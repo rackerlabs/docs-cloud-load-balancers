@@ -38,12 +38,11 @@
             <year>2011</year>
             <year>2012</year>
             <year>2013</year>
-            <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-05-20</pubdate>
+        <pubdate>2013-11-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,70 +58,7 @@
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-05-20</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added <code>currentConn</code> field
-                                to response returned by List Load
-                                Balancer Stats API call and updated
-                                reponse examples accordingly. Added
-                                description to detail the duplication
-                                of stats for SSL Termination. Refer to
-                                   <xref
-                                   linkend="List_Load_Balancer_Stats-d1e1524"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-03-24</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Fixed JSON issues with several
-                                examples for load balancer connection
-                                throttling, monitoring, and SSL
-                                termination. Also fixed XML response
-                                example for Update Load Balancer
-                                Attributes.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-01-10</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added notes that changing protocol
-                                or port for a load balancer will
-                                disable session persistence (see <xref
-                                   linkend="Manage_Session_Persistence-d1e3733"
-                                /> and <xref
-                                   linkend="List_Load_Balancing_Protocols-d1e4269"
-                                />).</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added  422 response
-                                (unprocessableEntity) to the list of
-                                Error Response Codes and a note about
-                                it for <xref
-                                   linkend="Manage_Session_Persistence-d1e3733"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2013-11-19</date>
+                <date>2013-11-05</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -135,11 +71,6 @@
                                 /> and <xref
                                    linkend="Update_Load_Balancer_Attributes-d1e1812"
                                 /> for details).</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added new Notes section in <xref
-                                   linkend="Manage_Access_Lists-d1e3187"
-                                />.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -2976,16 +2907,17 @@
                     balancers attached:
                 </para>
                 <example>
-                    <title>List Load Balancers With Node Specified
-                        Response: XML </title>
+                    <title>List Load Balancers With Node Specified: XML
+                    </title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="xml">
 <xi:include href="samples/lb-list-response-with-node.xml" parse="text"/>
                     </programlisting>
                 </example>
                 <example>
-                    <title>List Load Balancers With Node Specified
-                        Response: JSON </title>
+                    <title>List Load Balancers With Node Specified:
+                        JSON
+                    </title>
                     <programlisting language="json">
 <xi:include href="samples/lb-list-response-with-node.json" parse="text"/>
                     </programlisting>
@@ -4124,17 +4056,7 @@
                         at any one time.
                     </para>
                 </listitem>
-                <listitem>
-                    <para>
-                        <emphasis role="bold">currentConn</emphasis>
-                        &ndash; Number of simultaneous connections
-                        active at the time of the request.
-                    </para>
-                </listitem>
             </itemizedlist>
-            <para>The information is duplicated for SSL Termination.  However,
-            if the Load Balancer is not SSL Terminated, the appropriate
-            information will be left without a value.</para>
             <para>This operation does not require a request body.</para>
             <example>
                 <title>List Load Balancer stats Response: XML</title>
@@ -4721,22 +4643,19 @@
                 <para> This operation does not require a request
                     body.</para>
                 <example>
-                    <title>View Node Service Events Response:
-                        XML</title>
+                    <title>View Node Service Events: XML</title>
                     <programlisting language="xml">
                         <xi:include href="samples/node-service-events-response.xml" parse="text"/>
                     </programlisting>
                 </example>
                 <example>
-                    <title>View Node Service Events Response:
-                        JSON</title>
+                    <title>View Node Service Events: JSON</title>
                     <programlisting language="json">
                         <xi:include href="samples/node-service-events-response.json" parse="text"/>
                     </programlisting>
                 </example>
                 <example>
-                    <title>View Node Service Events Response:
-                        ATOM</title>
+                    <title>View Node Service Events: ATOM</title>
                     <programlisting language="json">
                         <xi:include href="samples/node-service-events-atom-feed.xml" parse="text"/>
                     </programlisting>
@@ -4878,13 +4797,13 @@
                         are supported. </para>
                 </note>
                 <example>
-                    <title>List Allowed Domains Response: XML</title>
+                    <title>List Allowed Domains: XML</title>
                     <programlisting language="xml">
 <xi:include href="samples/allowed-domains.xml" parse="text"/>
                     </programlisting>
                 </example>
                 <example>
-                    <title>List Allowed Domains Response: JSON</title>
+                    <title>List Allowed Domains: JSON</title>
                     <?dbfo keep-together="always"?>
                     <programlisting language="json">
 <xi:include href="samples/allowed-domains.json" parse="text"/>
@@ -5093,15 +5012,13 @@
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3"
-                                   >/loadbalancers/<parameter>loadBalancerId</parameter>/usage?startTime=2010-12-15&amp;endTime=2011-5-1</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/usage?startTime=2010-12-15&amp;endTime=2011-5-1</td>
                             <td colspan="3">List historical usage.</td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3"
-                                   >/loadbalancers/<parameter>loadBalancerId</parameter>/usage/current</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/usage/current</td>
                             <td colspan="3">List current usage.</td>
                         </tr>
                     </tbody>
@@ -5719,18 +5636,18 @@
                     <tbody>
                         <tr align="left">
                             <td>&GET; </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/sessionpersistence</td>
+                            <td>/loadbalancers/loadBalancerId/sessionpersistence</td>
                             <td>List session persistence
                                 configuration.</td>
                         </tr>
                         <tr align="left">
                             <td>&PUT; </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/sessionpersistence</td>
+                            <td>/loadbalancers/loadBalancerId/sessionpersistence</td>
                             <td>Enable session persistence.</td>
                         </tr>
                         <tr align="left">
                             <td>&DELETE; </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/sessionpersistence</td>
+                            <td>/loadbalancers/loadBalancerId/sessionpersistence</td>
                             <td>Disable session persistence.</td>
                         </tr>
                     </tbody>
@@ -5745,33 +5662,15 @@
                     serviceUnavailable (<errorcode>503</errorcode>),
                     unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), overLimit
-                        (<errorcode>413</errorcode>),
-                    unprocessableEntity
-                    (<errorcode>422</errorcode>)</simpara>
+                        (<errorcode>413</errorcode>) </simpara>
                 <para><glossterm baseform="session persistence"
                         >Session persistence</glossterm> is a feature
                     of the load balancing service that forces multiple
                     requests, of the same protocol, from clients to be
                     directed to the same node. This is common with
                     many web applications that do not inherently share
-                    application state between back-end servers. <note><title>Notes</title>
-                        <itemizedlist>
-                            <listitem>
-                                <para>Changing the protocol or port
-                                   for a load balancer will disable
-                                   session persistence.</para>
-                            </listitem>
-                            <listitem>
-                                <para>If you try to DELETE the session
-                                   persistence configuration when
-                                   session persistence is already
-                                   disabled, a 422 response
-                                   (unprocessableEntity) is
-                                   returned.</para>
-                            </listitem>
-                        </itemizedlist>
-                    </note></para>
-                <para>Two session persistence modes are available, as
+                    application state between back-end servers. Two
+                    session persistence modes are available, as
                     described in the following table:</para>
                 <table rules="all">
                     <caption>Session Persistence Modes</caption>
@@ -5917,16 +5816,14 @@
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3"
-                                   >/loadbalancers/<parameter>loadBalancerId</parameter>/connectionlogging</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/connectionlogging</td>
                             <td colspan="3">View current configuration
                                 of <glossterm>connection logging</glossterm>.</td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">&PUT;
                             </td>
-                            <td colspan="3"
-                                   >/loadbalancers/<parameter>loadBalancerId</parameter>/connectionlogging</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/connectionlogging</td>
                             <td colspan="3">Enable or disable connection logging.</td>
                         </tr>
                     </tbody>
@@ -6012,19 +5909,19 @@
                         <tr align="left">
                             <td>&GET;
                             </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/connectionthrottle</td>
+                            <td>/loadbalancers/loadBalancerId/connectionthrottle</td>
                             <td>List connection throttling configuration.</td>
                         </tr>
                         <tr align="left">
                             <td>&PUT;
                             </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/connectionthrottle</td>
+                            <td>/loadbalancers/loadBalancerId/connectionthrottle</td>
                             <td>Update throttling configuration.</td>
                         </tr>
                         <tr align="left">
                             <td>&DELETE;
                             </td>
-                            <td>/loadbalancers/<parameter>loadBalancerId</parameter>/connectionthrottle</td>
+                            <td>/loadbalancers/loadBalancerId/connectionthrottle</td>
                             <td>Remove connection throttling configurations.</td>
                         </tr>
                     </tbody>
@@ -6161,15 +6058,13 @@
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3"
-                                >/loadbalancers/<parameter>loadBalancerId</parameter>/contentcaching</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/contentcaching</td>
                             <td colspan="3">View current configuration of content caching.</td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">&PUT;
                             </td>
-                            <td colspan="3"
-                                >/loadbalancers/<parameter>loadBalancerId</parameter>/contentcaching</td>
+                            <td colspan="3">/loadbalancers/loadBalancerId/contentcaching</td>
                             <td colspan="3">Enable or disable content caching.</td>
                         </tr>
                     </tbody>
@@ -6497,21 +6392,12 @@
                         </tr>
                     </tbody>
                 </table>
-                <note><title>Notes</title>
-                    <itemizedlist>
-                        <listitem><para>UDP-Based protocols (DNS_UDP, UDP, and
-                            UDP_STREAM) have the following limitations.
-                            They are not capable of using the Health
-                            Monitor features. Also, SSL Termination is
-                            unavailable when using UDP-based ports.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Changing the protocol or port for a
-                                load balancer will disable session
-                                persistence.</para>
-                        </listitem>
-                    </itemizedlist>
-                    
+                <note>
+                    <para>UDP-Based protocols (DNS_UDP, UDP, and
+                        UDP_STREAM) have the following limitations.
+                        They are not capable of using the Health
+                        Monitor features. Also, SSL Termination is
+                        unavailable when using UDP-based ports.</para>
                 </note>
             </section>
         </section>
@@ -7400,6 +7286,22 @@
             </section>
         </section>
 
+    </chapter>
+    <chapter xml:id="API_Operations_Wadl">
+        <?dbhtml stop-chunking?>
+        <title>API Operations (Wadl)</title>
+        <info>
+            <raxm:metadata
+                xmlns:raxm="http://docs.rackspace.com/api/metadata">
+                <raxm:type>concept</raxm:type>
+                <raxm:product version="v1.0"
+                    >loadbalancers</raxm:product>
+                <raxm:priority>2</raxm:priority>
+            </raxm:metadata>
+        </info>
+        <wadl:resources
+            href="../../../Misc/lbaas1.wadl"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02"/>
     </chapter>
     <glossary>
         <title>Glossary</title>

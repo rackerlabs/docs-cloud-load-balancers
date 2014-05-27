@@ -22,11 +22,12 @@
 			<year>2011</year>
 			<year>2012</year>
 			<year>2013</year>
+			<year>2014</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2013-02-26</pubdate>
+	<pubdate>2014-05-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,6 +41,103 @@
         </abstract>
     	<revhistory>
 			<revision>
+				<date>2014-05-21</date>
+				<revdescription>
+					<para>Updated for v1.21.12.</para>
+				</revdescription>
+			</revision>
+            <revision>
+				<date>2014-03-24</date>
+				<revdescription>
+					<para>Updated for v1.20.22.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2014-02-26</date>
+				<revdescription>
+					<para>Updated for v1.19.32.</para>
+				</revdescription>
+			</revision>
+    		<revision security="internal">
+				<date>2013-12-17</date>
+				<revdescription>
+					<para>Updated for v1.19.28.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-11-19</date>
+				<revdescription>
+					<para>Updated for v1.19.26.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-10-15</date>
+				<revdescription>
+					<para>Updated for v1.19.18.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-09-30</date>
+				<revdescription>
+					<para>Updated for v1.19.15.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-09-19</date>
+				<revdescription>
+					<para>Updated for v1.19.14.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-09-17</date>
+				<revdescription>
+					<para>Updated for v1.19.13 (SYD and IAD only) .</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-07-23</date>
+				<revdescription>
+					<para>Updated for v1.18.11.</para>
+				</revdescription>
+			</revision>
+			<revision security="internal">
+				<date>2013-06-07</date>
+				<revdescription>
+					<para>Updated for v1.18.2 configuration
+						changes.</para>
+				</revdescription>
+			</revision>
+    		<revision security="internal">
+				<date>2013-06-04</date>
+				<revdescription>
+					<para>Updated for v1.18.2.</para>
+				</revdescription>
+			</revision>
+            <revision security="internal">
+				<date>2013-04-28</date>
+				<revdescription>
+					<para>Updated for v1.17.29.</para>
+				</revdescription>
+			</revision>
+            <revision security="internal">
+				<date>2013-04-24</date>
+				<revdescription>
+					<para>Updated for v1.17.26.</para>
+				</revdescription>
+			</revision>
+            <revision security="internal">
+				<date>2013-04-03</date>
+				<revdescription>
+					<para>Updated for v1.17.23.</para>
+				</revdescription>
+			</revision>
+            <revision security="internal">
+				<date>2013-03-21</date>
+				<revdescription>
+					<para>Updated for v1.17.19.</para>
+				</revdescription>
+			</revision>
+            <revision>
 				<date>2013-02-26</date>
 				<revdescription>
 					<para>Updated for v1.17.14.</para>
@@ -175,7 +273,7 @@
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Release Notes</raxm:displayname>
       <raxm:product version="v1.0">loadbalancers</raxm:product>
-      <raxm:priority>10</raxm:priority>
+      <raxm:priority>30</raxm:priority>
     </raxm:metadata> 
     </info>
 	<chapter xml:id="doc_change_history">
@@ -185,7 +283,565 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="clbv1.17.14">
+	<chapter xml:id="clbv1.21.12">
+		<title>v1.21.12, May 21, 2014</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Added additional field <code>currentConn</code>
+					to stats call for better connection
+					tracking.</para>
+			</listitem>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml" security="internal">
+				<para>Implemented private cluster ability.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Updated stats call to properly track SSL virtual
+					servers.</para>
+			</listitem>
+			<listitem>
+				<para>Fixed a bug where modifying certain attributes
+					of a load balancer with HTTPS Redirect enabled
+					could cause an ERROR state. </para>
+			</listitem>
+			<listitem security="internal">
+				<para>Fixed HostEndpointPoller Failure due to stats
+					updates.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Updated HTTPS Redirect virtual servers to use the "discard"
+					pool instead of creating an extra empty pool. </para>
+			</listitem>
+			<listitem security="internal">
+				<para>Fixed the Management Sync call to recreate load balancers in
+					the correct sequence when both SSL Termination and
+					HTTPS Redirect are enabled. </para>
+			</listitem>
+			<listitem security="internal">
+				<para>Changed the Management Sync call to keep the load balancer
+					in <code>PENDING_UPDATE</code> status for the
+					duration of the sync.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.20.22">
+		<title>v1.20.22, March 24, 2014</title>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Fixed issue where deleting error pages caused load balancer
+					to go into an ERROR state if SSL termination was
+					subsequently enabled. </para>
+			</listitem>
+			<listitem>
+				<para>Fixed concurrency issue where deleting nodes on a load
+					balancer would not always be honored. </para>
+			</listitem>
+			<listitem>
+				<para>Fixed issue where updating the connection throttle was
+					causing load balancers created prior to the
+					1.19.32 release to go into an ERROR state. </para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.32">
+		<title>v1.19.32, February 26, 2014</title>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Various improvements to backend services.</para>
+				<itemizedlist security="internal">
+					<listitem>
+						<para>Includes updating wsdls to prepare for
+							supporting Stingray 9.5 in an upcoming
+							release. </para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter security="internal" xml:id="clbv1.19.28">
+		<title>v1.19.28, December 17, 2013</title>
+		<itemizedlist security="internal">
+			<title>Resolved Issues</title>
+			<listitem security="internal">
+				<para>Updated primary key column on certain database tables from
+					32-bit to 64-bit.</para>
+			</listitem>
+			<listitem>
+				<para>Fixed issue where SSL usage was bleeding over
+					onto non-SSL usage records.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.26">
+		<title>v1.19.26, November 19, 2013</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Added support for HTTPS redirection feature.
+					Refer to the description for the
+						<code>httpsRedirect</code> attribute at <link
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+					and <link
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html</link>
+					for details. </para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.18">
+		<title>v1.19.18, October 15, 2013</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para>Nodes are no longer a required attribute for creating a new
+					load balancer, and it is now possible to delete or
+					disable a load balancer's last remaining
+					node.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.15">
+		<title>v1.19.15, September 30, 2013</title>
+		<itemizedlist security="internal">
+			<title>New Features</title>
+			<listitem>
+				<para>Enhanced request/response logging for ATOM Hopper
+					integration.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Bug fix to ensure correct bandwidth
+					usage.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.14">
+		<title>v1.19.14, September 19, 2013</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para>Expiration validation of SSL certificates now in
+					place.</para>
+			</listitem>
+			<listitem>
+				<para>Improved usage gathering mechanism.</para>
+				<para security="internal">This includes:</para>
+				<itemizedlist security="internal">
+					<listitem>
+						<para>Using SNMP instead of SOAP to gather
+							usage metrics.</para>
+					</listitem>
+					<listitem>
+						<para>Gathering of usage from failover
+							nodes.</para>
+					</listitem>
+					<listitem>
+						<para>Gathering of usage from all hosts a load
+							balancer has served traffic on.</para>
+					</listitem>
+					<listitem>
+						<para>Fixed various bugs related to old usage
+							implementation.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para>Improved public API accessibility of usage from
+					a 2 hour delay to a 1 hour delay.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.19.13_SYD_IAD">
+		<title>v1.19.13, September 17, 2013 (SYD and IAD only)</title>
+		<note>
+			<para>This release is for the SYD and IAD datacenters only. This
+				will be released for the other datacenters
+				later.</para>
+		</note>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para>Expiration validation of SSL certificates now in
+					place.</para>
+			</listitem>
+			<listitem>
+				<para>Improved usage gathering mechanism.</para>
+				<para security="internal">This includes:</para>
+				<itemizedlist security="internal">
+					<listitem>
+						<para>Using SNMP instead of SOAP to gather
+							usage metrics.</para>
+					</listitem>
+					<listitem>
+						<para>Gathering of usage from failover
+							nodes.</para>
+					</listitem>
+					<listitem>
+						<para>Gathering of usage from all hosts a load
+							balancer has served traffic on.</para>
+					</listitem>
+					<listitem>
+						<para>Fixed various bugs related to old usage
+							implementation.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para>Improved public API accessibility of usage from a 2 hour
+					delay to a 1 hour delay.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.18.11">
+		<title>v1.18.11, July 23, 2013</title>
+		<itemizedlist security="internal">
+			<title>New Features</title>
+			<listitem>
+				<para>Provided a packaged tool to allow for processing logs
+					separately if needed.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Fixed a race condition that was causing some very large logs
+					to get corrupted for customers.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Fixed the SOAP API endpoint so that the SOAP calls are sent
+					to the correct node.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.18.2_config" security="internal">
+		<title>v1.18.2 Configuration Changes, June 7, 2013</title>
+		<itemizedlist security="internal">
+			<title>Configuration Changes</title>
+			<listitem security="internal">
+				<para>Upgraded Stingray Traffic Manager (STM) to version 9.2 for
+					ORD and LON datacenters.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="clbv1.18.2" security="internal">
+		<title>v1.18.2, June 4, 2013</title>
+		<itemizedlist security="internal">
+			<title>New Features</title>
+			<listitem security="internal">
+				<para>Updated log messages to provide details after
+					Management API sync call is completed.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Modified logging process to use updated Hortonworks Hadoop
+					cluster for customer logs.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+    <chapter xml:id="clbv1.17.29" security="internal">
+		<title>v1.17.29, April 28, 2013</title>
+		<itemizedlist security="internal">
+			<title>Resolved Issues</title>
+			<listitem security="internal">
+				<para>Atom Hopper support for SYD</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Dropped Duplicate Indexes and added additional
+					logic to resolve duplicate usage entries.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+    <chapter xml:id="clbv1.17.26" security="internal">
+		<title>v1.17.26, April 24, 2013</title>
+		<itemizedlist security="internal">
+			<title>Resolved Issues</title>
+			<listitem security="internal">
+				<para>Updated datacenter regions to support SYD (Sydney).</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+    <chapter xml:id="clbv1.17.23" security="internal">
+		<title>v1.17.23, April 3, 2013</title>
+		<itemizedlist security="internal">
+			<title>Resolved Issues</title>
+			<listitem security="internal">
+				<para>Fixed issues with Atom Hopper processing.
+				</para>
+			</listitem>
+			<listitem security="internal">
+				<para>More tracking on the entries as well as alerts
+					and service events are generated for better
+					tracking and monitoring.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Updated AHUSL (Atom Hopper Usage Service Layer)
+					to handle referenceId for corrected usage.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Added configuration <code>ahusl_logs_fail_requests</code> to
+					print all AHUSL entries.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+    <chapter xml:id="clbv1.17.19" security="internal">
+		<title>v1.17.19, March 21, 2013</title>
+		<itemizedlist security="internal">
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Added referenceId value/behavior for corrected usage
+					records.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Added configuration <code>ahusl_logs_requests</code> to
+					print all AHUSL (Atom Hopper Usage Service Layer)
+					entries.</para>
+			</listitem>
+            <listitem security="internal">
+				<para>Updated logs app ArchiveLogsJobs, which is now run in its
+					own cron interval. Added configuration
+						<code>job.repeat.archive.interval</code> to
+					hadoop-logs.conf for this.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+    <chapter xml:id="clbv1.17.14">
 		<title>v1.17.14, February 26, 2013</title>
 		<itemizedlist>
 			<title>Resolved Issues</title>

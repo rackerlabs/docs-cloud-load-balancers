@@ -39,11 +39,12 @@
             <year>2011</year>
             <year>2012</year>
             <year>2013</year>
+            <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2013-02-05</pubdate>
+        <pubdate>2014-05-20</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -57,6 +58,67 @@
             </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-05-20</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated response examples for
+                                listing a cluster and lists of
+                                clusters (see <xref
+                                   linkend="Clusters-d1e443"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated attributes and examples for
+                                Creating a New Host API call (see
+                                   <xref
+                                   linkend="Creating_a_New_Host-d1e827"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added JSON example for List Alerts
+                                Response API call (see <xref
+                                   linkend="Listing_and_Acknowledging_Alerts-d1e3019"
+                                />).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for Host Capacity
+                                Reports API calls (see <xref
+                                   linkend="Host_Capacity-d1e4265"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-04</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated rate limit information (see
+                                   <xref linkend="Rate_Limits-d1e1272"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-04-03</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information for new alerts and
+                                events for the Atom Hopper Service
+                                (see <xref
+                                   linkend="Listing_and_Acknowledging_Alerts-d1e3019"
+                                /> and  <xref
+                                   linkend="Viewing_Events-d1e3739"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-02-05</date>
                 <revdescription>
@@ -652,12 +714,22 @@
                     </listitem>
                     <listitem>
                         <para>
+                            <code>managementRestInterface</code>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
                             <code>trafficManagerName</code>
                         </para>
                     </listitem>
                     <listitem>
                         <para>
                             <code>soapEndpointActive</code>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <code>restEndpointActive</code>
                         </para>
                     </listitem>
                     <listitem>
@@ -859,55 +931,9 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/ratelimit</td>
-                        <td colspan="3">Retrieve the rate limit information for a specified load
-                            balancer.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/activeratelimits</td>
-                        <td colspan="3">Retrieve all currently rate
-                            limited load balancers.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/customlimitaccounts</td>
-                        <td colspan="3">Retrieve all accounts with
-                            custom absolute limits.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/apiratelimit</td>
-                        <td colspan="3">Retrieve all accounts that are
-                            API rate limited.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&POST;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/ratelimit</td>
-                        <td colspan="3">Impose a new rate limit on the specified load balancer.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&PUT;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/ratelimit</td>
-                        <td colspan="3">Modify the expiration time and/or ticket associated with the
-                            rate limit.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/ratelimit</td>
-                        <td colspan="3">Immediately remove the defined rate limit.</td>
-                        <td colspan="2">Service Admin</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/removeoldlimits</td>
-                        <td colspan="3">Immediately remove expired limits.</td>
+                        <td colspan="5">/limits/</td>
+                        <td colspan="3">Retrieve the rate limit information for a specified account.
+                        </td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                 </tbody>
@@ -929,38 +955,6 @@
                     >http://docs-internal.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/Group_Calls.html</link>
                 for information about adding and removing users from
                 groups.</para>
-            <para>
-                Additionally, rate limit information is returned as part of the "extended details of a load
-                balancer", which is documented below.
-            </para>
-            <example>
-                <title>List Rate Limit Response: XML</title>
-                <programlisting language="xml">
-<xi:include href="samples/lb-list-ratelimit.xml" parse="text"/>
-                </programlisting>
-            </example>
-            <example>
-                <?dbfo keep-together="always"?>
-                <title>List Rate Limit Response: JSON</title>
-                <programlisting language="json">
-<xi:include href="samples/lb-list-ratelimit.json" parse="text"/>
-                </programlisting>
-            </example>
-            <example>
-                <title>List Non-Standard Absolute Limit Account
-                    Response: XML</title>
-                <programlisting language="xml">
-<xi:include href="samples/lb-list-absolutelimit-accounts.xml" parse="text"/>
-                </programlisting>
-            </example>
-            <example>
-                <?dbfo keep-together="always"?>
-                <title>List Non-Standard Absolute Limit Account
-                    Response: JSON</title>
-                <programlisting language="json">
-<xi:include href="samples/lb-list-absolutelimit-accounts.json" parse="text"/>
-                </programlisting>
-            </example>
 
             <para> Addtionally, for more information on how load
                 balancer rate limits and authentication is handled via
@@ -1382,6 +1376,52 @@
                 <title>Health Check: JSON</title>
                 <programlisting language="json">
 <xi:include href="samples/lb-health-check.json" parse="text" />
+                </programlisting>
+            </example>
+        </section>
+        <section xml:id="Callback-d1e2342">
+            <title>ZeusEvents-Callback</title>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="5">URI</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="2">Access Level</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">&POST;</td>
+                        <td colspan="5">/management/zeusevent</td>
+                        <td colspan="3">Creates a callback for ZeusEvents used to track node status within the system.</td>
+                        <td colspan="2">Service Admin</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>
+                This will allow a service to submit messages or callback that will be processed by the system and handled
+                accordingly depending on the message contents. The message must follow a specific format as specified in the below example.
+            </para>
+
+            <para>Examples: </para>
+            <para>
+                <parameter>Fail: 'WARN monitors/571432_62203 monitorfail Monitor has detected a failure in node '10.1.1.1:443': Invalid HTTP response received; premature end of headers'</parameter>
+            </para>
+            <para>
+                <parameter>OK: 'INFO monitors/571432_62203 monitorok Monitor is working for node '10.1.1.1:443'</parameter>
+            </para>
+            <example>
+                <?dbfo keep-together="always"?>
+                <title>ZeusEvent: XML</title>
+                <programlisting language="xml">
+<xi:include href="samples/zeus-event.xml" parse="text" />
+                </programlisting>
+            </example>
+            <example>
+                <title>ZeusEvent: JSON</title>
+                <programlisting language="json">
+<xi:include href="samples/zeus-event.json" parse="text" />
                 </programlisting>
             </example>
         </section>
@@ -1886,12 +1926,25 @@
                         <td colspan="3">Retrieve unacknowledged alerts, if any.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
+                    <tr align="left">
+                        <td colspan="1">&GET;</td>
+                        <td colspan="5">/alerts/atomhopper</td>
+                        <td colspan="3">Retrieve alerts generated by
+                            the Atom Hopper Service.</td>
+                        <td colspan="2">Support, Service Admin</td>
+                    </tr>
                 </tbody>
             </informaltable>
             <example>
                 <title>List Alerts Response: XML</title>
                 <programlisting language="xml">
 <xi:include href="samples/lb-list-alerts.xml" parse="text"/>
+                </programlisting>
+            </example>
+            <example>
+                <title>List Alerts Response: JSON</title>
+                <programlisting language="json">
+<xi:include href="samples/lb-list-alerts.json" parse="text"/>
                 </programlisting>
             </example>
         </section>
@@ -2232,8 +2285,18 @@
                         <td colspan="4"
                                 >/event/user/<parameter>username</parameter>?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
                         <td colspan="4">List recent load balancer
-                            service events for the specified  user and
-                            date range</td>
+                            service events for the specified user and
+                            date range.</td>
+                        <td colspan="2">Support, Service Admin</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">&GET;</td>
+                        <td colspan="4"
+                        >/event/<parameter>loadbalancerId</parameter>/atomhopper?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
+                        <td colspan="4">List recent load balancer
+                            service events for the specified account
+                            and date range generated by the Atom
+                            Hopper Service.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                 </tbody>

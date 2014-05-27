@@ -1,11 +1,9 @@
-<hostcapacityreports>
-    <hostcapacityreport
-            hostId="1"
-            hostName="The Best Host Ever"
-            totalConcurrentConnectionCapacity="150000"
-            availableConcurrentConnections="100000"
-            allocatedConcurrentConnections="50000"
-            allocatedConcurrentConnectionsToday="14000"
-            allocatedConcurrentConnectionsInLastSevenDays="25000"
-            remainingDaysOfCapacity="9.55" />
-</hostcapacityreports>
+<mgmt:hostCapacityReports xmlns:mgmt="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <mgmt:hostCapacityReport hostId="1"
+                             hostName="FirstBestHost"
+                             totalConcurrentConnectionCapacity="150000"/>
+    <mgmt:hostCapacityReport hostId="2"
+                             hostName="SecondBestHost"
+                             totalConcurrentConnectionCapacity="150000"/>
+</mgmt:hostCapacityReports>
+
