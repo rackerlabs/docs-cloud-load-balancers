@@ -1,0 +1,29 @@
+<loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    id="144"
+    name="a-new-loadbalancer"
+    algorithm="RANDOM"
+    protocol="HTTP"
+    port="83"
+    status="BUILD"
+    timeout="30">
+    <virtualIps>
+        <virtualIp
+            id="39"
+            address="206.10.10.210"
+            ipVersion="IPV4"
+            type="PUBLIC" />
+    </virtualIps>
+    <nodes>
+        <node
+            id="653"
+            address="10.1.1.1"
+            port="80"
+            condition="ENABLED"
+            status="ONLINE"
+            weight="1" />
+    </nodes>
+    <cluster name="ztm-n03.staging1.lbaas.rackspace.net" />
+    <created time="2011-02-08T21:19:55Z" />
+    <updated time="2011-02-08T21:19:55Z" />
+    <connectionLogging enabled="false" />
+</loadBalancer>

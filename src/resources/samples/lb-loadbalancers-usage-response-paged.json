@@ -1,0 +1,107 @@
+{
+    "loadBalancerUsageRecords": [
+        {
+            "id": 21,
+            "accountId": 406271,
+            "loadBalancerId": 33,
+            "averageNumConnections": 0,
+            "incomingTransfer": 0,
+            "outgoingTransfer": 0,
+            "averageNumConnectionsSsl": 0,
+            "incomingTransferSsl": 0,
+            "outgoingTransferSsl": 0,
+            "numVips": 1,
+            "numPolls": 89,
+            "startTime": "2011-08-25T11:45:48-05:00",
+            "endTime": "2011-08-25T17:36:59-05:00",
+            "vipType": "SERVICENET",
+            "sslMode": "OFF",
+            "eventType": "CREATE_LOADBALANCER"
+        },
+        {
+            "id": 27,
+            "accountId": 406271,
+            "loadBalancerId": 33,
+            "averageNumConnections": 0,
+            "incomingTransfer": 0,
+            "outgoingTransfer": 0,
+            "averageNumConnectionsSsl": 0,
+            "incomingTransferSsl": 0,
+            "outgoingTransferSsl": 0,
+            "numVips": 1,
+            "numPolls": 7,
+            "startTime": "2011-09-01T16:38:06-05:00",
+            "endTime": "2011-09-01T17:37:27-05:00",
+            "vipType": "SERVICENET",
+            "sslMode": "OFF"
+        },
+        {
+            "id": 37,
+            "accountId": 406271,
+            "loadBalancerId": 33,
+            "averageNumConnections": 0,
+            "incomingTransfer": 0,
+            "outgoingTransfer": 0,
+            "averageNumConnectionsSsl": 0,
+            "incomingTransferSsl": 0,
+            "outgoingTransferSsl": 0,
+            "numVips": 1,
+            "numPolls": 49,
+            "startTime": "2011-09-02T11:51:56-05:00",
+            "endTime": "2011-09-02T16:00:55-05:00",
+            "vipType": "SERVICENET",
+            "sslMode": "OFF"
+        },
+        {
+            "id": 73,
+            "accountId": 406271,
+            "loadBalancerId": 33,
+            "averageNumConnections": 0,
+            "incomingTransfer": 0,
+            "outgoingTransfer": 0,
+            "averageNumConnectionsSsl": 0,
+            "incomingTransferSsl": 0,
+            "outgoingTransferSsl": 0,
+            "numVips": 1,
+            "numPolls": 1,
+            "startTime": "2011-10-28T14:42:29-05:00",
+            "endTime": "2011-10-28T14:42:29-05:00",
+            "vipType": "SERVICENET",
+            "sslMode": "OFF"
+        },
+        {
+            "id": 1089,
+            "accountId": 406271,
+            "loadBalancerId": 33,
+            "averageNumConnections": 0,
+            "incomingTransfer": 0,
+            "outgoingTransfer": 0,
+            "averageNumConnectionsSsl": 0,
+            "incomingTransferSsl": 0,
+            "outgoingTransferSsl": 0,
+            "numVips": 0,
+            "numPolls": 0,
+            "startTime": "2012-01-25T22:09:21-06:00",
+            "endTime": "2012-01-25T22:09:21-06:00",
+            "vipType": "PUBLIC",
+            "sslMode": "OFF",
+            "eventType": "DELETE_LOADBALANCER"
+        }
+    ],
+    "links": [
+        {
+            "link": {
+                "otherAttributes": {},
+                "href": "http://localhost:8080/lb-mgmt-rest-service/management/loadbalancers/usage?startTime=2011-01-11&endTime=2013-01-12&offset=30&limit=5",
+                "rel": "next"
+            }
+        },
+        {
+            "link": {
+                "otherAttributes": {},
+                "href": "http://localhost:8080/lb-mgmt-rest-service/management/loadbalancers/usage?startTime=2011-01-11&endTime=2013-01-12&offset=20&limit=5",
+                "rel": "previous"
+            }
+        }
+    ]
+}

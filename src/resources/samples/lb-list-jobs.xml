@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jobs xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <job id="3" jobName="LB_USAGE_POLLER" state="FINISHED" startTime="2011-07-25T12:28:01-05:00"
+         endTime="2011-07-25T12:28:14-05:00"/>
+    <job id="4" jobName="HOST_ENDPOINT_POLLER" state="FINISHED" startTime="2011-07-25T12:28:01-05:00"
+         endTime="2011-07-25T12:28:13-05:00"/>
+</jobs>

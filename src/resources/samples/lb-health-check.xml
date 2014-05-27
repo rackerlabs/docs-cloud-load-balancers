@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<healthChecks xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <healthCheck type="ZEUS" status="ACTIVE" time="835"/>
+    <healthCheck type="DATABASE" status="ACTIVE" time="72"/>
+    <healthCheck type="LOCAL" status="ACTIVE" time="0"/>
+</healthChecks>

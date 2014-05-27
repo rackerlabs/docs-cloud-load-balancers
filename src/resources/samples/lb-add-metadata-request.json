@@ -1,0 +1,12 @@
+{
+  "metadata": [
+    {
+      "key":"color",
+      "value":"red"
+    },
+    {
+      "key":"label",
+      "value":"web-load-balancer"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<rateLimit xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+   expirationTime="2012-10-17T00:00:00-05:00"
+   maxRequestsPerSecond="150">
+   <ticket ticketId="1234" comment="DOS Attack" />
+</rateLimit>

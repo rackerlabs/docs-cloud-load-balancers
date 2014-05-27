@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<blacklist xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <blacklistItem id="8" cidrBlock="0.0.0.0/32" ipVersion="IPV4"/>
+    <blacklistItem id="9" cidrBlock="255.255.255.255/32" ipVersion="IPV4"/>
+</blacklist>

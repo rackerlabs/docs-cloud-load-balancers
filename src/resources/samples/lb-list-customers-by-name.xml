@@ -1,0 +1,4 @@
+<byIdOrName
+        xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+        xmlns:ns2="http://docs.openstack.org/loadbalancers/api/v1.0"
+        name="name-of-host-or-cluster" />

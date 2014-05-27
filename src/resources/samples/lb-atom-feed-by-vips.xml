@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <link rel="next"
+          href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/virtualips.atom?page=2"/>
+    <title type="text">Virtual Ips Feed</title>
+    <id>1234-loadbalancers-141-virtualips</id>
+    <author>
+        <name>Rackspace Cloud</name>
+    </author>
+    <entry>
+        <title type="text">Virtual Ip Successfully Added</title>
+        <summary type="text">Virtual ip successfully added</summary>
+        <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141"/>
+        <id>1234-loadbalancers-141-20111011631330</id>
+        <category term="CREATE"/>
+        <updated>2011-04-11T16:31:33.000Z</updated>
+    </entry>
+</feed>

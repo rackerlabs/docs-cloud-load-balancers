@@ -1,0 +1,30 @@
+<hosts xmlns="http://docs.openstack.org/loadbalancers/api/mgmt/v1.0">
+    <host
+            id="1"
+            name="host1"
+            clusterId="1"
+            coreDeviceId="14410"
+            zone="A"
+            status="ACTIVE_TARGET"
+            maxConcurrentConnections="150000"
+            managementIpAddress="10.1.1.1"
+            managementSoapInterface="http://10.1.1.1:9090/soap"
+            utilization="60%"
+            numberOfLoadBalancingConfigurations="414"
+            numberOfUniqueCustomers="141"
+            soapEndpointActive="true" />
+    <host
+            id="2"
+            name="host2"
+            clusterId="1"
+            coreDeviceId="15510"
+            zone="B"
+            status="ACTIVE_TARGET"
+            maxConcurrentConnections="150000"
+            managementIpAddress="10.1.1.2"
+            managementSoapInterface="http://10.1.1.2:9090/soap"
+            utilization="59%"
+            numberOfLoadBalancingConfigurations="520"
+            numberOfUniqueCustomers="515"
+            soapEndpointActive="true" />
+</hosts>

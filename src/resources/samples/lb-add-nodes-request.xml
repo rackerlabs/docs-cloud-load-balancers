@@ -1,0 +1,5 @@
+<nodes xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <node address="10.1.1.1" port="80" condition="ENABLED" type="PRIMARY"/>
+    <node address="10.2.2.1" port="80" condition="ENABLED" type="SECONDARY"/>
+    <node address="www.myrackspace.com" port="88" condition="ENABLED" type="SECONDARY" weight="10"/>
+</nodes>

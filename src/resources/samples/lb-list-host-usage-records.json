@@ -1,0 +1,13 @@
+{"hostUsageRecords": [
+        {
+            "hostId": 1,
+            "hostUsages": [
+                {
+                    "day": "2011-02-14T00:00:00-0600",
+                    "bandwidthIn": 0,
+                    "bandwidthOut": 0
+                }
+            ]
+        }
+    ]
+}

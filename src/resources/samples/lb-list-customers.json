@@ -1,0 +1,32 @@
+{
+    "customers" : [
+        {
+            "accountId" : 406271,
+            "loadBalancers" : [
+                {
+                    "accountId" : 406271,
+                    "id" : 3,
+                    "status" : "ACTIVE",
+                    "name" : "a-new-loadbalancer"
+                },
+                {
+                    "accountId" : 406271,
+                    "id" : 4,
+                    "status" : "ACTIVE",
+                    "name" : "a-new-loadbalancer"
+                }
+            ]
+        },
+        {
+            "accountId" : 563374,
+            "loadBalancers" : [
+                {
+                    "accountId" : 563374,
+                    "id" : 45,
+                    "status" : "ACTIVE",
+                    "name" : "brand new lb in collaboration with Mr Toohill"
+                }
+            ]
+        }
+    ]
+}

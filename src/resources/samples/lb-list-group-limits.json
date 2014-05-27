@@ -1,0 +1,11 @@
+{
+    "loadBalancerLimitGroups": [
+        {
+            "name": "customer_group",
+            "id": 1,
+            "limit": 50000,
+            "accounts": [],
+            "isDefault": true
+        }
+    ]
+}

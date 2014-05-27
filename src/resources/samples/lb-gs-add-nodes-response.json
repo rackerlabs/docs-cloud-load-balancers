@@ -1,0 +1,12 @@
+{
+    "nodes": [
+        {
+            "address": "108.166.67.215",
+            "id": 44717,
+            "port": 80,
+            "status": "ONLINE",
+            "condition": "ENABLED",
+            "weight": 1
+        }
+    ]
+}

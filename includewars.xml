@@ -8,7 +8,7 @@
     <fileSet>
       <directory>${project.basedir}/target/docbkx/webhelp</directory>
       <includes>
-        <include>**.war</include>
+	<include>**.war</include>
       </includes>
     </fileSet>
   </fileSets>

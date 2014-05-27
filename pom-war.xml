@@ -1,92 +1,157 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.rackspace.cloud.files.api</groupId>
-  <artifactId>files-docs</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  <name>Cloud Load Balancers API Docs</name>
-  <profiles>
-    <profile>
-      <id>Rackspace Research Repositories</id>
-      <activation>
-	<activeByDefault>true</activeByDefault>
-      </activation>
-      <repositories>
-	<repository>
-	  <id>rackspace-research</id>
-	  <name>Rackspace Research Repository</name>
-	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-	</repository>
-      </repositories>
-      <pluginRepositories>
-	<pluginRepository>
-	  <id>rackspace-research</id>
-	  <name>Rackspace Research Repository</name>
-	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
-	</pluginRepository>
-      </pluginRepositories>
-    </profile>
-  </profiles>
-  <build>
-    <plugins>
-      <plugin>
-	<groupId>com.rackspace.cloud.api</groupId>
-	<artifactId>clouddocs-maven-plugin</artifactId>
-	<version>1.5.0-SNAPSHOT</version>
-	<executions>		 
-	  <execution>
-	    <id>g1-war</id>
-	    <goals>
-	      <goal>generate-xhtml</goal>
-	    </goals>
-	    <phase>generate-sources</phase>
-	    <configuration>
-	      <includes>clb-intro.xml</includes>
-	      <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1/clb-intro/content</canonicalUrlBase>
-	      <preProcess>
-		<copy
-		    todir="target/docbkx/xhtml/clb-intro/figures">
-		  <fileset dir="src/docbkx/figures">
-		    <include name="**/*.png"/>
-		    <exclude name="**/CLBinterfaces.png"/>
-		  </fileset>
-		</copy>
-	      </preProcess>
-	    </configuration>			
-	  </execution>
-	  <execution>
-	    <id>g2-war</id>
-	    <goals>
-	      <goal>generate-xhtml</goal>
-	    </goals>
-	    <phase>generate-sources</phase>
-	    <configuration>
-	      <includes>clb-devguide.xml</includes>
-	      <security>external</security>
-	      <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-devguide/content</canonicalUrlBase>
-	      <preProcess>
-		<copy
-		    todir="target/docbkx/xhtml/clb-devguide/figures">
-		  <fileset dir="src/docbkx/figures">
-		    <include name="**/CLBinterfaces.png"/>
-		  </fileset>
-		</copy>
-	      </preProcess>
-	    </configuration>
-	  </execution>
-	</executions>
-	<configuration>
-	  <xincludeSupported>true</xincludeSupported>
-	  <branding>rackspace</branding>
-	  <enableDisqus>1</enableDisqus>
-	  <!-- <enableDisqus>intranet</enableDisqus> -->
-	  <feedbackEmail>diane.fleming@rackspace.com</feedbackEmail>
-	  <socialIcons>1</socialIcons>
-	</configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <groupId>com.rackspace.cloud.docs.loadbalancers.docbook</groupId>
+    <artifactId>docbook-conversions</artifactId>
+    <version>1.0.0</version>
+
+    <name>Loadbalancing Public API Spec</name>
+    <packaging>jar</packaging>
+       <pluginRepositories>
+           <pluginRepository>
+               <id>rackspace-research</id>
+               <name>Rackspace Research Repository</name>
+       <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+           </pluginRepository>
+       </pluginRepositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.rackspace.cloud.api</groupId>
+                <artifactId>clouddocs-maven-plugin</artifactId>
+                <!-- this <version> relates only to the *plugin* used for document formatting -->
+                <!-- the version of the *API* that is the subject of the document is indicated within each document -->
+                <version>1.5.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>g1</id>
+                        <goals>
+                            <!-- <goal>generate-pdf</goal> -->
+                            <goal>generate-xhtml</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <xincludeSupported>true</xincludeSupported>
+                            <sourceDirectory>src/resources</sourceDirectory>
+                            <highlightSource>false</highlightSource>
+                            <!-- this is the Rackspace-internal service developer guide formerly known as ManagementAPISpec.xml -->
+			    <security>internal</security>
+                            <includes>clb-mgmt-devguide.xml</includes>
+			    <pdfUrl>../../clb-mgmt-devguide-internal.pdf</pdfUrl>
+			    <enableDisqus>intranet</enableDisqus>
+			    <canonicalUrlBase>http://docs-beta.rackspace.com/internal/cdns/api/v1.0/cdns-mgmt-devguide/content</canonicalUrlBase>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>g2</id>
+                        <goals>
+                            <!-- <goal>generate-pdf</goal> -->
+                            <goal>generate-xhtml</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <xincludeSupported>true</xincludeSupported>
+                            <sourceDirectory>src/resources</sourceDirectory>
+                            <highlightSource>false</highlightSource>
+                            <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+                            <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ --> 
+			    <pdfUrl>../../../clb-devguide-latest.pdf</pdfUrl>
+                            <enableDisqus>1</enableDisqus>
+			    <googleAnalyticsId>UA-23102455-4</googleAnalyticsId>
+                            <includes>clb-devguide.xml</includes>
+			    <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
+                        </configuration>
+                    </execution> 
+                    <!-- MA: added this to generate public release notes -->
+                    <execution>
+                        <id>g3</id>
+                        <goals>
+                            <goal>generate-xhtml</goal>
+                            <!-- <goal>generate-pdf</goal> -->
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <xincludeSupported>true</xincludeSupported>
+                            <sourceDirectory>src/resources</sourceDirectory>
+                            <highlightSource>false</highlightSource>
+                            <pdfUrl>../../../clb-releasenotes-latest.pdf</pdfUrl>
+                            <includes>clb-releasenotes.xml</includes>
+                            <enableDisqus>1</enableDisqus>
+                            <enableGoogleAnalytics>1</enableGoogleAnalytics>
+                            <chapterAutolabel>0</chapterAutolabel>
+                            <security>external</security>
+                            <canonicalUrlBase>http://docs-beta.rackspace.com/internal/clb/api/v1.0/clb-releasenote/content</canonicalUrlBase>
+			    <postProcess>
+			      <move todir="target/docbkx/webhelp/clb-releasenotes-external" failonerror="false">
+				<fileset dir="target/docbkx/webhelp/clb-releasenotes"/>
+			      </move>
+			      <move file="target/docbkx/pdf/clb-releasenotes.pdf" tofile="target/docbkx/pdf/clb-releasenotes-YYYYMMDD.pdf" failonerror="false"/>
+			      <delete file="target/docbkx/pdf/clb-releasenotes.fo" failonerror="false"/>
+			    </postProcess>
+                        </configuration>
+                    </execution>                                       
+                    <execution>
+                        <id>g4</id>
+                        <goals>
+                            <!-- <goal>generate-pdf</goal> -->
+                            <goal>generate-xhtml</goal>
+                        </goals>
+                        <!-- <phase>generate-sources</phase> -->
+                        <configuration>
+                            <xincludeSupported>true</xincludeSupported>
+                            <sourceDirectory>src/resources</sourceDirectory>
+                            <highlightSource>false</highlightSource>
+                            <pdfUrl>../../../clb-releasenotes-latest.pdf</pdfUrl>
+                            <includes>clb-releasenotes.xml</includes>
+                            <enableDisqus>intranet</enableDisqus>
+                            <enableGoogleAnalytics>1</enableGoogleAnalytics>
+                            <chapterAutolabel>0</chapterAutolabel>
+                            <security>internal</security>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-releasenotes/content</canonicalUrlBase>
+			    <postProcess>
+			      <move todir="target/docbkx/webhelp/clb-releasenotes-internal" failonerror="false">
+				<fileset dir="target/docbkx/webhelp/clb-releasenotes"/>
+			      </move>
+			      <move file="target/docbkx/pdf/clb-releasenotes.pdf" tofile="target/docbkx/pdf/clb-releasenotes-internal.pdf" failonerror="false"/>
+			      <delete file="target/docbkx/pdf/clb-releasenotes.fo" failonerror="false"/>
+			    </postProcess>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
+                        <id>g5</id>
+                        <goals>
+                            <!-- <goal>generate-pdf</goal> -->
+                            <goal>generate-xhtml</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <xincludeSupported>true</xincludeSupported>
+                            <sourceDirectory>src/resources</sourceDirectory>
+                            <highlightSource>false</highlightSource>
+                            <!-- this is the public-facing client Getting Started guide -->
+                            <!-- this document that will be published as clb-getting-started-latest.pdf at http://docs.rackspacecloud.com/api/ --> 
+                            <pdfUrl>../../../clb-getting-started-latest.pdf</pdfUrl>
+                            <enableDisqus>1</enableDisqus>
+                            <googleAnalyticsId>UA-23102455-4</googleAnalyticsId>
+                            <includes>clb-tutorial.xml</includes>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-getting-started/content</canonicalUrlBase>
+			    <postProcess>
+			      <copy todir="target/docbkx/webhelp/clb-getting-started/content/images">
+				<fileset dir="src/resources/images" includes="**/*"/>
+			      </copy>
+			    </postProcess>
+                        </configuration>
+                    </execution>                    
+                </executions>
+		<configuration>
+			     <socialIcons>1</socialIcons>
+		  <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+		</configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

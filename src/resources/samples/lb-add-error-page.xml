@@ -1,0 +1,8 @@
+<errorpage xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <content>
+              <![CDATA[
+               <html> DEFAULT ERROR PAGE
+               </html>
+       ]]>
+    </content>
+</errorpage>

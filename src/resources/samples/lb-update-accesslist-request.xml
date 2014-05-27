@@ -1,0 +1,8 @@
+<accessList xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <networkItem
+        address="206.160.165.1"
+        type="ALLOW" />
+    <networkItem
+        address="206.160.165.2"
+        type="DENY" />
+</accessList>

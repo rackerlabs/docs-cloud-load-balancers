@@ -1,0 +1,19 @@
+{
+    "allowedDomain":[
+        {
+            "allowedDomain":
+            {
+                "name":"rackspace.com"
+            }
+        },
+        {
+            "allowedDomain":{
+                "name":"randomsite.com"
+            }
+        },
+        {
+            "allowedDomain":{
+                "name":"org"
+            }
+        }
+    ]}

@@ -1,0 +1,13 @@
+<zeusRateLimitedLoadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <zeusRateLimitedLoadBalancer
+            accountId="548939"
+            loadbalancerId="3673"
+            expirationTime="Mon Oct 17 00:00:00 CDT 2011">
+        <tickets>
+            <ticket
+                    id="1"
+                    ticketId="1234"
+                    comment="DOS Attack"/>
+        </tickets>
+    </zeusRateLimitedLoadBalancer>
+</zeusRateLimitedLoadBalancers>

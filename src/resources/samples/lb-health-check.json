@@ -1,0 +1,18 @@
+{
+    "healthChecks":[{
+            "type":"ZEUS",
+            "time":4328,
+            "status":"ACTIVE"
+        },
+        {
+            "type":"DATABASE",
+            "time":89,
+            "status":"ACTIVE"
+        },
+        {
+            "type":"LOCAL",
+            "time":0,
+            "status":"ACTIVE"
+        }
+    ]
+}

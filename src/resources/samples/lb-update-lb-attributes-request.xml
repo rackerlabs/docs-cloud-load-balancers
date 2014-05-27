@@ -1,0 +1,6 @@
+<loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    name="sample-loadbalancer"
+    algorithm="RANDOM"
+    protocol="HTTP"
+    port="80"
+    timeout="60"/>

@@ -1,0 +1,35 @@
+{"hosts": {
+        "host": [
+            {
+                "id": 1,
+                "name": "host1",
+                "clusterId": 1,
+                "coreDeviceId": 14410,
+                "zone": "A",
+                "status": "ACTIVE_TARGET",
+                "maxConcurrentConnections": 150000,
+                "managementIpAddress": "10.1.1.1",
+                "managementSoapInterface": "http://10.1.1.1:9090/soap",
+                "utilization": "60%",
+                "numberOfLoadBalancingConfiguraions": 414,
+                "numberOfUniqueCustomers": 141,
+                "soapEndpointActive": true
+            },
+            {
+                "id": 2,
+                "name": "1",
+                "clusterId": 1,
+                "coreDeviceId": "15510-44140",
+                "zone": "B",
+                "status": "ACTIVE_TARGET",
+                "maxConcurrentConnections": 150000,
+                "managementIpAddress": "10.1.1.2",
+                "managementSoapInterface": "httpd://10.1.1.2:9090/soap",
+                "utilization": "59%",
+                "numberOfLoadBalancingConfigurations": 520,
+                "numberOfUniqueCustomers": 515,
+                "soapEndpointActive": true
+            }
+        ]
+    }
+}

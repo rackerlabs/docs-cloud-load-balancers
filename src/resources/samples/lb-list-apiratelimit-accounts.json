@@ -1,0 +1,16 @@
+{"accountGroups":
+        [
+            {
+                "group":
+                {
+                    "id":1,"description":"customer_limit_group"
+                },
+                "accountId":546428},
+                {"group":
+                {
+                    "id":1,"description":"customer_limit_group"
+                },
+                "accountId":354934
+            }
+        ]
+}

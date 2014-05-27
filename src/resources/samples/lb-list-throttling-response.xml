@@ -1,0 +1,5 @@
+<connectionThrottle xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    minConnections="10"
+    maxConnections="100"
+    maxConnectionRate="50"
+    rateInterval="60" />

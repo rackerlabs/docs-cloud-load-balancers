@@ -1,0 +1,26 @@
+{"defaultLimits": [
+        {
+            "name": "ACCESS_LIST_LIMIT",
+            "value": 100
+        },
+        {
+            "name": "BATCH_DELETE_LIMIT",
+            "value": 10
+        },
+        {
+            "name": "IPV6_LIMIT",
+            "value": 25
+        },
+        {
+            "name": "NODE_LIMIT",
+            "value": 25
+        }
+    ],
+    "customLimits": [
+        {
+            "name": "LOADBALANCER_LIMIT",
+            "value": 30,
+            "id": 2
+        }
+    ]
+}

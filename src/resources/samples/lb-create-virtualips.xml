@@ -1,0 +1,3 @@
+<virtualIp xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0" type="PUBLIC">
+    <ticket ticketId="1234" comment="One vip is not enough!" />
+</virtualIp>
