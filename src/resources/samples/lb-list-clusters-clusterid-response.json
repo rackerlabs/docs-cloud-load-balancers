@@ -1,0 +1,12 @@
+{"cluster": {
+        "id": 1,
+        "name": "Cluster Alpha",
+        "description": "The best cluster, ever.",
+        "dataCenter": "DFW",
+        "numberOfLoadBalancingConfigurations": 410,
+        "numberOfUniqueCustomers": 348,
+        "numberOfHostMachines": 8,
+        "utilization": "59%",
+        "status": "INACTIVE"
+    }
+}

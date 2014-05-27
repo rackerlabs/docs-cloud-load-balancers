@@ -1,0 +1,10 @@
+<accountLoadBalancerServiceEvents xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" accountId="546428">
+    <loadBalancerServiceEvents loadbalancerId="8">
+        <loadBalancerServiceEvent
+                author="abc"
+                description="LoadBalancer successfully created"
+                category="CREATE"
+                severity="INFO"
+                created="01/06/2011 10:37" />
+    </loadBalancerServiceEvents>
+</accountLoadBalancerServiceEvents>

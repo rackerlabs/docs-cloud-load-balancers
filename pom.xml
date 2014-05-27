@@ -1,73 +1,52 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rackspace.cloud.apidocs</groupId>
-    <artifactId>cloud-files</artifactId>
+    <artifactId>loadbalancers-docs</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <name>Loadbalancing Public API Spec</name>
     <packaging>jar</packaging>
-    <name>Cloud Load Balancers API Docs</name>
     <build>
-      <sourceDirectory>src</sourceDirectory>
-      <plugins>
-
-	  <plugin>
-            <groupId>com.rackspace.cloud.api</groupId>
-            <artifactId>olink-maven-plugin</artifactId>
-            <version>1.0</version>
-            <executions>
-              <execution>
-		<phase>initialize</phase>
-		<goals>
-		  <goal>olink</goal>
-		</goals>
-              </execution>
-            </executions>
-	  </plugin>
-
+        <plugins>
             <plugin>
                 <groupId>com.rackspace.cloud.api</groupId>
                 <artifactId>clouddocs-maven-plugin</artifactId>
+                <!-- this <version> relates only to the *plugin* used for document formatting -->
+                <!-- the version of the *API* that is the subject of the document is indicated within each document -->
                 <version>2.0.2</version>
-                  <executions>
-                      <!--
-                   <execution>
-                        <goals>
-                            <goal>generate-webhelp</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <includes>clb-intro.xml</includes>
-                            <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-intro/content</canonicalUrlBase>
-                        </configuration>			
-                    </execution>  -->                  
-                  <execution>
-		                <id>g1</id>
-                        <goals>
-                            <goal>generate-webhelp</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-			            <configuration>
-			                <includes>clb-devguide.xml</includes>
-			                <security>external</security>
-			                <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-devguide/content</canonicalUrlBase>
-			            </configuration>
-                    </execution>
+                <executions>
                     <execution>
-                        <id>g2</id>
+                        <id>clb-mgmt-devguide-internal</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <includes>clb-getting-started.xml</includes>
-                            <security>external</security>
-                            <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-getting-started/content</canonicalUrlBase>
-                            <webhelpDefaultTopic>Overview-d1e01.html</webhelpDefaultTopic>
+                            <!-- this is the Rackspace-internal service developer guide formerly known as ManagementAPISpec.xml -->
+                            <includes>clb-mgmt-devguide.xml</includes>
+                            <security>internal</security>
+                            <enableGoogleAnalytics>0</enableGoogleAnalytics>
+                            <enableDisqus>intranet</enableDisqus>
+                            <canonicalUrlBase>http://docs-internal.rackspace.com/loadbalancers/api/v1.0/clb-mgmt-devguide/content</canonicalUrlBase>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>g3</id>
+                        <id>clb-devguide-external</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+                            <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+                            <includes>clb-devguide.xml</includes>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
+                        </configuration>
+                    </execution>
+                    <!-- MA: added this to generate public release notes -->
+                    <execution>
+                        <id>clb-releasenotes-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
@@ -75,17 +54,57 @@
                         <configuration>
                             <includes>clb-releasenotes.xml</includes>
                             <chapterAutolabel>0</chapterAutolabel>
-			                <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-releasenotes/content</canonicalUrlBase>
-                         </configuration>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-releasenotes/content</canonicalUrlBase>
+                            <postProcess>
+                                <move todir="target/docbkx/webhelp/clb-releasenotes-external" failonerror="false">
+                                    <fileset dir="target/docbkx/webhelp/clb-releasenotes"/>
+                                </move>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>clb-releasenotes-internal</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>clb-releasenotes.xml</includes>
+                            <enableDisqus>intranet</enableDisqus>
+                            <chapterAutolabel>0</chapterAutolabel>
+                            <security>internal</security>
+                            <enableGoogleAnalytics>0</enableGoogleAnalytics>
+                            <canonicalUrlBase>http://docs-internal.rackspace.com/loadbalancers/api/v1.0/clb-releasenotes/content</canonicalUrlBase>
+                            <postProcess>
+                                <move todir="target/docbkx/webhelp/clb-releasenotes-internal" failonerror="false">
+                                    <fileset dir="target/docbkx/webhelp/clb-releasenotes"/>
+                                </move>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>clb-getting-started-external</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <!-- this is the public-facing client Getting Started guide -->
+                            <!-- this document that will be published as clb-getting-started-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+                            <includes>clb-getting-started.xml</includes>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-getting-started/content</canonicalUrlBase>
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <branding>rackspace</branding>
-                    <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
-		    <socialIcons>1</socialIcons>
-		    <enableDisqus>1</enableDisqus>
-		    <enableGoogleAnalytics>1</enableGoogleAnalytics>
-		    <showXslMessages>true</showXslMessages>
+                    <!-- Global config for all docs -->
+                    <sourceDirectory>src/resources</sourceDirectory>
+                    <enableDisqus>1</enableDisqus>
+                    <socialIcons>1</socialIcons>
+                    <enableGoogleAnalytics>1</enableGoogleAnalytics>
+                    <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+                    <highlightSource>false</highlightSource>
+                    <showXslMessages>true</showXslMessages>
                 </configuration>
             </plugin>
             <plugin>
@@ -108,7 +127,15 @@
                 </executions>
             </plugin>
         </plugins>
+        <defaultGoal>generate-webhelp</defaultGoal>
     </build>
+    <!-- <pluginRepositories> -->
+    <!--   <pluginRepository> -->
+    <!--     <id>rackspace-research</id> -->
+    <!--     <name>Rackspace Research Repository</name> -->
+    <!--     <url>http://maven.research.rackspacecloud.com/content/groups/public/</url> -->
+    <!--   </pluginRepository> -->
+    <!-- </pluginRepositories> -->
     <profiles>
         <profile>
             <id>Rackspace Research Repositories</id>
@@ -132,6 +159,6 @@
         </profile>
     </profiles>
     <scm>
-      <connection>scm:git:ssh://git@github.rackspace.com:IX/cloud-files.git</connection>
+        <connection>scm:git:ssh://git@github.com:lbrackspace/atlas-lb-docbook.git</connection>
     </scm>
 </project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<allowedDomains xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <allowedDomain name="rackspace.com"/>
+    <allowedDomain name="randomsite.com"/>
+    <allowedDomain name="org"/>
+</allowedDomains>

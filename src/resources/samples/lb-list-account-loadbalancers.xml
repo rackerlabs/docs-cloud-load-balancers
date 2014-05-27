@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:accountLoadBalancers xmlns:ns2="http://docs.openstack.org/loadbalancers/api/management/v1.0" accountId="5805065">
+    <ns2:accountLoadBalancer loadBalancerId="321" loadBalancerName="a-new-loadbalancer" clusterId="1" clusterName="DEV"
+                              protocol="HTTP" status="BUILD"/>
+    <ns2:accountLoadBalancer loadBalancerId="322" loadBalancerName="a-new-loadbalancer" clusterId="1" clusterName="DEV"
+                              protocol="HTTP" status="ACTIVE"/>
+</ns2:accountLoadBalancers>

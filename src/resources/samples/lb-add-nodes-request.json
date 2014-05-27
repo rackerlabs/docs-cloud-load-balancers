@@ -1,0 +1,22 @@
+{"nodes": [
+        {
+            "address": "10.2.2.3",
+            "port": 80,
+            "condition": "ENABLED",
+            "type":"PRIMARY"
+        },
+        {
+            "address": "10.2.2.4",
+            "port": 81,
+            "condition": "ENABLED",
+            "type":"SECONDARY"
+        },
+        {
+            "address": "www.myrackspace.com",
+            "port": 88,
+            "condition": "ENABLED",
+            "weight": 10,
+            "type":"SECONDARY"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+<customerList xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+              xmlns:ns2="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <customers>
+        <customer accountId="528830">
+            <loadBalancers>
+                <loadBalancer accountId="528830" id="1" name="JORGE #1" status="ACTIVE"/>
+                <loadBalancer accountId="528830" id="2" name="JORGE #2" status="ACTIVE"/>
+                <loadBalancer accountId="528830" id="9" name="loadBalancer263373" status="ACTIVE"/>
+            </loadBalancers>
+        </customer>
+        <customer accountId="563374">
+            <loadBalancers>
+                <loadBalancer accountId="563374" id="57" name="brand new lb in collaboration with Mr Tohill" status="ACTIVE"/>
+            </loadBalancers>
+        </customer>
+    </customers>
+</customerList>

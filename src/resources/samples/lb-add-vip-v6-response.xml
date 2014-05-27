@@ -1,0 +1,5 @@
+<virtualIp xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+           id="9000133"
+           address="fd24:f480:ce44:91bc:1af2:15ff:0000:0001"
+           ipVersion="IPV6"
+           type="PUBLIC" />

@@ -1,0 +1,83 @@
+{"loadbalancer": {
+    "id": 2000,
+    "accountId" : 3434,
+    "sticky" : true,
+    "name": "sample-loadbalancer",
+    "protocol": "HTTP",
+    "port": 80,
+    "algorithm": "RANDOM",
+    "status": "ACTIVE",
+    "timeout": 30,
+    "totalActiveConnections": 340,
+    "ipv4Servicenet": "10.0.0.0",
+    "ipv4Public": "1.2.3.4",
+    "ipv6Public": "FFFF:0000:0000:0000:0000:0000:0000:FFFF",
+    "currentUsage": {
+        "incomingTransfer": 1.40,
+        "outgoingTransfer": 20.14
+    },
+    "host": {
+        "id": 1,
+        "type": "ACTIVE"
+    },
+    "virtualIps": {
+        "virtualIp": {
+            "id": 1000,
+            "address": "206.10.10.2010",
+            "type": "PUBLIC"
+        }
+    },
+    "nodes": {
+        "node": [
+            {
+                "nodeId": 1041,
+                "ip": "10.1.1.1",
+                "port": 9090,
+                "condition": "ENABLED",
+                "status": "ONLINE",
+                "type":"PRIMARY"
+            },
+            {
+                "nodeId": 1042,
+                "ip": "10.1.1.2",
+                "port": 80,
+                "condition": "ENABLED",
+                "status": "ONLINE",
+                "type":"SECONDARY"
+            }
+        ]
+    },
+    "connectionLogging": {
+        "enabled": "true"
+    },
+    "rateLimit": {
+        "ticketId": 1123,
+        "expirationTime": 1283277190574,
+        "maxRequestsPerSecond": 37
+    },
+    "sessionPersistence": {
+        "persistenceType": "HTTP_COOKIE"
+    },
+    "connectionLimits": {
+        "minConnections": 10,
+        "maxConnectionsFromIp": 100,
+        "maxConnectionsRateFromIp": 50,
+        "maxConnectionsRateTimer": 60
+    },
+    "cluster": {
+        "name": "c1.dfw1",
+        "description": "Cluster Description"
+    },
+    "created": {
+        "time": "2010-06-01 00: 00: 00"
+    },
+    "updated": {
+        "time": "2010-06-01 00: 00: 00"
+    },
+    "sslTermination":{
+        "enabled":true,
+        "secureTrafficOnly":false,
+        "securePort":555
+    }
+}
+}

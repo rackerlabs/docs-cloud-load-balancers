@@ -1,0 +1,6 @@
+<virtualIpBlocks type="PUBLIC"
+        xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+        xmlns:ns2="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <ns2:virtualIpBlock firstIp="10.0.0.5" lastIp="10.0.0.5"/>
+    <ns2:virtualIpBlock firstIp="172.16.0.64" lastIp="172.16.0.64"/>
+</virtualIpBlocks>

@@ -1,0 +1,3 @@
+<loadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+   <loadBalancer id="1" />
+</loadBalancers>

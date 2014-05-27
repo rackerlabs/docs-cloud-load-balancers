@@ -1,0 +1,14 @@
+{
+    "tickets": [
+        {
+            "id": 1,
+            "comment": "My first ticket :)",
+            "ticketId": 1
+        },
+        {
+            "id": 2,
+            "comment": "My last ticket :(",
+            "ticketId": 2
+        }
+    ]
+}

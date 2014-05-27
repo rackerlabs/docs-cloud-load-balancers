@@ -1,0 +1,3 @@
+<backup
+        xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+        name="NightlyBackUp" />

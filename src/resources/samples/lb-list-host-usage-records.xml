@@ -1,0 +1,9 @@
+<hostUsageList xmlns="http://docs.rackspacecloud.com/loadbalancers/api/management/v1.0">
+    <hostUsageRecords>
+        <hostUsageRecord hostId="1">
+            <hostUsages>
+                <hostUsage bandwidthIn="0" bandwidthOut="0" day="2011-02-01Z"/>
+            </hostUsages>
+        </hostUsageRecord>
+    </hostUsageRecords>
+</hostUsageList>

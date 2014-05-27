@@ -1,0 +1,12 @@
+<allAbsoluteLimits xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+                   xmlns:ns2="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <customLimits>
+        <limit id="1" name="LOADBALANCER_LIMIT" value="30"/>
+    </customLimits>
+    <defaultLimits>
+        <limit name="ACCESS_LIST_LIMIT" value="100"/>
+        <limit name="BATCH_DELETE_LIMIT" value="10"/>
+        <limit name="IPV6_LIMIT" value="25"/>
+        <limit name="NODE_LIMIT" value="25"/>
+    </defaultLimits>
+</allAbsoluteLimits>

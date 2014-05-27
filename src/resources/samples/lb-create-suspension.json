@@ -1,0 +1,8 @@
+{
+    "reason": "Non-payment",
+    "user": "bob",
+    "ticket": {
+        "ticketId": 1234,
+        "comment": "Late Payment"
+    }
+}

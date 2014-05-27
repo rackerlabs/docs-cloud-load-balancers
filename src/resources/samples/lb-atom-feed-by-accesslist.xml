@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <link rel="next"
+          href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/accesslist.atom?page=2"/>
+    <title type="text">Access List Feed</title>
+    <id>1234-loadbalancers-141-accesslist</id>
+    <author>
+        <name>Rackspace Cloud</name>
+    </author>
+    <entry>
+        <title type="text">Access List Updated</title>
+        <summary
+                type="text">Access list successfully updated with the following network item: id: '2155', address: '206.160.163.210', type: 'DENY'
+        </summary>
+        <author>
+            <name>tvardema</name>
+        </author>
+        <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/accesslist/"/>
+        <id>1234-loadbalancers-141-accesslist-2011971658310</id>
+        <category term="UPDATE"/>
+        <updated>2011-04-07T16:58:31.000Z</updated>
+    </entry>
+    <entry>
+        <title type="text">Access List Updated</title>
+        <summary
+                type="text">Access list successfully updated with the following network item: id: '2156', address: '206.160.165.110', type: 'DENY'
+        </summary>
+        <author>
+            <name>tvardema</name>
+        </author>
+        <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/accesslist/"/>
+        <id>1234-loadbalancers-141-accesslist-2011971658310</id>
+        <category term="UPDATE"/>
+        <updated>2011-04-07T16:58:31.000Z</updated>
+    </entry>
+</feed>

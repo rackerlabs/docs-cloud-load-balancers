@@ -1,0 +1,7 @@
+{
+    "type": "PUBLIC",
+    "ticket": {
+        "ticketId": 1234,
+        "comment": "One vip is not enough!"
+    }
+}

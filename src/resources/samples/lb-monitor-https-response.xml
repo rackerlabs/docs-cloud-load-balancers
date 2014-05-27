@@ -1,0 +1,9 @@
+<healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    type="HTTPS"
+    delay="10"
+    timeout="10"
+    attemptsBeforeDeactivation="3"
+    path="/"
+    statusRegex="^[234][0-9][0-9]$"
+    bodyRegex=""
+    hostHeader="myrack.com"/>

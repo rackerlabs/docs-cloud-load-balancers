@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <link rel="next" href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/events.atom?page=2"/>
+    <title type="text">Node Service Feed</title>
+    <id>406271-loadbalancers-323-nodeservice</id>
+    <author>
+        <name>Rackspace Cloud</name>
+    </author>
+    <entry>
+        <title type="text">Node Status Updated</title>
+        <summary type="text">Node '373' status changed to 'ONLINE' for load balancer '323'</summary>
+        <author>
+            <name>Rackspace Cloud</name>
+        </author>
+        <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
+        <id>406271-loadbalancers-323-nodes-373-events-20123041018230</id>
+        <category term="UPDATE"/>
+        <updated>2012-10-30T15:18:23.000Z</updated>
+        <content type="text">Node is ok</content>
+    </entry>
+    <entry>
+        <title type="text">Node Status Updated</title>
+        <summary type="text">Node '373' status changed to 'OFFLINE' for load balancer '323'</summary>
+        <author>
+            <name>Rackspace Cloud</name>
+        </author>
+        <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
+        <id>406271-loadbalancers-323-nodes-373-events-20123041122250</id>
+        <category term="UPDATE"/>
+        <updated>2012-10-30T16:22:25.000Z</updated>
+        <content type="text">Details: Invalid HTTP response received; premature end of headers</content>
+    </entry>
+</feed>

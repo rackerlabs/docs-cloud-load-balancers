@@ -1,0 +1,19 @@
+{
+    "loadBalancer": {
+        "name": "a-new-loadbalancer",
+        "port": 80,
+        "protocol": "HTTP",
+        "virtualIps": [
+            {
+                "type": "PUBLIC"
+            }
+        ],
+        "nodes": [
+            {
+                "address": "10.1.1.1",
+                "port": 80,
+                "condition": "ENABLED"
+            }
+        ]
+    }
+}

@@ -1,0 +1,56 @@
+<loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+        id="2000"
+        name="sample-loadbalancer"
+        sticky="true"
+        accountId="54334"
+        protocol="HTTP"
+        port="80"
+        algorithm="RANDOM"
+        status="ACTIVE"
+        timeout="30"
+        totalActiveConnections="340"
+        ipv4Servicenet="10.0.0.0"
+        ipv4Public="1.2.3.4"
+        ipv6Public="FFFF:0000:0000:0000:0000:0000:0000:FFFF">
+    <host id="1" type="ACTIVE" />
+    <currentUsage
+            incomingTransfer="1.40"
+            outgoingTransfer="20.14" />
+    <virtualIps>
+        <virtualIp
+                id="1000"
+                address="206.10.10.210"
+                type="PUBLIC" />
+    </virtualIps>
+    <nodes>
+        <node
+                nodeId="1041"
+                ip="10.1.1.1"
+                port="80"
+                condition="ENABLED"
+                status="ONLINE"
+                type="PRIMARY"/>
+        <node
+                nodeId="1411"
+                ip="10.1.1.2"
+                port="80"
+                condition="ENABLED"
+                status="ONLINE"
+                type="SECONDARY"/>
+    </nodes>
+    <sessionPersistence persistenceType="HTTP_COOKIE"/>
+    <connectionLimits
+            minConnections="10"
+            maxConnectionsFromIp="100"
+            maxConnectionRateFromIp="50"
+            maxConnectionRateTimer="60" />
+    <connectionLogging enabled="false" />
+    <cluster name="c1.dfw1" />
+    <ratelimit
+            ticketId="4100"
+            expirationTime="2010-10-17 00:00:00"
+            maxRequestsPerSecond="100" />
+    <created time="2010-06-01T12:00:00Z" />
+    <updated time="2010-06-01T12:00:00Z" />
+    <sslTermination xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true" securePort="500" secureTrafficOnly="false"/>
+</loadBalancer>

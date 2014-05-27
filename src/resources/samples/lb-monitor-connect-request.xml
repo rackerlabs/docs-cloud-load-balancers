@@ -1,0 +1,5 @@
+<healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    type="CONNECT"
+    delay="10"
+    timeout="10"
+    attemptsBeforeDeactivation="3" />

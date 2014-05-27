@@ -1,0 +1,8 @@
+{"blacklistItems": [
+        {
+            "ipVersion": "IPV4",
+            "type": "NODE",
+            "cidrBlock": "0.0.0.1/32"
+        }
+    ]
+}

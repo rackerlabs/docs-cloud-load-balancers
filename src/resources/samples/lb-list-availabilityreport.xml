@@ -1,0 +1,17 @@
+<virtualipavailabilityreports>
+    <virtualipavailabilityreport
+            clusterId="1"
+            clusterName="My Little Cluster"
+            totalPublicIpAddresses="254"
+            totalServiceNetAddresses="254"
+            freeAndClearPublicIpAddresses="128"
+            freeAndClearServiceNetIpAddresses="128"
+            publicIpAddressesInHolding="14"
+            serviceNetIpAddressesInHolding="21"
+            publicIpAddressesAllocatedToday="15"
+            serviceNetIpAddressesAllocatedToday="4"
+            allocatedPublicIpAddressesInLastSevenDays="45"
+            allocatedServiceNetIpAddressesInLastSevenDays="15"
+            remainingDaysOfPublicIpAddresses="50.11"
+            remainingDaysOfServiceNetIpAddresses="14.41" />
+</virtualipavailabilityreports>

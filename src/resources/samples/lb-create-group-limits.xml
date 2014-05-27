@@ -1,0 +1,4 @@
+<loadBalancerLimitGroup xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+        name="high-limit"
+        limit="1000"
+        isDefault="true"/>

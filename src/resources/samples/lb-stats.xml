@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stats xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+       connectTimeOut="10" connectError="20" connectFailure="1" dataTimedOut="30" keepAliveTimedOut="40" maxConn="50"/>

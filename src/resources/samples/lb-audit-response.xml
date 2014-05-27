@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<loadBalancerAudits xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
+    <loadBalancerAudit id="123" status="ERROR" created="2011-04-14T15:53:06-05:00" updated="2011-04-14T15:53:06-05:00"><alertAudits/></loadBalancerAudit>
+    <loadBalancerAudit id="125" status="ERROR" created="2011-04-14T16:04:03-05:00" updated="2011-04-18T17:37:47-05:00">
+        <alertAudits/>
+    </loadBalancerAudit>
+    <loadBalancerAudit id="435" status="ERROR" created="2011-05-13T12:12:48-05:00" updated="2011-05-13T12:12:54-05:00">
+        <alertAudits>
+            <alert id="1" accountId="563374" loadbalancerId="435" messageName="An error occurred while creating loadbalancer '435' in Zeus." status="UNACKNOWLEDGED" created="2011-05-13T12:12:54-05:00"/>
+        </alertAudits>
+    </loadBalancerAudit>
+    <loadBalancerAudit id="437" status="ERROR" created="2011-05-13T12:23:30-05:00" updated="2011-05-13T12:23:35-05:00">
+        <alertAudits>
+            <alert id="2" accountId="563374" loadbalancerId="437" messageName="An error occurred while creating loadbalancer '437' in Zeus." status="UNACKNOWLEDGED" created="2011-05-13T12:23:35-05:00"/>
+         </alertAudits>
+    </loadBalancerAudit>
+</loadBalancerAudits>
