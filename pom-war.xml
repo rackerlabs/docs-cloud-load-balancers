@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.rackspace.cloud.files.api</groupId>
+  <artifactId>files-docs</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Cloud Load Balancers API Docs</name>
+  <profiles>
+    <profile>
+      <id>Rackspace Research Repositories</id>
+      <activation>
+	<activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+	<repository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</repository>
+      </repositories>
+      <pluginRepositories>
+	<pluginRepository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>com.rackspace.cloud.api</groupId>
+	<artifactId>clouddocs-maven-plugin</artifactId>
+	<version>1.5.0-SNAPSHOT</version>
+	<executions>		 
+	  <execution>
+	    <id>g1-war</id>
+	    <goals>
+	      <goal>generate-xhtml</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	    <configuration>
+	      <includes>clb-intro.xml</includes>
+	      <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1/clb-intro/content</canonicalUrlBase>
+	      <preProcess>
+		<copy
+		    todir="target/docbkx/xhtml/clb-intro/figures">
+		  <fileset dir="src/docbkx/figures">
+		    <include name="**/*.png"/>
+		    <exclude name="**/CLBinterfaces.png"/>
+		  </fileset>
+		</copy>
+	      </preProcess>
+	    </configuration>			
+	  </execution>
+	  <execution>
+	    <id>g2-war</id>
+	    <goals>
+	      <goal>generate-xhtml</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	    <configuration>
+	      <includes>clb-devguide.xml</includes>
+	      <security>external</security>
+	      <canonicalUrlBase>http://docs.rackspace.com/files/api/v1/clb-devguide/content</canonicalUrlBase>
+	      <preProcess>
+		<copy
+		    todir="target/docbkx/xhtml/clb-devguide/figures">
+		  <fileset dir="src/docbkx/figures">
+		    <include name="**/CLBinterfaces.png"/>
+		  </fileset>
+		</copy>
+	      </preProcess>
+	    </configuration>
+	  </execution>
+	</executions>
+	<configuration>
+	  <xincludeSupported>true</xincludeSupported>
+	  <branding>rackspace</branding>
+	  <enableDisqus>1</enableDisqus>
+	  <!-- <enableDisqus>intranet</enableDisqus> -->
+	  <feedbackEmail>diane.fleming@rackspace.com</feedbackEmail>
+	  <socialIcons>1</socialIcons>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
