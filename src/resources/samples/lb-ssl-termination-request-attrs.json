@@ -1,5 +1,7 @@
 {
-    "enabled": "true",
-    "securePort": 443,
-    "secureTrafficOnly": "true"
+    "sslTermination":{
+        "enabled": "true",
+        "securePort": 443,
+        "secureTrafficOnly": "true"
+    }
 }

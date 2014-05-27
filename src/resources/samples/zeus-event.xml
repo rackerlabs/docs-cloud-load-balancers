@@ -1,0 +1,2 @@
+<zeusEvent xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
+           paramLine="WARN monitors/571432_62203 monitorfail Monitor has detected a failure in node '10.178.224.134:443': Invalid HTTP response received; premature end of headers"/>

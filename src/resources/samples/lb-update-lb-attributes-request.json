@@ -4,6 +4,7 @@
     "protocol": "HTTP",
     "port": 80,
     "timeout": 60,
-    "connectionLogging": true
+    "connectionLogging": true,
+    "httpsRedirect": true
     }
 }

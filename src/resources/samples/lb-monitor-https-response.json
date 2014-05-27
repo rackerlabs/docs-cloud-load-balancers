@@ -1,4 +1,5 @@
-{"healthMonitor": {
+{
+    "healthMonitor": {
         "type": "HTTPS",
         "delay": 10,
         "timeout":10,

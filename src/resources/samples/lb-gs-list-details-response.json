@@ -16,7 +16,7 @@
                 "address":"50.56.166.100",
                 "ipVersion":"IPV4",
                 "type":"PUBLIC"
-            }
+            },
             {
                 "id": 9002499,
                 "address":"2001:4800:7901:0000:9c92:6fca:0000:0001",
@@ -31,7 +31,7 @@
                 "port": 80,
                 "condition":"ENABLED",
                 "status":"ONLINE"
-            },
+            }
         ],
         "cluster":{
             "name":"ztm-n02.lbaas.dfw1.rackspace.net"
