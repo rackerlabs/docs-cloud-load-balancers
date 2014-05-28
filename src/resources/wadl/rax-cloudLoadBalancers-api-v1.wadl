@@ -75,7 +75,7 @@
                                 <method href="#listNodeEvents"/>
                             </resource>
                         </resource>
-                        <resource id="virtualIPs" path="virtualIPs">
+                        <resource id="virtualIPs" path="virtualips">
                             <method href="#listVirtualIps"/>
                             <method href="#addVirtualIpv6"/>
                             <method href="#bulkDeleteVirtualIps"/>
@@ -97,6 +97,9 @@
                             <resource id="current" path="current">
                                 <method href="#showCurrentUsage"/>
                             </resource>
+                        </resource>
+                        <resource id="accesslist" path="accesslist">
+                            <method href="#showAccessList"/>
                         </resource>
                     </resource>
                 </resource>
@@ -1329,7 +1332,7 @@
                 days.</para>
         </wadl:doc>
     </method>
-    <!-- virtualIPs -->
+    <!-- virtualips -->
     <method id="listVirtualIps" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List virtual IPs">
@@ -1578,6 +1581,325 @@
                 <para>Historical usage data is available for up to 90
                     days of service activity.</para>
             </note>
+        </wadl:doc>
+    </method>
+    <!-- accesslist -->
+    <method id="showAccessList" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show access list">
+            <para role="shortdesc">Shows the access list.</para>
+            <para>When issuing a <command>POST</command> to add to an
+                access list, one or more network items are required.
+                If a populated access list already exists for the load
+                balancer, it is appended to with subsequent
+                    <command>POST</command> requests. One access list
+                may include up to 100 network items. A single address
+                or subnet definition is considered unique and cannot
+                be duplicated between items in an access list.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address for item to add to
+                            access list. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of item to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>ALLOW</code> – Specifies
+                                   items that will always take
+                                   precedence over items with the
+                                   <code>DENY</code> type.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>DENY</code> – Specifies items
+                                   to which traffic can be
+                                   denied.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>There are two <command>DELETE</command> operations
+                for the access list. One allows for deletion of
+                multiple network items in an access list, or the
+                entire access list, and the other for deletion of a
+                specific network item in the access list.</para>
+        </wadl:doc>
+    </method>
+    <method id="createAccessList" name="POST">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Create or update access list">
+            <para role="shortdesc">Creates or appends to an access
+                list.</para>
+            <para>When issuing a <command>POST</command> to add to an
+                access list, one or more network items are required.
+                If a populated access list already exists for the load
+                balancer, it is appended to with subsequent
+                    <command>POST</command> requests. One access list
+                may include up to 100 network items. A single address
+                or subnet definition is considered unique and cannot
+                be duplicated between items in an access list.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address for item to add to
+                            access list. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of item to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>ALLOW</code> – Specifies
+                                   items that will always take
+                                   precedence over items with the
+                                   <code>DENY</code> type.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>DENY</code> – Specifies items
+                                   to which traffic can be
+                                   denied.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>There are two <command>DELETE</command> operations
+                for the access list. One allows for deletion of
+                multiple network items in an access list, or the
+                entire access list, and the other for deletion of a
+                specific network item in the access list.</para>
+        </wadl:doc>
+    </method>
+    <method id="deleteNetwork" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Manage Access Lists">
+            <para role="shortdesc">Deletes a network item from a
+                specified access list.</para>
+            <para>When issuing a <command>POST</command> to add to an
+                access list, one or more network items are required.
+                If a populated access list already exists for the load
+                balancer, it is appended to with subsequent
+                    <command>POST</command> requests. One access list
+                can include up to 100 network items. A single address
+                or subnet definition is considered unique and cannot
+                be duplicated between items in an access list.</para>
+            <para>The following table lists the required and optional
+                attributes for Create or Append To Access List:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address for item to add to
+                            access list. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of item to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>ALLOW</code> – Specifies
+                                   items that will always take
+                                   precedence over items with the
+                                   <code>DENY</code> type.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>DENY</code> – Specifies items
+                                   to which traffic can be
+                                   denied.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>There are two <command>DELETE</command> operations
+                for the access list. One allows for deletion of
+                multiple network items in an access list, or the
+                entire access list, and the other for deletion of a
+                specific network item in the access list.</para>
+        </wadl:doc>
+    </method>
+    <method id="deleteAccessList" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete access list">
+            <para role="shortdesc">Deletes the entire access
+                list.</para>
+            <para>When issuing a <command>POST</command> to add to an
+                access list, one or more network items are required.
+                If a populated access list already exists for the load
+                balancer, it is appended to with subsequent
+                    <command>POST</command> requests. One access list
+                may include up to 100 network items. A single address
+                or subnet definition is considered unique and cannot
+                be duplicated between items in an access list.</para>
+            <para>The following table lists the required and optional
+                attributes for Create or Append To Access List:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address for item to add to
+                            access list. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of item to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>ALLOW</code> – Specifies
+                                   items that will always take
+                                   precedence over items with the
+                                   <code>DENY</code> type.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>DENY</code> – Specifies items
+                                   to which traffic can be
+                                   denied.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>There are two <command>DELETE</command> operations
+                for the access list. One allows for deletion of
+                multiple network items in an access list, or the
+                entire access list, and the other for deletion of a
+                specific network item in the access list.</para>
+        </wadl:doc>
+    </method>
+    <method id="bulkDeleteNetworks" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Bulk-delete networks from access list">
+            <para role="shortdesc">Bulk-deletes the specified networks
+                from an access list.</para>
+            <para>When issuing a <command>POST</command> to add to an
+                access list, one or more network items are required.
+                If a populated access list already exists for the load
+                balancer, it is appended to with subsequent
+                    <command>POST</command> requests. One access list
+                may include up to 100 network items. A single address
+                or subnet definition is considered unique and cannot
+                be duplicated between items in an access list.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address for item to add to
+                            access list. </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of item to add:</para>
+                            <itemizedlist spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>ALLOW</code> – Specifies
+                                   items that will always take
+                                   precedence over items with the
+                                   <code>DENY</code> type.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>DENY</code> – Specifies items
+                                   to which traffic can be
+                                   denied.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>There are two <command>DELETE</command> operations
+                for the access list. One allows for deletion of
+                multiple network items in an access list, or the
+                entire access list, and the other for deletion of a
+                specific network item in the access list.</para>
         </wadl:doc>
     </method>
 </application>
