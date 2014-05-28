@@ -27,7 +27,7 @@
                         <wadl:doc
                             xmlns="http://docbook.org/ns/docbook"
                             xml:lang="EN">
-                            <para>The unique identifier of the
+                            <para>The unique ID of the
                                 container.</para>
                         </wadl:doc>
                     </param>
@@ -75,9 +75,27 @@
                                 <method href="#listNodeEvents"/>
                             </resource>
                         </resource>
-                        <resource id="virtualips" path="virtualips">
+                        <resource id="virtualIPs" path="virtualIPs">
                             <method href="#listVirtualIps"/>
+                            <method href="#addVirtualIpv6"/>
+                            <method href="#bulkDeleteVirtualIps"/>
+                            <resource id="virtualIpId"
+                                path="{virtualIpId}">
+                                <param style="template"
+                                   type="xsd:string" required="true"
+                                   name="virtualIpId">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   ><para>The ID for the virtual
+                                   IP.</para></wadl:doc>
+                                </param>
+                                <method href="#deleteVirtualIp"/>
+                            </resource>
                         </resource>
+                    </resource>
+                    <resource id="alloweddomains"
+                        path="alloweddomains">
+                        <method href="#listAllowedDomains"/>
                     </resource>
                 </resource>
             </resource>
@@ -176,12 +194,12 @@
                 request object. Once the request is validated and
                 progress has started on the provisioning process, a
                 response object is returned. The object contains a
-                unique identifier and status of the request. Using the
-                identifier, the caller can check on the progress of
-                the operation by performing a <command>GET</command>
-                on <code>loadbalancers/id</code>. If the corresponding
-                request cannot be fulfilled due to insufficient or
-                invalid data, an <code>HTTP</code>
+                unique ID and status of the request. Using the ID, the
+                caller can check on the progress of the operation by
+                performing a <command>GET</command> on
+                    <code>loadbalancers/id</code>. If the
+                corresponding request cannot be fulfilled due to
+                insufficient or invalid data, an <code>HTTP</code>
                 <returnvalue>400 (Bad Request)</returnvalue> error
                 response is returned with information regarding the
                 nature of the failure in the body of the response.
@@ -502,7 +520,7 @@
                         <para>In addition, load balancers sharing
                             Virtual IPs can utilize certain compatible
                             TCP/UDP and DNS based protocols on the
-                            same port. Please see <xref
+                            same port. See <xref
                                 linkend="Compatible_Load_Balancing_Protocols-d1e4269"
                             /> for more details.</para>
                     </listitem>
@@ -789,7 +807,7 @@
                     required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>One to ten load balancer
-                            IDs. To batch delete load balancers,
+                            IDs. To bulk-delete load balancers,
                             provide a query parameter list of load
                             balancer IDs. For example:
                                 <code>/loadbalancers?id=loadBalancerId&amp;id=
@@ -963,8 +981,8 @@
                 <para>The <code>weight</code> attributes are only
                     displayed for load balancers that use the
                         <code>WEIGHTED_LEAST_CONNECTIONS</code> or
-                        <code>WEIGHTED_ROUND_ROBIN</code> algorithms.
-                </para>
+                        <code>WEIGHTED_ROUND_ROBIN</code>
+                    algorithms.</para>
             </note>
         </wadl:doc>
     </method>
@@ -978,8 +996,8 @@
                 <para>The <code>weight</code> attributes are only
                     displayed for load balancers that use the
                         <code>WEIGHTED_LEAST_CONNECTIONS</code> or
-                        <code>WEIGHTED_ROUND_ROBIN</code> algorithms.
-                </para>
+                        <code>WEIGHTED_ROUND_ROBIN</code>
+                    algorithms.</para>
             </note>
         </wadl:doc>
     </method>
@@ -988,28 +1006,27 @@
             title="Add node">
             <para role="shortdesc">Adds a node to a specified load
                 balancer.</para>
-            <para>When a node is added, it is assigned a unique
-                identifier that can be used for management operations
-                such as changing the condition or removing it. Every
-                load balancer is dual-homed on both the public
-                Internet and ServiceNet. As a result, nodes can either
-                be internal ServiceNet addresses or addresses on the
-                public Internet.</para>
+            <para>When a node is added, it is assigned a unique ID
+                that can be used for management operations such as
+                changing the condition or removing it. Every load
+                balancer is dual-homed on both the public Internet and
+                ServiceNet. As a result, nodes can either be internal
+                ServiceNet addresses or addresses on the public
+                Internet.</para>
             <para>One or more secondary nodes can be added to a
                 specified load balancer so that if all the primary
                 nodes fail, traffic can be redirected to secondary
                 nodes. The type attribute allows configuring the node
                 as either PRIMARY or SECONDARY.</para>
             <para>Domain names are also accepted with certain
-                restrictions. Refer to <xref
+                restrictions. See <xref
                     linkend="List-allowed-domains-d2f002e"/> for
                 additional details.</para>
             <para>The following table lists the required and optional
-                attributes for Add Nodes:</para>
+                attributes for add nodes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and Optional Attributes for Add
-                    Nodes</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name</td>
@@ -1021,8 +1038,8 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address or domain name for
-                            the node. Refer to the request examples in
-                            this section for the required XML and JSON
+                            the node. See the request examples in this
+                            section for the required XML and JSON
                             formats.</td>
                         <td colspan="1">Yes</td>
                     </tr>
@@ -1030,7 +1047,7 @@
                         <td colspan="1">condition</td>
                         <td colspan="3">Condition for the node, which
                             determines its role within the load
-                            balancer. Refer to <xref
+                            balancer. See <xref
                                 linkend="Modify_Nodes-d1e2503"/> for a
                             table of available node conditions.</td>
                         <td colspan="1">Yes</td>
@@ -1094,8 +1111,7 @@
                     unsupported attribute results in a
                         <returnvalue>400 (badRequest)</returnvalue>
                     fault. A load balancer supports a maximum of 25
-                    nodes; the maximum weight of a node is 100.
-                </para>
+                    nodes; the maximum weight of a node is 100.</para>
             </note>
             <para>Every node in the load balancer has an associated
                 condition which determines its role within the load
@@ -1104,8 +1120,7 @@
                 attributes for Modify Nodes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and Optional Attributes for Modify
-                    Nodes</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name</td>
@@ -1118,7 +1133,7 @@
                         <td colspan="1">condition</td>
                         <td colspan="3">Condition for the node, which
                             determines its role within the load
-                            balancer. Refer to <xref
+                            balancer. See <xref
                                 linkend="Modify_Nodes-d1e2503"/> for a
                             table of available node conditions.</td>
                         <td colspan="1">No</td>
@@ -1178,8 +1193,7 @@
             </note>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Load Balancer Node Conditions</caption>
-                <?dbfo keep-together="always"?>
+                <caption>Load balancer node conditions</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="1">Name</td>
@@ -1217,8 +1231,8 @@
             title="Delete node">
             <para role="shortdesc">Deletes a node from a specified
                 load balancer.</para>
-            <para>To batch delete nodes, provide a query parameter
-                list of node IDs (for example:
+            <para>To bulk-delete nodes, provide a query parameter list
+                of node IDs (for example:
                     /nodes?id=<parameter>nodeId</parameter>&amp;id=
                     <parameter>nodeId</parameter>). The current
                 default limit is ten IDs per request. Any and all
@@ -1235,8 +1249,8 @@
             title="Bulk-delete nodes">
             <para role="shortdesc">Bulk-deletes the specified nodes
                 from a specified load balancer.</para>
-            <para>To batch delete nodes, provide a query parameter
-                list of node IDs (for example:
+            <para>To bulk-delete nodes, provide a query parameter list
+                of node IDs (for example:
                     /nodes?id=<parameter>nodeId</parameter>&amp;id=
                     <parameter>nodeId</parameter>). The current
                 default limit is ten IDs per request. Any and all
@@ -1262,13 +1276,133 @@
                 days.</para>
         </wadl:doc>
     </method>
-    <!-- virtualips -->
+    <!-- virtualIPs -->
     <method id="listVirtualIps" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List virtual IPs">
             <para role="shortdesc">Lists virtual IPs that are
                 associated with a specified load balancer.</para>
             <para>This request does not require a request body.</para>
+        </wadl:doc>
+    </method>
+    <method id="addVirtualIpv6" name="POST">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Add virtual IP version 6">
+            <para role="shortdesc">Adds virtual IP version 6.</para>
+            <para>The following table lists the required and optional
+                attributes for add virtual IP version 6:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">ipVersion</td>
+                        <td colspan="3">IP Version: must be set to
+                                <code>IPV6</code>.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of virtualIp to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>PUBLIC</code> – Virtual IP on
+                                   the public internet.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>SERVICENET</code> – Virtual
+                                   IP on the Rackspace private
+                                   ServiceNet.</para>
+                                </listitem>
+                            </itemizedlist>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+    <method id="deleteVirtualIp" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete virtual IP">
+            <para role="shortdesc">Deletes a specified virtual
+                IP.</para>
+            <para>This request does not require a request body.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>All load balancers must have at least one
+                    virtual IP associated with them at all times.
+                    Attempting to delete the last virtual IP results
+                    in a <returnvalue>400 (badRequest) </returnvalue>
+                    fault. To bulk-delete virtual IPs, provide a query
+                    parameter list of virtual ip IDs. For example:
+                        /virtualips?id=<parameter>virtualIpId</parameter>&amp;id=<parameter>virtualIpId</parameter>.
+                    The current default limit is ten IDs per request.
+                    Any and all configuration data is immediately
+                    purged and is not recoverable. If one or more of
+                    the items in the list cannot be removed due to its
+                    current status, a <returnvalue>400 (badRequest)
+                    </returnvalue> is returned along with the IDs of
+                    the ones the system identified as potential
+                    failures for this request.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="bulkDeleteVirtualIps" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Bulk-delete virtual IPs">
+            <para role="shortdesc">Bulk-deletes specified virtual
+                IPs.</para>
+            <para>This request does not require a request body.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>All load balancers must have at least one
+                    virtual IP associated with them at all times.
+                    Attempting to delete the last virtual IP results
+                    in a <returnvalue>400 (badRequest) </returnvalue>
+                    fault. To bulk-delete virtual IPs, provide a query
+                    parameter list of virtual ip IDs. For example:
+                        /virtualips?id=<parameter>virtualIpId</parameter>&amp;id=<parameter>virtualIpId</parameter>.
+                    The current default limit is ten IDs per request.
+                    Any and all configuration data is immediately
+                    purged and is not recoverable. If one or more of
+                    the items in the list cannot be removed due to its
+                    current status, a <returnvalue>400 (badRequest)
+                    </returnvalue> is returned along with the IDs of
+                    the ones the system identified as potential
+                    failures for this request.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <!-- alloweddomains -->
+    <method id="listAllowedDomains" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="List allowed domains">
+            <para role="shortdesc">Lists allowed domains.</para>
+            <para>The allowed domains are restrictions set for the
+                allowed domain names used for adding load balancer
+                nodes. In order to submit a domain name as an address
+                for the load balancer node to add, the user must
+                verify that the domain is valid by using the list
+                allowed domains call. Once verified, simply supply the
+                domain name in place of the address of the node in the
+                add nodes call.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>Currently only Rackspace-based domain names are
+                    supported.</para>
+            </note>
         </wadl:doc>
     </method>
 </application>
