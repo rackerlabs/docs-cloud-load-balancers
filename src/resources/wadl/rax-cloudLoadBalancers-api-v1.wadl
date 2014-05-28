@@ -47,6 +47,11 @@
                         <method href="#updateLoadBalancer"/>
                         <method href="#deleteLoadBalancer"/>
                     </resource>
+                    <resource id="errorpage" path="errorpage">
+                        <method href="#showErrorPage"/>
+                        <method href="#setErrorPage"/>
+                        <method href="#deleteErrorPage"/>
+                    </resource>
                 </resource>
             </resource>
         </resource>
@@ -91,7 +96,7 @@
                 using the URI
                     <code>/loadbalancers?changes-since=2011-05-19T08:07:08-0500</code>
                 lists all load balancers that have changed since May
-                19th, 2011 at 8:07:08 AM, GMT-5. Refer to <xref
+                19th, 2011 at 8:07:08 AM, GMT-5. See <xref
                     linkend="Date_Time_Format"/> for information about
                 specifying the date/time.</para>
             <para>To view deleted load balancers, add the query
@@ -171,7 +176,7 @@
                 added for identifying the originating protocol of an
                 HTTP request as "http" or "https" depending on what
                 protocol the client requested. This is specially
-                useful when using SSL termination (refer to <xref
+                useful when using SSL termination (See <xref
                     linkend="SSLTermination-d1e2479"/>).</para>
             <para>An HTTP load balancer will also include the
                 X-Forwarded-Port HTTP header, which has been added for
@@ -183,8 +188,7 @@
                 attributes for Create Load Balancer:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and Optional Attributes for Create
-                    Load Balancer</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name </td>
@@ -198,11 +202,11 @@
                         <td colspan="3">Name of the load balancer to
                             create. The name must be 128 characters or
                             less in length, and all UTF-8 characters
-                            are valid. Refer to <link
+                            are valid. See <link
                                 xlink:href="http://www.utf8-chartable.de/"
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
-                            set. Refer to the request examples in this
+                            set. See the request examples in this
                             section for the required xml/json
                             format.</td>
                         <td colspan="1">Yes</td>
@@ -210,15 +214,15 @@
                     <tr>
                         <td colspan="1">nodes</td>
                         <td colspan="3">Nodes to be added to the load
-                            balancer. Refer to the request examples in
-                            this section for the required xml/json
+                            balancer. See the request examples in this
+                            section for the required xml/json
                             format.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">protocol</td>
                         <td colspan="3">Protocol of the service which
-                            is being load balanced. Refer to <xref
+                            is being load balanced. See <xref
                                 linkend="Protocols-d1e4264"/> for a
                             table of available protocols.</td>
                         <td colspan="1">Yes</td>
@@ -247,29 +251,30 @@
                         <td colspan="3">The access list management
                             feature allows fine-grained network access
                             controls to be applied to the load
-                            balancer's virtual IP address. Refer to
-                            the request examples in <xref
+                            balancer's virtual IP address. See the
+                            request examples in <xref
                                 linkend="Access_Lists-d1e3160"/> for
-                            the required xml/json format.</td>
+                            the required XML and JSON formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">algorithm</td>
                         <td colspan="3">Algorithm that defines how
                             traffic should be directed between
-                            back-end nodes. Refer to the request
-                            examples in <xref
-                                linkend="Algorithms-d1e4367"/> for the
-                            required xml/json format.</td>
+                            back-end nodes. See the request examples
+                            in <xref linkend="Algorithms-d1e4367"/>
+                            for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">connectionLogging</td>
                         <td colspan="3">Current connection logging
-                            configuration. Refer to the request
-                            examples in <xref
+                            configuration. See the request examples in
+                                <xref
                                 linkend="Log_Connections-d1e3924"/>
-                            for the required xml/json format.</td>
+                            for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -277,38 +282,38 @@
                         <td colspan="3">Specifies limits on the number
                             of connections per IP address to help
                             mitigate malicious or abusive traffic to
-                            your applications. Refer to the request
+                            your applications. See the request
                             examples in <xref
                                 linkend="Throttle_Connections-d1e4057"
-                            /> for the required xml/json format.</td>
+                            /> for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">healthMonitor</td>
                         <td colspan="3">The type of health monitor
                             check to perform to ensure that the
-                            service is performing properly. Refer to
-                            the request examples in <xref
+                            service is performing properly. See the
+                            request examples in <xref
                                 linkend="Monitor_Health-d1e3434"/> for
-                            the required xml/json format.</td>
+                            the required XML and JSON formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">metadata</td>
                         <td colspan="3">Information (metadata) that
                             can be associated with each load balancer
-                            for the client's personal use. Refer to
-                            the request examples in <xref
+                            for the client's personal use. See the
+                            request examples in <xref
                                 linkend="Add_Metadata-d1e2379"/> for
-                            the required xml/json format.</td>
+                            the required XML and JSON formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">port</td>
                         <td colspan="3">Port number for the service
                             you are load balancing.</td>
-                        <td colspan="1">Refer to Notes below
-                            table</td>
+                        <td colspan="1">See Notes below table</td>
                     </tr>
                     <tr>
                         <td colspan="1">timeout</td>
@@ -322,10 +327,11 @@
                         <td colspan="1">sessionPersistence</td>
                         <td colspan="3">Specifies whether multiple
                             requests from clients are directed to the
-                            same node. Refer to the request examples
-                            in <xref
+                            same node. See the request examples in
+                                <xref
                                 linkend="Manage_Session_Persistence-d1e3733"
-                            /> for the required xml/json format.</td>
+                            /> for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -347,7 +353,7 @@
                             Protocol with a properly configured SSL
                             Termination
                                 (<code>secureTrafficOnly=true</code>,
-                                <code>securePort=443</code>); refer to
+                                <code>securePort=443</code>); See
                                 <xref linkend="SSLTermination-d1e2479"
                             />.</td>
                         <td colspan="1">No</td>
@@ -388,7 +394,7 @@
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all"
                 xml:id="table_virtual_ip_types">
-                <caption>Virtual IP Types</caption>
+                <caption>Virtual IP types</caption>
                 <thead align="center">
                     <tr>
                         <td>Version</td>
@@ -538,8 +544,7 @@
                 attributes for Update Load Balancer Attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and Optional Attributes for Update
-                    Load Balancer Attributes</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name </td>
@@ -553,11 +558,11 @@
                         <td colspan="3">Name of the load balancer to
                             create. The name must be 128 characters or
                             less in length, and all UTF-8 characters
-                            are valid. Refer to <link
+                            are valid. See <link
                                 xlink:href="http://www.utf8-chartable.de/"
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
-                            set. Refer to the request examples in this
+                            set. See the request examples in this
                             section for the required xml/json
                             format.</td>
                         <td colspan="1">No</td>
@@ -565,7 +570,7 @@
                     <tr>
                         <td colspan="1">protocol</td>
                         <td colspan="3">Protocol of the service which
-                            is being load balanced. Refer to <xref
+                            is being load balanced. See <xref
                                 linkend="Protocols-d1e4264"/> for a
                             table of available protocols.</td>
                         <td colspan="1">No</td>
@@ -580,10 +585,10 @@
                         <td colspan="1">algorithm</td>
                         <td colspan="3">Algorithm that defines how
                             traffic should be directed between
-                            back-end nodes. Refer to the request
-                            examples in <xref
-                                linkend="Algorithms-d1e4367"/> for the
-                            required xml/json format.</td>
+                            back-end nodes. See the request examples
+                            in <xref linkend="Algorithms-d1e4367"/>
+                            for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -643,7 +648,7 @@
                 back-end nodes.</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Load Balancer Statuses</caption>
+                <caption>Load balancer statuses</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="1">Name</td>
@@ -765,7 +770,8 @@
                 this request.</para>
             <para>This operation does not return a response
                 body.</para>
-            <request><param style="query" type="xsd:string" name="id"
+            <request>
+                <param style="query" type="xsd:string" name="id"
                     required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>One to ten load balancer
@@ -776,7 +782,103 @@
                                 loadBalancerId</code>. The current
                             default limit is ten IDs per
                             request.</para></wadl:doc>
-                </param></request>
+                </param>
+            </request>
+        </wadl:doc>
+    </method>
+    <!-- errorpage -->
+    <method id="showErrorPage" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show custom error page">
+            <para role="shortdesc">Shows the custom error page that is
+                configured for a specified load balancer. </para>
+            <para>The following table lists the required and optional
+                attributes for set custom error page:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">content</td>
+                        <td colspan="3">Specifies the HTML content for
+                            the custom error page. Must be 65536
+                            characters or less. See the request
+                            examples in this section for the required
+                            XML and JSON formats.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+
+    <method id="setErrorPage" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Set custom error page">
+            <para role="shortdesc">Sets a custom error page for a
+                specified load balancer. </para>
+            <para>The following table lists the required and optional
+                attributes for set custom error page:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">content</td>
+                        <td colspan="3">Specifies the HTML content for
+                            the custom error page. Must be 65536
+                            characters or less. See the request
+                            examples in this section for the required
+                            XML and JSON formats.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+    <method id="deleteErrorPage" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete custom error page">
+            <para role="shortdesc">Deletes the custom error page for a
+                specified load balancer. </para>
+            <para>The following table lists the required and optional
+                attributes for set custom error page:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">content</td>
+                        <td colspan="3">Specifies the HTML content for
+                            the custom error page. Must be 65536
+                            characters or less. See the request
+                            examples in this section for the required
+                            XML and JSON formats.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
         </wadl:doc>
     </method>
 </application>
