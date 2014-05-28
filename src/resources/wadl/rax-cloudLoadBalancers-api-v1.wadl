@@ -46,24 +46,28 @@
                         <method href="#showLoadBalancer"/>
                         <method href="#updateLoadBalancer"/>
                         <method href="#deleteLoadBalancer"/>
-                    </resource>
-                    <resource id="errorpage" path="errorpage">
-                        <method href="#showErrorPage"/>
-                        <method href="#setErrorPage"/>
-                        <method href="#deleteErrorPage"/>
+                        <resource id="stats" path="stats">
+                            <method href="#showStats"/>
+                        </resource>
+                        <resource id="errorpage" path="errorpage">
+                            <method href="#showErrorPage"/>
+                            <method href="#setErrorPage"/>
+                            <method href="#deleteErrorPage"/>
+                        </resource>
                     </resource>
                 </resource>
             </resource>
         </resource>
     </resources>
+    <!-- loadbalancers -->
     <method id="listLoadBalancers" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List load balancers">
             <para role="shortdesc">Lists load balancers that are
                 configured for the account.</para>
-            <para>A limited set of load balancer attributes including
-                the following are returned in the response
-                object:</para>
+            <para>The response object shows a limited set of load
+                balancer attributes, including the following
+                attributes:</para>
             <itemizedlist xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 spacing="compact">
@@ -791,7 +795,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show custom error page">
             <para role="shortdesc">Shows the custom error page that is
-                configured for a specified load balancer. </para>
+                configured for a specified load balancer.</para>
             <para>The following table lists the required and optional
                 attributes for set custom error page:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -818,12 +822,11 @@
             </table>
         </wadl:doc>
     </method>
-
     <method id="setErrorPage" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Set custom error page">
             <para role="shortdesc">Sets a custom error page for a
-                specified load balancer. </para>
+                specified load balancer.</para>
             <para>The following table lists the required and optional
                 attributes for set custom error page:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -854,7 +857,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete custom error page">
             <para role="shortdesc">Deletes the custom error page for a
-                specified load balancer. </para>
+                specified load balancer.</para>
             <para>The following table lists the required and optional
                 attributes for set custom error page:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -879,6 +882,64 @@
                     </tr>
                 </tbody>
             </table>
+        </wadl:doc>
+    </method>
+    <!-- stats -->
+    <method id="showStats" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show load balancer statistics">
+            <para role="shortdesc">Shows statistics for a specified
+                load balancer.</para>
+            <para>This operation provides detailed stats output,
+                including the following information, for a specific
+                load balancer configured and associated with the
+                user's account:</para>
+            <itemizedlist xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <listitem>
+                    <para>
+                        <emphasis role="bold"
+                            >connectTimeOut</emphasis> – Connections
+                        closed by this load balancer because the
+                        'connect_timeout' interval was
+                        exceeded.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectError</emphasis>
+                        – Number of transaction or protocol errors in
+                        this load balancer.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold"
+                            >connectFailure</emphasis> – Number of
+                        connection failures in this load
+                        balancer.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold"> dataTimedOut</emphasis>
+                        – Connections closed by this load balancer
+                        because the 'timeout' interval was
+                        exceeded.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold"
+                            >keepAliveTimedOut</emphasis> –
+                        Connections closed by this load balancer
+                        because the 'keepalive_timeout' interval was
+                        exceeded.</para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">maxConn</emphasis> –
+                        Maximum number of simultaneous TCP connections
+                        this load balancer has processed at any one
+                        time.</para>
+                </listitem>
+            </itemizedlist>
         </wadl:doc>
     </method>
 </application>
