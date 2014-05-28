@@ -107,6 +107,13 @@
                             <method href="#updateHealthMonitor"/>
                             <method href="#deleteHealthMonitor"/>
                         </resource>
+                        <resource id="sessionpersistence"
+                            path="sessionpersistence">
+                            <method href="#showSessionPersistence"/>
+                            <method href="#enableSessionPersistence"/>
+                            <method href="#disableSessionPersistence"
+                            />
+                        </resource>
                     </resource>
                 </resource>
                 <resource id="alloweddomains" path="alloweddomains">
@@ -1630,8 +1637,8 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that always take
-                                   precedence over items with the
+                                   items that always take precedence
+                                   over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
                                 <listitem>
@@ -1694,8 +1701,8 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that always take
-                                   precedence over items with the
+                                   items that always take precedence
+                                   over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
                                 <listitem>
@@ -1758,8 +1765,8 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that always take
-                                   precedence over items with the
+                                   items that always take precedence
+                                   over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
                                 <listitem>
@@ -1822,8 +1829,8 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that always take
-                                   precedence over items with the
+                                   items that always take precedence
+                                   over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
                                 <listitem>
@@ -1885,8 +1892,8 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that always take
-                                   precedence over items with the
+                                   items that always take precedence
+                                   over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
                                 <listitem>
@@ -2193,5 +2200,306 @@
                 </wadl:doc>
             </representation>
         </response>
+    </method>
+    <!-- sessionpersistence -->
+
+    <method id="showSessionPersistence" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show session persistence configuration">
+            <para role="shortdesc">Shows the session persistence
+                configuration.</para>
+            <para>Session persistence is a feature of the load
+                balancing service that forces multiple requests, of
+                the same protocol, from clients to be directed to the
+                same node. This is common with many web applications
+                that do not inherently share application state between
+                back-end servers. Two session persistence modes are
+                available, as described in the following table:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Session persistence modes</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">HTTP_COOKIE</td>
+                        <td colspan="3">A session persistence
+                            mechanism that inserts an HTTP cookie and
+                            is used to determine the destination
+                            back-end node. This is supported for HTTP
+                            load balancing only. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">SOURCE_IP</td>
+                        <td colspan="3">A session persistence
+                            mechanism that keeps track of the source
+                            IP address that is mapped and is able to
+                            determine the destination back-end node.
+                            This is supported for HTTPS pass-through
+                            and non-HTTP load balancing only. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>The following table lists the required and optional
+                attributes for Enable Session Persistence:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">persistenceType</td>
+                        <td colspan="3">
+                            <para>Mode in which session persistence
+                                mechanism operates. Refer to the
+                                following table "Session Persistence
+                                Modes" for the available modes.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>You can only set one of the session persistence
+                modes on a load balancer, and it can only support one
+                protocol. If you set HTTP_COOKIE mode for an HTTP load
+                balancer, it supports session persistence for HTTP
+                requests only. Likewise, if you set SOURCE_IP mode for
+                an HTTPS load balancer, it supports session
+                persistence for only HTTPS requests.</para>
+            <para>To support session persistence for both HTTP and
+                HTTPS requests concurrently, choose one of the
+                following options:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Use two load balancers, one configured for
+                        session persistence for HTTP requests and the
+                        other configured for session persistence for
+                        HTTPS requests. That way, the load balancers
+                        support session persistence for both HTTP and
+                        HTTPS requests concurrently, with each load
+                        balancer supporting one of the
+                        protocols.</para>
+                </listitem>
+                <listitem>
+                    <para>Use one load balancer, configure it for
+                        session persistence for HTTP requests, and
+                        then enable SSL termination for that load
+                        balancer (refer to <xref
+                            linkend="SSLTermination-d1e2479"/> for
+                        details). The load balancer supports session
+                        persistence for both HTTP and HTTPS requests
+                        concurrently.</para>
+                </listitem>
+            </itemizedlist>
+        </wadl:doc>
+    </method>
+    <method id="enableSessionPersistence" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Enable session persistence">
+            <para role="shortdesc">Enables session persistence.</para>
+            <para>Session persistence is a feature of the load
+                balancing service that forces multiple requests, of
+                the same protocol, from clients to be directed to the
+                same node. This is common with many web applications
+                that do not inherently share application state between
+                back-end servers. Two session persistence modes are
+                available, as described in the following table:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Session persistence modes</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">HTTP_COOKIE</td>
+                        <td colspan="3">A session persistence
+                            mechanism that inserts an HTTP cookie and
+                            is used to determine the destination
+                            back-end node. This is supported for HTTP
+                            load balancing only. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">SOURCE_IP</td>
+                        <td colspan="3">A session persistence
+                            mechanism that keeps track of the source
+                            IP address that is mapped and is able to
+                            determine the destination back-end node.
+                            This is supported for HTTPS pass-through
+                            and non-HTTP load balancing only. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>The following table lists the required and optional
+                attributes for Enable Session Persistence:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">persistenceType</td>
+                        <td colspan="3">
+                            <para>Mode in which session persistence
+                                mechanism operates. Refer to the
+                                following table "Session Persistence
+                                Modes" for the available modes.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>You can only set one of the session persistence
+                modes on a load balancer, and it can only support one
+                protocol. If you set HTTP_COOKIE mode for an HTTP load
+                balancer, it supports session persistence for HTTP
+                requests only. Likewise, if you set SOURCE_IP mode for
+                an HTTPS load balancer, it supports session
+                persistence for only HTTPS requests.</para>
+            <para>To support session persistence for both HTTP and
+                HTTPS requests concurrently, choose one of the
+                following options:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Use two load balancers, one configured for
+                        session persistence for HTTP requests and the
+                        other configured for session persistence for
+                        HTTPS requests. That way, the load balancers
+                        support session persistence for both HTTP and
+                        HTTPS requests concurrently, with each load
+                        balancer supporting one of the
+                        protocols.</para>
+                </listitem>
+                <listitem>
+                    <para>Use one load balancer, configure it for
+                        session persistence for HTTP requests, and
+                        then enable SSL termination for that load
+                        balancer (refer to <xref
+                            linkend="SSLTermination-d1e2479"/> for
+                        details). The load balancer supports session
+                        persistence for both HTTP and HTTPS requests
+                        concurrently.</para>
+                </listitem>
+            </itemizedlist>
+        </wadl:doc>
+    </method>
+    <method id="disableSessionPersistence" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Disable session persistence">
+            <para role="shortdesc">Disables session
+                persistence.</para>
+            <para>Session persistence is a feature of the load
+                balancing service that forces multiple requests, of
+                the same protocol, from clients to be directed to the
+                same node. This is common with many web applications
+                that do not inherently share application state between
+                back-end servers. Two session persistence modes are
+                available:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Session persistence modes</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">HTTP_COOKIE</td>
+                        <td colspan="3">A session persistence
+                            mechanism that inserts an HTTP cookie and
+                            is used to determine the destination
+                            back-end node. This is supported for HTTP
+                            load balancing only. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">SOURCE_IP</td>
+                        <td colspan="3">A session persistence
+                            mechanism that keeps track of the source
+                            IP address that is mapped and is able to
+                            determine the destination back-end node.
+                            This is supported for HTTPS pass-through
+                            and non-HTTP load balancing only. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>The following table lists the required and optional
+                attributes for Enable Session Persistence:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">persistenceType</td>
+                        <td colspan="3">
+                            <para>Mode in which session persistence
+                                mechanism operates. Refer to the
+                                following table "Session Persistence
+                                Modes" for the available modes.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <para>You can only set one of the session persistence
+                modes on a load balancer, and it can only support one
+                protocol. If you set HTTP_COOKIE mode for an HTTP load
+                balancer, it supports session persistence for HTTP
+                requests only. Likewise, if you set SOURCE_IP mode for
+                an HTTPS load balancer, it supports session
+                persistence for only HTTPS requests.</para>
+            <para>To support session persistence for both HTTP and
+                HTTPS requests concurrently, choose one of the
+                following options:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>Use two load balancers, one configured for
+                        session persistence for HTTP requests and the
+                        other configured for session persistence for
+                        HTTPS requests. That way, the load balancers
+                        support session persistence for both HTTP and
+                        HTTPS requests concurrently, with each load
+                        balancer supporting one of the
+                        protocols.</para>
+                </listitem>
+                <listitem>
+                    <para>Use one load balancer, configure it for
+                        session persistence for HTTP requests, and
+                        then enable SSL termination for that load
+                        balancer (refer to <xref
+                            linkend="SSLTermination-d1e2479"/> for
+                        details). The load balancer supports session
+                        persistence for both HTTP and HTTPS requests
+                        concurrently.</para>
+                </listitem>
+            </itemizedlist>
+        </wadl:doc>
     </method>
 </application>
