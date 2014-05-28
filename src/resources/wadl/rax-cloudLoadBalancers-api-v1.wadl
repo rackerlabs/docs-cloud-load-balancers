@@ -92,12 +92,65 @@
                                 <method href="#deleteVirtualIp"/>
                             </resource>
                         </resource>
-                    </resource>
-                    <resource id="alloweddomains"
-                        path="alloweddomains">
-                        <method href="#listAllowedDomains"/>
+                        <resource id="LB-usage" path="usage">
+                            <method href="#showHistoryUsage"/>
+                            <resource id="current" path="current">
+                                <method href="#showCurrentUsage"/>
+                            </resource>
+                        </resource>
                     </resource>
                 </resource>
+                <resource id="alloweddomains" path="alloweddomains">
+                    <method href="#listAllowedDomains"/>
+                </resource>
+                <resource id="billable" path="billable">
+                    <param style="query" type="xsd:date"
+                        name="startTime" required="false">
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN"><para>If the startTime
+                                parameter is supplied but the endTime
+                                parameter is not, then all usage
+                                beginning with the startTime is
+                                provided. Likewise, if the endTime
+                                parameter is supplied but the
+                                startTime parameter is not, then all
+                                usage is returned up to the endTime
+                                specified.</para></wadl:doc>
+                    </param>
+                    <param style="query" type="xsd:date"
+                        name="endTime" required="false">
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN"><!--WRITEME--></wadl:doc>
+                    </param>
+                    <param style="query" type="xsd:string"
+                        name="offset" required="false">
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN"><!--WRITEME--></wadl:doc>
+                    </param>
+                    <param style="query" type="xsd:string"
+                        name="limit" required="false">
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN"><!--WRITEME--></wadl:doc>
+                    </param>
+                    <method href="#listBillableLoadBalancers"/>
+                </resource>
+            </resource>
+            <resource id="usage" path="usage">
+                <param style="query" type="xsd:date" name="startTime"
+                    required="false">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><!--WRITEME--></wadl:doc>
+                </param>
+                <param style="query" type="xsd:date" name="endTime"
+                    required="false">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><!--WRITEME--></wadl:doc>
+                </param>
+                <method href="#showAccountLevelUsage"/>
             </resource>
         </resource>
     </resources>
@@ -158,8 +211,8 @@
                     <code>/loadbalancers?nodeaddress=10.1.1.1</code>
                 searches all load balancers for the account for a node
                 with IP address 10.1.1.1, and returns a list including
-                the id, name, and status of all load balancers
-                attached:</para>
+                the ID, name, and status of all load balancers
+                attached.</para>
         </wadl:doc>
     </method>
     <method id="showLoadBalancer" name="GET">
@@ -230,7 +283,7 @@
                 X-Forwarded-For header, provide the needed information
                 to the underlying application servers.</para>
             <para>The following table lists the required and optional
-                attributes for Create Load Balancer:</para>
+                attributes for create load balancer:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1402,6 +1455,128 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>Currently only Rackspace-based domain names are
                     supported.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <!-- billable -->
+    <method id="listBillableLoadBalancers" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="List billable load balancers">
+            <para role="shortdesc">Lists billable load balancers for a
+                specified date range.</para>
+            <para>The response is paginated with a default limit of
+                500 and a maximum limit of 1000.</para>
+            <para>The load balancer usage reports provide a view of
+                all transfer activity, average number of connections,
+                and number of virtual IPs associated with the load
+                balancing service. Current usage represents all usage
+                recorded within the preceding 24 hours. Values for
+                both <code>incomingTransfer</code> and
+                    <code>outgoingTransfer</code> are expressed in
+                bytes transferred.</para>
+            <para>The optional <code>startTime</code> and
+                    <code>endTime</code> parameters can be used to
+                filter all usage. If the <code>startTime</code>
+                parameter is supplied but the <code>endTime</code>
+                parameter is not, then all usage beginning with the
+                    <code>startTime</code> is provided. Likewise, if
+                the <code>endTime</code> parameter is supplied but the
+                    <code>startTime</code> parameter is not, then all
+                usage is returned up to the <code>endTime</code>
+                specified.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>Historical usage data is available for up to 90
+                    days of service activity.</para>
+            </note>
+        </wadl:doc>
+    </method>
+
+    <method id="showAccountLevelUsage" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show account-level usage">
+            <para role="shortdesc">Shows account-level usage.</para>
+            <para>The load balancer usage reports provide a view of
+                all transfer activity, average number of connections,
+                and number of virtual IPs associated with the load
+                balancing service. Current usage represents all usage
+                recorded within the preceding 24 hours. Values for
+                both <code>incomingTransfer</code> and
+                    <code>outgoingTransfer</code> are expressed in
+                bytes transferred.</para>
+            <para>The optional <code>startTime</code> and
+                    <code>endTime</code> parameters can be used to
+                filter all usage. If the <code>startTime</code>
+                parameter is supplied but the <code>endTime</code>
+                parameter is not, then all usage beginning with the
+                    <code>startTime</code> is provided. Likewise, if
+                the <code>endTime</code> parameter is supplied but the
+                    <code>startTime</code> parameter is not, then all
+                usage is returned up to the <code>endTime</code>
+                specified.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>Historical usage data is available for up to 90
+                    days of service activity.</para>
+            </note>
+        </wadl:doc>
+    </method>
+
+    <method id="showHistoricalUsage" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show historical usage">
+            <para role="shortdesc">Shows historical usage.</para>
+            <para>The load balancer usage reports provide a view of
+                all transfer activity, average number of connections,
+                and number of virtual IPs associated with the load
+                balancing service. Current usage represents all usage
+                recorded within the preceding 24 hours. Values for
+                both <code>incomingTransfer</code> and
+                    <code>outgoingTransfer</code> are expressed in
+                bytes transferred.</para>
+            <para>The optional <code>startTime</code> and
+                    <code>endTime</code> parameters can be used to
+                filter all usage. If the <code>startTime</code>
+                parameter is supplied but the <code>endTime</code>
+                parameter is not, then all usage beginning with the
+                    <code>startTime</code> is provided. Likewise, if
+                the <code>endTime</code> parameter is supplied but the
+                    <code>startTime</code> parameter is not, then all
+                usage is returned up to the <code>endTime</code>
+                specified.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>Historical usage data is available for up to 90
+                    days of service activity.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="showCurrentUsage" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show current usage">
+            <para role="shortdesc">Shows current usage.</para>
+            <para>The load balancer usage reports provide a view of
+                all transfer activity, average number of connections,
+                and number of virtual IPs associated with the load
+                balancing service. Current usage represents all usage
+                recorded within the preceding 24 hours. Values for
+                both <code>incomingTransfer</code> and
+                    <code>outgoingTransfer</code> are expressed in
+                bytes transferred.</para>
+            <para>The optional <code>startTime</code> and
+                    <code>endTime</code> parameters can be used to
+                filter all usage. If the <code>startTime</code>
+                parameter is supplied but the <code>endTime</code>
+                parameter is not, then all usage beginning with the
+                    <code>startTime</code> is provided. Likewise, if
+                the <code>endTime</code> parameter is supplied but the
+                    <code>startTime</code> parameter is not, then all
+                usage is returned up to the <code>endTime</code>
+                specified.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>Historical usage data is available for up to 90
+                    days of service activity.</para>
             </note>
         </wadl:doc>
     </method>
