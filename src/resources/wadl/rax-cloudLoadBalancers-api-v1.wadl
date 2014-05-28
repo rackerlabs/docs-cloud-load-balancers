@@ -101,6 +101,12 @@
                         <resource id="accesslist" path="accesslist">
                             <method href="#showAccessList"/>
                         </resource>
+                        <resource id="healthmonitor"
+                            path="healthmonitor">
+                            <method href="#showHealthMonitor"/>
+                            <method href="#updateHealthMonitor"/>
+                            <method href="#deleteHealthMonitor"/>
+                        </resource>
                     </resource>
                 </resource>
                 <resource id="alloweddomains" path="alloweddomains">
@@ -1624,7 +1630,7 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that will always take
+                                   items that always take
                                    precedence over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
@@ -1688,7 +1694,7 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that will always take
+                                   items that always take
                                    precedence over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
@@ -1752,7 +1758,7 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that will always take
+                                   items that always take
                                    precedence over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
@@ -1816,7 +1822,7 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that will always take
+                                   items that always take
                                    precedence over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
@@ -1879,7 +1885,7 @@
                                 <listitem>
                                    <para>
                                    <code>ALLOW</code> – Specifies
-                                   items that will always take
+                                   items that always take
                                    precedence over items with the
                                    <code>DENY</code> type.</para>
                                 </listitem>
@@ -1901,5 +1907,291 @@
                 entire access list, and the other for deletion of a
                 specific network item in the access list.</para>
         </wadl:doc>
+    </method>
+    <!-- healthmonitor -->
+
+    <method id="showHealthMonitor" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show health monitor configuration">
+            <para role="shortdesc">Shows the health monitor
+                configuration, if one exists.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-healthmonitor.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+    </method>
+    <method id="updateHealthMonitor" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update health monitor">
+            <para role="shortdesc">Updates the settings for a health
+                monitor.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-healthmonitor.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+    </method>
+    <method id="deleteHealthMonitor" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete health monitor">
+            <para role="shortdesc">Deletes a health monitor.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-healthmonitor.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-http-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        <response>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
     </method>
 </application>
