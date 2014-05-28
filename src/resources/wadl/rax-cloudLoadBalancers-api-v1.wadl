@@ -54,6 +54,27 @@
                             <method href="#setErrorPage"/>
                             <method href="#deleteErrorPage"/>
                         </resource>
+                        <resource id="nodes" path="nodes">
+                            <method href="#listNodes"/>
+                            <method href="#addNode"/>
+                            <method href="#bulkDeleteNodes"/>
+                            <resource id="nodeId" path="{nodeId}">
+                                <param style="template"
+                                   type="xsd:string" required="true"
+                                   name="nodeId">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   ><para>The ID for the
+                                   node.</para></wadl:doc>
+                                </param>
+                                <method href="#showNode"/>
+                                <method href="#updateNode"/>
+                                <method href="#deleteNode"/>
+                            </resource>
+                            <resource id="events" path="events">
+                                <method href="#listNodeEvents"/>
+                            </resource>
+                        </resource>
                     </resource>
                 </resource>
             </resource>
@@ -114,10 +135,10 @@
                 address or domain name for the desired node. For
                 example, using the URI
                     <code>/loadbalancers?nodeaddress=10.1.1.1</code>
-                will search all load balancers for the account for a
-                node with IP address 10.1.1.1, and return a list
-                including the id, name, and status of all load
-                balancers attached:</para>
+                searches all load balancers for the account for a node
+                with IP address 10.1.1.1, and returns a list including
+                the id, name, and status of all load balancers
+                attached:</para>
         </wadl:doc>
     </method>
     <method id="showLoadBalancer" name="GET">
@@ -151,38 +172,37 @@
                 balancer based on the configuration defined in the
                 request object. Once the request is validated and
                 progress has started on the provisioning process, a
-                response object will be returned. The object will
-                contain a unique identifier and status of the request.
-                Using the identifier, the caller can check on the
-                progress of the operation by performing a
-                    <command>GET</command> on
-                    <code>loadbalancers/id</code>. If the
-                corresponding request cannot be fulfilled due to
-                insufficient or invalid data, an <code>HTTP</code>
+                response object is returned. The object contains a
+                unique identifier and status of the request. Using the
+                identifier, the caller can check on the progress of
+                the operation by performing a <command>GET</command>
+                on <code>loadbalancers/id</code>. If the corresponding
+                request cannot be fulfilled due to insufficient or
+                invalid data, an <code>HTTP</code>
                 <returnvalue>400 (Bad Request)</returnvalue> error
-                response will be returned with information regarding
-                the nature of the failure in the body of the response.
+                response is returned with information regarding the
+                nature of the failure in the body of the response.
                 Failures in the validation process are non-recoverable
                 and require the caller to correct the cause of the
                 failure and <command>POST</command> the request
                 again.</para>
-            <para>An HTTP load balancer will have the X-Forwarded-For
-                (XFF) HTTP header set by default. This header will
-                contain the actual originating IP address of a client
-                connecting to a web server through an HTTP proxy or
-                load balancer, which many web applications are already
+            <para>An HTTP load balancer has the X-Forwarded-For (XFF)
+                HTTP header set by default. This header contains the
+                actual originating IP address of a client connecting
+                to a web server through an HTTP proxy or load
+                balancer, which many web applications are already
                 designed to use when determining the source address
                 for a request. (This header is also included on the
                 Modify Load Balancer request if the protocol changes
-                to reenable it.)</para>
-            <para>An HTTP load balancer will also include the
+                to re-enable it.)</para>
+            <para>An HTTP load balancer also includes the
                 X-Forwarded-Proto (XFP) HTTP header, which has been
                 added for identifying the originating protocol of an
                 HTTP request as "http" or "https" depending on what
                 protocol the client requested. This is specially
                 useful when using SSL termination (See <xref
                     linkend="SSLTermination-d1e2479"/>).</para>
-            <para>An HTTP load balancer will also include the
+            <para>An HTTP load balancer also includes the
                 X-Forwarded-Port HTTP header, which has been added for
                 being able to generate secure URLs containing the
                 specified port. This header, along with the
@@ -195,7 +215,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -211,16 +231,16 @@
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
                             set. See the request examples in this
-                            section for the required xml/json
-                            format.</td>
+                            section for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
                         <td colspan="1">nodes</td>
                         <td colspan="3">Nodes to be added to the load
                             balancer. See the request examples in this
-                            section for the required xml/json
-                            format.</td>
+                            section for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -324,7 +344,7 @@
                         <td colspan="3">The timeout value for the load
                             balancer and communications with its
                             nodes. Defaults to 30 seconds with a
-                            maximum of 120 seconds. </td>
+                            maximum of 120 seconds.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -342,9 +362,9 @@
                         <td colspan="1">httpsRedirect</td>
                         <td colspan="3">Enables or disables HTTP to
                             HTTPS redirection for the load balancer.
-                            When enabled, any HTTP request will return
+                            When enabled, any HTTP request returns
                             status code 301 (Moved Permanently), and
-                            the requestor will be redirected to the
+                            the requester is redirected to the
                             requested URL via the HTTPS protocol on
                             port 443. For example, <link
                                 xlink:href="http://example.com/page.html"
@@ -369,7 +389,7 @@
                 <title>Notes</title>
                 <itemizedlist>
                     <listitem>
-                        <para>Users may configure all documented
+                        <para>Users can configure all documented
                             features of the load balancer at creation
                             time by simply providing the additional
                             elements or attributes in the request.
@@ -494,7 +514,7 @@
                 specified load balancer.</para>
             <para>This operation asynchronously updates the attributes
                 for a specified load balancer. Upon successful
-                validation of the request, the service will return a
+                validation of the request, the service returns a
                     <returnvalue>202 (Accepted)</returnvalue> response
                 code. A caller can poll the load balancer with its ID
                 to wait for the changes to be applied and the load
@@ -540,8 +560,8 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>The load balancer's ID and status are immutable
                     attributes and cannot be modified by the caller.
-                    Supplying an unsupported attribute will result in
-                    a <returnvalue>400 (badRequest)</returnvalue>
+                    Supplying an unsupported attribute results in a
+                        <returnvalue>400 (badRequest)</returnvalue>
                     fault.</para>
             </note>
             <para>The following table lists the required and optional
@@ -551,7 +571,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -560,15 +580,15 @@
                     <tr>
                         <td colspan="1">name</td>
                         <td colspan="3">Name of the load balancer to
-                            create. The name must be 128 characters or
-                            less in length, and all UTF-8 characters
-                            are valid. See <link
+                            create. The name must be 128 or fewer
+                            characters in length, and all UTF-8
+                            characters are valid. See <link
                                 xlink:href="http://www.utf8-chartable.de/"
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
                             set. See the request examples in this
-                            section for the required xml/json
-                            format.</td>
+                            section for the required XML and JSON
+                            formats.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -613,11 +633,11 @@
                         <td colspan="1">httpsRedirect</td>
                         <td colspan="3">Enables or disables HTTP to
                             HTTPS redirection for the load balancer.
-                            When enabled, any HTTP request will return
+                            When enabled, any HTTP request returns
                             status code 301 (Moved Permanently), and
-                            the requestor will be redirected to the
-                            requested URL via the HTTPS protocol on
-                            port 443. For example, <link
+                            the requester is redirected to the
+                            requested URL through the HTTPS protocol
+                            on port 443. For example, <link
                                 xlink:href="http://example.com/page.html"
                                 >http://example.com/page.html</link>
                             would be redirected to <link
@@ -633,22 +653,22 @@
                     </tr>
                 </tbody>
             </table>
-            <para>All load balancers also have a status attribute to
-                signify the current configuration status of the
-                device. This status is immutable by the caller and is
-                updated automatically based on state changes within
-                the service. When a load balancer is first created, it
-                will be placed into a <code>BUILD</code> status while
-                the configuration is being generated and applied based
-                on the request. Once the configuration is applied and
-                finalized, it will be in an <code>ACTIVE</code>
-                status. In the event of a configuration change or
-                update, the status of the load balancer will change to
+            <para>All load balancers also have a status attribute that
+                shows current configuration status of the device. This
+                status is immutable by the caller and is updated
+                automatically based on state changes within the
+                service. When a load balancer is first created, it is
+                placed into a <code>BUILD</code> status while the
+                configuration is being generated and applied based on
+                the request. Once the configuration is applied and
+                finalized, it is in an <code>ACTIVE</code> status. In
+                the event of a configuration change or update, the
+                status of the load balancer changes to
                     <code>PENDING_UPDATE</code> to signify
-                configuration changes are in progress but have not yet
+                configuration changes are in progress but are not yet
                 been finalized. Load balancers in a
                     <code>SUSPENDED</code> status are configured to
-                reject traffic and will not forward requests to
+                reject traffic and does not forward requests to
                 back-end nodes.</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
@@ -661,67 +681,54 @@
                 </thead>
                 <tbody>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>ACTIVE</code>
-                        </td>
-                        <td colspan="3"> Load balancer is configured
+                        <td colspan="1"><code>ACTIVE</code></td>
+                        <td colspan="3">Load balancer is configured
                             properly and ready to serve traffic to
                             incoming requests via the configured
-                            virtual IPs. </td>
+                            virtual IPs.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>BUILD</code>
-                        </td>
-                        <td colspan="3"> Load balancer is being
+                        <td colspan="1"><code>BUILD</code></td>
+                        <td colspan="3">Load balancer is being
                             provisioned for the first time and
                             configuration is being applied to bring
-                            the service online. The service will not
-                            yet be ready to serve incoming requests.
-                        </td>
+                            the service online. The service cannot yet
+                            serve incoming requests.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>PENDING_UPDATE</code>
-                        </td>
+                        <td colspan="1"
+                            ><code>PENDING_UPDATE</code></td>
                         <td colspan="3">Load balancer is online but
                             configuration changes are being applied to
                             update the service based on a previous
-                            request. </td>
+                            request.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>PENDING_DELETE</code>
-                        </td>
+                        <td colspan="1"
+                            ><code>PENDING_DELETE</code></td>
                         <td colspan="3">Load balancer is online but
                             configuration changes are being applied to
                             begin deletion of the service based on a
-                            previous request. </td>
+                            previous request.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>SUSPENDED</code>
-                        </td>
-                        <td colspan="3"> Load balancer has been taken
-                            offline and disabled; contact Support.
-                        </td>
+                        <td colspan="1"><code>SUSPENDED</code></td>
+                        <td colspan="3">Load balancer has been taken
+                            offline and disabled; contact
+                            Support.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>ERROR</code>
-                        </td>
-                        <td colspan="3"> The system encountered an
+                        <td colspan="1"><code>ERROR</code></td>
+                        <td colspan="3">The system encountered an
                             error when attempting to configure the
-                            load balancer; contact Support. </td>
+                            load balancer; contact Support.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1">
-                            <code>DELETED</code>
-                        </td>
+                        <td colspan="1"><code>DELETED</code></td>
                         <td colspan="3">Load balancers in
                                 <code>DELETED</code> status can be
                             displayed for at least 90 days after
-                            deletion. </td>
+                            deletion.</td>
                     </tr>
                 </tbody>
             </table>
@@ -803,7 +810,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -834,7 +841,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -865,7 +872,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -940,6 +947,316 @@
                         time.</para>
                 </listitem>
             </itemizedlist>
+        </wadl:doc>
+    </method>
+    <!-- nodes -->
+    <method id="listNodes" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="List nodes">
+            <para role="shortdesc">Lists nodes that are configured for
+                a specified load balancer.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>The <code>weight</code> attributes are only
+                    displayed for load balancers that use the
+                        <code>WEIGHTED_LEAST_CONNECTIONS</code> or
+                        <code>WEIGHTED_ROUND_ROBIN</code> algorithms.
+                </para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="showNode" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show node details">
+            <para role="shortdesc">Show details for a specified
+                node.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>The <code>weight</code> attributes are only
+                    displayed for load balancers that use the
+                        <code>WEIGHTED_LEAST_CONNECTIONS</code> or
+                        <code>WEIGHTED_ROUND_ROBIN</code> algorithms.
+                </para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="addNode" name="POST">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Add node">
+            <para role="shortdesc">Adds a node to a specified load
+                balancer.</para>
+            <para>When a node is added, it is assigned a unique
+                identifier that can be used for management operations
+                such as changing the condition or removing it. Every
+                load balancer is dual-homed on both the public
+                Internet and ServiceNet. As a result, nodes can either
+                be internal ServiceNet addresses or addresses on the
+                public Internet.</para>
+            <para>One or more secondary nodes can be added to a
+                specified load balancer so that if all the primary
+                nodes fail, traffic can be redirected to secondary
+                nodes. The type attribute allows configuring the node
+                as either PRIMARY or SECONDARY.</para>
+            <para>Domain names are also accepted with certain
+                restrictions. Refer to <xref
+                    linkend="List-allowed-domains-d2f002e"/> for
+                additional details.</para>
+            <para>The following table lists the required and optional
+                attributes for Add Nodes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and Optional Attributes for Add
+                    Nodes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">IP address or domain name for
+                            the node. Refer to the request examples in
+                            this section for the required XML and JSON
+                            formats.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">condition</td>
+                        <td colspan="3">Condition for the node, which
+                            determines its role within the load
+                            balancer. Refer to <xref
+                                linkend="Modify_Nodes-d1e2503"/> for a
+                            table of available node conditions.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">port</td>
+                        <td colspan="3">Port number for the service
+                            you are load balancing.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of node to
+                                add:</para><itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>PRIMARY</code> – Nodes
+                                   defined as <code>PRIMARY</code> are
+                                   in the normal rotation to receive
+                                   traffic from the load
+                                   balancer.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>SECONDARY</code> – Nodes
+                                   defined as <code>SECONDARY</code>
+                                   are only in the rotation to receive
+                                   traffic from the load balancer when
+                                   all the primary nodes fail.</para>
+                                </listitem>
+                            </itemizedlist></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">weight</td>
+                        <td colspan="3">Weight of node to add. If the
+                            WEIGHTED_ROUND_ROBIN load balancer
+                            algorithm mode is selected, then the user
+                            should assign the relevant weight to the
+                            node using the weight attribute for the
+                            node. Must be an integer from 1 to
+                            100.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+    <method id="updateNode" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update node">
+            <para role="shortdesc">Update the configuration for a
+                specified node on a specified load balancer.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>The node's IP and port are immutable attributes
+                    and cannot be modified with a
+                        <command>PUT</command> request. Supplying an
+                    unsupported attribute results in a
+                        <returnvalue>400 (badRequest)</returnvalue>
+                    fault. A load balancer supports a maximum of 25
+                    nodes; the maximum weight of a node is 100.
+                </para>
+            </note>
+            <para>Every node in the load balancer has an associated
+                condition which determines its role within the load
+                balancer.</para>
+            <para>The following table lists the required and optional
+                attributes for Modify Nodes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and Optional Attributes for Modify
+                    Nodes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">condition</td>
+                        <td colspan="3">Condition for the node, which
+                            determines its role within the load
+                            balancer. Refer to <xref
+                                linkend="Modify_Nodes-d1e2503"/> for a
+                            table of available node conditions.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of node:</para>
+                            <itemizedlist spacing="compact">
+                                <listitem>
+                                   <para>
+                                   <code>PRIMARY</code> – Nodes
+                                   defined as <code>PRIMARY</code> are
+                                   in the normal rotation to receive
+                                   traffic from the load
+                                   balancer.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>
+                                   <code>SECONDARY</code> – Nodes
+                                   defined as <code>SECONDARY</code>
+                                   are only in the rotation to receive
+                                   traffic from the load balancer when
+                                   all the primary nodes fail. This
+                                   provides a failover feature that
+                                   automatically routes traffic to the
+                                   secondary node in the event that
+                                   the primary node is disabled or in
+                                   a failing state. Note that active
+                                   health monitoring must be enabled
+                                   on the load balancer to enable the
+                                   failover feature to the secondary
+                                   node.</para>
+                                </listitem>
+                            </itemizedlist></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">weight</td>
+                        <td colspan="3">Weight of node. If the
+                            WEIGHTED_ROUND_ROBIN load balancer
+                            algorithm mode is selected, then the user
+                            should assign the relevant weight to the
+                            node using the weight attribute for the
+                            node. Must be an integer from 1 to
+                            100.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>
+                    <emphasis>At least one</emphasis> of the optional
+                    attributes is required for the Modify Nodes
+                    request.</para>
+            </note>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Load Balancer Node Conditions</caption>
+                <?dbfo keep-together="always"?>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1"><code>ENABLED</code></td>
+                        <td colspan="3">Node is permitted to accept
+                            new connections.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1"><code>DISABLED</code></td>
+                        <td colspan="3">Node is not permitted to
+                            accept any new connections regardless of
+                            session persistence configuration.
+                            Existing connections are forcibly
+                            terminated.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1"><code>DRAINING</code></td>
+                        <td colspan="3">Node is allowed to service
+                            existing established connections and
+                            connections that are being directed to it
+                            as a result of the session persistence
+                            configuration.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+    <method id="deleteNode" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete node">
+            <para role="shortdesc">Deletes a node from a specified
+                load balancer.</para>
+            <para>To batch delete nodes, provide a query parameter
+                list of node ids (for example:
+                    /nodes?id=<parameter>nodeId</parameter>&amp;id=
+                    <parameter>nodeId</parameter>). The current
+                default limit is ten ids per request. Any and all
+                configuration data is immediately purged and is not
+                recoverable. By chance if one of the items in the list
+                cannot be removed due to its current status a
+                400:BadRequest is returned along with the ids of the
+                ones the system identified as potential failures for
+                this request</para>
+        </wadl:doc>
+    </method>
+    <method id="bulkDeleteNodes" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Bulk-delete nodes">
+            <para role="shortdesc">Bulk-deletes the specified nodes
+                from a specified load balancer.</para>
+            <para>To batch delete nodes, provide a query parameter
+                list of node ids (for example:
+                    /nodes?id=<parameter>nodeId</parameter>&amp;id=
+                    <parameter>nodeId</parameter>). The current
+                default limit is ten ids per request. Any and all
+                configuration data is immediately purged and is not
+                recoverable. By chance if one of the items in the list
+                cannot be removed due to its current status a
+                400:BadRequest is returned along with the ids of the
+                ones the system identified as potential failures for
+                this request</para>
+        </wadl:doc>
+    </method>
+    <method id="listNodeEvents" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="List node service events">
+            <para role="shortdesc">Lists node service events.</para>
+            <para>Lists events associated with the activity between
+                the node and the load balancer. The events report
+                errors found with the node. The
+                    <code>detailedMessage</code> provides the detailed
+                reason for the error. The events can be processed as
+                JSON, XML, and ATOM. This call has pagination and a
+                list limit of 100 events. Events are stored for 90
+                days.</para>
         </wadl:doc>
     </method>
 </application>
