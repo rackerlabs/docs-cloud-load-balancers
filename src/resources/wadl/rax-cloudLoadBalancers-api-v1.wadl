@@ -125,6 +125,10 @@
                         </resource>
                         <resource id="accesslist" path="accesslist">
                             <method href="#showAccessList"/>
+                            <method href="#createAccessList"/>
+                            <method href="#deleteNetwork"/>
+                            <method href="#deleteAccessList"/>
+                            <method href="#bulkDeleteNetworks"/>
                         </resource>
                         <resource id="healthmonitor"
                             path="healthmonitor">
