@@ -44,7 +44,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-05-20</pubdate>
+        <pubdate>2014-05-30</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,7 +59,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-05-20</date>
+                <date>2014-05-30</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
