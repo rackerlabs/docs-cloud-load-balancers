@@ -114,6 +114,11 @@
                             <method href="#disableSessionPersistence"
                             />
                         </resource>
+                        <resource id="connectionlogging"
+                            path="connectionlogging">
+                            <method href="#showConnectionLogging"/>
+                            <method href="#enableConnectionLogging"/>
+                        </resource>
                     </resource>
                 </resource>
                 <resource id="alloweddomains" path="alloweddomains">
@@ -2500,6 +2505,71 @@
                         concurrently.</para>
                 </listitem>
             </itemizedlist>
+        </wadl:doc>
+    </method>
+    <!-- contentcaching -->
+    <method id="showConnectionLogging" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show connection logging configuration">
+            <para role="shortdesc">Shows the connection logging
+                configuration.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">enabled</td>
+                        <td colspan="3">
+                            <para>If set to <code>true</code>, enables
+                                connection logging. If set to
+                                   <code>false</code>, disables
+                                connection logging.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+    </method>
+    <method id="enableConnectionLogging" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Enable or disable connection logging">
+            <para role="shortdesc">Enables or disables connection
+                logging.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">enabled</td>
+                        <td colspan="3">
+                            <para>If set to <code>true</code>, enables
+                                connection logging. If set to
+                                   <code>false</code>, disables
+                                connection logging.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
         </wadl:doc>
     </method>
 </application>
