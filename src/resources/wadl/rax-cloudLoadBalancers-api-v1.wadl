@@ -119,6 +119,12 @@
                             <method href="#showConnectionLogging"/>
                             <method href="#enableConnectionLogging"/>
                         </resource>
+                        <resource id="connectionthrottle"
+                            path="connectionthrottle">
+                            <method href="#showConnectionThrottle"/>
+                            <method href="#updateConnectionThrottle"/>
+                            <method href="#deleteConnectionThrottle"/>
+                        </resource>
                     </resource>
                 </resource>
                 <resource id="alloweddomains" path="alloweddomains">
@@ -561,8 +567,8 @@
                 bottom of the create load balancer (required
                 attributes) response. This feature is useful for
                 customers who are automating the deployment of
-                infrastructure and need to determine the IP addresses
-                of requests coming from our load balancers for the
+                infrastructure and must determine the IP addresses of
+                requests coming from our load balancers for the
                 purpose of creating more robust firewall rules.</para>
             <para>To conserve IPv4 address space, Rackspace highly
                 recommends sharing Virtual IPs between your load
@@ -1621,7 +1627,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -1630,7 +1636,7 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address for item to add to
-                            access list. </td>
+                            access list.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -1685,7 +1691,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -1694,7 +1700,7 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address for item to add to
-                            access list. </td>
+                            access list.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -1749,7 +1755,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -1758,7 +1764,7 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address for item to add to
-                            access list. </td>
+                            access list.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -1813,7 +1819,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -1822,7 +1828,7 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address for item to add to
-                            access list. </td>
+                            access list.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -1877,7 +1883,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -1886,7 +1892,7 @@
                     <tr>
                         <td colspan="1">address</td>
                         <td colspan="3">IP address for item to add to
-                            access list. </td>
+                            access list.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -2207,7 +2213,6 @@
         </response>
     </method>
     <!-- sessionpersistence -->
-
     <method id="showSessionPersistence" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show session persistence configuration">
@@ -2236,7 +2241,7 @@
                             mechanism that inserts an HTTP cookie and
                             is used to determine the destination
                             back-end node. This is supported for HTTP
-                            load balancing only. </td>
+                            load balancing only.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">SOURCE_IP</td>
@@ -2245,7 +2250,7 @@
                             IP address that is mapped and is able to
                             determine the destination back-end node.
                             This is supported for HTTPS pass-through
-                            and non-HTTP load balancing only. </td>
+                            and non-HTTP load balancing only.</td>
                     </tr>
                 </tbody>
             </table>
@@ -2256,7 +2261,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -2268,8 +2273,8 @@
                             <para>Mode in which session persistence
                                 mechanism operates. Refer to the
                                 following table "Session Persistence
-                                Modes" for the available modes.</para>
-                        </td>
+                                Modes" for the available
+                            modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2335,7 +2340,7 @@
                             mechanism that inserts an HTTP cookie and
                             is used to determine the destination
                             back-end node. This is supported for HTTP
-                            load balancing only. </td>
+                            load balancing only.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">SOURCE_IP</td>
@@ -2344,7 +2349,7 @@
                             IP address that is mapped and is able to
                             determine the destination back-end node.
                             This is supported for HTTPS pass-through
-                            and non-HTTP load balancing only. </td>
+                            and non-HTTP load balancing only.</td>
                     </tr>
                 </tbody>
             </table>
@@ -2355,7 +2360,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -2367,8 +2372,8 @@
                             <para>Mode in which session persistence
                                 mechanism operates. Refer to the
                                 following table "Session Persistence
-                                Modes" for the available modes.</para>
-                        </td>
+                                Modes" for the available
+                            modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2435,7 +2440,7 @@
                             mechanism that inserts an HTTP cookie and
                             is used to determine the destination
                             back-end node. This is supported for HTTP
-                            load balancing only. </td>
+                            load balancing only.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">SOURCE_IP</td>
@@ -2444,7 +2449,7 @@
                             IP address that is mapped and is able to
                             determine the destination back-end node.
                             This is supported for HTTPS pass-through
-                            and non-HTTP load balancing only. </td>
+                            and non-HTTP load balancing only.</td>
                     </tr>
                 </tbody>
             </table>
@@ -2455,7 +2460,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -2467,8 +2472,8 @@
                             <para>Mode in which session persistence
                                 mechanism operates. Refer to the
                                 following table "Session Persistence
-                                Modes" for the available modes.</para>
-                        </td>
+                                Modes" for the available
+                            modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2520,7 +2525,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -2532,8 +2537,7 @@
                             <para>If set to <code>true</code>, enables
                                 connection logging. If set to
                                    <code>false</code>, disables
-                                connection logging.</para>
-                        </td>
+                                connection logging.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2552,7 +2556,7 @@
                 <caption>Required and optional attributes</caption>
                 <thead>
                     <tr>
-                        <td colspan="1">Name </td>
+                        <td colspan="1">Name</td>
                         <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
@@ -2564,12 +2568,246 @@
                             <para>If set to <code>true</code>, enables
                                 connection logging. If set to
                                    <code>false</code>, disables
-                                connection logging.</para>
-                        </td>
+                                connection logging.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
             </table>
+        </wadl:doc>
+    </method>
+    <!-- connectionthrottle -->
+    <method id="showConnectionThrottle" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show connection throttling configuration">
+            <para role="shortdesc">Show the connection throttling
+                configuration.</para>
+            <para>The connection throttling feature imposes limits on
+                the number of connections per IP address to help
+                mitigate malicious or abusive traffic to your
+                applications. The attributes in the table that follows
+                can be configured based on the traffic patterns for
+                your sites.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">maxConnectionRate</td>
+                        <td colspan="3">Maximum number of connections
+                            allowed from a single IP address in the
+                            defined <code>rateInterval</code>. To
+                            enable an unlimited connection rate, set
+                            to 0. Otherwise, set to a value from 1 to
+                            100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">maxConnections</td>
+                        <td colspan="3">Maximum number of connections
+                            to allow for a single IP address. To
+                            enable unlimited simultaneous connections,
+                            set to 0. Otherwise, set to a value from 1
+                            to 100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">minConnections</td>
+                        <td colspan="3">Allow at least this number of
+                            connections per IP address before applying
+                            throttling restrictions. Setting a value
+                            of 0 allows unlimited simultaneous
+                            connections; otherwise, set a value from 1
+                            to 1000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">rateInterval</td>
+                        <td colspan="3">
+                            <para>Frequency (in seconds) at which the
+                                   <code>maxConnectionRate</code> is
+                                assessed. For example, a
+                                   <code>maxConnectionRate</code> of
+                                30 with a <code>rateInterval</code> of
+                                60 would allow a maximum of 30
+                                connections per minute for a single IP
+                                address. This value must be between 1
+                                and 3600.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>You must specify all attributes when initially
+                    creating the connection throttle. However, when
+                    you update an existing setting, you can pass as
+                    few as one attribute.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="updateConnectionThrottle" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update connection throttling configuration">
+            <para role="shortdesc">Updates the throttling
+                configuration.</para>
+            <para>The connection throttling feature imposes limits on
+                the number of connections per IP address to help
+                mitigate malicious or abusive traffic to your
+                applications. The attributes in the table that follows
+                can be configured based on the traffic patterns for
+                your sites.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">maxConnectionRate</td>
+                        <td colspan="3">Maximum number of connections
+                            allowed from a single IP address in the
+                            defined <code>rateInterval</code>. To
+                            enable an unlimited connection rate, set
+                            to 0. Otherwise, set to a value from 1 to
+                            100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">maxConnections</td>
+                        <td colspan="3">Maximum number of connections
+                            to allow for a single IP address. To
+                            enable unlimited simultaneous connections,
+                            set to 0. Otherwise, set to a value from 1
+                            to 100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">minConnections</td>
+                        <td colspan="3">Allow at least this number of
+                            connections per IP address before applying
+                            throttling restrictions. Setting a value
+                            of 0 allows unlimited simultaneous
+                            connections; otherwise, set a value from 1
+                            to 1000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">rateInterval</td>
+                        <td colspan="3">
+                            <para>Frequency (in seconds) at which the
+                                   <code>maxConnectionRate</code> is
+                                assessed. For example, a
+                                   <code>maxConnectionRate</code> of
+                                30 with a <code>rateInterval</code> of
+                                60 would allow a maximum of 30
+                                connections per minute for a single IP
+                                address. This value must be between 1
+                                and 3600.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>You must specify all attributes when initially
+                    creating the connection throttle. However, when
+                    you update an existing setting, you can pass as
+                    few as one attribute.</para>
+            </note>
+        </wadl:doc>
+    </method>
+    <method id="deleteConnectionThrottle" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete connection throttling configuration">
+            <para role="shortdesc">Deletes the connection throttling
+                configuration.</para>
+            <para>The connection throttling feature imposes limits on
+                the number of connections per IP address to help
+                mitigate malicious or abusive traffic to your
+                applications. The attributes in the table that follows
+                can be configured based on the traffic patterns for
+                your sites.</para>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">maxConnectionRate</td>
+                        <td colspan="3">Maximum number of connections
+                            allowed from a single IP address in the
+                            defined <code>rateInterval</code>. To
+                            enable an unlimited connection rate, set
+                            to 0. Otherwise, set to a value from 1 to
+                            100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">maxConnections</td>
+                        <td colspan="3">Maximum number of connections
+                            to allow for a single IP address. To
+                            enable unlimited simultaneous connections,
+                            set to 0. Otherwise, set to a value from 1
+                            to 100000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">minConnections</td>
+                        <td colspan="3">Allow at least this number of
+                            connections per IP address before applying
+                            throttling restrictions. Setting a value
+                            of 0 allows unlimited simultaneous
+                            connections; otherwise, set to a value
+                            from 1 to 1000.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">rateInterval</td>
+                        <td colspan="3">
+                            <para>Frequency (in seconds) at which the
+                                   <code>maxConnectionRate</code> is
+                                assessed. For example, a
+                                   <code>maxConnectionRate</code> of
+                                30 with a <code>rateInterval</code> of
+                                60 would allow a maximum of 30
+                                connections per minute for a single IP
+                                address. Set to a value from 1 to
+                                3600.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>You must specify all attributes when initially
+                    creating the connection throttle. However, when
+                    you update an existing setting, you can pass as
+                    few as one attribute.</para>
+            </note>
         </wadl:doc>
     </method>
 </application>
