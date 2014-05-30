@@ -341,9 +341,7 @@
                     />
                 </wadl:doc>
             </representation>
-        </response>
-        &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer details">
@@ -390,8 +388,7 @@
                     />
                 </wadl:doc>
             </representation>
-        </response>  &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <method id="createLoadBalancer" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create load balancer">
@@ -438,7 +435,7 @@
                 X-Forwarded-For header, provide the needed information
                 to the underlying application servers.</para>
             <para>The following table lists the required and optional
-                attributes for create load balancer:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -734,7 +731,106 @@
                 </itemizedlist>
             </note>
         </wadl:doc>
-    </method>
+        <request>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-sharedip-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-sharedip-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-shared-ipv4-ipv6-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-shared-ipv4-ipv6-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-sharedip-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-sharedip-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-shared-ipv4-ipv6-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-create-required-shared-ipv4-ipv6-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="updateLoadBalancer" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer properties">
@@ -782,8 +878,6 @@
                         <code>httpsRedirect</code></para>
                 </listitem>
             </itemizedlist>
-            <para>This operation does not return a response
-                body.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>The load balancer's ID and status are immutable
@@ -793,7 +887,7 @@
                     fault.</para>
             </note>
             <para>The following table lists the required and optional
-                attributes for Update Load Balancer Attributes:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -961,6 +1055,24 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-lb-attributes-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-lb-attributes-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="deleteLoadBalancer" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -983,8 +1095,6 @@
                 400:BadRequest is returned along with the IDs of the
                 ones the system identified as potential failures for
                 this request.</para>
-            <para>This operation does not return a response
-                body.</para>
         </wadl:doc>
     </method>
     <method id="bulkDeleteLoadBalancer" name="DELETE">
@@ -1007,8 +1117,6 @@
                 400:BadRequest is returned along with the IDs of the
                 ones the system identified as potential failures for
                 this request.</para>
-            <para>This operation does not return a response
-                body.</para>
             <request>
                 <param style="query" type="xsd:string" name="id"
                     required="false">
@@ -1032,7 +1140,7 @@
             <para role="shortdesc">Shows the custom error page that is
                 configured for a specified load balancer.</para>
             <para>The following table lists the required and optional
-                attributes for set custom error page:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1067,20 +1175,18 @@
             <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-list-error-page.xml"
-                    />
+                    <xsdxt:code
+                        href="../samples/lb-list-error-page.xml"/>
                 </wadl:doc>
             </representation>
-        </response>
-        &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <method id="setErrorPage" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Set custom error page">
             <para role="shortdesc">Sets a custom error page for a
                 specified load balancer.</para>
             <para>The following table lists the required and optional
-                attributes for set custom error page:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1104,14 +1210,45 @@
                 </tbody>
             </table>
         </wadl:doc>
-    </method>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-error-page.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-error-page.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-error-page.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-error-page.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="deleteErrorPage" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete custom error page">
             <para role="shortdesc">Deletes the custom error page for a
                 specified load balancer.</para>
             <para>The following table lists the required and optional
-                attributes for set custom error page:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1197,20 +1334,16 @@
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-stats.json"/>
+                    <xsdxt:code href="../samples/lb-stats.json"/>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-stats.xml"
-                    />
+                    <xsdxt:code href="../samples/lb-stats.xml"/>
                 </wadl:doc>
             </representation>
-        </response>
-        &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <!-- nodes -->
     <method id="listNodes" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1231,26 +1364,25 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
-                        href="../samples/lb-list-nodes-response.json"/>
+                        href="../samples/lb-list-nodes-response.json"
+                    />
                 </wadl:doc>
             </representation>
             <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-list-nodes-response.xml"
-                    />
+                    <xsdxt:code
+                        href="../samples/lb-list-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/atom" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-list-nodes-response.xml"
-                    />
+                    <xsdxt:code
+                        href="../samples/lb-list-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
-        </response>
-        &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showNode" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show node details">
@@ -1276,20 +1408,19 @@
             <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-list-node-response.xml"
-                    />
+                    <xsdxt:code
+                        href="../samples/lb-list-node-response.xml"/>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/atom" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="../samples/lb-atom-feed-by-node-id.xml"
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-node-id.xml"
                     />
                 </wadl:doc>
             </representation>
-        </response>
-        &commonFaults; &getFaults;
-    </method>
+        </response> &commonFaults; &getFaults; </method>
     <method id="addNode" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add node">
@@ -1312,7 +1443,7 @@
                     linkend="List-allowed-domains-d2f002e"/> for
                 additional details.</para>
             <para>The following table lists the required and optional
-                attributes for add nodes:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1386,7 +1517,38 @@
                 </tbody>
             </table>
         </wadl:doc>
-    </method>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-nodes-request.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-nodes-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-nodes-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-nodes-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="updateNode" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update node">
@@ -1406,7 +1568,7 @@
                 condition which determines its role within the load
                 balancer.</para>
             <para>The following table lists the required and optional
-                attributes for Modify Nodes:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1514,6 +1676,23 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-node-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-node-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="deleteNode" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1526,11 +1705,11 @@
                     <parameter>nodeId</parameter>). The current
                 default limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status a
-                400:BadRequest is returned along with the IDs of the
-                ones the system identified as potential failures for
-                this request</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
     <method id="bulkDeleteNodes" name="DELETE">
@@ -1544,11 +1723,11 @@
                     <parameter>nodeId</parameter>). The current
                 default limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status a
-                400:BadRequest is returned along with the IDs of the
-                ones the system identified as potential failures for
-                this request.</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
     <method id="listNodeEvents" name="GET">
@@ -1564,22 +1743,68 @@
                 list limit of 100 events. Events are stored for 90
                 days.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/node-service-events-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/node-service-events-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/node-service-events-atom-feed.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <!-- virtualips -->
     <method id="listVirtualIps" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List virtual IPs">
             <para role="shortdesc">Lists virtual IPs that are
                 associated with a specified load balancer.</para>
-            <para>This request does not require a request body.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-vips-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-vips-response.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-vips.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="addVirtualIpv6" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add virtual IP version 6">
             <para role="shortdesc">Adds virtual IP version 6.</para>
             <para>The following table lists the required and optional
-                attributes for add virtual IP version 6:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1626,7 +1851,6 @@
             title="Delete virtual IP">
             <para role="shortdesc">Deletes a specified virtual
                 IP.</para>
-            <para>This request does not require a request body.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>All load balancers must have at least one
@@ -1652,7 +1876,6 @@
             title="Bulk-delete virtual IPs">
             <para role="shortdesc">Bulk-deletes specified virtual
                 IPs.</para>
-            <para>This request does not require a request body.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>All load balancers must have at least one
@@ -1692,7 +1915,22 @@
                     supported.</para>
             </note>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code href="../samples/allowed-domains.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code href="../samples/allowed-domains.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <!-- billable -->
     <method id="listBillableLoadBalancers" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1725,8 +1963,24 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
-    </method>
-
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-loadbalancers-billable-paged.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-loadbalancers-billable-paged.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showAccountLevelUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show account-level usage">
@@ -1755,8 +2009,24 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
-    </method>
-
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-report-usage-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-report-usage-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showHistoricalUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show historical usage">
@@ -1871,11 +2141,14 @@
                     </tr>
                 </tbody>
             </table>
-            <para>There are two <command>DELETE</command> operations
-                for the access list. One allows for deletion of
-                multiple network items in an access list, or the
-                entire access list, and the other for deletion of a
-                specific network item in the access list.</para>
+            <para>You can perform these <command>DELETE</command>
+                operations for the access list:</para>
+            <itemizedlist>
+                <listitem><para>Delete multiple network items in an
+                        access list or the entire access
+                    list.</para></listitem>
+                <listitem><para>Delete a specified network item in an
+                        access list.</para></listitem></itemizedlist>
         </wadl:doc>
     </method>
     <method id="createAccessList" name="POST">
@@ -1934,12 +2207,33 @@
                     </tr>
                 </tbody>
             </table>
-            <para>There are two <command>DELETE</command> operations
-                for the access list. One allows for deletion of
-                multiple network items in an access list, or the
-                entire access list, and the other for deletion of a
-                specific network item in the access list.</para>
+            <para>You can perform these <command>DELETE</command>
+                operations for the access list:</para>
+            <itemizedlist>
+                <listitem><para>Delete multiple network items in an
+                        access list or the entire access
+                    list.</para></listitem>
+                <listitem><para>Delete a specified network item in an
+                        access list.</para></listitem></itemizedlist>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-accesslist-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-accesslist-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="deleteNetwork" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1955,7 +2249,7 @@
                 or subnet definition is considered unique and cannot
                 be duplicated between items in an access list.</para>
             <para>The following table lists the required and optional
-                attributes for Create or Append To Access List:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -1997,11 +2291,14 @@
                     </tr>
                 </tbody>
             </table>
-            <para>There are two <command>DELETE</command> operations
-                for the access list. One allows for deletion of
-                multiple network items in an access list, or the
-                entire access list, and the other for deletion of a
-                specific network item in the access list.</para>
+            <para>You can perform these <command>DELETE</command>
+                operations for the access list:</para>
+            <itemizedlist>
+                <listitem><para>Delete multiple network items in an
+                        access list or the entire access
+                    list.</para></listitem>
+                <listitem><para>Delete a specified network item in an
+                        access list.</para></listitem></itemizedlist>
         </wadl:doc>
     </method>
     <method id="deleteAccessList" name="DELETE">
@@ -2018,7 +2315,7 @@
                 or subnet definition is considered unique and cannot
                 be duplicated between items in an access list.</para>
             <para>The following table lists the required and optional
-                attributes for Create or Append To Access List:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -2060,11 +2357,14 @@
                     </tr>
                 </tbody>
             </table>
-            <para>There are two <command>DELETE</command> operations
-                for the access list. One allows for deletion of
-                multiple network items in an access list, or the
-                entire access list, and the other for deletion of a
-                specific network item in the access list.</para>
+            <para>You can perform these <command>DELETE</command>
+                operations for the access list:</para>
+            <itemizedlist>
+                <listitem><para>Delete multiple network items in an
+                        access list or the entire access
+                    list.</para></listitem>
+                <listitem><para>Delete a specified network item in an
+                        access list.</para></listitem></itemizedlist>
         </wadl:doc>
     </method>
     <method id="bulkDeleteNetworks" name="DELETE">
@@ -2074,13 +2374,13 @@
                 from an access list.</para>
             <para>When issuing a <command>POST</command> to add to an
                 access list, one or more network items are required.
-                If a populated access list already exists for the load
+                If a populated access list exists for the load
                 balancer, it is appended to with subsequent
                     <command>POST</command> requests. One access list
                 may include up to 100 network items. A single address
                 or subnet definition is considered unique and cannot
                 be duplicated between items in an access list.</para>
-            <para>The following table lists the required and optional
+            <para>The following table describes the required and optional
                 attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
@@ -2122,15 +2422,17 @@
                     </tr>
                 </tbody>
             </table>
-            <para>There are two <command>DELETE</command> operations
-                for the access list. One allows for deletion of
-                multiple network items in an access list, or the
-                entire access list, and the other for deletion of a
-                specific network item in the access list.</para>
+            <para>You can perform these <command>DELETE</command>
+                operations for the access list:</para>
+            <itemizedlist>
+                <listitem><para>Delete multiple network items in an
+                        access list or the entire access
+                    list.</para></listitem>
+                <listitem><para>Delete a specified network item in an
+                        access list.</para></listitem></itemizedlist>
         </wadl:doc>
     </method>
     <!-- healthmonitor -->
-
     <method id="showHealthMonitor" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show health monitor configuration">
@@ -2426,8 +2728,8 @@
                 the same protocol, from clients to be directed to the
                 same node. This is common with many web applications
                 that do not inherently share application state between
-                back-end servers. Two session persistence modes are
-                available, as described in the following table:</para>
+                back-end servers. The following table describes the
+                session persistence modes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Session persistence modes</caption>
@@ -2458,7 +2760,7 @@
                 </tbody>
             </table>
             <para>The following table lists the required and optional
-                attributes for Enable Session Persistence:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -2474,10 +2776,9 @@
                         <td colspan="1">persistenceType</td>
                         <td colspan="3">
                             <para>Mode in which session persistence
-                                mechanism operates. Refer to the
-                                following table "Session Persistence
-                                Modes" for the available
-                            modes.</para></td>
+                                mechanism operates. See the following
+                                table "Session Persistence Modes" for
+                                the available modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2557,7 +2858,7 @@
                 </tbody>
             </table>
             <para>The following table lists the required and optional
-                attributes for Enable Session Persistence:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -2573,10 +2874,9 @@
                         <td colspan="1">persistenceType</td>
                         <td colspan="3">
                             <para>Mode in which session persistence
-                                mechanism operates. Refer to the
-                                following table "Session Persistence
-                                Modes" for the available
-                            modes.</para></td>
+                                mechanism operates. See the following
+                                table "Session Persistence Modes" for
+                                the available modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2614,6 +2914,32 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-set-persistence-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-set-persistence-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-sessionpersistence.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="disableSessionPersistence" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -2625,7 +2951,7 @@
                 the same protocol, from clients to be directed to the
                 same node. This is common with many web applications
                 that do not inherently share application state between
-                back-end servers. Two session persistence modes are
+                back-end servers. These session persistence modes are
                 available:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
@@ -2657,7 +2983,7 @@
                 </tbody>
             </table>
             <para>The following table lists the required and optional
-                attributes for Enable Session Persistence:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -2673,10 +2999,9 @@
                         <td colspan="1">persistenceType</td>
                         <td colspan="3">
                             <para>Mode in which session persistence
-                                mechanism operates. Refer to the
-                                following table "Session Persistence
-                                Modes" for the available
-                            modes.</para></td>
+                                mechanism operates. See the following
+                                table "Session Persistence Modes" for
+                                the available modes.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -2714,6 +3039,32 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-set-persistence-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-set-persistence-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-sessionpersistence.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <!-- contentcaching -->
     <method id="showConnectionLogging" name="GET">
@@ -2746,7 +3097,24 @@
                 </tbody>
             </table>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-logging-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-logging-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="enableConnectionLogging" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable or disable connection logging">
@@ -2777,6 +3145,24 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-enable-logging-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-enable-logging-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <!-- connectionthrottle -->
     <method id="showConnectionThrottle" name="GET">
@@ -2856,7 +3242,24 @@
                     few as one attribute.</para>
             </note>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-throttling-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-throttling-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="updateConnectionThrottle" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update connection throttling configuration">
@@ -2934,6 +3337,32 @@
                     few as one attribute.</para>
             </note>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-throttling-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-throttling-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-connectionthrottle.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="deleteConnectionThrottle" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -3036,10 +3465,25 @@
                     xlink:href="http://www.rackspace.com/knowledge_center/content/content-caching-cloud-load-balancers"
                     >Content Caching for Cloud Load
                 Balancers</link>.</para>
-            <para>This operation does not require a request body for
-                GET requests.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-content-caching-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-content-caching-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="enableContentCaching" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable content caching">
@@ -3062,12 +3506,27 @@
                     xlink:href="http://www.rackspace.com/knowledge_center/content/content-caching-cloud-load-balancers"
                     >Content Caching for Cloud Load
                 Balancers</link>.</para>
-            <para>This operation does not require a request body for
-                GET requests.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-enable-content-caching-request.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-enable-content-caching-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <!-- protocols -->
-
     <method id="listProtocols" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List load balancing protocols">
@@ -3277,7 +3736,24 @@
                     when using UDP-based ports.</para>
             </note>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-content-caching-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-content-caching-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <!-- algorithms -->
     <method id="listAlgorithms" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -3285,7 +3761,24 @@
             <para role="shortdesc">Lists all supported load balancing
                 algorithms.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-algorithms-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-algorithms-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <!-- ssltermination -->
     <method id="showSSLTermination" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -3344,10 +3837,9 @@
                             redirection, <code>securePort</code> must
                             be set to <code>443</code> and
                                 <code>secureTrafficOnly</code> must be
-                                <code>true</code>. Refer to the
-                            description for the
-                                <code>httpsRedirect</code> attribute
-                            in <xref
+                                <code>true</code>. See the description
+                            for the <code>httpsRedirect</code>
+                            attribute in <xref
                                 xmlns:svg="http://www.w3.org/2000/svg"
                                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                                 xmlns:html="http://www.w3.org/1999/xhtml"
@@ -3360,17 +3852,15 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>If SSL is enabled on a load balancer that is
                     configured with nodes that are NOT in the same
-                    datacenter, then decrypted traffic will be sent in
-                    clear text over the public internet to the
-                    external node(s) and will no longer be
-                    secure.</para>
+                    data center, decrypted traffic is sent in clear
+                    text over the public internet to the external
+                    nodes and is no longer secure.</para>
             </warning>
             <para>A combination of the following required and optional
                 attributes can be used to create the desired SSL
                 configuration per load balancer:</para>
             <para>The following table lists the required and optional
-                attributes for Update/Configure SSL
-                Termination:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -3389,11 +3879,11 @@
                         <td colspan="1"> N/A</td>
                         <td colspan="2">
                             <para>The port on which the SSL
-                                termination load balancer will listen
-                                for secure traffic.</para>
+                                termination load balancer listens for
+                                secure traffic.</para>
                             <para>The securePort must be unique to the
                                 existing LB protocol/port combination.
-                                For example, port 443. </para></td>
+                                For example, port 443.</para></td>
                         <td colspan="1"> Yes</td>
                     </tr>
                     <tr align="left">
@@ -3405,7 +3895,7 @@
                                 certificate.</para>
                             <para>The private key is validated and
                                 verified against the provided
-                                certificate(s).</para></td>
+                                certificates.</para></td>
                         <td colspan="1"> Yes</td>
                     </tr>
                     <tr align="left">
@@ -3446,8 +3936,8 @@
                                 traffic.</para>
                             <para>If <code>enabled</code> =
                                    <code>false</code>, the load
-                                balancer will retain its specified SSL
-                                attributes, but will
+                                balancer retains its specified SSL
+                                attributes, but does
                                    <emphasis>not</emphasis> terminate
                                 SSL traffic.</para></td>
                         <td colspan="1"> No</td>
@@ -3463,7 +3953,7 @@
                                 secure traffic.</para>
                             <para>If <code>secureTrafficOnly</code> =
                                    <code>true</code>, the load
-                                balancer will <emphasis>not</emphasis>
+                                balancer does <emphasis>not</emphasis>
                                 accept non-secure traffic.</para></td>
                         <td colspan="1"> No</td>
                     </tr>
@@ -3509,19 +3999,18 @@
                         <emphasis>not</emphasis> want the system to
                     overwrite the existing SSL certificate/key
                     configuration.</para>
-                <para>If a user wants to replace the existing SSL
-                    configuration, a new certificate, key, and
-                    securePort combination must be provided instead
-                    of, or in addition to, the optional/editable
-                    attributes.</para>
+                <para>To replace the existing SSL configuration, you
+                    must provide a new certificate, key, and
+                    securePort combination instead of or in addition
+                    to the optional, editable attributes.</para>
                 <table rules="all">
                     <?dbfo keep-together="always"?>
                     <caption> Optional SSL attributes</caption>
                     <thead>
                         <tr align="center">
-                            <td>Optional SSL Attributes</td>
-                            <td>Non-SSL Traffic</td>
-                            <td>SSL Traffic</td>
+                            <td>Optional SSL attributes</td>
+                            <td>Non-SSL traffic</td>
+                            <td>SSL traffic</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -3579,12 +4068,10 @@
                             <td>
                                 <para>
                                    <code>enabled</code> =
-                                   <code>false</code>
-                                </para>
+                                   <code>false</code></para>
                                 <para>
                                    <code>secureTrafficOnly</code> =
-                                   <code>false</code>
-                                </para>
+                                   <code>false</code></para>
                             </td>
                             <td>Yes</td>
                             <td>No</td>
@@ -3602,106 +4089,19 @@
                         </tr>
                     </tbody>
                 </table>
-                <response xmlns="http://wadl.dev.java.net/2009/02">
-                    <representation mediaType="application/xml">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-response.xml"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </response>
-                <response xmlns="http://wadl.dev.java.net/2009/02">
-                    <representation mediaType="application/json">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-response.json"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </response>
                 <note>
                     <para>All requests to SSL termination in the JSON
                         format require the key/certificates to be in
                         "proper" JSON format, meaning that all raw
                         line feed characters should be wrapped in a
-                        newline character. So if the user pastes in
-                        the key from a <filename>mykey.key</filename>
-                        file, JSON will not properly handle the field.
-                        The key/certificates can be wrapped in a
-                        newline character in Java, for example, using
+                        newline character. So is you paste in the key
+                        from a <filename>mykey.key</filename> file,
+                        JSON does not properly handle the field. The
+                        key/certificates can be wrapped in a newline
+                        character in Java, for example, using
                             <code>string.replaceAll("\n",
-                            "\\n")</code>. See the examples above for
-                        working, "pre-formatted" examples.</para>
+                            "\\n")</code>.</para>
                 </note>
-                <example>
-                    <title>Update Load Balancing SSL termination Full
-                        Certification Request: XML</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/xml">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request.xml"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update load balancing SSL termination full
-                        certification: JSON request</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/json">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request.json"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update Load Balancing SSL termination
-                        Attribute Request: XML</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/xml">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request-attrs.xml"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update Load Balancing SSL termination
-                        Attribute Request: JSON</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/json">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request-attrs.json"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <para>There is no example for the Delete Load
-                    Balancing SSL termination Request.</para>
-                <para>This operation does not return a response
-                    body.</para>
             </simplesect>
         </wadl:doc>
         <request>
@@ -3776,9 +4176,9 @@
                 port. This shadow server is only visible to and
                 manageable by the system. Existing or updated
                 attributes on a load balancer with SSL termination
-                will also apply to its shadow server. For example, if
+                also applies to its shadow server. For example, if
                 Connection Logging is enabled on an SSL load balancer,
-                it will also be enabled on the shadow server and Cloud
+                it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -3816,10 +4216,9 @@
                             redirection, <code>securePort</code> must
                             be set to <code>443</code> and
                                 <code>secureTrafficOnly</code> must be
-                                <code>true</code>. Refer to the
-                            description for the
-                                <code>httpsRedirect</code> attribute
-                            in <xref
+                                <code>true</code>. See the description
+                            for the <code>httpsRedirect</code>
+                            attribute in <xref
                                 xmlns:svg="http://www.w3.org/2000/svg"
                                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                                 xmlns:html="http://www.w3.org/1999/xhtml"
@@ -3832,21 +4231,18 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>If SSL is enabled on a load balancer that is
                     configured with nodes that are NOT in the same
-                    datacenter, then decrypted traffic will be sent in
+                    datacenter, then decrypted traffic is sent in
                     clear text over the public internet to the
-                    external node(s) and will no longer be
-                    secure.</para>
+                    external nodes and is no longer secure.</para>
             </warning>
             <para>A combination of the following required and optional
                 attributes can be used to create the desired SSL
                 configuration per load balancer:</para>
             <para>The following table lists the required and optional
-                attributes for Update/Configure SSL
-                Termination:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes for
-                    Update/Configure SSL termination</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="1">Name</td>
@@ -3862,11 +4258,11 @@
                         <td colspan="1"> N/A</td>
                         <td colspan="2">
                             <para>The port on which the SSL
-                                termination load balancer will listen
-                                for secure traffic.</para>
+                                termination load balancer listens for
+                                secure traffic.</para>
                             <para>The securePort must be unique to the
                                 existing LB protocol/port combination.
-                                For example, port 443. </para></td>
+                                For example, port 443.</para></td>
                         <td colspan="1"> Yes</td>
                     </tr>
                     <tr align="left">
@@ -3878,7 +4274,7 @@
                                 certificate.</para>
                             <para>The private key is validated and
                                 verified against the provided
-                                certificate(s).</para></td>
+                                certificates.</para></td>
                         <td colspan="1"> Yes</td>
                     </tr>
                     <tr align="left">
@@ -3919,8 +4315,8 @@
                                 traffic.</para>
                             <para>If <code>enabled</code> =
                                    <code>false</code>, the load
-                                balancer will retain its specified SSL
-                                attributes, but will
+                                balancer retains its specified SSL
+                                attributes but does
                                    <emphasis>not</emphasis> terminate
                                 SSL traffic.</para></td>
                         <td colspan="1"> No</td>
@@ -3936,7 +4332,7 @@
                                 secure traffic.</para>
                             <para>If <code>secureTrafficOnly</code> =
                                    <code>true</code>, the load
-                                balancer will <emphasis>not</emphasis>
+                                balancer does <emphasis>not</emphasis>
                                 accept non-secure traffic.</para></td>
                         <td colspan="1"> No</td>
                     </tr>
@@ -3961,18 +4357,15 @@
                 <itemizedlist>
                     <listitem>
                         <para>
-                            <code>enabled</code>
-                        </para>
+                            <code>enabled</code></para>
                     </listitem>
                     <listitem>
                         <para>
-                            <code>secureTrafficOnly</code>
-                        </para>
+                            <code>secureTrafficOnly</code></para>
                     </listitem>
                     <listitem>
                         <para>
-                            <code>securePort</code>
-                        </para>
+                            <code>securePort</code></para>
                     </listitem>
                 </itemizedlist>
                 <para>These configurable attributes must be provided
@@ -3982,19 +4375,18 @@
                         <emphasis>not</emphasis> want the system to
                     overwrite the existing SSL certificate/key
                     configuration.</para>
-                <para>If a user wants to replace the existing SSL
-                    configuration, a new certificate, key, and
-                    securePort combination must be provided instead
-                    of, or in addition to, the optional/editable
-                    attributes.</para>
+                <para>To replace the existing SSL configuration, you
+                    must provide a new certificate, key, and
+                    securePort combination instead of or in addition
+                    to the optional, editable attributes.</para>
                 <table rules="all">
                     <?dbfo keep-together="always"?>
-                    <caption> Optional SSL Attributes</caption>
+                    <caption> Optional SSL attributes</caption>
                     <thead>
                         <tr align="center">
-                            <td>Optional SSL Attributes</td>
-                            <td>Non-SSL Traffic</td>
-                            <td>SSL Traffic</td>
+                            <td>Optional SSL attributes</td>
+                            <td>Non-SSL traffic</td>
+                            <td>SSL traffic</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -4101,79 +4493,14 @@
                         format require the key/certificates to be in
                         "proper" JSON format, meaning that all raw
                         line feed characters should be wrapped in a
-                        newline character. So if the user pastes in
-                        the key from a <filename>mykey.key</filename>
-                        file, JSON will not properly handle the field.
-                        The key/certificates can be wrapped in a
-                        newline character in Java, for example, using
+                        newline character. So is you paste in the key
+                        from a <filename>mykey.key</filename> file,
+                        JSON does not properly handle the field. The
+                        key/certificates can be wrapped in a newline
+                        character in Java, for example, using
                             <code>string.replaceAll("\n",
-                            "\\n")</code>. See the examples above for
-                        working, "pre-formatted" examples.</para>
+                            "\\n")</code>.</para>
                 </note>
-                <example>
-                    <title>Update Load Balancing SSL termination Full
-                        Certification Request: XML</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/xml">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request.xml"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update Load Balancing SSL termination Full
-                        Certification Request: JSON</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/json">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request.json"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update Load Balancing SSL termination
-                        Attribute Request: XML</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/xml">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request-attrs.xml"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <example>
-                    <title>Update Load Balancing SSL termination
-                        Attribute Request: JSON</title>
-                    <representation
-                        xmlns="http://wadl.dev.java.net/2009/02"
-                        mediaType="application/json">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <xsdxt:code
-                                href="../samples/lb-ssl-termination-request-attrs.json"
-                            />
-                        </wadl:doc>
-                    </representation>
-                </example>
-                <para>There is no example for the Delete Load
-                    Balancing SSL termination Request.</para>
-                <para>This operation does not return a response
-                    body.</para>
             </simplesect>
         </wadl:doc>
         <request>
@@ -4247,9 +4574,9 @@
                 port. This shadow server is only visible to and
                 manageable by the system. Existing or updated
                 attributes on a load balancer with SSL termination
-                will also apply to its shadow server. For example, if
-                Connection Logging is enabled on an SSL load balancer,
-                it will also be enabled on the shadow server and Cloud
+                also applies to its shadow server. For example, if
+                connection logging is enabled on an SSL load balancer,
+                it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -4287,10 +4614,9 @@
                             redirection, <code>securePort</code> must
                             be set to <code>443</code> and
                                 <code>secureTrafficOnly</code> must be
-                                <code>true</code>. Refer to the
-                            description for the
-                                <code>httpsRedirect</code> attribute
-                            in <xref
+                                <code>true</code>. See the description
+                            for the <code>httpsRedirect</code>
+                            attribute in <xref
                                 xmlns:svg="http://www.w3.org/2000/svg"
                                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                                 xmlns:html="http://www.w3.org/1999/xhtml"
@@ -4303,21 +4629,18 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>If SSL is enabled on a load balancer that is
                     configured with nodes that are NOT in the same
-                    datacenter, then decrypted traffic will be sent in
+                    datacenter, then decrypted traffic is sent in
                     clear text over the public internet to the
-                    external node(s) and will no longer be
-                    secure.</para>
+                    external nodes and is no longer secure.</para>
             </warning>
             <para>A combination of the following required and optional
                 attributes can be used to create the desired SSL
                 configuration per load balancer:</para>
             <para>The following table lists the required and optional
-                attributes for Update/Configure SSL
-                Termination:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes for
-                    Update/Configure SSL termination</caption>
+                <caption>Required and optional attributes</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="1">Name</td>
@@ -4333,8 +4656,8 @@
                         <td colspan="1"> N/A</td>
                         <td colspan="2">
                             <para>The port on which the SSL
-                                termination load balancer will listen
-                                for secure traffic.</para>
+                                termination load balancer listens for
+                                secure traffic.</para>
                             <para>The securePort must be unique to the
                                 existing LB protocol/port combination.
                                 For example, port 443.</para></td>
@@ -4349,7 +4672,7 @@
                                 certificate.</para>
                             <para>The private key is validated and
                                 verified against the provided
-                                certificate(s).</para></td>
+                                certificates.</para></td>
                         <td colspan="1"> Yes</td>
                     </tr>
                     <tr align="left">
@@ -4390,8 +4713,8 @@
                                 traffic.</para>
                             <para>If <code>enabled</code> =
                                    <code>false</code>, the load
-                                balancer will retain its specified SSL
-                                attributes, but will
+                                balancer retains its specified SSL
+                                attributes but does
                                    <emphasis>not</emphasis> terminate
                                 SSL traffic.</para></td>
                         <td colspan="1"> No</td>
@@ -4407,7 +4730,7 @@
                                 secure traffic.</para>
                             <para>If <code>secureTrafficOnly</code> =
                                    <code>true</code>, the load
-                                balancer will <emphasis>not</emphasis>
+                                balancer does <emphasis>not</emphasis>
                                 accept non-secure traffic.</para></td>
                         <td colspan="1"> No</td>
                     </tr>
@@ -4450,19 +4773,18 @@
                         <emphasis>not</emphasis> want the system to
                     overwrite the existing SSL certificate/key
                     configuration.</para>
-                <para>If a user wants to replace the existing SSL
-                    configuration, a new certificate, key, and
-                    securePort combination must be provided instead
-                    of, or in addition to, the optional/editable
-                    attributes.</para>
+                <para>To replace the existing SSL configuration, you
+                    must provide a new certificate, key, and
+                    securePort combination instead of or in addition
+                    to the optional, editable attributes.</para>
                 <table rules="all">
                     <?dbfo keep-together="always"?>
                     <caption> Optional SSL attributes</caption>
                     <thead>
                         <tr align="center">
-                            <td>Optional SSL Attributes</td>
-                            <td>Non-SSL Traffic</td>
-                            <td>SSL Traffic</td>
+                            <td>Optional SSL attributes</td>
+                            <td>Non-SSL traffic</td>
+                            <td>SSL traffic</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -4702,23 +5024,70 @@
             <para role="shortdesc">Shows all metadata associated with
                 the specified load balancer.</para>
         </wadl:doc>
-    </method>
-
-
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-metadata-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-metadata-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showLoadBalancerMetadataItem" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer metadata item">
             <para role="shortdesc">Shows details for a specified
                 metadata item for a specified load balancer.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-meta-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-meta-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showNodeMetadata" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer node metadata">
             <para role="shortdesc">Shows all metadata associated with
                 a specified node and load balancer.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-metadata-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-metadata-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="showNodeMetadataItem" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer node metadata item">
@@ -4726,7 +5095,22 @@
                 metadata item for a specified node and load
                 balancer.</para>
         </wadl:doc>
-    </method>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-meta-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-meta-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; </method>
     <method id="addLoadBalancerMetadata" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add load balancer metadata">
@@ -4737,7 +5121,7 @@
                 operations such as changing the value attribute or
                 removing it.</para>
             <para>The following table lists the required and optional
-                attributes for Add Metadata:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -4753,8 +5137,8 @@
                         <td colspan="1">key</td>
                         <td colspan="3">Key that is used to identify
                             the metadata. Must be 256 characters or
-                            less. All UTF-8 characters are valid.
-                            Refer to <link
+                            less. All UTF-8 characters are valid. See
+                                <link
                                 xlink:href="http://www.utf8-chartable.de/"
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
@@ -4772,6 +5156,23 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="addNodeMetadataItem" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -4783,7 +5184,7 @@
                 operations such as changing the value attribute or
                 removing it.</para>
             <para>The following table lists the required and optional
-                attributes for Add Metadata:</para>
+                attributes:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Required and optional attributes</caption>
@@ -4799,8 +5200,8 @@
                         <td colspan="1">key</td>
                         <td colspan="3">Key that is used to identify
                             the metadata. Must be 256 characters or
-                            less. All UTF-8 characters are valid.
-                            Refer to <link
+                            less. All UTF-8 characters are valid. See
+                                <link
                                 xlink:href="http://www.utf8-chartable.de/"
                                 > http://www.utf8-chartable.de/</link>
                             for information about the UTF-8 character
@@ -4818,6 +5219,23 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="updateLoadBalancerMetadataItem" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -4829,52 +5247,7 @@
                 <para>The meta data item's id and key are immutable
                     attributes and cannot be modified with a
                         <command>PUT</command> request. Supplying an
-                    unsupported attribute will result in a
-                        <returnvalue>400 (badRequest)</returnvalue>
-                    fault. A load balancer and a node supports a
-                    maximum of 25 metadata items.</para>
-            </note>
-            <para>The following table lists the required and optional
-                attributes for Modify Metadata:</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes</caption>
-                <thead>
-                    <tr>
-                        <td colspan="1">Name</td>
-                        <td colspan="3">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">value</td>
-                        <td colspan="3">
-                            <para>Value for the metadata item. Must be
-                                256 characters or less. All UTF-8
-                                characters are valid. Refer to <link
-                                   xlink:href="http://www.utf8-chartable.de/"
-                                   >
-                                   http://www.utf8-chartable.de/</link>
-                                for information about the UTF-8
-                                character set.</para></td>
-                        <td colspan="1">Yes</td>
-                    </tr>
-                </tbody>
-            </table>
-        </wadl:doc>
-    </method>
-    <method id="updateNodeMetadataItem" name="PUT">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Update load balancer node metadata item">
-            <para role="shortdesc">Updates the configuration of a
-                metadata item on the node.</para>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>The meta data item's id and key are immutable
-                    attributes and cannot be modified with a
-                        <command>PUT</command> request. Supplying an
-                    unsupported attribute will result in a
+                    unsupported attribute results in a
                         <returnvalue>400 (badRequest)</returnvalue>
                     fault. A load balancer and a node supports a
                     maximum of 25 metadata items.</para>
@@ -4897,7 +5270,7 @@
                         <td colspan="3">
                             <para>Value for the metadata item. Must be
                                 256 characters or less. All UTF-8
-                                characters are valid. Refer to <link
+                                characters are valid. See <link
                                    xlink:href="http://www.utf8-chartable.de/"
                                    >
                                    http://www.utf8-chartable.de/</link>
@@ -4908,24 +5281,102 @@
                 </tbody>
             </table>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+    </method>
+    <method id="updateNodeMetadataItem" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update load balancer node metadata item">
+            <para role="shortdesc">Updates the configuration of a
+                metadata item on the node.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>The meta data item's id and key are immutable
+                    attributes and cannot be modified with a
+                        <command>PUT</command> request. Supplying an
+                    unsupported attribute results in a
+                        <returnvalue>400 (badRequest)</returnvalue>
+                    fault. A load balancer and node support a maximum
+                    of 25 metadata items.</para>
+            </note>
+            <para>The following table lists the required and optional
+                attributes:</para>
+            <table xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
+                <caption>Required and optional attributes</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">value</td>
+                        <td colspan="3">
+                            <para>Value for the metadata item. Must be
+                                256 characters or less. All UTF-8
+                                characters are valid. See <link
+                                   xlink:href="http://www.utf8-chartable.de/"
+                                   >
+                                   http://www.utf8-chartable.de/</link>
+                                for information about the UTF-8
+                                character set.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-meta-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
     </method>
     <method id="deleteLoadBalancerMetadataItem" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete load balancer metadata item">
             <para role="shortdesc">Deletes a metadata item from the
                 load balancer.</para>
-            <para>This operation does not require a request body. To
-                batch delete metadata, provide a query parameter list
-                of meta ids. For example:
+            <para>To bulk-delete metadata, provide a query parameter
+                list of meta IDs. For example:
                     /metadata?id=<parameter>metaId</parameter>&amp;id=
                     <parameter>metaId</parameter>. The current default
-                limit is ten ids per request. Any and all
+                limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status, a
-                400:BadRequest is returned along with the ids of the
-                ones the system identified as potential failures for
-                this request.</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status, a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
     <method id="bulkDeleteLoadBalancerMetadataItems" name="DELETE">
@@ -4933,18 +5384,17 @@
             title="Bulk-delete load balancer metadata items">
             <para role="shortdesc">Bulk-deletes the metadata items
                 given specified id list.</para>
-            <para>This operation does not require a request body. To
-                batch delete metadata, provide a query parameter list
-                of meta ids. For example:
+            <para>To bulk-delete metadata, provide a query parameter
+                list of meta IDs. For example:
                     /metadata?id=<parameter>metaId</parameter>&amp;id=
                     <parameter>metaId</parameter>. The current default
-                limit is ten ids per request. Any and all
+                limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status, a
-                400:BadRequest is returned along with the ids of the
-                ones the system identified as potential failures for
-                this request.</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status, a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
     <method id="deleteNodeMetadataItem" name="DELETE">
@@ -4952,18 +5402,17 @@
             title="Delete load balancer node metadata item">
             <para role="shortdesc">Deletes a metadata item from the
                 node.</para>
-            <para>This operation does not require a request body. To
-                batch delete metadata, provide a query parameter list
-                of meta ids. For example:
+            <para>To bulk-delete metadata, provide a query parameter
+                list of meta IDs. For example:
                     /metadata?id=<parameter>metaId</parameter>&amp;id=
                     <parameter>metaId</parameter>. The current default
-                limit is ten ids per request. Any and all
+                limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status, a
-                400:BadRequest is returned along with the ids of the
-                ones the system identified as potential failures for
-                this request.</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status, a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
     <method id="bulkDeleteNodeMetadataItems" name="DELETE">
@@ -4971,18 +5420,17 @@
             title="Bulk-delete load balancer node metadata items">
             <para role="shortdesc">Bulk-deletes the metadata items
                 given specified id list.</para>
-            <para>This operation does not require a request body. To
-                batch delete metadata, provide a query parameter list
-                of meta ids. For example:
+            <para>To bulk-delete metadata, provide a query parameter
+                list of meta IDs. For example:
                     /metadata?id=<parameter>metaId</parameter>&amp;id=
                     <parameter>metaId</parameter>. The current default
-                limit is ten ids per request. Any and all
+                limit is ten IDs per request. Any and all
                 configuration data is immediately purged and is not
-                recoverable. By chance if one of the items in the list
-                cannot be removed due to its current status, a
-                400:BadRequest is returned along with the ids of the
-                ones the system identified as potential failures for
-                this request.</para>
+                recoverable. If one of the items in the list cannot be
+                removed due to its current status, a 400:BadRequest is
+                returned along with the IDs of the ones the system
+                identified as potential failures for this
+                request.</para>
         </wadl:doc>
     </method>
 </application>
