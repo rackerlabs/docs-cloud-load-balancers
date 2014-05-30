@@ -191,7 +191,9 @@
                         <resource id="protocols" path="protocols">
                             <method href="#listProtocols"/>
                         </resource>
-                        <resource id="algorithms" path="algorithms"> </resource>
+                        <resource id="algorithms" path="algorithms">
+                            <method href="#listAlgorithms"/>
+                        </resource>
                         <resource id="alloweddomains"
                             path="alloweddomains">
                             <method href="#listAllowedDomains"/>
@@ -3503,9 +3505,8 @@
                         The key/certificates can be wrapped in a
                         newline character in Java, for example, using
                             <code>string.replaceAll("\n",
-                            "\\n")</code>. See the
-                        examples above for working, "pre-formatted"
-                        examples.</para>
+                            "\\n")</code>. See the examples above for
+                        working, "pre-formatted" examples.</para>
                 </note>
                 <para>The examples to update the load balancers SSL
                     termination full certification request are shown
@@ -3966,9 +3967,8 @@
                         The key/certificates can be wrapped in a
                         newline character in Java, for example, using
                             <code>string.replaceAll("\n",
-                            "\\n")</code>. See the
-                        examples above for working, "pre-formatted"
-                        examples.</para>
+                            "\\n")</code>. See the examples above for
+                        working, "pre-formatted" examples.</para>
                 </note>
                 <para>The examples to update the load balancers SSL
                     termination full certification request are shown
@@ -4423,9 +4423,8 @@
                         The key/certificates can be wrapped in a
                         newline character in Java, for example, using
                             <code>string.replaceAll("\n",
-                            "\\n")</code>. See the
-                        examples above for working, "pre-formatted"
-                        examples.</para>
+                            "\\n")</code>. See the examples above for
+                        working, "pre-formatted" examples.</para>
                 </note>
                 <para>The examples to update the load balancers SSL
                     termination full certification request are shown
