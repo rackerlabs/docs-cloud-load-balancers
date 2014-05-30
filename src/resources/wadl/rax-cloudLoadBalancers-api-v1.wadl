@@ -2931,14 +2931,14 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom">
+          <!--  <representation mediaType="application/atom">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </request>
     </method>
     <method id="disableSessionPersistence" name="DELETE">
