@@ -293,8 +293,6 @@
                         <code>updated</code></para>
                 </listitem>
             </itemizedlist>
-            <para>List load balancer example responses are shown
-                below:</para>
             <para>A <emphasis>changes-since</emphasis> query parameter
                 is supported that lists all load balancers that have
                 changed since the specified date/time. For example,
@@ -320,6 +318,30 @@
                 the ID, name, and status of all load balancers
                 attached.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code href="../samples/lb-list-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-loadbalancer.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
     </method>
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -342,6 +364,32 @@
                 our load balancers for the purpose of creating more
                 robust firewall rules.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-details-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-details-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom" xml:lang="EN">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-loadbalancer-id.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
     </method>
     <method id="createLoadBalancer" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -444,10 +492,9 @@
                     </tr>
                     <tr>
                         <td colspan="1">virtualIps</td>
-                        <td colspan="3">Type of virtualIp to add along
-                            with the creation of a load balancer. See
-                            the Virtual IP Types table below for the
-                            Virtual IP Types.</td>
+                        <td colspan="3">Type of virtualIp to add with
+                            the creation of a load balancer. See the
+                            virtual IP types table.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -517,7 +564,7 @@
                         <td colspan="1">port</td>
                         <td colspan="3">Port number for the service
                             you are load balancing.</td>
-                        <td colspan="1">See Notes below table</td>
+                        <td colspan="1">See Notes.</td>
                     </tr>
                     <tr>
                         <td colspan="1">timeout</td>
@@ -2957,8 +3004,6 @@
                     unavailable while using UDP-based
                     protocols.</para>
             </note>
-            <para>See the table below for descriptions of the
-                protocols.</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Load balancing protocols</caption>
@@ -3474,24 +3519,26 @@
                         </tr>
                     </tbody>
                 </table>
-                <para>The examples to view the load balancers SSL
-                    termination configuration are shown below:</para>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <note>
@@ -3508,20 +3555,19 @@
                             "\\n")</code>. See the examples above for
                         working, "pre-formatted" examples.</para>
                 </note>
-                <para>The examples to update the load balancers SSL
-                    termination full certification request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination Full
                         Certification Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -3530,27 +3576,28 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
-                <para>The examples to update the load balancers SSL
-                    termination attribute request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination
                         Attribute Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -3559,11 +3606,13 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <para>There is no example for the Delete Load
@@ -3574,50 +3623,56 @@
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </request>
         <response>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
         <response>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
     </method>
@@ -3936,24 +3991,26 @@
                         </tr>
                     </tbody>
                 </table>
-                <para>The examples to view the load balancers SSL
-                    termination configuration are shown below:</para>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <note>
@@ -3970,20 +4027,19 @@
                             "\\n")</code>. See the examples above for
                         working, "pre-formatted" examples.</para>
                 </note>
-                <para>The examples to update the load balancers SSL
-                    termination full certification request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination Full
                         Certification Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -3992,27 +4048,28 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
-                <para>The examples to update the load balancers SSL
-                    termination attribute request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination
                         Attribute Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -4021,11 +4078,13 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <para>There is no example for the Delete Load
@@ -4036,50 +4095,56 @@
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </request>
         <response>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
         <response>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
     </method>
@@ -4392,54 +4457,55 @@
                         </tr>
                     </tbody>
                 </table>
-                <para>The examples to view the load balancers SSL
-                    termination configuration are shown below:</para>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <response xmlns="http://wadl.dev.java.net/2009/02">
                     <representation mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-response.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </response>
                 <note>
                     <para>All requests to SSL termination in the JSON
                         format require the key/certificates to be in
-                        "proper" JSON format, meaning that all raw
-                        line feed characters should be wrapped in a
-                        newline character. So if the user pastes in
-                        the key from a <filename>mykey.key</filename>
-                        file, JSON will not properly handle the field.
-                        The key/certificates can be wrapped in a
-                        newline character in Java, for example, using
+                        proper JSON format, meaning that all raw line
+                        feed characters should be wrapped in a newline
+                        character. So if you paste in the key from a
+                            <filename>mykey.key</filename> file, JSON
+                        does not properly handle the field. The
+                        key/certificates can be wrapped in a newline
+                        character in Java, for example, using
                             <code>string.replaceAll("\n",
                             "\\n")</code>. See the examples above for
                         working, "pre-formatted" examples.</para>
                 </note>
-                <para>The examples to update the load balancers SSL
-                    termination full certification request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination Full
                         Certification Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -4448,27 +4514,28 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
-                <para>The examples to update the load balancers SSL
-                    termination attribute request are shown
-                    below:</para>
                 <example>
                     <title>Update Load Balancing SSL termination
                         Attribute Request: XML</title>
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/xml">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.xml"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <example>
@@ -4477,11 +4544,13 @@
                     <representation
                         xmlns="http://wadl.dev.java.net/2009/02"
                         mediaType="application/json">
-                        <doc>
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
                             <xsdxt:code
                                 href="../samples/lb-ssl-termination-request-attrs.json"
                             />
-                        </doc>
+                        </wadl:doc>
                     </representation>
                 </example>
                 <para>This operation does not return a response
@@ -4490,50 +4559,56 @@
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </request>
         <response>
             <representation mediaType="application/xml">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.xml"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
         <response>
             <representation mediaType="application/json">
-                <doc>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-response.json"
                     />
-                </doc>
+                </wadl:doc>
             </representation>
         </response>
     </method>
