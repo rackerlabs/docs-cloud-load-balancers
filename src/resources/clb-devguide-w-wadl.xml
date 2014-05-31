@@ -3374,9 +3374,9 @@
         <section xml:id="Monitors-d1e3370">
             <title>Monitors</title>
             <para>The load balancing service includes a health
-                monitoring operation which periodically checks your
+                monitoring operation that periodically checks your
                 back-end nodes to ensure they are responding
-                correctly. If a node is not responding, it is removed
+                correctly. If a node does not respond, it is removed
                 from rotation until the <glossterm>health
                     monitor</glossterm> determines that the node is
                 functional. In addition to being performed
@@ -3428,18 +3428,15 @@
                     status updated to ONLINE regardless of the health
                     of the node.</para>
             </note>
-            <section xml:id="monitors">
-                <title>Health monitors</title>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#healthmonitor">
-                        <wadl:method href="#showHealthMonitor"/>
-                        <wadl:method href="#updateHealthMonitor"/>
-                        <wadl:method href="#deleteHealthMonitor"/>
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#healthmonitor">
+                    <wadl:method href="#showHealthMonitor"/>
+                    <wadl:method href="#updateHealthMonitor"/>
+                    <wadl:method href="#deleteHealthMonitor"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
         <section xml:id="Sessions-d1e3728">
             <title>Session persistence</title>
