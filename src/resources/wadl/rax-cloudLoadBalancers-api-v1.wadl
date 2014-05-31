@@ -118,9 +118,9 @@
                             </resource>
                         </resource>
                         <resource id="LB-usage" path="usage">
-                            <method href="#showHistoryUsage"/>
+                            <method href="#showHistoricalUsage"/>
                             <resource id="current" path="current">
-                                <method href="#showCurrentUsage"/>
+                                <method href="#showCurrentUsage"/> 
                             </resource>
                         </resource>
                         <resource id="accesslist" path="accesslist">
@@ -597,7 +597,7 @@
     </method>
     <method id="bulkDeleteLoadBalancer" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Delete load balancer">
+            title="Bulk-delete load balancers">
             <para role="shortdesc">Bulk-deletes load balancers.</para>
             <para>The bulk-delete load balancer function removes the
                 specified load balancer and its associated
@@ -609,18 +609,18 @@
                 returned along with the IDs of the ones the system
                 identified as potential failures for this
                 request.</para>
-            <request>
-                <param style="query" type="xsd:string" name="id"
-                    required="false">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>One to ten load balancer
-                            IDs. For example: <code>&amp;id=
-                                loadBalancerId</code>. The current
-                            default limit is ten IDs per
-                            request.</para></wadl:doc>
-                </param>
-            </request>
         </wadl:doc>
+        <request>
+            <param style="query" type="xsd:string" name="id"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>One to ten load balancer IDs.
+                        For example: <code>&amp;id=
+                            loadBalancerId</code>. The current default
+                        limit is ten IDs per
+                    request.</para></wadl:doc>
+            </param>
+        </request>
     </method>
     <!-- errorpage -->
     <method id="showErrorPage" name="GET">

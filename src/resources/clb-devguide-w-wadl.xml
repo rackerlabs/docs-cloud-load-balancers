@@ -2799,7 +2799,7 @@
                 <title>Notes</title>
                 <itemizedlist>
                     <listitem>
-                        <para>Load balancers sharing a Virtual IP
+                        <para>Load balancers sharing a virtual IP
                                 <emphasis>must</emphasis> utilize a
                             unique port. Also, to share both an IPv4
                             as well as an IPv6, you must supply an
@@ -2931,25 +2931,24 @@
                         <code>httpsRedirect</code></para>
                 </listitem>
             </itemizedlist>
-            <section xml:id="loadbalancers-operations"
-                role="api-reference">
-                <title>Manage load balancers</title>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadbalancers">
-                        <wadl:method href="#listLoadBalancers"/>
-                        <wadl:method href="#createLoadBalancer"/>
-                        <wadl:method href="#bulkDeleteLoadBalancer"/>
-                    </wadl:resource>
-                    <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadBalancerId">
-                        <wadl:method href="#showLoadBalancer"/>
-                        <wadl:method href="#updateLoadBalancer"/>
-                        <wadl:method href="#deleteLoadBalancer"/>
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
+        </section>
+        <section xml:id="load-balancer-operations">
+            <title>Load balancer operations</title>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#loadbalancers">
+                    <wadl:method href="#listLoadBalancers"/>
+                    <wadl:method href="#createLoadBalancer"/>
+                    <wadl:method href="#bulkDeleteLoadBalancer"/>
+                </wadl:resource>
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#loadBalancerId">
+                    <wadl:method href="#showLoadBalancer"/>
+                    <wadl:method href="#updateLoadBalancer"/>
+                    <wadl:method href="#deleteLoadBalancer"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
         <section xml:id="Erropage-d1e666">
             <title>Error pages</title>
@@ -2994,7 +2993,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#errorpage">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#errorpage">
                     <wadl:method href="#showErrorPage"/>
                     <wadl:method href="#setErrorPage"/>
                     <wadl:method href="#deleteErrorPage"/>
@@ -3006,7 +3005,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#stats">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#stats">
                     <wadl:method href="#showStats"/>
                 </wadl:resource>
             </wadl:resources>
@@ -3181,19 +3180,19 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#nodes">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#nodes">
                     <wadl:method href="#listNodes"/>
                     <wadl:method href="#addNode"/>
                     <wadl:method href="#bulkDeleteNodes"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#nodeId">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#nodeId">
                     <wadl:method href="#showNode"/>
                     <wadl:method href="#updateNode"/>
                     <wadl:method href="#deleteNode"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#events">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#events">
                     <wadl:method href="#listNodeEvents"/>
                 </wadl:resource>
             </wadl:resources>
@@ -3294,13 +3293,13 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#virtualIPs">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#virtualIPs">
                     <wadl:method href="#listVirtualIps"/>
                     <wadl:method href="#addVirtualIpv6"/>
                     <wadl:method href="#bulkDeleteVirtualIps"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#virtualIpId">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#virtualIpId">
                     <wadl:method href="#deleteVirtualIp"/>
                 </wadl:resource>
             </wadl:resources>
@@ -3310,7 +3309,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#alloweddomains">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#alloweddomains">
                     <wadl:method href="#listAllowedDomains"/>
                 </wadl:resource>
             </wadl:resources>
@@ -3320,16 +3319,19 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#usage">
-                    <wadl:method href="#showHistoryUsage"/>
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#LB-usage">
+                    <wadl:method href="#showHistoricalUsage"/>
+                </wadl:resource>
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#usage">
                     <wadl:method href="#showAccountLevelUsage"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#current">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#current">
                     <wadl:method href="#showCurrentUsage"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#billable">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#billable">
                     <wadl:method href="#listBillableLoadBalancers"/>
                 </wadl:resource>
             </wadl:resources>
@@ -3412,7 +3414,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#accesslist">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#accesslist">
                     <wadl:method href="#showAccessList"/>
                     <wadl:method href="#createAccessList"/>
                     <wadl:method href="#deleteNetwork"/>
@@ -3483,7 +3485,7 @@
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#healthmonitor">
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#healthmonitor">
                         <wadl:method href="#showHealthMonitor"/>
                         <wadl:method href="#updateHealthMonitor"/>
                         <wadl:method href="#deleteHealthMonitor"/>
@@ -3588,7 +3590,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#sessionpersistence">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#sessionpersistence">
                     <wadl:method href="#showSessionPersistence"/>
                     <wadl:method href="#enableSessionPersistence"/>
                     <wadl:method href="#disableSessionPersistence"/>
@@ -3628,7 +3630,7 @@
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionlogging">
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionlogging">
                         <wadl:method href="#showConnectionLogging"/>
                         <wadl:method href="#enableConnectionLogging"/>
                     </wadl:resource>
@@ -3708,7 +3710,7 @@
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionthrottle">
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionthrottle">
                         <wadl:method href="#showConnectionThrottle"/>
                         <wadl:method href="#updateConnectionThrottle"/>
                         <wadl:method href="#deleteConnectionThrottle"
@@ -3746,7 +3748,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#contentcaching">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#contentcaching">
                     <wadl:method href="#showContentCaching"/>
                     <wadl:method href="#enableContentCaching"/>
                 </wadl:resource>
@@ -3960,7 +3962,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#protocols">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#protocols">
                     <wadl:method href="#listProtocols"/>
                 </wadl:resource>
             </wadl:resources>
@@ -4032,7 +4034,7 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#algorithms">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#algorithms">
                     <wadl:method href="#listAlgorithms"/>
                 </wadl:resource>
             </wadl:resources>
@@ -4346,7 +4348,7 @@
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
-                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#ssltermination">
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#ssltermination">
                         <wadl:method href="#showSSLTermination"/>
                         <wadl:method href="#updateSSLTermination"/>
                         <wadl:method href="#deleteSSLTermination"/>
@@ -4364,14 +4366,14 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#metadata">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#metadata">
                     <wadl:method href="#addLoadBalancerMetadata"/>
                     <wadl:method href="#showLoadBalancerMetadata"/>
                     <wadl:method
                         href="#bulkDeleteLoadBalancerMetadataItems"/>
                 </wadl:resource>
                 <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#metaId">
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#metaId">
                     <wadl:method href="#showLoadBalancerMetadataItem"/>
                     <wadl:method
                         href="#updateLoadBalancerMetadataItem"/>
