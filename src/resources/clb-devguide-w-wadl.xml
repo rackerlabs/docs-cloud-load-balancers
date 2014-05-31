@@ -17,9 +17,8 @@
 <book version="5.0" xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="clb-devguide">
-    <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Load Balancers Developer Guide</title>
-    <titleabbrev>Rackspace Cloud LB Dev Guide</titleabbrev>
+    <titleabbrev>Load Balancers Developer Guide</titleabbrev>
     <info>
         <author>
             <personname>
@@ -3520,33 +3519,29 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
-        <section xml:id="Connections-d1e3919">
-            <title>Connections</title>
-            <section xml:id="log_connections">
-                <title>Log connections</title>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionlogging">
-                        <wadl:method href="#showConnectionLogging"/>
-                        <wadl:method href="#enableConnectionLogging"/>
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
-            <section xml:id="throttle_connections">
-                <title>Throttle connections</title>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionthrottle">
-                        <wadl:method href="#showConnectionThrottle"/>
-                        <wadl:method
-                            href="#createOrUpdateConnectionThrottle"/>
-                        <wadl:method href="#deleteConnectionThrottle"
-                        />
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
+        <section xml:id="log_connections">
+            <title>Log connections</title>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionlogging">
+                    <wadl:method href="#showConnectionLogging"/>
+                    <wadl:method href="#enableConnectionLogging"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="throttle_connections">
+            <title>Throttle connections</title>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionthrottle">
+                    <wadl:method href="#showConnectionThrottle"/>
+                    <wadl:method
+                        href="#createOrUpdateConnectionThrottle"/>
+                    <wadl:method href="#deleteConnectionThrottle"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
         <section xml:id="content_caching">
             <title>Content caching</title>
