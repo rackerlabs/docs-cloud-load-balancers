@@ -151,7 +151,7 @@
                         <resource id="connectionthrottle"
                             path="connectionthrottle">
                             <method href="#showConnectionThrottle"/>
-                            <method href="#updateConnectionThrottle"/>
+                            <method href="#createOrUpdateConnectionThrottle"/>
                             <method href="#deleteConnectionThrottle"/>
                         </resource>
                         <resource id="contentcaching"
@@ -333,7 +333,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -380,7 +380,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -662,8 +662,8 @@
             <para role="shortdesc">Sets a custom error page for a
                 specified load balancer.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/json">
+        <request> &contentParameter; <representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -803,7 +803,7 @@
                         href="../samples/lb-list-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -840,7 +840,7 @@
                         href="../samples/lb-list-node-response.xml"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -864,7 +864,7 @@
             <para>One or more secondary nodes can be added to a
                 specified load balancer so that if all the primary
                 nodes fail, traffic can be redirected to secondary
-                nodes. The type attribute allows configuring the node
+                nodes. The type attribute enables configuring the node
                 as either PRIMARY or SECONDARY.</para>
             <para>Domain names are also accepted with certain
                 restrictions.</para>
@@ -1004,7 +1004,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1035,7 +1035,7 @@
                         href="../samples/lb-list-vips-response.xml"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1312,7 +1312,7 @@
     </method>
     <method id="deleteNetwork" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Manage Access Lists">
+            title="Delete network from access list">
             <para role="shortdesc">Deletes a network item from a
                 specified access list.</para>
             <para>You can perform these <command>DELETE</command>
@@ -1321,8 +1321,8 @@
                 <listitem>
                     <para>Delete multiple network items in an access
                         list.</para></listitem>
-                <listitem><para>Delete the entire access list.</para>
-                </listitem>
+                <listitem><para>Delete the entire access
+                    list.</para></listitem>
                 <listitem>
                     <para>Delete a specified network item in an access
                         list.</para>
@@ -1677,6 +1677,7 @@
             <para role="shortdesc">Enables session persistence.</para>
         </wadl:doc>
         <request>
+            &persistenceTypeParameter;
             <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1693,7 +1694,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <!--  <representation mediaType="application/atom">
+            <!--  <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1726,7 +1727,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <!--<representation mediaType="application/atom">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1768,6 +1769,7 @@
                 logging.</para>
         </wadl:doc>
         <request>
+            &enabledParameter;
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1811,13 +1813,24 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
-    <method id="updateConnectionThrottle" name="PUT">
+    <method id="createOrUpdateConnectionThrottle" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Update connection throttling configuration">
-            <para role="shortdesc">Updates the throttling
+            title="Create or update connection throttling configuration">
+            <para role="shortdesc">Creates or updates the throttling
                 configuration.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>You must specify all attributes when
+                    initially creating the connection throttle.
+                    However, when you update an existing setting,
+                    you can pass as few as one attribute.</para>
+            </note>
         </wadl:doc>
         <request>
+            &maxConnectionRateParameter;
+            &maxConnectionsParameter;
+            &minConnectionsParameter;
+            &rateIntervalParameter;
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1834,7 +1847,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/atom" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1863,7 +1876,7 @@
             title="Show content caching configuration">
             <para role="shortdesc">Shows the current configuration of
                 content caching.</para>
-            <para>This operation allows the user to view the current
+            <para>This operation enables the user to view the current
                 content caching configuration, enable content caching,
                 or disable content caching.</para>
             <para>When content caching is enabled, recently-accessed
@@ -1904,7 +1917,7 @@
             title="Enable content caching">
             <para role="shortdesc">Enables or disables content
                 caching.</para>
-            <para>This operation allows the user to view the current
+            <para>This operation enables the user to view the current
                 content caching configuration, enable content caching,
                 or disable content caching.</para>
             <para>When content caching is enabled, recently-accessed
@@ -1997,12 +2010,11 @@
             title="Show SSL termination configuration">
             <para role="shortdesc">Shows the load balancers SSL
                 termination configuration.</para>
-            <para>The SSL termination feature allows a load balancer
-                user to terminate SSL traffic at the load balancer
-                layer versus at the web server layer. A user may
-                choose to configure SSL termination using a key and an
-                SSL certificate or an (Intermediate) SSL
-                certificate.</para>
+            <para>The SSL termination feature enables you to terminate
+                SSL traffic at the load balancer layer versus at the
+                web server layer. You can choose to configure SSL
+                termination using a key and an SSL certificate or an
+                (Intermediate) SSL certificate.</para>
             <para>When SSL termination is configured on a load
                 balancer, a secure shadow server is created that
                 listens only for secure traffic on a user-specified
@@ -2020,14 +2032,15 @@
             title="Update SSL termination configuration">
             <para role="shortdesc">Updates the SSL termination
                 configuration.</para>
-            <para>The SSL termination feature allows a load balancer
-                user to terminate SSL traffic at the load balancer
-                layer versus at the web server layer. A user may
-                choose to configure SSL termination using a key and an
-                SSL certificate or an intermediate SSL
-                certificate.</para></wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+            <para>The SSL termination feature enables you to terminate
+                SSL traffic at the load balancer layer versus at the
+                web server layer. You can choose to configure SSL
+                termination using a key and an SSL certificate or an
+                intermediate SSL certificate.</para></wadl:doc>
+        <request> &securePortParameter; &privatekeyParameter;
+            &certificateParameter; &intermediatecertificateParameter;
+            &enabledParameter; &secureTrafficOnlyParameter;
+                <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2085,12 +2098,11 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete SSL termination">
             <para role="shortdesc">Deletes SSL termination.</para>
-            <para>The SSL termination feature allows a load balancer
-                user to terminate SSL traffic at the load balancer
-                layer versus at the web server layer. A user may
-                choose to configure SSL termination using a key and an
-                SSL certificate or an (Intermediate) SSL
-                certificate.</para>
+            <para>The SSL termination feature enables you to terminate
+                SSL traffic at the load balancer layer versus at the
+                web server layer. You can choose to configure SSL
+                termination using a key and an SSL certificate or an
+                (Intermediate) SSL certificate.</para>
             <para>When SSL termination is configured on a load
                 balancer, a secure shadow server is created that
                 listens only for secure traffic on a user-specified

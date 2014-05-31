@@ -1292,10 +1292,9 @@
                     rather than the sample values shown here for
                         <code>username</code> and <code>apiKey</code>.
                     When you authenticate successfully, the response
-                    to your authentication request will include a
-                    catalog of the services to which you have
-                    subscribed rather than the sample values shown
-                    here.</para>
+                    to your authentication request includes a catalog
+                    of the services to which you have subscribed
+                    rather than the sample values shown here.</para>
                 <example>
                     <title>Authentication with US endpoint: XML
                         request</title>
@@ -1403,9 +1402,9 @@
                 <note>
                     <para>The information shown in the Auth Response
                         examples is for US-based accounts. If you
-                        authenticate against the UK-endpoint for auth,
-                        you will see the service catalog information
-                        for UK-based accounts.</para>
+                        authenticate against the UK authentication
+                        endpoint, you see the service catalog
+                        information for UK-based accounts.</para>
                 </note>
                 <calloutlist>
                     <callout arearefs="response.xml.namespaces">
@@ -1420,15 +1419,14 @@
                             valid for a finite duration; a token's
                             default lifespan is twenty-four
                             hours.</para>
-                        <para>The token's <code>expires</code>
-                            attribute denotes the time after which the
-                            token will automatically become invalid. A
-                            token may be manually revoked before the
-                            time identified by the
-                                <code>expires</code> attribute;
-                                <code>expires</code> predicts a
+                        <para>The <code>expires</code> attribute
+                            denotes the time after which the token
+                            automatically becomes invalid. A token may
+                            be manually revoked before the time
+                            identified by the <code>expires</code>
+                            attribute; <code>expires</code> predicts a
                             token's maximum possible lifespan but does
-                            not guarantee that it will reach that
+                            not guarantee that it reaches that
                             lifespan. Clients are encouraged to cache
                             a token until it expires.</para>
                         <note>
@@ -1619,9 +1617,9 @@
                     account number, which is a required element of the
                     service endpoints. The examples shown here are for
                     authentication for US customers. Customers with
-                    UK-based accounts will see different values in the
-                    service catalog. Refer to the next section for
-                    more information about service endpoints.</para>
+                    UK-based accounts see different values in the
+                    service catalog. See the next section for more
+                    information about service endpoints.</para>
             </section>
         </section>
         <section xml:id="Service_Access_Endpoints-d1e517">
@@ -1633,8 +1631,8 @@
                 an endpoint from the table below. Replace the sample
                 account ID number,<parameter>1234</parameter>, with
                 your actual account number returned as part of the
-                authentication service response. You will find the
-                actual account number after the final '/' in the
+                authentication service response. You find the actual
+                account number after the final '/' in the
                     <code>publicURL</code> field returned by the
                 authentication response. In <xref
                     linkend="auth_response_json"/>, the account id is
@@ -1646,8 +1644,7 @@
                     xmlns:html="http://www.w3.org/1999/xhtml"
                     >"https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"</code>.
                     <table rules="all">
-                    <?dbfo keep-together="always"?>
-                    <caption>Regionalized Service Endpoints</caption>
+                    <caption>Regionalized service endpoints</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="1">Region</td>
@@ -1740,7 +1737,7 @@
                 can be used to efficiently determine when the state of
                 services has changed.</para>
             <table rules="all">
-                <caption>JSON and XML Response Formats</caption>
+                <caption>JSON and XML response formats</caption>
                 <thead>
                     <tr align="center">
                         <td>Format</td>
@@ -1782,8 +1779,7 @@
                 response. Unless the header is explicitly set,
                 encoding defaults to disabled.</para>
             <table rules="all">
-                <?dbfo keep-together="always"?>
-                <caption>Encoding Headers</caption>
+                <caption>Encoding headers</caption>
                 <thead>
                     <tr align="center">
                         <td>Header Type</td>
@@ -1829,7 +1825,7 @@
         </section>
         <section xml:id="Paginated_Collections-d1e786">
             <title>Paginated collections</title>
-            <para>To reduce load on the service, list operations will
+            <para>To reduce load on the service, list operations
                 return a maximum limit of 100 items at a time. This is
                 referred to as <emphasis>pagination</emphasis>. If a
                 request supplies no limit or one that exceeds the
@@ -1849,10 +1845,10 @@
                 navigate the collection, the <code>limit</code> and
                     <code>marker</code> parameters can be set in the
                 URI. For example,
-                    <code>?limit=10&amp;marker=1234</code> will
-                display a maximum of 10 load balancers in the
-                paginated results, beginning with the load balancer
-                whose id is 1234.</para>
+                    <code>?limit=10&amp;marker=1234</code> displays a
+                maximum of 10 load balancers in the paginated results,
+                beginning with the load balancer whose id is
+                1234.</para>
             <para>There is also an <code>offset</code> parameter that
                 can be used as a count of the number of objects from
                 where the paginated list is started.</para>
@@ -1893,7 +1889,7 @@
                         <code>/v1.0/1234/loadbalancers</code>
                     </emphasis> .</para>
                 <table rules="all">
-                    <caption>Default Rate Limits</caption>
+                    <caption>Default rate limits</caption>
                     <?dbfo keep-together="always"?>
                     <thead>
                         <tr align="center">
@@ -2139,8 +2135,7 @@
                 <para>This fault indicates that the data in the
                     request object is invalid; for example, a string
                     was used in a parameter that was expecting an
-                    integer. The fault will wrap validation
-                    errors.</para>
+                    integer. The fault wraps validation errors.</para>
                 <example>
                     <title>badRequest fault: Response</title>
                     <?dbfo keep-together="always"?>
@@ -2299,7 +2294,7 @@
                 <programlisting>2011-05-19T08:07:08-05:00</programlisting>
             </example>
             <table rules="all">
-                <caption>Explanation of Date/Time Format Codes </caption>
+                <caption>Date and time format codes </caption>
                 <thead>
                     <tr>
                         <td>Code</td>
@@ -2351,7 +2346,7 @@
                 select <emphasis>unique</emphasis> ports unless the
                 load balancer protocols used are designed to work
                 together on the same port. This section provides
-                information on the compatible load balancer protocols
+                information on the-compatible load balancer protocols
                 that are designed to share UDP and TCP based protocols
                 on the same port.</para>
             <note>
@@ -2361,11 +2356,11 @@
             </note>
             <para>See the tables below for the descriptions of these
                 protocols.</para>
-            <para>The first of these tables lists the DNS compatible
+            <para>The first of these tables lists the DNS-compatible
                 load balancing protocols:</para>
             <table rules="all">
-                <caption>DNS Compatible Load Balancing
-                    Protocols</caption>
+                <caption>DNS-compatible load balancing
+                    protocols</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -2393,22 +2388,21 @@
             </table>
             <note>
                 <para>The TCP and UDP protocols listed in the table
-                    above are compatible and good for load balancing
+                    above are-compatible and good for load balancing
                     DNS based applications. These
                         <emphasis>cannot</emphasis> be combined with
                     the TCP and UDP protocols listed in the tables
                     below.</para>
             </note>
             <para>The TCP and UDP protocols listed in the following
-                tables are compatible for sharing TCP and UDP based
+                tables are-compatible for sharing TCP and UDP based
                 protocols on the same port. These protocols can be
                 interchanged to achieve the proper setup for the
                 user's TCP/UDP based application.</para>
 
             <table rules="all">
-                <caption>TCP Compatible Load Balancing
-                    Protocols</caption>
-
+                <caption>TCP-compatible load balancing
+                    protocols</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -2441,10 +2435,9 @@
                     </tr>
                 </tbody>
             </table>
-
             <table rules="all">
-                <caption>UDP Compatible Load Balancing
-                    Protocols</caption>
+                <caption>UDP-compatible load balancing
+                    protocols</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -2542,15 +2535,15 @@
                     roles and their permissions.</para>
                 <table rules="all" width="70%"
                     xml:id="cloud_lbs_roles_capabilities">
-                    <caption>Cloud Load Balancers Product Roles and
-                        Capabilities</caption>
+                    <caption>Cloud Load Balancers product roles and
+                        capabilities</caption>
                     <?dbfo keep-together="always"?>
                     <col width="31%"/>
                     <col width="69%"/>
                     <thead>
                         <tr align="center">
-                            <td>Role Name</td>
-                            <td>Role Permissions</td>
+                            <td>Role name</td>
+                            <td>Role permissions</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -2583,8 +2576,8 @@
                     describes these roles and their
                     permissions.</para>
                 <table rules="all" width="70%">
-                    <caption>Multiproduct (Global Roles) and
-                        Permissions</caption>
+                    <caption>Multiproduct global roles and
+                        permissions</caption>
                     <col width="30%"/>
                     <col width="70%"/>
                     <?dbfo keep-together="always"?>
@@ -2685,7 +2678,7 @@
             </section>
         </section>
     </chapter>
-    <chapter xml:id="API_Operations-d1e1354">
+    <chapter xml:id="API_Operations" role="api-reference">
         <title>API operations</title>
         <info>
             <raxm:metadata
@@ -2695,36 +2688,20 @@
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
-        <para>This chapter explains specific API operations. For ideas
-            relevant to all API operations, see the "General API
-            Information" chapter.</para>
         <section xml:id="load-balancers">
             <title>Load balancers</title>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <title>Notes</title>
-                <itemizedlist>
-                    <listitem>
-                        <para>Users can configure all documented
-                            features of the load balancer at creation
-                            time by simply providing the additional
-                            elements or attributes in the request.
-                            This document provides an overview of all
-                            the features the load balancing service
-                            supports.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Any protocol that is not listed in the
-                            protocols response, or is in the list but
-                            port=0, requires port to be set. For
-                            example the TCP protocol is in the list,
-                            however it specifies port as 0
-                                (<code>&lt;protocol name="TCP"
-                                port="0" /&gt;</code>), therefore it
-                            requires port to be set.</para>
-                    </listitem>
-                </itemizedlist>
-            </note>
+            <para>Users can configure all documented features of the
+                load balancer at creation time by simply providing the
+                additional elements or attributes in the request. This
+                document provides an overview of all the features the
+                load balancing service supports.</para>
+            <para>Any protocol that is not listed in the protocols
+                response, or is in the list but port=0, requires port
+                to be set. For example the TCP protocol is in the
+                list, however it specifies port as 0
+                    (<code>&lt;protocol name="TCP" port="0"
+                    /&gt;</code>), therefore it requires port to be
+                set.</para>
             <para>You must specify the type of virtualIp to add along
                 with the creation of a load balancer. The following
                 table describes the options.</para>
@@ -2810,7 +2787,7 @@
                     </listitem>
                     <listitem>
                         <para>In addition, load balancers sharing
-                            Virtual IPs can utilize certain compatible
+                            Virtual IPs can utilize certain-compatible
                             TCP/UDP and DNS based protocols on the
                             same port. See <xref
                                 linkend="Compatible_Load_Balancing_Protocols-d1e4269"
@@ -2931,9 +2908,6 @@
                         <code>httpsRedirect</code></para>
                 </listitem>
             </itemizedlist>
-        </section>
-        <section xml:id="load-balancer-operations">
-            <title>Load balancer operations</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -2960,36 +2934,11 @@
                 configured with a default error page that gets
                 displayed when traffic is requested for an offline
                 node.</para>
-            <para>A single custom error page may be added to a load
-                balancer with an HTTP-based protocol. Page updates
-                will override existing content. If a custom error page
-                is deleted, or the load balancer is changed to a
-                non-HTTP protocol, the default error page is
-                restored.</para>
-            <para>The following table lists the required and optional
-                attributes:</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes</caption>
-                <thead>
-                    <tr>
-                        <td colspan="1">Name</td>
-                        <td colspan="3">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">content</td>
-                        <td colspan="3">Specifies the HTML content for
-                            the custom error page. Must be 65536
-                            characters or less. See the request
-                            examples in this section for the required
-                            XML and JSON formats.</td>
-                        <td colspan="1">Yes</td>
-                    </tr>
-                </tbody>
-            </table>
+            <para>You can add a single custom error page with an
+                HTTP-based protocol to a load balancer. Page updates
+                override existing content. If a custom error page is
+                deleted, or the load balancer is changed to a non-HTTP
+                protocol, the default error page is restored.</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -3224,7 +3173,7 @@
                     failures for this request.</para>
             </note>
             <table rules="all">
-                <caption>Virtual IP Types</caption>
+                <caption>Virtual IP types</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
@@ -3337,7 +3286,7 @@
             </wadl:resources>
         </section>
         <section xml:id="Access_Lists-d1e3160">
-            <title>Access Lists</title>
+            <title>Access lists</title>
             <para>The access list management feature allows
                 fine-grained network access controls to be applied to
                 the load balancer's virtual IP address. A single IP
@@ -3447,7 +3396,7 @@
                 attribute to signify what kind of monitor it
                 is.</para>
             <table rules="all">
-                <caption>Health Monitor Types</caption>
+                <caption>Health monitor types</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
@@ -3531,30 +3480,6 @@
                     </tr>
                 </tbody>
             </table>
-            <para>The following table lists the required and optional
-                attributes:</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes</caption>
-                <thead>
-                    <tr>
-                        <td colspan="1">Name</td>
-                        <td colspan="3">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">persistenceType</td>
-                        <td colspan="3">
-                            <para>Mode in which session persistence
-                                mechanism operates. See the following
-                                table "Session Persistence Modes" for
-                                the available modes.</para></td>
-                        <td colspan="1">Yes</td>
-                    </tr>
-                </tbody>
-            </table>
             <para>You can only set one of the session persistence
                 modes on a load balancer, and it can only support one
                 protocol. If you set HTTP_COOKIE mode for an HTTP load
@@ -3580,9 +3505,7 @@
                     <para>Use one load balancer, configure it for
                         session persistence for HTTP requests, and
                         then enable SSL termination for that load
-                        balancer (refer to <xref
-                            linkend="SSLTermination-d1e2479"/> for
-                        details). The load balancer supports session
+                        balancer. The load balancer supports session
                         persistence for both HTTP and HTTPS requests
                         concurrently.</para>
                 </listitem>
@@ -3601,32 +3524,6 @@
             <title>Connections</title>
             <section xml:id="log_connections">
                 <title>Log connections</title>
-                <para>The following table lists the required and
-                    optional attributes:</para>
-                <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:xi="http://www.w3.org/2001/XInclude"
-                    rules="all">
-                    <caption>Required and optional
-                        attributes</caption>
-                    <thead>
-                        <tr>
-                            <td colspan="1">Name</td>
-                            <td colspan="3">Description</td>
-                            <td colspan="1">Required</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="1">enabled</td>
-                            <td colspan="3">
-                                <para>If set to <code>true</code>,
-                                   enables connection logging. If set
-                                   to <code>false</code>, disables
-                                   connection logging.</para></td>
-                            <td colspan="1">Yes</td>
-                        </tr>
-                    </tbody>
-                </table>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
@@ -3638,81 +3535,13 @@
             </section>
             <section xml:id="throttle_connections">
                 <title>Throttle connections</title>
-                <para>The following table lists the required and
-                    optional attributes:</para>
-                <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:xi="http://www.w3.org/2001/XInclude"
-                    rules="all">
-                    <caption>Required and optional
-                        attributes</caption>
-                    <thead>
-                        <tr>
-                            <td colspan="1">Name</td>
-                            <td colspan="3">Description</td>
-                            <td colspan="1">Required</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="1">maxConnectionRate</td>
-                            <td colspan="3">Maximum number of
-                                connections allowed from a single IP
-                                address in the defined
-                                   <code>rateInterval</code>. To
-                                enable an unlimited connection rate,
-                                set to 0. Otherwise, set to a value
-                                from 1 to 100000.</td>
-                            <td colspan="1">No</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">maxConnections</td>
-                            <td colspan="3">Maximum number of
-                                connections to allow for a single IP
-                                address. To enable unlimited
-                                simultaneous connections, set to 0.
-                                Otherwise, set to a value from 1 to
-                                100000.</td>
-                            <td colspan="1">No</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">minConnections</td>
-                            <td colspan="3">Allow at least this number
-                                of connections per IP address before
-                                applying throttling restrictions.
-                                Setting a value of 0 allows unlimited
-                                simultaneous connections; otherwise,
-                                set to a value from 1 to 1000.</td>
-                            <td colspan="1">No</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">rateInterval</td>
-                            <td colspan="3">
-                                <para>Frequency (in seconds) at which
-                                   the <code>maxConnectionRate</code>
-                                   is assessed. For example, a
-                                   <code>maxConnectionRate</code> of
-                                   30 with a <code>rateInterval</code>
-                                   of 60 would allow a maximum of 30
-                                   connections per minute for a single
-                                   IP address. Set to a value from 1
-                                   to 3600.</para></td>
-                            <td colspan="1">No</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:xi="http://www.w3.org/2001/XInclude">
-                    <para>You must specify all attributes when
-                        initially creating the connection throttle.
-                        However, when you update an existing setting,
-                        you can pass as few as one attribute.</para>
-                </note>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
                         href="wadl/rax-cloudLoadBalancers-api-v1.wadl#connectionthrottle">
                         <wadl:method href="#showConnectionThrottle"/>
-                        <wadl:method href="#updateConnectionThrottle"/>
+                        <wadl:method
+                            href="#createOrUpdateConnectionThrottle"/>
                         <wadl:method href="#deleteConnectionThrottle"
                         />
                     </wadl:resource>
@@ -3721,30 +3550,6 @@
         </section>
         <section xml:id="content_caching">
             <title>Content caching</title>
-            <para>The following table lists the required and optional
-                attributes:</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes</caption>
-                <thead>
-                    <tr>
-                        <td colspan="1">Name</td>
-                        <td colspan="3">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">enabled</td>
-                        <td colspan="3">
-                            <para>If set to <code>true</code>, enables
-                                connection logging. If set to
-                                   <code>false</code>, disables
-                                connection logging.</para></td>
-                        <td colspan="1">Yes</td>
-                    </tr>
-                </tbody>
-            </table>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -3980,7 +3785,7 @@
                 with a unique algorithm name within a given major
                 revision of the service API.</para>
             <table rules="all">
-                <caption>Load Balancing Algorithms</caption>
+                <caption>Load balancing algorithms</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -4041,62 +3846,38 @@
         </section>
         <section xml:id="SSLTermination-d1e2479">
             <title>SSL termination</title>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <title>Notes</title>
-                <itemizedlist>
-                    <listitem>
-                        <para>SSL termination may only be configured
-                            on load balancers with non-secure
-                            protocols. For example, SSL termination
-                            can be applied to an HTTP load balancer,
-                            but not to an HTTPS load balancer.</para>
-                    </listitem>
-                    <listitem>
-                        <para>SSL-terminated load balancers decrypt
-                            the traffic at the traffic manager and
-                            pass unencrypted traffic to the back-end
-                            node. Because of this, the customer's
-                            back-end nodes don't know what protocol
-                            the client requested. Therefore the
-                            X-Forwarded-Proto (XFP) header has been
-                            added for identifying the originating
-                            protocol of an HTTP request as "http" or
-                            "https" depending on what protocol the
-                            client requested.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Not every service returns certificates
-                            in the proper order. Please verify that
-                            your chain of certificates matches that of
-                            walking up the chain from the domain to
-                            the CA root.</para>
-                    </listitem>
-                    <listitem>
-                        <para>To be used with HTTP to HTTPS
-                            redirection, <code>securePort</code> must
-                            be set to <code>443</code> and
-                                <code>secureTrafficOnly</code> must be
-                                <code>true</code>.</para>
-                    </listitem>
-                    <listitem>
-                        <para>All requests to SSL termination in the
-                            JSON format require the key/certificates
-                            to be in proper JSON format, meaning that
-                            all raw line feed characters should be
-                            wrapped in a newline character. So if you
-                            paste in the key from a
-                                <filename>mykey.key</filename> file,
-                            JSON does not properly handle the field.
-                            The key/certificates can be wrapped in a
-                            newline character in Java, for example,
-                            using <code>string.replaceAll("\n",
-                                "\\n")</code>. See the examples above
-                            for working, "pre-formatted"
-                            examples.</para>
-                    </listitem>
-                </itemizedlist>
-            </note>
+            <para>You can configure SSL termination only on load
+                balancers with non-secure protocols. For example, SSL
+                termination can be applied to an HTTP load balancer,
+                but not to an HTTPS load balancer.</para>
+            <para>SSL-terminated load balancers decrypt the traffic at
+                the traffic manager and pass unencrypted traffic to
+                the back-end node. Because of this, the customer's
+                back-end nodes don't know what protocol the client
+                requested. Therefore the X-Forwarded-Proto (XFP)
+                header has been added for identifying the originating
+                protocol of an HTTP request as "http" or "https"
+                depending on what protocol the client
+                requested.</para>
+            <para>Not every service returns certificates in the proper
+                order. Please verify that your chain of certificates
+                matches that of walking up the chain from the domain
+                to the CA root.</para>
+            <para>To be used with HTTP to HTTPS redirection,
+                    <code>securePort</code> must be set to
+                    <code>443</code> and
+                    <code>secureTrafficOnly</code> must be
+                    <code>true</code>.</para>
+            <para>All requests to SSL termination in the JSON format
+                require the key/certificates to be in proper JSON
+                format, meaning that all raw line feed characters
+                should be wrapped in a newline character. So if you
+                paste in the key from a <filename>mykey.key</filename>
+                file, JSON does not properly handle the field. The
+                key/certificates can be wrapped in a newline character
+                in Java, for example, using
+                    <code>string.replaceAll("\n",
+                "\\n")</code>.</para>
             <warning xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>If SSL is enabled on a load balancer that is
@@ -4105,256 +3886,15 @@
                     clear text over the public internet to the
                     external nodes and is no longer secure.</para>
             </warning>
-            <para>A combination of the following required and optional
-                attributes can be used to create the desired SSL
-                configuration per load balancer:</para>
-            <para>The following table lists the required and optional
-                attributes:</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Required and optional attributes</caption>
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Name</td>
-                        <td colspan="1">Default</td>
-                        <td colspan="2">Description</td>
-                        <td colspan="1">Required</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>securePort</code></td>
-                        <td colspan="1"> N/A</td>
-                        <td colspan="2">
-                            <para>The port on which the SSL
-                                termination load balancer listens for
-                                secure traffic.</para>
-                            <para>The securePort must be unique to the
-                                existing LB protocol/port combination.
-                                For example, port 443.</para></td>
-                        <td colspan="1"> Yes</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>privatekey</code></td>
-                        <td colspan="1"> N/A</td>
-                        <td colspan="2">
-                            <para>The private key for the SSL
-                                certificate.</para>
-                            <para>The private key is validated and
-                                verified against the provided
-                                certificates.</para></td>
-                        <td colspan="1"> Yes</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>certificate</code></td>
-                        <td colspan="1"> N/A</td>
-                        <td colspan="2">
-                            <para>The certificate used for SSL
-                                termination.</para>
-                            <para>The certificate is validated and
-                                verified against the key and
-                                intermediate certificate if
-                                provided.</para></td>
-                        <td colspan="1"> Yes</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>intermediatecerti<?sbr?>fi<?sbr?>cate</code></td>
-                        <td colspan="1"> N/A</td>
-                        <td colspan="2">
-                            <para>The user's intermediate certificate
-                                used for SSL termination.</para>
-                            <para>The intermediate certificate is
-                                validated and verified against the key
-                                and certificate credentials
-                                provided.</para></td>
-                        <td colspan="1">Yes, only when configuring
-                            Intermediate SSL termination [a]</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>enabled</code></td>
-                        <td colspan="1">
-                            <code>true</code></td>
-                        <td colspan="2">
-                            <para>Determines if the load balancer is
-                                enabled to terminate SSL
-                                traffic.</para>
-                            <para>If <code>enabled</code> =
-                                   <code>false</code>, the load
-                                balancer retains its specified SSL
-                                attributes but does
-                                   <emphasis>not</emphasis> terminate
-                                SSL traffic.</para></td>
-                        <td colspan="1"> No</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">
-                            <code>secureTrafficOnly</code></td>
-                        <td colspan="1">
-                            <code>false</code></td>
-                        <td colspan="2">
-                            <para>Determines if the load balancer may
-                                accept <emphasis>only</emphasis>
-                                secure traffic.</para>
-                            <para>If <code>secureTrafficOnly</code> =
-                                   <code>true</code>, the load
-                                balancer does <emphasis>not</emphasis>
-                                accept non-secure traffic.</para></td>
-                        <td colspan="1"> No</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="5">
-                            <para>[a] A user may only provide an
-                                intermediateCertificate when
-                                accompanied by a certificate, private
-                                key, and securePort. It may not be
-                                added to an existing SSL configuration
-                                as a single attribute in a future
-                                request.</para></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section xml:id="update_ssl_termination">
-                <title>Update SSL termination</title>
-                <para>The following attributes may be updated without
-                    overwriting a load balancer’s existing SSL
-                    certificate and key specifications:</para>
-                <itemizedlist>
-                    <listitem>
-                        <para>
-                            <code>enabled</code></para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                            <code>secureTrafficOnly</code></para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                            <code>securePort</code></para>
-                    </listitem>
-                </itemizedlist>
-                <para>These configurable attributes must be provided
-                    (individually or grouped) in a request
-                        <emphasis>without</emphasis> specifying any
-                    certificate/key combination if a user does
-                        <emphasis>not</emphasis> want the system to
-                    overwrite the existing SSL certificate/key
-                    configuration.</para>
-                <para>To replace the existing SSL configuration, you
-                    must provide a new certificate, key, and
-                    securePort combination instead of or in addition
-                    to the optional, editable attributes.</para>
-                <table rules="all">
-                    <?dbfo keep-together="always"?>
-                    <caption> Optional SSL attributes</caption>
-                    <thead>
-                        <tr align="center">
-                            <td>Optional SSL attributes</td>
-                            <td>Non-SSL traffic</td>
-                            <td>SSL traffic</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr align="left">
-                            <td>
-                                <code>enabled</code> =
-                                   <code>true</code> (default)</td>
-                            <td>Yes</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <code>enabled</code> =
-                                   <code>false</code></td>
-                            <td>Yes</td>
-                            <td>No</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <code>secureTrafficOnly</code> =
-                                   <code>true</code></td>
-                            <td>No</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <code>secureTrafficOnly</code> =
-                                   <code>false</code> (default)</td>
-                            <td>Yes</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <para>
-                                   <code>enabled</code> =
-                                   <code>true</code></para>
-                                <para>
-                                   <code>secureTrafficOnly</code> =
-                                   <code>true</code></para></td>
-                            <td>No</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <para>
-                                   <code>enabled</code> =
-                                   <code>true</code></para>
-                                <para>
-                                   <code>secureTrafficOnly</code> =
-                                   <code>false</code></para></td>
-                            <td>Yes</td>
-                            <td>Yes</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <para>
-                                   <code>enabled</code> =
-                                   <code>false</code></para>
-                                <para>
-                                   <code>secureTrafficOnly</code> =
-                                   <code>false</code></para></td>
-                            <td>Yes</td>
-                            <td>No</td>
-                        </tr>
-                        <tr align="left">
-                            <td>
-                                <para>
-                                   <code>enabled</code> =
-                                   <code>false</code></para>
-                                <para>
-                                   <code>secureTrafficOnly</code> =
-                                   <code>true</code></para></td>
-                            <td>Yes</td>
-                            <td>No</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <note>
-                    <para>SSL termination should not be used when
-                        transferring certain types of Personally
-                        Identifiable Information (PII). For the
-                        definition of PII, see the Knowledge Center
-                        article at: <link
-                            xlink:href="http://www.rackspace.com/knowledge_center/article/definition-of-personally-identifiable-information-pii"
-                            >http://www.rackspace.com/knowledge_center/article/definition-of-personally-identifiable-information-pii</link>.</para>
-                </note>
-            </section>
-            <section xml:id="ssl_termination_operations">
-                <title>Manage SSL termination</title>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#ssltermination">
-                        <wadl:method href="#showSSLTermination"/>
-                        <wadl:method href="#updateSSLTermination"/>
-                        <wadl:method href="#deleteSSLTermination"/>
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#ssltermination">
+                    <wadl:method href="#showSSLTermination"/>
+                    <wadl:method href="#updateSSLTermination"/>
+                    <wadl:method href="#deleteSSLTermination"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
         <section xml:id="Metadata-d1e2173">
             <title>Metadata</title>

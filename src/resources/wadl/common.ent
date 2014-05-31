@@ -260,6 +260,121 @@
             less. All UTF-8 characters are valid.</para>
     </wadl:doc>
 </param>'>
+<!ENTITY contentParameter '
+<param name="content" style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The HTML content for the custom error page. Must be
+            65536 characters or less. See the request examples in this
+            section for the required XML and JSON formats.</para>
+    </wadl:doc>
+</param>
+'>
+<!ENTITY securePortParameter '<param name="securePort" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The port on which the SSL termination load balancer
+            listens for secure traffic.</para>
+        <para>The securePort must be unique to the existing LB
+            protocol/port combination. For example, port 443.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY privatekeyParameter '<param name="privatekey" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The private key for the SSL certificate.</para>
+        <para>The private key is validated and verified against the
+            provided certificates.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY certificateParameter '<param name="certificate" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The certificate used for SSL termination.</para>
+        <para>The certificate is validated and verified against the
+            key and intermediate certificate if provided.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY intermediatecertificateParameter '<param name="certificate" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The intermediate certificate for the user that is used
+            for SSL termination.</para>
+        <para>The intermediate certificate is validated and verified
+            against the key and certificate credentials
+            provided.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY enabledParameter '<param name="enabled" style="plain" required="false"
+    type="xsd:boolean">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Determines if the load balancer is enabled to terminate
+            SSL traffic.</para>
+        <para>If <code>enabled</code> = <code>false</code>, the load
+            balancer retains its specified SSL attributes but does
+                <emphasis>not</emphasis> terminate SSL traffic.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY secureTrafficOnlyParameter '<param name="certificate" style="plain" required="false"
+    type="xsd:boolean">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Determines if the load balancer can accept
+                <emphasis>only</emphasis> secure traffic.</para>
+        <para>If <code>secureTrafficOnly</code> = <code>true</code>,
+            the load balancer does <emphasis>not</emphasis> accept
+            non-secure traffic.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY maxConnectionRateParameter '<param name="maxConnectionRate" style="plain" required="false"
+    type="xsd:int">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Maximum number of
+                                connections allowed from a single IP
+                                address in the defined
+                                   <code>rateInterval</code>. To
+                                enable an unlimited connection rate,
+                                set to 0. Otherwise, set to a value
+                                from 1 to 100000.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY maxConnectionsParameter '<param name="maxConnections" style="plain" required="false"
+    type="xsd:int">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Maximum number of
+                                connections to allow for a single IP
+                                address. To enable unlimited
+                                simultaneous connections, set to 0.
+                                Otherwise, set to a value from 1 to
+                                100000.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY minConnectionsParameter '<param name="minConnections" style="plain" required="false"
+    type="xsd:int">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Allow at least this number
+                                of connections per IP address before
+                                applying throttling restrictions.
+                                Setting a value of 0 allows unlimited
+                                simultaneous connections; otherwise,
+                                set to a value from 1 to 1000.</para></wadl:doc></param>
+                                '>
+<!ENTITY rateIntervalParameter '<param name="rateInterval" style="plain" required="false"
+    type="xsd:int">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Frequency (in seconds) at which
+                                   the <code>maxConnectionRate</code>
+                                   is assessed. For example, a
+                                   <code>maxConnectionRate</code> of
+                                   30 with a <code>rateInterval</code>
+                                   of 60 would allow a maximum of 30
+                                   connections per minute for a single
+                                   IP address. Set to a value from 1
+                                   to 3600.</para></wadl:doc></param>' >
+<!ENTITY persistenceTypeParameter '<param name="persistenceType" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>Mode in which session persistence
+                                mechanism operates. See the session persistence modes table for
+                                the available modes.</para></wadl:doc></param>' >
      <!-- Useful for describing APIs -->
      <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
      <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
