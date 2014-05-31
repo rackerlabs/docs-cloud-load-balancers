@@ -992,7 +992,7 @@
         <raxm:metadata
             xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v1.0">loadbalancers</raxm:product>
+            <raxm:product version="v1.0">clb</raxm:product>
             <raxm:priority>20</raxm:priority>
         </raxm:metadata>
     </info>
@@ -1002,8 +1002,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0"
-                    >loadbalancers</raxm:product>
+                <raxm:product version="v1.0">clb</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -1089,8 +1088,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0"
-                    >loadbalancers</raxm:product>
+                <raxm:product version="v1.0">clb</raxm:product>
                 <raxm:priority>2</raxm:priority>
             </raxm:metadata>
         </info>
@@ -1195,8 +1193,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0"
-                    >loadbalancers</raxm:product>
+                <raxm:product version="v1.0">clb</raxm:product>
                 <raxm:priority>2</raxm:priority>
             </raxm:metadata>
         </info>
@@ -2694,8 +2691,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>apiref</raxm:type>
-                <raxm:product version="v1.0"
-                    >loadbalancers</raxm:product>
+                <raxm:product version="v1.0">clb</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -2935,25 +2931,29 @@
                         <code>httpsRedirect</code></para>
                 </listitem>
             </itemizedlist>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadbalancers">
-                    <wadl:method href="#listLoadBalancers"/>
-                    <wadl:method href="#createLoadBalancer"/>
-                    <wadl:method href="#bulkDeleteLoadBalancer"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadBalancerId">
-                    <wadl:method href="#showLoadBalancer"/>
-                    <wadl:method href="#updateLoadBalancer"/>
-                    <wadl:method href="#deleteLoadBalancer"/>
-                </wadl:resource>
-            </wadl:resources>
+            <section xml:id="loadbalancers-operations"
+                role="api-reference">
+                <title>Manage load balancers</title>
+                <wadl:resources
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource
+                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadbalancers">
+                        <wadl:method href="#listLoadBalancers"/>
+                        <wadl:method href="#createLoadBalancer"/>
+                        <wadl:method href="#bulkDeleteLoadBalancer"/>
+                    </wadl:resource>
+                    <wadl:resource
+                        href="https://raw.githubusercontent.com/rackerlabs/docs-cloud-load-balancers/master/src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl#loadBalancerId">
+                        <wadl:method href="#showLoadBalancer"/>
+                        <wadl:method href="#updateLoadBalancer"/>
+                        <wadl:method href="#deleteLoadBalancer"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
         </section>
         <section xml:id="Erropage-d1e666">
             <title>Error pages</title>
-            <para>An <glossterm>error page</glossterm> is the html
+            <para>An <glossterm>error page</glossterm> is the HTML
                 file that is shown to an end user who is attempting to
                 access a load balancer <glossterm>node</glossterm>
                 that is offline/unavailable.</para>
