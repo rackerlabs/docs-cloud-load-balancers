@@ -44,19 +44,19 @@
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
                         </configuration>
                     </execution>
-                   <!-- <execution>
+                    <execution>
                         <id>clb-devguide-w-wadl-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <!-\- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -\->
-                            <!-\- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -\->
+                            <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+                            <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
                             <includes>clb-devguide-w-wadl.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide-w-wadl/content</canonicalUrlBase>
                         </configuration>
-                    </execution>-->
+                    </execution>
                     <!-- MA: added this to generate public release notes -->
                     <execution>
                         <id>clb-releasenotes-external</id>
