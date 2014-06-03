@@ -10,7 +10,7 @@
         "name":"ztm-n02.lbaas.dfw1.rackspace.net"
         },
         "nodes":[{
-                "address":"50.56.166.100",
+                "address":"50.56.207.146",
                 "id":44615,
                 "port":80,
                 "status":"ONLINE",
