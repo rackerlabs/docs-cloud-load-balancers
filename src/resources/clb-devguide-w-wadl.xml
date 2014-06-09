@@ -17,6 +17,7 @@
 <book version="5.0" xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="clb-devguide">
+    <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Load Balancers Developer Guide</title>
     <titleabbrev>Load Balancers Developer Guide</titleabbrev>
     <info>

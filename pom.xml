@@ -16,49 +16,63 @@
                 <!-- the version of the *API* that is the subject of the document is indicated within each document -->
                 <version>2.0.3</version>
                 <executions>
-                    <execution>
+              <!--      <execution>
+                         <id>clb-devguide-w-wadl-external</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase> 
+                        <configuration> </execution> -->
+                            <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+                            <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+            <!--                  <includes>clb-devguide-w-wadl.xml</includes>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide-w-wadl/content</canonicalUrlBase>
+                        </configuration>
+                    </execution>  -->
+                        
+                     <execution>
                         <id>clb-mgmt-devguide-internal</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                        <configuration> 
                             <!-- this is the Rackspace-internal service developer guide formerly known as ManagementAPISpec.xml -->
-                            <includes>clb-mgmt-devguide.xml</includes>
+                              <includes>clb-mgmt-devguide.xml</includes>
                             <security>internal</security>
                             <enableGoogleAnalytics>0</enableGoogleAnalytics>
                             <enableDisqus>intranet</enableDisqus>
                             <canonicalUrlBase>http://docs-internal.rackspace.com/loadbalancers/api/v1.0/clb-mgmt-devguide/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
-                    <execution>
+                        </execution> 
+                      <execution>
                         <id>clb-devguide-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                 <configuration> 
                             <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
                             <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
                             <includes>clb-devguide.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
-                    <execution>
+                        </execution> 
+             <!--        <execution>
                         <id>clb-devguide-w-wadl-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                        <configuration>  -->
                             <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
                             <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
-                            <includes>clb-devguide-w-wadl.xml</includes>
+           <!--                   <includes>clb-devguide-w-wadl.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide-w-wadl/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
+                    </execution> -->
                     <!-- MA: added this to generate public release notes -->
-                    <execution>
+                       <execution>
                         <id>clb-releasenotes-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
@@ -74,7 +88,7 @@
                                 </move>
                             </postProcess>
                         </configuration>
-                    </execution>
+                    </execution> 
                     <execution>
                         <id>clb-releasenotes-internal</id>
                         <goals>
@@ -94,20 +108,20 @@
                                 </move>
                             </postProcess>
                         </configuration>
-                    </execution>
+                    </execution>  
                     <execution>
                         <id>clb-getting-started-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                        <configuration> 
                             <!-- this is the public-facing client Getting Started guide -->
                             <!-- this document that will be published as clb-getting-started-latest.pdf at http://docs.rackspacecloud.com/api/ -->
-                            <includes>clb-getting-started.xml</includes>
+                             <includes>clb-getting-started.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-getting-started/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
+                    </execution>  
                 </executions>
                 <configuration>
                     <!-- Global config for all docs -->

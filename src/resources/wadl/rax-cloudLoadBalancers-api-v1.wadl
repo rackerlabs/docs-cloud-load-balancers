@@ -266,6 +266,7 @@
             title="List load balancers">
             <para role="shortdesc">Lists load balancers that are
                 configured for the account.</para>
+            <para security="writeronly">BUG: The element lbaas is not working to turn on the response body message.</para>
             <para>The response object shows a limited set of load
                 balancer attributes, including the following
                 attributes:</para>
@@ -319,7 +320,8 @@
                 attached.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/json">
+            <representation mediaType="application/json" xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
+                element="lbapi:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -341,7 +343,7 @@
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; </method>
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer details">
@@ -394,6 +396,7 @@
             title="Create load balancer">
             <para role="shortdesc">Creates a load balancer with the
                 configuration defined by the request.</para>
+            <para security="writeronly">BUG: The body parameters are not being pulled in the Devguide, but they work in the ref page.</para>
             <para>This operation asynchronously provisions a new load
                 balancer based on the configuration defined in the
                 request object. Once the request is validated and
@@ -441,7 +444,8 @@
             &healthMonitorParameter; &metadataParameter;
             &portParameter;
             &timeoutParameter;&sessionPersistenceParameter;
-            &httpsRedirectParameter; <representation
+            &httpsRedirectParameter; 
+            <representation
                 mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -540,7 +544,7 @@
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults;  </method>
     <method id="updateLoadBalancer" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer properties">
