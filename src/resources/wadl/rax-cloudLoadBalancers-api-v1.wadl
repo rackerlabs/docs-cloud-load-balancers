@@ -16,8 +16,13 @@
     <resources base="https://syd.loadbalancers.api.rackspacecloud.com">
         <resource id="versions" path="v1.0">
             <resource id="account" path="{account}">
-                &accountParameter; <resource id="loadbalancers"
-                    path="loadbalancers">
+                <param name="account" style="template" required="true"
+                    type="xsd:string">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The tenant ID.</para>
+                    </wadl:doc>
+                </param>
+                <resource id="loadbalancers" path="loadbalancers">
                     <method href="#listLoadBalancers"/>
                     <method href="#createLoadBalancer"/>
                     <method href="#bulkDeleteLoadBalancer"/>
@@ -168,7 +173,8 @@
             title="List load balancers">
             <para role="shortdesc">Lists load balancers that are
                 configured for the account.</para>
-            <para security="writeronly">BUG: The element lbaas is not working to turn on the response body message.</para>
+            <para security="writeronly">BUG: The element lbaas is not
+                working to turn on the response body message.</para>
             <para>The response object shows a limited set of load
                 balancer attributes, including the following
                 attributes:</para>
@@ -196,10 +202,10 @@
                         <code>updated</code></para>
                 </listitem>
             </itemizedlist>
-            <para>Use the <emphasis>changes-since</emphasis> query parameter
-                to list all load balancers that have
-                changed since the specified date/time. For example,
-                using the URI
+            <para>Use the <emphasis>changes-since</emphasis> query
+                parameter to list all load balancers that have changed
+                since the specified date/time. For example, using the
+                URI
                     <code>/loadbalancers?changes-since=2011-05-19T08:07:08-0500</code>
                 lists all load balancers that have changed since May
                 19th, 2011 at 8:07:08 AM, GMT-5. See <xref
@@ -222,7 +228,8 @@
                 attached.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/json" xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
+            <representation mediaType="application/json"
+                xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
                 element="lbapi:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -298,7 +305,9 @@
             title="Create load balancer">
             <para role="shortdesc">Creates a load balancer with the
                 configuration defined by the request.</para>
-            <para security="writeronly">BUG: The body parameters are not being pulled in the Devguide, but they work in the ref page.</para>
+            <para security="writeronly">BUG: The body parameters are
+                not being pulled in the Devguide, but they work in the
+                ref page.</para>
             <para>This operation asynchronously provisions a new load
                 balancer based on the configuration defined in the
                 request object. Once the request is validated and
@@ -346,8 +355,7 @@
             &healthMonitorParameter; &metadataParameter;
             &portParameter;
             &timeoutParameter;&sessionPersistenceParameter;
-            &httpsRedirectParameter; 
-            <representation
+            &httpsRedirectParameter; <representation
                 mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -446,7 +454,7 @@
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults;  </method>
+        </response> &commonFaults; </method>
     <method id="updateLoadBalancer" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer properties">
@@ -521,7 +529,8 @@
                 required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>One to ten load balancer IDs.
-                        For example: <code>?id={loadBalancerId}</code>. The default
+                        For example:
+                        <code>?id={loadBalancerId}</code>. The default
                         limit is ten IDs per
                     request.</para></wadl:doc>
             </param>
@@ -2326,14 +2335,12 @@
                 request.</para>
         </wadl:doc>
         <request>
-            <request>
-                <param style="template" type="xsd:string"
-                    required="true" name="metaId">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The ID of the metadata
-                            item.</para></wadl:doc>
-                </param>
-            </request>
+            <param style="template" type="xsd:string" required="true"
+                name="metaId">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The ID of the metadata
+                        item.</para></wadl:doc>
+            </param>
         </request>
     </method>
     <method id="bulkDeleteLoadBalancerMetadataItems" name="DELETE">
