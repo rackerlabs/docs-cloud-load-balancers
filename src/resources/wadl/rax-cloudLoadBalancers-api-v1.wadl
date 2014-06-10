@@ -16,34 +16,15 @@
     <resources base="https://syd.loadbalancers.api.rackspacecloud.com">
         <resource id="versions" path="v1.0">
             <resource id="account" path="{account}">
-                <param name="account" style="template" required="true">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The tenant ID.</para>
-                    </wadl:doc>
-                </param>
-                <resource id="loadbalancers" path="loadbalancers">
-                    <param name="container" style="template"
-                        type="xsd:string">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <para>The unique ID of the
-                                container.</para>
-                        </wadl:doc>
-                    </param>
+                &accountParameter; <resource id="loadbalancers"
+                    path="loadbalancers">
                     <method href="#listLoadBalancers"/>
                     <method href="#createLoadBalancer"/>
                     <method href="#bulkDeleteLoadBalancer"/>
                     <resource id="loadBalancerId"
                         path="{loadBalancerId}">
-                        <param style="template" type="xsd:string"
-                            required="true" name="loadBalancerId">
-                            <wadl:doc
-                                xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the load
-                                   balancer.</para></wadl:doc>
-                        </param>
-                        <method href="#showLoadBalancer"/>
+                        &loadbalancerIdParameter; <method
+                            href="#showLoadBalancer"/>
                         <method href="#updateLoadBalancer"/>
                         <method href="#deleteLoadBalancer"/>
                         <resource id="stats" path="stats">
@@ -59,15 +40,8 @@
                             <method href="#addNode"/>
                             <method href="#bulkDeleteNodes"/>
                             <resource id="nodeId" path="{nodeId}">
-                                <param style="template"
-                                   type="xsd:string" required="true"
-                                   name="nodeId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the
-                                   node.</para></wadl:doc>
-                                </param>
-                                <method href="#showNode"/>
+                                &nodeIdParameter; <method
+                                   href="#showNode"/>
                                 <method href="#updateNode"/>
                                 <method href="#deleteNode"/>
                                 <resource id="nodeId_metadata"
@@ -78,15 +52,7 @@
                                    href="#bulkDeleteNodeMetadataItems"/>
                                    <resource
                                    id="nodeId_metadata_metaId"
-                                   path="{metaId}">
-                                   <param style="template"
-                                   type="xsd:string" required="true"
-                                   name="metaId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><!--WRITEME--></wadl:doc>
-                                   </param>
+                                   path="{metaId}"> &metaIdParameter;
                                    <method
                                    href="#showNodeMetadataItem"/>
                                    <method
@@ -106,21 +72,14 @@
                             <method href="#bulkDeleteVirtualIps"/>
                             <resource id="virtualIpId"
                                 path="{virtualIpId}">
-                                <param style="template"
-                                   type="xsd:string" required="true"
-                                   name="virtualIpId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the virtual
-                                   IP.</para></wadl:doc>
-                                </param>
-                                <method href="#deleteVirtualIp"/>
+                                &virtualIpsParameter; <method
+                                   href="#deleteVirtualIp"/>
                             </resource>
                         </resource>
                         <resource id="LB-usage" path="usage">
                             <method href="#showHistoricalUsage"/>
                             <resource id="current" path="current">
-                                <method href="#showCurrentUsage"/> 
+                                <method href="#showCurrentUsage"/>
                             </resource>
                         </resource>
                         <resource id="accesslist" path="accesslist">
@@ -151,7 +110,8 @@
                         <resource id="connectionthrottle"
                             path="connectionthrottle">
                             <method href="#showConnectionThrottle"/>
-                            <method href="#createOrUpdateConnectionThrottle"/>
+                            <method
+                                href="#createOrUpdateConnectionThrottle"/>
                             <method href="#deleteConnectionThrottle"/>
                         </resource>
                         <resource id="contentcaching"
@@ -171,14 +131,6 @@
                             <method
                                 href="#bulkDeleteLoadBalancerMetadataItems"/>
                             <resource id="metaId" path="{metaId}">
-                                <param style="template"
-                                   type="xsd:string" required="true"
-                                   name="metaId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><!--WRITEME--></wadl:doc>
-                                </param>
                                 <method
                                    href="#showLoadBalancerMetadataItem"/>
                                 <method
@@ -199,61 +151,11 @@
                             <method href="#listAllowedDomains"/>
                         </resource>
                         <resource id="billable" path="billable">
-                            <param style="query" type="xsd:date"
-                                name="startTime" required="false">
-                                <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"><para>If the
-                                   startTime parameter is supplied but
-                                   the endTime parameter is not, then
-                                   all usage beginning with the
-                                   startTime is provided. Likewise, if
-                                   the endTime parameter is supplied
-                                   but the startTime parameter is not,
-                                   then all usage is returned up to
-                                   the endTime
-                                   specified.</para></wadl:doc>
-                            </param>
-                            <param style="query" type="xsd:date"
-                                name="endTime" required="false">
-                                <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><!--WRITEME--></wadl:doc>
-                            </param>
-                            <param style="query" type="xsd:string"
-                                name="offset" required="false">
-                                <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><!--WRITEME--></wadl:doc>
-                            </param>
-                            <param style="query" type="xsd:string"
-                                name="limit" required="false">
-                                <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><!--WRITEME--></wadl:doc>
-                            </param>
                             <method href="#listBillableLoadBalancers"
                             />
                         </resource>
                     </resource>
                     <resource id="usage" path="usage">
-                        <param style="query" type="xsd:date"
-                            name="startTime" required="false">
-                            <wadl:doc
-                                xmlns="http://docbook.org/ns/docbook"
-                                xml:lang="EN"
-                                ><!--WRITEME--></wadl:doc>
-                        </param>
-                        <param style="query" type="xsd:date"
-                            name="endTime" required="false">
-                            <wadl:doc
-                                xmlns="http://docbook.org/ns/docbook"
-                                xml:lang="EN"
-                                ><!--WRITEME--></wadl:doc>
-                        </param>
                         <method href="#showAccountLevelUsage"/>
                     </resource>
                 </resource>
@@ -294,8 +196,8 @@
                         <code>updated</code></para>
                 </listitem>
             </itemizedlist>
-            <para>A <emphasis>changes-since</emphasis> query parameter
-                is supported that lists all load balancers that have
+            <para>Use the <emphasis>changes-since</emphasis> query parameter
+                to list all load balancers that have
                 changed since the specified date/time. For example,
                 using the URI
                     <code>/loadbalancers?changes-since=2011-05-19T08:07:08-0500</code>
@@ -619,8 +521,7 @@
                 required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>One to ten load balancer IDs.
-                        For example: <code>&amp;id=
-                            loadBalancerId</code>. The current default
+                        For example: <code>?id={loadBalancerId}</code>. The default
                         limit is ten IDs per
                     request.</para></wadl:doc>
             </param>
@@ -1152,6 +1053,38 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
+        <request>
+            <param style="query" type="xsd:date" name="startTime"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>If the startTime parameter is
+                        supplied but the endTime parameter is not, all
+                        usage beginning with the startTime is
+                        returned.</para></wadl:doc>
+            </param>
+            <param style="query" type="xsd:date" name="endTime"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>If the endTime parameter is
+                        supplied but the startTime parameter is not,
+                        all usage up to the endTime is
+                        returned.</para></wadl:doc>
+            </param>
+            <param style="query" type="xsd:string" name="offset"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The pagination
+                    offset.</para></wadl:doc>
+            </param>
+            <param style="query" type="xsd:string" name="limit"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The pagination limit. The
+                        response is paginated with a default limit of
+                        500 and a maximum limit of
+                    1000.</para></wadl:doc>
+            </param>
+        </request>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1198,6 +1131,24 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
+        <request>
+            <param style="query" type="xsd:date" name="startTime"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>If the startTime parameter is
+                        supplied but the endTime parameter is not, all
+                        usage beginning with the startTime is
+                        returned.</para></wadl:doc>
+            </param>
+            <param style="query" type="xsd:date" name="endTime"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>If the endTime parameter is
+                        supplied but the startTime parameter is not,
+                        all usage up to the endTime is
+                        returned.</para></wadl:doc>
+            </param>
+        </request>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1680,9 +1631,8 @@
             title="Enable session persistence">
             <para role="shortdesc">Enables session persistence.</para>
         </wadl:doc>
-        <request>
-            &persistenceTypeParameter;
-            <representation mediaType="application/xml">
+        <request> &persistenceTypeParameter; <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1772,9 +1722,8 @@
             <para role="shortdesc">Enables or disables connection
                 logging.</para>
         </wadl:doc>
-        <request>
-            &enabledParameter;
-            <representation mediaType="application/json">
+        <request> &enabledParameter; <representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1824,18 +1773,16 @@
                 configuration.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>You must specify all attributes when
-                    initially creating the connection throttle.
-                    However, when you update an existing setting,
-                    you can pass as few as one attribute.</para>
+                <para>You must specify all attributes when initially
+                    creating the connection throttle. However, when
+                    you update an existing setting, you can pass as
+                    few as one attribute.</para>
             </note>
         </wadl:doc>
-        <request>
-            &maxConnectionRateParameter;
-            &maxConnectionsParameter;
-            &minConnectionsParameter;
-            &rateIntervalParameter;
-            <representation mediaType="application/json">
+        <request> &maxConnectionRateParameter;
+            &maxConnectionsParameter; &minConnectionsParameter;
+            &rateIntervalParameter; <representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2150,6 +2097,14 @@
             <para role="shortdesc">Shows details for a specified
                 metadata item for a specified load balancer.</para>
         </wadl:doc>
+        <request>
+            <param style="template" type="xsd:string" required="true"
+                name="metaId">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The ID of the metadata
+                        item.</para></wadl:doc>
+            </param>
+        </request>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2197,6 +2152,14 @@
                 metadata item for a specified node and load
                 balancer.</para>
         </wadl:doc>
+        <request>
+            <param style="template" type="xsd:string" required="true"
+                name="metaId">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The ID of the metadata
+                        item.</para></wadl:doc>
+            </param>
+        </request>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2285,8 +2248,14 @@
                     maximum of 25 metadata items.</para>
             </note>
         </wadl:doc>
-        <request> &valueParameter; <representation
-                mediaType="application/json">
+        <request> &valueParameter; &metaIdParameter; <param
+                style="template" type="xsd:string" required="true"
+                name="metaId">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The ID of the metadata
+                        item.</para></wadl:doc>
+            </param>
+            <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2356,6 +2325,16 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <request>
+            <request>
+                <param style="template" type="xsd:string"
+                    required="true" name="metaId">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The ID of the metadata
+                            item.</para></wadl:doc>
+                </param>
+            </request>
+        </request>
     </method>
     <method id="bulkDeleteLoadBalancerMetadataItems" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"

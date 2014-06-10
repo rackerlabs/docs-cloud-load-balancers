@@ -385,6 +385,51 @@
         <para>Mode in which session persistence
                                 mechanism operates. See the session persistence modes table for
                                 the available modes.</para></wadl:doc></param>' >
+<!ENTITY accountParameter '<param name="account" style="template" required="true">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The tenant ID.</para>
+                    </wadl:doc>
+                </param>' >
+<!ENTITY containerParameter '<param name="container" style="template"
+                        type="xsd:string">
+                        <wadl:doc
+                            xmlns="http://docbook.org/ns/docbook"
+                            xml:lang="EN">
+                            <para>The unique ID of the
+                                container.</para>
+                        </wadl:doc>
+                    </param>' >
+<!ENTITY loadbalancerIdParameter '<param style="template" type="xsd:string"
+                            required="true" name="loadBalancerId">
+                            <wadl:doc
+                                xmlns="http://docbook.org/ns/docbook"
+                                   ><para>The ID for the load
+                                   balancer.</para></wadl:doc>
+                        </param>' >
+<!ENTITY nodeIdParameter '<param style="template"
+                                   type="xsd:string" required="true"
+                                   name="nodeId">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   ><para>The ID for the
+                                   node.</para></wadl:doc>
+                                </param>' >
+<!ENTITY virtualIpIdParameter '<param style="template"
+                                   type="xsd:string" required="true"
+                                   name="virtualIpId">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   ><para>The ID for the virtual
+                                   IP.</para></wadl:doc>
+                                </param>' >
+<!ENTITY metaIdParameter '<param style="template"
+                                   type="xsd:string" required="true"
+                                   name="metaId">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   xml:lang="EN"
+                                   ><para>The ID of the metadata item.</para></wadl:doc>
+                                </param>' >
      <!-- Useful for describing APIs -->
      <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
      <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
