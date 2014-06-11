@@ -16,11 +16,12 @@
     <resources base="https://syd.loadbalancers.api.rackspacecloud.com">
         <resource id="versions" path="v1.0">
             <resource id="account" path="{account}">
-                <param name="account" style="template" required="true"
+                <param name="account" style="template"
                     type="xsd:string">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The tenant ID.</para>
-                    </wadl:doc>
+                        xml:lang="EN"><para>The ID for the tenant or
+                            account in a multi-tenancy
+                        cloud.</para></wadl:doc>
                 </param>
                 <resource id="loadbalancers" path="loadbalancers">
                     <method href="#listLoadBalancers"/>
@@ -28,8 +29,14 @@
                     <method href="#bulkDeleteLoadBalancer"/>
                     <resource id="loadBalancerId"
                         path="{loadBalancerId}">
-                        &loadbalancerIdParameter; <method
-                            href="#showLoadBalancer"/>
+                        <param name="loadBalancerId" style="template"
+                            type="lbapi:UUID">
+                            <wadl:doc
+                                xmlns="http://docbook.org/ns/docbook"
+                                xml:lang="EN"><para>The UUID for the
+                                   load balancer.</para></wadl:doc>
+                        </param>
+                        <method href="#showLoadBalancer"/>
                         <method href="#updateLoadBalancer"/>
                         <method href="#deleteLoadBalancer"/>
                         <resource id="stats" path="stats">
@@ -45,8 +52,14 @@
                             <method href="#addNode"/>
                             <method href="#bulkDeleteNodes"/>
                             <resource id="nodeId" path="{nodeId}">
-                                &nodeIdParameter; <method
-                                   href="#showNode"/>
+                                <param name="nodeId" style="template"
+                                   type="lbapi:UUID">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   xml:lang="EN"><para>The UUID for
+                                   the node.</para></wadl:doc>
+                                </param>
+                                <method href="#showNode"/>
                                 <method href="#updateNode"/>
                                 <method href="#deleteNode"/>
                                 <resource id="nodeId_metadata"
@@ -57,7 +70,15 @@
                                    href="#bulkDeleteNodeMetadataItems"/>
                                    <resource
                                    id="nodeId_metadata_metaId"
-                                   path="{metaId}"> &metaIdParameter;
+                                   path="{metaId}">
+                                   <param name="metaId"
+                                   style="template" type="lbapi:UUID">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   xml:lang="EN"><para>The UUID for
+                                   the metadata
+                                   item.</para></wadl:doc>
+                                   </param>
                                    <method
                                    href="#showNodeMetadataItem"/>
                                    <method
@@ -77,8 +98,15 @@
                             <method href="#bulkDeleteVirtualIps"/>
                             <resource id="virtualIpId"
                                 path="{virtualIpId}">
-                                &virtualIpsParameter; <method
-                                   href="#deleteVirtualIp"/>
+                                <param name="virtualIpId"
+                                   style="template" type="lbapi:UUID">
+                                   <wadl:doc
+                                   xmlns="http://docbook.org/ns/docbook"
+                                   xml:lang="EN"><para>The UUID for
+                                   the virtual IP
+                                   address.</para></wadl:doc>
+                                </param>
+                                <method href="#deleteVirtualIp"/>
                             </resource>
                         </resource>
                         <resource id="LB-usage" path="usage">
@@ -227,6 +255,7 @@
                 the ID, name, and status of all load balancers
                 attached.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json"
                 xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
@@ -274,6 +303,7 @@
                 our load balancers for the purpose of creating more
                 robust firewall rules.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -348,12 +378,12 @@
                 X-Forwarded-For header, provide the needed information
                 to the underlying application servers.</para>
         </wadl:doc>
-        <request> &nameParameter; &nodesParameter; &protocolParameter;
-            &halfClosedParameter; &virtualIpsParameter;
-            &accessListParameter; &algorithmParameter;
-            &connectionLoggingParameter; &connectionThrottleParameter;
-            &healthMonitorParameter; &metadataParameter;
-            &portParameter;
+        <request><!-- &accountParameter;--> &nameParameter; &nodesParameter;
+            &protocolParameter; &halfClosedParameter;
+            &virtualIpsParameter; &accessListParameter;
+            &algorithmParameter; &connectionLoggingParameter;
+            &connectionThrottleParameter; &healthMonitorParameter;
+            &metadataParameter; &portParameter;
             &timeoutParameter;&sessionPersistenceParameter;
             &httpsRedirectParameter; <representation
                 mediaType="application/json" xml:lang="EN">
@@ -476,11 +506,11 @@
                         <returnvalue>400 (badRequest)</returnvalue>
                     fault.</para></note>
         </wadl:doc>
-        <request> &nameParameter; &protocolParameter;
-            &halfClosedParameter; &algorithmParameter; &portParameter;
-            &timeoutParameter; &httpsRedirectParameter;
-                <representation mediaType="application/json"
-                xml:lang="EN">
+        <request> <!--&accountParameter;--> &nameParameter;
+            &protocolParameter; &halfClosedParameter;
+            &algorithmParameter; &portParameter; &timeoutParameter;
+            &httpsRedirectParameter; <representation
+                mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -508,6 +538,7 @@
                 the account. Any and all configuration data is
                 immediately purged and is not recoverable.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="bulkDeleteLoadBalancer" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -524,9 +555,8 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
-        <request>
-            <param style="query" type="xsd:string" name="id"
-                required="false">
+        <request> <!--&accountParameter;--> <param style="query"
+                type="xsd:string" name="id" required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>One to ten load balancer IDs.
                         For example:
@@ -543,9 +573,8 @@
             <para role="shortdesc">Shows the custom error page that is
                 configured for a specified load balancer.</para>
         </wadl:doc>
-        <request>
-            <param name="content" style="plain" type="xsd:string"
-                required="true">
+        <request> <!--&accountParameter;--> <param name="content"
+                style="plain" type="xsd:string" required="true">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <para>Specifies the HTML content for the custom
@@ -576,8 +605,8 @@
             <para role="shortdesc">Sets a custom error page for a
                 specified load balancer.</para>
         </wadl:doc>
-        <request> &contentParameter; <representation
-                mediaType="application/json">
+        <request> <!--&accountParameter;--> &contentParameter;
+                <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -614,6 +643,7 @@
             <para role="shortdesc">Deletes the custom error page for a
                 specified load balancer.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- stats -->
     <method id="showStats" name="GET">
@@ -672,6 +702,7 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -701,6 +732,7 @@
                     algorithms.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -739,6 +771,7 @@
                     algorithms.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -783,8 +816,8 @@
             <para>Domain names are also accepted with certain
                 restrictions.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/json">
+        <request> <!--&accountParameter; --><representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -834,8 +867,8 @@
                 condition which determines its role within the load
                 balancer.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/json">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -869,6 +902,7 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="bulkDeleteNodes" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -887,6 +921,7 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="listNodeEvents" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -901,6 +936,7 @@
                 list limit of 100 events. Events are stored for 90
                 days.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -934,6 +970,7 @@
             <para role="shortdesc">Lists virtual IPs that are
                 associated with a specified load balancer.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -962,6 +999,7 @@
             title="Add virtual IP version 6">
             <para role="shortdesc">Adds virtual IP version 6.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="deleteVirtualIp" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -969,6 +1007,7 @@
             <para role="shortdesc">Deletes a specified virtual
                 IP.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="bulkDeleteVirtualIps" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -994,6 +1033,7 @@
                     failures for this request.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- alloweddomains -->
     <method id="listAllowedDomains" name="GET">
@@ -1014,6 +1054,7 @@
                     supported.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1062,9 +1103,8 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
-        <request>
-            <param style="query" type="xsd:date" name="startTime"
-                required="false">
+        <request> &accountParameter; <param style="query"
+                type="xsd:date" name="startTime" required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>If the startTime parameter is
                         supplied but the endTime parameter is not, all
@@ -1140,9 +1180,8 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
-        <request>
-            <param style="query" type="xsd:date" name="startTime"
-                required="false">
+        <request> &accountParameter; <param style="query"
+                type="xsd:date" name="startTime" required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>If the startTime parameter is
                         supplied but the endTime parameter is not, all
@@ -1204,6 +1243,7 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="showCurrentUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1233,6 +1273,7 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- accesslist -->
     <method id="showAccessList" name="GET">
@@ -1240,6 +1281,7 @@
             title="Show access list">
             <para role="shortdesc">Shows the access list.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="createAccessList" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1255,8 +1297,8 @@
                 or subnet definition is considered unique and cannot
                 be duplicated between items in an access list.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/json">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1293,6 +1335,7 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="deleteAccessList" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1321,6 +1364,7 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="bulkDeleteNetworks" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1341,6 +1385,7 @@
                 </listitem>
             </itemizedlist>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- healthmonitor -->
     <method id="showHealthMonitor" name="GET">
@@ -1349,8 +1394,8 @@
             <para role="shortdesc">Shows the health monitor
                 configuration, if one exists.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1444,8 +1489,8 @@
             <para role="shortdesc">Updates the settings for a health
                 monitor.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1538,8 +1583,8 @@
             title="Delete health monitor">
             <para role="shortdesc">Deletes a health monitor.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1634,14 +1679,15 @@
             <para role="shortdesc">Shows the session persistence
                 configuration.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="enableSessionPersistence" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable session persistence">
             <para role="shortdesc">Enables session persistence.</para>
         </wadl:doc>
-        <request> &persistenceTypeParameter; <representation
-                mediaType="application/xml">
+        <request> &accountParameter; &persistenceTypeParameter;
+                <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1673,8 +1719,8 @@
             <para role="shortdesc">Disables session
                 persistence.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1707,6 +1753,7 @@
             <para role="shortdesc">Shows the connection logging
                 configuration.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1731,8 +1778,8 @@
             <para role="shortdesc">Enables or disables connection
                 logging.</para>
         </wadl:doc>
-        <request> &enabledParameter; <representation
-                mediaType="application/json">
+        <request> &accountParameter; &enabledParameter;
+                <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1757,6 +1804,7 @@
             <para role="shortdesc">Show the connection throttling
                 configuration.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1788,7 +1836,7 @@
                     few as one attribute.</para>
             </note>
         </wadl:doc>
-        <request> &maxConnectionRateParameter;
+        <request> &accountParameter; &maxConnectionRateParameter;
             &maxConnectionsParameter; &minConnectionsParameter;
             &rateIntervalParameter; <representation
                 mediaType="application/json">
@@ -1829,6 +1877,7 @@
                 can be configured based on the traffic patterns for
                 your sites.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- contentcaching -->
     <method id="showContentCaching" name="GET">
@@ -1854,6 +1903,7 @@
                     >Content Caching for Cloud Load
                 Balancers</link>.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1895,8 +1945,8 @@
                     >Content Caching for Cloud Load
                 Balancers</link>.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
+       <request> <!-- &accountParameter; --> <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1921,6 +1971,7 @@
             <para role="shortdesc">Lists supported load balancing
                 protocols.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1946,6 +1997,7 @@
             <para role="shortdesc">Lists all supported load balancing
                 algorithms.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1986,6 +2038,7 @@
                 it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="updateSSLTermination" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -1997,10 +2050,11 @@
                 web server layer. You can choose to configure SSL
                 termination using a key and an SSL certificate or an
                 intermediate SSL certificate.</para></wadl:doc>
-        <request> &securePortParameter; &privatekeyParameter;
-            &certificateParameter; &intermediatecertificateParameter;
-            &enabledParameter; &secureTrafficOnlyParameter;
-                <representation mediaType="application/xml">
+        <request> &accountParameter; &securePortParameter;
+            &privatekeyParameter; &certificateParameter;
+            &intermediatecertificateParameter; &enabledParameter;
+            &secureTrafficOnlyParameter; <representation
+                mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2074,6 +2128,7 @@
                 it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <!-- metadata -->
     <method id="showLoadBalancerMetadata" name="GET">
@@ -2082,6 +2137,7 @@
             <para role="shortdesc">Shows all metadata associated with
                 the specified load balancer.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2106,9 +2162,8 @@
             <para role="shortdesc">Shows details for a specified
                 metadata item for a specified load balancer.</para>
         </wadl:doc>
-        <request>
-            <param style="template" type="xsd:string" required="true"
-                name="metaId">
+        <request><!-- &accountParameter; --><param style="template"
+                type="xsd:string" required="true" name="metaId">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>The ID of the metadata
                         item.</para></wadl:doc>
@@ -2136,6 +2191,7 @@
             <para role="shortdesc">Shows all metadata associated with
                 a specified node and load balancer.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -2161,9 +2217,8 @@
                 metadata item for a specified node and load
                 balancer.</para>
         </wadl:doc>
-        <request>
-            <param style="template" type="xsd:string" required="true"
-                name="metaId">
+        <request> &accountParameter; <param style="template"
+                type="xsd:string" required="true" name="metaId">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>The ID of the metadata
                         item.</para></wadl:doc>
@@ -2195,8 +2250,8 @@
                 operations such as changing the value attribute or
                 removing it.</para>
         </wadl:doc>
-        <request> &keyParameter; &valueParameter; <representation
-                mediaType="application/json">
+        <request> &accountParameter; &keyParameter; &valueParameter;
+                <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2223,8 +2278,8 @@
                 operations such as changing the value attribute or
                 removing it.</para>
         </wadl:doc>
-        <request> &keyParameter; &valueParameter; <representation
-                mediaType="application/json">
+        <request> &accountParameter; &keyParameter; &valueParameter;
+                <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2257,9 +2312,9 @@
                     maximum of 25 metadata items.</para>
             </note>
         </wadl:doc>
-        <request> &valueParameter; &metaIdParameter; <param
-                style="template" type="xsd:string" required="true"
-                name="metaId">
+        <request> &accountParameter; &valueParameter;
+            &metaIdParameter; <param style="template"
+                type="xsd:string" required="true" name="metaId">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>The ID of the metadata
                         item.</para></wadl:doc>
@@ -2299,7 +2354,7 @@
             <para>The following table lists the required and optional
                 attributes:</para>
         </wadl:doc>
-        <request> &valueParameter; <representation
+        <request> &accountParameter; &valueParameter; <representation
                 mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2334,9 +2389,8 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
-        <request>
-            <param style="template" type="xsd:string" required="true"
-                name="metaId">
+        <request> &accountParameter; <param style="template"
+                type="xsd:string" required="true" name="metaId">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>The ID of the metadata
                         item.</para></wadl:doc>
@@ -2360,6 +2414,7 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="deleteNodeMetadataItem" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -2378,6 +2433,7 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
     <method id="bulkDeleteNodeMetadataItems" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -2396,5 +2452,6 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <!-- <request> &accountParameter; </request> -->
     </method>
 </application>
