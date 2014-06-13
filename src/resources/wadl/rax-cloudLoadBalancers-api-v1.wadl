@@ -256,7 +256,7 @@
                 attached.</para>
         </wadl:doc>
         <response status="200"> &loadBalancersParameter;
-            &nameParameter; &loadbalancerIdParameter;
+            &nameParameter; &loadbalancerIdPlainParameter;
             &protocolParameter; &algorithmParameter; &statusParameter;
             &nodeCountParameter; &virtualIpsParameter;
             &virtualIpIdParameter; &virtualIpAddressParameter;
