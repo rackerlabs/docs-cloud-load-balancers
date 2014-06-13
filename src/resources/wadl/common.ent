@@ -493,12 +493,20 @@
         <para>The unique ID of the container.</para>
     </wadl:doc>
 </param>' >
-<!ENTITY loadBalancersParameter ' 
+<!ENTITY loadBalancersPlainParameter ' 
 <param xmlns="http://wadl.dev.java.net/2009/02" id="loadBalancers" type="xsd:string" name="loadBalancers"
     style="plain">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>A <code>loadBalancers</code> object.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY loadBalancerPlainParameter ' 
+<param xmlns="http://wadl.dev.java.net/2009/02" type="xsd:string" name="loadBalancer"
+    style="plain" required="true">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>A <code>loadBalancer</code> object.</para>
     </wadl:doc>
 </param>' >
 <!ENTITY loadbalancerIdTemplateParameter '
@@ -533,12 +541,55 @@
         <para>The ID of the metadata item.</para>
     </wadl:doc>
 </param>' >
-<!ENTITY loadbalancerIdPlainParameter '
+<!ENTITY loadBalancerIdPlainParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
     name="id">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The ID for the load balancer.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY sourceAddressesParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:dict" required="true"
+    name="sourceAddresses">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The source public and private IP addresses.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY nodeAddressParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
+    name="address">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The node address.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY nodePortParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:int" required="true"
+    name="port">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The node port.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY nodeConditionParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
+    name="condition">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The node condition. For example, ENABLED.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY nodeStatusParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
+    name="status">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The node status. For example, ONLINE.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY clusterParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
+    name="cluster">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The cluster name.</para>
     </wadl:doc>
 </param>' >
      <!-- Useful for describing APIs -->
