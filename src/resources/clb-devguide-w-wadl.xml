@@ -247,9 +247,9 @@
                             xmlns:m="http://www.w3.org/1998/Math/MathML"
                             xmlns:html="http://www.w3.org/1999/xhtml">
                             <para>Added note about deleting a health
-                                monitor of any type (refer to <xref
+                                monitor of any type<!-- (refer to <xref
                                    linkend="Monitors-d1e3370"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -438,9 +438,9 @@
                             xmlns:html="http://www.w3.org/1999/xhtml"
                             xmlns:db="http://docbook.org/ns/docbook">
                             <para>Added note about proper certificate
-                                ordering. See <xref
+                                ordering.<!-- See <xref
                                    linkend="SSLTermination-d1e2479"/>
-                                for details.</para>
+                                for details.--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -500,11 +500,11 @@
                             xmlns:html="http://www.w3.org/1999/xhtml"
                             xmlns:db="http://docbook.org/ns/docbook">
                             <para>Updated information on the secondary
-                                nodes failover feature. See <xref
+                                nodes failover feature.<!-- See <xref
                                    linkend="Active_Health_Monitor-d1e336"
                                 /> and <xref
                                    linkend="Monitors-d1e3370"/> for
-                                details.</para>
+                                details.--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -567,9 +567,9 @@
                         </listitem>
                         <listitem>
                             <para>Added Metadata API calls to access
-                                metadata for a specified node (see
+                                metadata for a specified node<!-- (see
                                    <xref linkend="Metadata-d1e2173"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                         <listitem>
                             <para>Added support for content
@@ -617,9 +617,9 @@
                                 Personally Identifiable Information
                                 (PII) and added information for
                                 x-forwarded-proto and x-forwarded-for
-                                headers (see <xref
+                                headers<!-- (see <xref
                                    linkend="SSLTermination-d1e2479"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -683,19 +683,19 @@
                         </listitem>
                         <listitem>
                             <para>Added note to customers describing
-                                who should not use SSL Termination in
+                                who should not use SSL Termination<!-- in
                                    <xref
                                    linkend="SSLTermination-d1e2479"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Corrected note below Example 4.81
                                 "View Load Balancing SSL Termination
                                 Configuration Response: JSON" about
                                 wrapping the key/certificates in a
-                                newline character in Java in <xref
+                                newline character in Java<!-- in <xref
                                    linkend="SSLTermination-d1e2479"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -735,9 +735,9 @@
                                 example.</para>
                         </listitem>
                         <listitem>
-                            <para>Added <xref
+                            <para>Added <!--<xref
                                    linkend="SSLTermination-d1e2479"/>
-                                for new SSL termination feature.
+                                for -->new SSL termination feature.
                             </para>
                         </listitem>
                     </itemizedlist>
@@ -839,8 +839,8 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para>Added<xref linkend="Erropage-d1e666"
-                                />.</para>
+                            <para>Added <!--<xref linkend="Erropage-d1e666"
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -3889,7 +3889,7 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
-        <section xml:id="Metadata-d1e2173">
+        <!--<section xml:id="Metadata-d1e2173">
             <title>Metadata</title>
             <para>Metadata can be associated with each load balancer
                 and each node for the client's personal use. It is
@@ -3914,7 +3914,7 @@
                         href="#deleteLoadBalancerMetadataItem"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
+        </section>-->
     </chapter>
     <glossary>
         <title>Glossary</title>
