@@ -94,15 +94,87 @@
         </response>
            '>       
 
-     <!-- Image List Parameters -->
+     <!-- Load balancer List Parameters -->
 
+<!ENTITY loadBalancersParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="loadBalancers"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>A <code>loadBalancers</code> object.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY statusParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="status"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The status of the load balancer.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY createdParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="created"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The date and time what the load balancer was created.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY updatedParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="updated"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+       <para>The date and time what the load balancer was last updated.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY virtualIpipVersionParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="ipVersion"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+       <para>The IP version.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY virtualIpAddressParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="address"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+       <para>The IP address.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY virtualIpIdParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="id"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+       <para>The ID for the IP address.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY virtualIpTypeParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="type"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+       <para>The IP address type.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY nodeCountParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="nodeCount"
+    style="plain" required="true" type="xsd:int">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The number of load balancer nodes.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY nameParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="name"
     style="plain" required="true" type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Name of the load balancer to create. The name must be
-            128 characters or less in length, and all UTF-8 characters
+            128 characters or fewer in length, and all UTF-8 characters
             are valid. See <link
                 xlink:href="http://www.utf8-chartable.de/">
                 http://www.utf8-chartable.de/</link> for information
@@ -122,9 +194,7 @@
     style="plain" required="true" type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Protocol of the service which is being load balanced.
-            See <xref linkend="Protocols-d1e4264"/> for a table of
-            available protocols.</para>
+        <para>Protocol of the service that is being load balanced.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY halfClosedParameter ' 
@@ -256,57 +326,71 @@
     </wadl:doc>
 </param>'>
 <!ENTITY keyParameter '
-<param name="key" style="plain" required="true" type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+<param xmlns="http://wadl.dev.java.net/2009/02" name="key"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Key that is used to identify the metadata. Must be 256
-            characters or less. All UTF-8 characters are valid.</para>
+            characters or fewer. All UTF-8 characters are valid.</para>
     </wadl:doc>
-</param>
-'>
+</param>'>
 <!ENTITY valueParameter '
-<param name="value" style="plain" required="true" type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+<param xmlns="http://wadl.dev.java.net/2009/02" name="value"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Value for the metadata item. Must be 256 characters or
             less. All UTF-8 characters are valid.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY contentParameter '
-<param name="content" style="plain" required="true" type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+<param xmlns="http://wadl.dev.java.net/2009/02" name="content"
+    style="plain" required="true" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The HTML content for the custom error page. Must be
-            65536 characters or less. See the request examples in this
+            65536 characters or fewer. See the request examples in this
             section for the required XML and JSON formats.</para>
     </wadl:doc>
-</param>
-'>
-<!ENTITY securePortParameter '<param name="securePort" style="plain" required="true"
+</param>'>
+<!ENTITY securePortParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="securePort" style="plain" required="true"
     type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
         <para>The port on which the SSL termination load balancer
             listens for secure traffic.</para>
         <para>The securePort must be unique to the existing LB
             protocol/port combination. For example, port 443.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY privatekeyParameter '<param name="privatekey" style="plain" required="true"
+<!ENTITY privatekeyParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="privatekey" style="plain" required="true"
     type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
         <para>The private key for the SSL certificate.</para>
         <para>The private key is validated and verified against the
             provided certificates.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY certificateParameter '<param name="certificate" style="plain" required="true"
+<!ENTITY certificateParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="true"
     type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The certificate used for SSL termination.</para>
         <para>The certificate is validated and verified against the
             key and intermediate certificate if provided.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY intermediatecertificateParameter '<param name="certificate" style="plain" required="true"
+<!ENTITY intermediatecertificateParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="true"
     type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The intermediate certificate for the user that is used
             for SSL termination.</para>
         <para>The intermediate certificate is validated and verified
@@ -314,9 +398,11 @@
             provided.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY enabledParameter '<param name="enabled" style="plain" required="false"
+<!ENTITY enabledParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="enabled" style="plain" required="false"
     type="xsd:boolean">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Determines if the load balancer is enabled to terminate
             SSL traffic.</para>
         <para>If <code>enabled</code> = <code>false</code>, the load
@@ -324,9 +410,11 @@
                 <emphasis>not</emphasis> terminate SSL traffic.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY secureTrafficOnlyParameter '<param name="certificate" style="plain" required="false"
+<!ENTITY secureTrafficOnlyParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="false"
     type="xsd:boolean">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Determines if the load balancer can accept
                 <emphasis>only</emphasis> secure traffic.</para>
         <para>If <code>secureTrafficOnly</code> = <code>true</code>,
@@ -334,104 +422,117 @@
             non-secure traffic.</para>
     </wadl:doc>
 </param>' >
-<!ENTITY maxConnectionRateParameter '<param name="maxConnectionRate" style="plain" required="false"
+<!ENTITY maxConnectionRateParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="maxConnectionRate" style="plain" required="false"
     type="xsd:int">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-        <para>Maximum number of
-                                connections allowed from a single IP
-                                address in the defined
-                                   <code>rateInterval</code>. To
-                                enable an unlimited connection rate,
-                                set to 0. Otherwise, set to a value
-                                from 1 to 100000.</para>
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Maximum number of connections allowed from a single IP
+            address in the defined <code>rateInterval</code>. To
+            enable an unlimited connection rate, set to 0. Otherwise,
+            set to a value from 1 to 100000.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY maxConnectionsParameter '<param name="maxConnections" style="plain" required="false"
+<!ENTITY maxConnectionsParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="maxConnections" style="plain" required="false"
     type="xsd:int">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-        <para>Maximum number of
-                                connections to allow for a single IP
-                                address. To enable unlimited
-                                simultaneous connections, set to 0.
-                                Otherwise, set to a value from 1 to
-                                100000.</para>
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Maximum number of connections to allow for a single IP
+            address. To enable unlimited simultaneous connections, set
+            to 0. Otherwise, set to a value from 1 to 100000.</para>
     </wadl:doc>
 </param>'>
-<!ENTITY minConnectionsParameter '<param name="minConnections" style="plain" required="false"
+<!ENTITY minConnectionsParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="minConnections" style="plain" required="false"
     type="xsd:int">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-        <para>Allow at least this number
-                                of connections per IP address before
-                                applying throttling restrictions.
-                                Setting a value of 0 allows unlimited
-                                simultaneous connections; otherwise,
-                                set to a value from 1 to 1000.</para></wadl:doc></param>
-                                '>
-<!ENTITY rateIntervalParameter '<param name="rateInterval" style="plain" required="false"
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Allow at least this number of connections per IP address
+            before applying throttling restrictions. Setting a value
+            of 0 allows unlimited simultaneous connections; otherwise,
+            set to a value from 1 to 1000.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY rateIntervalParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="rateInterval" style="plain" required="false"
     type="xsd:int">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-        <para>Frequency (in seconds) at which
-                                   the <code>maxConnectionRate</code>
-                                   is assessed. For example, a
-                                   <code>maxConnectionRate</code> of
-                                   30 with a <code>rateInterval</code>
-                                   of 60 would allow a maximum of 30
-                                   connections per minute for a single
-                                   IP address. Set to a value from 1
-                                   to 3600.</para></wadl:doc></param>' >
-<!ENTITY persistenceTypeParameter '<param name="persistenceType" style="plain" required="true"
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Frequency (in seconds) at which the
+                <code>maxConnectionRate</code> is assessed. For
+            example, a <code>maxConnectionRate</code> of 30 with a
+                <code>rateInterval</code> of 60 would allow a maximum
+            of 30 connections per minute for a single IP address. Set
+            to a value from 1 to 3600.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY persistenceTypeParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="persistenceType" style="plain" required="true"
     type="xsd:string">
-    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-        <para>Mode in which session persistence
-                                mechanism operates. See the session persistence modes table for
-                                the available modes.</para></wadl:doc></param>' >
-<!ENTITY accountParameter '<param name="account" style="template"
-                    type="xsd:string">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The ID for the tenant or
-                            account in a multi-tenancy
-                        cloud.</para></wadl:doc>
-                </param>' >
-<!ENTITY containerParameter '<param name="container" style="template"
-                        type="xsd:string">
-                        <wadl:doc
-                            xmlns="http://docbook.org/ns/docbook"
-                            xml:lang="EN">
-                            <para>The unique ID of the
-                                container.</para>
-                        </wadl:doc>
-                    </param>' >
-<!ENTITY loadbalancerIdParameter '<param style="template" type="xsd:string"
-                            required="true" name="loadBalancerId">
-                            <wadl:doc
-                                xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the load
-                                   balancer.</para></wadl:doc>
-                        </param>' >
-<!ENTITY nodeIdParameter '<param style="template"
-                                   type="xsd:string" required="true"
-                                   name="nodeId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the
-                                   node.</para></wadl:doc>
-                                </param>' >
-<!ENTITY virtualIpIdParameter '<param style="template"
-                                   type="xsd:string" required="true"
-                                   name="virtualIpId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   ><para>The ID for the virtual
-                                   IP.</para></wadl:doc>
-                                </param>' >
-<!ENTITY metaIdParameter '<param style="template"
-                                   type="xsd:string" required="true"
-                                   name="metaId">
-                                   <wadl:doc
-                                   xmlns="http://docbook.org/ns/docbook"
-                                   xml:lang="EN"
-                                   ><para>The ID of the metadata item.</para></wadl:doc>
-                                </param>' >
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Mode in which session persistence mechanism operates.
+            See the session persistence modes table for the available
+            modes.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY accountParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="account"
+    style="template" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the tenant or account in a multi-tenancy
+            cloud.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY containerParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="container" style="template" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The unique ID of the container.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY loadBalancersParameter ' 
+<param xmlns="http://wadl.dev.java.net/2009/02" id="loadBalancers" type="xsd:string" name="loadBalancers"
+    style="plain">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>A <code>loadBalancers</code> object.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY loadbalancerIdParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="loadBalancerId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the load balancer.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY nodeIdParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="nodeId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the node.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY virtualIpIdParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="virtualIpId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the virtual IP.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY metaIdParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="metaId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID of the metadata item.</para>
+    </wadl:doc>
+</param>' >
      <!-- Useful for describing APIs -->
      <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
      <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
