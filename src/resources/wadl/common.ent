@@ -94,8 +94,42 @@
         </response>
            '>       
 
-     <!-- Load balancer List Parameters -->
-
+<!-- Load balancer List Parameters -->
+<!ENTITY startTimeQueryParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query"
+    type="xsd:date" name="startTime" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>If the startTime parameter is supplied but the endTime
+            parameter is not, all usage beginning with the startTime
+            is returned.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY endTimeQueryParameter '  
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query"
+    type="xsd:date" name="endTime" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN"
+            ><para>If the endTime parameter is supplied but the
+            startTime parameter is not, all usage up to the endTime is
+            returned.</para></wadl:doc>
+</param>'>
+<!ENTITY offsetQueryParameter '   
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query"
+    type="xsd:string" name="offset" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN"
+            ><para>The pagination offset.</para></wadl:doc>
+</param>'>
+<!ENTITY limitQueryParameter '   
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query"
+    type="xsd:string" name="limit" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN"
+            ><para>The pagination limit. The response is paginated
+            with a default limit of 500 and a maximum limit of
+            1000.</para></wadl:doc>
+</param>' >
 <!ENTITY loadBalancersParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="loadBalancers"
     style="plain" required="true" type="xsd:string">
@@ -517,6 +551,14 @@
         <para>The ID for the load balancer.</para>
     </wadl:doc>
 </param>' >
+<!ENTITY loadbalancerIdQueryParameter '
+<param style="query" type="xsd:string" name="id" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>One to ten load balancer IDs. For example:
+                <code>?id={loadBalancerId}</code>. The default limit
+            is ten IDs per request.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY nodeIdParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
     name="nodeId">
