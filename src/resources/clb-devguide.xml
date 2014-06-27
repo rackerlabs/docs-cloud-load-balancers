@@ -43,7 +43,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-06-06</pubdate>
+        <pubdate>2014-05-20</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -59,7 +59,7 @@
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-06-06</date>
+                <date>2014-05-20</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -3632,8 +3632,8 @@
                     <tbody>
                         <tr>
                             <td colspan="1">name</td>
-                            <td colspan="3">Name of the load balancer
-                                to create. The name must be 128
+                            <td colspan="3">Update the load balancer to
+                                this name.  The name must be 128
                                 characters or less in length, and all
                                 UTF-8 characters are valid. Refer to
                                    <link
@@ -4130,6 +4130,56 @@
                         &ndash; Number of simultaneous connections
                         active at the time of the request.
                     </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectTimeOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'connect_timeout' interval was exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectErrorSsl</emphasis>
+                        &ndash; Number of SSL transaction or protocol erros
+                        in this load balancer.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectFailureSsl</emphasis>
+                        &ndash; Number of SSL conection failuers in this load
+                        balancer.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">dataTimedOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'timeout' interval was exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">keepAliveTimedOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'keepalive_timeout' interval was
+                        exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">maxConnSsl</emphasis>
+                        &ndash; Maximum number of simultaneous SSL connections
+                        this load balancer has processed a any one time.
+                    </para>
+                </listitem>
+                <listitem>
+                     <para>
+                         <emphasis role="bold">currentConnSsl</emphasis>
+                         &ndash; Number of simultaneous SSL connections
+                         active at the time of the request.
+                     </para>
                 </listitem>
             </itemizedlist>
             <para>The information is duplicated for SSL Termination.  However,
@@ -4675,7 +4725,7 @@
                     the list cannot be removed due to its current
                     status a 400:BadRequest is returned along with the
                     ids of the ones the system identified as potential
-                    failures for this request </para>
+                    failures for this request.</para>
                 <para>This operation does not require a request
                     body.</para>
             </section>
@@ -5155,6 +5205,18 @@
                     </programlisting>
                 </example>
                 <example>
+                   <title>List Account Level Usage: XML</title>
+                   <programlisting language="xml">
+<xi:include href="samples/lb-loadbalancers-account-usage.xml" parse="text"/>
+                   </programlisting>
+                </example>
+                <example>
+                   <title>List Account Level Usage: JSON</title>
+                   <programlisting language="json">
+<xi:include href="samples/lb-loadbalancers-account-usage.json" parse="text"/>
+                    </programlisting>
+                </example>
+                <example>
                     <title>Report Load Balancer Usage Response: XML</title>
                     <programlisting language="xml">
 <xi:include href="samples/lb-report-usage-response.xml" parse="text"/>
@@ -5167,13 +5229,26 @@
 <xi:include href="samples/lb-report-usage-response.json" parse="text"/>
                     </programlisting>
                 </example>
+                <example>
+                   <title>Report Current Usage Response: XML</title>
+                   <programlisting language="xml">
+<xi:include href="samples/lb-list-current-usage.xml" parse="text"/>
+                   </programlisting>
+                </example>
+                <example>
+                   <title>Report Current Usage Response: JSON</title>
+                   <programlisting language="json">
+<xi:include href="samples/lb-list-current-usage.xml" parse="text"/>
+                   </programlisting>
+                </example>
             </section>
         </section>
         <section xml:id="Access_Lists-d1e3160">
             <title>Access Lists</title>
             <para>The access list management feature allows fine-grained network access controls to
                 be applied to the load balancer's virtual IP address. A single IP address, multiple
-                IP addresses, or entire network subnets can be added as a<code>networkItem</code>.
+                IP addresses, or entire network subnets can be added as a
+                <code>networkItem</code>.
                 Items that are configured with the
                 <code>ALLOW</code>
                 type will always take
@@ -5249,7 +5324,7 @@
                     unauthorized (<errorcode>401</errorcode>), badRequest (<errorcode>400</errorcode>),
                     overLimit (<errorcode>413</errorcode>)
                 </simpara>
-                <para>This operation does not require a request body.</para>
+                <para>Only the GET action requires a request body.</para>
                 <para> When issuing a &POST; to add to an access list,
                     one or more network items are required. If a
                     populated access list already exists for the load
@@ -5971,7 +6046,7 @@
                     </tbody>
                 </table>
                 <para>
-                    This operation does not require a request body.
+                    This operation requires a request body.
                 </para>
                 <example>
                     <title>List Connection Logging Configuration Response: XML</title>
@@ -6413,7 +6488,7 @@
                             </td>
                             <td colspan="3">The Post Office Protocol
                                 is one of the two most common
-                                protocols for communciation between
+                                protocols for communication between
                                 email clients and email servers.
                                 Version 3 is the current standard of
                                 POP.</td>
@@ -6642,7 +6717,7 @@
                     <tr align="left">
                         <td>&GET; </td>
                         <td>/loadbalancers/<parameter>loadBalancerId</parameter>/ssltermination</td>
-                        <td>View the load balancers SSL termination configuration.</td>
+                        <td>View the load balancer's SSL termination configuration.</td>
                     </tr>
                     <tr align="left">
                         <td>&PUT; </td>

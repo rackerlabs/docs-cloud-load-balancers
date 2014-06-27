@@ -1,0 +1,20 @@
+{
+    "links": [],
+    "loadBalancerUsageRecords": [
+        {
+            "id": 42030,
+            "startTime": "2014-06-25T15:00:00-05:00",
+            "endTime": "2014-06-25T16:00:00-05:00",
+            "outgoingTransfer": 0,
+            "incomingTransfer": 0,
+            "outgoingTransferSsl": 0,
+            "incomingTransferSsl": 0,
+            "numVips": 1,
+            "vipType": "PUBLIC",
+            "averageNumConnections": 0,
+            "averageNumConnectionsSsl": 0,
+            "numPolls": 0,
+            "sslMode": "OFF"
+        }
+    ]
+}
