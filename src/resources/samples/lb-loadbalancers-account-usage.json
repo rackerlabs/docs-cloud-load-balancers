@@ -1,0 +1,38 @@
+{
+    "accountId": 548939,
+    "accountUsage": {
+        "accountUsageRecords": [
+            {
+                "startTime": "2014-03-13T12:03:51-05:00",
+                "numLoadBalancers": 4,
+                "numPublicVips": 4,
+                "numServicenetVips": 0
+            }
+        ],
+        "links": []
+    },
+    "loadBalancerUsages": [
+        {
+            "loadBalancerId": 2000,
+            "loadBalancerName": "dev-testing",
+            "links": [],
+            "loadBalancerUsageRecords": [
+                {
+                    "id": 22591,
+                    "startTime": "2014-04-08T10:00:00-05:00",
+                    "endTime": "2014-04-08T10:37:39-05:00",
+                    "outgoingTransfer": 0,
+                    "incomingTransfer": 0,
+                    "outgoingTransferSsl": 0,
+                    "incomingTransferSsl": 0,
+                    "numVips": 1,
+                    "vipType": "PUBLIC",
+                    "averageNumConnections": 0,
+                    "averageNumConnectionsSsl": 0,
+                    "numPolls": 1,
+                    "sslMode": "OFF"
+                }
+            ]
+        }
+    ]
+}
