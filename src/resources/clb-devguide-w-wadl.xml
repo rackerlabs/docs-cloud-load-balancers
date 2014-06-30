@@ -64,7 +64,7 @@
                             <para>Added <code>currentConn</code> field
                                 to response returned by List Load
                                 Balancer Stats API call and updated
-                                repose examples accordingly. Added
+                                response examples accordingly. Added
                                 description to detail the duplication
                                 of stats for SSL Termination.</para>
                         </listitem>

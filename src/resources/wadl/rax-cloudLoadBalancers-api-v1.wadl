@@ -9,7 +9,9 @@
     xmlns:xsd="http://docs.rackspacecloud.com/xsd/v1.0"
     xmlns:db="http://docbook.org/ns/docbook"
     xmlns:lbapi="http://docs.openstack.org/loadbalancers/api/v1.0"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+    
     <!--*******************************************************-->
     <!--     All Resources     -->
     <!--*******************************************************-->
@@ -168,8 +170,8 @@
             title="List load balancers">
             <para role="shortdesc">Lists load balancers that are
                 configured for the account.</para>
-            <para security="writeronly">BUG: The element lbaas is not
-                working to turn on the response body message.</para>
+        <!--      <para security="writeronly">BUG: The element lbaas is not
+                working to turn on the response body message.</para> -->
             <para>The response object shows a limited set of load
                 balancer attributes, including the following
                 attributes:</para>
@@ -223,7 +225,7 @@
                 attached.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/json" xml:lang="EN">
                 <!--<representation mediaType="application/json"
                 xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
                 element="lbapi:loadBalancers">-->
@@ -245,8 +247,8 @@
                 &virtualIpIdParameter; &virtualIpAddressParameter;
                 &virtualIpTypeParameter; &virtualIpipVersionParameter;
                 &createdParameter; &updatedParameter; </representation>
-            <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+              <representation mediaType="application/atom-xml"
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="List load balancers: Atom response">
@@ -254,8 +256,12 @@
                         href="../samples/lb-atom-feed-by-loadbalancer.xml"
                     />
                 </wadl:doc>
-            </representation>
-        </response> &commonFaults; </method>
+            </representation>  
+              
+        </response> &commonFaults; 
+        <!--    <?rax-wadl skipNoRequestText="true"?>  -->
+        <?rax-wadl skipNoResponeText="true"?>
+    </method>
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer details">
@@ -306,7 +312,7 @@
                 &createdParameter; &updatedParameter;
                 &sourceAddressesParameter; </representation>
             <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -773,7 +779,7 @@
                 </wadl:doc>
             </representation>
             <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -938,7 +944,7 @@
                 </wadl:doc>
             </representation>
             <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -970,7 +976,7 @@
                 </wadl:doc>
             </representation>
             <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1370,7 +1376,8 @@
             </representation>
         </response>
         <response>
-            <representation mediaType="application/atom-xml">
+            <representation mediaType="application/atom-xml" 
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1465,7 +1472,8 @@
             </representation>
         </response>
         <response>
-            <representation mediaType="application/atom-xml">
+            <representation mediaType="application/atom-xml" 
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1559,7 +1567,8 @@
             </representation>
         </response>
         <response>
-            <representation mediaType="application/atom-xml">
+            <representation mediaType="application/atom-xml" 
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1786,7 +1795,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 &maxConnectionsParameter; &minConnectionsParameter;
                 &rateIntervalParameter; </representation>
             <representation mediaType="application/atom-xml"
-                xml:lang="EN">
+                xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
