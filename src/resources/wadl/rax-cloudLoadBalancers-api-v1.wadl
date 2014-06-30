@@ -225,10 +225,12 @@
                 attached.</para>
         </wadl:doc>
         <response status="200">
+
             <representation mediaType="application/json" xml:lang="EN">
                 <!--<representation mediaType="application/json"
                 xmlns:lbapi="http://docs.rackspacecloud.com/loadbalancers/api/v1.0"
                 element="lbapi:loadBalancers">-->
+
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
