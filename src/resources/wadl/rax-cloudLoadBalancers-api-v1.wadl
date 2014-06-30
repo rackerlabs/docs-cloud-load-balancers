@@ -237,7 +237,7 @@
                         href="../samples/lb-list-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="atom:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="../samples/lb-list-response.xml"
