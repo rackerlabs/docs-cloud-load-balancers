@@ -262,7 +262,7 @@
               
         </response> &commonFaults; 
         <!--    <?rax-wadl skipNoRequestText="true"?>  -->
-        <?rax-wadl skipNoResponeText="true"?>
+        <!--    <?rax-wadl skipNoResponseText="true"?> -->
     </method>
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -496,7 +496,10 @@
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; </method>
+        </response> &commonFaults; 
+        <!--    <?rax-wadl skipNoRequestText="true"?>  -->
+        <!--   <?rax-wadl skipNoResponseText="true"?>  -->
+    </method>
     <method id="updateLoadBalancer" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer properties">
