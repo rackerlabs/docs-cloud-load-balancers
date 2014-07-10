@@ -5263,7 +5263,7 @@
                 <example>
                    <title>Report Current Usage Response: JSON</title>
                    <programlisting language="json">
-<xi:include href="samples/lb-list-current-usage.xml" parse="text"/>
+<xi:include href="samples/lb-list-current-usage.json" parse="text"/>
                    </programlisting>
                 </example>
             </section>

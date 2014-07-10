@@ -3,6 +3,7 @@
          A collection of common faults, these are pretty much expected
          in every request.
      -->
+     <!ENTITY ndash "&#8211;">
      <!ENTITY commonFaults
            '
         <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
@@ -262,6 +263,20 @@
             virtual IP address.</para>
     </wadl:doc>
 </param>'>
+<!ENTITY networkItemIdTemplateParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="networkItemId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the network item.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY networkItemIdQueryParameter '
+<param style="query" type="xsd:string" name="networkItemId" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The ID for the network item.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY algorithmParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="algorithm"
     style="plain" required="false" type="xsd:string">
@@ -421,7 +436,7 @@
     </wadl:doc>
 </param>'>
 <!ENTITY intermediatecertificateParameter '
-<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="true"
+<param xmlns="http://wadl.dev.java.net/2009/02" name="intermediatecertificate" style="plain" required="true"
     type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
@@ -430,6 +445,10 @@
         <para>The intermediate certificate is validated and verified
             against the key and certificate credentials
             provided.</para>
+        <para>A user may only provide an intermediateCertificate when 
+        accompanied by a certificate, private key, and securePort.
+        It may not be added to an existing SSL configuration as a 
+        single attribute in a future request.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY enabledParameter '
@@ -445,7 +464,7 @@
     </wadl:doc>
 </param>'>
 <!ENTITY secureTrafficOnlyParameter '
-<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="false"
+<param xmlns="http://wadl.dev.java.net/2009/02" name="secureTrafficOnly" style="plain" required="false"
     type="xsd:boolean">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
@@ -456,6 +475,24 @@
             non-secure traffic.</para>
     </wadl:doc>
 </param>' >
+<!ENTITY enabledConnectionLoggingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="enabled" style="plain" required="false"
+    type="xsd:boolean">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>If set to true, enables connection logging. If set to false, disables
+connection logging.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY enabledContentCachingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="enabled" style="plain" required="false"
+    type="xsd:boolean">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>If set to true, enables content caching. If set to false, disables
+content caching.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY maxConnectionRateParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="maxConnectionRate" style="plain" required="false"
     type="xsd:int">
@@ -559,6 +596,12 @@
             is ten IDs per request.</para>
     </wadl:doc>
 </param>'>
+<!ENTITY nodeIdQueryParameter '
+<param style="query" type="xsd:string" name="nodeId" required="false">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+        <para>The ID for the specified node.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY nodeIdParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
     name="nodeId">
@@ -567,8 +610,16 @@
         <para>The ID for the node.</para>
     </wadl:doc>
 </param>' >
-<!ENTITY virtualIpIdParameter '
+<!ENTITY virtualIpIdTemplateParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="virtualIpId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the virtual IP.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY virtualIpIdQueryParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query" type="xsd:string" required="false"
     name="virtualIpId">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
@@ -581,6 +632,14 @@
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The ID of the metadata item.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY metaIdQueryParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="query" type="xsd:string" required="false"
+    name="metaId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the metadata item.</para>
     </wadl:doc>
 </param>' >
 <!ENTITY loadBalancerIdPlainParameter '
@@ -632,6 +691,13 @@
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The cluster name.</para>
+    </wadl:doc>
+</param>' >
+<!ENTITY enabledConnectionLogging '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true" 
+    name="enabled">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>If set to true, enables connection logging. If set to false, disables connection logging.</para>
     </wadl:doc>
 </param>' >
      <!-- Useful for describing APIs -->

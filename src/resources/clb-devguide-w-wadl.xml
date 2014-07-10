@@ -57,7 +57,7 @@
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-05-30</date>
+                <date>2014-06-30</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -66,7 +66,35 @@
                                 Balancer Stats API call and updated
                                 response examples accordingly. Added
                                 description to detail the duplication
-                                of stats for SSL Termination.</para>
+                                of stats for SSL Termination. Refer to
+                                   <xref linkend="stats"/> for
+                                details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added response examples for List
+                                Account Level Usage and Report Current
+                                Usage. Refer to <xref
+                                   linkend="Usage_Reports-d1e3009"/>
+                                for details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-06-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <code>currentConn</code> field
+                                to response returned by List Load
+                                Balancer Stats API call and updated
+                                response examples accordingly. Added
+                                description to detail the duplication
+                                of stats for SSL Termination. Refer to
+                                   <xref linkend="stats"/> for
+                                details.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -3353,7 +3381,10 @@
             <itemizedlist>
                 <listitem>
                     <para>Delete multiple network items in an access
-                        list or the entire access list.</para>
+                        list </para>
+                </listitem>
+                <listitem>
+                    <para>Delete the entire access list.</para>
                 </listitem>
                 <listitem>
                     <para>Delete a specified network item in an access
@@ -3365,11 +3396,14 @@
                 <wadl:resource
                     href="wadl/rax-cloudLoadBalancers-api-v1.wadl#accesslist">
                     <wadl:method href="#showAccessList"/>
-                    <wadl:method href="#createAccessList"/>
-                    <wadl:method href="#deleteNetwork"/>
+                    <wadl:method href="#createAccessList"/>              
                     <wadl:method href="#deleteAccessList"/>
                     <wadl:method href="#bulkDeleteNetworks"/>
                 </wadl:resource>
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#networkItemId">
+                    <wadl:method href="#deleteNetwork"/>
+                </wadl:resource>  
             </wadl:resources>
         </section>
         <section xml:id="Monitors-d1e3370">
@@ -3429,6 +3463,182 @@
                     status updated to ONLINE regardless of the health
                     of the node.</para>
             </note>
+            <formalpara><title>Connect Monitor</title>
+                <para>The monitor connects to each node on its
+                    defined port to ensure that the service is
+                    listening properly. The connect monitor is the
+                    most basic type of health check and does no
+                    post-processing or protocol specific health
+                    checks. It includes several configurable
+                    properties. 
+                The following table lists the required and
+                    optional attributes for Monitor
+                    Connections:
+                <table rules="all">
+                    <caption>Required and Optional Attributes for
+                        Monitor Connections</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="1">Name </td>
+                            <td colspan="3">Description</td>
+                            <td colspan="1">Required</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1"
+                                >attemptsBefore<?sbr?>Deactivation</td>
+                            <td colspan="3">
+                                <para>Number of permissible monitor
+                                    failures before removing a node
+                                    from rotation. Must be a number
+                                    between 1 and 10.</para>
+                            </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">delay</td>
+                            <td colspan="3">
+                                <para>The minimum number of
+                                    seconds to wait before executing
+                                    the health monitor. Must be a
+                                    number between 1 and 3600.</para>
+                            </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">timeout</td>
+                            <td colspan="3">
+                                <para>Maximum number of seconds to
+                                    wait for a connection to be
+                                    established before timing out. Must
+                                    be a number between 1 and 300. </para>
+                            </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">type</td>
+                            <td colspan="3">
+                                <para>Type of the health monitor.
+                                    Must be specified as "CONNECT" to
+                                    monitor connections.</para>
+                            </td>
+                            <td colspan="1">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </para>
+            </formalpara>
+            <formalpara>
+                <title>Monitor HTTP and HTTPS</title>
+                <para>The HTTP and HTTPS monitor is more intelligent
+                    than the connect monitor. It is capable of
+                    processing an HTTP or HTTPS response to determine
+                    the condition of a node. It supports the same
+                    basic properties as the connect monitor and
+                    includes additional attributes that are used to
+                    evaluate the HTTP response. The user can supply an
+                    optional <code>hostHeader</code> attribute for the
+                    HTTP and HTTPS health monitor to specify a host
+                    for which the health monitors will check.
+                    <?sbr?>The following table lists the required and
+                    optional attributes for Monitor HTTP and
+                        HTTPS:<?sbr?><table rules="all">
+                        <caption>Required and Optional Attributes for
+                            Monitor HTTP and HTTPS</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                   >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                   <para>Number of permissible monitor
+                                   failures before removing a node
+                                   from rotation. Must be a number
+                                   between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">bodyRegex</td>
+                                <td colspan="3">
+                                   <para>A regular expression that
+                                   will be used to evaluate the
+                                   contents of the body of the
+                                   response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                   <para>The minimum number of seconds
+                                   to wait before executing the health
+                                   monitor. Must be a number between 1
+                                   and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">hostHeader</td>
+                                <td colspan="3">
+                                   <para>The name of a host for which
+                                   the health monitors will
+                                   check.</para>
+                                </td>
+                                <td colspan="1">No</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">path</td>
+                                <td colspan="3">
+                                   <para>The HTTP path that will be
+                                   used in the sample request.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">statusRegex</td>
+                                <td colspan="3">
+                                   <para>A regular expression that
+                                   will be used to evaluate the HTTP
+                                   status code returned in the
+                                   response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                   <para>Maximum number of seconds to
+                                   wait for a connection to be
+                                   established before timing out. Must
+                                   be a number between 1 and 300.
+                                   </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                   <para>Type of the health monitor.
+                                   Must be specified as "HTTP" to
+                                   monitor an HTTP response or "HTTPS"
+                                   to monitor an HTTPS
+                                   response.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </formalpara>
+            
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -3446,7 +3656,25 @@
                 the same protocol, from clients to be directed to the
                 same node. This is common with many web applications
                 that do not inherently share application state between
-                back-end servers. These session persistence modes are
+                back-end servers. </para>
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem>
+                        <para>Changing the protocol or port
+                            for a load balancer will disable
+                            session persistence.</para>
+                    </listitem>
+                    <listitem>
+                        <para>If you try to DELETE the session
+                            persistence configuration when
+                            session persistence is already
+                            disabled, a 422 response
+                            (unprocessableEntity) is
+                            returned.</para>
+                    </listitem>
+                </itemizedlist>
+            </note>
+            <para>These session persistence modes are
                 available:</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
@@ -3560,13 +3788,28 @@
                 back-end nodes. When configuring a load balancer, the
                 default port for the given protocol is selected unless
                 otherwise specified.</para>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>UDP-based protocols (that is DNS_UDP, UDP, and
-                    UDP_STREAM) are not capable of utilizing the
-                    Health Monitor features. Also, SSL termination is
-                    unavailable while using UDP-based
-                    protocols.</para>
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem><para>UDP-Based protocols (DNS_UDP, UDP, and UDP_STREAM) have the
+                            following limitations:<itemizedlist>
+                                <listitem>
+                                   <para>They are not capable of using
+                                   the Health Monitor features.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Also, SSL Termination is
+                                   unavailable when using UDP-based
+                                   ports.</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Changing the protocol or port for a
+                            load balancer will disable session
+                            persistence.</para>
+                    </listitem>
+                </itemizedlist>
+                
             </note>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
@@ -3749,14 +3992,6 @@
                     </tr>
                 </tbody>
             </table>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>UDP-Based protocols (DNS_UDP, UDP, and
-                    UDP_STREAM) have the following limitations. They
-                    are not capable of using the Health Monitor
-                    features. Also, SSL termination is unavailable
-                    when using UDP-based ports.</para>
-            </note>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -3860,7 +4095,10 @@
                     <code>securePort</code> must be set to
                     <code>443</code> and
                     <code>secureTrafficOnly</code> must be
-                    <code>true</code>.</para>
+                    <code>true</code> Refer to the description for the
+                &lt;code>httpsRedirect&lt;/code> attribute for the
+                Create Load Balancer API Operation for
+                details..</para>
             <para>All requests to SSL termination in the JSON format
                 require the key/certificates to be in proper JSON
                 format, meaning that all raw line feed characters
@@ -3889,7 +4127,8 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
-        <!--<section xml:id="Metadata-d1e2173">
+        
+        <section xml:id="Metadata-d1e2173">
             <title>Metadata</title>
             <para>Metadata can be associated with each load balancer
                 and each node for the client's personal use. It is
@@ -3913,9 +4152,22 @@
                     <wadl:method
                         href="#deleteLoadBalancerMetadataItem"/>
                 </wadl:resource>
-            </wadl:resources>
-        </section>-->
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#nodeId_metadata">
+                    <wadl:method href="#showNodeMetadata"/>
+                    <wadl:method href="#addNodeMetadataItem"/>
+                    <wadl:method href="#bulkDeleteNodeMetadataItems"/>
+                </wadl:resource>
+                <wadl:resource
+                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#nodeId_metadata_metaId">
+                    <wadl:method href="#showNodeMetadataItem"/>
+                    <wadl:method href="#updateNodeMetadataItem"/>
+                    <wadl:method href="#deleteNodeMetadataItem"/>
+                </wadl:resource>
+            </wadl:resources> 
+        </section>  
     </chapter>
+    
     <glossary>
         <title>Glossary</title>
         <glossentry xml:id="Connection-Logging-Gloss-d1e022">

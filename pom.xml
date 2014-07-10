@@ -15,7 +15,7 @@
                 <artifactId>clouddocs-maven-plugin</artifactId>
                 <!-- this <version> relates only to the *plugin* used for document formatting -->
                 <!-- the version of the *API* that is the subject of the document is indicated within each document -->
-                <version>2.1.1-SNAPSHOT</version>
+                <version>2.1.1</version>
                 <executions>
                     <execution>
                         <id>clb-devguide-w-wadl-external</id>
@@ -31,15 +31,15 @@
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide-w-wadl/content</canonicalUrlBase>
                         </configuration>
                     </execution>
-                    <execution>
+              <!--        <execution>
                         <id>clb-mgmt-devguide-internal</id>
                         <goals>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
-                            <!-- this is the Rackspace-internal service developer guide formerly known as ManagementAPISpec.xml -->
-                            <includes>clb-mgmt-devguide.xml</includes>
+                        <configuration>  -->
+                             <!-- this is the Rackspace-internal service developer guide formerly known as ManagementAPISpec.xml -->
+                    <!--           <includes>clb-mgmt-devguide.xml</includes>
                             <security>internal</security>
                             <enableGoogleAnalytics>0</enableGoogleAnalytics>
                             <enableDisqus>intranet</enableDisqus>
@@ -52,15 +52,15 @@
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                        <configuration> --> 
                             <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
                             <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
-                            <includes>clb-devguide.xml</includes>
+                    <!--            <includes>clb-devguide.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
+                    </execution> -->
                     <!-- MA: added this to generate public release notes -->
-                    <execution>
+                    <!--        <execution>
                         <id>clb-releasenotes-external</id>
                         <goals>
                             <goal>generate-webhelp</goal>
@@ -111,13 +111,13 @@
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
-                        <configuration>
+                        <configuration> -->
                             <!-- this is the public-facing client Getting Started guide -->
                             <!-- this document that will be published as clb-getting-started-latest.pdf at http://docs.rackspacecloud.com/api/ -->
-                            <includes>clb-getting-started.xml</includes>
+                    <!--          <includes>clb-getting-started.xml</includes>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-getting-started/content</canonicalUrlBase>
                         </configuration>
-                    </execution>
+                    </execution> -->
                 </executions>
                 <configuration>
                     <!-- Global config for all docs -->

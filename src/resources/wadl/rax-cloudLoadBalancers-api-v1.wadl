@@ -23,6 +23,19 @@
                     <method href="#listLoadBalancers"/>
                     <method href="#createLoadBalancer"/>
                     <method href="#bulkDeleteLoadBalancer"/>
+                    <resource id="alloweddomains"
+                        path="alloweddomains">
+                        <method href="#listAllowedDomains"/>
+                    </resource>
+                    <resource id="protocols" path="protocols">
+                        <method href="#listProtocols"/>
+                    </resource>
+                    <resource id="algorithms" path="algorithms">
+                        <method href="#listAlgorithms"/>
+                    </resource>
+                    <resource id="billable" path="billable">
+                        <method href="#listBillableLoadBalancers"/>
+                    </resource>
                     <resource id="loadBalancerId"
                         path="{loadBalancerId}">
                         &loadbalancerIdTemplateParameter; <method
@@ -74,7 +87,7 @@
                             <method href="#bulkDeleteVirtualIps"/>
                             <resource id="virtualIpId"
                                 path="{virtualIpId}">
-                                &virtualIpIdParameter; <method
+                                &virtualIpIdTemplateParameter; <method
                                    href="#deleteVirtualIp"/>
                             </resource>
                         </resource>
@@ -87,9 +100,14 @@
                         <resource id="accesslist" path="accesslist">
                             <method href="#showAccessList"/>
                             <method href="#createAccessList"/>
-                            <method href="#deleteNetwork"/>
                             <method href="#deleteAccessList"/>
                             <method href="#bulkDeleteNetworks"/>
+                            <resource id="networkItemId"
+                                path="{networkItemId}">
+                                &networkItemIdTemplateParameter;
+                                <method
+                                    href="#deleteNetwork"/>
+                            </resource>
                         </resource>
                         <resource id="healthmonitor"
                             path="healthmonitor">
@@ -142,20 +160,11 @@
                                 />
                             </resource>
                         </resource>
-                        <resource id="protocols" path="protocols">
-                            <method href="#listProtocols"/>
-                        </resource>
-                        <resource id="algorithms" path="algorithms">
-                            <method href="#listAlgorithms"/>
-                        </resource>
-                        <resource id="alloweddomains"
-                            path="alloweddomains">
-                            <method href="#listAllowedDomains"/>
-                        </resource>
-                        <resource id="billable" path="billable">
-                            <method href="#listBillableLoadBalancers"
-                            />
-                        </resource>
+                        
+                        
+                        
+                        
+                        
                     </resource>
                     <resource id="usage" path="usage">
                         <method href="#showAccountLevelUsage"/>
@@ -164,7 +173,9 @@
             </resource>
         </resource>
     </resources>
+    
     <!-- loadbalancers -->
+    
     <method id="listLoadBalancers" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List load balancers">
@@ -237,7 +248,7 @@
                         href="../samples/lb-list-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN" element="atom:loadBalancers">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="../samples/lb-list-response.xml"
@@ -264,6 +275,7 @@
         <!--    <?rax-wadl skipNoRequestText="true"?>  -->
         <!--    <?rax-wadl skipNoResponseText="true"?> -->
     </method>
+    
     <method id="showLoadBalancer" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer details">
@@ -294,7 +306,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -322,7 +334,9 @@
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="createLoadBalancer" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create load balancer">
@@ -378,7 +392,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer: XML request">
@@ -402,7 +416,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer with shared IP: XML request">
@@ -420,7 +434,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer with IPv4/IPv6: XML request">
@@ -440,7 +454,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer: XML response">
@@ -469,7 +483,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer with shared IP: XML response">
@@ -487,7 +501,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
                     title="Create load balancer with IPv4/IPv6: XML response">
@@ -500,6 +514,7 @@
         <!--    <?rax-wadl skipNoRequestText="true"?>  -->
         <!--   <?rax-wadl skipNoResponseText="true"?>  -->
     </method>
+    
     <method id="updateLoadBalancer" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer properties">
@@ -530,7 +545,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -541,7 +556,12 @@
                 &portParameter; &timeoutParameter;
                 &httpsRedirectParameter; </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteLoadBalancer" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete load balancer">
@@ -552,6 +572,10 @@
                 the account. Any and all configuration data is
                 immediately purged and is not recoverable.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
     <method id="bulkDeleteLoadBalancer" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -569,11 +593,17 @@
                 request.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 &loadbalancerIdQueryParameter;</representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- errorpage -->
+    
     <method id="showErrorPage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show custom error page">
@@ -592,14 +622,16 @@
                         href="../samples/lb-list-error-page.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:errorpage">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-error-page.xml"/>
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="setErrorPage" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Set custom error page">
@@ -614,7 +646,7 @@
                         href="../samples/lb-add-error-page.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:errorpage">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -629,7 +661,7 @@
                         href="../samples/lb-list-error-page.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:errorpage">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -637,14 +669,21 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="deleteErrorPage" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete custom error page">
             <para role="shortdesc">Deletes the custom error page for a
                 specified load balancer.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
-    <!-- stats -->
+    
+    <!-- stats --> 
+    
     <method id="showStats" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer statistics">
@@ -699,7 +738,68 @@
                         this load balancer has processed at any one
                         time.</para>
                 </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">currentConn</emphasis>
+                        &ndash; Number of simultaneous connections
+                        active at the time of the request.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectTimeOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'connect_timeout' interval was exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectErrorSsl</emphasis>
+                        &ndash; Number of SSL transaction or protocol erros
+                        in this load balancer.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">connectFailureSsl</emphasis>
+                        &ndash; Number of SSL conection failuers in this load
+                        balancer.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">dataTimedOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'timeout' interval was exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">keepAliveTimedOutSsl</emphasis>
+                        &ndash; SSL connections closed by this load balancer
+                        because the 'keepalive_timeout' interval was
+                        exceeded.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">maxConnSsl</emphasis>
+                        &ndash; Maximum number of simultaneous SSL connections
+                        this load balancer has processed a any one time.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        <emphasis role="bold">currentConnSsl</emphasis>
+                        &ndash; Number of simultaneous SSL connections
+                        active at the time of the request.
+                    </para>
+                </listitem>
             </itemizedlist>
+            <para>
+                The information is duplicated for SSL Termination. However, if the Load Balancer 
+                is not SSL Terminated, the appropriate information will be left without a value.
+            </para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json">
@@ -708,14 +808,16 @@
                     <xsdxt:code href="../samples/lb-stats.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:stats">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="../samples/lb-stats.xml"/>
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <!-- nodes -->
+    
     <method id="listNodes" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List nodes">
@@ -739,14 +841,14 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodes">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodes">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -754,6 +856,7 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="showNode" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show node details">
@@ -776,7 +879,7 @@
                         href="../samples/lb-list-node-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:node">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -793,6 +896,7 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="addNode" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add node">
@@ -821,7 +925,7 @@
                         href="../samples/lb-add-nodes-request.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodes">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -837,7 +941,7 @@
                         href="../samples/lb-add-nodes-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodes">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -845,6 +949,7 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="updateNode" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update node">
@@ -873,7 +978,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:node">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -882,6 +987,7 @@
             </representation>
         </request>
     </method>
+    
     <method id="deleteNode" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete node">
@@ -899,7 +1005,12 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="bulkDeleteNodes" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Bulk-delete nodes">
@@ -917,7 +1028,16 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
+                &nodeIdQueryParameter;</representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="listNodeEvents" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List node service events">
@@ -940,7 +1060,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodeServiceEvents">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -958,7 +1078,9 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <!-- virtualips -->
+    
     <method id="listVirtualIps" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List virtual IPs">
@@ -973,7 +1095,7 @@
                         href="../samples/lb-list-vips-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:virtualIps">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -989,19 +1111,29 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="addVirtualIpv6" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add virtual IP version 6">
             <para role="shortdesc">Adds virtual IP version 6.</para>
         </wadl:doc>
     </method>
+    
     <method id="deleteVirtualIp" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete virtual IP">
             <para role="shortdesc">Deletes a specified virtual
                 IP.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                </wadl:doc>
+            </representation>
+        </response>
     </method>
+    
     <method id="bulkDeleteVirtualIps" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Bulk-delete virtual IPs">
@@ -1026,8 +1158,18 @@
                     failures for this request.</para>
             </note>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                &virtualIpIdQueryParameter;</representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- alloweddomains -->
+    
     <method id="listAllowedDomains" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List allowed domains">
@@ -1054,7 +1196,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:allowedDomains">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="../samples/allowed-domains.xml"
@@ -1062,7 +1204,9 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <!-- billable -->
+    
     <method id="listBillableLoadBalancers" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List billable load balancers">
@@ -1073,8 +1217,7 @@
             <para>The load balancer usage reports provide a view of
                 all transfer activity, average number of connections,
                 and number of virtual IPs associated with the load
-                balancing service. Current usage represents all usage
-                recorded within the preceding 24 hours. Values for
+                balancing service. Values for
                 both <code>incomingTransfer</code> and
                     <code>outgoingTransfer</code> are expressed in
                 bytes transferred.</para>
@@ -1109,7 +1252,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1118,6 +1261,7 @@
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="showAccountLevelUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show account-level usage">
@@ -1156,19 +1300,20 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
-                        href="../samples/lb-report-usage-response.json"
+                        href="../samples/lb-loadbalancers-account-usage.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancerUsageRecords">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
-                        href="../samples/lb-report-usage-response.xml"
+                        href="../samples/lb-loadbalancers-account-usage.xml"
                     />
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="showHistoricalUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show historical usage">
@@ -1176,8 +1321,7 @@
             <para>The load balancer usage reports provide a view of
                 all transfer activity, average number of connections,
                 and number of virtual IPs associated with the load
-                balancing service. Current usage represents all usage
-                recorded within the preceding 24 hours. Values for
+                balancing service. Values for
                 both <code>incomingTransfer</code> and
                     <code>outgoingTransfer</code> are expressed in
                 bytes transferred.</para>
@@ -1197,7 +1341,31 @@
                     days of service activity.</para>
             </note>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN">
+                &startTimeQueryParameter; &endTimeQueryParameter;
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-report-usage-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancerUsageRecords">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-report-usage-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; 
     </method>
+    
     <method id="showCurrentUsage" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show current usage">
@@ -1220,20 +1388,72 @@
                     <code>startTime</code> parameter is not, then all
                 usage is returned up to the <code>endTime</code>
                 specified.</para>
-            <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>Historical usage data is available for up to 90
-                    days of service activity.</para>
-            </note>
+            
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN">
+                &startTimeQueryParameter; &endTimeQueryParameter;
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-current-usage.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancerUsageRecords">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-current-usage.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults; 
     </method>
+    
     <!-- accesslist -->
+    
     <method id="showAccessList" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show access list">
             <para role="shortdesc">Shows the access list.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN">
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-retrieve-accesslist-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:accessList">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-retrieve-accesslist-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="atom:feed">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show atom access list: XML response">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-accesslist.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="createAccessList" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create or update access list">
@@ -1257,7 +1477,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:accessList">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1265,112 +1485,311 @@
                     />
                 </wadl:doc>
             </representation>
-        </request>
+        </request> 
+        <response status="200">
+            
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteNetwork" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete network from access list">
             <para role="shortdesc">Deletes a network item from a
                 specified access list.</para>
-            <para>You can perform these <command>DELETE</command>
-                operations for the access list:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>Delete multiple network items in an access
-                        list.</para></listitem>
-                <listitem><para>Delete the entire access
-                    list.</para></listitem>
-                <listitem>
-                    <para>Delete a specified network item in an access
-                        list.</para>
-                </listitem>
-            </itemizedlist>
+            
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteAccessList" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete access list">
             <para role="shortdesc">Deletes the entire access
                 list.</para>
-            <para>When issuing a <command>POST</command> to add to an
-                access list, one or more network items are required.
-                If a populated access list already exists for the load
-                balancer, it is appended to with subsequent
-                    <command>POST</command> requests. One access list
-                may include up to 100 network items. A single address
-                or subnet definition is considered unique and cannot
-                be duplicated between items in an access list.</para>
-            <para>You can perform these <command>DELETE</command>
-                operations for the access list:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>Delete multiple network items in an access
-                        list.</para></listitem>
-                <listitem><para>Delete the entire access list.</para>
-                </listitem>
-                <listitem>
-                    <para>Delete a specified network item in an access
-                        list.</para>
-                </listitem>
-            </itemizedlist>
+            
+            
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="bulkDeleteNetworks" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Bulk-delete networks from access list">
             <para role="shortdesc">Bulk-deletes the specified networks
                 from an access list.</para>
-            <para>You can perform these <command>DELETE</command>
-                operations for the access list:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>Delete multiple network items in an access
-                        list.</para></listitem>
-                <listitem><para>Delete the entire access list.</para>
-                </listitem>
-                <listitem>
-                    <para>Delete a specified network item in an access
-                        list.</para>
-                </listitem>
-            </itemizedlist>
+            
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                &networkItemIdQueryParameter; </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- healthmonitor -->
+    
     <method id="showHealthMonitor" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show health monitor configuration">
             <para role="shortdesc">Shows the health monitor
                 configuration, if one exists.</para>
+            <formalpara><title>Connect Monitor</title>
+                <para>The monitor connects to each node on its
+                    defined port to ensure that the service is
+                    listening properly. The connect monitor is the
+                    most basic type of health check and does no
+                    post-processing or protocol specific health
+                    checks. It includes several configurable
+                    properties. 
+                    The following table lists the required and
+                    optional attributes for Monitor
+                    Connections:
+                    <table rules="all">
+                        <caption>Required and Optional Attributes for
+                             Connect Monitor</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                    >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                    <para>Number of permissible monitor
+                                        failures before removing a node
+                                        from rotation. Must be a number
+                                        between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                    <para>The minimum number of
+                                        seconds to wait before executing
+                                        the health monitor. Must be a
+                                        number between 1 and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                    <para>Maximum number of seconds to
+                                        wait for a connection to be
+                                        established before timing out. Must
+                                        be a number between 1 and 300. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                    <para>Type of the health monitor.
+                                        Must be specified as "CONNECT" to
+                                        monitor connections.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </formalpara>
+            
+             <formalpara>
+                <title>Monitor HTTP and HTTPS</title>
+                <para>The HTTP and HTTPS monitor is more intelligent
+                    than the connect monitor. It is capable of
+                    processing an HTTP or HTTPS response to determine
+                    the condition of a node. It supports the same
+                    basic properties as the connect monitor and
+                    includes additional attributes that are used to
+                    evaluate the HTTP response. The user can supply an
+                    optional <code>hostHeader</code> attribute for the
+                    HTTP and HTTPS health monitor to specify a host
+                    for which the health monitors will check.
+                    <?sbr?>The following table lists the required and
+                    optional attributes for Monitor HTTP and
+                    HTTPS:<?sbr?><table rules="all">
+                        <caption>Required and Optional Attributes for
+                            HTTP and HTTPS Monitor</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                    >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                    <para>Number of permissible monitor
+                                        failures before removing a node
+                                        from rotation. Must be a number
+                                        between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">bodyRegex</td>
+                                <td colspan="3">
+                                    <para>A regular expression that
+                                        will be used to evaluate the
+                                        contents of the body of the
+                                        response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                    <para>The minimum number of seconds
+                                        to wait before executing the health
+                                        monitor. Must be a number between 1
+                                        and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">hostHeader</td>
+                                <td colspan="3">
+                                    <para>The name of a host for which
+                                        the health monitors will
+                                        check.</para>
+                                </td>
+                                <td colspan="1">No</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">path</td>
+                                <td colspan="3">
+                                    <para>The HTTP path that will be
+                                        used in the sample request.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">statusRegex</td>
+                                <td colspan="3">
+                                    <para>A regular expression that
+                                        will be used to evaluate the HTTP
+                                        status code returned in the
+                                        response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                    <para>Maximum number of seconds to
+                                        wait for a connection to be
+                                        established before timing out. Must
+                                        be a number between 1 and 300.
+                                    </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                    <para>Type of the health monitor.
+                                        Must be specified as "HTTP" to
+                                        monitor an HTTP response or "HTTPS"
+                                        to monitor an HTTPS
+                                        response.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </formalpara> 
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-monitor-connect-request.xml"
-                    />
-                </wadl:doc>
-            </representation>
-            <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-monitor-connect-request.json"
-                    />
-                </wadl:doc>
-            </representation>
+            
         </request>
-        <response>
-            <representation mediaType="application/xml">
+        <response status="200">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Show connect monitor configuration: XML response">
                     <xsdxt:code
                         href="../samples/lb-monitor-connect-response.xml"
                     />
                 </wadl:doc>
             </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show connect monitor configuration: JSON response">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-connect-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/atom-xml" 
+                xml:lang="EN" element="atom:feed">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show http monitor configuration: ATOM/XML response">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-healthmonitor.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            
+                <representation mediaType="application/json">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN" title="Show http monitor configuration: JSON response">
+                        <xsdxt:code
+                            href="../samples/lb-monitor-http-response.json"
+                        />
+                    </wadl:doc>
+                </representation>
+            
+            
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN" title="Show http monitor configuration: XML response">
+                        <xsdxt:code
+                            href="../samples/lb-monitor-http-response.xml"
+                        />
+                    </wadl:doc>
+                </representation>
+            
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show https monitor configuration: JSON response">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            
+            
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show https monitor configuration: XML response">
+                    <xsdxt:code
+                        href="../samples/lb-monitor-https-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            
         </response>
-        <response>
+        &commonFaults; &getFaults;
+     <!--    <response>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1391,6 +1810,8 @@
                 </wadl:doc>
             </representation>
         </response>
+        
+        
         <response>
             <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1430,8 +1851,10 @@
                     />
                 </wadl:doc>
             </representation>
-        </response>
+        </response> --> 
     </method>
+    
+    
     <method id="updateHealthMonitor" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update health monitor">
@@ -1439,9 +1862,9 @@
                 monitor.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" >
                     <xsdxt:code
                         href="../samples/lb-monitor-connect-request.xml"
                     />
@@ -1456,7 +1879,9 @@
                 </wadl:doc>
             </representation>
         </request>
-        <response>
+        <response status="200">
+        </response>
+   <!--       <response>
             <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1526,14 +1951,22 @@
                     />
                 </wadl:doc>
             </representation>
-        </response>
+        </response> -->
+        &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteHealthMonitor" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete health monitor">
             <para role="shortdesc">Deletes a health monitor.</para>
         </wadl:doc>
-        <request>
+        
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
+        
+   <!--       <request>
             <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1550,8 +1983,8 @@
                     />
                 </wadl:doc>
             </representation>
-        </request>
-        <response>
+        </request> -->
+   <!--       <response>
             <representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1621,23 +2054,56 @@
                     />
                 </wadl:doc>
             </representation>
-        </response>
+        </response> -->
     </method>
+    
     <!-- sessionpersistence -->
+    
     <method id="showSessionPersistence" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show session persistence configuration">
             <para role="shortdesc">Shows the session persistence
                 configuration.</para>
         </wadl:doc>
+        
+        
+        
+        <response status="200">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sessionPersistence">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-persistence-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-persistence-response.json"
+                    />
+                </wadl:doc>
+            </representation> 
+            <representation mediaType="application/xml" xml:lang="EN" element="atom:feed">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Show atom session persistence configuration: ATOM/XML response">
+                    <xsdxt:code
+                        href="../samples/lb-atom-feed-by-sessionpersistence.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response>
+        &commonFaults; &getFaults;
     </method>
+    
     <method id="enableSessionPersistence" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable session persistence">
             <para role="shortdesc">Enables session persistence.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sessionPersistence">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1661,46 +2127,32 @@
                 </wadl:doc>
             </representation>-->
         </request>
+        <response status="200"></response>
+        &commonFaults; &getFaults;
     </method>
+    
     <method id="disableSessionPersistence" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Disable session persistence">
             <para role="shortdesc">Disables session
                 persistence.</para>
         </wadl:doc>
-        <request>
-            <representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-set-persistence-request.xml"
-                    />
-                </wadl:doc>
-            </representation>
+        
+        <response status="200">
             <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-set-persistence-request.json"
-                    />
-                </wadl:doc>
             </representation>
-            <!--<representation mediaType="application/xml">
-<wadl:doc xmlns="http://docbook.org/ns/docbook"
-    xml:lang="EN">
-    <xsdxt:code
-href="../samples/lb-atom-feed-by-sessionpersistence.json"
-    />
-</wadl:doc>    </representation>-->
-        </request>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- contentcaching -->
+    
     <method id="showConnectionLogging" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show connection logging configuration">
             <para role="shortdesc">Shows the connection logging
                 configuration.</para>
-        </wadl:doc>
+        </wadl:doc> 
+        
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1709,16 +2161,20 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                         href="../samples/lb-list-logging-response.json"
                     />
                 </wadl:doc>
+                
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:connectionLogging">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-logging-response.xml"
                     />
                 </wadl:doc>
+                &enabledConnectionLoggingParameter;
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="enableConnectionLogging" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable or disable connection logging">
@@ -1734,16 +2190,21 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:connectionLogging">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-enable-logging-request.xml"
                     />
-                </wadl:doc> &enabledParameter; </representation>
+                </wadl:doc> &enabledConnectionLoggingParameter; 
+            </representation>
         </request>
+        <response status="200">
+        </response>  &commonFaults; &getFaults;
     </method>
+    
     <!-- connectionthrottle -->
+    
     <method id="showConnectionThrottle" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show connection throttling configuration">
@@ -1759,7 +2220,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:connectionThrottle">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1768,11 +2229,18 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="createOrUpdateConnectionThrottle" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create or update connection throttling configuration">
             <para role="shortdesc">Creates or updates the throttling
                 configuration.</para>
+            
+            <para>The connection throttling feature imposes limits on the number of connections 
+            per IP address to help mitigate malicious or abusive traffic to your applications. 
+            The attributes in the table that follows can be configured based on the traffic 
+            patterns for your sites. </para>
+            
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>You must specify all attributes when initially
@@ -1790,7 +2258,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:connectionThrottle">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1809,7 +2277,10 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc>
             </representation>
         </request>
+        <response status="200">
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteConnectionThrottle" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete connection throttling configuration">
@@ -1822,8 +2293,14 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 can be configured based on the traffic patterns for
                 your sites.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- contentcaching -->
+    
     <method id="showContentCaching" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show content caching configuration">
@@ -1856,7 +2333,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:contentCaching">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1865,6 +2342,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <method id="enableContentCaching" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Enable content caching">
@@ -1889,13 +2367,13 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 Balancers</link>.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:contentCaching">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-enable-content-caching-request.xml"
                     />
-                </wadl:doc>
+                </wadl:doc> &enabledContentCachingParameter;
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1903,11 +2381,15 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     <xsdxt:code
                         href="../samples/lb-enable-content-caching-request.json"
                     />
-                </wadl:doc>
+                </wadl:doc> 
             </representation>
         </request>
+        <response status="200">
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- protocols -->
+    
     <method id="listProtocols" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List load balancing protocols">
@@ -1919,20 +2401,22 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
-                        href="../samples/lb-list-content-caching-response.json"
+                        href="../samples/lb-list-protocols-response.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:protocols">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
-                        href="../samples/lb-list-content-caching-response.xml"
+                        href="../samples/lb-list-protocols-response.xml"
                     />
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <!-- algorithms -->
+    
     <method id="listAlgorithms" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List load balancing algorithms">
@@ -1948,7 +2432,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:algorithms">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -1957,11 +2441,13 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults; </method>
+    
     <!-- ssltermination -->
+    
     <method id="showSSLTermination" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show SSL termination configuration">
-            <para role="shortdesc">Shows the load balancers SSL
+            <para role="shortdesc">Shows the load balancer's SSL
                 termination configuration.</para>
             <para>The SSL termination feature enables you to terminate
                 SSL traffic at the load balancer layer versus at the
@@ -1979,7 +2465,28 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sslTermination">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" >
+                    <xsdxt:code
+                        href="../samples/lb-ssl-termination-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        
+       
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-ssl-termination-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="updateSSLTermination" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update SSL termination configuration">
@@ -1989,29 +2496,158 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 SSL traffic at the load balancer layer versus at the
                 web server layer. You can choose to configure SSL
                 termination using a key and an SSL certificate or an
-                intermediate SSL certificate.</para></wadl:doc>
+                intermediate SSL certificate.</para>
+        
+            <para>The following attributes may be updated without
+                overwriting a load balancer’s existing SSL
+                certificate and key specifications:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        <code>enabled</code>
+                    </para>
+                </listitem>
+                <listitem>
+                    <para><code>secureTrafficOnly</code></para>
+                </listitem>
+                <listitem>
+                    <para><code>securePort</code></para>
+                </listitem>
+            </itemizedlist>
+            <para> These configurable attributes must be provided
+                (individually or grouped) in a request
+                <emphasis>without</emphasis> specifying any
+                certificate/key combination if a user does
+                <emphasis>not</emphasis> want the system to
+                overwrite the existing SSL certificate/key
+                configuration.  </para>
+            <para>If a user wants to replace the existing SSL
+                configuration, a new certificate, key, and
+                securePort combination must be provided instead
+                of, or in addition to, the optional/editable
+                attributes. </para>
+            <table rules="all">
+                <?dbfo keep-together="always"?>
+                <caption> Optional SSL Attributes</caption>
+                <thead>
+                    <tr align="center">
+                        <td>Optional SSL Attributes</td>
+                        <td>Non-SSL Traffic</td>
+                        <td>SSL Traffic</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td><code>enabled</code> =
+                            <code>true</code> (default)</td>
+                        <td> Yes </td>
+                        <td> Yes </td>
+                    </tr>
+                    <tr align="left">
+                        <td><code>enabled</code> =
+                            <code>false</code></td>
+                        <td> Yes </td>
+                        <td> No </td>
+                    </tr>
+                    <tr align="left">
+                        <td><code>secureTrafficOnly</code> =
+                            <code>true</code></td>
+                        <td> No </td>
+                        <td> Yes </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <code>secureTrafficOnly</code> =
+                            <code>false</code> (default) </td>
+                        <td> Yes </td>
+                        <td> Yes </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <para><code>enabled</code> =
+                                <code>true</code></para>
+                            <para><code>secureTrafficOnly</code> =
+                                <code>true</code></para>
+                        </td>
+                        <td> No </td>
+                        <td> Yes </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <para><code>enabled</code> =
+                                <code>true</code></para>
+                            <para><code>secureTrafficOnly</code> =
+                                <code>false</code></para>
+                        </td>
+                        <td> Yes </td>
+                        <td> Yes </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <para><code>enabled</code> =
+                                <code>false</code></para>
+                            <para><code>secureTrafficOnly</code> =
+                                <code>false</code></para>
+                        </td>
+                        <td> Yes </td>
+                        <td> No </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <para><code>enabled</code> =
+                                <code>false</code></para>
+                            <para><code>secureTrafficOnly</code> =
+                                <code>true</code></para>
+                        </td>
+                        <td> Yes </td>
+                        <td> No </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <note>
+                <para>All requests to SSL termination in the JSON
+                    format require the key/certificates to be in
+                    "proper" JSON format, meaning that all raw
+                    line feed characters should be wrapped in a
+                    newline character. So if the user pastes in
+                    the key from a <filename>mykey.key</filename>
+                    file, JSON will not properly handle the field.
+                    The key/certificates can be wrapped in a
+                    newline character in Java, for example, using
+                    <code>string.replaceAll("\n",
+                        "\\n")</code>. Please refer to the
+                    examples above for working, "pre-formatted"
+                    examples. </para>
+            </note>
+        
+        </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sslTermination">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Update Load Balancing SSL Termination Full
+                    Certification Request: XML">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.xml"
                     />
                 </wadl:doc> &securePortParameter;
                 &privatekeyParameter; &certificateParameter;
-                &intermediatecertificateParameter; &enabledParameter;
+                &intermediatecertificateParameter;
+                &enabledParameter;
                 &secureTrafficOnlyParameter; </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Update Load Balancing SSL Termination Full
+                    Certification Request: JSON">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request.json"
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sslTermination">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Update Load Balancing SSL Termination
+                    Attribute Request: XML">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.xml"
                     />
@@ -2019,34 +2655,18 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Update Load Balancing SSL Termination
+                        Attribute Request: JSON">
                     <xsdxt:code
                         href="../samples/lb-ssl-termination-request-attrs.json"
                     />
                 </wadl:doc>
             </representation>
         </request>
-        <response>
-            <representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-ssl-termination-response.xml"
-                    />
-                </wadl:doc>
-            </representation>
-        </response>
-        <response>
-            <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-ssl-termination-response.json"
-                    />
-                </wadl:doc>
-            </representation>
-        </response>
+        <response status="200">
+        </response> &commonFaults; &getFaults;        
     </method>
+    
     <method id="deleteSSLTermination" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete SSL termination">
@@ -2067,8 +2687,14 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 it is also enabled on the shadow server and Cloud
                 Files logs contain log files for both.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <!-- metadata -->
+    
     <method id="showLoadBalancerMetadata" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer metadata">
@@ -2092,7 +2718,9 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="showLoadBalancerMetadataItem" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer metadata item">
@@ -2118,7 +2746,9 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                         href="../samples/lb-list-meta-response.xml"/>
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="showNodeMetadata" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer node metadata">
@@ -2142,7 +2772,9 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                     />
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="showNodeMetadataItem" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer node metadata item">
@@ -2152,7 +2784,8 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
-                &metaIdParameter; </representation>
+                <!--     &metaIdParameter;  --> 
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/json">
@@ -2169,7 +2802,9 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                         href="../samples/lb-list-meta-response.xml"/>
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; 
+    </method>
+    
     <method id="addLoadBalancerMetadata" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add load balancer metadata">
@@ -2198,6 +2833,7 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
             </representation>
         </request>
     </method>
+    
     <method id="addNodeMetadataItem" name="POST">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Add load balancer node metadata item">
@@ -2225,7 +2861,12 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc> &keyParameter; &valueParameter;
             </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="updateLoadBalancerMetadataItem" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer metadata item">
@@ -2259,7 +2900,12 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 </wadl:doc> &valueParameter; &metaIdParameter;
             </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="updateNodeMetadataItem" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Update load balancer node metadata item">
@@ -2294,29 +2940,31 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                         href="../samples/lb-update-meta-request.xml"/>
                 </wadl:doc>&valueParameter; </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteLoadBalancerMetadataItem" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete load balancer metadata item">
             <para role="shortdesc">Deletes a metadata item from the
                 load balancer.</para>
-            <para>To bulk-delete metadata, provide a query parameter
-                list of meta IDs. For example:
-                    /metadata?id=<parameter>metaId</parameter>&amp;id=
-                    <parameter>metaId</parameter>. The current default
-                limit is ten IDs per request. Any and all
+            <para>Any and all
                 configuration data is immediately purged and is not
-                recoverable. If one of the items in the list cannot be
-                removed due to its current status, a 400:BadRequest is
-                returned along with the IDs of the ones the system
-                identified as potential failures for this
-                request.</para>
+                recoverable.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/xml" xml:lang="EN">
                 &metaIdParameter; </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="bulkDeleteLoadBalancerMetadataItems" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Bulk-delete load balancer metadata items">
@@ -2334,25 +2982,31 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN">
+                &metaIdQueryParameter; </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="deleteNodeMetadataItem" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete load balancer node metadata item">
             <para role="shortdesc">Deletes a metadata item from the
                 node.</para>
-            <para>To bulk-delete metadata, provide a query parameter
-                list of meta IDs. For example:
-                    /metadata?id=<parameter>metaId</parameter>&amp;id=
-                    <parameter>metaId</parameter>. The current default
-                limit is ten IDs per request. Any and all
+            <para>Any and all
                 configuration data is immediately purged and is not
-                recoverable. If one of the items in the list cannot be
-                removed due to its current status, a 400:BadRequest is
-                returned along with the IDs of the ones the system
-                identified as potential failures for this
-                request.</para>
+                recoverable.</para>
         </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
+    
     <method id="bulkDeleteNodeMetadataItems" name="DELETE">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Bulk-delete load balancer node metadata items">
@@ -2370,5 +3024,14 @@ href="../samples/lb-atom-feed-by-sessionpersistence.json"
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" xml:lang="EN">
+                &metaIdQueryParameter; </representation>
+        </request>
+        
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
 </application>
