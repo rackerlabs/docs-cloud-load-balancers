@@ -2710,7 +2710,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:metadata">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2739,7 +2739,7 @@
                         href="../samples/lb-list-meta-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2764,7 +2764,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:metadata">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2795,7 +2795,7 @@
                         href="../samples/lb-list-meta-response.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2824,7 +2824,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2832,6 +2832,10 @@
                 </wadl:doc> &keyParameter; &valueParameter;
             </representation>
         </request>
+        <response status="200">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
     
     <method id="addNodeMetadataItem" name="POST">
@@ -2853,7 +2857,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2892,7 +2896,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2933,7 +2937,7 @@
                     />
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -2956,7 +2960,7 @@
                 recoverable.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/json" xml:lang="EN">
                 &metaIdParameter; </representation>
         </request>
         <response status="200">
@@ -2983,7 +2987,7 @@
                 request.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:meta">
                 &metaIdQueryParameter; </representation>
         </request>
         <response status="200">
@@ -3025,7 +3029,7 @@
                 request.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" xml:lang="EN">
+            <representation mediaType="application/json" xml:lang="EN">
                 &metaIdQueryParameter; </representation>
         </request>
         
