@@ -47,13 +47,27 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-06-06</pubdate>
+        <pubdate>2014-07-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-07-15</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for locating
+                                your account number (tenant ID) in the
+                                Cloud Control Panel (see <xref
+                                   linkend="Generating_Auth_Token"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-06</date>
                 <revdescription>
@@ -754,9 +768,10 @@
                         the Rackspace cloud. To find your tenant ID or
                         cloud account number, locate your username on
                         the upper-right side of the top navigation
-                        pane in the Cloud Control Panel. The tenant ID
-                        or account number is in parentheses just to
-                        the right of your username.</para>
+                        pane in the Cloud Control Panel. Click your
+                        username to display the menu. The tenant ID or
+                        account number is the first item in the
+                        menu.</para>
                 </listitem>
             </itemizedlist></para>
         <para> You can use either of the following endpoints to access
