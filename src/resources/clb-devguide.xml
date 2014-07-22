@@ -1691,15 +1691,18 @@
                 service. It allows the caller to select a region into
                 which a load balancer is to be provisioned.</para>
             <para>To determine which region to operate against, select
-                an endpoint from the table below. To help you decide
-                which regionalized endpoint to use, read about special
-                considerations for choosing a data center at <link
-                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw"
-                    xmlns:svg="http://www.w3.org/2000/svg"
-                    xmlns:m="http://www.w3.org/1998/Math/MathML"
-                    xmlns:html="http://www.w3.org/1999/xhtml"
-                    >http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw</link>.
-                    <table rules="all">
+                an endpoint from the table below. <tip>
+                    <para>To help you decide which regionalized
+                        endpoint to use, read about special
+                        considerations for choosing a data center at
+                            <link
+                            xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw"
+                            xmlns:svg="http://www.w3.org/2000/svg"
+                            xmlns:m="http://www.w3.org/1998/Math/MathML"
+                            xmlns:html="http://www.w3.org/1999/xhtml"
+                            >http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw</link>.</para>
+                </tip>
+                <table rules="all">
                     <caption>Regionalized service endpoints</caption>
                     <thead>
                         <tr align="center">
