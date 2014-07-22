@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-07-15</pubdate>
+        <pubdate>2014-07-22</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,22 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-07-22</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information about choosing
+                                which regionalized endpoint to use in
+                                   <xref
+                                   linkend="Service_Access_Endpoints-d1e517"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -1675,21 +1691,14 @@
                 service. It allows the caller to select a region into
                 which a load balancer is to be provisioned.</para>
             <para>To determine which region to operate against, select
-                an endpoint from the table below. Replace the sample
-                account ID number,<parameter>1234</parameter>, with
-                your actual account number returned as part of the
-                authentication service response. You find the actual
-                account number after the final '/' in the
-                    <code>publicURL</code> field returned by the
-                authentication response. In <xref
-                    linkend="auth_response_json"/>, the account id is
-                    <code>1100111</code>, as you can see from the
-                    <code>publicURL</code> field for
-                    <code>cloudLoadBalancers</code>:<code
+                an endpoint from the table below. To help you decide
+                which regionalized endpoint to use, read about special
+                considerations for choosing a data center at <link
+                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw"
                     xmlns:svg="http://www.w3.org/2000/svg"
                     xmlns:m="http://www.w3.org/1998/Math/MathML"
                     xmlns:html="http://www.w3.org/1999/xhtml"
-                    >"https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"</code>.
+                    >http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw</link>.
                     <table rules="all">
                     <caption>Regionalized service endpoints</caption>
                     <thead>
@@ -1734,6 +1743,21 @@
                     </tbody>
                 </table>
             </para>
+            <para>Replace the sample account ID
+                    number,<parameter>1234</parameter>, with your
+                actual account number returned as part of the
+                authentication service response. You find the actual
+                account number after the final '/' in the
+                    <code>publicURL</code> field returned by the
+                authentication response. In <xref
+                    linkend="auth_response_json"/>, the account id is
+                    <code>1100111</code>, as you can see from the
+                    <code>publicURL</code> field for
+                    <code>cloudLoadBalancers</code>:<code
+                    xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns:m="http://www.w3.org/1998/Math/MathML"
+                    xmlns:html="http://www.w3.org/1999/xhtml"
+                    >"https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"</code>.</para>
             <para>
                 <emphasis role="bold">If load balancing Cloud
                     Servers</emphasis>, you can determine the
