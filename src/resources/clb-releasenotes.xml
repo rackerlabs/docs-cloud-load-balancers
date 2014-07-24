@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2014-06-17</pubdate>
+	<pubdate>2014-07-23</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,6 +40,12 @@
         	</para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2014-07-23</date>
+				<revdescription>
+					<para>Updated for v1.22.9.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-06-17</date>
 				<revdescription>
@@ -288,6 +294,56 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="clbv1.22.9">
+		<title>v1.22.9, July 23, 2014</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Added new TCP_STREAM load balancing protocol.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Deprecated all connection throttling attributes except for
+					the <code>maxConnections</code> attribute.</para>
+			</listitem>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Minor documentation changes.</para>
+			</listitem>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Minor bug fixes.</para>
+			</listitem>
+			<listitem security="internal" xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<para>Rewrote sync management API call in order to minimize
+					downtime for load balancers being synchronized. </para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="clbv1.21.14">
 		<title>v1.21.14, June 17, 2014</title>
