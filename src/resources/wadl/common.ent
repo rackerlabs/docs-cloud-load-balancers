@@ -498,10 +498,8 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Maximum number of connections allowed from a single IP
-            address in the defined <code>rateInterval</code>. To
-            enable an unlimited connection rate, set to 0. Otherwise,
-            set to a value from 1 to 100000.</para>
+        <para>Deprecated as of 1.22. Attribute can still be set,
+        but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY maxConnectionsParameter '
@@ -519,10 +517,8 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Allow at least this number of connections per IP address
-            before applying throttling restrictions. Setting a value
-            of 0 allows unlimited simultaneous connections; otherwise,
-            set to a value from 1 to 1000.</para>
+        <para>Deprecated as of 1.22. Attribute can still be set,
+        but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY rateIntervalParameter '
@@ -530,12 +526,8 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Frequency (in seconds) at which the
-                <code>maxConnectionRate</code> is assessed. For
-            example, a <code>maxConnectionRate</code> of 30 with a
-                <code>rateInterval</code> of 60 would allow a maximum
-            of 30 connections per minute for a single IP address. Set
-            to a value from 1 to 3600.</para>
+        <para>Deprecated as of 1.22. Attribute can still be set,
+        but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>' >
 <!ENTITY persistenceTypeParameter '

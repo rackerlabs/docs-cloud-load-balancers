@@ -4036,6 +4036,18 @@
                             stream media over networks and is built on
                             top of UDP.</td>
                     </tr>
+                    <tr align="left">
+                        <td colspan="2">
+                            <code>TCP_STREAM</code></td>
+                        <td colspan="3">TCP Streaming allows either
+                            the client or server to send the first
+                            message when a connection is established.
+                            This option is for protocols where there is
+                            no request-response semantic. Either side of
+                            the connection can write the first message,
+                            with no response being necessarily
+                            required or expected.</td>
+                    </tr>
                 </tbody>
             </table>
             <wadl:resources

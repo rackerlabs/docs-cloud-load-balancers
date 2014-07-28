@@ -70,6 +70,10 @@
         {
             "name": "SFTP",
             "port": 22
+        },
+        {
+            "name": "TCP_STREAM",
+            "port": 0
         }
     ]
 }
