@@ -17,4 +17,5 @@
     <protocol name="UDP" port="0" />
     <protocol name="UDP_STREAM" port="0" />
     <protocol name="SFTP" port="22" />
+    <protocol name="TCP_STREAM" port="0" />
 </protocols>
