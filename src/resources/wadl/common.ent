@@ -498,7 +498,7 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Deprecated as of 1.22. Attribute can still be set,
+        <para>Deprecated as of v1.22 and later versions. Parameter can still be set,
         but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>'>
@@ -517,7 +517,7 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Deprecated as of 1.22. Attribute can still be set,
+        <para>Deprecated as of v1.22 and later versions. Parameter can still be set,
         but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>'>
@@ -526,7 +526,7 @@ content caching.</para>
     type="xsd:int">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Deprecated as of 1.22. Attribute can still be set,
+        <para>Deprecated as of v1.22 and later versions. Parameter can still be set,
         but it has no effect on the load balancer.</para>
     </wadl:doc>
 </param>' >

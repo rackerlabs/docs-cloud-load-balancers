@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2014-07-23</pubdate>
+	<pubdate>2014-07-31</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -41,7 +41,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2014-07-23</date>
+				<date>2014-07-31</date>
 				<revdescription>
 					<para>Updated for v1.22.9.</para>
 				</revdescription>
@@ -296,13 +296,15 @@
 		<?rax revhistory?>
 	</chapter>
 	<chapter xml:id="clbv1.22.9">
-		<title>v1.22.9, July 23, 2014</title>
+		<title>v1.22.9, July 31, 2014</title>
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
-				<para>Added new TCP_STREAM load balancing protocol.</para>
+				<para>Added new TCP_STREAM load balancing protocol. Refer to <link
+					xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/protocols.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/protocols.html</link> for details.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
@@ -311,12 +313,11 @@
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				<para>Deprecated all connection throttling attributes except for
-					the <code>maxConnections</code> attribute.</para>
-			</listitem>
-			<listitem xmlns:svg="http://www.w3.org/2000/svg"
-				xmlns:m="http://www.w3.org/1998/Math/MathML"
-				xmlns:html="http://www.w3.org/1999/xhtml">
-				<para>Minor documentation changes.</para>
+					the <code>maxConnections</code> attribute. Refer
+					to <link
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/throttle_connections.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/throttle_connections.html</link>
+					for details.</para>
 			</listitem>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"

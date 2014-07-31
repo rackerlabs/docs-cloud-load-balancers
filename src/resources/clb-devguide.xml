@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-07-22</pubdate>
+        <pubdate>2014-07-31</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,27 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-07-31</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added TCP Streaming protocol in
+                                   <xref linkend="protocols"/>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Deprecated the attributes
+                                   <code>maxConnectionRate</code>,
+                                   <code>minConnections</code>, and
+                                   <code>rateInterval</code> in <xref
+                                   linkend="throttle_connections"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -4022,6 +4043,18 @@
                     </tr>
                     <tr align="left">
                         <td colspan="2">
+                            <code>TCP_STREAM</code></td>
+                        <td colspan="3">TCP Streaming allows either
+                            the client or server to send the first
+                            message when a connection is established.
+                            This option is for protocols where there is
+                            no request-response semantic. Either side of
+                            the connection can write the first message,
+                            with no response being necessarily
+                            required or expected.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">
                             <code>UDP</code></td>
                         <td colspan="3">The User Datagram Protocol
                             provides a datagram service that
@@ -4036,18 +4069,7 @@
                             stream media over networks and is built on
                             top of UDP.</td>
                     </tr>
-                    <tr align="left">
-                        <td colspan="2">
-                            <code>TCP_STREAM</code></td>
-                        <td colspan="3">TCP Streaming allows either
-                            the client or server to send the first
-                            message when a connection is established.
-                            This option is for protocols where there is
-                            no request-response semantic. Either side of
-                            the connection can write the first message,
-                            with no response being necessarily
-                            required or expected.</td>
-                    </tr>
+                    
                 </tbody>
             </table>
             <wadl:resources
