@@ -47,13 +47,27 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-07-23</pubdate>
+        <pubdate>2014-08-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-08-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information about choosing
+                                which regionalized endpoint to use in
+                                   <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-07-23</date>
                 <revdescription>
@@ -940,8 +954,8 @@
             <para>To help you decide which regionalized endpoint to
                 use, read about special considerations for choosing a
                 data center at <link
-                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw"
-                    >http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw</link>.</para>
+                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
+                    >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>
         </tip>
         <para>
             <table rules="all">

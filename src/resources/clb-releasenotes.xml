@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2014-07-31</pubdate>
+	<pubdate>2014-08-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -41,9 +41,9 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2014-07-31</date>
+				<date>2014-08-01</date>
 				<revdescription>
-					<para>Updated for v1.22.9.</para>
+					<para>Updated for v1.22.10.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -295,8 +295,8 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="clbv1.22.9">
-		<title>v1.22.9, July 31, 2014</title>
+	<chapter xml:id="clbv1.22.10">
+		<title>v1.22.10, August 1, 2014</title>
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
