@@ -328,7 +328,8 @@
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				<para>Rewrote sync management API call in order to minimize
-					downtime for load balancers being synchronized. </para>
+					downtime for load balancers being
+					synchronized.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
