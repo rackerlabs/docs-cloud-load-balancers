@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2014-08-01</pubdate>
+	<pubdate>2014-08-08</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,6 +40,12 @@
         	</para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2014-08-08</date>
+				<revdescription>
+					<para>Updated links in Release Notes.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-08-01</date>
 				<revdescription>
@@ -342,7 +348,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -382,7 +388,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -445,7 +451,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -479,7 +485,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -509,7 +515,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -537,7 +543,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -552,11 +558,11 @@
 				<para>Added support for HTTPS redirection feature.
 					Refer to the description for the
 						<code>httpsRedirect</code> attribute at <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+							xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html"
+							>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html</link>
 					and <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/PUT_updateLoadBalancer_v1.0__account__loadbalancers__loadBalancerId__load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/PUT_updateLoadBalancer_v1.0__account__loadbalancers__loadBalancerId__load-balancers.html</link>
 					for details. </para>
 			</listitem>
 		</itemizedlist>
@@ -570,7 +576,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -596,7 +602,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -627,7 +633,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -677,7 +683,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -732,7 +738,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -767,7 +773,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -791,7 +797,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -819,7 +825,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -846,7 +852,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -869,7 +875,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -906,7 +912,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -941,7 +947,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -973,7 +979,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -999,7 +1005,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1026,7 +1032,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1057,7 +1063,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1082,7 +1088,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1096,11 +1102,11 @@
 					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:259986"
 						>B-27058: </link>Added Half-Closed support on
 					the load balancer. Refer to <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html</link>
 					and <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Update_Load_Balancer_Attributes-d1e1812.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/PUT_updateLoadBalancer_v1.0__account__loadbalancers__loadBalancerId__load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/PUT_updateLoadBalancer_v1.0__account__loadbalancers__loadBalancerId__load-balancers.html</link>
 					for details.</para>
 			</listitem>
 		</itemizedlist>
@@ -1114,8 +1120,8 @@
 					has been fixed so a default timeout value is now
 					mapped and displayed in the response if the user
 					has not set the value. Refer to <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html</link>
 					for details about timeout.</para>
 			</listitem>
 		</itemizedlist>
@@ -1129,7 +1135,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1167,7 +1173,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1182,8 +1188,8 @@
 						>B-35550: </link>Added Health Monitoring based
 					logging with ATOM and API formatted feeds. Refer
 					to <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Node-Events-d1e264.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Node-Events-d1e264.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/GET_listNodeEvents_v1.0__account__loadbalancers__loadBalancerId__nodes_events_Nodes-d1e2173.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/GET_listNodeEvents_v1.0__account__loadbalancers__loadBalancerId__nodes_events_Nodes-d1e2173.html</link>
 					for details.</para>
 			</listitem>
             <listitem>
@@ -1191,8 +1197,8 @@
 						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A411895"
 						>B-34716: </link>Added timeout option to load
 					balancer. Refer to <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html</link>
 					for details.</para>
 			</listitem>
 		</itemizedlist>
@@ -1201,8 +1207,8 @@
     		<listitem>
     			<para>Updated Shared IPs information with samples for IPv4/IPv6
 					combinations. Refer to <link
-						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html"
-						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Create_Load_Balancer-d1e1635.html</link>
+						xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html"
+						>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/POST_createLoadBalancer_v1.0__account__loadbalancers_load-balancers.html</link>
 					for details.</para>
     		</listitem>
 		</itemizedlist>
@@ -1216,7 +1222,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1251,7 +1257,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1291,7 +1297,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1322,7 +1328,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1368,7 +1374,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1423,7 +1429,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1482,7 +1488,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1576,7 +1582,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1616,7 +1622,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1640,7 +1646,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1681,7 +1687,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1721,7 +1727,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1745,7 +1751,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1796,7 +1802,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1862,7 +1868,7 @@
 				<para><link xlink:href="http://docs.rackspace.com/api/">Cloud Load Balancers Developer Guide</link></para>
 			</listitem>
 			<listitem>
-				<para><link xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+				<para><link xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 					>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1929,7 +1935,7 @@
 				<para><link xlink:href="http://docs.rackspace.com/api/">Cloud Load Balancers Developer Guide</link></para>
 			</listitem>
 			<listitem>
-				<para><link xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+				<para><link xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 					>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -1998,7 +2004,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-					xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -2022,7 +2028,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-					xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>
@@ -2049,7 +2055,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-					xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
     	</itemizedlist>
@@ -2089,7 +2095,7 @@
 			</listitem>
 			<listitem>
 				<para><link
-					xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/23181-cloud-load-balancers"
+					xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81969-cloud-load-balancers"
 						>Product Feedback Forum</link></para>
 			</listitem>
 		</itemizedlist>

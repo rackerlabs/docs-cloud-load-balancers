@@ -403,10 +403,9 @@
                     </listitem>
                 </itemizedlist> You can download the current version
                 of the Rackspace Cloud Load Balancers Developer Guide
-                from <link
-                    xlink:href="http://docs.rackspace.com/loadbalancers/api/clb-devguide-latest.pdf"
-                    >
-                    http://docs.rackspace.com/loadbalancers/api/clb-devguide-latest.pdf</link>. </para>
+                from the Rackspace Cloud website at <link
+                    xlink:href="http://docs.rackspace.com/"
+                    >http://docs.rackspace.com/</link>. </para>
         </section>
     </chapter>
     <chapter xml:id="Management_API_Operations-d1e268">
