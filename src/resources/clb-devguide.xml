@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-08-01</pubdate>
+        <pubdate>2014-08-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,22 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-08-12</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note about
+                                   <code>unprocessableEntity</code> in
+                                   <xref
+                                   linkend="unprocessableEntity-d1e1334"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -2367,6 +2383,23 @@
                     requested on an item that does not support the
                     operation, but the request is properly
                     formed.</para>
+                <note>
+                    <para>The Cloud Load Balancing API is considered
+                        asynchronous, which is why there is a
+                            <code>status</code> attribute on the load
+                        balancer. The API does not allow concurrent
+                        modifications on a single load balancer
+                        instance. If a concurrent modification is
+                        attempted, the
+                            <code>unprocessableEntity</code> fault
+                        will be returned in the response. If you are
+                        using the API programmatically, we suggest
+                        that you issue a GET request to Show load
+                        balancer details on the load balancer instance
+                        to verify that the status is
+                            <code>ACTIVE</code> before continuing any
+                        other modifications.</para>
+                </note>
                 <example>
                     <title>unprocessableEntity fault: Response</title>
                     <literallayout class="monospaced">
