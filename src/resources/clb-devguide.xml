@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-08-12</pubdate>
+        <pubdate>2014-09-10</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,27 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-09-10</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed link for creating account
+                                users in <xref
+                                   linkend="assigning_roles_to_account_users"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information to the section
+                                "Add node" in the API  operations
+                                chapter about adding nodes that are
+                                not yet ready to serve traffic.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -2637,7 +2658,7 @@
                 <itemizedlist>
                     <listitem>
                         <para><link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_admin-addUser_v2.0_users_User_Calls.html"
                                 >Create account users</link></para>
                     </listitem>
                     <listitem>

@@ -916,6 +916,14 @@
                 as either PRIMARY or SECONDARY.</para>
             <para>Domain names are also accepted with certain
                 restrictions.</para>
+            <tip><para>   
+                Suppose that you want to add nodes to the load balancer before the services on those nodes are ready to serve traffic. 
+                As of right now, the default status for added nodes is <code>ONLINE</code>. 
+                The node's status is an immutable attribute, and only health monitoring can change this attribute.
+                So in order to prevent traffic from going to the node, but still allowing the health monitor to perform checks, 
+                you can add a node with a <code>DRAINING</code> condition. Once the backend node is ready to serve traffic,
+                you can change the condition to <code>ENABLED</code>.
+            </para></tip>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -957,13 +965,14 @@
                 specified node on a specified load balancer.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>The node's IP and port are immutable attributes
-                    and cannot be modified with a
+                
+                <para>The node's IP, port, and status are immutable attributes
+                        and cannot be modified with a
                         <command>PUT</command> request. Supplying an
-                    unsupported attribute results in a
+                        unsupported attribute results in a
                         <returnvalue>400 (badRequest)</returnvalue>
-                    fault. A load balancer supports a maximum of 25
-                    nodes; the maximum weight of a node is 100.</para>
+                        fault. A load balancer supports a maximum of 25
+                        nodes; the maximum weight of a node is 100.</para>                           
             </note>
             <para>Every node in the load balancer has an associated
                 condition which determines its role within the load
