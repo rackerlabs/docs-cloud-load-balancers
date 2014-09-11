@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-09-10</pubdate>
+        <pubdate>2014-09-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -57,20 +57,20 @@
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2014-09-10</date>
+                <date>2014-09-11</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Fixed link for creating account
-                                users in <xref
+                            <para>Fixed links for account users in
+                                   <xref
                                    linkend="assigning_roles_to_account_users"
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para>Added information to the section
-                                "Add node" in the API  operations
-                                chapter about adding nodes that are
-                                not yet ready to serve traffic.</para>
+                            <para>Added tip to the section "Add node"
+                                in the API operations chapter about
+                                adding nodes that are not yet ready to
+                                serve traffic.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -2658,19 +2658,19 @@
                 <itemizedlist>
                     <listitem>
                         <para><link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_admin-addUser_v2.0_users_User_Calls.html"
-                                >Create account users</link></para>
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html"
+                                >Add account users</link></para>
                     </listitem>
                     <listitem>
                         <para>
                             <link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
                                 >Assign roles to account
                             users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
                                 >Delete roles from account
                                 users</link></para>
                     </listitem>
