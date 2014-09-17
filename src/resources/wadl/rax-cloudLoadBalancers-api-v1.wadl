@@ -1126,6 +1126,68 @@
             title="Add virtual IP version 6">
             <para role="shortdesc">Adds virtual IP version 6.</para>
         </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-vip-v6-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:virtualIp">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-vip-v6-request.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Add shared virtual IP version 6: JSON request">
+                    <xsdxt:code
+                        href="../samples/lb-add-shared-vip-v6-request.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:virtualIp">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Add shared virtual IP version 6: XML request">
+                    <xsdxt:code
+                        href="../samples/lb-add-shared-vip-v6-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code href="../samples/lb-add-vip-v6-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:virtualIp">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code href="../samples/lb-add-vip-v6-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Add shared virtual IP version 6: JSON response">
+                    <xsdxt:code href="../samples/lb-add-shared-vip-v6-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:virtualIp">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Add shared virtual IP version 6: XML response">
+                    <xsdxt:code href="../samples/lb-add-shared-vip-v6-response.xml"
+                    />
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
     </method>
     
     <method id="deleteVirtualIp" name="DELETE">
@@ -1140,7 +1202,7 @@
                     xml:lang="EN">
                 </wadl:doc>
             </representation>
-        </response>
+        </response> &lesscommonFaults;
     </method>
     
     <method id="bulkDeleteVirtualIps" name="DELETE">

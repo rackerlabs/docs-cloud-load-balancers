@@ -29,6 +29,27 @@
             <representation mediaType="application/json"/>
         </response>
            '>
+           
+     <!ENTITY lesscommonFaults
+           '
+        <response status="400 500" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="lbapi:loadbalancerFault"/>
+            <representation mediaType="application/json"/>
+        </response>
+        <response status="503" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="lbapi:serviceUnavailable"/>
+            <representation mediaType="application/json"/>
+        </response>
+        <response status="404" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="lbapi:itemNotFound"/>
+            <representation mediaType="application/json"/>
+        </response>
+        <response status="401" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="lbapi:unauthorized"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>
+           
       <!--
           Faults on GET
       -->
