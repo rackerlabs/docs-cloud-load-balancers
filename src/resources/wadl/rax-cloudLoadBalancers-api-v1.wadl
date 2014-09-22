@@ -572,7 +572,7 @@
                 the account. Any and all configuration data is
                 immediately purged and is not recoverable.</para>
         </wadl:doc>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
