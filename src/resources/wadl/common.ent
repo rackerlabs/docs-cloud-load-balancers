@@ -623,6 +623,14 @@ content caching.</para>
         <para>The ID for the node.</para>
     </wadl:doc>
 </param>' >
+<!ENTITY certificateMappingIdParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
+    name="certificateMappingId">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The ID for the certificate mapping.</para>
+    </wadl:doc>
+</param>' >
 <!ENTITY virtualIpIdTemplateParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" style="template" type="xsd:string" required="true"
     name="virtualIpId">
