@@ -4295,6 +4295,40 @@
                     <wadl:method href="#deleteSSLTermination"/>
                 </wadl:resource>
             </wadl:resources>
+            <section xml:id="CertificateMappings">
+                <title>Certificate Mappings</title>
+                <para>
+                    Certificate mappings allow for multiple
+                    certificates to be used on SSL terminated load
+                    balancers. By default, a load balancer supports
+                    a maximum of 20 certificate mappings.
+                </para>
+                <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:xi="http://www.w3.org/2001/XInclude">
+                    <para>
+                        The <code>hostName</code> attribute is considered
+                        to be unique per load balancer. Thus, duplicate host names
+                        are not allowed. Furthermore, the <code>'*'</code>
+                        wildcard character is allowed for host names. Lastly,
+                        host names are honored in a most specific to least specific
+                        fashion.
+                    </para>
+                </note>
+                <wadl:resources
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#certificateMappings">
+                        <wadl:method href="#listCertificateMappings"/>
+                        <wadl:method href="#addCertificateMapping"/>
+                    </wadl:resource>
+                    <wadl:resource
+                        href="wadl/rax-cloudLoadBalancers-api-v1.wadl#certificateMappingId">
+                        <wadl:method href="#showCertificateMapping"/>
+                        <wadl:method href="#updateCertificateMapping"/>
+                        <wadl:method href="#deleteCertificateMapping"/>
+                    </wadl:resource>
+                </wadl:resources>
+             </section>
         </section>
         
         <section xml:id="Metadata-d1e2173">

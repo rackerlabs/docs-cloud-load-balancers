@@ -1,0 +1,16 @@
+{
+  "certificateMappings": [
+    {
+      "certificateMapping": {
+        "id": 123,
+        "hostName": "rackspace.com"
+      }
+    },
+    {
+      "certificateMapping": {
+        "id": 124,
+        "hostName": "*.rackspace.com"
+      }
+    }
+  ]
+}
