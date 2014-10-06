@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<certificateMappings xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+  <certificateMapping
+    id="123"
+    hostName="rackspace.com"/>
+  <certificateMapping
+    id="124"
+    hostName="*.rackspace.com"/>
+</certificateMappings>

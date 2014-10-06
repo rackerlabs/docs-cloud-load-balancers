@@ -144,6 +144,16 @@
                             <method href="#showSSLTermination"/>
                             <method href="#updateSSLTermination"/>
                             <method href="#deleteSSLTermination"/>
+                            <resource id="certificateMappings" path="certificatemappings">
+                                <method href="#listCertificateMappings"/>
+                                <method href="#addCertificateMapping"/>
+                                <resource id="certificateMappingId" path="{certificateMappingId}">
+                                    &certificateMappingIdParameter; <method
+                                       href="#showCertificateMapping"/>
+                                    <method href="#updateCertificateMapping"/>
+                                    <method href="#deleteCertificateMapping"/>
+                                </resource>
+                            </resource>
                         </resource>
                         <resource id="metadata" path="metadata">
                             <method href="#addLoadBalancerMetadata"/>
@@ -848,13 +858,6 @@
                         href="../samples/lb-list-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:nodes">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-list-nodes-response.xml"/>
-                </wadl:doc>
-            </representation>
         </response> &commonFaults; &getFaults; </method>
     
     <method id="showNode" name="GET">
@@ -941,7 +944,7 @@
                 </wadl:doc>
             </representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2764,8 +2767,190 @@
         </response> &commonFaults; &getFaults;
     </method>
     
+    <!-- certificateMappings -->
+
+    <method id="listCertificateMappings" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="List certificate mappings">
+            <para role="shortdesc">
+                Lists certificate mappings that are configured for
+                a specified load balancer.
+            </para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>
+                    Only the <code>id</code> and
+                    <code>hostName</code> attributes are
+                    displayed.
+                </para>
+            </note>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mappings-response.json"
+                    />
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mappings-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
+    </method>
+
+    <method id="showCertificateMapping" name="GET">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show certificate mappings details">
+            <para role="shortdesc">Show details for a specified
+                certificate mapping.</para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>
+                    The <code>privateKey</code> attribute
+                    is not displayed for security purposes.
+                </para>
+            </note>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mapping-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
+    </method>
+
+    <method id="addCertificateMapping" name="POST">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Add certificate mapping">
+            <para role="shortdesc">
+                Adds a certificate mapping to a
+                specified load balancer.
+            </para>
+            <para>
+                When a certificate mapping is added, it is assigned a
+                unique ID that can be used for management operations
+                such as changing its attributes or removing it.
+            </para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-request.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
+    </method>
+
+    <method id="updateCertificateMapping" name="PUT">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update certificate mapping">
+            <para role="shortdesc">
+                Updates the configuration for a
+                specified certificate mapping on a specified load balancer.
+            </para>
+            <note xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xi="http://www.w3.org/2001/XInclude">
+                <para>
+                    The <code>privateKey</code> attribute
+                    is not displayed for security purposes.
+                </para>
+            </note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-request.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-request.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-response.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &commonFaults; &getFaults;
+    </method>
+
+    <method id="deleteCertificateMapping" name="DELETE">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete certificate mapping">
+            <para role="shortdesc">
+                Deletes a certificate mapping from a
+                specified load balancer.
+            </para>
+            <para>
+                Any and all configuration data is immediately purged
+                and is not recoverable.
+            </para>
+        </wadl:doc>
+        <response status="202">
+            <representation mediaType="application/json">
+            </representation>
+        </response> &commonFaults; &getFaults;
+    </method>
+
     <!-- metadata -->
-    
+
     <method id="showLoadBalancerMetadata" name="GET">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show load balancer metadata">
