@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Load Balancers</productname>
-	<pubdate>2014-08-08</pubdate>
+	<pubdate>2014-10-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,6 +40,12 @@
         	</para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2014-10-07</date>
+				<revdescription>
+					<para>Updated for 1.23.6.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-08-08</date>
 				<revdescription>
@@ -300,6 +306,71 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="clbv1.23.6">
+		<title>v1.23.6, October 7, 2014</title>
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para>Added certificate mappings feature for SSL-terminated load
+					balancers.</para>
+			</listitem>
+			<listitem>
+				<para>Added SSL session ID persistence for HTTPS and SSL
+					pass-through load balancers.</para>
+			</listitem>
+			<listitem>
+				<para>Source IP session persistence can now be used on HTTP load
+					balancers.</para>
+			</listitem>
+			<listitem>
+				<para>Private key is no longer returned for SSL
+					Termination.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Added 'SMOKE' cluster type for QE testing purposes.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Added validation to Zeus callback API call.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Added callBackHost attribute to Zeus callback API
+					call.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resolved Issues</title>
+			<listitem>
+				<para>Fixed bug in which real-time stats API call was returning
+					wrong usage for current connections (SSL).</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Fixed bug where ATOM Hopper "pusher" wasn't
+					successfully marking duplicate records.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>
+					<itemizedlist>
+						<listitem>
+							<para> </para>
+						</listitem>
+					</itemizedlist>
+				</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist>
+			<title>Resources</title>
+			<listitem>
+				<para><link
+						xlink:href="http://docs.rackspace.com/api/"
+						>Cloud Load Balancers Developer
+					Guide</link></para>
+			</listitem>
+			<listitem>
+				<para><link xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link></para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="clbv1.22.10">
 		<title>v1.22.10, August 1, 2014</title>
