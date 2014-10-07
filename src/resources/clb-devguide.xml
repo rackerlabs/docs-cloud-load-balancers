@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-09-22</pubdate>
+        <pubdate>2014-10-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,41 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-10-07</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated links for <xref
+                                   linkend="assigning_roles_to_account_users"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="CertificateMappings"
+                                   >“Certificate
+                                Mappings”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-09-22</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Modified normal response code for
+                                Delete load balancer from 200 to 202
+                                in API Operations chapter.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -1787,13 +1822,12 @@
                 an endpoint from the table below. <tip>
                     <para>To help you decide which regionalized
                         endpoint to use, read about special
-                        considerations for choosing a data center at
-                            <link
-                                xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
+                        considerations for choosing a region at <link
+                            xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
                             xmlns:svg="http://www.w3.org/2000/svg"
                             xmlns:m="http://www.w3.org/1998/Math/MathML"
                             xmlns:html="http://www.w3.org/1999/xhtml"
-                                >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>
+                            >http://www.rackspace.com/knowledge_center/article/about-regions</link>.</para>
                 </tip>
                 <table rules="all">
                     <caption>Regionalized service endpoints</caption>
@@ -2692,13 +2726,13 @@
                     <listitem>
                         <para>
                             <link
-                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                                 >Assign roles to account
                             users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
-                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                                 >Delete roles from account
                                 users</link></para>
                     </listitem>
@@ -4297,12 +4331,10 @@
             </wadl:resources>
             <section xml:id="CertificateMappings">
                 <title>Certificate Mappings</title>
-                <para>
-                    Certificate mappings allow for multiple
-                    certificates to be used on SSL terminated load
-                    balancers. By default, a load balancer supports
-                    a maximum of 20 certificate mappings.
-                </para>
+                <para> Certificate mappings allow for multiple
+                    certificates to be used on SSL-terminated load
+                    balancers. By default, a load balancer supports a
+                    maximum of 20 certificate mappings. </para>
                 <note xmlns:xlink="http://www.w3.org/1999/xlink"
                     xmlns:xi="http://www.w3.org/2001/XInclude">
                     <para>

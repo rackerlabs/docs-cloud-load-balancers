@@ -1,5 +1,5 @@
 <books xmlns="http://docs.rackspace.com/olink">
-  <book path="src/docbkx/clb-intro.xml"/>
-  <book path="src/docbkx/clb-devguide.xml"/>
-  <book path="src/docbkx/clb-releasenotes.xml"/>
+  <book path="src/resources/clb-getting-started.xml"/>
+  <book path="src/resources/clb-devguide.xml"/>
+  <book path="src/resources/clb-releasenotes.xml"/>
 </books>
