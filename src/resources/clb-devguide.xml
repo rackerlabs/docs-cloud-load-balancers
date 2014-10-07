@@ -65,6 +65,13 @@
                                    linkend="assigning_roles_to_account_users"
                                 />.</para>
                         </listitem>
+                        <listitem>
+                            <para>Added <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="CertificateMappings"
+                                   >“Certificate
+                                Mappings”</olink>.</para>
+                        </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
@@ -1815,13 +1822,12 @@
                 an endpoint from the table below. <tip>
                     <para>To help you decide which regionalized
                         endpoint to use, read about special
-                        considerations for choosing a data center at
-                            <link
-                                xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
+                        considerations for choosing a region at <link
+                            xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
                             xmlns:svg="http://www.w3.org/2000/svg"
                             xmlns:m="http://www.w3.org/1998/Math/MathML"
                             xmlns:html="http://www.w3.org/1999/xhtml"
-                                >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>
+                            >http://www.rackspace.com/knowledge_center/article/about-regions</link>.</para>
                 </tip>
                 <table rules="all">
                     <caption>Regionalized service endpoints</caption>
@@ -4325,22 +4331,19 @@
             </wadl:resources>
             <section xml:id="CertificateMappings">
                 <title>Certificate Mappings</title>
-                <para>
-                    Certificate mappings allow for multiple
-                    certificates to be used on SSL terminated load
-                    balancers. By default, a load balancer supports
-                    a maximum of 20 certificate mappings.
-                </para>
+                <para> Certificate mappings allow for multiple
+                    certificates to be used on SSL-terminated load
+                    balancers. By default, a load balancer supports a
+                    maximum of 20 certificate mappings. </para>
                 <note xmlns:xlink="http://www.w3.org/1999/xlink"
                     xmlns:xi="http://www.w3.org/2001/XInclude">
-                    <para>
-                        The <code>hostName</code> attribute is considered
-                        to be unique per load balancer. Thus, duplicate host names
-                        are not allowed. Furthermore, the <code>'*'</code>
-                        wildcard character is allowed for host names. Lastly,
-                        host names are honored in a most specific to least specific
-                        fashion.
-                    </para>
+                    <para> The <code>hostName</code> attribute is
+                        considered to be unique per load balancer.
+                        Thus, duplicate host names are not allowed.
+                        Furthermore, the <code>'*'</code> wildcard
+                        character is allowed for host names. Lastly,
+                        host names are honored in a most specific to
+                        least specific order. </para>
                 </note>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
