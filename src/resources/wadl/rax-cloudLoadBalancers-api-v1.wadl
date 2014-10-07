@@ -2786,19 +2786,19 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mappings-response.xml"/>
+                </wadl:doc>
+            </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-certificate-mappings-response.json"
                     />
-                </wadl:doc>
-            </representation>
-            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-list-certificate-mappings-response.xml"/>
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2818,18 +2818,18 @@
             </note>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-list-certificate-mapping-response.json"/>
-                </wadl:doc>
-            </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-list-certificate-mapping-response.json"/>
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2849,6 +2849,17 @@
             </para>
         </wadl:doc>
         <request>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-request.xml"/>
+                </wadl:doc>
+                &hostName-PostMappingParameter;
+                &privateKey-PostMappingParameter;
+                &certificate-PostMappingParameter;
+                &intermediateCertificate-PostMappingParameter;
+            </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2856,27 +2867,20 @@
                         href="../samples/lb-add-certificate-mapping-request.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-add-certificate-mapping-request.xml"/>
-                </wadl:doc>
-            </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-add-certificate-mapping-response.json"/>
-                </wadl:doc>
-            </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-add-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-add-certificate-mapping-response.json"/>
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2898,6 +2902,17 @@
             </note>
         </wadl:doc>
         <request>
+            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-request.xml"/>
+                </wadl:doc>
+                &hostName-PutMappingParameter;
+                &privateKey-PutMappingParameter;
+                &certificate-PutMappingParameter;
+                &intermediateCertificate-PutMappingParameter;
+            </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2905,27 +2920,20 @@
                         href="../samples/lb-update-certificate-mapping-request.json"/>
                 </wadl:doc>
             </representation>
-            <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-update-certificate-mapping-request.xml"/>
-                </wadl:doc>
-            </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                    <xsdxt:code
-                        href="../samples/lb-update-certificate-mapping-response.json"/>
-                </wadl:doc>
-            </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-update-certificate-mapping-response.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="../samples/lb-update-certificate-mapping-response.json"/>
                 </wadl:doc>
             </representation>
         </response> &commonFaults; &getFaults;
