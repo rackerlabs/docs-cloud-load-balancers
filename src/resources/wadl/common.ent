@@ -472,6 +472,100 @@
         single attribute in a future request.</para>
     </wadl:doc>
 </param>'>
+<!ENTITY hostName-PostMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="hostName" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
+        <para>The host name to be used for the provided certificate credentials.</para>
+        <para>The host name is not validated and verified against the
+            provided certificates. Duplicate host names are also not allowed when
+            providing multiple certificate mappings for a given load balancer.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY privateKey-PostMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="privateKey" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
+        <para>The private key to be used for the provided certificate.</para>
+        <para>The private key is validated and verified against the
+            provided certificates.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY certificate-PostMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="true"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The certificate to be used for the provided host name.</para>
+        <para>The certificate is validated and verified against the
+            key and intermediate certificate(s) if provided.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY intermediateCertificate-PostMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="intermediateCertificate" style="plain" required="false"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The intermediate certificate to be used for the provided
+            certificate and host name.</para>
+        <para>The intermediate certificate is validated and verified
+            against the private key and certificate credentials
+            provided.</para>
+        <para>A user may only provide an intermediate certificate when
+        accompanied by a certificate, private key and host name.
+        It may be added to an existing certificate mapping configuration
+        as a single attribute in a future request.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY hostName-PutMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="hostName" style="plain" required="false"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
+        <para>The host name to be used for the provided certificate credentials.</para>
+        <para>The host name is not validated and verified against the
+            provided certificates. Duplicate host names are also not allowed when
+            providing multiple certificate mappings for a given load balancer.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY privateKey-PutMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="privateKey" style="plain" required="false"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    xml:lang="EN">
+        <para>The private key to be used for the provided certificate.</para>
+        <para>The private key is validated and verified against the
+            provided certificates.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY certificate-PutMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="certificate" style="plain" required="false"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The certificate to be used for the provided host name.</para>
+        <para>The certificate is validated and verified against the
+            key and intermediate certificate(s) if provided.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY intermediateCertificate-PutMappingParameter '
+<param xmlns="http://wadl.dev.java.net/2009/02" name="intermediateCertificate" style="plain" required="false"
+    type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>The intermediate certificate to be used for the provided
+            certificate and host name.</para>
+        <para>The intermediate certificate is validated and verified
+            against the private key and certificate credentials
+            provided.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY enabledParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="enabled" style="plain" required="false"
     type="xsd:boolean">

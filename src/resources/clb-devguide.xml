@@ -4337,13 +4337,19 @@
                     maximum of 20 certificate mappings. </para>
                 <note xmlns:xlink="http://www.w3.org/1999/xlink"
                     xmlns:xi="http://www.w3.org/2001/XInclude">
-                    <para> The <code>hostName</code> attribute is
-                        considered to be unique per load balancer.
-                        Thus, duplicate host names are not allowed.
-                        Furthermore, the <code>'*'</code> wildcard
-                        character is allowed for host names. Lastly,
-                        host names are honored in a most specific to
-                        least specific order. </para>
+                    <para>
+                        The <code>hostName</code> attribute is considered
+                        to be unique per load balancer. Thus, duplicate host names
+                        are not allowed.
+                        The <code>'*'</code> wildcard character is allowed for
+                        host names.
+                        Host names are honored in a most specific to least specific
+                        fashion.
+                        The SSL Termination object will contain the default private key,
+                        certificate and intermediate certificates. These defaults are
+                        necessary and serve as a catch-all to certificate mappings
+                        that do not match on a provided host name.
+                    </para>
                 </note>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
