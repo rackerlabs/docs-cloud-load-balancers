@@ -43,7 +43,7 @@
 			<revision>
 				<date>2014-10-07</date>
 				<revdescription>
-					<para>Updated for 1.23.6.</para>
+					<para>Updated for 1.23.7.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -307,8 +307,8 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="clbv1.23.6">
-		<title>v1.23.6, October 7, 2014</title>
+	<chapter xml:id="clbv1.23.7">
+		<title>v1.23.7, October 7, 2014</title>
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem>
@@ -347,15 +347,6 @@
 			<listitem security="internal">
 				<para>Fixed bug where ATOM Hopper "pusher" wasn't
 					successfully marking duplicate records.</para>
-			</listitem>
-			<listitem security="internal">
-				<para>
-					<itemizedlist>
-						<listitem>
-							<para> </para>
-						</listitem>
-					</itemizedlist>
-				</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist>
