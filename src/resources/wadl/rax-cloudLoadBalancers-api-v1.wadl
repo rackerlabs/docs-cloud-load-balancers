@@ -977,6 +977,14 @@
                         fault. A load balancer supports a maximum of 25
                         nodes; the maximum weight of a node is 100.</para>                           
             </note>
+            <tip><para>Suppose you want to add nodes to the load balancer before the 
+                services on those nodes are ready to serve traffic. 
+                As of right now, the default status for added nodes is <code>ONLINE</code>. 
+                To get the nodes added without having them serve traffic, 
+                you can add a node with a <code>DRAINING</code> condition, which will 
+                prevent traffic from going to the node, but still allow the health monitor 
+                to perform checks. Once the backend node is ready to serve traffic, 
+                you can change the condition to <code>ENABLED</code>.</para></tip>
             <para>Every node in the load balancer has an associated
                 condition which determines its role within the load
                 balancer.</para>
@@ -2225,6 +2233,7 @@
             title="Show connection logging configuration">
             <para role="shortdesc">Shows the connection logging
                 configuration.</para>
+            <note><para>The logs use Common Log Format.</para></note>
         </wadl:doc> 
         
         <response status="200">
