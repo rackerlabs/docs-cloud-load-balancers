@@ -13,7 +13,7 @@ Source files are for the following documents:
     o Cloud Load Balancers Developer Guide
     o Cloud Load Balancers Release Notes
 
-You should create your own branch to make changes to the this project and send a Pull Request to have your changes
+You should create your own branch to make changes to this project and send a Pull Request to have your changes
 reviewed and merged into the master branch as appropriate.
 
 You can use any editor to work with these source files. The files that are most likely to be of interest are:
