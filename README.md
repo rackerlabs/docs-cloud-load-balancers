@@ -16,7 +16,7 @@ You should create your own fork of the project to make changes to this project a
 
 ### Building from Source
 
-Any text editor may be used to work with these source files. This repository uses Maven to generate the output documentation. Command line users may generate the complete output from this repository using the following command.
+This repository uses Maven to generate the output documentation. Command line users may generate the complete output from this repository using the following command.
 
     mvn clean generate-sources
 
@@ -29,6 +29,15 @@ The output will appear in PDF and HTML form in the following locations. The item
 | [Release Notes](http://docs.rackspace.com/loadbalancers/api/v1.0/clb-releasenotes/) | target/docbkx/webhelp/clb-releasenotes-external |
 | Developer Guide for Service Management (Internal) | target/docbkx/webhelp/clb-mgmt-devguide |
 | Release Notes (Internal) | target/docbkx/webhelp/clb-releasenotes-internal |
+
+#### Editors
+
+Any text editor may be used to work with these source files. Users wishing to use an IDE may consider [NetBeans](http://netbeans.org). This cross-platform IDE offers seamless support for Maven projects, with no additional configuration necessary to open the **pom.xml** file as a project. The project can be configured so the **Build** command which appears when right-clicking a project in the **Projects** pane executes the previously-described command using the following steps:
+
+1. Right-click the project in the **Projects** window and select **Properties**.
+2. Select the **Build** category on the left, followed by the **Build project** action on the right.
+3. Change **Execute Goals** to `clean generate-sources`
+4. (Optional) Repeat steps 2 and 3 for the **Clean and Build project** and **Build with Dependencies** actions.
 
 ### Quick Links
 
