@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-10-27</pubdate>
+        <pubdate>2014-11-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,67 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-11-07</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="API_Behavior_and_Suggestions-d1e5498"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated request parameters for
+                                Update load balancer properties API
+                                operation. Refer to <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="PUT_updateLoadBalancer_v1.0__account__loadbalancers__loadBalancerId__load-balancers"
+                                   >“Update load balancer
+                                   properties”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information to clarify node
+                                   <code>status</code> and
+                                   <code>condition</code> attributes.
+                                Refer to <xref linkend="Nodes-d1e2173"
+                                /> for details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed <code>id</code> fields to be
+                                integers in JSON response example for
+                                List nodes API operation. Refer to
+                                   <olink targetdoc="clb-devguide"
+                                   targetptr="GET_listNodes_v1.0__account__loadbalancers__loadBalancerId__nodes_Nodes-d1e2173"
+                                   >“List nodes”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for "dual-homed"
+                                nodes for Add node API operation.
+                                Refer to <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="POST_addNode_v1.0__account__loadbalancers__loadBalancerId__nodes_Nodes-d1e2173"
+                                   >“Add node”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added note for ALLOW / DENY
+                                attribute type for items in access
+                                lists. Refer to <xref
+                                   linkend="Access_Lists-d1e3160"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for Update health
+                                monitor API operation. Refer to <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="PUT_updateHealthMonitor_v1.0__account__loadbalancers__loadBalancerId__healthmonitor_Monitors-d1e3370"
+                                   >“Update health
+                                monitor”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -1390,9 +1451,13 @@
                     to <code>ONLINE</code> and it is capable of
                     servicing requests.</para>
                 <para>If active health monitoring is enabled, a
-                    customer can then specify a secondary node for
-                    routing traffic in the event of a primary node
-                    failure.</para>
+                    customer can then specify a SECONDARY node for
+                    routing traffic in the event of a PRIMARY node
+                    failure. If all PRIMARY nodes fail, SECONDARY
+                    nodes will then start to serve traffic. A common
+                    use case is having the SECONDARY nodes return a
+                    static page saying "We have a problem; please
+                    check back later".</para>
             </section>
         </section>
         <section xml:id="Session_Persistence-d1e376">
@@ -2047,9 +2112,9 @@
             <title>Persistent connections</title>
             <para>By default, the API supports persistent connections
                 via <code>HTTP/1.1</code> keepalives. All connections
-                is kept alive unless the connection header is set to
+                are kept alive unless the connection header is set to
                 close.</para>
-            <para>To prevent abuse, HTTP sessions have a timeout of 20
+            <para>To prevent abuse, HTTP sessions have a timeout of 30
                 seconds before being closed.</para>
             <note>
                 <para>The server may close the connection at any time
@@ -2590,6 +2655,94 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+        <section xml:id="API_Behavior_and_Suggestions-d1e5498">
+            <title>API Behavior and Suggestions</title>
+            <para>This section describes the behavior of the API and
+                provides suggestions for working with it.</para>
+            <section xml:id="API_Behavior-d1e2674">
+                <title>API Behavior</title>
+                <para>The LBaaS API is considered to be asynchronous
+                    because mutable operations (that is,
+                    POST/PUT/DELETE) are often queued up and then
+                    handled accordingly. All successful asynchronous
+                    API operations have a normal response code of
+                    202. The load balancer <code>status</code>
+                    attribute is closely linked to mutable operations
+                    as it is updated depending on the operation and/or
+                    state of the load balancer. Please see the table
+                    below for a list of possible load balancer
+                    statuses. Please note that any load balancer can
+                    have at most one operation requested at a time.
+                    Thus, issuing parallel mutable requests per load
+                    balancer is not allowed and only one of the
+                    requests will be accepted should concurrent
+                    mutable requests be issued. Issuing concurrent
+                    non-mutable requests (that is, GET) is
+                    allowed.</para>
+                <para>
+                    <table rules="all">
+                        <caption>Load Balancer Statuses</caption>
+                        <?dbfo keep-together="always"?>
+                        <thead>
+                            <tr align="center">
+                                <td colspan="1">Name</td>
+                                <td colspan="3">Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr align="left">
+                                <td colspan="1">ACTIVE</td>
+                                <td colspan="3">The load balancer is
+                                   active.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">BUILD</td>
+                                <td colspan="3">The load balancer is
+                                   undergoing its initial build.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">DELETED</td>
+                                <td colspan="3">The load balancer is
+                                   deleted.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">ERROR</td>
+                                <td colspan="3">The load balancer is
+                                   in an error state.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">PENDING_DELETE</td>
+                                <td colspan="3">The load balancer has
+                                   a deletion pending.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">PENDING_UPDATE</td>
+                                <td colspan="3">The load balancer has
+                                   an update pending.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1"> SUSPENDED </td>
+                                <td colspan="3">The load balancer is
+                                   suspended.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </section>
+            <section xml:id="Suggestions-d1e8427">
+                <title>Suggestions</title>
+                <para>The most common issue an API user will come
+                    across is determining when a mutable action is
+                    complete. It is suggested that the API user poll
+                    the load balancer details (once per 5-10 seconds
+                    is recommended) in order to determine if the load
+                    balancer has changed back to an
+                        <code>ACTIVE</code> status. Once the load
+                    balancer is back in the <code>ACTIVE</code>
+                    status, another mutable operation can be
+                    accepted.</para>
+            </section>
         </section>
         <section xml:id="Compatible_Load_Balancing_Protocols-d1e4269">
             <title>Compatible shared load balancing protocols</title>
@@ -3228,21 +3381,32 @@
                 nodes that are in an <code>ONLINE</code> status
                 receive and can service traffic from the load
                 balancer.</para>
-            <para>All nodes have an associated status that indicates
-                whether the node is <code>ONLINE</code>,
-                    <code>OFFLINE</code>, or <code>DRAINING</code>.
-                Only nodes that are in <code>ONLINE</code> status
+            <para> All nodes have an associated condition that
+                indicates whether the node is <code>ENABLED</code>,
+                    <code>DISABLED</code>, or <code>DRAINING</code>.
+                Nodes that are in an <code>ENABLED</code> condition
                 receive and can service traffic from the load
-                balancer. The <code>OFFLINE</code> status represents a
-                node that cannot accept or service traffic. A node in
-                    <code>DRAINING</code> status represents a node
-                that stops the traffic manager from sending any
-                additional new connections to the node, but honors
-                established sessions. If the traffic manager receives
-                a request and session persistence requires that the
-                node is used, the traffic manager uses it. The status
-                is determined by the passive or active health
-                monitors.</para>
+                balancer. The <code>DISABLED</code> condition
+                represents a node that cannot accept or service
+                traffic. A node in the <code>DRAINING</code> condition
+                represents a node that stops the traffic manager from
+                sending any additional <emphasis>new</emphasis> connections
+                to the node, but honors established sessions. If the
+                traffic manager receives a request and session
+                persistence requires that the node is used, the
+                traffic manager uses it. As mentioned earlier, the
+                status is determined by the passive or active health
+                monitors. </para>
+            <note>
+                <para> Do not confuse the condition of a node with its
+                    status. The <code>condition</code> attribute is
+                    mutable and gives the user control on how to
+                    manage requests to the node. The
+                        <code>status</code> attribute is immutable and
+                    is updated by the load balancing service based on
+                    whether or not the node
+                    <emphasis>can</emphasis> service requests. </para>
+            </note>
             <para>If the <code>WEIGHTED_ROUND_ROBIN</code> load
                 balancer algorithm mode is selected, then the caller
                 should assign the relevant weights to the node as part
@@ -3594,7 +3758,23 @@
                                    to which traffic can be
                                    denied.</para>
                                 </listitem>
-                            </itemizedlist></td>
+                            </itemizedlist>
+                            <note>
+                                <para>Items that are configured with
+                                   the <code>ALLOW</code> type always
+                                   take precedence over items with the
+                                   <code>DENY</code> type. That is,
+                                   the items marked with the
+                                   <code>DENY</code> type will still
+                                   be accepted, but just at a lower
+                                   priority than ALLOW ones. A common
+                                   use case for <code>ALLOW</code> and
+                                   <code>DENY</code> is to
+                                   <code>DENY</code> a subnet and then
+                                   <code>ALLOW</code> individual
+                                   addresses within that
+                                   subnet.</para>
+                            </note></td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -3946,8 +4126,9 @@
                         HTTPS requests. That way, the load balancers
                         support session persistence for both HTTP and
                         HTTPS requests concurrently, with each load
-                        balancer supporting one of the
-                        protocols.</para>
+                        balancer supporting one of the protocols. In
+                        this case, the two load balancers need to
+                        share a common Virtual IP.</para>
                 </listitem>
                 <listitem>
                     <para>Use one load balancer, configure it for
@@ -4332,9 +4513,8 @@
                     <code>443</code> and
                     <code>secureTrafficOnly</code> must be
                     <code>true</code> Refer to the description for the
-                &lt;code>httpsRedirect&lt;/code> attribute for the
-                Create Load Balancer API Operation for
-                details..</para>
+                    <code>httpsRedirect</code> attribute for the
+                Create Load Balancer API Operation for details.</para>
             <para>All requests to SSL termination in the JSON format
                 require the key/certificates to be in proper JSON
                 format, meaning that all raw line feed characters

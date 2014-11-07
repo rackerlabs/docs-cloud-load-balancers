@@ -257,19 +257,135 @@
                     <xsdxt:code
                         href="../samples/lb-list-response.json"/>
                 </wadl:doc>
+                
+                <!--   <param name="." style="plain" path="$.parameters "/>  -->
+                <param name="loadBalancers" style="plain" type="xsd:string" required="false" path="$.parameters.loadBalancers">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>A <code>loadBalancers</code> object.</para>
+                    </wadl:doc>
+                </param>
+                <param name="name" style="plain" type="xsd:string" required="false" path="$.parameters.name">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>Name of the load balancer to create. The name must be
+                            128 characters or fewer in length, and all UTF-8 characters
+                            are valid. See <link
+                                xlink:href="http://www.utf8-chartable.de/">
+                                http://www.utf8-chartable.de/</link> for information
+                            about the UTF-8 character set.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:int" required="false"
+                    name="id" path="$.parameters.loadBalancerIdPlainParameter">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The ID for the load balancer.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="protocol"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.protocol">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>Protocol of the service that is being load balanced.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="port"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.port">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>Port number for the service you are load
+                            balancing.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="algorithm"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.algorithm">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>Algorithm that defines how traffic should be directed
+                            between back-end nodes.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="status"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.status">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The status of the load balancer.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="nodeCount"
+                    style="plain" required="false" type="xsd:int" path="$.parameters.nodeCount">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The number of load balancer nodes.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="created"
+                    style="plain" required="false" type="object" path="$.parameters.created">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The date and time what the load balancer was created.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="updated"
+                    style="plain" required="false" type="object" path="$.parameters.updated">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The date and time what the load balancer was last updated.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="virtualIps"
+                    style="plain" required="false" type="object" path="$.parameters.virtualIps">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The list of virtualIps for a load
+                            balancer.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="id"
+                    style="plain" required="false" type="xsd:int" path="$.parameters.virtualIps.id">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The ID for the IP address.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="address"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.virtualIps.address">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The IP address.</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="type"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.virtualIps.type">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The IP address type. See the Virtual IP Types table in the Chapter 4 section "Virtual IPs".</para>
+                    </wadl:doc>
+                </param>
+                <param xmlns="http://wadl.dev.java.net/2009/02" name="ipVersion"
+                    style="plain" required="false" type="xsd:string" path="$.parameters.virtualIps.ipVersion">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+                        <para>The IP version.</para>
+                    </wadl:doc>
+                </param>
             </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancers">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="../samples/lb-list-response.xml"
                     />
-                </wadl:doc> &loadBalancersParameter; &nameParameter;
-                &loadBalancerIdPlainParameter; &protocolParameter;
+                </wadl:doc> 
+
+                <!--             &loadBalancersParameter; &nameParameter;
+                &loadBalancerIdPlainParameter; &protocolParameter; &portParameter;
                 &algorithmParameter; &statusParameter;
-                &nodeCountParameter; &virtualIpsParameter;
+                &nodeCountParameter; &createdParameter; &updatedParameter;
+                &virtualIpsParameter;
                 &virtualIpIdParameter; &virtualIpAddressParameter;
-                &virtualIpTypeParameter; &virtualIpipVersionParameter;
-                &createdParameter; &updatedParameter; </representation>
+                &virtualIpTypeParameter; &virtualIpipVersionParameter;   -->
+              </representation>
               <representation mediaType="application/atom-xml"
                 xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -401,6 +517,7 @@
                         href="../samples/lb-create-required-request.json"
                     />
                 </wadl:doc>
+                
             </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -409,14 +526,16 @@
                     <xsdxt:code
                         href="../samples/lb-create-required-request.xml"
                     />
-                </wadl:doc> &nameParameter; &nodesParameter;
+                </wadl:doc> 
+                &nameParameter; &nodesParameter;
                 &protocolParameter; &halfClosedParameter;
                 &virtualIpsParameter; &accessListParameter;
                 &algorithmParameter; &connectionLoggingParameter;
                 &connectionThrottleParameter; &healthMonitorParameter;
                 &metadataParameter; &portParameter;
                 &timeoutParameter;&sessionPersistenceParameter;
-                &httpsRedirectParameter; </representation>
+                &httpsRedirectParameter; 
+            </representation>
             <representation mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
@@ -454,7 +573,7 @@
                 </wadl:doc>
             </representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
@@ -553,6 +672,8 @@
                     <xsdxt:code
                         href="../samples/lb-update-lb-attributes-request.json"
                     />
+                    <para xmlns="http://docbook.org/ns/docbook">Note that all body parameters are optional, but at least one must be supplied for an Update 
+                        load balancer properties request.</para>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
@@ -561,12 +682,12 @@
                     <xsdxt:code
                         href="../samples/lb-update-lb-attributes-request.xml"
                     />
-                </wadl:doc> &nameParameter; &protocolParameter;
+                </wadl:doc> &nameParameterUpdate; &protocolParameterUpdate;
                 &halfClosedParameter; &algorithmParameter;
                 &portParameter; &timeoutParameter;
                 &httpsRedirectParameter; </representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -606,7 +727,7 @@
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:loadBalancer">
                 &loadbalancerIdQueryParameter;</representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -909,9 +1030,9 @@
                 that can be used for management operations such as
                 changing the condition or removing it. Every load
                 balancer is dual-homed on both the public Internet and
-                ServiceNet. As a result, nodes can either be internal
+                ServiceNet. That is, you may add public or ServiceNet nodes. As a result, nodes can either be internal
                 ServiceNet addresses or addresses on the public
-                Internet.</para>
+                Internet. The Virtual IP (or Virtual IPs) of the load balancer, however, can only be <emphasis>either</emphasis> public or ServiceNet.</para>
             <para>One or more secondary nodes can be added to a
                 specified load balancer so that if all the primary
                 nodes fail, traffic can be redirected to secondary
@@ -1006,6 +1127,8 @@
                 </wadl:doc>
             </representation>
         </request>
+        <response status="202">
+        </response> &commonFaults; &getFaults;
     </method>
     
     <method id="deleteNode" name="DELETE">
@@ -1025,7 +1148,7 @@
                 identified as potential failures for this
                 request.</para>
         </wadl:doc>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1244,7 +1367,7 @@
             <representation mediaType="application/json">
                 &virtualIpIdQueryParameter;</representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1580,7 +1703,7 @@
                 specified access list.</para>
             
         </wadl:doc>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1594,7 +1717,7 @@
             
             
         </wadl:doc>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1605,13 +1728,13 @@
             title="Bulk-delete networks from access list">
             <para role="shortdesc">Bulk-deletes the specified networks
                 from an access list.</para>
-            
+            <note><para>Note that a maximum of 10 network items can be deleted with a Bulk-delete networks from access list API operation.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 &networkItemIdQueryParameter; </representation>
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1636,13 +1759,13 @@
                     optional attributes for Monitor
                     Connections:
                     <table rules="all">
-                        <caption>Required and Optional Attributes for
+                        <caption>Attributes for
                              Connect Monitor</caption>
                         <thead>
                             <tr>
                                 <td colspan="1">Name </td>
                                 <td colspan="3">Description</td>
-                                <td colspan="1">Required</td>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -1655,7 +1778,7 @@
                                         from rotation. Must be a number
                                         between 1 and 10.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">delay</td>
@@ -1665,7 +1788,7 @@
                                         the health monitor. Must be a
                                         number between 1 and 3600.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">timeout</td>
@@ -1675,7 +1798,7 @@
                                         established before timing out. Must
                                         be a number between 1 and 300. </para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">type</td>
@@ -1684,7 +1807,7 @@
                                         Must be specified as "CONNECT" to
                                         monitor connections.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -1706,13 +1829,13 @@
                     <?sbr?>The following table lists the required and
                     optional attributes for Monitor HTTP and
                     HTTPS:<?sbr?><table rules="all">
-                        <caption>Required and Optional Attributes for
+                        <caption>Attributes for
                             HTTP and HTTPS Monitor</caption>
                         <thead>
                             <tr>
                                 <td colspan="1">Name </td>
                                 <td colspan="3">Description</td>
-                                <td colspan="1">Required</td>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -1725,7 +1848,7 @@
                                         from rotation. Must be a number
                                         between 1 and 10.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">bodyRegex</td>
@@ -1735,7 +1858,7 @@
                                         contents of the body of the
                                         response. </para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">delay</td>
@@ -1745,7 +1868,7 @@
                                         monitor. Must be a number between 1
                                         and 3600.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">hostHeader</td>
@@ -1754,7 +1877,7 @@
                                         the health monitors will
                                         check.</para>
                                 </td>
-                                <td colspan="1">No</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">path</td>
@@ -1762,7 +1885,7 @@
                                     <para>The HTTP path that will be
                                         used in the sample request.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">statusRegex</td>
@@ -1772,7 +1895,7 @@
                                         status code returned in the
                                         response. </para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">timeout</td>
@@ -1783,7 +1906,7 @@
                                         be a number between 1 and 300.
                                     </para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                             <tr>
                                 <td colspan="1">type</td>
@@ -1794,7 +1917,7 @@
                                         to monitor an HTTPS
                                         response.</para>
                                 </td>
-                                <td colspan="1">Yes</td>
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -1942,6 +2065,221 @@
             title="Update health monitor">
             <para role="shortdesc">Updates the settings for a health
                 monitor.</para>
+            
+            <para>Every health monitor has a <code>type</code>
+                attribute to signify what kind of monitor it
+                is.</para>
+            <table rules="all">
+                <caption>Health monitor types</caption>
+                <?dbfo keep-together="always"?>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="1">CONNECT</td>
+                        <td colspan="3">Health monitor is a connect
+                            monitor.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">HTTP</td>
+                        <td colspan="3">Health monitor is an HTTP
+                            monitor.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">HTTPS</td>
+                        <td colspan="3">Health monitor is an HTTPS
+                            monitor.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note>
+                <para>When deleting a health monitor of any type,
+                    every node on that load balancer that is enabled
+                    or has failed and is in OFFLINE status has its
+                    status updated to ONLINE regardless of the health
+                    of the node.</para>
+            </note>
+            <formalpara><title>Connect Monitor</title>
+                <para>The monitor connects to each node on its
+                    defined port to ensure that the service is
+                    listening properly. The connect monitor is the
+                    most basic type of health check and does no
+                    post-processing or protocol specific health
+                    checks. It includes several configurable
+                    properties. 
+                    The following table lists the required and
+                    optional attributes for Monitor
+                    Connections:
+                    <table rules="all">
+                        <caption>Required and Optional Attributes for
+                            Monitor Connections</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                    >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                    <para>Number of permissible monitor
+                                        failures before removing a node
+                                        from rotation. Must be a number
+                                        between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                    <para>The minimum number of
+                                        seconds to wait before executing
+                                        the health monitor. Must be a
+                                        number between 1 and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                    <para>Maximum number of seconds to
+                                        wait for a connection to be
+                                        established before timing out. Must
+                                        be a number between 1 and 300. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                    <para>Type of the health monitor.
+                                        Must be specified as "CONNECT" to
+                                        monitor connections.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </formalpara>
+            <formalpara>
+                <title>Monitor HTTP and HTTPS</title>
+                <para>The HTTP and HTTPS monitor is more intelligent
+                    than the connect monitor. It is capable of
+                    processing an HTTP or HTTPS response to determine
+                    the condition of a node. It supports the same
+                    basic properties as the connect monitor and
+                    includes additional attributes that are used to
+                    evaluate the HTTP response. The user can supply an
+                    optional <code>hostHeader</code> attribute for the
+                    HTTP and HTTPS health monitor to specify a host
+                    for which the health monitors will check.
+                    <?sbr?>The following table lists the required and
+                    optional attributes for Monitor HTTP and
+                    HTTPS:<?sbr?><table rules="all">
+                        <caption>Required and Optional Attributes for
+                            Monitor HTTP and HTTPS</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                    >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                    <para>Number of permissible monitor
+                                        failures before removing a node
+                                        from rotation. Must be a number
+                                        between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">bodyRegex</td>
+                                <td colspan="3">
+                                    <para>A regular expression that
+                                        will be used to evaluate the
+                                        contents of the body of the
+                                        response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                    <para>The minimum number of seconds
+                                        to wait before executing the health
+                                        monitor. Must be a number between 1
+                                        and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">hostHeader</td>
+                                <td colspan="3">
+                                    <para>The name of a host for which
+                                        the health monitors will
+                                        check.</para>
+                                </td>
+                                <td colspan="1">No</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">path</td>
+                                <td colspan="3">
+                                    <para>The HTTP path that will be
+                                        used in the sample request.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">statusRegex</td>
+                                <td colspan="3">
+                                    <para>A regular expression that
+                                        will be used to evaluate the HTTP
+                                        status code returned in the
+                                        response. </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                    <para>Maximum number of seconds to
+                                        wait for a connection to be
+                                        established before timing out. Must
+                                        be a number between 1 and 300.
+                                    </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                    <para>Type of the health monitor.
+                                        Must be specified as "HTTP" to
+                                        monitor an HTTP response or "HTTPS"
+                                        to monitor an HTTPS
+                                        response.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </formalpara>
+            
+            
         </wadl:doc>
         <request>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
@@ -1961,7 +2299,7 @@
                 </wadl:doc>
             </representation>
         </request>
-        <response status="200">
+        <response status="202">
         </response>
    <!--       <response>
             <representation mediaType="application/xml">
@@ -2043,7 +2381,7 @@
             <para role="shortdesc">Deletes a health monitor.</para>
         </wadl:doc>
         
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;

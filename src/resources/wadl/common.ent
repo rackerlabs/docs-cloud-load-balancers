@@ -154,7 +154,7 @@
 </param>' >
 <!ENTITY loadBalancersParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="loadBalancers"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.loadBalancers">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>A <code>loadBalancers</code> object.</para>
@@ -170,7 +170,7 @@
 </param>'>
 <!ENTITY createdParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="created"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="object" path="$.created">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The date and time what the load balancer was created.</para>
@@ -178,7 +178,7 @@
 </param>'>
 <!ENTITY updatedParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="updated"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="object" path="$.updated">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
        <para>The date and time what the load balancer was last updated.</para>
@@ -186,7 +186,7 @@
 </param>'>
 <!ENTITY virtualIpipVersionParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="ipVersion"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.virtualIps.ipVersion">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
        <para>The IP version.</para>
@@ -194,7 +194,7 @@
 </param>'>
 <!ENTITY virtualIpAddressParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="address"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.virtualIps.address">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
        <para>The IP address.</para>
@@ -202,7 +202,7 @@
 </param>'>
 <!ENTITY virtualIpIdParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="id"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:int" path="$.virtualIps.id">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
        <para>The ID for the IP address.</para>
@@ -210,7 +210,7 @@
 </param>'>
 <!ENTITY virtualIpTypeParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="type"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.virtualIps.type">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
        <para>The IP address type.</para>
@@ -218,7 +218,7 @@
 </param>'>
 <!ENTITY nodeCountParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="nodeCount"
-    style="plain" required="true" type="xsd:int">
+    style="plain" required="true" type="xsd:int" path="$.nodeCount">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The number of load balancer nodes.</para>
@@ -226,7 +226,7 @@
 </param>'>
 <!ENTITY nameParameter '  
 <param xmlns="http://wadl.dev.java.net/2009/02" name="name"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.name">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Name of the load balancer to create. The name must be
@@ -237,9 +237,22 @@
             about the UTF-8 character set.</para>
     </wadl:doc>
 </param>'>
+<!ENTITY nameParameterUpdate '  
+<param xmlns="http://wadl.dev.java.net/2009/02" name="name"
+    style="plain" required="false" type="xsd:string">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Name of the load balancer to update. The name must be
+            128 characters or fewer in length, and all UTF-8 characters
+            are valid. See <link
+                xlink:href="http://www.utf8-chartable.de/">
+                http://www.utf8-chartable.de/</link> for information
+            about the UTF-8 character set.</para>
+    </wadl:doc>
+</param>'>
 <!ENTITY nodesParameter ' 
 <param xmlns="http://wadl.dev.java.net/2009/02" name="nodes"
-    style="plain" required="false" type="xsd:string">
+    style="plain" required="false" type="object">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Nodes to be added to the load balancer.</para>
@@ -247,7 +260,15 @@
 </param>'>
 <!ENTITY protocolParameter ' 
 <param xmlns="http://wadl.dev.java.net/2009/02" name="protocol"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="xsd:string" path="$.protocol">
+    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
+        <para>Protocol of the service that is being load balanced.</para>
+    </wadl:doc>
+</param>'>
+<!ENTITY protocolParameterUpdate ' 
+<param xmlns="http://wadl.dev.java.net/2009/02" name="protocol"
+    style="plain" required="false" type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Protocol of the service that is being load balanced.</para>
@@ -267,11 +288,11 @@
 </param>'>
 <!ENTITY virtualIpsParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="virtualIps"
-    style="plain" required="true" type="xsd:string">
+    style="plain" required="true" type="object" path="$.virtualIps">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Type of virtualIp to add with the creation of a load
-            balancer. See the virtual IP types table.</para>
+            balancer. See the virtual IP types table in the Chapter 4 section "Virtual IPs".</para>
     </wadl:doc>
 </param>'>
 <!ENTITY accessListParameter '
@@ -281,7 +302,7 @@
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The access list management feature allows fine-grained
             network access controls to be applied to the load balancer
-            virtual IP address.</para>
+            virtual IP address. Refer to the Chapter 4 section "Access lists" for information and examples.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY networkItemIdTemplateParameter '
@@ -300,7 +321,7 @@
 </param>'>
 <!ENTITY algorithmParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="algorithm"
-    style="plain" required="false" type="xsd:string">
+    style="plain" required="false" type="xsd:string" path="$.algorithm">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Algorithm that defines how traffic should be directed
@@ -313,7 +334,7 @@
     type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
-        <para>Current connection logging configuration.</para>
+        <para>Current connection logging configuration. Refer to the Chapter 4 section "Log connections" for information and examples.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY connectionThrottleParameter '
@@ -324,7 +345,7 @@
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Specifies limits on the number of connections per IP
             address to help mitigate malicious or abusive traffic to
-            your applications.</para>
+            your applications. Refer to the Chapter 4 section "Throttle connections" for information and examples.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY healthMonitorParameter '
@@ -347,7 +368,7 @@
 </param>'>
 <!ENTITY portParameter '
 <param xmlns="http://wadl.dev.java.net/2009/02" name="port"
-    style="plain" required="false" type="xsd:string">
+    style="plain" required="false" type="xsd:string" path="$.port">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Port number for the service you are load
@@ -457,7 +478,7 @@
     </wadl:doc>
 </param>'>
 <!ENTITY intermediatecertificateParameter '
-<param xmlns="http://wadl.dev.java.net/2009/02" name="intermediatecertificate" style="plain" required="true"
+<param xmlns="http://wadl.dev.java.net/2009/02" name="intermediateCertificate" style="plain" required="false"
     type="xsd:string">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
@@ -758,8 +779,8 @@ content caching.</para>
     </wadl:doc>
 </param>' >
 <!ENTITY loadBalancerIdPlainParameter '
-<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
-    name="id">
+<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:int" required="true"
+    name="id" path="$.loadBalancerIdPlainParameter">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The ID for the load balancer.</para>
@@ -795,7 +816,7 @@ content caching.</para>
     </wadl:doc>
 </param>' >
 <!ENTITY nodeStatusParameter '<param xmlns="http://wadl.dev.java.net/2009/02" style="plain" type="xsd:string" required="true"
-    name="status">
+    name="status" path="$.status">
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>The node status. For example, ONLINE.</para>
