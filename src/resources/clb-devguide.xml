@@ -40,7 +40,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-11-07</pubdate>
+        <pubdate>2014-11-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +54,57 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2014-11-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed typos in descriptions for
+                                attributes
+                                   <code>connectErrorSsl</code> and
+                                   <code>connectFailureSsl</code>.
+                                Refer to <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="GET_showStats_v1.0__account__loadbalancers__loadBalancerId__stats_stats"
+                                   >“Show load balancer
+                                   statistics”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed typo in description for
+                                attribute <code>maxConnSsl</code>.
+                                Refer to <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="GET_showStats_v1.0__account__loadbalancers__loadBalancerId__stats_stats"
+                                   >“Show load balancer
+                                   statistics”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed normal response code for
+                                Enable session persistence. Refer to
+                                   <olink targetdoc="clb-devguide"
+                                       targetptr="PUT_enableSessionPersistence_v1.0__account__loadbalancers__loadBalancerId__sessionpersistence_Sessions-d1e3728"
+                                   >“Enable session persistence”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed normal response code for
+                                Disable session persistence. Refer to
+                                   <olink targetdoc="clb-devguide"
+                                       targetptr="DELETE_disableSessionPersistence_v1.0__account__loadbalancers__loadBalancerId__sessionpersistence_Sessions-d1e3728"
+                                   >“Disable session
+                                   persistence”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed normal response code for
+                                Enable content caching. Refer to
+                                   <olink targetdoc="clb-devguide"
+                                       targetptr="PUT_enableContentCaching_v1.0__account__loadbalancers__loadBalancerId__contentcaching_content_caching"
+                                   >“Enable content caching”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">

@@ -886,14 +886,14 @@
                 <listitem>
                     <para>
                         <emphasis role="bold">connectErrorSsl</emphasis>
-                        &ndash; Number of SSL transaction or protocol erros
+                        &ndash; Number of SSL transaction or protocol errors
                         in this load balancer.
                     </para>
                 </listitem>
                 <listitem>
                     <para>
                         <emphasis role="bold">connectFailureSsl</emphasis>
-                        &ndash; Number of SSL conection failuers in this load
+                        &ndash; Number of SSL connection failures in this load
                         balancer.
                     </para>
                 </listitem>
@@ -916,7 +916,7 @@
                     <para>
                         <emphasis role="bold">maxConnSsl</emphasis>
                         &ndash; Maximum number of simultaneous SSL connections
-                        this load balancer has processed a any one time.
+                        this load balancer has processed at any one time.
                     </para>
                 </listitem>
                 <listitem>
@@ -2547,7 +2547,7 @@
                 </wadl:doc>
             </representation>-->
         </request>
-        <response status="200"></response>
+        <response status="202"></response>
         &commonFaults; &getFaults;
     </method>
     
@@ -2558,7 +2558,7 @@
                 persistence.</para>
         </wadl:doc>
         
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2805,7 +2805,7 @@
                 </wadl:doc> 
             </representation>
         </request>
-        <response status="200">
+        <response status="202">
         </response> &commonFaults; &getFaults;
     </method>
     
