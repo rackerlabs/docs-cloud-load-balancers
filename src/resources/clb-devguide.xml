@@ -1641,9 +1641,9 @@
                     <programlistingco>
                         <areaspec>
                             <area xml:id="credentials.xml.user"
-                                units="linecolumn" coords="13 17"/>
+                                units="linecolumn" coords="12 17"/>
                             <area xml:id="credentials.xml.key"
-                                units="linecolumn" coords="14 15"/>
+                                units="linecolumn" coords="13 15"/>
                         </areaspec>
                         <programlisting language="xml"><xi:include href="samples/lb-credentials-20.xml" parse="text"/>
                         </programlisting>
@@ -1655,9 +1655,9 @@
                     <programlistingco>
                         <areaspec>
                             <area xml:id="credentials.json.user"
-                                units="linecolumn" coords="14 22"/>
+                                units="linecolumn" coords="13 22"/>
                             <area xml:id="credentials.json.key"
-                                units="linecolumn" coords="15 20"/>
+                                units="linecolumn" coords="14 20"/>
                         </areaspec>
                         <programlisting language="json"><xi:include href="samples/lb-credentials-20.json" parse="text"/>
                         </programlisting>
