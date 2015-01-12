@@ -887,6 +887,36 @@
             <title>Notes</title>
             <itemizedlist spacing="compact">
                 <listitem>
+                    <para>If the authentication response returns a 401 message with a request for
+                        additional credentials, your account requires multi-factor authentication.To
+                        complete the authentication process, submit a second
+                            <guilabel>POSTtoken</guilabel> request with these multi-factor
+                        authenticationcredentials: <itemizedlist>
+                            <listitem>
+                                <para>The session ID value returned in the <code>WWW-Authenticate:
+                                        OS-MF sessionId</code> header parameter that is included in
+                                    the response to the initial authentication request.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The passcode from the mobile phone associated with your user
+                                    account.</para>
+                                <example>
+                                    <title>Authentication request with multi-factor authentication
+                                        credentials</title>
+                                    <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt>curl https://identity.api.rackspacecloud.com/v2.0/tokens \
+     -X POST \
+     -d '{"auth": {"RAX-AUTH:passcodeCredentials": {"passcode":"1411594"}}}'\
+     -H "X-SessionId: $SESSION_ID" \
+     -H "Content-Type: application/json" --verbose | python -m json.tool</programlisting>
+                                </example>
+                            </listitem>
+                        </itemizedlist></para>
+                    <para>For more information, see <link
+                        xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+                        >Multi-factor authentication</link> in the <citetitle>Cloud Identity Client
+                            Developer Guide</citetitle>.</para>
+                </listitem>
+                <listitem>
                     <para>For all response examples in this guide, the
                         field values you receive in your responses
                         will vary from those shown here since they
@@ -903,7 +933,7 @@
                         the examples in this guide.</para>
                 </listitem>
                 <listitem>
-                    <para> The <code>expires</code> attribute denotes
+                    <para>The <code>expires</code> attribute denotes
                         the time after which the token will
                         automatically become invalid. A token may be
                         manually revoked before the time identified by
