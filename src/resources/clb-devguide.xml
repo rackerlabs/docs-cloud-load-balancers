@@ -1624,17 +1624,30 @@
                         (<errorcode>400</errorcode>), authFault
                         (<errorcode>500</errorcode>),
                     serviceUnavailable (<errorcode>503</errorcode>) </simpara>
-                <para>The authenticate operation provides clients with
-                    an authentication token and a list of regional
-                    cloud endpoints. The sample requests and responses
-                    in this section illustrate a general case. In your
-                    authentication request, use your own credentials
-                    rather than the sample values shown here for
-                        <code>username</code> and <code>apiKey</code>.
-                    When you authenticate successfully, the response
-                    to your authentication request includes a catalog
-                    of the services to which you have subscribed
-                    rather than the sample values shown here.</para>
+                <para>The authenticate operation provides clients with an authentication token and a
+                    list of regional cloud endpoints. The sample requests and responses in this
+                    section illustrate a general case. In your authentication request, use your own
+                    credentials rather than the sample values shown here for <code>username</code>
+                    and <code>apiKey</code>. When you authenticate successfully, the response to
+                    your authentication request includes a catalog of the services to which you have
+                    subscribed rather than the sample values shown here.</para>
+                <note><title>Notes</title>
+                <itemizedlist>
+                        <listitem>
+                            <para>For information about setting up and using multi-factor
+                                authentication to increase security on your Rackspace Cloud account,
+                                see <link
+                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+                                    >Mutli-factor authentication</link> in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.</para>
+                        </listitem>
+                    <listitem>
+                            <para>For information about other authentication methods with examples,
+                                see <link
+                                    xlink:href="http://docs-internal-staging.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/Token_Calls.html"
+                                    >Authentication tokens</link> in the <citetitle>Cloud Identity
+                                    Client Developer Guide</citetitle>. </para>
+                        </listitem>
+                </itemizedlist></note>
                 <example>
                     <title>Authentication with US endpoint: XML
                         request</title>
