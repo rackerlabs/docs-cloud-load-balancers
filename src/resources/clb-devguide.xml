@@ -36,11 +36,12 @@
             <year>2012</year>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-11-13</pubdate>
+        <pubdate>2015-01-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -54,6 +55,21 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2015-01-15</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note for multi-factor
+                                authentication. Refer to <xref
+                                   linkend="Authenticate-d1e171"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -1634,16 +1650,25 @@
                 <note><title>Notes</title>
                 <itemizedlist>
                         <listitem>
-                            <para>For information about setting up and using multi-factor
-                                authentication to increase security on your Rackspace Cloud account,
-                                see <link
-                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
-                                    >Mutli-factor authentication</link> in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.</para>
+                            <para>If you authenticate with username
+                                and password credentials, you can set
+                                up multi-factor authentication to add
+                                an additional level of security to
+                                your account. This feature is not
+                                available for username and API key
+                                credentials. For information about
+                                setting up and using multi-factor
+                                authentication, see <link
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+                                   >Multifactor authentication</link>
+                                in the <citetitle>Cloud Identity
+                                   Client Developer
+                                Guide</citetitle>.</para>
                         </listitem>
-                    <listitem>
+                        <listitem>
                             <para>For information about other authentication methods with examples,
                                 see <link
-                                    xlink:href="http://docs-internal-staging.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/Token_Calls.html"
+                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html"
                                     >Authentication tokens</link> in the <citetitle>Cloud Identity
                                     Client Developer Guide</citetitle>. </para>
                         </listitem>

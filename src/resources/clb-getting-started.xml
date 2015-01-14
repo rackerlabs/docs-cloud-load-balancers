@@ -886,24 +886,32 @@
         <note>
             <title>Notes</title>
             <itemizedlist spacing="compact">
-                <listitem>
-                    <para>If the authentication response returns a 401 message with a request for
-                        additional credentials, your account requires multi-factor authentication.To
-                        complete the authentication process, submit a second
-                            <guilabel>POSTtoken</guilabel> request with these multi-factor
-                        authenticationcredentials: <itemizedlist>
+                <listitem security="writeronly">
+                    <para>If the authentication response returns a 401
+                        message with a request for additional
+                        credentials, your account requires
+                        multi-factor authentication. To complete the
+                        authentication process, submit a second
+                            <guilabel>POST tokens</guilabel> request
+                        with these multi-factor authentication
+                        credentials: <itemizedlist>
                             <listitem>
-                                <para>The session ID value returned in the <code>WWW-Authenticate:
-                                        OS-MF sessionId</code> header parameter that is included in
-                                    the response to the initial authentication request.</para>
+                                <para>The session ID value returned in
+                                   the <code>WWW-Authenticate: OS-MF
+                                   sessionId</code> header parameter
+                                   that is included in the response to
+                                   the initial authentication
+                                   request.</para>
                             </listitem>
                             <listitem>
-                                <para>The passcode from the mobile phone associated with your user
-                                    account.</para>
+                                <para>The passcode from the mobile
+                                   phone associated with your user
+                                   account.</para>
                                 <example>
-                                    <title>Authentication request with multi-factor authentication
-                                        credentials</title>
-                                    <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt>curl https://identity.api.rackspacecloud.com/v2.0/tokens \
+                                   <title>Authentication request with
+                                   multi-factor authentication
+                                   credentials</title>
+                                   <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt>curl https://identity.api.rackspacecloud.com/v2.0/tokens \
      -X POST \
      -d '{"auth": {"RAX-AUTH:passcodeCredentials": {"passcode":"1411594"}}}'\
      -H "X-SessionId: $SESSION_ID" \
