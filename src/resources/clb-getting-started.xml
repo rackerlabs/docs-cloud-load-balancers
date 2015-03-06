@@ -335,7 +335,7 @@
       <raxm:priority>10</raxm:priority>
     </raxm:metadata> 
     </info>
-    <chapter xml:id="DB_Doc_Change_History">
+    <chapter xml:id="LB_Doc_Change_History">
         <title>Document Change History</title>
         <para>This version of the Getting Started replaces and
             obsoletes all previous versions. The most recent changes
