@@ -4614,8 +4614,8 @@
                     <code>securePort</code> must be set to
                     <code>443</code> and
                     <code>secureTrafficOnly</code> must be
-                    <code>true</code> Refer to the description for the
-                    <code>httpsRedirect</code> attribute for the
+                    <code>true</code>. Refer to the description for
+                the <code>httpsRedirect</code> attribute for the
                 Create Load Balancer API Operation for details.</para>
             <para>All requests to SSL termination in the JSON format
                 require the key/certificates to be in proper JSON
