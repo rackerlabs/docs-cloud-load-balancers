@@ -133,7 +133,7 @@
                             <para>Corrected link to product
                                 information for the Load Balancers
                                 service. See <xref
-                                   linkend="DB_Overview"/>.</para>
+                                   linkend="LB_Overview"/>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -300,7 +300,7 @@
                             <para>Added link to <citetitle>Cloud Load
                                    Balancers Developer
                                    Guide</citetitle>  (see <xref
-                                   linkend="DB_Overview"/>).</para>
+                                   linkend="LB_Overview"/>).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -342,7 +342,7 @@
             are described in the table below:</para>
         <?rax revhistory?>
     </chapter>
-    <chapter xml:id="DB_Overview">
+    <chapter xml:id="LB_Overview">
         <title>Overview</title>
         <para>Follow the steps described in this guide to use the
             Rackspace Cloud Load Balancers API and the Cloud
