@@ -17,9 +17,9 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
-      xmlns:html="http://www.w3.org/1999/xhtml"
-      xmlns:db="http://docbook.org/ns/docbook"
+      xmlns:html="http://www.w3.org/1999/xhtml" 
     xml:id="clb-mgmt-devguide">
+    
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Load Balancers Developer Guide for Service Management</title>
     <titleabbrev>Rackspace Cloud LB Mgmt Guide</titleabbrev>
@@ -40,11 +40,12 @@
             <year>2012</year>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2014-06-06</pubdate>
+        <pubdate>2015-03-24</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -58,6 +59,19 @@
             </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2015-03-24</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added API call List Valid Traffic
+                                for IP (see <xref
+                                   linkend="Virtual_IPs-d1e1074"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-06</date>
                 <revdescription>
@@ -444,8 +458,8 @@
                         </tr>
                         <tr>
                             <td>&GET;</td>
-                            <td>/management/loadbalancers?vipaddress=<parameter>vipAddress</parameter></td>
-                            <td>Retrieve a list of all load balancers using a virtual ip
+                            <td>/management/loadbalancers?vipaddress=<?sbr?><parameter>vipAddress</parameter></td>
+                            <td>Retrieve a list of all load balancers using a virtual IP
                                 address.</td>
                             <td>Support, Service Admin</td>
                         </tr>
@@ -516,13 +530,14 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters</td>
+                        <td colspan="5">/management/clusters</td>
                         <td colspan="3">Retrieve a list of all clusters.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter></td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter></td>
                         <td colspan="3">Retrieve a cluster by id.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -590,19 +605,20 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/hosts</td>
+                        <td colspan="5">/management/hosts</td>
                         <td colspan="3">Retrieve a list of all hosts within the region.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/hosts</td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter>/hosts</td>
                         <td colspan="3">Retrieve a list of all hosts belonging to a cluster.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/hosts</td>
+                        <td colspan="5">/management/hosts</td>
                         <td colspan="3">Create a new load balancing host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
@@ -614,40 +630,46 @@
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter></td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter></td>
                         <td colspan="3">Update the mutable attributes of a load balancing host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter></td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter></td>
                         <td colspan="3">Remove a load balancing host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/endpoint</td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter>/endpoint</td>
                         <td colspan="3">Retrieve the host that is currently the active SOAP
                             endpoint.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/endpoint/enable</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/endpoint/enable</td>
                         <td colspan="3">Enable this host's SOAP endpoint. (Warning: can be
                             overwritten by <code>pollendpoints</code> call.)</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/endpoint/disable</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/endpoint/disable</td>
                         <td colspan="3">Disable this host's SOAP endpoint. (Warning: can be
                             overwritten by <code>pollendpoints</code> call.)</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/clusters/pollendpoints</td>
+                        <td colspan="5"
+                            >/management/clusters/pollendpoints</td>
                         <td colspan="3">Test all endpoints and set <code>soap_endpoint_active</code>
                             if endpoint works.</td>
                         <td colspan="2">Service Admin</td>
@@ -833,34 +855,57 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/virtualips</td>
+                        <td colspan="5">/management/virtualips</td>
                         <td colspan="3">Retrieve a list of all virtual IPs associated with the
                             region.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/virtualips</td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter>/virtualips</td>
                         <td colspan="3">Retrieve a list of all virtual IPs associated with a
                             cluster.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/virtualips</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/virtualips</td>
                         <td colspan="3">Retrieve a list of all virtual IPs associated with a load
                             balancer.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
+                        <td colspan="1">&GET;</td>
+                        <td colspan="5"
+                                >/management/virtualips/detailsbyip?ip=<emphasis
+                                role="italic"
+                            >ipAddress</emphasis></td>
+                        <td colspan="3">
+                            <para>Retrieve a list of what kind of
+                                traffic (UDP or TCP) and which ports
+                                should be considered valid traffic for
+                                an IP address (in order to help
+                                mitigate DDoS attacks).</para>
+                            <note>
+                                <para>This operation does not support
+                                   XML requests and responses.</para>
+                            </note>
+                        </td>
+                        <td colspan="2">Service Admin</td>
+                    </tr>
+                    <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/virtualipblocks</td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter>/virtualipblocks</td>
                         <td colspan="3">Assign a set of IP blocks to the cluster.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/virtualips/<parameter>virtualIpId</parameter></td>
+                        <td colspan="5"
+                                >/management/virtualips/<parameter>virtualIpId</parameter></td>
                         <td colspan="3">Remove the specified virtual IP from the cluster.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
@@ -879,16 +924,22 @@
                 request can be found below.
             </para>
             <note>
-                <para>
-                    In the event a virtual IP must be removed from the cluster, the &DELETE; operation can be used;
-                    however, to delete a virtual IP it must not have a load balancer associated to it.
-                </para>
-            </note>
-            <note>
-                <para>
-                    To add single or multiple specific virtual IPs, simply specify the first and lastIp fields
-                    identically (not as a range).
-                </para>
+                <title>Notes</title>
+                <itemizedlist>
+                    <listitem>
+                        <para>In the event a virtual IP must be
+                            removed from the cluster, the &DELETE;
+                            operation can be used; however, to delete
+                            a virtual IP it must not have a load
+                            balancer associated to it. </para>
+                    </listitem>
+                    <listitem>
+                        <para>To add single or multiple
+                                <emphasis>specific</emphasis> virtual
+                            IPs, simply specify the firstIp and lastIp
+                            fields identically (not as a range). </para>
+                    </listitem>
+                </itemizedlist>
             </note>
             <example>
                 <title>List All VIPs Within Cluster Response: XML</title>
@@ -915,6 +966,22 @@
 <xi:include href="samples/lb-create-clusters-clusterid-virtualipblocks.json" parse="text"/>
                 </programlisting>
             </example>
+            <para>The following example assumes that the IP is bound
+                to an HTTPS-terminated load balancer that accepts
+                mixed traffic. </para>
+            <example>
+                <title>List Valid Traffic for IP: JSON</title>
+                <programlisting language="json">
+<xi:include href="samples/lb-get-valid-traffic-virtualip.json" parse="text"/>
+                </programlisting>
+            </example>
+            <para>The following example shows the case where the IP is
+                not bound to a load balancer.</para>
+            <example>
+                <title>List Valid Traffic for IP (not bound):
+                    JSON</title>
+                <programlisting language="json"><xi:include href="samples/lb-get-valid-traffic-virtualip-not-bound.json" parse="text"/>                </programlisting>
+            </example>
         </section>
         <section xml:id="Rate_Limits-d1e1272">
             <title>Rate Limits</title>
@@ -930,7 +997,7 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/limits/</td>
+                        <td colspan="5">/management/limits/</td>
                         <td colspan="3">Retrieve the rate limit information for a specified account.
                         </td>
                         <td colspan="2">Service Admin</td>
@@ -979,27 +1046,31 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/sticky</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/sticky</td>
                         <td colspan="3">Make the specified load balancer sticky.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/sticky</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/sticky</td>
                         <td colspan="3">Turn off the "sticky" flag on the specified load
                             balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">loadbalancers/<parameter>loadBalancerId</parameter>/host</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/host</td>
                         <td colspan="3">Get the host assignment(s) for a specified load
                             balancer.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/loadbalancers/reassignhosts</td>
+                        <td colspan="5"
+                            >/management/loadbalancers/reassignhosts</td>
                         <td colspan="3">Update the host assignment(s) for a list of load
                             balancers.</td>
                         <td colspan="2">Service Admin</td>
@@ -1081,50 +1152,57 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/hosts/backups</td>
+                        <td colspan="5">/management/hosts/backups</td>
                         <td colspan="3">View a list of available backups for all host machines.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/backups</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/backups</td>
                         <td colspan="3">View a list of available backups for a specified host
                             machine.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/subnetmappings</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/subnetmappings</td>
                         <td colspan="3">View the list of subnet mappings for this host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/subnetmappings</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/subnetmappings</td>
                         <td colspan="3">Add subnet mappings on this host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/subnetmappings</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/subnetmappings</td>
                         <td colspan="3">Delete the specified subnet mappings on this host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/backups</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/backups</td>
                         <td colspan="3">Create a new backup of the host configuration.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/backups/backupId</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/backups/backupId</td>
                         <td colspan="3">Purge a backup with the specified backup ID.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/hosts/<parameter>hostId</parameter>/backups/<parameter>backupId</parameter>/restore</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostId</parameter>/backups/<parameter>backupId</parameter>/restore</td>
                         <td colspan="3">Restore the specified backup to the host machine.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
@@ -1244,25 +1322,29 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/hosts/customers</td>
+                        <td colspan="5"
+                            >/management/hosts/customers</td>
                         <td colspan="3">Generate a customer list by host.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/clusters/customers</td>
+                        <td colspan="5"
+                            >/management/clusters/customers</td>
                         <td colspan="3">Generate a customer list by cluster.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/clusters/<parameter>clusterId</parameter>/customercount</td>
+                        <td colspan="5"
+                                >/management/clusters/<parameter>clusterId</parameter>/customercount</td>
                         <td colspan="3">Generate a customer list by cluster id.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/hosts/<parameter>hostid</parameter>/customercount</td>
+                        <td colspan="5"
+                                >/management/hosts/<parameter>hostid</parameter>/customercount</td>
                         <td colspan="3">Generate a customer list by host id.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -1454,7 +1536,8 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/virtualips</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/virtualips</td>
                         <td colspan="3">Provision an additional virtual IP to a load balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -1498,7 +1581,8 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId/</parameter>sync</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId/</parameter>sync</td>
                         <td colspan="3">Synchronize the load balancer with the authoritative
                             source.</td>
                         <td colspan="2">Support, Service Admin</td>
@@ -1567,21 +1651,24 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
                         <td colspan="3">Retrieve the current suspension information, if any, for the
                             load balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
                         <td colspan="3">Issue an immediate service suspension for a load
                             balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/suspension</td>
                         <td colspan="3">Remove the suspension for a load balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -1640,7 +1727,8 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/loadbalancers/<parameter>loadBalancerId</parameter>/extendedview</td>
+                        <td colspan="5"
+                                >/management/loadbalancers/<parameter>loadBalancerId</parameter>/extendedview</td>
                         <td colspan="3">View extended details of a load balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -1684,26 +1772,24 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">
-                            /accounts/<parameter>accountId</parameter>/loadbalancers
-                        </td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/loadbalancers </td>
                         <td colspan="4">Retrieve a list of load balancers on this account.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">
-                            /accounts/<parameter>accountId</parameter>/extendedloadbalancers
-                        </td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/extendedloadbalancers </td>
                         <td colspan="4">Retrieve a list of load balancers on this account with extended details including virtual IPs.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                                >/accounts/billing?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>
+                                >/management/accounts/billing?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>
                         </td>
                         <td colspan="4">Retrieve usage for all accounts for a <emphasis>single</emphasis> day.</td>
                         <td colspan="2">Support, Service Admin, Billing</td>
@@ -1711,9 +1797,9 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                                >/accounts/usage?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;offset=<parameter>offset</parameter>&amp;limit=<parameter>limit</parameter>
+                                >/management/accounts/usage?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;offset=<parameter>offset</parameter>&amp;limit=<parameter>limit</parameter>
                         </td>
                         <td colspan="4">Retrieves account- specific
                             usage for all accounts for the given date
@@ -1725,9 +1811,9 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                                >/loadbalancers/usage?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
-                            <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;offset=<parameter>offset</parameter>&amp;limit=<parameter>limit</parameter>
+                                >/management/loadbalancers/usage?startTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;endTime=<parameter>YYYY</parameter>-<parameter>MM</parameter>-<parameter>DD</parameter>T
+                                <parameter>HH</parameter>:<parameter>mm</parameter>:<parameter>ss</parameter>&amp;offset=<parameter>offset</parameter>&amp;limit=<parameter>limit</parameter>
                         </td>
                         <td colspan="4">Retrieves load balancer-
                             specific usage for all load balancers for
@@ -1826,22 +1912,22 @@
             </para>
             <itemizedlist spacing="compact">
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/ACTIVE</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/ACTIVE</para>
                 </listitem>
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/BUILD</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/BUILD</para>
                 </listitem>
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/DELETED</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/DELETED</para>
                 </listitem>
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/ERROR</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/ERROR</para>
                 </listitem>
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/PENDING_DELETE</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/PENDING_DELETE</para>
                 </listitem>
                 <listitem>
-                    <para>loadbalancers/<parameter>id</parameter>/setstatus/PENDING_UPDATE</para>
+                    <para>/management/loadbalancers/<parameter>id</parameter>/setstatus/PENDING_UPDATE</para>
                 </listitem>
             </itemizedlist>
         </section>
@@ -1868,52 +1954,58 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts</td>
+                        <td colspan="5">/management/alerts</td>
                         <td colspan="3">Retrieve all alerts, if any.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts/<parameter>alertId</parameter></td>
+                        <td colspan="5"
+                                >/management/alerts/<parameter>alertId</parameter></td>
                         <td colspan="3">Retrieve details for the alert.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts/loadbalancer?id=<parameter>loadBalancerId</parameter></td>
+                        <td colspan="5"
+                                >/management/alerts/loadbalancer?id=<parameter>loadBalancerId</parameter></td>
                         <td colspan="3">Retrieve all alerts, if any, for the specified load
                             balancer.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts/byloadbalancerids?id=<parameter>loadBalancerId</parameter>
-                            &amp;id=<parameter>loadBalancerId</parameter>
-                            &amp;startDate=<parameter>2010-12-21T12:32:07-06:00</parameter>
-                            &amp;endDate=<parameter>2010-12-21T12:36:30-06:00</parameter></td>
+                        <td colspan="5"
+                                >/management/alerts/byloadbalancerids?id=<parameter>loadBalancerId</parameter>
+                                &amp;id=<parameter>loadBalancerId</parameter>
+                                &amp;startDate=<parameter>2010-12-21T12:32:07-06:00</parameter>
+                                &amp;endDate=<parameter>2010-12-21T12:36:30-06:00</parameter></td>
                         <td colspan="3">Retrieve all alerts, if any, for any specified load balancers.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/management/alerts/account?account=<parameter>accountId</parameter>
-                            &amp;account=<parameter>accountId</parameter>
-                            &amp;startDate=<parameter>Date</parameter>&amp;endDate=<parameter>Date</parameter>
-                            &amp;showStackTrace=<parameter>true</parameter></td>
+                        <td colspan="5"
+                                >/management/management/alerts/account?account=<parameter>accountId</parameter>
+                                &amp;account=<parameter>accountId</parameter>
+                                &amp;startDate=<parameter>Date</parameter>&amp;endDate=<parameter>Date</parameter>
+                                &amp;showStackTrace=<parameter>true</parameter></td>
                         <td colspan="3">Retrieve all alerts, if any, for an account.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts/cluster/<parameter>clusterId</parameter>
-                            &amp;startDate=<parameter>2010-12-21T12:32:07-06:00</parameter>
-                            &amp;endDate=<parameter>2010-12-21T12:36:30-06:00</parameter></td>
+                        <td colspan="5"
+                                >/management/alerts/cluster/<parameter>clusterId</parameter>
+                                &amp;startDate=<parameter>2010-12-21T12:32:07-06:00</parameter>
+                                &amp;endDate=<parameter>2010-12-21T12:36:30-06:00</parameter></td>
                         <td colspan="3">Retrieve all alerts, if any, for any specified cluster.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="5">/alerts/<parameter>alertId</parameter>/acknowledged</td>
+                        <td colspan="5"
+                                >/management/alerts/<parameter>alertId</parameter>/acknowledged</td>
                         <td colspan="3">Acknowledge alert and change
                             its status to
                             <code>ACKNOWLEDGED</code>.</td>
@@ -1921,13 +2013,15 @@
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts?status=UNACKNOWLEDGED</td>
+                        <td colspan="5"
+                            >/management/alerts?status=UNACKNOWLEDGED</td>
                         <td colspan="3">Retrieve unacknowledged alerts, if any.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="5">/alerts/atomhopper</td>
+                        <td colspan="5"
+                            >/management/alerts/atomhopper</td>
                         <td colspan="3">Retrieve alerts generated by
                             the Atom Hopper Service.</td>
                         <td colspan="2">Support, Service Admin</td>
@@ -2024,25 +2118,29 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits</td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits</td>
                         <td colspan="4">Retrieve all absolute limits, ids included with custom limits.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="4">accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits</td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits</td>
                         <td colspan="4">Add an absolute limit.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="4">accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits/<parameter>id</parameter></td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits/<parameter>id</parameter></td>
                         <td colspan="4">Delete the specific absolute limit.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&PUT;</td>
-                        <td colspan="4">accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits/<parameter>id</parameter></td>
+                        <td colspan="4"
+                                >/management/accounts/<parameter>accountId</parameter>/loadbalancers/absolutelimits/<parameter>id</parameter></td>
                         <td colspan="4">Update an absolute limit.</td>
                         <td colspan="2">Support, Service Admin</td>
                     </tr>
@@ -2273,7 +2371,7 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                                >/event/account/<parameter>accountId</parameter>/loadbalancer?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
+                                >/management/event/account/<parameter>accountId</parameter>/loadbalancer?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
                         <td colspan="4">List recent load balancer
                             service events for the specified account
                             and date range.</td>
@@ -2282,7 +2380,7 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                                >/event/user/<parameter>username</parameter>?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
+                                >/management/event/user/<parameter>username</parameter>?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
                         <td colspan="4">List recent load balancer
                             service events for the specified user and
                             date range.</td>
@@ -2291,7 +2389,7 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                        >/event/<parameter>loadbalancerId</parameter>/atomhopper?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
+                                >/management/event/<parameter>loadbalancerId</parameter>/atomhopper?startDate=<parameter>YYYY-MM-DD</parameter>&amp;endDate=<parameter>YYYY-MM-DD</parameter></td>
                         <td colspan="4">List recent load balancer
                             service events for the specified account
                             and date range generated by the Atom
@@ -2398,13 +2496,15 @@
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3">/alloweddomains</td>
+                            <td colspan="3"
+                                >/management/alloweddomains</td>
                             <td colspan="3">View a list of allowed domains.</td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">&GET;
                             </td>
-                            <td colspan="3">/alloweddomains?matches={<code>domainname</code>}</td>
+                            <td colspan="3"
+                                   >/management/alloweddomains?matches={<code>domainname</code>}</td>
                             <td colspan="3">For testing purposes, a
                                 domain name can be specified to verify
                                 it is allowed by the system. The query
@@ -2417,14 +2517,16 @@
                         <tr align="left">
                             <td colspan="1">&PUT;
                             </td>
-                            <td colspan="3">/alloweddomains</td>
+                            <td colspan="3"
+                                >/management/alloweddomains</td>
                             <td colspan="3">Add an item to the list of
                                 allowed domains.</td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">&DELETE;
                             </td>
-                            <td colspan="3">/alloweddomains?name={<code>domainname</code>}</td>
+                            <td colspan="3"
+                                   >/management/alloweddomains?name={<code>domainname</code>}</td>
                             <td colspan="3">Specify an item to remove
                                 from the list of allowed domains. The
                                 query parameter for the specified
@@ -2502,19 +2604,20 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/blacklist</td>
+                        <td colspan="4">/management/blacklist</td>
                         <td colspan="4">Retrieve a list of blacklisted items.</td>
                         <td colspan="2">Operations</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&POST;</td>
-                        <td colspan="4">/blacklist</td>
+                        <td colspan="4">/management/blacklist</td>
                         <td colspan="4">Create a new blacklist item.</td>
                         <td colspan="2">Operations</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&DELETE;</td>
-                        <td colspan="4">blacklist/<parameter>id</parameter></td>
+                        <td colspan="4"
+                                >/management/blacklist/<parameter>id</parameter></td>
                         <td colspan="4">Delete a specific blacklist item.</td>
                         <td colspan="2">Operations, Support</td>
                     </tr>
@@ -2580,19 +2683,21 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/jobs</td>
+                        <td colspan="4">/management/jobs</td>
                         <td colspan="4">Retrieve a list of jobss.</td>
                         <td colspan="2">Operations</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/jobs?state=<parameter>SomeState</parameter></td>
+                        <td colspan="4"
+                                >/management/jobs?state=<parameter>SomeState</parameter></td>
                         <td colspan="4">Retrieve jobs by state.</td>
                         <td colspan="2">Operations</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/jobs/<parameter>JobId</parameter></td>
+                        <td colspan="4"
+                                >/management/jobs/<parameter>JobId</parameter></td>
                         <td colspan="4">Delete a specific job.</td>
                         <td colspan="2">Operations, Support</td>
                     </tr>
@@ -2654,24 +2759,29 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/hosts/capacityreport</td>
+                        <td colspan="4"
+                            >/management/hosts/capacityreport</td>
                         <td colspan="4">Generate a capacity planning report for all load balancing
                             hosts.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/hosts/<parameter>hostId</parameter>/capacityreport</td>
+                        <td colspan="4"
+                                >/management/hosts/<parameter>hostId</parameter>/capacityreport</td>
                         <td colspan="4">Generate a capacity planning report for a specified load
                             balancing host.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                 </tbody>
             </informaltable>
-            <para> The load balancing host capacity report provides insight into the available
-                capacity of a given host machine. It also supplies an estimated runway of available
-                capacity based on historical provisioning activity. The historical period consists
-                of one week, reported as <code>allocatedConcurrentConnectionsInLastSevenDays</code>. </para>
+            <para>The load balancing host capacity report provides
+                insight into the available capacity of a given host
+                machine. It also supplies an estimated runway of
+                available capacity based on historical provisioning
+                activity. The historical period consists of one week,
+                reported as
+                    <code>allocatedConcurrentConnectionsInLastSevenDays</code>. </para>
             <example>
                 <title>Report Host Capacity Response: XML</title>
                 <programlisting language="xml">
@@ -2699,14 +2809,16 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/virtualips/availabilityreport</td>
+                        <td colspan="4"
+                            >/management/virtualips/availabilityreport</td>
                         <td colspan="4">Generate an availability report for all virtual IPs associated with any
                             cluster.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">&GET;</td>
-                        <td colspan="4">/clusters/<parameter>clusterId</parameter>/virtualips/availabilityreport</td>
+                        <td colspan="4"
+                                >/management/clusters/<parameter>clusterId</parameter>/virtualips/availabilityreport</td>
                         <td colspan="4">Generate an availability report for all virtual IPs associated with the
                             specific cluster</td>
                         <td colspan="2">Service Admin</td>
@@ -2750,7 +2862,7 @@
                     <tr align="left">
                         <td colspan="1">&GET;</td>
                         <td colspan="4"
-                            >/audit/status?status=<parameter>statuses</parameter>&amp;<parameter>changes-since</parameter></td>
+                                >/management/audit/status?status=<parameter>statuses</parameter>&amp;<parameter>changes-since</parameter></td>
                         <td colspan="4">Generate a load balancer audit report.</td>
                         <td colspan="2">Service Admin</td>
                     </tr>

@@ -335,13 +335,6 @@
       <raxm:priority>10</raxm:priority>
     </raxm:metadata> 
     </info>
-    <chapter xml:id="LB_Doc_Change_History">
-        <title>Document Change History</title>
-        <para>This version of the Getting Started replaces and
-            obsoletes all previous versions. The most recent changes
-            are described in the table below:</para>
-        <?rax revhistory?>
-    </chapter>
     <chapter xml:id="LB_Overview">
         <title>Overview</title>
         <para>Follow the steps described in this guide to use the
@@ -1432,5 +1425,12 @@
         <para>This concludes the <citetitle>Getting
                 Started</citetitle>. Thank you for using Rackspace
             Cloud products.</para>
+    </chapter>
+    <chapter xml:id="LB_Doc_Change_History">
+        <title>Document Change History</title>
+        <para>This version of the Getting Started replaces and
+            obsoletes all previous versions. The most recent changes
+            are described in the table below:</para>
+        <?rax revhistory?>
     </chapter>
 </book>
