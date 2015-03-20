@@ -226,8 +226,8 @@
                 URI
                     <code>/loadbalancers?changes-since=2011-05-19T08:07:08-0500</code>
                 lists all load balancers that have changed since May
-                19th, 2011 at 8:07:08 AM, GMT-5. See <xref
-                    linkend="Date_Time_Format"/> for information about
+                19th, 2011 at 8:07:08 AM, GMT-5. See <link
+                xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Date_Time_Format.html">Date and time format</link> for information about
                 specifying the date/time.</para>
             <para>To view deleted load balancers, add the query
                 parameter <code>?status=DELETED</code> to the end of
