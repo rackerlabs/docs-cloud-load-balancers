@@ -927,6 +927,11 @@
                     </para>
                 </listitem>
             </itemizedlist>
+            <note><para>
+                The Show load balancer statistics API operation caches data for approximately 5 minutes after the initial request is sent. 
+                If the system is under high load, a 503 error response is returned to the user along with a Retry-After header suggesting 
+                to the client when to send the next request. To limit 503 error responses, the client should honor the Retry-After header.  
+            </para></note>
             <para>
                 The information is duplicated for SSL Termination. However, if the Load Balancer 
                 is not SSL Terminated, the appropriate information will be left without a value.

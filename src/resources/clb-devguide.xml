@@ -41,7 +41,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2015-02-25</pubdate>
+        <pubdate>2015-03-23</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -55,6 +55,22 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2015-03-23</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note about caching for <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="GET_showStats_v1.0__account__loadbalancers__loadBalancerId__stats_stats"
+                                   >“Show load balancer
+                                   statistics”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
