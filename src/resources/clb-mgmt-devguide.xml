@@ -45,7 +45,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2015-03-24</pubdate>
+        <pubdate>2015-03-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -60,7 +60,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2015-03-24</date>
+                <date>2015-03-25</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -889,8 +889,9 @@
                                 an IP address (in order to help
                                 mitigate DDoS attacks).</para>
                             <note>
-                                <para>This operation does not support
-                                   XML requests and responses.</para>
+                                <para>This operation does not
+                                   officially support XML
+                                   responses.</para>
                             </note>
                         </td>
                         <td colspan="2">Service Admin</td>
