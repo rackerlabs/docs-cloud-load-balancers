@@ -114,7 +114,15 @@
             <representation mediaType="application/xml" element="lbapi:forbidden"/>
             <representation mediaType="application/json"/>
         </response>
-           '>       
+           '> 
+           
+     <!ENTITY immutableEntity
+           '
+        <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="lbapi:immutableEntity"/>
+            <representation mediaType="application/json"/>
+        </response>
+           '>      
 
 <!-- Load balancer List Parameters -->
 <!ENTITY startTimeQueryParameter '  

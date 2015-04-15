@@ -1085,7 +1085,8 @@
                         href="../samples/lb-add-nodes-response.xml"/>
                 </wadl:doc>
             </representation>
-        </response> &commonFaults; &getFaults; </method>
+        </response> &commonFaults; &getFaults; &immutableEntity;
+    </method>
     
     <method id="updateNode" name="PUT">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
