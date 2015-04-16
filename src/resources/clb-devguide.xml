@@ -41,7 +41,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2015-04-15</pubdate>
+        <pubdate>2015-04-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -55,6 +55,31 @@
                 Interface (<abbrev>API</abbrev>).</para>
         </abstract>
         <revhistory>
+            <revision xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+                <date>2015-04-16</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="API-Errors-d1e3649"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information for <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="DELETE_bulkDeleteLoadBalancer_v1.0__account__loadbalancers_load-balancers"
+                                   >“Bulk-delete load
+                                   balancers”</olink> and <olink
+                                   targetdoc="clb-devguide"
+                                   targetptr="DELETE_bulkDeleteNodes_v1.0__account__loadbalancers__loadBalancerId__nodes_Nodes-d1e2173"
+                                   >“Bulk-delete
+                                nodes”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
@@ -2791,9 +2816,10 @@
             </table>
         </section>
         <section xml:id="API_Behavior_and_Suggestions-d1e5498">
-            <title>API Behavior and Suggestions</title>
-            <para>This section describes the behavior of the API and
-                provides suggestions for working with it.</para>
+            <title>API Behavior, Errors, and Suggestions</title>
+            <para>This section describes the behavior of the API,
+                errors, and provides suggestions for working with the
+                API.</para>
             <section xml:id="API_Behavior-d1e2674">
                 <title>API Behavior</title>
                 <para>The LBaaS API is considered to be asynchronous
@@ -2863,6 +2889,14 @@
                         </tbody>
                     </table>
                 </para>
+            </section>
+            <section xml:id="API-Errors-d1e3649">
+                <title>API Errors</title>
+                <para>Error responses contain a body with the
+                    validation error, code, and specific message
+                    related to the error. Use this information to
+                    diagnose what went wrong during the API
+                    operation.</para>
             </section>
             <section xml:id="Suggestions-d1e8427">
                 <title>Suggestions</title>
