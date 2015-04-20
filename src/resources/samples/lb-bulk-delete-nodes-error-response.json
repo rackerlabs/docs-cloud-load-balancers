@@ -1,0 +1,10 @@
+{
+   "validationErrors":{
+      "messages":[
+         "Node ids 100 are not a part of your loadbalancer"
+      ]
+   },
+   "message":"Validation Failure",
+   "code":400,
+   "details":"The object is not valid"
+}

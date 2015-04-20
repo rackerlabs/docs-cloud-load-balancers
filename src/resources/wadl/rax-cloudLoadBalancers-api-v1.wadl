@@ -1183,7 +1183,12 @@
         </request>
         <response status="202">
             <representation mediaType="application/json">
-            </representation>
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN" title="Bulk-delete Nodes Error: JSON response">
+                    <xsdxt:code href="../samples/lb-bulk-delete-nodes-error-response.json"
+                    />
+                </wadl:doc>
+            </representation>   
         </response> &commonFaults; &getFaults;
     </method>
     
