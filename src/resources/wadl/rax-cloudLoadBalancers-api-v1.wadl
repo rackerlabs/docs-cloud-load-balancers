@@ -1044,7 +1044,8 @@
                 nodes. The type attribute enables configuring the node
                 as either PRIMARY or SECONDARY.</para>
             <para>Domain names are also accepted with certain
-                restrictions.</para>
+                restrictions. Refer to the following API operation for information about how to list the allowed names: 
+                <link xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/GET_listAllowedDomains_v1.0__account__loadbalancers_alloweddomains_allowed_domains.html">List allowed domains</link>.</para>
             <tip><para>   
                 Suppose that you want to add nodes to the load balancer before the services on those nodes are ready to serve traffic. 
                 As of right now, the default status for added nodes is <code>ONLINE</code>. 
