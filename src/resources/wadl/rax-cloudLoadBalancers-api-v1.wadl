@@ -1869,6 +1869,15 @@
                                         will be used to evaluate the
                                         contents of the body of the
                                         response. </para>
+                                    <para>For example you could use the regular expression "^.*(Unauthorized|Forbidden|Not Found|Timeout|Server Error).*$" 
+                                        to look for any of those potentially problematic strings in the body of the response 
+                                        or use the regular expression "^success$" to look for the string "success".</para>
+                                    <note><para>The system only evaluates the first 2048 bytes of the response against
+                                        the bodyRegex that is specified, so you will want to test accordingly. </para>
+                                        <para>To debug the HTTP/HTTPS health monitoring you will want to test the bodyRegex against the IP of the node(s) that are being disabled. 
+                                            You can use the following cURL command to see what the health monitoring analyzes:</para>
+                                        <para>curl -s -r 0-2048 https://YOUR_IP_ADDRESS | head -c 2048 | egrep "YOUR_REGULAR_EXPRESSION"</para>
+                                    </note>
                                 </td>
                                 
                             </tr>
@@ -2224,6 +2233,15 @@
                                         will be used to evaluate the
                                         contents of the body of the
                                         response. </para>
+                                    <para>For example you could use the regular expression "^.*(Unauthorized|Forbidden|Not Found|Timeout|Server Error).*$" 
+                                        to look for any of those potentially problematic strings in the body of the response 
+                                        or use the regular expression "^success$" to look for the string "success".</para>
+                                    <note><para>The system only evaluates the first 2048 bytes of the response against
+                                        the bodyRegex that is specified, so you will want to test accordingly. </para>
+                                        <para>To debug the HTTP/HTTPS health monitoring you will want to test the bodyRegex against the IP of the node(s) that are being disabled. 
+                                            You can use the following cURL command to see what the health monitoring analyzes:</para>
+                                        <para>curl -s -r 0-2048 https://YOUR_IP_ADDRESS | head -c 2048 | egrep "YOUR_REGULAR_EXPRESSION"</para>
+                                    </note>
                                 </td>
                                 <td colspan="1">Yes</td>
                             </tr>
