@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="service-access-and-endpoints">
+<span id="clb-dg-api-info-service-access"></span><h1>Service access and endpoints<a class="headerlink" href="#service-access-and-endpoints" title="Permalink to this headline">¶</a></h1>
+<p>The load balancing service is a regionalized service. It allows the caller to select a region into which a load balancer is to be provisioned.</p>
+<p>To determine which region to operate against, select an endpoint from
+the table below.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To help you decide which regionalized endpoint to use, read about <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">special considerations for choosing a region</a>.</p>
+</div>
+<div class="section" id="regionalized-service-endpoints">
+<span id="clb-dg-api-info-service-access-regional"></span><h2>Regionalized service endpoints<a class="headerlink" href="#regionalized-service-endpoints" title="Permalink to this headline">¶</a></h2>
+<p><strong>Chicago (ORD)</strong>
+<cite>https://ord.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/</cite></p>
+<p><strong>Dallas/Ft. Worth (DFW)</strong>
+<cite>https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/</cite></p>
+<p><strong>Northern Virginia (IAD)</strong>
+<cite>https://iad.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/</cite></p>
+<p><strong>London (LON)</strong>
+<cite>https://lon.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/</cite></p>
+<p><strong>Sydney (SYD)</strong>
+<cite>https://syd.loadbalancers.api.rackspacecloud.com/v1.0/1234/</cite></p>
+<p><strong>Hong Kong (HKG)</strong>
+<cite>https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234/</cite></p>
+<p>Replace the sample account ID number, <cite>1234</cite>, with your actual account number returned as part of the authentication service response.</p>
+<p>You find the actual account number after the final <cite>/</cite> in the <cite>publicURL</cite> field returned by the authentication response. In <span class="xref std std-ref">Authentication with US endpoint: JSON response</span>, the account ID is <cite>1100111</cite>, as you can see from the <cite>publicURL</cite> field for <cite>cloudLoadBalancers</cite>: <a class="reference external" href="https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111">https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111</a>.</p>
+<p><strong>If load balancing Cloud Servers</strong>, you can determine the appropriate region to select by viewing your Cloud Servers list and creating a load balancer within the same region as the datacenter in which your Cloud Server resides. When your resources reside in the same region as your load balancer, devices are in close proximity to each other and can take advantage of ServiceNet connectivity for free data transfer between services.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ServiceNet is an internal Rackspace-only, multi-tenant network connection within each Rackspace datacenter. ServiceNet IPs are not accessible via the public internet. Rackspace customers may configure resources to utilize an internal IP address so that traffic over the ServiceNet network is not billed.</p>
+</div>
+<p><strong>If load balancing external servers</strong>, you can determine the appropriate region to select by choosing the region that is geographically as close to your external servers as possible.</p>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+<a href="authentication.html"><<</a>
+
+|
+
+<a href="request-response.html">>></a>
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Service access and endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#regionalized-service-endpoints">Regionalized service endpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-response.html">Request and response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paginated-collections.html">Paginated collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-behavior.html">API Behavior &amp; Suggestions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatible-shared-load-balancing-protocols.html">Compatible shared load balancing protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role-based access control (RBAC)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>

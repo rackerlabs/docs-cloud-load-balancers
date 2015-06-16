@@ -1,5 +1,6 @@
 .DS_Store
 target/
+doctrees/
 !.gitignore
 *.iml
 *.iws

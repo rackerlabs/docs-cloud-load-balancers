@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="authentication">
+<span id="clb-dg-apiinfo-auth"></span><h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>Every ReST request against the Load Balancers Service requires the inclusion of a specific authorization token, supplied by the <code class="docutils literal"><span class="pre">X-Auth-Token</span></code> HTTP header. Customers obtain this token by first using the Rackspace Cloud Authentication Service and supplying valid authentication credentials.</p>
+<div class="section" id="geographic-endpoints">
+<span id="clb-dg-apiinfo-auth-endpoints"></span><h2>Geographic endpoints<a class="headerlink" href="#geographic-endpoints" title="Permalink to this headline">¶</a></h2>
+<p>The Rackspace Cloud Authentication Service serves as the entry point to all Rackspace Cloud APIs and is itself a ReSTful web service.</p>
+<p>Use the following endpoint to access the Authentication Service, regardless of US or UK identities:</p>
+<p><cite>https://identity.api.rackspacecloud.com/v2.0/</cite></p>
+<p>Your account may be based in either the US or the UK; this is not determined by your physical location but by the location of the Rackspace retail site which was used to create your account:</p>
+<ul class="simple">
+<li>If your account was created via <a class="reference external" href="http://www.rackspacecloud.com">http://www.rackspacecloud.com</a>, it is a US-based account.</li>
+<li>If your account was created via <a class="reference external" href="http://www.rackspace.co.uk">http://www.rackspace.co.uk</a>, it is a UK-based account.</li>
+</ul>
+</div>
+<div class="section" id="authenticate">
+<span id="clb-dg-apiinfo-auth-authenticate"></span><h2>Authenticate<a class="headerlink" href="#authenticate" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="20%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>POST</strong></td>
+<td>v2.0/tokens</td>
+<td>Authenticate to receive a token and a
+service catalog.</td>
+</tr>
+</tbody>
+</table>
+<p>Normal Response Code(s): 200, 203</p>
+<p>Error Response Code(s): unauthorized (401), userDisabled (403), badRequest (400), authFault (500), serviceUnavailable (503)</p>
+<p>The authenticate operation provides clients with an authentication token and a list of regional cloud endpoints. The sample requests and responses in this section illustrate a general case. In your authentication request, use your own credentials rather than the sample values shown here for <cite>username</cite> and <cite>apiKey</cite>. When you authenticate successfully, the response to your authentication request includes a catalog of the services to which you have subscribed rather than the sample values shown here.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API key credentials. For information about setting up and using multi-factor authentication, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multi-factor authentication</a> in the <em>Cloud Identity Client Developer Guide</em>.</p>
+<p class="last">For information about other authentication methods with examples, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html">authentication tokens</a> in the <em>Cloud Identity Client Developer Guide</em>.</p>
+</div>
+<p><strong>Example: Authentication with US endpoint: XML request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>POST /v2.0/tokens HTTP/1.1
+User-Agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.15 libssh2/1.2.6
+Host: identity.api.rackspacecloud.com
+Accept: application/xml
+Content-Type: application/xml
+Content-Length: 88
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;auth&gt;
+   &lt;apiKeyCredentials
+       xmlns=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0&quot;
+       username=&quot;jsmith&quot; **&lt;1&gt;**
+       apiKey=&quot;aaaaa-bbbbb-ccccc-12345678&quot;/&gt; **&lt;2&gt;**
+&lt;/auth&gt;
+
+.. _clb-dg-apiinfo-example2:
+</pre></div>
+</div>
+<p><strong>Example: Authentication with US endpoint: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>POST /v2.0/tokens HTTP/1.1
+User-Agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.15 libssh2/1.2.6
+Host: identity.api.rackspacecloud.com
+Accept: application/json
+Content-Type: application/json
+Content-Length: 54
+
+{
+   &quot;auth&quot;:
+   {
+      &quot;RAX-KSKEY:apiKeyCredentials&quot;:
+      {
+         &quot;username&quot;: &quot;jsmith&quot;, **&lt;1&gt;**
+         &quot;apiKey&quot;: &quot;aaaaa-bbbbb-ccccc-12345678&quot; **&lt;2&gt;**
+      }
+   }
+}
+</pre></div>
+</div>
+<p>The username supplied here is your common Rackspace Cloud username.</p>
+<p>The key is your API access key. The key can be obtained from the Rackspace <a class="reference external" href="http://mycloud.rackspace.com/">Cloud Control Panel</a> in the &lt;Your Account&gt; / API Access section.</p>
+<p><strong>Example: Authentication with US endpoint: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 477
+Date: Thu, 12 Apr 2012 18:50:20 GMT
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;access xmlns:os-ksadm=&quot;http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0&quot;
+  xmlns=&quot;http://docs.openstack.org/identity/api/v2.0&quot;
+  xmlns:rax-kskey=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0&quot;
+  xmlns:rax-ksqa=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSQA/v1.0&quot;
+  xmlns:common=&quot;http://docs.openstack.org/common/api/v1.0&quot;
+  xmlns:ksgrp=&quot;http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0&quot;
+  xmlns:rax-kscatalog=&quot;http://docs.openstack.org/identity/api/ext/OS-KSCATALOG/v1.0&quot;
+  xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;&gt;
+  &lt;token id=&quot;vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz&quot; expires=&quot;2011-12-08T22:51:02.000-06:00&quot;/&gt;
+  &lt;user id=&quot;123456&quot; name=&quot;jsmith&quot; rax-auth:defaultRegion=&quot;DFW&quot;&gt;
+    &lt;roles&gt;
+      &lt;role id=&quot;identity:admin&quot; name=&quot;identity:admin&quot; description=&quot;Admin Role.&quot;/&gt;
+      &lt;role id=&quot;identity:default&quot; name=&quot;identity:default&quot; description=&quot;Default Role.&quot;/&gt;
+    &lt;/roles&gt;
+  &lt;/user&gt;
+  &lt;serviceCatalog&gt;
+    &lt;service type=&quot;rax:database&quot; name=&quot;cloudDatabases&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://dfw.databases.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://ord.databases.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:load-balancer&quot; name=&quot;cloudLoadBalancers&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot; publicURL=&quot;https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;compute&quot; name=&quot;cloudServersOpenStack&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot; tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://dfw.servers.api.rackspacecloud.com/v2/1100111&quot;&gt;
+        &lt;version id=&quot;2&quot; info=&quot;https://dfw.servers.api.rackspacecloud.com/v2/&quot;
+          list=&quot;https://dfw.servers.api.rackspacecloud.com/&quot; /&gt;
+      &lt;/endpoint&gt;
+      &lt;endpoint region=&quot;ORD&quot; tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://ord.servers.api.rackspacecloud.com/v2/1100111&quot;&gt;
+        &lt;version id=&quot;2&quot; info=&quot;https://ord.servers.api.rackspacecloud.com/v2/&quot;
+          list=&quot;https://ord.servers.api.rackspacecloud.com/&quot; /&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;compute&quot; name=&quot;cloudServers&quot;&gt;
+      &lt;endpoint tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://servers.api.rackspacecloud.com/v1.0/1100111&quot;&gt;
+        &lt;version id=&quot;1.0&quot;
+          info=&quot;https://servers.api.rackspacecloud.com/v1.0/&quot;
+          list=&quot;https://servers.api.rackspacecloud.com/&quot;/&gt;
+      &lt;/endpoint&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;object-store&quot; name=&quot;cloudFiles&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        internalURL=&quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        internalURL=&quot;https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:object-cdn&quot; name=&quot;cloudFilesCDN&quot;&gt;
+      &lt;endpoint region=&quot;DFW&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+      &lt;endpoint region=&quot;ORD&quot;
+        tenantId=&quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;
+        publicURL=&quot;https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;/&gt;
+    &lt;/service&gt;
+    &lt;service type=&quot;rax:dns&quot; name=&quot;cloudDNS&quot;&gt;
+      &lt;endpoint tenantId=&quot;1100111&quot;
+        publicURL=&quot;https://dns.api.rackspacecloud.com/v1.0/1100111&quot;/&gt;
+    &lt;/service&gt;
+  &lt;/serviceCatalog&gt;
+&lt;/access&gt;
+</pre></div>
+</div>
+<p><strong>Example: Authentication with US endpoint: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 477
+Date: Thu, 12 Apr 2012 18:45:13 GMT
+
+{
+    &quot;access&quot;: {
+
+        &quot;token&quot;: {
+            &quot;expires&quot;: &quot;2011-12-08T22:51:02.000-06:00&quot;,
+            &quot;id&quot;: &quot;vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz&quot;
+        },
+        &quot;user&quot;: {
+            &quot;id&quot;: &quot;123456&quot;,
+            &quot;name&quot;: &quot;jsmith&quot;,
+            &quot;RAX-AUTH:defaultRegion&quot;: &quot;DFW&quot;,
+            &quot;roles&quot;: [
+                {
+                    &quot;description&quot;: &quot;Admin Role.&quot;,
+                    &quot;id&quot;: &quot;identity:admin&quot;,
+                    &quot;name&quot;: &quot;identity:admin&quot;
+                },
+                {
+                    &quot;description&quot;: &quot;Default Role.&quot;,
+                    &quot;id&quot;: &quot;identity:default&quot;,
+                    &quot;name&quot;: &quot;identity:default&quot;
+                }
+            ]
+        },
+        &quot;serviceCatalog&quot;: [
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;publicURL&quot;: &quot;https://dfw.databases.api.rackspacecloud.com/v1.0/1100111&quot;,
+                        &quot;region&quot;: &quot;DFW&quot;,
+                        &quot;tenantId&quot;: &quot;1100111&quot;
+                    },
+                    {
+                        &quot;publicURL&quot;: &quot;https://ord.databases.api.rackspacecloud.com/v1.0/1100111&quot;,
+                        &quot;region&quot;: &quot;ORD&quot;,
+                        &quot;tenantId&quot;: &quot;1100111&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudDatabases&quot;,
+                &quot;type&quot;: &quot;rax:database&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;publicURL&quot;: &quot;https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;,
+                        &quot;region&quot;: &quot;DFW&quot;,
+                        &quot;tenantId&quot;: &quot;1100111&quot;
+                    },
+                    {
+                        &quot;publicURL&quot;: &quot;https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111&quot;,
+                        &quot;region&quot;: &quot;ORD&quot;,
+                        &quot;tenantId&quot;: &quot;1100111&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudLoadBalancers&quot;,
+                &quot;type&quot;: &quot;rax:load-balancer&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;tenantId&quot;: &quot;1100111&quot;,
+                        &quot;region&quot;: &quot;DFW&quot;,
+                        &quot;publicURL&quot;: &quot;https://dfw.servers.api.rackspacecloud.com/v2/1100111&quot;,
+                        &quot;versionId&quot;: &quot;2&quot;,
+                        &quot;versionInfo&quot;: &quot;https://dfw.servers.api.rackspacecloud.com/v2/&quot;,
+                        &quot;versionList&quot;: &quot;https://dfw.servers.api.rackspacecloud.com/&quot;
+                    },
+                    {
+                        &quot;tenantId&quot;: &quot;1100111&quot;,
+                        &quot;region&quot;: &quot;ORD&quot;,
+                        &quot;publicURL&quot;: &quot;https://ord.servers.api.rackspacecloud.com/v2/1100111&quot;,
+                        &quot;versionId&quot;: &quot;2&quot;,
+                        &quot;versionInfo&quot;: &quot;https://ord.servers.api.rackspacecloud.com/v2/&quot;,
+                        &quot;versionList&quot;: &quot;https://ord.servers.api.rackspacecloud.com/&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudServersOpenStack&quot;,
+                &quot;type&quot;: &quot;compute&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;tenantId&quot;: &quot;1100111&quot;,
+                        &quot;publicURL&quot;: &quot;https://servers.api.rackspacecloud.com/v1.0/1100111&quot;,
+                        &quot;versionId&quot;: &quot;1.0&quot;,
+                        &quot;versionInfo&quot;: &quot;https://servers.api.rackspacecloud.com/v1.0/&quot;,
+                        &quot;versionList&quot;: &quot;https://servers.api.rackspacecloud.com/&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudServers&quot;,
+                &quot;type&quot;: &quot;compute&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;tenantId&quot;: &quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;publicURL&quot;: &quot;https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;internalURL&quot;: &quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;region&quot;: &quot;DFW&quot;
+                    },
+                    {
+                        &quot;tenantId&quot;: &quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;publicURL&quot;: &quot;https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;internalURL&quot;: &quot;https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;region&quot;: &quot;ORD&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudFiles&quot;,
+                &quot;type&quot;: &quot;object-store&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;tenantId&quot;: &quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;publicURL&quot;: &quot;https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;region&quot;: &quot;DFW&quot;
+                    },
+                    {
+                        &quot;tenantId&quot;: &quot;MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;publicURL&quot;: &quot;https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee&quot;,
+                        &quot;region&quot;: &quot;ORD&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudFilesCDN&quot;,
+                &quot;type&quot;: &quot;rax:object-cdn&quot;
+            },
+            {
+                &quot;endpoints&quot;: [
+                    {
+                        &quot;tenantId&quot;: &quot;1100111&quot;,
+                        &quot;publicURL&quot;: &quot;https://dns.api.rackspacecloud.com/v1.0/1100111&quot;
+                    }
+                ],
+                &quot;name&quot;: &quot;cloudDNS&quot;,
+                &quot;type&quot;: &quot;rax:dns&quot;
+            }
+        ]
+    }
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The information shown in the Auth Response examples is for US-based accounts. If you authenticate using a UK-based account, you see the service catalog information for UK-based accounts.</p>
+</div>
+<p>In XML responses only, a list of namespaces identifies API extensions that add functionality to the core API.</p>
+<p>This token can be presented to a service as evidence of authentication. Tokens are valid for a finite duration; a token&#8217;s default lifespan is twenty-four hours.</p>
+<p>The expires attribute denotes the time after which the token automatically becomes invalid. A token may be manually revoked before the time identified by the expires attribute; expires predicts a token&#8217;s maximum possible lifespan but does not guarantee that it reaches that lifespan. Clients are encouraged to cache a token until it expires.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The token&#8217;s expiration time is formatted differently in the US and UK. These response examples show the US format.</p>
+</div>
+<p>Users can be assigned a default region so that, when there is a choice between multiple endpoints associated with a service in the user&#8217;s catalog, the endpoint for the user&#8217;s default region is selected if it is available. In this example, the user&#8217;s default region is DFW and several of the services in the user&#8217;s catalog offer endpoints in that region and the ORD region; this user&#8217;s work is directed to the DFW region whenever possible.</p>
+<p>Users can be assigned multiple roles, with each role providing specific privileges. In this example, jsmith is the administrative user for the account, holding the fully-privileged identity:admin role. Other users might hold other roles with different privileges. Roles need not be associated with actual job functions such as Administrator, Operator, Developer, Tester, or Trainer.</p>
+<p>The service catalog lists the services this user can access. In this example, the user can access one database service, one load balancing service, two compute services (Cloud Servers OpenStack and Cloud Servers), two object storage services (Cloud Files Content Distribution Network (CDN), and Cloud Files), and one DNS service. The catalog listing for each service provides at least one endpoint URL for that service. Other information, such as regions, versions, and tenants, is provided if it&#8217;s relevant to this user&#8217;s access to this service.</p>
+<p>The service type attribute identifies services that perform similar functions, whatever those services might be named. In this example, the services named cloudServers and cloudServersOpenStack are both identified as type=&#8221;compute&#8221;, identifying them as compute services even though the word &#8220;compute&#8221; does not appear in their names.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Use service type as the primary value for locating a service. If multiple endpoints of the same service type exist in the same region, use service name as the tiebreaker.</p>
+</div>
+<p>The service name attribute identifies each unique service in the catalog. Once a service is created, its name does not change. However, new services of the same service type may be added to the catalog with new names.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are programmatically parsing an authentication response, use service type rather than service name as the basis for determining whether a user has access to a particular kind of service. Service type is stable across all releases; new service types may be developed, but existing service types are not renamed. In this example, type=&#8221;compute&#8221; identifies all the available compute services, one of which is named cloudServers and one of which is named cloudServersOpenStack. New compute service names may be added in future releases; whatever the compute services are named, you can always recognize them by parsing for type=&#8221;compute&#8221; in the authentication response&#8217;s service catalog.</p>
+</div>
+<p>A service may expose endpoints in different regions. Regional endpoints allow clients to provision resources in a manner that provides high availability.</p>
+<p>Some services are not region-specific. These services supply a single non-regional endpoint and do not provide access to internal URLs.</p>
+<p>Some services recognize specification of a tenant. If a service does recognize tenants, the format of the tenant specification is defined only by the service; for details about whether and how to specify a tenant, check the documentation for the service you are using.</p>
+<p>An endpoint can be assigned public and internal URLs. A public URL is accessible from anywhere. Access to a public URL usually incurs traffic charges. Internal URLs are only accessible to services within the same region. Access to an internal URL is free of charge.</p>
+<p>Authentication tokens are typically valid for 24 hours. Applications should be designed to re-authenticate after receiving a 401 (Unauthorized) response from a service endpoint.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are programmatically parsing an authentication response, please be aware that service names are stable for the life of the particular service and can be used as keys. You should also be aware that a user&#8217;s service catalog can include multiple uniquely-named services which perform similar functions. For example, cloudServersOpenStack is the OpenStack version of compute whereas cloudServers is the legacy version of compute; the same user can have access to both services. In Auth 2.0, the service type attribute can be used as a key by which to recognize similar services; see the tip below.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Beginning with Auth 2.0, the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, <cite>type=&#8221;compute&#8221;</cite> identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For additional information on Auth 2.0 (also known as the Cloud Identity Service), refer to the <a class="reference external" href="http://docs.rackspace.com">Cloud Identity Client Developer Guide</a>.</p>
+</div>
+<p>Load balancer service endpoints are published in the service catalog in the Auth response with the account number, which is a required element of the service endpoints. The examples shown here are for authentication for US customers. Customers with UK-based accounts see different values in the service catalog. See the next section for more information about service endpoints.</p>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+<a href="general-api-information.html"><<</a>
+
+|
+
+<a href="service-access.html">>></a>
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general-api-information.html">General API information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geographic-endpoints">Geographic endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authenticate">Authenticate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="service-access.html">Service access and endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="request-response.html">Request and response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content-compression.html">Content compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="persistent-connections.html">Persistent connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paginated-collections.html">Paginated collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-behavior.html">API Behavior &amp; Suggestions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatible-shared-load-balancing-protocols.html">Compatible shared load balancing protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role-based access control (RBAC)</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>
