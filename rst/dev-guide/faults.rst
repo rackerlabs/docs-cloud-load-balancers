@@ -4,14 +4,14 @@
 Faults
 ======
 
-API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, `serviceFault`, for easier exception handling for languages that support it.
+API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, ``serviceFault``, for easier exception handling for languages that support it.
 
 .. _clb-dg-faults-service:
 
 serviceFault
 ~~~~~~~~~~~~
 
-The `serviceFault` and by extension all other faults include `message` and `detail` elements which contain strings describing the nature of the fault as well as a `code` attribute representing the HTTP response code for convenience. The `code` attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the `serviceFault` to be returned directly but should instead expect only one of the child faults to be returned.
+The ``serviceFault`` and by extension all other faults include ``message`` and ``detail`` elements which contain strings describing the nature of the fault as well as a ``code`` attribute representing the HTTP response code for convenience. The ``code`` attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the ``serviceFault`` to be returned directly but should instead expect only one of the child faults to be returned.
 
 .. _clb-dg-faults-badrequest:
 
@@ -38,7 +38,7 @@ badRequest fault: Response
 immutableEntity
 ~~~~~~~~~~~~~~~
 
-This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of `PENDING_UPDATE`, `BUILD`, or `DELETED`
+This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
 may not be modified.
 
 immutableEntity fault: Response
@@ -69,7 +69,7 @@ itemNotFound fault: Response
 loadBalancerFault
 ~~~~~~~~~~~~~~~~~
 
-The `loadBalancerFault` fault shall be returned in the event that an error occurred during a load balancer operation.
+The ``loadBalancerFault`` fault shall be returned in the event that an error occurred during a load balancer operation.
 
 loadBalancerFault fault: Response
 ---------------------------------
@@ -154,7 +154,7 @@ unprocessableEntity
 This fault is returned when an operation is requested on an item that does not support the operation, but the request is properly formed.
 
 .. note::
-    The Cloud Load Balancing API is considered asynchronous, which is why there is a `status` attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the `unprocessableEntity` fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is `ACTIVE` before continuing any other modifications.
+    The Cloud Load Balancing API is considered asynchronous, which is why there is a ``status`` attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the ``unprocessableEntity`` fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is ``ACTIVE`` before continuing any other modifications.
 
 unprocessableEntity fault: Response
 -----------------------------------

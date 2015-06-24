@@ -45,7 +45,7 @@ Added link in Section 4.4.2, “Add node” to information for restrictions on d
 April 20, 2015
 ----------------
 
-    Added example error response for Section 4.4.3, “Bulk-delete nodes”.
+Added example error response for Section 4.4.3, “Bulk-delete nodes”.
 
 .. _clb-dg-overview-addlresources:
 

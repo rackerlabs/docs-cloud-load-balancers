@@ -91,10 +91,10 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="faults">
 <span id="clb-dg-faults"></span><h1>Faults<a class="headerlink" href="#faults" title="Permalink to this headline">¶</a></h1>
-<p>API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, <cite>serviceFault</cite>, for easier exception handling for languages that support it.</p>
+<p>API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, <code class="docutils literal"><span class="pre">serviceFault</span></code>, for easier exception handling for languages that support it.</p>
 <div class="section" id="servicefault">
 <span id="clb-dg-faults-service"></span><h2>serviceFault<a class="headerlink" href="#servicefault" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>serviceFault</cite> and by extension all other faults include <cite>message</cite> and <cite>detail</cite> elements which contain strings describing the nature of the fault as well as a <cite>code</cite> attribute representing the HTTP response code for convenience. The <cite>code</cite> attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the <cite>serviceFault</cite> to be returned directly but should instead expect only one of the child faults to be returned.</p>
+<p>The <code class="docutils literal"><span class="pre">serviceFault</span></code> and by extension all other faults include <code class="docutils literal"><span class="pre">message</span></code> and <code class="docutils literal"><span class="pre">detail</span></code> elements which contain strings describing the nature of the fault as well as a <code class="docutils literal"><span class="pre">code</span></code> attribute representing the HTTP response code for convenience. The <code class="docutils literal"><span class="pre">code</span></code> attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the <code class="docutils literal"><span class="pre">serviceFault</span></code> to be returned directly but should instead expect only one of the child faults to be returned.</p>
 </div>
 <div class="section" id="badrequest">
 <span id="clb-dg-faults-badrequest"></span><h2>badRequest<a class="headerlink" href="#badrequest" title="Permalink to this headline">¶</a></h2>
@@ -114,7 +114,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </div>
 <div class="section" id="immutableentity">
 <span id="clb-dg-faults-immutableentity"></span><h2>immutableEntity<a class="headerlink" href="#immutableentity" title="Permalink to this headline">¶</a></h2>
-<p>This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of <cite>PENDING_UPDATE</cite>, <cite>BUILD</cite>, or <cite>DELETED</cite>
+<p>This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of <code class="docutils literal"><span class="pre">PENDING_UPDATE</span></code>, <code class="docutils literal"><span class="pre">BUILD</span></code>, or <code class="docutils literal"><span class="pre">DELETED</span></code>
 may not be modified.</p>
 <div class="section" id="immutableentity-fault-response">
 <h3>immutableEntity fault: Response<a class="headerlink" href="#immutableentity-fault-response" title="Permalink to this headline">¶</a></h3>
@@ -138,7 +138,7 @@ may not be modified.</p>
 </div>
 <div class="section" id="loadbalancerfault">
 <span id="clb-dg-faults-loadbalancerfault"></span><h2>loadBalancerFault<a class="headerlink" href="#loadbalancerfault" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>loadBalancerFault</cite> fault shall be returned in the event that an error occurred during a load balancer operation.</p>
+<p>The <code class="docutils literal"><span class="pre">loadBalancerFault</span></code> fault shall be returned in the event that an error occurred during a load balancer operation.</p>
 <div class="section" id="loadbalancerfault-fault-response">
 <h3>loadBalancerFault fault: Response<a class="headerlink" href="#loadbalancerfault-fault-response" title="Permalink to this headline">¶</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;loadBalancerFault code=&quot;401&quot; xmlns=&quot;http://docs.openstack.org/loadbalancers/api/v1.0&quot;&gt;
@@ -203,7 +203,7 @@ may not be modified.</p>
 <p>This fault is returned when an operation is requested on an item that does not support the operation, but the request is properly formed.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The Cloud Load Balancing API is considered asynchronous, which is why there is a <cite>status</cite> attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the <cite>unprocessableEntity</cite> fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is <cite>ACTIVE</cite> before continuing any other modifications.</p>
+<p class="last">The Cloud Load Balancing API is considered asynchronous, which is why there is a <code class="docutils literal"><span class="pre">status</span></code> attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the <code class="docutils literal"><span class="pre">unprocessableEntity</span></code> fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is <code class="docutils literal"><span class="pre">ACTIVE</span></code> before continuing any other modifications.</p>
 </div>
 <div class="section" id="unprocessableentity-fault-response">
 <h3>unprocessableEntity fault: Response<a class="headerlink" href="#unprocessableentity-fault-response" title="Permalink to this headline">¶</a></h3>
@@ -272,7 +272,7 @@ may not be modified.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-behavior.html">API Behavior &amp; Suggestions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-behavior.html">API Behavior, Errors, &amp; Suggestions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compatible-shared-load-balancing-protocols.html">Compatible shared load balancing protocols</a></li>
 <li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role-based access control (RBAC)</a></li>
 </ul>
