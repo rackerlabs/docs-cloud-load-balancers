@@ -652,8 +652,8 @@ content caching.</para>
     <wadl:doc xmlns="http://docbook.org/ns/docbook"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xml:lang="EN">
         <para>Maximum number of connections to allow for a single IP
-            address. To enable unlimited simultaneous connections, set
-            to 0. Otherwise, set to a value from 1 to 100000.</para>
+            address. <phrase security="writeronly">To enable unlimited simultaneous connections, set
+            to 0.</phrase> Set to a value from 1 to 100000.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY minConnectionsParameter '

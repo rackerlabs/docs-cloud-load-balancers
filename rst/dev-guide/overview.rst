@@ -26,6 +26,15 @@ Document change history
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
+.. _clb-dg-overview-dochistory-08072015:
+
+July 8, 2015
+--------------
+
+Removed information about setting the maxConnections body parameter to zero to enable
+unlimited simultaneous connections until that feature is working correctly again in section 4.12.2 "Create
+or update connection throttling configuration".
+
 .. _clb-dg-overview-dochistory-07052015:
 
 May 7, 2015
@@ -39,13 +48,6 @@ April 23, 2015
 -----------------
 
 Added link in Section 4.4.2, “Add node” to information for restrictions on domain names.
-
-.. _clb-dg-overview-dochistory-20042015:
-
-April 20, 2015
-----------------
-
-Added example error response for Section 4.4.3, “Bulk-delete nodes”.
 
 .. _clb-dg-overview-addlresources:
 
