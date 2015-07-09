@@ -2,6 +2,7 @@
 language: python
 python:
 - "3.4"
+sudo: false
 env:
 - CONTENT_ID_BASE=https://github.com/rackerlabs/docs-cloud-load-balancers
 - CONTENT_STORE_URL=http://104.130.43.81:8000/
