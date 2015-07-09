@@ -16,4 +16,5 @@ install:
 script:
 - 'echo "Submitting content: ${DESC:-nowhere}"'
 - export CONTENT_STORE_APIKEY=${SKEY1}${SKEY2}${SKEY3}
+- cd rst/dev-guide
 - deconst-preparer-sphinx
