@@ -1,0 +1,17 @@
+---
+language: python
+python:
+- "3.4"
+env:
+- CONTENT_ID_BASE=https://github.com/rackerlabs/docs-cloud-load-balancers
+- CONTENT_STORE_URL=http://104.130.43.81:8000/
+- DESC=staging
+- secure: "Nr1KMW/SMFF2Z6BU24S/eYMDEL3uk7ha3Wzc+p6CSZyTEaoD6Bfba6cxhqFreDbmaZ2yQ08mbtCIO0/HrXX50rln0yPVJy17byNdd8+HZr0AwHVbcNz2jLrU+D6hb+gAzgNg3ggTrJkl66q3mq1g9JQW0fjkOIZa9lB11/073b0="
+- secure: "FnT11drPJhMJhWBhlEERX+j4MBiUA/Q/xuO9D8CrsL6qR5wZTOR/sgOeS/VLEUlzF+d3Z4W0z6XydV0v8HrIz8AH9e/U7Dy1lOLHl2I9vK9FE9XunpS1CBDF6TkSxJRUbsLFc1A/I65npjZWOdAGkDuMwBrAHArtVaZSj/LuUcE="
+- secure: "Hpy6ALIamYvFTFVKxdNGpbQzV9LK+BEYVU4ntbAEq1Tf5OwOI4HPI8Dsz7PiEKl8n8IpH8HwUdBef3XcDw4a6BP8JtWshgcf3773IrMHYmRr0929Bj9SVDFAuc5UwuqCQ9kUjCd6nXck1Z0rYt+f40ktHBV4NyI4M6TfVcief1I="
+install:
+- pip install -e git+https://github.com/deconst/preparer-sphinx.git#egg=deconstrst
+script:
+- 'echo "Submitting content: ${DESC:-nowhere}"'
+- export CONTENT_STORE_APIKEY=${SKEY1}${SKEY2}${SKEY3}
+- deconst-preparer-sphinx
