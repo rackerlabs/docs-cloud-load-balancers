@@ -1,5 +1,7 @@
 # Rackspace Cloud Load Balancers API documentation
 
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers)
+
 ## Resources
 
 This github repository contains the source files for the following Rackspace Cloud Load Balancers API documentation:
@@ -50,4 +52,3 @@ The files that are most likely to be of interest are:
 If you want to make changes to the example files referenced in the WADL file, you can find the example files at [src/resources/samples](src/resources/samples).
 
 The status codes referenced by the WADL files are at [src/resources/wadl/common.ent](src/resources/wadl/common.ent).
-
