@@ -26,6 +26,15 @@ Document change history
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
+.. _clb-dg-overview-dochistory-14072015:
+
+July 14, 2015
+--------------
+
+Removed information about node status going from OFFLINE to ONLINE after changing
+condition to ENABLED from DRAINING until that feature is working correctly again in section 4.4.2 "Add
+node".
+
 .. _clb-dg-overview-dochistory-08072015:
 
 July 8, 2015
@@ -41,13 +50,6 @@ May 7, 2015
 --------------
 
 Added information for HTTP and HTTPS health monitors for attribute bodyRegex in Section 4.9, “Monitors”.
-
-.. _clb-dg-overview-dochistory-23042015:
-
-April 23, 2015
------------------
-
-Added link in Section 4.4.2, “Add node” to information for restrictions on domain names.
 
 .. _clb-dg-overview-addlresources:
 
