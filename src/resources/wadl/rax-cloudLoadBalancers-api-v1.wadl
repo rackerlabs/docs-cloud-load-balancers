@@ -1046,7 +1046,7 @@
             <para>Domain names are also accepted with certain
                 restrictions. Refer to the following API operation for information about how to list the allowed names: 
                 <link xlink:href="http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/GET_listAllowedDomains_v1.0__account__loadbalancers_alloweddomains_allowed_domains.html">List allowed domains</link>.</para>
-            <tip><para>   
+            <tip security="writeronly"><para>   
                 Suppose that you want to add nodes to the load balancer before the services on those nodes are ready to serve traffic. 
                 As of right now, the default status for added nodes is <code>ONLINE</code>. 
                 The node's status is an immutable attribute, and only health monitoring can change this attribute.
