@@ -1,0 +1,83 @@
+=============================================================================
+Bulk-Delete Load Balancer Node Metadata Items -  Rackspace Cloud Load Balancers Developer Guide
+=============================================================================
+
+Bulk-Delete Load Balancer Node Metadata Items
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <DELETE_bulk-delete_load_balancer_node_metadata_items_v1.0_account_loadbalancers_loadbalancerid_nodes_nodeid_metadata.rst#request>`__
+`Response <DELETE_bulk-delete_load_balancer_node_metadata_items_v1.0_account_loadbalancers_loadbalancerid_nodes_nodeid_metadata.rst#response>`__
+
+.. code-block:: javascript
+
+    DELETE /v1.0/{account}/loadbalancers/{loadBalancerId}/nodes/{nodeId}/metadata
+
+Bulk-deletes the metadata items given specified id list.
+
+To bulk-delete metadata, provide a query parameter list of meta IDs. For example: /metadata?id= ``metaId`` & id= ``metaId``. The current default limit is ten IDs per request. Any and all configuration data is immediately purged and is not recoverable. If one of the items in the list cannot be removed due to its current status, a 400:BadRequest is returned along with the IDs of the ones the system identified as potential failures for this request.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|503                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|400                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|401                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|413                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|404                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{account}                 |xsd:string               |The ID for the tenant or |
+|                          |                         |account in a multi-      |
+|                          |                         |tenancy cloud.           |
++--------------------------+-------------------------+-------------------------+
+|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|                          |                         |balancer.                |
++--------------------------+-------------------------+-------------------------+
+|{nodeId}                  |xsd:string *(Required)*  |The ID for the node.     |
++--------------------------+-------------------------+-------------------------+
+
+
+
+This table shows the query parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|metaId                    |xsd:string *(Required)*  |The ID for the metadata  |
+|                          |                         |item.                    |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
