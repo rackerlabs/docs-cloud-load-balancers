@@ -507,6 +507,11 @@
                 specified port. This header, along with the
                 X-Forwarded-For header, provide the needed information
                 to the underlying application servers.</para>
+            <note><para>The headers listed here (X-Forwarded-For, X-Forwarded-Proto, and
+                X-Forwarded-Port) are available for HTTP load balancers with 
+                or without SSL termination enabled, however HTTPS load balancers 
+                do not provide these header elements due to encryption.
+            </para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" xml:lang="EN">

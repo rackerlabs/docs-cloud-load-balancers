@@ -421,7 +421,9 @@
             for HTTPS protocol (<code>port=443</code>), or HTTP
             protocol with a properly configured SSL termination
                 (<code>secureTrafficOnly=true</code>,
-                <code>securePort=443</code>).</para>
+                <code>securePort=443</code>).
+                Note that SSL termination for a load balancer can only be 
+                configured after the load balancer has been created.</para>
     </wadl:doc>
 </param>'>
 <!ENTITY keyParameter '
