@@ -10,7 +10,7 @@ Overview
 .. toctree::
     :maxdepth: 2
 
-    overview
+    overview/index
 
 Concepts
 --------
@@ -18,7 +18,7 @@ Concepts
 .. toctree::
     :maxdepth: 2
 
-    concepts
+    concepts/index
 
 General API Information
 -----------------------
@@ -26,19 +26,7 @@ General API Information
 .. toctree::
     :maxdepth: 2
 
-    general-api-information
-    authentication
-    service-access
-    request-response
-    content-compression
-    persistent-connections
-    paginated-collections
-    limits
-    faults
-    date-time-format
-    api-behavior
-    compatible-shared-load-balancing-protocols
-    role-based-access-control
+    general-api-information/index
 
 API Operations
 --------------
@@ -54,11 +42,14 @@ Glossary
 .. toctree::
     :maxdepth: 2
     
-    glossary
+    glossary/index
 
 .. toctree:: 
     :hidden:
     :maxdepth: 2
-
-    index
+    
+    overview/index
+    concepts/index
+    general-api-information/index
     api-operations/index
+    glossary/index

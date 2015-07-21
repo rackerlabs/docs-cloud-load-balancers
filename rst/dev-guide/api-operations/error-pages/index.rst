@@ -9,10 +9,8 @@ During provisioning, every load balancer is configured with a default error page
 You can add a single custom error page with an HTTP-based protocol to a load balancer. Page updates override existing content. If a custom error page is deleted, or the load balancer is changed to a non-HTTP protocol, the default error page is restored.
 
 .. toctree::
-    :maxdepth: 99
-    :hidden:
+    :maxdepth: 2
 
-    index
-    GET_show_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage
-    PUT_set_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage
-    DELETE_delete_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage
+    Show custom error page <GET_show_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage>
+    Set custom error page <PUT_set_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage>
+    Delete customer error page <DELETE_delete_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage>
