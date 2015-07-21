@@ -2,5 +2,5 @@
    :includehidden:
    :maxdepth: 99
 
-   dev-guide/index
+   index
    api-operations/index

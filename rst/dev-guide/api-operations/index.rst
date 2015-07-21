@@ -6,7 +6,7 @@ Load Balancers
 --------------
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     Load balancers <load-balancers/index>
     List load balancers <load-balancers/GET_list_load_balancers_v1.0_account_loadbalancers>
@@ -19,7 +19,7 @@ Error Pages
 -----------
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     Error pages <error-pages/index>
     Show custom error page <error-pages/GET_show_custom_error_page_v1.0_account_loadbalancers_loadbalancerid_errorpage>

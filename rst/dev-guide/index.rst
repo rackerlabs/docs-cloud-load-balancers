@@ -1,6 +1,8 @@
-===================
-API Developer Guide
-===================
+.. _index:
+
+========================================
+Cloud Load Balancers API Developer Guide
+========================================
 
 Overview
 --------
@@ -38,6 +40,14 @@ General API Information
     compatible-shared-load-balancing-protocols
     role-based-access-control
 
+API Operations
+--------------
+
+.. toctree::
+    :maxdepth: 2
+
+    api-operations/index
+
 Glossary
 --------
 
@@ -46,24 +56,9 @@ Glossary
     
     glossary
 
-
-.. toctree::
-    :maxdepth: 99
+.. toctree:: 
     :hidden:
+    :maxdepth: 2
 
-    overview
-    concepts
-    general-api-information
-    authentication
-    service-access
-    request-response
-    content-compression
-    persistent-connections
-    paginated-collections
-    limits
-    faults
-    date-time-format
-    api-behavior
-    compatible-shared-load-balancing-protocols
-    role-based-access-control
-    glossary
+    index
+    api-operations/index

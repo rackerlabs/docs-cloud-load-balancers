@@ -37,9 +37,8 @@ To conserve IPv4 address space, Rackspace highly recommends sharing Virtual IPs 
 
 All load balancers also have a status attribute that shows current configuration status of the device. This status is immutable by the caller and is updated automatically based on state changes within the service. When a load balancer is first created, it is placed into a BUILD status while the configuration is being generated and applied based on the request. Once the configuration is applied and finalized, it is in an ACTIVE status. In the event of a configuration change or update, the status of the load balancer changes to PENDING_UPDATE to signify configuration changes are in progress but are not yet been finalized. Load balancers in a SUSPENDED status are configured to reject traffic and does not forward requests to back-end nodes.
 
-.. table::
+.. table:: 
     :name: Load balancer statuses
-
     +================+============================================================+
     | Name           | Description                                                |
     +================+============================================================+
@@ -83,6 +82,7 @@ The update operation allows the caller to change one or more of the following at
     :maxdepth: 6
     :hidden:
 
+    index
     GET_list_load_balancers_v1.0_account_loadbalancers
     POST_create_load_balancer_v1.0_account_loadbalancers
     DELETE_bulk-delete_load_balancers_v1.0_account_loadbalancers
