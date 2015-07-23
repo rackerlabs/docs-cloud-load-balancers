@@ -246,6 +246,7 @@
                 attached.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
 
             <representation mediaType="application/json" xml:lang="EN">
                 <!--<representation mediaType="application/json"
@@ -424,6 +425,9 @@
                 robust firewall rules.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+            <representation mediaType="application/json">
+            </representation>
             <representation mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -579,6 +583,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" xml:lang="EN">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"
@@ -693,6 +698,7 @@
                 &httpsRedirectParameter; </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -709,6 +715,7 @@
                 immediately purged and is not recoverable.</para>
         </wadl:doc>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -733,6 +740,7 @@
                 &loadbalancerIdQueryParameter;</representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -751,6 +759,7 @@
                 &contentParameter;</representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -790,6 +799,7 @@
                 </wadl:doc> &contentParameter; </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -813,6 +823,7 @@
                 specified load balancer.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -943,6 +954,7 @@
             </para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -974,6 +986,7 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1006,6 +1019,7 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1077,6 +1091,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1140,6 +1155,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response> &commonFaults; &getFaults;
     </method>
     
@@ -1161,6 +1177,7 @@
                 request.</para>
         </wadl:doc>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1188,6 +1205,7 @@
                 &nodeIdQueryParameter;</representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN" title="Bulk-delete Nodes Error: JSON response">
@@ -1212,6 +1230,7 @@
                 days.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1248,6 +1267,7 @@
                 associated with a specified load balancer.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1310,6 +1330,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1348,10 +1369,8 @@
                 IP.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
-                </wadl:doc>
             </representation>
         </response> &lesscommonFaults;
     </method>
@@ -1385,6 +1404,7 @@
                 &virtualIpIdQueryParameter;</representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1411,6 +1431,7 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1466,6 +1487,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1518,6 +1540,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1569,6 +1592,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1618,6 +1642,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1649,6 +1674,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -1709,6 +1735,7 @@
             </representation>
         </request> 
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             
         </response> &commonFaults; &getFaults;
     </method>
@@ -1721,6 +1748,7 @@
             
         </wadl:doc>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1735,6 +1763,7 @@
             
         </wadl:doc>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1752,6 +1781,7 @@
                 &networkItemIdQueryParameter; </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -1954,6 +1984,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:healthMonitor">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN" title="Show connect monitor configuration: XML response">
@@ -2335,6 +2366,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response>
    <!--       <response>
             <representation mediaType="application/xml">
@@ -2417,6 +2449,7 @@
         </wadl:doc>
         
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2524,6 +2557,7 @@
         
         
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sessionPersistence">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2582,7 +2616,7 @@
                 </wadl:doc>
             </representation>-->
         </request>
-        <response status="202"></response>
+        <response status="202"><wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc></response>
         &commonFaults; &getFaults;
     </method>
     
@@ -2594,6 +2628,7 @@
         </wadl:doc>
         
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2610,6 +2645,7 @@
         </wadl:doc> 
         
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2656,6 +2692,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response>  &commonFaults; &getFaults;
     </method>
     
@@ -2668,6 +2705,7 @@
                 configuration.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2734,6 +2772,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response> &commonFaults; &getFaults;
     </method>
     
@@ -2750,6 +2789,7 @@
                 your sites.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -2781,6 +2821,7 @@
                 Balancers</link>.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2841,6 +2882,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response> &commonFaults; &getFaults;
     </method>
     
@@ -2853,6 +2895,7 @@
                 protocols.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2880,6 +2923,7 @@
                 algorithms.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -2922,6 +2966,7 @@
                 Files logs contain log files for both.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:sslTermination">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN" >
@@ -3120,6 +3165,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
         </response> &commonFaults; &getFaults;        
     </method>
     
@@ -3144,6 +3190,7 @@
                 Files logs contain log files for both.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3168,6 +3215,7 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3200,6 +3248,7 @@
             </note>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3251,6 +3300,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMappings">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3304,6 +3354,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:certificateMapping">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3334,6 +3385,7 @@
             </para>
         </wadl:doc>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3348,6 +3400,7 @@
                 the specified load balancer.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3378,6 +3431,7 @@
                 &metaIdParameter;</representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3402,6 +3456,7 @@
                 a specified node and load balancer.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3434,6 +3489,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
@@ -3479,6 +3535,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3512,6 +3569,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3551,6 +3609,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3591,6 +3650,7 @@
                 </wadl:doc>&valueParameter; </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3610,6 +3670,7 @@
                 &metaIdParameter; </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3637,6 +3698,7 @@
                 &metaIdQueryParameter; </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3652,6 +3714,7 @@
                 recoverable.</para>
         </wadl:doc>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;
@@ -3680,6 +3743,7 @@
         </request>
         
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
             </representation>
         </response> &commonFaults; &getFaults;

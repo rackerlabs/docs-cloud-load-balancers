@@ -37,6 +37,15 @@ General API Information
     api-behavior
     compatible-shared-load-balancing-protocols
     role-based-access-control
+    
+API Operations
+--------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   api-operations/*
 
 Glossary
 --------
