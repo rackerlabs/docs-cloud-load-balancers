@@ -360,7 +360,7 @@
     </wadl:doc>
 </param>' >
 <!ENTITY networkItemIdQueryParameter '
-<param style="query" type="xsd:string" name="networkItemId" required="false">
+<param style="query" type="xsd:string" name="id" required="false">
     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
         <para>The ID for the network item.</para>
     </wadl:doc>
