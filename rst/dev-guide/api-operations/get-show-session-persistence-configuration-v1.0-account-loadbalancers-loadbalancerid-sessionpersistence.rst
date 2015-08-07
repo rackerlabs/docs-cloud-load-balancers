@@ -1,0 +1,134 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+=============================================================================
+Show Session Persistence Configuration -  Rackspace Cloud Load Balancers Developer Guide
+=============================================================================
+
+Show Session Persistence Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.html#request>`__
+`Response <get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.html#response>`__
+
+.. code::
+
+    GET /v1.0/{account}/loadbalancers/{loadBalancerId}/sessionpersistence
+
+Shows the session persistence configuration.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |Success                  |Request succeeded.       |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
++--------------------------+-------------------------+-------------------------+
+|400                       |Bad Request              |The request is missing   |
+|                          |                         |one or more elements, or |
+|                          |                         |the values of some       |
+|                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |You are not authorized   |
+|                          |                         |to complete this         |
+|                          |                         |operation. This error    |
+|                          |                         |can occur if the request |
+|                          |                         |is submitted with an     |
+|                          |                         |invalid authentication   |
+|                          |                         |token.                   |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The service is not       |
+|                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{account}                 |xsd:string               |The ID for the tenant or |
+|                          |                         |account in a multi-      |
+|                          |                         |tenancy cloud.           |
++--------------------------+-------------------------+-------------------------+
+|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|                          |                         |balancer.                |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+**Example Show Session Persistence Configuration: XML response**
+
+
+.. code::
+
+    <sessionPersistence xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" persistenceType="HTTP_COOKIE"/>
+
+
+**Example Show Session Persistence Configuration: JSON response**
+
+
+.. code::
+
+    {
+       "sessionPersistence":{
+          "persistenceType":"HTTP_COOKIE"
+       }
+    }
+
+
+**Example Show atom session persistence configuration: ATOM/XML response**
+
+
+.. code::
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <link rel="next"
+              href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/sessionpersistence.atom?page=2"/>
+        <title type="text">Session Persistence Feed</title>
+        <id>1234-loadbalancers-141-sessionpersistence</id>
+        <author>
+            <name>Rackspace Cloud</name>
+        </author>
+        <entry>
+            <title type="text">Session Persistence Successfully Updated</title>
+            <summary type="text">Session persistence successfully updated to 'HTTP_COOKIE'</summary>
+            <author>
+                <name>tvardema</name>
+            </author>
+            <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/sessionpersistence"/>
+            <id>1234-loadbalancers-141-sessionpersistence-201142028460</id>
+            <category term="UPDATE"/>
+            <updated>2011-02-11T00:28:46.000Z</updated>
+        </entry>
+    </feed>
+

@@ -69,6 +69,20 @@
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content</canonicalUrlBase>
                         </configuration>
                     </execution> 
+                    <execution>
+                        <id>clb-devguide-external-2</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+                            <!-- this document that will be published as clb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+                            <includes>clb-devguide-2.xml</includes>
+                            <security>reviewer</security>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v2.0/clb-devguide-2/content</canonicalUrlBase>
+                        </configuration>
+                    </execution> 
                     <!-- MA: added this to generate public release notes -->
                     <execution>
                         <id>clb-releasenotes-external</id>

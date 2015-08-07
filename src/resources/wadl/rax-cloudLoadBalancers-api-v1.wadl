@@ -160,7 +160,7 @@
                             <method href="#showLoadBalancerMetadata"/>
                             <method
                                 href="#bulkDeleteLoadBalancerMetadataItems"/>
-                            <resource id="metaId" path="{metaId}">
+                            <resource id="metaId" path="{metaId}">&metaIdParameter;
                                 <method
                                    href="#showLoadBalancerMetadataItem"/>
                                 <method
@@ -455,10 +455,12 @@
                 &connectionThrottleParameter; &clusterParameter;
                 &createdParameter; &updatedParameter;
                 &sourceAddressesParameter; </representation>
-            <representation mediaType="application/atom-xml"
+           
+            
+            <representation mediaType="application/xml"
                 xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Show atom load balancer details: ATOM/XML response">
                     <xsdxt:code
                         href="../samples/lb-atom-feed-by-loadbalancer-id.xml"
                     />
@@ -796,7 +798,7 @@
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-add-error-page.xml"/>
-                </wadl:doc> &contentParameter; </representation>
+                </wadl:doc>  </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -805,7 +807,7 @@
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-list-error-page.json"/>
-                </wadl:doc>
+                </wadl:doc> &contentParameter;
             </representation>
             <representation mediaType="application/xml" xml:lang="EN" element="lbapi:errorpage">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -1037,7 +1039,7 @@
             <representation mediaType="application/atom-xml"
                 xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Show atom node details: ATOM/XML response">
                     <xsdxt:code
                         href="../samples/lb-atom-feed-by-node-id.xml"
                     />
@@ -1125,7 +1127,7 @@
                         fault. A load balancer supports a maximum of 25
                         nodes; the maximum weight of a node is 100.</para>                           
             </note>
-            <tip><para>Suppose you want to add nodes to the load balancer before the 
+            <tip security="writeronly"><para>Suppose you want to add nodes to the load balancer before the 
                 services on those nodes are ready to serve traffic. 
                 As of right now, the default status for added nodes is <code>ONLINE</code>. 
                 To get the nodes added without having them serve traffic, 
@@ -1285,7 +1287,7 @@
             <representation mediaType="application/atom-xml"
                 xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="List atom virtual IPs: ATOM/XML response">
                     <xsdxt:code
                         href="../samples/lb-atom-feed-by-vips.xml"/>
                 </wadl:doc>
@@ -2126,6 +2128,7 @@
             <para>Every health monitor has a <code>type</code>
                 attribute to signify what kind of monitor it
                 is.</para>
+            <para>The following table lists the health monitor types:</para>
             <table rules="all">
                 <caption>Health monitor types</caption>
                 <?dbfo keep-together="always"?>
@@ -2171,61 +2174,61 @@
                     The following table lists the required and
                     optional attributes for Monitor
                     Connections:
-                    <table rules="all">
-                        <caption>Required and Optional Attributes for
-                            Monitor Connections</caption>
-                        <thead>
-                            <tr>
-                                <td colspan="1">Name </td>
-                                <td colspan="3">Description</td>
-                                <td colspan="1">Required</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="1"
-                                    >attemptsBefore<?sbr?>Deactivation</td>
-                                <td colspan="3">
-                                    <para>Number of permissible monitor
-                                        failures before removing a node
-                                        from rotation. Must be a number
-                                        between 1 and 10.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">delay</td>
-                                <td colspan="3">
-                                    <para>The minimum number of
-                                        seconds to wait before executing
-                                        the health monitor. Must be a
-                                        number between 1 and 3600.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">timeout</td>
-                                <td colspan="3">
-                                    <para>Maximum number of seconds to
-                                        wait for a connection to be
-                                        established before timing out. Must
-                                        be a number between 1 and 300. </para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">type</td>
-                                <td colspan="3">
-                                    <para>Type of the health monitor.
-                                        Must be specified as "CONNECT" to
-                                        monitor connections.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </para>
+                    </para>
             </formalpara>
+            <table rules="all">
+                <caption>Required and Optional Attributes for
+                    Monitor Connections</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1"
+                            >attemptsBefore<?sbr?>Deactivation</td>
+                        <td colspan="3">
+                            <para>Number of permissible monitor
+                                failures before removing a node
+                                from rotation. Must be a number
+                                between 1 and 10.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">delay</td>
+                        <td colspan="3">
+                            <para>The minimum number of
+                                seconds to wait before executing
+                                the health monitor. Must be a
+                                number between 1 and 3600.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">timeout</td>
+                        <td colspan="3">
+                            <para>Maximum number of seconds to
+                                wait for a connection to be
+                                established before timing out. Must
+                                be a number between 1 and 300. </para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">type</td>
+                        <td colspan="3">
+                            <para>Type of the health monitor.
+                                Must be specified as "CONNECT" to
+                                monitor connections.</para>
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
             <formalpara>
                 <title>Monitor HTTP and HTTPS</title>
                 <para>The HTTP and HTTPS monitor is more intelligent
@@ -2764,7 +2767,7 @@
             <representation mediaType="application/atom-xml"
                 xml:lang="EN" element="atom:feed">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN">
+                    xml:lang="EN" title="Create or update atom connection throttling configuration: ATOM/XML response">
                     <xsdxt:code
                         href="../samples/lb-atom-feed-by-connectionthrottle.xml"
                     />
@@ -3428,7 +3431,7 @@
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
-                &metaIdParameter;</representation>
+                </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3605,7 +3608,7 @@
                     xml:lang="EN">
                     <xsdxt:code
                         href="../samples/lb-update-meta-request.xml"/>
-                </wadl:doc> &valueParameter; &metaIdParameter;
+                </wadl:doc> &valueParameter; 
             </representation>
         </request>
         <response status="200">
@@ -3667,7 +3670,7 @@
         </wadl:doc>
         <request>
             <representation mediaType="application/json" xml:lang="EN">
-                &metaIdParameter; </representation>
+                 </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
