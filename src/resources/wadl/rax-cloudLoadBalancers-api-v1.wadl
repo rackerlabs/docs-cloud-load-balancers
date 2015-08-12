@@ -1776,7 +1776,8 @@
             title="Bulk-delete networks from access list">
             <para role="shortdesc">Bulk-deletes the specified networks
                 from an access list.</para>
-            <note><para>Note that a maximum of 10 network items can be deleted with a Bulk-delete networks from access list API operation.</para></note>
+            <note><para>Note that a maximum of 10 network items can be deleted with a Bulk-delete networks from access list API operation, for example the following call will delete 3 network items: 
+                <code>DELETE /v1.0/{account}/loadbalancers/{loadBalancerId}/accesslist?id={id1}&amp;id={id2}&amp;id={id3}</code></para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
