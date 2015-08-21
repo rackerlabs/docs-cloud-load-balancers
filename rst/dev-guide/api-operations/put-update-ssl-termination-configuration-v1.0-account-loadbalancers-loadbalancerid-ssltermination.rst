@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Ssl Termination Configuration -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Update Ssl Termination Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.html#request>`__
-`Response <put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.html#response>`__
+Update SSL termination configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -63,13 +56,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -79,6 +72,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -86,24 +82,24 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -116,7 +112,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|securePort                |xsd:string *(Required)*  |The port on which the    |
+|securePort                |String *(Required)*      |The port on which the    |
 |                          |                         |SSL termination load     |
 |                          |                         |balancer listens for     |
 |                          |                         |secure traffic. The      |
@@ -126,20 +122,20 @@ This table shows the body parameters for the request:
 |                          |                         |combination. For         |
 |                          |                         |example, port 443.       |
 +--------------------------+-------------------------+-------------------------+
-|privatekey                |xsd:string *(Required)*  |The private key for the  |
+|privatekey                |String *(Required)*      |The private key for the  |
 |                          |                         |SSL certificate. The     |
 |                          |                         |private key is validated |
 |                          |                         |and verified against the |
 |                          |                         |provided certificates.   |
 +--------------------------+-------------------------+-------------------------+
-|certificate               |xsd:string *(Required)*  |The certificate used for |
+|certificate               |String *(Required)*      |The certificate used for |
 |                          |                         |SSL termination. The     |
 |                          |                         |certificate is validated |
 |                          |                         |and verified against the |
 |                          |                         |key and intermediate     |
 |                          |                         |certificate if provided. |
 +--------------------------+-------------------------+-------------------------+
-|intermediateCertificate   |xsd:string *(Required)*  |The intermediate         |
+|intermediateCertificate   |String *(Optional)*      |The intermediate         |
 |                          |                         |certificate for the user |
 |                          |                         |that is used for SSL     |
 |                          |                         |termination. The         |
@@ -159,7 +155,7 @@ This table shows the body parameters for the request:
 |                          |                         |single attribute in a    |
 |                          |                         |future request.          |
 +--------------------------+-------------------------+-------------------------+
-|enabled                   |xsd:boolean *(Required)* |Determines if the load   |
+|enabled                   |Boolean *(Optional)*     |Determines if the load   |
 |                          |                         |balancer is enabled to   |
 |                          |                         |terminate SSL traffic.   |
 |                          |                         |If ``enabled`` =         |
@@ -169,7 +165,7 @@ This table shows the body parameters for the request:
 |                          |                         |but does not terminate   |
 |                          |                         |SSL traffic.             |
 +--------------------------+-------------------------+-------------------------+
-|secureTrafficOnly         |xsd:boolean *(Required)* |Determines if the load   |
+|secureTrafficOnly         |Boolean *(Optional)*     |Determines if the load   |
 |                          |                         |balancer can accept only |
 |                          |                         |secure traffic. If       |
 |                          |                         |``secureTrafficOnly`` =  |
@@ -410,7 +406,14 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
+
+
+
+This operation does not return a response body.
 
 
 

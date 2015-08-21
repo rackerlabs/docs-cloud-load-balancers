@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Virtual Ip -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Delete Virtual Ip
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-virtual-ip-v1.0-account-loadbalancers-loadbalancerid-virtualips-virtualipid.html#request>`__
-`Response <delete-delete-virtual-ip-v1.0-account-loadbalancers-loadbalancerid-virtualips-virtualipid.html#response>`__
+Delete virtual IP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,12 +23,6 @@ This table shows the possible response codes for this operation:
 |400 500                   |Load Balancer Fault      |The load balancer has    |
 |                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
-|503                       |Service Unavailable      |The service is not       |
-|                          |                         |available.               |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
 |                          |                         |operation. This error    |
@@ -44,24 +31,33 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The service is not       |
+|                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|{virtualIpId}             |xsd:string *(Required)*  |The ID for the virtual   |
+|{virtualIpId}             |String *(Required)*      |The ID for the virtual   |
 |                          |                         |IP.                      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -69,11 +65,20 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
+
+
+
+This operation does not return a response body.
 
 
 

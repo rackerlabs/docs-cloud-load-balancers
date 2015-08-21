@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Add Certificate Mapping -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Add Certificate Mapping
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.html#request>`__
-`Response <post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.html#response>`__
+Add certificate mapping
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -29,13 +22,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -45,6 +38,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -52,24 +48,24 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -82,7 +78,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|hostName                  |xsd:string *(Required)*  |The host name to be used |
+|hostName                  |String *(Required)*      |The host name to be used |
 |                          |                         |for the provided         |
 |                          |                         |certificate credentials. |
 |                          |                         |The host name is not     |
@@ -95,14 +91,14 @@ This table shows the body parameters for the request:
 |                          |                         |mappings for a given     |
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
-|privateKey                |xsd:string *(Required)*  |The private key to be    |
+|privateKey                |String *(Required)*      |The private key to be    |
 |                          |                         |used for the provided    |
 |                          |                         |certificate. The private |
 |                          |                         |key is validated and     |
 |                          |                         |verified against the     |
 |                          |                         |provided certificates.   |
 +--------------------------+-------------------------+-------------------------+
-|certificate               |xsd:string *(Required)*  |The certificate to be    |
+|certificate               |String *(Required)*      |The certificate to be    |
 |                          |                         |used for the provided    |
 |                          |                         |host name. The           |
 |                          |                         |certificate is validated |
@@ -111,7 +107,7 @@ This table shows the body parameters for the request:
 |                          |                         |certificate(s) if        |
 |                          |                         |provided.                |
 +--------------------------+-------------------------+-------------------------+
-|intermediateCertificate   |xsd:string *(Required)*  |The intermediate         |
+|intermediateCertificate   |String *(Optional)*      |The intermediate         |
 |                          |                         |certificate to be used   |
 |                          |                         |for the provided         |
 |                          |                         |certificate and host     |
@@ -137,7 +133,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Add Certificate Mapping: XML request**
+**Example Add certificate mapping: XML request**
 
 
 .. code::
@@ -327,7 +323,7 @@ This table shows the body parameters for the request:
     </certificateMapping>
 
 
-**Example Add Certificate Mapping: JSON request**
+**Example Add certificate mapping: JSON request**
 
 
 .. code::
@@ -343,13 +339,18 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Add Certificate Mapping: XML response**
+
+
+
+
+
+**Example Add certificate mapping: XML response**
 
 
 .. code::
@@ -511,7 +512,7 @@ Response
     </certificateMapping>
 
 
-**Example Add Certificate Mapping: JSON response**
+**Example Add certificate mapping: JSON response**
 
 
 .. code::

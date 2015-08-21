@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Bulk-Delete Load Balancers -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Bulk-Delete Load Balancers
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.html#request>`__
-`Response <delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.html#response>`__
+Bulk-delete load balancers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -31,13 +24,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -47,6 +40,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -54,20 +50,20 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
@@ -79,7 +75,7 @@ This table shows the query parameters for the request:
 +-------------------------+------------------------+---------------------------+
 |Name                     |Type                    |Description                |
 +=========================+========================+===========================+
-|id                       |xsd:string *(Required)* |One to ten load balancer   |
+|id                       |String *(Optional)*     |One to ten load balancer   |
 |                         |                        |IDs. For example:          |
 |                         |                        |``?id={loadBalancerId}``.  |
 |                         |                        |The default limit is ten   |
@@ -89,11 +85,20 @@ This table shows the query parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
+
+
+
+This operation does not return a response body.
 
 
 

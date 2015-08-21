@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Node -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Update Node
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.html#request>`__
-`Response <put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.html#response>`__
+Update node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -36,13 +29,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -52,6 +45,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -59,37 +55,39 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|{nodeId}                  |xsd:string *(Required)*  |The ID for the node.     |
+|{nodeId}                  |String *(Required)*      |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
 
 
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Update Node: JSON request**
+
+**Example Update node: JSON request**
 
 
 .. code::
@@ -101,7 +99,7 @@ This table shows the URI parameters for the request:
     }
 
 
-**Example Update Node: XML request**
+**Example Update node: XML request**
 
 
 .. code::
@@ -110,7 +108,14 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
+
+
+
+This operation does not return a response body.
 
 
 

@@ -42,7 +42,10 @@ API Operations
 --------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 4
+   
+:ref: `_clb-dg-api-operations-error-pages`
+
    :glob:
 
    api-operations/*

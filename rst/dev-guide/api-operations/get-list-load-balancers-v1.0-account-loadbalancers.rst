@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Load Balancers -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-List Load Balancers
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-load-balancers-v1.0-account-loadbalancers.html#request>`__
-`Response <get-list-load-balancers-v1.0-account-loadbalancers.html#response>`__
+List load balancers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -44,13 +37,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -70,14 +63,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
@@ -86,11 +82,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -98,10 +99,10 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|loadBalancers             |xsd:string *(Required)*  |A ``loadBalancers``      |
+|loadBalancers             |String *(Optional)*      |A ``loadBalancers``      |
 |                          |                         |object.                  |
 +--------------------------+-------------------------+-------------------------+
-|name                      |xsd:string *(Required)*  |Name of the load         |
+|name                      |String *(Optional)*      |Name of the load         |
 |                          |                         |balancer to create. The  |
 |                          |                         |name must be 128         |
 |                          |                         |characters or fewer in   |
@@ -114,57 +115,59 @@ This table shows the body parameters for the response:
 |                          |                         |information about the    |
 |                          |                         |UTF-8 character set.     |
 +--------------------------+-------------------------+-------------------------+
-|id                        |xsd:int *(Required)*     |The ID for the load      |
+|id                        |Int *(Optional)*         |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|protocol                  |xsd:string *(Required)*  |Protocol of the service  |
+|protocol                  |String *(Optional)*      |Protocol of the service  |
 |                          |                         |that is being load       |
 |                          |                         |balanced.                |
 +--------------------------+-------------------------+-------------------------+
-|port                      |xsd:string *(Required)*  |Port number for the      |
+|port                      |String *(Optional)*      |Port number for the      |
 |                          |                         |service you are load     |
 |                          |                         |balancing.               |
 +--------------------------+-------------------------+-------------------------+
-|algorithm                 |xsd:string *(Required)*  |Algorithm that defines   |
+|algorithm                 |String *(Optional)*      |Algorithm that defines   |
 |                          |                         |how traffic should be    |
 |                          |                         |directed between back-   |
 |                          |                         |end nodes.               |
 +--------------------------+-------------------------+-------------------------+
-|status                    |xsd:string *(Required)*  |The status of the load   |
+|status                    |String *(Optional)*      |The status of the load   |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|nodeCount                 |xsd:int *(Required)*     |The number of load       |
+|nodeCount                 |Int *(Optional)*         |The number of load       |
 |                          |                         |balancer nodes.          |
 +--------------------------+-------------------------+-------------------------+
-|created                   |object *(Required)*      |The date and time what   |
+|created                   |Object *(Optional)*      |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |created.                 |
 +--------------------------+-------------------------+-------------------------+
-|updated                   |object *(Required)*      |The date and time what   |
+|updated                   |Object *(Optional)*      |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |last updated.            |
 +--------------------------+-------------------------+-------------------------+
-|virtualIps                |object *(Required)*      |The list of virtualIps   |
+|virtualIps                |Object *(Optional)*      |The list of virtualIps   |
 |                          |                         |for a load balancer.     |
 +--------------------------+-------------------------+-------------------------+
-|id                        |xsd:int *(Required)*     |The ID for the IP        |
+|id                        |Int *(Optional)*         |The ID for the IP        |
 |                          |                         |address.                 |
 +--------------------------+-------------------------+-------------------------+
-|address                   |xsd:string *(Required)*  |The IP address.          |
+|address                   |String *(Optional)*      |The IP address.          |
 +--------------------------+-------------------------+-------------------------+
-|type                      |xsd:string *(Required)*  |The IP address type. See |
+|type                      |String *(Optional)*      |The IP address type. See |
 |                          |                         |the Virtual IP Types     |
 |                          |                         |table in the Chapter 4   |
 |                          |                         |section "Virtual IPs".   |
 +--------------------------+-------------------------+-------------------------+
-|ipVersion                 |xsd:string *(Required)*  |The IP version.          |
+|ipVersion                 |String *(Optional)*      |The IP version.          |
 +--------------------------+-------------------------+-------------------------+
 
 
 
 
 
-**Example List Load Balancers: JSON response**
+
+
+**Example List load balancers: JSON response**
 
 
 .. code::
@@ -221,7 +224,7 @@ This table shows the body parameters for the response:
     }
 
 
-**Example List Load Balancers: XML response**
+**Example List load balancers: XML response**
 
 
 .. code::

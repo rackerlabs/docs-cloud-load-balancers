@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Show Current Usage -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Show Current Usage
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-show-current-usage-v1.0-account-loadbalancers-loadbalancerid-usage-current.html#request>`__
-`Response <get-show-current-usage-v1.0-account-loadbalancers-loadbalancerid-usage-current.html#response>`__
+Show current usage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -31,13 +24,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -47,6 +40,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -54,24 +50,24 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -82,14 +78,14 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|startTime                 |xsd:date *(Required)*    |If the startTime         |
+|startTime                 |Date *(Optional)*        |If the startTime         |
 |                          |                         |parameter is supplied    |
 |                          |                         |but the endTime          |
 |                          |                         |parameter is not, all    |
 |                          |                         |usage beginning with the |
 |                          |                         |startTime is returned.   |
 +--------------------------+-------------------------+-------------------------+
-|endTime                   |xsd:date *(Required)*    |If the endTime parameter |
+|endTime                   |Date *(Optional)*        |If the endTime parameter |
 |                          |                         |is supplied but the      |
 |                          |                         |startTime parameter is   |
 |                          |                         |not, all usage up to the |
@@ -99,17 +95,24 @@ This table shows the query parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Show Current Usage: JSON response**
+
+
+
+
+
+**Example Show current usage: JSON response**
 
 
 .. code::
@@ -137,7 +140,7 @@ Response
     
 
 
-**Example Show Current Usage: XML response**
+**Example Show current usage: XML response**
 
 
 .. code::

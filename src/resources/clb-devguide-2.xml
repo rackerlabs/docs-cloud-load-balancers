@@ -188,25 +188,27 @@
             </para>
         </section>
         <section xml:id="Listener-d1e975">
-            <title>Listener</title>
-            <para security="reviewer">Reviewer: can you please provide a definition of Listener?</para>
+            <title>Listener<?sbr?></title>
+            <para> A Listener is an object containing data pertaining
+                to the "listening" port. This object defines the
+                "frontend" of the configuration and contains the
+                backend data such as pools and its members. </para>
+            <para security="reviewer">Reviewer: can you refine/enhance
+                this definition of Listener?</para>
             <para security="reviewer">Reviewer: are there any other
                 new terms for V2 that we need to define here in the
                 Concepts section?</para>
-            <para security="reviewer">Reviewer: are there any terms
-                that need to be removed/hidden for V2 that we are no
-                longer supporting, or not yet supporting?</para>
         </section>
         <section xml:id="Virtual_IP-d1e252">
             <title>Virtual IP</title>
             <para>A virtual IP is an Internet Protocol (IP) address
                 configured on the load balancer for use by clients
                 connecting to a service that is load balanced.
-                Incoming connections are distributed to back-end nodes
-                based on the configuration of the load balancer.
-            </para>
+                Incoming connections are distributed to back-end
+                members based on the configuration of the load
+                balancer. </para>
         </section>
-        <section xml:id="Erropage-d1e669">
+        <section xml:id="Erropage-d1e669" security="writeronly">
             <title>Error page</title>
             <para>An error page is the html file that is shown to the
                 end user when an error in the service has been thrown.
@@ -214,27 +216,27 @@
                 default error file. It is also possible to submit a
                 custom error page via the Load Balancers API.</para>
         </section>
-        <section xml:id="Node-d1e262">
-            <title>Node</title>
-            <para>A node is a back-end device providing a service on a
+        <section xml:id="Member-d1e262">
+            <title>Member</title>
+            <para>A member is a back-end device providing a service on a
                 specified IP and port.</para>
         </section>
         <section xml:id="Health_Monitor-d1e271">
             <title>Health monitor</title>
             <para>A health monitor is a configurable feature of each
                 load balancer. It is used to determine whether or not
-                a back-end node is usable for processing a request.
+                a back-end member is usable for processing a request.
                 The load balancing service currently supports active
                 health monitoring.</para>
             <section xml:id="Active_Health_Monitor-d1e336">
                 <title>Active health monitor</title>
                 <para>Active health monitoring is a technique that
                     uses synthetic transactions executed at periodic
-                    intervals to determine the condition of a node.
+                    intervals to determine the condition of a member.
                     One of the advantages of active health monitoring
                     is that it does not require active transactions to
                     be processed by the load balancer to determine
-                    whether or not a node is suitable for handling
+                    whether or not a member is suitable for handling
                     traffic. Active health monitoring is not applied
                     by default and must be enabled per load
                     balancer.</para>
@@ -252,19 +254,19 @@
                     </listitem>
                 </itemizedlist>
                 <para>These probes are executed at configured
-                    intervals; in the event of a failure, the node
+                    intervals; in the event of a failure, the member
                     status changes to <code>OFFLINE</code> and the
-                    node does not receive traffic. If, after running a
-                    subsequent test, the probe detects that the node
-                    has recovered, then the node's status is changed
-                    to <code>ONLINE</code> and it is capable of
-                    servicing requests.</para>
-                <para>If active health monitoring is enabled, a
-                    customer can then specify a SECONDARY node for
-                    routing traffic in the event of a PRIMARY node
-                    failure. If all PRIMARY nodes fail, SECONDARY
-                    nodes will then start to serve traffic. A common
-                    use case is having the SECONDARY nodes return a
+                    member does not receive traffic. If, after running
+                    a subsequent test, the probe detects that the
+                    member has recovered, then the member's status is
+                    changed to <code>ONLINE</code> and it is capable
+                    of servicing requests.</para>
+                <para security="writeronly">If active health monitoring is enabled, a
+                    customer can then specify a SECONDARY member for
+                    routing traffic in the event of a PRIMARY member
+                    failure. If all PRIMARY members fail, SECONDARY
+                    members will then start to serve traffic. A common
+                    use case is having the SECONDARY members return a
                     static page saying "We have a problem; please
                     check back later".</para>
             </section>
@@ -274,9 +276,9 @@
             <para>Session persistence is a feature of the load
                 balancing service. It attempts to force subsequent
                 connections to a service to be redirected to the same
-                node as long as it is online.</para>
+                member as long as it is online.</para>
         </section>
-        <section xml:id="Connection_Logging-d1e385">
+        <section xml:id="Connection_Logging-d1e385" security="writeronly">
             <title>Connection logging</title>
             <para>The connection logging feature allows logs to be
                 delivered to a Cloud Files account every hour. For
@@ -411,7 +413,7 @@
                                     Client Developer Guide</citetitle>. </para>
                         </listitem>
                 </itemizedlist></note>
-                <example>
+                <example security="writeronly">
                     <title>Authentication with US endpoint: XML
                         request</title>
                     <programlistingco>
@@ -440,11 +442,11 @@
                     </programlistingco>
                 </example>
                 <calloutlist>
-                    <callout arearefs="credentials.xml.user">
+                    <callout arearefs="credentials.json.user">
                         <para>The username supplied here is your
                             common Rackspace Cloud username.</para>
                     </callout>
-                    <callout arearefs="credentials.xml.key">
+                    <callout arearefs="credentials.json.key">
                         <para>The key is your API access key. The key
                             can be obtained from the Rackspace Cloud
                             Control Panel in the <guimenu>&lt;Your
@@ -455,7 +457,7 @@
                                 >Control Panel Login</link>).</para>
                     </callout>
                 </calloutlist>
-                <example>
+                <example security="writeronly">
                     <title>Authentication with US endpoint: XML
                         response</title>
                     <programlistingco>
@@ -523,13 +525,8 @@
                         accounts.</para>
                 </note>
                 <calloutlist>
-                    <callout arearefs="response.xml.namespaces">
-                        <para>In XML responses only, a list of
-                            namespaces identifies API extensions that
-                            add functionality to the core API.</para>
-                        <para/>
-                    </callout>
-                    <callout arearefs="response.xml.token">
+                    
+                    <callout arearefs="response.json.token">
                         <para>This token can be presented to a service
                             as evidence of authentication. Tokens are
                             valid for a finite duration; a token's
@@ -556,7 +553,7 @@
                         </note>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.dfltregion">
+                    <callout arearefs="response.json.dfltregion">
                         <para>Users can be assigned a default region
                             so that, when there is a choice between
                             multiple endpoints associated with a
@@ -571,7 +568,7 @@
                             possible.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.role">
+                    <callout arearefs="response.json.role">
                         <para>Users can be assigned multiple roles,
                             with each role providing specific
                             privileges. In this example,
@@ -586,7 +583,7 @@
                             Tester, or Trainer.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.catalog">
+                    <callout arearefs="response.json.catalog">
                         <para>The service catalog lists the services
                             this user can access. In this example, the
                             user can access one database service, one
@@ -603,7 +600,7 @@
                             access to this service.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.servicetype">
+                    <callout arearefs="response.json.servicetype">
                         <para>The service type attribute identifies
                             services that perform similar functions,
                             whatever those services might be named. In
@@ -623,7 +620,7 @@
                         </important>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.servicename">
+                    <callout arearefs="response.json.servicename">
                         <para>The service name attribute identifies
                             each unique service in the catalog. Once a
                             service is created, its name does not
@@ -655,7 +652,7 @@
                         </important>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.region">
+                    <callout arearefs="response.json.region">
                         <para>A service may expose endpoints in
                             different regions. Regional endpoints
                             allow clients to provision resources in a
@@ -667,7 +664,7 @@
                             access to internal URLs.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.tenant">
+                    <callout arearefs="response.json.tenant">
                         <para>Some services recognize specification of
                             a tenant. If a service does recognize
                             tenants, the format of the tenant
@@ -678,7 +675,7 @@
                             using.</para>
                         <para/>
                     </callout>
-                    <callout arearefs="response.xml.url">
+                    <callout arearefs="response.json.url">
                         <para>An endpoint can be assigned public and
                             internal URLs. A public URL is accessible
                             from anywhere. Access to a public URL
@@ -848,26 +845,22 @@
         </section>
         <section xml:id="Request_Response_Types-d1e591">
             <title>Request and response types</title>
-            <para>The Rackspace Cloud Load Balancers API supports both
-                the JSON and XML data serialization formats. The
-                request format is specified using the
-                    <code>Content-Type</code> header and is required
-                for operations that have a request body. The response
-                format can be specified in requests using either the
-                    <code>Accept</code> header or adding an
-                    <code>.xml</code> or <code>.json</code> extension
-                to the request URI. Note that it is possible for a
-                response to be serialized using a format different
-                from the request. If no response format is specified,
-                JSON is the default. If conflicting formats are
-                specified using both an <code>Accept</code> header and
-                a query extension, the query extension takes
+            <para>The Rackspace Cloud Load Balancers API supports the
+                JSON data serialization format. The request format is
+                specified using the <code>Content-Type</code> header
+                and is required for operations that have a request
+                body. The response format can be specified in requests
+                using either the <code>Accept</code> header or adding
+                a <code>.json</code> extension to the request URI.
+                Note that it is possible for a response to be
+                serialized using a format different from the request.
+                If no response format is specified, JSON is the
+                default. If conflicting formats are specified using
+                both an <code>Accept</code> header and a query
+                extension, the query extension takes
                 precedence.</para>
-            <para>Some operations support an Atom representation that
-                can be used to efficiently determine when the state of
-                services has changed.</para>
             <table rules="all">
-                <caption>JSON and XML response formats</caption>
+                <caption>JSON response format</caption>
                 <thead>
                     <tr align="center">
                         <td>Format</td>
@@ -883,7 +876,7 @@
                         <td>.json</td>
                         <td>Yes</td>
                     </tr>
-                    <tr align="left">
+              <!--       <tr align="left">
                         <td>XML</td>
                         <td>application/xml</td>
                         <td>.xml</td>
@@ -894,7 +887,7 @@
                         <td>application/atom+xml</td>
                         <td>.atom</td>
                         <td>No</td>
-                    </tr>
+                    </tr>  --> 
                 </tbody>
             </table>
         </section>
@@ -908,6 +901,8 @@
                     <code>Content-Encoding</code> header in the server
                 response. Unless the header is explicitly set,
                 encoding defaults to disabled.</para>
+            <para security="reviewer">Dev is unsure whether or not content compression
+                will be supported in v2.</para>
             <table rules="all">
                 <caption>Encoding headers</caption>
                 <thead>
@@ -1095,7 +1090,8 @@
                     an increase in load balancer limits. Each request
                     must be approved before limits can be modified.
                     Limits may only be increased up to the maximum
-                    limit (such as 50 nodes per load balancer).</para>
+                    limit (such as 50 members per load
+                    balancer).</para>
                 <para>Refer to <xref
                         linkend="Determining_Limits_Programmatically-d1e1039"
                     /> to find your current account settings for these
@@ -1165,6 +1161,11 @@
                         </tr>
                     </tbody>
                 </informaltable>
+                <para security="reviewer">Reviewer: is NODE_LIMIT going to be renamed to
+                    MEMBER_LIMIT?</para>
+                <para security="reviewer">Reviewer: Brandon Logan says
+                    the absolute limits will need to change. Can
+                    someone give me the new limits?</para>
                 <para>Refer to <xref
                         linkend="Determining_Limits_Programmatically-d1e1039"
                     /> to find your current account settings for these
@@ -1212,25 +1213,9 @@
                         (<errorcode>413</errorcode>) </simpara>
                 <para>These operations do not require a request
                     body.</para>
-                <para security="reviewer">In looking at the V2 wadl, it appears that we
-                    will be providing only json examples. If that's
-                    true, I should delete all the xml references in
-                    the V2 docs. Is that correct?</para>
-                <example>
-                    <title>List rate limits: XML response</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/lb-limits-response.xml" parse="text"/>
-                    </programlisting>
-                </example>
                 <example>
                     <title>List rate limits: JSON response</title>
                     <programlisting language="json"><xi:include href="samples/lb-limits-response.json" parse="text"/>
-                    </programlisting>
-                </example>
-                <example>
-                    <title>List absolute limits: XML response</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml"><xi:include href="samples/lb-absolute-limits-response.xml" parse="text"/>
                     </programlisting>
                 </example>
                 <example>
@@ -1296,7 +1281,7 @@
                 <example>
                     <title>immutableEntity fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<immutableEntity code="422" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+<![CDATA[<immutableEntity code="409" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
     <message>The object at the specified URI is immutable and can not be overwritten.</message>
 </immutableEntity>]]>
                     </literallayout>
@@ -1533,19 +1518,14 @@
                                    active.</td>
                             </tr>
                             <tr align="left">
-                                <td colspan="1">BUILD</td>
-                                <td colspan="3">The load balancer is
-                                   undergoing its initial build.</td>
-                            </tr>
-                            <tr align="left">
-                                <td colspan="1">DELETED</td>
-                                <td colspan="3">The load balancer is
-                                   deleted.</td>
-                            </tr>
-                            <tr align="left">
                                 <td colspan="1">ERROR</td>
                                 <td colspan="3">The load balancer is
                                    in an error state.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">PENDING_CREATE</td>
+                                <td colspan="3">The load balancer has
+                                    a create pending.</td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">PENDING_DELETE</td>
@@ -1557,13 +1537,17 @@
                                 <td colspan="3">The load balancer has
                                    an update pending.</td>
                             </tr>
-                            <tr align="left">
-                                <td colspan="1"> SUSPENDED </td>
-                                <td colspan="3">The load balancer is
-                                   suspended.</td>
-                            </tr>
                         </tbody>
                     </table>
+                </para>
+                <para>
+                    <note>
+                        <para>There is not currently a DELETED status,
+                            which means that if you use the API to
+                            request details on a DELETED object, you
+                            will receive a 404 Not Found
+                            response.</para>
+                    </note>
                 </para>
             </section>
             <section xml:id="API-Errors-d1e3649">
@@ -2059,7 +2043,7 @@
                 been finalized. Load balancers in a
                     <code>SUSPENDED</code> status are configured to
                 reject traffic and does not forward requests to
-                back-end nodes.</para>
+                back-end members.</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
                 <caption>Load balancer statuses</caption>
@@ -2176,12 +2160,12 @@
             <title>Error pages</title>
             <para>An <glossterm>error page</glossterm> is the HTML
                 file that is shown to an end user who is attempting to
-                access a load balancer <glossterm>node</glossterm>
+                access a load balancer <glossterm>member</glossterm>
                 that is offline/unavailable.</para>
             <para>During provisioning, every load balancer is
                 configured with a default error page that gets
                 displayed when traffic is requested for an offline
-                node.</para>
+                member.</para>
             <para>You can add a single custom error page with an
                 HTTP-based protocol to a load balancer. Page updates
                 override existing content. If a custom error page is
@@ -2207,76 +2191,78 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
-        <section xml:id="Nodes-d1e2173">
-            <title>Nodes</title>
-            <para>The <glossterm baseform="node">nodes</glossterm>
+        <section xml:id="Members-d1e2173">
+            <title>Members</title>
+            <para>The <glossterm baseform="node">members</glossterm>
                 defined by the load balancer are responsible for
                 servicing the requests received through the load
                 balancer's virtual IP. By default, the load balancer
-                employs a basic health check that ensures the node is
-                listening on its defined port. The node is checked at
-                the time of addition and at regular intervals as
-                defined by the load balancer health check
-                configuration. If a back-end node is not listening on
-                its port or does not meet the conditions of the
+                employs a basic health check that ensures the member
+                is listening on its defined port. The member is
+                checked at the time of addition and at regular
+                intervals as defined by the load balancer health check
+                configuration. If a back-end member is not listening
+                on its port or does not meet the conditions of the
                 defined active health check for the load balancer,
                 then the load balancer does not forward connections
                 and its status is listed as <code>OFFLINE</code>. Only
-                nodes that are in an <code>ONLINE</code> status
+                members that are in an <code>ONLINE</code> status
                 receive and can service traffic from the load
                 balancer.</para>
-            <para> All nodes have an associated condition that
-                indicates whether the node is <code>ENABLED</code>,
+            <para> All members have an associated condition that
+                indicates whether the member is <code>ENABLED</code>,
                     <code>DISABLED</code>, or <code>DRAINING</code>.
-                Nodes that are in an <code>ENABLED</code> condition
+                Members that are in an <code>ENABLED</code> condition
                 receive and can service traffic from the load
                 balancer. The <code>DISABLED</code> condition
-                represents a node that cannot accept or service
-                traffic. A node in the <code>DRAINING</code> condition
-                represents a node that stops the traffic manager from
-                sending any additional <emphasis>new</emphasis> connections
-                to the node, but honors established sessions. If the
+                represents a member that cannot accept or service
+                traffic. A member in the <code>DRAINING</code>
+                condition represents a member that stops the traffic
+                manager from sending any additional
+                    <emphasis>new</emphasis> connections to the
+                member, but honors established sessions. If the
                 traffic manager receives a request and session
-                persistence requires that the node is used, the
+                persistence requires that the member is used, the
                 traffic manager uses it. As mentioned earlier, the
                 status is determined by the passive or active health
                 monitors. </para>
             <note>
-                <para> Do not confuse the condition of a node with its
-                    status. The <code>condition</code> attribute is
-                    mutable and gives the user control on how to
-                    manage requests to the node. The
+                <para> Do not confuse the condition of a member with
+                    its status. The <code>condition</code> attribute
+                    is mutable and gives the user control on how to
+                    manage requests to the member. The
                         <code>status</code> attribute is immutable and
                     is updated by the load balancing service based on
-                    whether or not the node
+                    whether or not the member
                     <emphasis>can</emphasis> service requests. </para>
             </note>
             <para>If the <code>WEIGHTED_ROUND_ROBIN</code> load
                 balancer algorithm mode is selected, then the caller
-                should assign the relevant weights to the node as part
-                of the weight attribute of the node element. When the
-                algorithm of the load balancer is changed to
-                    <code>WEIGHTED_ROUND_ROBIN</code> and the nodes do
-                not already have an assigned weight, the service
+                should assign the relevant weights to the member as
+                part of the weight attribute of the member element.
+                When the algorithm of the load balancer is changed to
+                    <code>WEIGHTED_ROUND_ROBIN</code> and the members
+                do not already have an assigned weight, the service
                 automatically sets the weight to <literal>1</literal>
-                for all nodes.</para>
-            <para>One or more secondary nodes can be added to a
+                for all members.</para>
+            <para security="writeronly">One or more secondary members can be added to a
                 specified load balancer so that if all the primary
-                nodes fail, traffic can be redirected to secondary
-                nodes. The type attribute allows configuring the node
-                as either <code>PRIMARY</code> or
+                members fail, traffic can be redirected to secondary
+                members. The type attribute allows configuring the
+                member as either <code>PRIMARY</code> or
                     <code>SECONDARY</code>.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
-                <para>The node's IP and port are immutable attributes
-                    and cannot be modified with a
+                <para>The member's IP and port are immutable
+                    attributes and cannot be modified with a
                         <command>PUT</command> request. Supplying an
                     unsupported attribute results in a
                         <returnvalue>400 (badRequest)</returnvalue>
                     fault. A load balancer supports a maximum of 25
-                    nodes; the maximum weight of a node is 100.</para>
+                    members; the maximum weight of a member is
+                    100.</para>
             </note>
-            <para>Every node in the load balancer has an associated
+            <para>Every member in the load balancer has an associated
                 condition which determines its role within the load
                 balancer.</para>
             <para>The following table lists the required and optional
@@ -2294,19 +2280,19 @@
                 <tbody>
                     <tr>
                         <td colspan="1">condition</td>
-                        <td colspan="3">Condition for the node, which
-                            determines its role within the load
+                        <td colspan="3">Condition for the member,
+                            which determines its role within the load
                             balancer.</td>
                         <td colspan="1">No</td>
                     </tr>
-                    <tr>
+           <!--           <tr>
                         <td colspan="1">type</td>
                         <td colspan="3">
-                            <para>Type of node:</para>
+                            <para>Type of member:</para>
                             <itemizedlist spacing="compact">
                                 <listitem>
                                    <para>
-                                   <code>PRIMARY</code> – Nodes
+                                   <code>PRIMARY</code> – members
                                    defined as <code>PRIMARY</code> are
                                    in the normal rotation to receive
                                    traffic from the load
@@ -2314,32 +2300,32 @@
                                 </listitem>
                                 <listitem>
                                    <para>
-                                   <code>SECONDARY</code> – Nodes
+                                   <code>SECONDARY</code> – members
                                    defined as <code>SECONDARY</code>
                                    are only in the rotation to receive
                                    traffic from the load balancer when
-                                   all the primary nodes fail. This
+                                   all the primary members fail. This
                                    provides a failover feature that
                                    automatically routes traffic to the
-                                   secondary node in the event that
-                                   the primary node is disabled or in
-                                   a failing state. Note that active
-                                   health monitoring must be enabled
-                                   on the load balancer to enable the
-                                   failover feature to the secondary
-                                   node.</para>
+                                   secondary member in the event that
+                                   the primary member is disabled or
+                                   in a failing state. Note that
+                                   active health monitoring must be
+                                   enabled on the load balancer to
+                                   enable the failover feature to the
+                                   secondary member.</para>
                                 </listitem>
                             </itemizedlist></td>
                         <td colspan="1">No</td>
-                    </tr>
+                    </tr>  -->
                     <tr>
                         <td colspan="1">weight</td>
-                        <td colspan="3">Weight of node. If the
+                        <td colspan="3">Weight of member. If the
                             WEIGHTED_ROUND_ROBIN load balancer
                             algorithm mode is selected, then the user
                             should assign the relevant weight to the
-                            node using the weight attribute for the
-                            node. Must be an integer from 1 to
+                            member using the weight attribute for the
+                            member. Must be an integer from 1 to
                             100.</td>
                         <td colspan="1">No</td>
                     </tr>
@@ -2354,7 +2340,7 @@
             </note>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all">
-                <caption>Load balancer node conditions</caption>
+                <caption>Load balancer member conditions</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="1">Name</td>
@@ -2364,12 +2350,12 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="1"><code>ENABLED</code></td>
-                        <td colspan="3">Node is permitted to accept
+                        <td colspan="3">member is permitted to accept
                             new connections.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1"><code>DISABLED</code></td>
-                        <td colspan="3">Node is not permitted to
+                        <td colspan="3">member is not permitted to
                             accept any new connections regardless of
                             session persistence configuration.
                             Existing connections are forcibly
@@ -2377,7 +2363,7 @@
                     </tr>
                     <tr align="left">
                         <td colspan="1"><code>DRAINING</code></td>
-                        <td colspan="3">Node is allowed to service
+                        <td colspan="3">member is allowed to service
                             existing established connections and
                             connections that are being directed to it
                             as a result of the session persistence
@@ -2657,22 +2643,22 @@
             <title>Monitors</title>
             <para>The load balancing service includes a health
                 monitoring operation that periodically checks your
-                back-end nodes to ensure they are responding
-                correctly. If a node does not respond, it is removed
+                back-end members to ensure they are responding
+                correctly. If a member does not respond, it is removed
                 from rotation until the <glossterm>health
-                    monitor</glossterm> determines that the node is
+                    monitor</glossterm> determines that the member is
                 functional. In addition to being performed
                 periodically, the health check also is performed
-                against every node that is added to ensure that the
-                node is operating properly before allowing it to
+                against every member that is added to ensure that the
+                member is operating properly before allowing it to
                 service traffic. Only one health monitor is allowed to
                 be enabled on a load balancer at a time.</para>
             <para>As part of your strategy for monitoring connections,
-                you should consider defining secondary nodes that
+                you should consider defining secondary members that
                 provide failover for effectively routing traffic in
-                case the primary node fails. This is an additional
+                case the primary member fails. This is an additional
                 feature that ensures that you remain up in case your
-                primary node fails.</para>
+                primary member fails.</para>
             <para>Every health monitor has a <code>type</code>
                 attribute to signify what kind of monitor it
                 is.</para>
@@ -2705,75 +2691,74 @@
             </table>
             <note>
                 <para>When deleting a health monitor of any type,
-                    every node on that load balancer that is enabled
+                    every member on that load balancer that is enabled
                     or has failed and is in OFFLINE status has its
                     status updated to ONLINE regardless of the health
-                    of the node.</para>
+                    of the member.</para>
             </note>
             <formalpara><title>Connect Monitor</title>
-                <para>The monitor connects to each node on its
+                <para>The monitor connects to each member on its
                     defined port to ensure that the service is
                     listening properly. The connect monitor is the
                     most basic type of health check and does no
                     post-processing or protocol specific health
                     checks. It includes several configurable
-                    properties. 
-                The following table lists the required and
-                    optional attributes for Monitor
-                    Connections:
-                <table rules="all">
-                    <caption>Required and Optional Attributes for
-                        Monitor Connections</caption>
-                    <thead>
-                        <tr>
-                            <td colspan="1">Name </td>
-                            <td colspan="3">Description</td>
-                            <td colspan="1">Required</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="1"
-                                >attemptsBefore<?sbr?>Deactivation</td>
-                            <td colspan="3">
-                                <para>Number of permissible monitor
-                                    failures before removing a node
-                                    from rotation. Must be a number
-                                    between 1 and 10.</para>
-                            </td>
-                            <td colspan="1">Yes</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">delay</td>
-                            <td colspan="3">
-                                <para>The minimum number of
-                                    seconds to wait before executing
-                                    the health monitor. Must be a
-                                    number between 1 and 3600.</para>
-                            </td>
-                            <td colspan="1">Yes</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">timeout</td>
-                            <td colspan="3">
-                                <para>Maximum number of seconds to
-                                    wait for a connection to be
-                                    established before timing out. Must
-                                    be a number between 1 and 300. </para>
-                            </td>
-                            <td colspan="1">Yes</td>
-                        </tr>
-                        <tr>
-                            <td colspan="1">type</td>
-                            <td colspan="3">
-                                <para>Type of the health monitor.
-                                    Must be specified as "CONNECT" to
-                                    monitor connections.</para>
-                            </td>
-                            <td colspan="1">Yes</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    properties. The following table lists the required
+                    and optional attributes for Monitor Connections:
+                        <table rules="all">
+                        <caption>Required and Optional Attributes for
+                            Monitor Connections</caption>
+                        <thead>
+                            <tr>
+                                <td colspan="1">Name </td>
+                                <td colspan="3">Description</td>
+                                <td colspan="1">Required</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"
+                                   >attemptsBefore<?sbr?>Deactivation</td>
+                                <td colspan="3">
+                                   <para>Number of permissible monitor
+                                   failures before removing a member
+                                   from rotation. Must be a number
+                                   between 1 and 10.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">delay</td>
+                                <td colspan="3">
+                                   <para>The minimum number of seconds
+                                   to wait before executing the health
+                                   monitor. Must be a number between 1
+                                   and 3600.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">timeout</td>
+                                <td colspan="3">
+                                   <para>Maximum number of seconds to
+                                   wait for a connection to be
+                                   established before timing out. Must
+                                   be a number between 1 and 300.
+                                   </para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                            <tr>
+                                <td colspan="1">type</td>
+                                <td colspan="3">
+                                   <para>Type of the health monitor.
+                                   Must be specified as "CONNECT" to
+                                   monitor connections.</para>
+                                </td>
+                                <td colspan="1">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </para>
             </formalpara>
             <formalpara>
@@ -2781,7 +2766,7 @@
                 <para>The HTTP and HTTPS monitor is more intelligent
                     than the connect monitor. It is capable of
                     processing an HTTP or HTTPS response to determine
-                    the condition of a node. It supports the same
+                    the condition of a member. It supports the same
                     basic properties as the connect monitor and
                     includes additional attributes that are used to
                     evaluate the HTTP response. The user can supply an
@@ -2806,7 +2791,7 @@
                                    >attemptsBefore<?sbr?>Deactivation</td>
                                 <td colspan="3">
                                    <para>Number of permissible monitor
-                                   failures before removing a node
+                                   failures before removing a member
                                    from rotation. Must be a number
                                    between 1 and 10.</para>
                                 </td>
@@ -2819,15 +2804,33 @@
                                    will be used to evaluate the
                                    contents of the body of the
                                    response. </para>
-                                    <para>For example you could use the regular expression "^.*(Unauthorized|Forbidden|Not Found|Timeout|Server Error).*$" 
-                                        to look for any of those potentially problematic strings in the body of the response 
-                                        or use the regular expression "^success$" to look for the string "success".</para>
-                                    <note><para>The system only evaluates the first 2048 bytes of the response against
-                                        the bodyRegex that is specified, so you will want to test accordingly. </para>
-                                        <para>To debug the HTTP/HTTPS health monitoring you will want to test the bodyRegex against the IP of the node(s) that are being disabled. 
-                                            You can use the following cURL command to see what the health monitoring analyzes:</para>
-                                        <para>curl -s -r 0-2048 https://YOUR_IP_ADDRESS | head -c 2048 | egrep "YOUR_REGULAR_EXPRESSION"</para>
-                                    </note>
+                                   <para>For example you could use the
+                                   regular expression
+                                   "^.*(Unauthorized|Forbidden|Not
+                                   Found|Timeout|Server Error).*$" to
+                                   look for any of those potentially
+                                   problematic strings in the body of
+                                   the response or use the regular
+                                   expression "^success$" to look for
+                                   the string "success".</para>
+                                   <note>
+                                   <para>The system only evaluates the
+                                   first 2048 bytes of the response
+                                   against the bodyRegex that is
+                                   specified, so you will want to test
+                                   accordingly. </para>
+                                   <para>To debug the HTTP/HTTPS
+                                   health monitoring you will want to
+                                   test the bodyRegex against the IP
+                                   of the member(s) that are being
+                                   disabled. You can use the following
+                                   cURL command to see what the health
+                                   monitoring analyzes:</para>
+                                   <para>curl -s -r 0-2048
+                                   https://YOUR_IP_ADDRESS | head -c
+                                   2048 | egrep
+                                   "YOUR_REGULAR_EXPRESSION"</para>
+                                   </note>
                                 </td>
                                 <td colspan="1">Yes</td>
                             </tr>
@@ -2910,7 +2913,7 @@
             <para>Session persistence is a feature of the load
                 balancing service that forces multiple requests, of
                 the same protocol, from clients to be directed to the
-                same node. This is common with many web applications
+                same member. This is common with many web applications
                 that do not inherently share application state between
                 back-end servers. </para>
             <note><title>Notes</title>
@@ -2947,15 +2950,15 @@
                         <td colspan="3">A session persistence
                             mechanism that inserts an HTTP cookie and
                             is used to determine the destination
-                            back-end node. This is supported for HTTP
-                            load balancing only.</td>
+                            back-end member. This is supported for
+                            HTTP load balancing only.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">SOURCE_IP</td>
                         <td colspan="3">A session persistence
                             mechanism that keeps track of the source
                             IP address that is mapped and is able to
-                            determine the destination back-end node.
+                            determine the destination back-end member.
                             This is supported for HTTPS pass-through
                             and non-HTTP load balancing only.</td>
                     </tr>
@@ -3042,9 +3045,9 @@
             <para>All load balancers must define the protocol of the
                 service which is being load balanced. The protocol
                 selection should be based on the protocol of the
-                back-end nodes. When configuring a load balancer, the
-                default port for the given protocol is selected unless
-                otherwise specified.</para>
+                back-end members. When configuring a load balancer,
+                the default port for the given protocol is selected
+                unless otherwise specified.</para>
             <note><title>Notes</title>
                 <itemizedlist>
                     <listitem><para>UDP-Based protocols (DNS_UDP, UDP, and UDP_STREAM) have the
@@ -3273,15 +3276,15 @@
         <section xml:id="Algorithms-d1e4367">
             <title>Algorithms</title>
             <para>All load balancers utilize an algorithm that defines
-                how traffic should be directed between back-end nodes.
-                The default algorithm for newly created load balancers
-                is <code>RANDOM</code>, which can be overridden at
-                creation time or changed after the load balancer has
-                been initially provisioned. The algorithm name is to
-                be constant within a major revision of the load
-                balancing API, though new algorithms may be created
-                with a unique algorithm name within a given major
-                revision of the service API.</para>
+                how traffic should be directed between back-end
+                members. The default algorithm for newly created load
+                balancers is <code>RANDOM</code>, which can be
+                overridden at creation time or changed after the load
+                balancer has been initially provisioned. The algorithm
+                name is to be constant within a major revision of the
+                load balancing API, though new algorithms may be
+                created with a unique algorithm name within a given
+                major revision of the service API.</para>
             <table rules="all">
                 <caption>Load balancing algorithms</caption>
                 <thead>
@@ -3295,7 +3298,7 @@
                         <td colspan="2">
                             <code>LEAST_CONNECTIONS</code>
                         </td>
-                        <td colspan="3">The node with the lowest
+                        <td colspan="3">The member with the lowest
                             number of connections receives
                             requests.</td>
                     </tr>
@@ -3318,9 +3321,8 @@
                             <code>WEIGHTED_LEAST_CONNECTIONS</code>
                         </td>
                         <td colspan="3">Each request is assigned to a
-                            node based on the number of concurrent
-                            connections to the node and its weight.
-                        </td>
+                            member based on the number of concurrent
+                            connections to the member and its weight. </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">
@@ -3328,9 +3330,9 @@
                         </td>
                         <td colspan="3">A round robin algorithm, but
                             with different proportions of traffic
-                            being directed to the back-end nodes.
+                            being directed to the back-end members.
                             Weights must be defined as part of the
-                            load balancer's node configuration.</td>
+                            load balancer's member configuration.</td>
                     </tr>
                 </tbody>
             </table>
@@ -3350,8 +3352,8 @@
                 but not to an HTTPS load balancer.</para>
             <para>SSL-terminated load balancers decrypt the traffic at
                 the traffic manager and pass unencrypted traffic to
-                the back-end node. Because of this, the customer's
-                back-end nodes don't know what protocol the client
+                the back-end member. Because of this, the customer's
+                back-end members don't know what protocol the client
                 requested. Therefore the X-Forwarded-Proto (XFP)
                 header has been added for identifying the originating
                 protocol of an HTTP request as "http" or "https"
@@ -3381,10 +3383,10 @@
             <warning xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude">
                 <para>If SSL is enabled on a load balancer that is
-                    configured with nodes that are NOT in the same
+                    configured with members that are NOT in the same
                     datacenter, then decrypted traffic is sent in
                     clear text over the public internet to the
-                    external nodes and is no longer secure.</para>
+                    external members and is no longer secure.</para>
             </warning>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -3437,7 +3439,7 @@
         <section xml:id="Metadata-d1e2173">
             <title>Metadata</title>
             <para>Metadata can be associated with each load balancer
-                and each node for the client's personal use. It is
+                and each member for the client's personal use. It is
                 defined using key-value pairs where the key and value
                 consist of alphanumeric characters. A key is unique
                 per load balancer.</para>
@@ -3502,7 +3504,7 @@
             <glossdef>
                 <para>A health monitor is a configurable feature of
                     each load balancer. It is used to determine
-                    whether or not a back-end node is usable for
+                    whether or not a back-end member is usable for
                     processing a request. The load balancing service
                     currently supports active health
                     monitoring.</para>
@@ -3519,10 +3521,10 @@
             </glossdef>
         </glossentry>
         <glossentry xml:id="Node-d1e019">
-            <glossterm>node</glossterm>
+            <glossterm>member</glossterm>
             <glossdef>
-                <para>A node is a back-end device providing a service
-                    on a specified IP and port.</para>
+                <para>A member is a back-end device providing a
+                    service on a specified IP and port.</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Session-Persistence-d1e021">
@@ -3531,7 +3533,7 @@
                 <para>Session persistence is a feature of the load
                     balancing service. It attempts to force subsequent
                     connections to a service to be redirected to the
-                    same node as long as it is online.</para>
+                    same member as long as it is online.</para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Virtual-IP-d1e016">
@@ -3541,7 +3543,7 @@
                     address configured on the load balancer for use by
                     clients connecting to a service that is load
                     balanced. Incoming connections are distributed to
-                    back-end nodes based on the configuration of the
+                    back-end members based on the configuration of the
                     load balancer.</para>
             </glossdef>
         </glossentry>

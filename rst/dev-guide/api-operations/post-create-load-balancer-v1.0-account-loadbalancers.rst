@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Load Balancer -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Create Load Balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-load-balancer-v1.0-account-loadbalancers.html#request>`__
-`Response <post-create-load-balancer-v1.0-account-loadbalancers.html#response>`__
+Create load balancer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -40,13 +33,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -66,14 +59,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
@@ -87,8 +83,8 @@ This table shows the body parameters for the request:
 +--------------------+-------------------+-------------------------------------+
 |Name                |Type               |Description                          |
 +====================+===================+=====================================+
-|name                |xsd:string         |Name of the load balancer to create. |
-|                    |*(Required)*       |The name must be 128 characters or   |
+|name                |String *(Required)*|Name of the load balancer to create. |
+|                    |                   |The name must be 128 characters or   |
 |                    |                   |fewer in length, and all UTF-8       |
 |                    |                   |characters are valid. See `          |
 |                    |                   |http://www.utf8-chartable.de/        |
@@ -96,14 +92,14 @@ This table shows the body parameters for the request:
 |                    |                   |for information about the UTF-8      |
 |                    |                   |character set.                       |
 +--------------------+-------------------+-------------------------------------+
-|nodes               |object *(Required)*|Nodes to be added to the load        |
+|nodes               |Object *(Optional)*|Nodes to be added to the load        |
 |                    |                   |balancer.                            |
 +--------------------+-------------------+-------------------------------------+
-|protocol            |xsd:string         |Protocol of the service that is      |
-|                    |*(Required)*       |being load balanced.                 |
+|protocol            |String *(Required)*|Protocol of the service that is      |
+|                    |                   |being load balanced.                 |
 +--------------------+-------------------+-------------------------------------+
-|halfClosed          |xsd:boolean        |Enables or disables Half-Closed      |
-|                    |*(Required)*       |support for the load balancer. Half- |
+|halfClosed          |Boolean            |Enables or disables Half-Closed      |
+|                    |*(Optional)*       |support for the load balancer. Half- |
 |                    |                   |Closed support provides the ability  |
 |                    |                   |for one end of the connection to     |
 |                    |                   |terminate its output, while still    |
@@ -111,56 +107,56 @@ This table shows the body parameters for the request:
 |                    |                   |Only available for                   |
 |                    |                   |TCP/TCP_CLIENT_FIRST protocols.      |
 +--------------------+-------------------+-------------------------------------+
-|virtualIps          |object *(Required)*|Type of virtualIp to add with the    |
+|virtualIps          |Object *(Required)*|Type of virtualIp to add with the    |
 |                    |                   |creation of a load balancer. See the |
 |                    |                   |virtual IP types table in the        |
 |                    |                   |Chapter 4 section "Virtual IPs".     |
 +--------------------+-------------------+-------------------------------------+
-|accessList          |xsd:string         |The access list management feature   |
-|                    |*(Required)*       |allows fine-grained network access   |
+|accessList          |String *(Optional)*|The access list management feature   |
+|                    |                   |allows fine-grained network access   |
 |                    |                   |controls to be applied to the load   |
 |                    |                   |balancer virtual IP address. Refer   |
 |                    |                   |to the Chapter 4 section "Access     |
 |                    |                   |lists" for information and examples. |
 +--------------------+-------------------+-------------------------------------+
-|algorithm           |xsd:string         |Algorithm that defines how traffic   |
-|                    |*(Required)*       |should be directed between back-end  |
+|algorithm           |String *(Optional)*|Algorithm that defines how traffic   |
+|                    |                   |should be directed between back-end  |
 |                    |                   |nodes.                               |
 +--------------------+-------------------+-------------------------------------+
-|connectionLogging   |xsd:string         |Current connection logging           |
-|                    |*(Required)*       |configuration. Refer to the Chapter  |
+|connectionLogging   |String *(Optional)*|Current connection logging           |
+|                    |                   |configuration. Refer to the Chapter  |
 |                    |                   |4 section "Log connections" for      |
 |                    |                   |information and examples.            |
 +--------------------+-------------------+-------------------------------------+
-|connectionThrottle  |xsd:string         |Specifies limits on the number of    |
-|                    |*(Required)*       |connections per IP address to help   |
+|connectionThrottle  |String *(Optional)*|Specifies limits on the number of    |
+|                    |                   |connections per IP address to help   |
 |                    |                   |mitigate malicious or abusive        |
 |                    |                   |traffic to your applications. Refer  |
 |                    |                   |to the Chapter 4 section "Throttle   |
 |                    |                   |connections" for information and     |
 |                    |                   |examples.                            |
 +--------------------+-------------------+-------------------------------------+
-|healthMonitor       |xsd:string         |The type of health monitor check to  |
-|                    |*(Required)*       |perform to ensure that the service   |
+|healthMonitor       |String *(Optional)*|The type of health monitor check to  |
+|                    |                   |perform to ensure that the service   |
 |                    |                   |is performing properly.              |
 +--------------------+-------------------+-------------------------------------+
-|metadata            |xsd:string         |Information (metadata) that can be   |
-|                    |*(Required)*       |associated with each load balancer.  |
+|metadata            |String *(Optional)*|Information (metadata) that can be   |
+|                    |                   |associated with each load balancer.  |
 +--------------------+-------------------+-------------------------------------+
-|port                |xsd:string         |Port number for the service you are  |
-|                    |*(Required)*       |load balancing.                      |
+|port                |String *(Optional)*|Port number for the service you are  |
+|                    |                   |load balancing.                      |
 +--------------------+-------------------+-------------------------------------+
-|timeout             |xsd:string         |The timeout value for the load       |
-|                    |*(Required)*       |balancer and communications with its |
+|timeout             |String *(Optional)*|The timeout value for the load       |
+|                    |                   |balancer and communications with its |
 |                    |                   |nodes. Defaults to 30 seconds with a |
 |                    |                   |maximum of 120 seconds.              |
 +--------------------+-------------------+-------------------------------------+
-|sessionPersistence  |xsd:string         |Specifies whether multiple requests  |
-|                    |*(Required)*       |from clients are directed to the     |
+|sessionPersistence  |String *(Optional)*|Specifies whether multiple requests  |
+|                    |                   |from clients are directed to the     |
 |                    |                   |same node.                           |
 +--------------------+-------------------+-------------------------------------+
-|httpsRedirect       |xsd:boolean        |Enables or disables HTTP to HTTPS    |
-|                    |*(Required)*       |redirection for the load balancer.   |
+|httpsRedirect       |Boolean            |Enables or disables HTTP to HTTPS    |
+|                    |*(Optional)*       |redirection for the load balancer.   |
 |                    |                   |When enabled, any HTTP request       |
 |                    |                   |returns status code 301 (Moved       |
 |                    |                   |Permanently), and the requester is   |
@@ -324,7 +320,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 
 This table shows the body parameters for the response:
@@ -332,77 +331,77 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|loadBalancer              |xsd:string *(Required)*  |A ``loadBalancer``       |
+|loadBalancer              |String *(Required)*      |A ``loadBalancer``       |
 |                          |                         |object.                  |
 +--------------------------+-------------------------+-------------------------+
-|id                        |xsd:int *(Required)*     |The ID for the load      |
+|id                        |Int *(Required)*         |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|protocol                  |xsd:string *(Required)*  |Protocol of the service  |
+|protocol                  |String *(Required)*      |Protocol of the service  |
 |                          |                         |that is being load       |
 |                          |                         |balanced.                |
 +--------------------------+-------------------------+-------------------------+
-|port                      |xsd:string *(Required)*  |Port number for the      |
+|port                      |String *(Optional)*      |Port number for the      |
 |                          |                         |service you are load     |
 |                          |                         |balancing.               |
 +--------------------------+-------------------------+-------------------------+
-|algorithm                 |xsd:string *(Required)*  |Algorithm that defines   |
+|algorithm                 |String *(Optional)*      |Algorithm that defines   |
 |                          |                         |how traffic should be    |
 |                          |                         |directed between back-   |
 |                          |                         |end nodes.               |
 +--------------------------+-------------------------+-------------------------+
-|status                    |xsd:string *(Required)*  |The status of the load   |
+|status                    |String *(Required)*      |The status of the load   |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|timeout                   |xsd:string *(Required)*  |The timeout value for    |
+|timeout                   |String *(Optional)*      |The timeout value for    |
 |                          |                         |the load balancer and    |
 |                          |                         |communications with its  |
 |                          |                         |nodes. Defaults to 30    |
 |                          |                         |seconds with a maximum   |
 |                          |                         |of 120 seconds.          |
 +--------------------------+-------------------------+-------------------------+
-|connectionLogging         |xsd:string *(Required)*  |Current connection       |
+|connectionLogging         |String *(Optional)*      |Current connection       |
 |                          |                         |logging configuration.   |
 |                          |                         |Refer to the Chapter 4   |
 |                          |                         |section "Log             |
 |                          |                         |connections" for         |
 |                          |                         |information and examples.|
 +--------------------------+-------------------------+-------------------------+
-|virtualIps                |object *(Required)*      |Type of virtualIp to add |
+|virtualIps                |Object *(Required)*      |Type of virtualIp to add |
 |                          |                         |with the creation of a   |
 |                          |                         |load balancer. See the   |
 |                          |                         |virtual IP types table   |
 |                          |                         |in the Chapter 4 section |
 |                          |                         |"Virtual IPs".           |
 +--------------------------+-------------------------+-------------------------+
-|id                        |xsd:int *(Required)*     |The ID for the IP        |
+|id                        |Int *(Required)*         |The ID for the IP        |
 |                          |                         |address.                 |
 +--------------------------+-------------------------+-------------------------+
-|address                   |xsd:string *(Required)*  |The IP address.          |
+|address                   |String *(Required)*      |The IP address.          |
 +--------------------------+-------------------------+-------------------------+
-|type                      |xsd:string *(Required)*  |The IP address type.     |
+|type                      |String *(Required)*      |The IP address type.     |
 +--------------------------+-------------------------+-------------------------+
-|ipVersion                 |xsd:string *(Required)*  |The IP version.          |
+|ipVersion                 |String *(Required)*      |The IP version.          |
 +--------------------------+-------------------------+-------------------------+
-|nodes                     |object *(Required)*      |Nodes to be added to the |
+|nodes                     |Object *(Optional)*      |Nodes to be added to the |
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
-|address                   |xsd:string *(Required)*  |The node address.        |
+|address                   |String *(Required)*      |The node address.        |
 +--------------------------+-------------------------+-------------------------+
-|port                      |xsd:int *(Required)*     |The node port.           |
+|port                      |Int *(Required)*         |The node port.           |
 +--------------------------+-------------------------+-------------------------+
-|condition                 |xsd:string *(Required)*  |The node condition. For  |
+|condition                 |String *(Required)*      |The node condition. For  |
 |                          |                         |example, ENABLED.        |
 +--------------------------+-------------------------+-------------------------+
-|status                    |xsd:string *(Required)*  |The node status. For     |
+|status                    |String *(Required)*      |The node status. For     |
 |                          |                         |example, ONLINE.         |
 +--------------------------+-------------------------+-------------------------+
-|sessionPersistence        |xsd:string *(Required)*  |Specifies whether        |
+|sessionPersistence        |String *(Optional)*      |Specifies whether        |
 |                          |                         |multiple requests from   |
 |                          |                         |clients are directed to  |
 |                          |                         |the same node.           |
 +--------------------------+-------------------------+-------------------------+
-|connectionThrottle        |xsd:string *(Required)*  |Specifies limits on the  |
+|connectionThrottle        |String *(Optional)*      |Specifies limits on the  |
 |                          |                         |number of connections    |
 |                          |                         |per IP address to help   |
 |                          |                         |mitigate malicious or    |
@@ -413,19 +412,21 @@ This table shows the body parameters for the response:
 |                          |                         |for information and      |
 |                          |                         |examples.                |
 +--------------------------+-------------------------+-------------------------+
-|cluster                   |xsd:string *(Required)*  |The cluster name.        |
+|cluster                   |String *(Required)*      |The cluster name.        |
 +--------------------------+-------------------------+-------------------------+
-|created                   |object *(Required)*      |The date and time what   |
+|created                   |Object *(Required)*      |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |created.                 |
 +--------------------------+-------------------------+-------------------------+
-|updated                   |object *(Required)*      |The date and time what   |
+|updated                   |Object *(Required)*      |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |last updated.            |
 +--------------------------+-------------------------+-------------------------+
-|sourceAddresses           |xsd:dict *(Required)*    |The source public and    |
+|sourceAddresses           |Dict *(Required)*        |The source public and    |
 |                          |                         |private IP addresses.    |
 +--------------------------+-------------------------+-------------------------+
+
+
 
 
 

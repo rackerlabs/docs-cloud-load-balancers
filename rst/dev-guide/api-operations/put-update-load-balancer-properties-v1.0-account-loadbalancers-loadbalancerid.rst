@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Load Balancer Properties -  Rackspace Cloud Load Balancers Developer Guide
-=============================================================================
-
-Update Load Balancer Properties
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.html#request>`__
-`Response <put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.html#response>`__
+Update load balancer properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -34,13 +27,13 @@ This table shows the possible response codes for this operation:
 +==========================+=========================+=========================+
 |202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|400 500                   |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
@@ -50,6 +43,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |invalid authentication   |
 |                          |                         |token.                   |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |413                       |Over Limit               |The number of items      |
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
@@ -57,24 +53,24 @@ This table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
-+--------------------------+-------------------------+-------------------------+
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{account}                 |xsd:string               |The ID for the tenant or |
+|{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |xsd:string *(Required)*  |The ID for the load      |
+|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -87,8 +83,8 @@ This table shows the body parameters for the request:
 +--------------------+-------------------+-------------------------------------+
 |Name                |Type               |Description                          |
 +====================+===================+=====================================+
-|name                |xsd:string         |Name of the load balancer to update. |
-|                    |*(Required)*       |The name must be 128 characters or   |
+|name                |String *(Optional)*|Name of the load balancer to update. |
+|                    |                   |The name must be 128 characters or   |
 |                    |                   |fewer in length, and all UTF-8       |
 |                    |                   |characters are valid. See `          |
 |                    |                   |http://www.utf8-chartable.de/        |
@@ -96,11 +92,11 @@ This table shows the body parameters for the request:
 |                    |                   |for information about the UTF-8      |
 |                    |                   |character set.                       |
 +--------------------+-------------------+-------------------------------------+
-|protocol            |xsd:string         |Protocol of the service that is      |
-|                    |*(Required)*       |being load balanced.                 |
+|protocol            |String *(Optional)*|Protocol of the service that is      |
+|                    |                   |being load balanced.                 |
 +--------------------+-------------------+-------------------------------------+
-|halfClosed          |xsd:boolean        |Enables or disables Half-Closed      |
-|                    |*(Required)*       |support for the load balancer. Half- |
+|halfClosed          |Boolean            |Enables or disables Half-Closed      |
+|                    |*(Optional)*       |support for the load balancer. Half- |
 |                    |                   |Closed support provides the ability  |
 |                    |                   |for one end of the connection to     |
 |                    |                   |terminate its output, while still    |
@@ -108,20 +104,20 @@ This table shows the body parameters for the request:
 |                    |                   |Only available for                   |
 |                    |                   |TCP/TCP_CLIENT_FIRST protocols.      |
 +--------------------+-------------------+-------------------------------------+
-|algorithm           |xsd:string         |Algorithm that defines how traffic   |
-|                    |*(Required)*       |should be directed between back-end  |
+|algorithm           |String *(Optional)*|Algorithm that defines how traffic   |
+|                    |                   |should be directed between back-end  |
 |                    |                   |nodes.                               |
 +--------------------+-------------------+-------------------------------------+
-|port                |xsd:string         |Port number for the service you are  |
-|                    |*(Required)*       |load balancing.                      |
+|port                |String *(Optional)*|Port number for the service you are  |
+|                    |                   |load balancing.                      |
 +--------------------+-------------------+-------------------------------------+
-|timeout             |xsd:string         |The timeout value for the load       |
-|                    |*(Required)*       |balancer and communications with its |
+|timeout             |String *(Optional)*|The timeout value for the load       |
+|                    |                   |balancer and communications with its |
 |                    |                   |nodes. Defaults to 30 seconds with a |
 |                    |                   |maximum of 120 seconds.              |
 +--------------------+-------------------+-------------------------------------+
-|httpsRedirect       |xsd:boolean        |Enables or disables HTTP to HTTPS    |
-|                    |*(Required)*       |redirection for the load balancer.   |
+|httpsRedirect       |Boolean            |Enables or disables HTTP to HTTPS    |
+|                    |*(Optional)*       |redirection for the load balancer.   |
 |                    |                   |When enabled, any HTTP request       |
 |                    |                   |returns status code 301 (Moved       |
 |                    |                   |Permanently), and the requester is   |
@@ -148,7 +144,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Update Load Balancer Properties: JSON request**
+**Example Update load balancer properties: JSON request**
 
 
 .. code::
@@ -164,7 +160,7 @@ This table shows the body parameters for the request:
     }
 
 
-**Example Update Load Balancer Properties: XML request**
+**Example Update load balancer properties: XML request**
 
 
 .. code::
@@ -179,7 +175,14 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
+
+
+
+This operation does not return a response body.
 
 
 
