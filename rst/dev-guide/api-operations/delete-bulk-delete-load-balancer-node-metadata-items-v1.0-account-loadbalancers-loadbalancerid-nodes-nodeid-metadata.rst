@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _api-operations-delete-bulk-delete-load-balancer-node-metadata-items-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata:
+
 Bulk-delete load balancer node metadata items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
