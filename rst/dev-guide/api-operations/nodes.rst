@@ -48,9 +48,9 @@ either ``PRIMARY`` or ``SECONDARY``.
 
 ..  note:: 
       The node's IP and port are immutable attributes and cannot be modified
-      with a **PUT** request. Supplying an unsupported attribute results in a
-	  400 (badRequest) fault. A load balancer supports a maximum of 25 nodes;
-	  the maximum weight of a node is 100.
+      with a **PUT** request. Supplying an unsupported attribute results in a 
+      ``400 badRequest fault``. A load balancer supports a maximum of 25 nodes. 
+      The maximum weight of a node is 100.
 
 Every node in the load balancer has an associated condition which
 determines its role within the load balancer.
@@ -106,10 +106,23 @@ Node is allowed to service existing established connections and
 connections that are being directed to it as a result of the session
 persistence configuration.
 
-.. include:: get-listnodes-v1.0-account-loadbalancers-loadbalancerid-nodes-nodes.rst
-.. include:: post-addnode-v1.0-account-loadbalancers-loadbalancerid-nodes-nodes.rst
-.. include:: delete-bulkdeletenodes-v1.0-account-loadbalancers-loadbalancerid-nodes-nodes.rst
-.. include:: get-shownode-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-nodes.rst
-.. include:: put-updatenode-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-nodes.rst
-.. include:: delete-deletenode-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-nodes.rst
-.. include:: get-listnodeevents-v1.0-account-loadbalancers-loadbalancerid-nodes-events-nodes.rst
+   
+You can use any of the following API operations to work with load balancer node resources: 
+
+* :ref:`api-operations-get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes`
+* :ref:`api-operations-post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes`
+* :ref:`api-operations-delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes`
+* :ref:`api-operations-get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid`
+* :ref:`api-operations-put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid`
+* :ref:`api-operations-delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid`
+* :ref:`api-operations-get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events`
+
+
+
+.. include:: get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events.rst

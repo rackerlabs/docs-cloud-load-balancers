@@ -43,7 +43,7 @@
   * :ref:`api-operations-monitors`
   * :ref:`api-operations-session-persistence`
   * :ref:`api-operations-log-connections`
-  * :ref:`api-operations-throttle connections
+  * :ref:`api-operations-throttle-connections`
   * :ref:`api-operations-content-caching`
   * :ref:`api-operations-protocols`
   * :ref:`api-operations-algorithms`
