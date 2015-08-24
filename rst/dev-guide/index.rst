@@ -39,16 +39,13 @@ General API Information
     role-based-access-control
     
 API Operations
---------------
+---------------
 
 .. toctree::
-   :maxdepth: 4
+    :maxdepth: 3
+      
+   api-operations/api-operations
    
-:ref: `_clb-dg-api-operations-error-pages`
-
-   :glob:
-
-   api-operations/*
 
 Glossary
 --------

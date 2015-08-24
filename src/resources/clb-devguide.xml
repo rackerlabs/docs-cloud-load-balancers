@@ -3406,9 +3406,7 @@
             <para>You must specify the type of virtualIp to add along
                 with the creation of a load balancer. The following
                 table describes the options.</para>
-            <table xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude" rules="all"
-                xml:id="table_virtual_ip_types">
+            <table xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="table_virtual_ip_types">
                 <caption>Virtual IP types</caption>
                 <thead align="center">
                     <tr>
