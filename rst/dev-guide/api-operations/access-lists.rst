@@ -52,8 +52,8 @@ You can perform these **DELETE** operations for the access list:
 
 -  Delete a specified network item in an access list.
 
-.. include:: get-showaccesslist-v1.0-account-loadbalancers-loadbalancerid-accesslist-access-lists.rst
-.. include:: post-createaccesslist-v1.0-account-loadbalancers-loadbalancerid-accesslist-access-lists.rst
-.. include:: delete-deleteaccesslist-v1.0-account-loadbalancers-loadbalancerid-accesslist-access-lists.rst
-.. include:: delete-bulkdeletenetworks-v1.0-account-loadbalancers-loadbalancerid-accesslist-access-lists.rst
-.. include:: delete-deletenetwork-v1.0-account-loadbalancers-loadbalancerid-accesslist-networkitemid-access-lists.rst
+.. include:: get-show-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist
+.. include:: post-create-or-update-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist
+.. include:: delete-delete-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist,rst
+.. include:: delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist.rst
+.. include:: delete-delete-network-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist-networkitemid.rst

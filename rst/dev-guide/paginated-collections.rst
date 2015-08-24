@@ -1,4 +1,4 @@
-.. _clb-dg-api-info-paginated:
+.. _general-api-info-paginated-collections:
 
 =====================
 Paginated collections

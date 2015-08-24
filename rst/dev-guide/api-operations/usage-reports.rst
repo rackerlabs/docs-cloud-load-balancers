@@ -1,4 +1,4 @@
-.. api-operations-usage-reports:
+.. _api-operations-usage-reports:
 
 Usage reports
 ~~~~~~~~~~~~~~~~~~~~

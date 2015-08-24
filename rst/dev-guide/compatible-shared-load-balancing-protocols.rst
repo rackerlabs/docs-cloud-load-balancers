@@ -1,4 +1,4 @@
-.. _clb-dg-compatible:
+.. _general-api-info-compatible-shared-load-balancing-protocols:
 
 ==========================================
 Compatible shared load balancing protocols

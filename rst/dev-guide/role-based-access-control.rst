@@ -1,4 +1,4 @@
-.. _clb-dg-api-info-rbac:
+.. _general-api-info-role-based-access-control:
 
 ================================
 Role-based access control (RBAC)

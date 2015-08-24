@@ -1,10 +1,10 @@
-.. _clb-dg-overview:
+.. _overview:
 
 ========
 Overview
 ========
 
-.. _clb-dg-overview-audience:
+.. _overview-audience:
 
 Intended audience
 ~~~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ May 7, 2015
 
 Added information for HTTP and HTTPS health monitors for attribute bodyRegex in Section 4.9, “Monitors”.
 
-.. _clb-dg-overview-addlresources:
+.. _overview-additional-resources:
 
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +64,7 @@ For more details about the Rackspace Cloud Load Balancer service, refer to http:
 
 You can also follow updates and announcements via twitter at http://www.twitter.com/Rackspace.
 
-.. _clb-dg-overview-pricing:
+.. _overview-pricing:
 
 Pricing and service level
 ~~~~~~~~~~~~~~~~~~~~~~~~~

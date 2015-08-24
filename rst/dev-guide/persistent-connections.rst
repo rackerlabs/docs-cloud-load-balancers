@@ -1,4 +1,4 @@
-.. _clb-dg-api-info-persist:
+.. _general-api-info-persistent-connections:
 
 ======================
 Persistent connections

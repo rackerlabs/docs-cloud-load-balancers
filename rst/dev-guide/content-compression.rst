@@ -1,4 +1,4 @@
-.. _clb-dg-api-info-compression:
+.. _general-api-info-content-compression:
 
 ===================
 Content compression

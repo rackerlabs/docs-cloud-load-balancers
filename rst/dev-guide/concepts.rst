@@ -1,4 +1,4 @@
-.. _clb-dg-concepts:
+.. _concepts:
 
 ========
 Concepts
@@ -6,40 +6,40 @@ Concepts
 
 To use the Rackspace Cloud Load Balancers API effectively, you should understand several key concepts:
 
-.. _clb-dg-concepts-loadbalancer:
+.. _concept-load-balancer:
 
 Load balancer
 ~~~~~~~~~~~~~
 
 A load balancer is a logical device which belongs to a cloud account. It is used to distribute workloads between multiple back-end systems or services, based on the criteria defined as part of its configuration.
 
-.. _clb-dg-concepts-virtualip:
+.. _concept-virtual-ip:
 
 Virtual IP
 ~~~~~~~~~~
 
 A virtual IP is an Internet Protocol (IP) address configured on the load balancer for use by clients connecting to a service that is load balanced. Incoming connections are distributed to back-end nodes based on the configuration of the load balancer.
 
-.. _clb-dg-concepts-errorpage:
+.. _concept-error-page:
 
 Error page
 ~~~~~~~~~~
 
 An error page is the html file that is shown to the end user when an error in the service has been thrown. By default every virtual server is provided with the default error file. It is also possible to submit a custom error page via the Load Balancers API.
 
-.. _clb-dg-concepts-node:
+.. _concept-node:
 
 Node
 ~~~~
 
 A node is a back-end device providing a service on a specified IP and port.
 
-.. _clb-dg-concepts-healthmon:
+.. _concept-health-monitor:
 
 Health monitor
 ~~~~~~~~~~~~~~
 
-.. _clb-dg-concepts-healthmon-active:
+.. _concept-health-monitor-active:
 
 Active health monitor
 ---------------------
@@ -60,14 +60,14 @@ These probes are executed at configured intervals; in the event of a failure, th
 
 If active health monitoring is enabled, a customer can then specify a SECONDARY node for routing traffic in the event of a PRIMARY node failure. If all PRIMARY nodes fail, SECONDARY nodes will then start to serve traffic. A common use case is having the SECONDARY nodes return a static page saying "We have a problem; please check back later".
 
-.. _clb-dg-concepts-session:
+.. _concept-session-persistence:
 
 Session persistence
 ~~~~~~~~~~~~~~~~~~~
 
 Session persistence is a feature of the load balancing service. It attempts to force subsequent connections to a service to be redirected to the same node as long as it is online.
 
-.. _clb-dg-concepts-connection:
+.. _concept-connection-logging:
 
 Connection logging
 ~~~~~~~~~~~~~~~~~~

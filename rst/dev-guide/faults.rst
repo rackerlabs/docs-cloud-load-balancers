@@ -1,4 +1,4 @@
-.. _clb-dg-faults:
+.. _general-api-info-faults:
 
 ======
 Faults

@@ -1,4 +1,4 @@
-.. _clb-dg-apiinfo:
+.. _general-api-info:
 
 =======================
 General API information

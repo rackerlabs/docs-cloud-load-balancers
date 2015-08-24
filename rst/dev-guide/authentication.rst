@@ -1,4 +1,4 @@
-.. _clb-dg-apiinfo-auth:
+.. _general-api-info-auth:
 
 ==============
 Authentication
@@ -66,7 +66,7 @@ The authenticate operation provides clients with an authentication token and a l
            apiKey="aaaaa-bbbbb-ccccc-12345678"/> **<2>**
     </auth>
 
-    .. _clb-dg-apiinfo-example2:
+.. _clb-dg-apiinfo-example2: 
 
 **Example: Authentication with US endpoint: JSON request**
 

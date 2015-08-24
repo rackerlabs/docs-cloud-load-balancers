@@ -8,15 +8,15 @@ client's personal use. It is defined using key-value pairs where the key
 and value consist of alphanumeric characters. A key is unique per load
 balancer.
 
-.. include:: post-addloadbalancermetadata-v1.0-account-loadbalancers-loadbalancerid-metadata-metadata.rst
-.. include:: get-showloadbalancermetadata-v1.0-account-loadbalancers-loadbalancerid-metadata-metadata.rst
-.. include:: delete-bulkdeleteloadbalancermetadataitems-v1.0-account-loadbalancers-loadbalancerid-metadata-metadata.rst
-.. include:: get-showloadbalancermetadataitem-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid-metadata.rst
-.. include:: put-updateloadbalancermetadataitem-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid-metadata.rst
-.. include:: delete-deleteloadbalancermetadataitem-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid-metadata.rst
-.. include:: get-shownodemetadata-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metadata.rst
-.. include:: post-addnodemetadataitem-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metadata.rst
-.. include:: delete-bulkdeletenodemetadataitems-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metadata.rst
-.. include:: get-shownodemetadataitem-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid-metadata.rst
-.. include:: put-updatenodemetadataitem-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid-metadata.rst
-.. include:: delete-deletenodemetadataitem-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid-metadata.rst
+.. include:: post-add-load-balancer-metadata-v1.0-account-loadbalancers-loadbalancerid-metadata
+.. include:: get-show-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid
+.. include:: delete-bulk-delete-load-balancer-metadata-items-v1.0-account-loadbalancers-loadbalancerid-metadata
+.. include:: get-show-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid
+.. include:: put-update-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid
+.. include:: delete-delete-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid
+.. include:: get-show-load-balancer-node-metadata-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata
+.. include:: post-add-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata
+.. include:: delete-bulk-delete-load-balancer-node-metadata-items-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata
+.. include:: get-show-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid
+.. include:: put-update-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid
+.. include:: delete-delete-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid

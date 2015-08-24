@@ -1,4 +1,4 @@
-.. _clb-dg-datetime:
+.. _general-api-info-date-time-format:
 
 ====================
 Date and time format

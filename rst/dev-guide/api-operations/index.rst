@@ -1,4 +1,5 @@
-.. _api-operations-lb-index:
+.. _api-operations-index:
+
 
 ================
 API operations 

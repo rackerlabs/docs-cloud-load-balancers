@@ -1,4 +1,4 @@
-.. _clb-dg-api-info-limits:
+.. _general-api-info-limits:
 
 ======
 Limits

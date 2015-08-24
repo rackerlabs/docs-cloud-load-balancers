@@ -1,4 +1,4 @@
-.. _clb-dg-api-infp-rr:
+.. _general-api-info-req-resp-types:
 
 ==========================
 Request and response types

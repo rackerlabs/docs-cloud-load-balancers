@@ -142,6 +142,6 @@ HTTP response or "HTTPS" to monitor an HTTPS response.
 
 Yes
 
-.. include:: get-showhealthmonitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor-monitors.rst
-.. include:: put-updatehealthmonitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor-monitors.rst
-.. include:: delete-deletehealthmonitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor-monitors.rst
+.. include:: get-show-health-monitor-configuration-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
+.. include:: put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor
+.. include:: delete-delete-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
