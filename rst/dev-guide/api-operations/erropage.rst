@@ -4,8 +4,12 @@
 Error pages 
 ~~~~~~~~~~~~~~~~~~~
 
-An `error page <#>`__ is the HTML file that is shown to an end user who
-is attempting to access a load balancer `node <#>`__ that is
+.. contents::
+   :depth: 1
+   :local:
+
+An error page is the HTML file that is shown to an end user who
+is attempting to access a load balancer node that is
 offline/unavailable.
 
 During provisioning, every load balancer is configured with a default

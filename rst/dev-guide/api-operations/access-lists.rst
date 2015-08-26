@@ -3,6 +3,10 @@
 Access lists
 ~~~~~~~~~~~~~~~~
 
+.. contents::
+   :depth: 1
+   :local:
+
 The access list management feature allows fine-grained network access
 controls to be applied to the load balancer's virtual IP address. A
 single IP address, multiple IP addresses, or entire network subnets can
@@ -21,28 +25,30 @@ items in an access list.
 
 The following table describes the required and optional attributes:
 
-Table 4.7. Required and optional attributes
-Name
-Description
-Required
-address
-IP address for item to add to access list.
-Yes
-type
-Type of item to add:
+Table. Required and optional attributes
 
--  ``ALLOW`` – Specifies items that always take precedence over items
-   with the ``DENY`` type.
++-----------+---------------------------------------------------------------+----------+
+| Name      | Description                                                   | Required |
++===========+===============================================================+==========+
+| address   | IP address for item to add to access list.                    |  No      |                           
++-----------+---------------------------------------------------------------+----------+
+| type      |Type of item to add:                                           |  No      |
+|           |                                                               |          |
+|           |``ALLOW`` – Specifies items that always take precedence        |          |
+|           |over items with the ``DENY`` type.                             |          |
+|           |                                                               |          |
+|           |``DENY`` – Specifies items to which traffic can be denied.     |          |
+|           |                                                               |          |
+|           |.. note::                                                      |          |
+|           |                                                               |          |
+|           |  Items that are configured with the ALLOW type always         |          |
+|           |  take precedence over items with the DENY type. That          |          |
+|           |  is, the items marked with the DENY type will still be        |          |
+|           |  accepted, but just at a lower priority than ALLOW ones.      |          |
+|           |  A common use case for ALLOW and DENY is to DENY a subnet     |          |
+|           |  and then ALLOW individual addresses within that subnet       |          | 
++-----------+---------------------------------------------------------------+----------+
 
--  ``DENY`` – Specifies items to which traffic can be denied.
-
-..  note::  
-      Items that are configured with the ``ALLOW`` type always take precedence over items 
-      with the ``DENY`` type. That is, the items marked with the``DENY`` type will still 
-      be accepted, but just at a lower priority than ALLOW ones. A common use case for 
-      ``ALLOW`` and ``DENY`` is to ``DENY``
-
-Yes
 
 You can perform these **DELETE** operations for the access list:
 
@@ -52,8 +58,8 @@ You can perform these **DELETE** operations for the access list:
 
 -  Delete a specified network item in an access list.
 
-.. include:: get-show-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist
-.. include:: post-create-or-update-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist
-.. include:: delete-delete-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist,rst
+.. include:: get-show-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist.rst
+.. include:: post-create-or-update-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist.rst
+.. include:: delete-delete-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist.rst
 .. include:: delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist.rst
 .. include:: delete-delete-network-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist-networkitemid.rst

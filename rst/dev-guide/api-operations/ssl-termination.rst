@@ -3,6 +3,10 @@
 SSL termination
 ~~~~~~~~~~~~~~~~~~~~~
 
+.. contents::
+   :depth: 1
+   :local:
+
 You can configure SSL termination only on load balancers with non-secure
 protocols. For example, SSL termination can be applied to an HTTP load
 balancer, but not to an HTTPS load balancer.
@@ -28,13 +32,13 @@ feed characters should be wrapped in a newline character. So if you
 paste in the key from a ``mykey.key`` file, JSON does not properly
 handle the field. The key/certificates can be wrapped in a newline
 character in Java, for example, using
-``string.replaceAll("\n",                 "\\n")``.
+``string.replaceAll("\n", "\\n")``.
 
 ..  warning:: 
            If SSL is enabled on a load balancer that is configured with nodes that
            are NOT in the same datacenter, then decrypted traffic is sent in clear
            text over the public internet to the external nodes and is no longer secure.
 
-.. include:: get-showssltermination-v1.0-account-loadbalancers-loadbalancerid-ssltermination-ssltermination.rst
-.. include:: put-updatessltermination-v1.0-account-loadbalancers-loadbalancerid-ssltermination-ssltermination.rst
-.. include:: delete-deletessltermination-v1.0-account-loadbalancers-loadbalancerid-ssltermination-ssltermination.rst
+.. include:: get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
+.. include:: put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
+.. include:: delete-delete-ssl-termination-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst

@@ -3,6 +3,10 @@
 Load balancers 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. contents::
+   :depth: 1
+   :local:
+
 Users can configure all documented features of the load balancer at
 creation time by simply providing the additional elements or attributes
 in the request. This document provides an overview of all the features
@@ -11,34 +15,30 @@ the load balancing service supports.
 Any protocol that is not listed in the protocols response, or is in the
 list but port=0, requires port to be set. For example the TCP protocol
 is in the list, however it specifies port as 0
-(``<protocol name="TCP" port="0"                     />``), therefore it
+(``<protocol name="TCP" port="0" />``), therefore it
 requires port to be set.
 
 You must specify the type of virtualIp to add along with the creation of
 a load balancer. The following table describes the options.
 
-Table 4.1. Virtual IP types
-Version
-Type
-Outcome
-Not Specified
-PUBLIC
-IPV4 & IPV6
-IPV4
-PUBLIC
-IPV4
-IPV6
-PUBLIC
-IPV6
-Not Specified
-SERVICENET
-IPV4
-IPV4
-SERVICENET
-IPV4
-IPV6
-SERVICENET
-Failure Message
+Table. Virtual IP types
+
++---------------+------------+-----------------+
+| Version       | Type       | Outcome         |
++===============+============+=================+
+| Not Specified | PUBLIC     | IPV4 & IPV6     |
++---------------+------------+-----------------+
+| IPV4          | PUBLIC     | IPV4            |
++---------------+------------+-----------------+
+| IPV6          | PUBLIC     | IPV6            |
++---------------+------------+-----------------+
+| Not Specified | SERVICENET | IPV4            |
++---------------+------------+-----------------+
+| IPV4          | SERVICENET | IPV4            |
++---------------+------------+-----------------+
+| IPV6          | SERVICENET | Failure Message |
++---------------+------------+-----------------+
+
 Notice in the following examples that API users are now able to
 programmatically derive the source IP addresses of our load balancers
 using the ``sourceAddresses`` label included at the bottom of the create
@@ -59,16 +59,15 @@ possible to use the same load balancing configuration to support
 
 ..  note:: 
 
-        -  Load balancers sharing a virtual IP *must* utilize a unique port.
-           Also, to share both an IPv4 as well as an IPv6, you must supply an
-           extra ``virtualIp`` object to the ``virtualIps`` container with the
-           desired ``ID`` being shared.
+       -  Load balancers sharing a virtual IP *must* utilize a unique port.
+          Also, to share both an IPv4 as well as an IPv6, you must supply an
+          extra ``virtualIp`` object to the ``virtualIps`` container with the
+          desired ``ID`` being shared.
 
        -  In addition, load balancers sharing Virtual IPs can utilize
           certain-compatible TCP/UDP and DNS based protocols on the same port.
-          See `Section 3.11, “Compatible shared load balancing
-          protocols” <Compatible_Load_Balancing_Protocols-d1e4269.html>`__ for
-          more details.
+          See :ref:`general-api-info-compatible-shared-load-balancing-protocols` 
+          for more details.
 
 All load balancers also have a status attribute that shows current
 configuration status of the device. This status is immutable by the
@@ -82,30 +81,34 @@ signify configuration changes are in progress but are not yet been
 finalized. Load balancers in a ``SUSPENDED`` status are configured to
 reject traffic and does not forward requests to back-end nodes.
 
-Table: Load balancer statuses
-Name
-Description
-``ACTIVE``
-Load balancer is configured properly and ready to serve traffic to
-incoming requests via the configured virtual IPs.
-``BUILD``
-Load balancer is being provisioned for the first time and configuration
-is being applied to bring the service online. The service cannot yet
-serve incoming requests.
-``PENDING_UPDATE``
-Load balancer is online but configuration changes are being applied to
-update the service based on a previous request.
-``PENDING_DELETE``
-Load balancer is online but configuration changes are being applied to
-begin deletion of the service based on a previous request.
-``SUSPENDED``
-Load balancer has been taken offline and disabled; contact Support.
-``ERROR``
-The system encountered an error when attempting to configure the load
-balancer; contact Support.
-``DELETED``
-Load balancers in ``DELETED`` status can be displayed for at least 90
-days after deletion.
+Table. Load balancer statuses
+
++-----------------+---------------------------------------------------------------------+
+| Name            | Description                                                         |
++=================+=====================================================================+
+| ACTIVE          | Load balancer is configured properly and ready to |                 | 
+|                 | serve traffic to incoming requests via the configured virtual IPs.  |
++-----------------+---------------------------------------------------------------------+
+| BUILD           | Load balancer is being provisioned for the first time and           |
+|                 | configuration is being applied to bring the service online. The     |
+|                 | service cannot yet serve incoming requests.                         |
++-----------------+---------------------------------------------------------------------+
+| PENDING_UPDATE  | Load balancer is online but configuration changes are being         |
+|                 | applied to update the service based on a previous request.          |
++-----------------+---------------------------------------------------------------------+
+| PENDING_DELETE  | Load balancer is online but configuration changes are being         |
+|                 | applied to begin deletion of the service based on a                 |
+|                 | previous request.                                                   |         
++-----------------+---------------------------------------------------------------------+
+| SUSPENDED       | Load balancer has been taken offline and disabled; contact Support. | 
++-----------------+---------------------------------------------------------------------+
+| ERROR           | The system encountered an error when attempting to configure the    |
+|                 | load balancer; contact Support.                                     |
++-----------------+---------------------------------------------------------------------+
+| DELETED         | Load balancers in DELETED status can be displayed for at least 90   |
+|                 | days after deletion.                                                |
++-----------------+---------------------------------------------------------------------+
+
 The update operation allows the caller to change one or more of the
 following attributes:
 
@@ -122,6 +125,7 @@ following attributes:
 -  ``timeout``
 
 -  ``httpsRedirect``
+
 
 .. include:: get-list-load-balancers-v1.0-account-loadbalancers.rst
 .. include:: post-create-load-balancer-v1.0-account-loadbalancers.rst

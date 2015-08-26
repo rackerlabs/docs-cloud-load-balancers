@@ -13,6 +13,7 @@
   * :ref:`concept-health-monitor`
   * :ref:`concept-health-monitor-active`
   * :ref:`concept-session-persistence`
+  * :ref:`concept-connection-logging`
  
 
 * :ref:`general-api-info`
