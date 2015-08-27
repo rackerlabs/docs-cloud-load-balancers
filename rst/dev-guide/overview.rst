@@ -26,30 +26,21 @@ Document change history
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
-.. _clb-dg-overview-dochistory-14072015:
+.. _clb-dg-overview-dochistory-12082015:
 
-July 14, 2015
+August 12, 2015
 --------------
 
-Removed information about node status going from OFFLINE to ONLINE after changing
-condition to ENABLED from DRAINING until that feature is working correctly again in section 4.4.2 "Add
-node".
+Corrected the name of the query parameter for the API operation :ref:`api-operations-delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist`
+and expanded the explanatory note. 
 
-.. _clb-dg-overview-dochistory-08072015:
+.. _clb-dg-overview-dochistory-23072015:
 
-July 8, 2015
+July 23, 2015
 --------------
 
-Removed information about setting the maxConnections body parameter to zero to enable
-unlimited simultaneous connections until that feature is working correctly again in section 4.12.2 "Create
-or update connection throttling configuration".
-
-.. _clb-dg-overview-dochistory-07052015:
-
-May 7, 2015
---------------
-
-Added information for HTTP and HTTPS health monitors for attribute bodyRegex in Section 4.9, “Monitors”.
+Updated examples for :ref:`api-operations-put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid` 
+to remove connectionLogging property. 
 
 .. _overview-additional-resources:
 

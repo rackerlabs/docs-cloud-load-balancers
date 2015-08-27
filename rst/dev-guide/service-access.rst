@@ -19,23 +19,21 @@ the table below.
 Regionalized service endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Chicago (ORD)**
-`https://ord.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/`
-
-**Dallas/Ft. Worth (DFW)**
-`https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/`
-
-**Northern Virginia (IAD)**
-`https://iad.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/`
-
-**London (LON)**
-`https://lon.loadbalancers.api.rackspacecloud.com/v1.0/v1.0/1234/`
-
-**Sydney (SYD)**
-`https://syd.loadbalancers.api.rackspacecloud.com/v1.0/1234/`
-
-**Hong Kong (HKG)**
-`https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234/`
++-------------------------+-------------------------------------------------------------+
+| Region                  | Endpoint                                                    |
++=========================+=============================================================+
+| Chicago (ORD)           | https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
+| Dallas/Ft. Worth (DFW)  | https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
+| Northern Virginia (IAD) | https://iad.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
+| London (LON)            | https://lon.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
+| Sydney (SYD)            | https://syd.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
+| Hong Kong (HKG)         | https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
++-------------------------+-------------------------------------------------------------+
 
 Replace the sample account ID number, `1234`, with your actual account number returned as 
 part of the authentication service response. You find the actual account number after the 

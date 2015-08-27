@@ -15,11 +15,11 @@ The account owner (identity:user-admin) can create account users on the account 
 
 See the *Cloud Identity Client Developer Guide* for information on how to perform the following tasks:
 
-* Add account users
+* `Add account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html>`_
 
-* Assign roles to account users
+* `Assign roles to account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`_
 
-* Delete roles from account users
+* `Delete roles from account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`_
 
 .. note::
     The account owner (identity:user-admin) role cannot hold any additional roles because it already has full access to all capabilities.
@@ -55,9 +55,13 @@ Additionally, two multiproduct roles apply to all products. Users with multiprod
 Multiproduct global roles and permissions
 -----------------------------------------
 
-**admin**: This role provides Create, Read, Update, and Delete permissions in all products, where access is granted.
-
-**observer**: This role provides Read permission in all products, where access is granted.
++-----------+------------------------------------------------------------------------------------------------------------+
+| Role Name | Role Permissions                                                                                           |
++===========+============================================================================================================+
+| admin     | This role provides Create, Read, Update, and Delete permissions in all products, where access is granted.  |
++-----------+------------------------------------------------------------------------------------------------------------+
+| observer  | This role provides Read permission in all products, where access is granted.                               |
++-----------+------------------------------------------------------------------------------------------------------------+
 
 .. _clb-dg-api-info-rbac-resolve:
 

@@ -1572,69 +1572,12 @@
                     accepted.</para>
             </section>
         </section>
-        <section xml:id="Compatible_Load_Balancing_Protocols-d1e4269">
-            <title>Compatible shared load balancing protocols</title>
-            <para>Load balancers utilizing shared Virtual IPs must
-                select <emphasis>unique</emphasis> ports unless the
-                load balancer protocols used are designed to work
-                together on the same port. This section provides
-                information on the-compatible load balancer protocols
-                that are designed to share UDP and TCP based protocols
-                on the same port.</para>
-            <note>
-                <para>Only a select set of protocols are allowed to
-                    share the same port across shared load balancers.
-                </para>
-            </note>
-            <para>See the tables below for the descriptions of these
+        <section xml:id="Listener_Protocols-d1e3543">
+            <title>Listener protocols</title>
+            <para>The following table describes the supported Listener
                 protocols.</para>
-            <para>The first of these tables lists the DNS-compatible
-                load balancing protocols:</para>
             <table rules="all">
-                <caption>DNS-compatible load balancing
-                    protocols</caption>
-                <thead>
-                    <tr align="center">
-                        <td colspan="2">Name</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="left">
-                        <td colspan="2">
-                            <code>DNS_TCP</code>
-                        </td>
-                        <td colspan="3">This protocol works with IPv6
-                            and allows your DNS server to receive
-                            traffic using TCP port 53.</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="2">
-                            <code>DNS_UDP</code>
-                        </td>
-                        <td colspan="3">This protocol works with IPv6
-                            and allows your DNS server to receive
-                            traffic using UDP port 53.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <note>
-                <para>The TCP and UDP protocols listed in the table
-                    above are-compatible and good for load balancing
-                    DNS based applications. These
-                        <emphasis>cannot</emphasis> be combined with
-                    the TCP and UDP protocols listed in the tables
-                    below.</para>
-            </note>
-            <para>The TCP and UDP protocols listed in the following
-                tables are-compatible for sharing TCP and UDP based
-                protocols on the same port. These protocols can be
-                interchanged to achieve the proper setup for the
-                user's TCP/UDP based application.</para>
-
-            <table rules="all">
-                <caption>TCP-compatible load balancing
-                    protocols</caption>
+                <caption>Listener protocols</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -1646,30 +1589,42 @@
                         <td colspan="2">
                             <code>TCP</code>
                         </td>
-                        <td colspan="3">The Transmission Control
-                            Protocol (TCP) is a part of the Transport
-                            Layer Protocol and is one of the core
-                            protocols of the Internet Protocol Suite.
-                            It provides a reliable, ordered delivery
-                            of a stream of bytes from one program on a
-                            computer to another program on another
-                            computer. Applications that require an
-                            ordered and reliable delivery of packets
-                            use this protocol.</td>
+                        <td colspan="3">Basic TCP. This protocol can
+                            be used as the protocol for any TCP-based
+                            protocol.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">
-                            <code>TCP_CLIENT_FIRST</code>
+                            <code>HTTP</code>
                         </td>
-                        <td colspan="3">This protocol is similar to
-                            TCP, but is more efficient when a client
-                            is expected to write the data first.</td>
+                        <td colspan="3">This protocol load balances
+                            HTTP traffic and passes it to the members. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">
+                            <code>HTTPS</code>
+                        </td>
+                        <td colspan="3">HTTPS passthrough.  This
+                            protocol will not do any inspection of the
+                            packet payloads, but just pass them to the
+                            pool of members. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">
+                            <code>TERMINATED_HTTPS</code>
+                        </td>
+                        <td colspan="3">This protocol terminates HTTPS
+                            at the load balancer.  It decrypts and
+                            passes unencrypted data to the pool of
+                            members. </td>
                     </tr>
                 </tbody>
             </table>
+            <para>The following table describes the supported
+                protocols for pools.</para>
+
             <table rules="all">
-                <caption>UDP-compatible load balancing
-                    protocols</caption>
+                <caption>Supported protocols for pools</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Name</td>
@@ -1679,21 +1634,23 @@
                 <tbody>
                     <tr align="left">
                         <td colspan="2">
-                            <code>UDP</code>
+                            <code>TCP</code>
                         </td>
-                        <td colspan="3">The User Datagram Protocol
-                            (UDP) provides a datagram service
-                            that emphasizes speed over reliability. It
-                            works well with applications that provide
-                            security through other measures. </td>
+                        <td colspan="3">Basic L4 protocol.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">
-                            <code>UDP_STREAM</code>
+                            <code>HTTP</code>
                         </td>
-                        <td colspan="3">This protocol is designed to
-                            stream media over networks and is built on
-                            top of UDP.</td>
+                        <td colspan="3"> Higher layer protocol based
+                            on TCP. </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">
+                            <code>HTTPS</code>
+                        </td>
+                        <td colspan="3"> Encrypted protocol based on
+                            TCP. </td>
                     </tr>
                 </tbody>
             </table>
@@ -2673,9 +2630,14 @@
                 </thead>
                 <tbody>
                     <tr align="left">
-                        <td colspan="1">CONNECT</td>
+                        <td colspan="1">PING</td>
+                        <td colspan="3">Health monitor that pings the
+                            connection using ICMP.</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="1">TCP</td>
                         <td colspan="3">Health monitor is a connect
-                            monitor.</td>
+                            monitor to test the TCP connection.</td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">HTTP</td>

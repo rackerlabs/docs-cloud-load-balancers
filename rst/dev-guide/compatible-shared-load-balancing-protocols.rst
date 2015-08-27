@@ -16,9 +16,15 @@ See below for the descriptions of these protocols.
 DNS-compatible load balancing protocols
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**DNS_TCP**: This protocol works with IPv6 and allows your DNS server to receive traffic using TCP port 53.
-
-**DNS_UDP**: This protocol works with IPv6 and allows your DNS server to receive traffic using UDP port 53.
++--------------+-----------------------------------------------------------------------+
+| Name         | Description                                                           |
++==============+=======================================================================+
+| ``DNS_TCP``  | This protocol works with IPv6 and allows your DNS server to receive   |
+|              | traffic using TCP port 53.                                            |
++--------------+-----------------------------------------------------------------------+
+| ``DNS_UDP``  | This protocol works with IPv6 and allows your DNS server to receive   |
+|              | traffic using UDP port 53.                                            |
++--------------+-----------------------------------------------------------------------+
 
 .. note::
     The TCP and UDP protocols listed above are compatible and good for load balancing DNS based applications. These cannot be combined with the TCP and UDP protocols listed  below.
@@ -30,15 +36,33 @@ The TCP and UDP protocols listed below are compatible for sharing TCP and UDP ba
 TCP-compatible load balancing protocols
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**TCP**: The Transmission Control Protocol (TCP) is a part of the Transport Layer Protocol and is one of the core protocols of the Internet Protocol Suite. It provides a reliable, ordered delivery of a stream of bytes from one program on a computer to another program on another computer. Applications that require an ordered and reliable delivery of packets use this protocol.
-
-**TCP_CLIENT_FIRST**: This protocol is similar to TCP, but is more efficient when a client is expected to write the data first.
++--------------------+-----------------------------------------------------------------------+
+| Name               | Description                                                           |
++====================+=======================================================================+
+| ``TCP``            | The Transmission Control Protocol (TCP) is a part of the Transport    |
+|                    | Layer Protocol and is one of the core protocols of the Internet       |
+|                    | Protocol Suite. It provides a reliable, ordered delivery of a stream  |
+|                    | of bytes from one program on a computer to another program on another |
+|                    | computer. Applications that require an ordered and reliable delivery  |
+|                    | of packets use this protocol.                                         |
++--------------------+-----------------------------------------------------------------------+
+|``TCP_CLIENT_FIRST``| This protocol is similar to TCP, but is more efficient when a client  |
+|                    | is expected to write the data first.                                  |
++--------------------+-----------------------------------------------------------------------+
 
 .. _clb-dg-compatible-udp:
 
 UDP-compatible load balancing protocols
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**UDP**: The User Datagram Protocol (UDP) provides a datagram service that emphasizes speed over reliability. It works well with applications that provide security through other measures. 
++--------------+-----------------------------------------------------------------------+
+| Name         | Description                                                           |
++==============+=======================================================================+
+| ``UDP``      | The User Datagram Protocol (UDP) provides a datagram service that     |
+|              | emphasizes speed over reliability. It works well with applications    |
+|              | that provide security through other measures.                         |
++--------------+-----------------------------------------------------------------------+
+|``UDP_STREAM``| This protocol is designed to stream media over networks and is built  |
+|              | on top of UDP.                                                        |
++--------------+-----------------------------------------------------------------------+
 
-**UDP_STREAM**:  This protocol is designed to stream media over networks and is built on top of UDP.
