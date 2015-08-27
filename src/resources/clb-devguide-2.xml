@@ -1979,8 +1979,12 @@
                             Virtual IPs can utilize certain-compatible
                             TCP/UDP and DNS based protocols on the
                             same port. See <xref
-                                linkend="Compatible_Load_Balancing_Protocols-d1e4269"
-                            /> for more details.</para>
+                                linkend="Listener_Protocols-d1e3543"/>
+                            for more details.</para>
+                        <para security="reviewer">Reviewer: We removed
+                            the info about compatible protocols, so we
+                            probably need to delete the bullet above.
+                            Is that correct?</para>
                     </listitem>
                 </itemizedlist>
             </note>
