@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
+.. _get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
 
 Show node details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

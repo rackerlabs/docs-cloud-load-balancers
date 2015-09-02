@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence:
+.. _put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence:
 
 Enable session persistence
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

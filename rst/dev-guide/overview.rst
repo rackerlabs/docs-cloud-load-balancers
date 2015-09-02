@@ -31,7 +31,7 @@ This version of the Developer Guide replaces and obsolesces all previous version
 August 12, 2015
 --------------
 
-Corrected the name of the query parameter for the API operation :ref:`api-operations-delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist`
+Corrected the name of the query parameter for the API operation :ref:`delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist`
 and expanded the explanatory note. 
 
 .. _clb-dg-overview-dochistory-23072015:
@@ -39,7 +39,7 @@ and expanded the explanatory note.
 July 23, 2015
 --------------
 
-Updated examples for :ref:`api-operations-put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid` 
+Updated examples for :ref:`put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid` 
 to remove connectionLogging property. 
 
 .. _overview-additional-resources:

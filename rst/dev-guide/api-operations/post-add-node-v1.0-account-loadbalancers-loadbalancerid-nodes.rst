@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes:
+.. _post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes:
 
 Add node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

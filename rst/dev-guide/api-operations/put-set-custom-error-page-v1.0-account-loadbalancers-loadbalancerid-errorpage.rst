@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-set-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
+.. _put-set-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
 
 Set custom error page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,7 +73,20 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
+This table shows the body parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|content                   |String *(Required)*      |The HTML content for the |
+|                          |                         |custom error page. Must  |
+|                          |                         |be 65536 characters or   |
+|                          |                         |fewer. See the request   |
+|                          |                         |examples in this section |
+|                          |                         |for the required XML and |
+|                          |                         |JSON formats.            |
++--------------------------+-------------------------+-------------------------+
+
 
 
 
@@ -108,21 +121,6 @@ Response
 
 
 
-
-
-This table shows the body parameters for the response:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|content                   |String *(Required)*      |The HTML content for the |
-|                          |                         |custom error page. Must  |
-|                          |                         |be 65536 characters or   |
-|                          |                         |fewer. See the request   |
-|                          |                         |examples in this section |
-|                          |                         |for the required XML and |
-|                          |                         |JSON formats.            |
-+--------------------------+-------------------------+-------------------------+
 
 
 

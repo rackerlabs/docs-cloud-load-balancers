@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-load-balancer-v1.0-account-loadbalancers:
+.. _post-create-load-balancer-v1.0-account-loadbalancers:
 
 Create load balancer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,9 +88,9 @@ This table shows the body parameters for the request:
 |name                |String *(Required)*|Name of the load balancer to create. |
 |                    |                   |The name must be 128 characters or   |
 |                    |                   |fewer in length, and all UTF-8       |
-|                    |                   |characters are valid. See `          |
-|                    |                   |http://www.utf8-chartable.de/        |
-|                    |                   |<http://www.utf8-chartable.de/>`__   |
+|                    |                   |characters are valid. See            |
+|                    |                   |`http://www.utf8-chartable.de/       |
+|                    |                   |<http://www.utf8-chartable.de/>`_    |
 |                    |                   |for information about the UTF-8      |
 |                    |                   |character set.                       |
 +--------------------+-------------------+-------------------------------------+
@@ -111,31 +111,31 @@ This table shows the body parameters for the request:
 +--------------------+-------------------+-------------------------------------+
 |virtualIps          |Object *(Required)*|Type of virtualIp to add with the    |
 |                    |                   |creation of a load balancer. See the |
-|                    |                   |virtual IP types table in the        |
-|                    |                   |Chapter 4 section "Virtual IPs".     |
+|                    |                   |virtual IP types table at            |
+|                    |                   |:ref:`api-operations-virtual-ips`.   |
 +--------------------+-------------------+-------------------------------------+
 |accessList          |String *(Optional)*|The access list management feature   |
 |                    |                   |allows fine-grained network access   |
 |                    |                   |controls to be applied to the load   |
 |                    |                   |balancer virtual IP address. Refer   |
-|                    |                   |to the Chapter 4 section "Access     |
-|                    |                   |lists" for information and examples. |
+|                    |                   |to :ref:`api-operations-access-lists`|
+|                    |                   |for information and examples.        |
 +--------------------+-------------------+-------------------------------------+
 |algorithm           |String *(Optional)*|Algorithm that defines how traffic   |
 |                    |                   |should be directed between back-end  |
 |                    |                   |nodes.                               |
 +--------------------+-------------------+-------------------------------------+
 |connectionLogging   |String *(Optional)*|Current connection logging           |
-|                    |                   |configuration. Refer to the Chapter  |
-|                    |                   |4 section "Log connections" for      |
-|                    |                   |information and examples.            |
+|                    |                   |configuration. Refer to              |
+|                    |                   |:ref:`api-operations-log-connections`|
+|                    |                   |for information and examples.        |
 +--------------------+-------------------+-------------------------------------+
 |connectionThrottle  |String *(Optional)*|Specifies limits on the number of    |
 |                    |                   |connections per IP address to help   |
 |                    |                   |mitigate malicious or abusive        |
 |                    |                   |traffic to your applications. Refer  |
-|                    |                   |to the Chapter 4 section "Throttle   |
-|                    |                   |connections" for information and     |
+|                    |                   |to :ref:`api-operations-throttle-    |
+|                    |                   |connections` for information and     |
 |                    |                   |examples.                            |
 +--------------------+-------------------+-------------------------------------+
 |healthMonitor       |String *(Optional)*|The type of health monitor check to  |
@@ -364,17 +364,17 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |connectionLogging         |String *(Optional)*      |Current connection       |
 |                          |                         |logging configuration.   |
-|                          |                         |Refer to the Chapter 4   |
-|                          |                         |section "Log             |
-|                          |                         |connections" for         |
+|                          |                         |Refer to the API Ops     |
+|                          |                         |section "Log Connections"|
+|                          |                         |for                      |
 |                          |                         |information and examples.|
 +--------------------------+-------------------------+-------------------------+
 |virtualIps                |Object *(Required)*      |Type of virtualIp to add |
 |                          |                         |with the creation of a   |
 |                          |                         |load balancer. See the   |
-|                          |                         |virtual IP types table   |
-|                          |                         |in the Chapter 4 section |
-|                          |                         |"Virtual IPs".           |
+|                          |                         |virtual IP types table in|
+|                          |                         |the API Operations       |
+|                          |                         |section "Virtual IPs".   |
 +--------------------------+-------------------------+-------------------------+
 |id                        |Int *(Required)*         |The ID for the IP        |
 |                          |                         |address.                 |
@@ -409,7 +409,7 @@ This table shows the body parameters for the response:
 |                          |                         |mitigate malicious or    |
 |                          |                         |abusive traffic to your  |
 |                          |                         |applications. Refer to   |
-|                          |                         |the Chapter 4 section    |
+|                          |                         |the API Ops section      |
 |                          |                         |"Throttle connections"   |
 |                          |                         |for information and      |
 |                          |                         |examples.                |

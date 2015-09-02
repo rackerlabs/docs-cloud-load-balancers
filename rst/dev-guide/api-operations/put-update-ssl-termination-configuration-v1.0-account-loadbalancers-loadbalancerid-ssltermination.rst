@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
+.. _put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
 
 Update SSL termination configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,23 +27,42 @@ These configurable attributes must be provided (individually or grouped) in a re
 
 If a user wants to replace the existing SSL configuration, a new certificate, key, and securePort combination must be provided instead of, or in addition to, the optional/editable attributes. 
 
- Optional SSL AttributesOptional SSL AttributesNon-SSL TrafficSSL Traffic``enabled`` =``true`` (default) Yes  Yes ``enabled`` =``false`` Yes  No ``secureTrafficOnly`` =``true`` No  Yes ``secureTrafficOnly`` =``false`` (default)  Yes  Yes ``enabled`` = ``true``
+.. table::  Optional SSL Attributes
 
-``secureTrafficOnly`` = ``true``
+    
+    +--------------------------+-------------------------+-------------------------+
+    |Optional SSL Attributes   |Non-SSL Traffic          |SSL Traffic              |
+    +==========================+=========================+=========================+
+    |``enabled`` =``true``     |Yes                      |Yes                      |
+    |(default)                 |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``enabled`` =``false``    |Yes                      |No                       |
+    +--------------------------+-------------------------+-------------------------+
+    |``secureTrafficOnly``     |No                       |Yes                      |
+    |=``true``                 |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``secureTrafficOnly``     |Yes                      |Yes                      |
+    |=``false`` (default)      |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``enabled`` = ``true``    |No                       |Yes                      |
+    |``secureTrafficOnly`` =   |                         |                         |
+    |``true``                  |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``enabled`` = ``true``    |Yes                      |Yes                      |
+    |``secureTrafficOnly`` =   |                         |                         |
+    |``false``                 |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``enabled`` = ``false``   |Yes                      |No                       |
+    |``secureTrafficOnly`` =   |                         |                         |
+    |``false``                 |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |``enabled`` = ``false``   |Yes                      |No                       |
+    |``secureTrafficOnly`` =   |                         |                         |
+    |``true``                  |                         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    
 
- No  Yes ``enabled`` = ``true``
-
-``secureTrafficOnly`` = ``false``
-
- Yes  Yes ``enabled`` = ``false``
-
-``secureTrafficOnly`` = ``false``
-
- Yes  No ``enabled`` = ``false``
-
-``secureTrafficOnly`` = ``true``
-
- Yes  No .. note::
+.. note::
    All requests to SSL termination in the JSON format require the key/certificates to be in "proper" JSON format, meaning that all raw line feed characters should be wrapped in a newline character. So if the user pastes in the key from a mykey.key file, JSON will not properly handle the field. The key/certificates can be wrapped in a newline character in Java, for example, using ``string.replaceAll("\n", "\\n")``. Please refer to the examples above for working, "pre-formatted" examples. 
    
    

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid:
+.. _delete-delete-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid:
 
 Delete load balancer metadata item
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

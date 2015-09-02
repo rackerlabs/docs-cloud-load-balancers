@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes:
+.. _delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes:
 
 Bulk-delete nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

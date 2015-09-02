@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-content-caching-configuration-v1.0-account-loadbalancers-loadbalancerid-contentcaching:
+.. _get-show-content-caching-configuration-v1.0-account-loadbalancers-loadbalancerid-contentcaching:
 
 Show content caching configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

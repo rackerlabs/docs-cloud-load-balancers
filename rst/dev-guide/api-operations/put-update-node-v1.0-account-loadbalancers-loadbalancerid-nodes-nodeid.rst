@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
+.. _put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
 
 Update node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

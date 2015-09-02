@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
+.. _delete-delete-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
 
 Delete custom error page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

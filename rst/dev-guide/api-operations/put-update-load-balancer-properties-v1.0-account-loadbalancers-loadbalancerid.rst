@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid:
+.. _put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid:
 
 Update load balancer properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,9 +88,9 @@ This table shows the body parameters for the request:
 |name                |String *(Optional)*|Name of the load balancer to update. |
 |                    |                   |The name must be 128 characters or   |
 |                    |                   |fewer in length, and all UTF-8       |
-|                    |                   |characters are valid. See `          |
-|                    |                   |http://www.utf8-chartable.de/        |
-|                    |                   |<http://www.utf8-chartable.de/>`__   |
+|                    |                   |characters are valid. See            |
+|                    |                   |`http://www.utf8-chartable.de/       |
+|                    |                   |<http://www.utf8-chartable.de/>`_    |
 |                    |                   |for information about the UTF-8      |
 |                    |                   |character set.                       |
 +--------------------+-------------------+-------------------------------------+

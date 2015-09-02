@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid:
+.. _get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid:
 
 Show load balancer details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,7 +125,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |connectionLogging         |String *(Optional)*      |Current connection       |
 |                          |                         |logging configuration.   |
-|                          |                         |Refer to the Chapter 4   |
+|                          |                         |Refer to the API Ops     |
 |                          |                         |section "Log             |
 |                          |                         |connections" for         |
 |                          |                         |information and examples.|
@@ -134,7 +134,7 @@ This table shows the body parameters for the response:
 |                          |                         |with the creation of a   |
 |                          |                         |load balancer. See the   |
 |                          |                         |virtual IP types table   |
-|                          |                         |in the Chapter 4 section |
+|                          |                         |in the API Ops section   |
 |                          |                         |"Virtual IPs".           |
 +--------------------------+-------------------------+-------------------------+
 |id                        |Int *(Required)*         |The ID for the IP        |
@@ -170,7 +170,7 @@ This table shows the body parameters for the response:
 |                          |                         |mitigate malicious or    |
 |                          |                         |abusive traffic to your  |
 |                          |                         |applications. Refer to   |
-|                          |                         |the Chapter 4 section    |
+|                          |                         |the API Ops section      |
 |                          |                         |"Throttle connections"   |
 |                          |                         |for information and      |
 |                          |                         |examples.                |

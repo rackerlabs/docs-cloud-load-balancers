@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings:
+.. _post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings:
 
 Add certificate mapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

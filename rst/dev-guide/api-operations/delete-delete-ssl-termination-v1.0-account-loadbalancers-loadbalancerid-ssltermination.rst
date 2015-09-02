@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-ssl-termination-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
+.. _delete-delete-ssl-termination-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
 
 Delete SSL termination
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

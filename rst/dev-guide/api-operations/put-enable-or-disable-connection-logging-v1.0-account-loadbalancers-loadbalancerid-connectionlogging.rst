@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-enable-or-disable-connection-logging-v1.0-account-loadbalancers-loadbalancerid-connectionlogging:
+.. _put-enable-or-disable-connection-logging-v1.0-account-loadbalancers-loadbalancerid-connectionlogging:
 
 Enable or disable connection logging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

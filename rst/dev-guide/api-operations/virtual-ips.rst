@@ -37,7 +37,7 @@ Table. Virtual IP types
 
 The following table lists the required and optional attributes:
 
-Tables. Required and optional attributes
+Table. Required and optional attributes
 
 +-----------+--------------------------------------------------------------+----------+
 | Name      | Description                                                  | Required |

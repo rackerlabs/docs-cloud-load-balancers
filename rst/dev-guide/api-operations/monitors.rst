@@ -37,6 +37,7 @@ Table. Health monitor types
 | HTTPS   | Health monitor is an HTTPS monitor.  |
 +---------+--------------------------------------+
 
+
 ..  note:: 
 
   When deleting a health monitor of any type, every node on that load

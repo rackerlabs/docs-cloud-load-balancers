@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
+.. _get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
 
 Show SSL termination configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
