@@ -1,4 +1,4 @@
-.. _general-api-info-faults:
+.. _faults:
 
 ======
 Faults
@@ -6,14 +6,14 @@ Faults
 
 API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, ``serviceFault``, for easier exception handling for languages that support it.
 
-.. _clb-dg-faults-service:
+.. _faults-service:
 
 serviceFault
 ~~~~~~~~~~~~
 
 The ``serviceFault`` and by extension all other faults include ``message`` and ``detail`` elements which contain strings describing the nature of the fault as well as a ``code`` attribute representing the HTTP response code for convenience. The ``code`` attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the ``serviceFault`` to be returned directly but should instead expect only one of the child faults to be returned.
 
-.. _clb-dg-faults-badrequest:
+.. _faults-badrequest:
 
 badRequest
 ~~~~~~~~~~
@@ -33,7 +33,7 @@ badRequest fault: Response
             </validationErrors>
     </badRequest>
 
-.. _clb-dg-faults-immutableentity:
+.. _faults-immutableentity:
 
 immutableEntity
 ~~~~~~~~~~~~~~~
@@ -50,7 +50,7 @@ immutableEntity fault: Response
         <message>The object at the specified URI is immutable and can not be overwritten.</message>
     </immutableEntity>
 
-.. _clb-dg-faults-itemnotfound:
+.. _faults-itemnotfound:
 
 itemNotFound
 ~~~~~~~~~~~~
@@ -64,7 +64,7 @@ itemNotFound fault: Response
         <message>Object not Found</message>
     </itemNotFound>
 
-.. _clb-dg-faults-loadbalancerfault:
+.. _faults-loadbalancerfault:
 
 loadBalancerFault
 ~~~~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ loadBalancerFault fault: Response
         <message>Invalid authentication token. Please renew</message>
     </loadBalancerFault>
 
-.. _clb-dg-faults-outofvirtualips:
+.. _faults-outofvirtualips:
 
 outOfVirtualIps
 ~~~~~~~~~~~~~~~
@@ -98,7 +98,7 @@ outOfVirtualIps fault: Response
         </message>
     </outOfVirtualips>
 
-.. _clb-dg-faults-overlimit:
+.. _faults-overlimit:
 
 overLimit
 ~~~~~~~~~
@@ -114,7 +114,7 @@ overLimit fault: Response
         <message>Your account is currently over the limit so your request could not be processed.</message>
     </overLimit>
 
-.. _clb-dg-faults-serviceunavailable:
+.. _faults-serviceunavailable:
 
 serviceUnavailable
 ~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ serviceUnavailable fault: Response
         <message>The Load balancing service is currently not available</message>
     </serviceUnavailable>
 
-.. _clb-dg-faults-unauthorized:
+.. _faults-unauthorized:
 
 unauthorized
 ~~~~~~~~~~~~
@@ -146,7 +146,7 @@ unauthorized fault: Response
         <message>You are not authorized to execute this operation.</message>
     </unauthorized>
 
-.. _clb-dg-faults-unprocessableentity:
+.. _faults-unprocessableentity:
 
 unprocessableEntity
 ~~~~~~~~~~~~~~~~~~~

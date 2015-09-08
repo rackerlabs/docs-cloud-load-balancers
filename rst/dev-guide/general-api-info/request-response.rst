@@ -1,4 +1,4 @@
-.. _general-api-info-req-resp-types:
+.. _req-resp-types:
 
 ==========================
 Request and response types

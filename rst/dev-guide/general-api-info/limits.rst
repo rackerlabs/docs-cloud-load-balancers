@@ -1,4 +1,4 @@
-.. _general-api-info-limits:
+.. _limits:
 
 ======
 Limits

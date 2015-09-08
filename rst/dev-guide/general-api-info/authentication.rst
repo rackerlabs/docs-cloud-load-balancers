@@ -1,4 +1,4 @@
-.. _general-api-info-auth:
+.. _auth:
 
 ==============
 Authentication

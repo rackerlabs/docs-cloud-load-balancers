@@ -1,4 +1,4 @@
-.. _general-api-info-compatible-shared-load-balancing-protocols:
+.. _compatible-shared-load-balancing-protocols:
 
 ==========================================
 Compatible shared load balancing protocols

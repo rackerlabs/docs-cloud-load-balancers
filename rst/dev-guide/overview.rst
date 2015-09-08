@@ -19,14 +19,14 @@ This guide is intended for software developers who want to create applications u
 
 -  Atom syndication format
 
-.. _clb-dg-overview-dochistory:
+.. _overview-dochistory:
 
 Document change history
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
-.. _clb-dg-overview-dochistory-12082015:
+.. _overview-dochistory-12082015:
 
 August 12, 2015
 ----------------
@@ -34,7 +34,7 @@ August 12, 2015
 Corrected the name of the query parameter for the API operation :ref:`delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist`
 and expanded the explanatory note. 
 
-.. _clb-dg-overview-dochistory-23072015:
+.. _overview-dochistory-23072015:
 
 July 23, 2015
 --------------

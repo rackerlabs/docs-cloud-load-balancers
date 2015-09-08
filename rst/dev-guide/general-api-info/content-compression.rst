@@ -1,4 +1,4 @@
-.. _general-api-info-content-compression:
+.. _content-compression:
 
 ===================
 Content compression

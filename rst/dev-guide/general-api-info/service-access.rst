@@ -1,4 +1,4 @@
-.. _general-api-info-service-access:
+.. _service-access:
 
 ============================
 Service access and endpoints

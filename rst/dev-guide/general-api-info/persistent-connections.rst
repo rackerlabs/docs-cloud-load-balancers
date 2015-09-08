@@ -1,4 +1,4 @@
-.. _general-api-info-persistent-connections:
+.. _persistent-connections:
 
 ======================
 Persistent connections

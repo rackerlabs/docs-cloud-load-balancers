@@ -1,4 +1,4 @@
-.. _general-api-info-behavior:
+.. _behavior:
 
 ======================================
 API Behavior, Errors, & Suggestions

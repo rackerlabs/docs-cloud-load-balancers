@@ -1,4 +1,4 @@
-.. _general-api-info-date-time-format:
+.. _date-time-format:
 
 ====================
 Date and time format

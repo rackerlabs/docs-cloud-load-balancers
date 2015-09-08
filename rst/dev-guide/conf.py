@@ -53,9 +53,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'docs-cloud-load-balancers'
-copyright = u'2015, mike.asthalter'
-author = u'mike.asthalter'
+project = 'API developer documentation'
+copyright = '2015, mike.asthalter'
+author = 'mike.asthalter'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -81,7 +81,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples']
+exclude_patterns = ['_build', 'samples','include /*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -249,8 +249,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'docs-cloud-load-balancers.tex', u'docs-cloud-load-balancers Documentation',
-   u'mike.asthalter', 'manual'),
+  (master_doc, 'docs-cloud-load-balancers.tex', 'Rackspace Cloud Load Balancers API Developer Guide',
+   'mike.asthalter', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

@@ -1,4 +1,4 @@
-.. _general-api-info-role-based-access-control:
+.. _role-based-access-control:
 
 ================================
 Role-based access control (RBAC)

@@ -1,4 +1,4 @@
-.. _general-api-info-paginated-collections:
+.. _paginated-collections:
 
 =====================
 Paginated collections

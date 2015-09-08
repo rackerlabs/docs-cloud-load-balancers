@@ -66,7 +66,7 @@ possible to use the same load balancing configuration to support
 
        -  In addition, load balancers sharing Virtual IPs can utilize
           certain-compatible TCP/UDP and DNS based protocols on the same port.
-          See :ref:`general-api-info-compatible-shared-load-balancing-protocols` 
+          See :ref:`compatible-shared-load-balancing-protocols` 
           for more details.
 
 All load balancers also have a status attribute that shows current
