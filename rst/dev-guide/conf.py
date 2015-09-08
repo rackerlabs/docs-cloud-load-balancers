@@ -29,10 +29,17 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+
+extensions = [
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.todo',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.extlinks'
+]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+#templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -74,7 +81,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'samples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -94,6 +101,26 @@ exclude_patterns = ['_build']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# External link library
+extlinks = {
+    'rax': ('http://www.rackspace.com/%s', ''),
+    'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
+    'rax-docs': ('http://docs.rackspace.com/%s', ''),
+    'rax-dev': ('https://developer.rackspace.com/%s', ''),
+    'rax-api': ('http://api.rackspace.com/%s', ''),
+    'rax-git': ('https://github.com/rackspace/%s', ''),
+    'mycloud': ('https://mycloud.rackspace.com/%s', ''),
+    'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
+    'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
+    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
+    'os': ('http://www.openstack.org/%s', ''),
+    'os-docs': ('http://docs.openstack.org/%s', ''),
+    'os-wiki': ('http://wiki.openstack.org/%s', ''),
+    'git-repo': ('https://github.com/rackerlabs/docs-core-infra-user-guide/%s', ''),
+    'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
+    'rocket': ('https://objectrocket.com/%s', '')
+}
+
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
@@ -108,7 +135,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -137,7 +164,7 @@ html_theme = 'alabaster'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -252,8 +279,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'docs-cloud-load-balancers', u'docs-cloud-load-balancers Documentation',
-     [author], 1)
+    (master_doc, 'Rackspace Cloud Load Balancers API Developer Guide', 'Rackspace developer documentation',
+     'Mike Asthalter', 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -266,8 +293,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'docs-cloud-load-balancers', u'docs-cloud-load-balancers Documentation',
-   author, 'docs-cloud-load-balancers', 'One line description of project.',
+  (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
+   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the REST API Rackspace Cloud Images service',
    'Miscellaneous'),
 ]
 
