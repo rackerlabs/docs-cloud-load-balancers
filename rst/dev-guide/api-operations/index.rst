@@ -5,39 +5,29 @@
 API operations 
 ================
 
-.. include:: load-balancers.rst
+You can use the Cloud Load Balancers API operations to interact directly with the Load Balancer 
+service.  You can also perform Load Balancer operations by using the Rackspace Command Line 
+Client, the SDK, or from the Cloud Control panel.  
 
-.. include:: erropage.rst
+.. toctree:: :hidden:
+   :maxdepth: 2
 
-.. include:: stats.rst
-
-.. include:: nodes.rst
-
-.. include:: virtual-ips.rst
-
-.. include:: allowed-domains.rst
-
-.. include:: usage-reports.rst
-
-.. include:: access-lists.rst
-
-.. include:: monitors.rst
-
-.. include:: sessions.rst
-
-.. include:: log-connections.rst
-
-.. include:: throttle connections
-
-.. include:: content-caching.rst
-
-.. include:: protocols.rst
-
-.. include:: algorithms.rst
-
-.. include:: ssltermination.rst
-
-.. include:: certificatemappings.rst
-
-.. include:: metadata.rst
+   load-balancers     
+   erropage     
+   stats     
+   nodes     
+   virtual-ips     
+   allowed-domains     
+   usage-reports     
+   access-lists     
+   monitors     
+   sessions     
+   log-connections     
+   throttle-connections
+   content-caching     
+   protocols     
+   algorithms     
+   ssl-termination     
+   certificatemappings     
+   metadata     
 

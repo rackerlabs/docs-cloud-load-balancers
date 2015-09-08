@@ -29,7 +29,7 @@ This version of the Developer Guide replaces and obsolesces all previous version
 .. _clb-dg-overview-dochistory-12082015:
 
 August 12, 2015
---------------
+----------------
 
 Corrected the name of the query parameter for the API operation :ref:`delete-bulk-delete-networks-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist`
 and expanded the explanatory note. 

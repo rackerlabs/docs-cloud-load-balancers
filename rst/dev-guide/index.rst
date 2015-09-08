@@ -12,7 +12,7 @@ The :kc-faq:`Cloud Load Balancers FAQ <cloud-load-balancers>` in the Knowledge C
 provides more information about the service.
 
 .. toctree:: :hidden:
-   :maxdepth: 4
+   :maxdepth: 3
    
    overview
    concepts    
