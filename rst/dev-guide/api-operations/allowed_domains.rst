@@ -1,4 +1,4 @@
-.. _api-operations-allowed-domains: 
+.. _allowed-domains: 
 
 Allowed domains
 ~~~~~~~~~~~~~~~~~~

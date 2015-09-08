@@ -1,4 +1,4 @@
-.. _api-operations-ssl-termination: 
+.. _ssl-termination: 
 
 SSL termination
 ~~~~~~~~~~~~~~~~~~~~~

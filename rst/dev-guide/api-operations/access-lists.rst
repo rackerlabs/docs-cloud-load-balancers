@@ -1,4 +1,4 @@
-.. _api-operations-access-lists:
+.. _access-lists:
 
 Access lists
 ~~~~~~~~~~~~~~~~

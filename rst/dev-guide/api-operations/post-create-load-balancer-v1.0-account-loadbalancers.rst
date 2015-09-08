@@ -23,11 +23,7 @@ An HTTP load balancer also includes the X-Forwarded-Port HTTP header, which has 
 .. note::
    The headers listed here (X-Forwarded-For, X-Forwarded-Proto, and X-Forwarded-Port) are available for HTTP load balancers with or without SSL termination enabled, however HTTPS load balancers do not provide these header elements due to encryption.
    
-   
-
-
-
-This table shows the possible response codes for this operation:
+      This table shows the possible response codes for this operation:
 
 
 +--------------------------+-------------------------+-------------------------+
@@ -61,11 +57,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
-
+""""""""""""""""   
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -74,11 +66,7 @@ This table shows the URI parameters for the request:
 |{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+-------------------------+   
 
 This table shows the body parameters for the request:
 
@@ -112,13 +100,13 @@ This table shows the body parameters for the request:
 |virtualIps          |Object *(Required)*|Type of virtualIp to add with the    |
 |                    |                   |creation of a load balancer. See the |
 |                    |                   |virtual IP types table at            |
-|                    |                   |:ref:`api-operations-virtual-ips`.   |
+|                    |                   |:ref:`virtual-ips`.                  |
 +--------------------+-------------------+-------------------------------------+
 |accessList          |String *(Optional)*|The access list management feature   |
 |                    |                   |allows fine-grained network access   |
 |                    |                   |controls to be applied to the load   |
 |                    |                   |balancer virtual IP address. Refer   |
-|                    |                   |to :ref:`api-operations-access-lists`|
+|                    |                   |to :ref:`access-lists`               |
 |                    |                   |for information and examples.        |
 +--------------------+-------------------+-------------------------------------+
 |algorithm           |String *(Optional)*|Algorithm that defines how traffic   |
@@ -127,16 +115,15 @@ This table shows the body parameters for the request:
 +--------------------+-------------------+-------------------------------------+
 |connectionLogging   |String *(Optional)*|Current connection logging           |
 |                    |                   |configuration. Refer to              |
-|                    |                   |:ref:`api-operations-log-connections`|
+|                    |                   |:ref:`log-connections`               |
 |                    |                   |for information and examples.        |
 +--------------------+-------------------+-------------------------------------+
 |connectionThrottle  |String *(Optional)*|Specifies limits on the number of    |
 |                    |                   |connections per IP address to help   |
 |                    |                   |mitigate malicious or abusive        |
-|                    |                   |traffic to your applications. Refer  |
-|                    |                   |to :ref:`api-operations-throttle-    |
-|                    |                   |connections` for information and     |
-|                    |                   |examples.                            |
+|                    |                   |traffic to your applications. See    |
+|                    |                   |:ref:`throttle-connections`          |
+|                    |                   |for information and examples.        |
 +--------------------+-------------------+-------------------------------------+
 |healthMonitor       |String *(Optional)*|The type of health monitor check to  |
 |                    |                   |perform to ensure that the service   |
@@ -179,11 +166,7 @@ This table shows the body parameters for the request:
 |                    |                   |termination for a load balancer can  |
 |                    |                   |only be configured after the load    |
 |                    |                   |balancer has been created.           |
-+--------------------+-------------------+-------------------------------------+
-
-
-
-
++--------------------+-------------------+-------------------------------------+   
 
 **Example Create load balancer: JSON request**
 
@@ -322,112 +305,106 @@ This table shows the body parameters for the request:
 
 
 Response
-""""""""""""""""
-
-
-
-
+""""""""""""""""   
 
 This table shows the body parameters for the response:
 
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|loadBalancer              |String *(Required)*      |A ``loadBalancer``       |
-|                          |                         |object.                  |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Int *(Required)*         |The ID for the load      |
-|                          |                         |balancer.                |
-+--------------------------+-------------------------+-------------------------+
-|protocol                  |String *(Required)*      |Protocol of the service  |
-|                          |                         |that is being load       |
-|                          |                         |balanced.                |
-+--------------------------+-------------------------+-------------------------+
-|port                      |String *(Optional)*      |Port number for the      |
-|                          |                         |service you are load     |
-|                          |                         |balancing.               |
-+--------------------------+-------------------------+-------------------------+
-|algorithm                 |String *(Optional)*      |Algorithm that defines   |
-|                          |                         |how traffic should be    |
-|                          |                         |directed between back-   |
-|                          |                         |end nodes.               |
-+--------------------------+-------------------------+-------------------------+
-|status                    |String *(Required)*      |The status of the load   |
-|                          |                         |balancer.                |
-+--------------------------+-------------------------+-------------------------+
-|timeout                   |String *(Optional)*      |The timeout value for    |
-|                          |                         |the load balancer and    |
-|                          |                         |communications with its  |
-|                          |                         |nodes. Defaults to 30    |
-|                          |                         |seconds with a maximum   |
-|                          |                         |of 120 seconds.          |
-+--------------------------+-------------------------+-------------------------+
-|connectionLogging         |String *(Optional)*      |Current connection       |
-|                          |                         |logging configuration.   |
-|                          |                         |Refer to the API Ops     |
-|                          |                         |section "Log Connections"|
-|                          |                         |for                      |
-|                          |                         |information and examples.|
-+--------------------------+-------------------------+-------------------------+
-|virtualIps                |Object *(Required)*      |Type of virtualIp to add |
-|                          |                         |with the creation of a   |
-|                          |                         |load balancer. See the   |
-|                          |                         |virtual IP types table in|
-|                          |                         |the API Operations       |
-|                          |                         |section "Virtual IPs".   |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Int *(Required)*         |The ID for the IP        |
-|                          |                         |address.                 |
-+--------------------------+-------------------------+-------------------------+
-|address                   |String *(Required)*      |The IP address.          |
-+--------------------------+-------------------------+-------------------------+
-|type                      |String *(Required)*      |The IP address type.     |
-+--------------------------+-------------------------+-------------------------+
-|ipVersion                 |String *(Required)*      |The IP version.          |
-+--------------------------+-------------------------+-------------------------+
-|nodes                     |Object *(Optional)*      |Nodes to be added to the |
-|                          |                         |load balancer.           |
-+--------------------------+-------------------------+-------------------------+
-|address                   |String *(Required)*      |The node address.        |
-+--------------------------+-------------------------+-------------------------+
-|port                      |Int *(Required)*         |The node port.           |
-+--------------------------+-------------------------+-------------------------+
-|condition                 |String *(Required)*      |The node condition. For  |
-|                          |                         |example, ENABLED.        |
-+--------------------------+-------------------------+-------------------------+
-|status                    |String *(Required)*      |The node status. For     |
-|                          |                         |example, ONLINE.         |
-+--------------------------+-------------------------+-------------------------+
-|sessionPersistence        |String *(Optional)*      |Specifies whether        |
-|                          |                         |multiple requests from   |
-|                          |                         |clients are directed to  |
-|                          |                         |the same node.           |
-+--------------------------+-------------------------+-------------------------+
-|connectionThrottle        |String *(Optional)*      |Specifies limits on the  |
-|                          |                         |number of connections    |
-|                          |                         |per IP address to help   |
-|                          |                         |mitigate malicious or    |
-|                          |                         |abusive traffic to your  |
-|                          |                         |applications. Refer to   |
-|                          |                         |the API Ops section      |
-|                          |                         |"Throttle connections"   |
-|                          |                         |for information and      |
-|                          |                         |examples.                |
-+--------------------------+-------------------------+-------------------------+
-|cluster                   |String *(Required)*      |The cluster name.        |
-+--------------------------+-------------------------+-------------------------+
-|created                   |Object *(Required)*      |The date and time what   |
-|                          |                         |the load balancer was    |
-|                          |                         |created.                 |
-+--------------------------+-------------------------+-------------------------+
-|updated                   |Object *(Required)*      |The date and time what   |
-|                          |                         |the load balancer was    |
-|                          |                         |last updated.            |
-+--------------------------+-------------------------+-------------------------+
-|sourceAddresses           |Dict *(Required)*        |The source public and    |
-|                          |                         |private IP addresses.    |
-+--------------------------+-------------------------+-------------------------+
-
++--------------------------+-------------------------+---------------------------+
+|Name                      |Type                     |Description                |
++==========================+=========================+===========================+
+|loadBalancer              |String *(Required)*      |A ``loadBalancer``         |
+|                          |                         |object.                    |
++--------------------------+-------------------------+---------------------------+
+|id                        |Int *(Required)*         |The ID for the load        |
+|                          |                         |balancer.                  |
++--------------------------+-------------------------+---------------------------+
+|protocol                  |String *(Required)*      |Protocol of the service    |
+|                          |                         |that is being load         |
+|                          |                         |balanced.                  |
++--------------------------+-------------------------+---------------------------+
+|port                      |String *(Optional)*      |Port number for the        |
+|                          |                         |service you are load       |
+|                          |                         |balancing.                 |
++--------------------------+-------------------------+---------------------------+
+|algorithm                 |String *(Optional)*      |Algorithm that defines     |
+|                          |                         |how traffic should be      |
+|                          |                         |directed between back-     |
+|                          |                         |end nodes.                 |
++--------------------------+-------------------------+---------------------------+
+|status                    |String *(Required)*      |The status of the load     |
+|                          |                         |balancer.                  |
++--------------------------+-------------------------+---------------------------+
+|timeout                   |String *(Optional)*      |The timeout value for      |
+|                          |                         |the load balancer and      |
+|                          |                         |communications with its    |
+|                          |                         |nodes. Defaults to 30      |
+|                          |                         |seconds with a maximum     |
+|                          |                         |of 120 seconds.            |
++--------------------------+-------------------------+---------------------------+
+|connectionLogging         |String *(Optional)*      |Current connection         |
+|                          |                         |logging configuration.     |
+|                          |                         |Refer to the API Ops       |
+|                          |                         |section "Log Connections"  |
+|                          |                         |for                        |
+|                          |                         |information and examples.  |
++--------------------------+-------------------------+---------------------------+
+|virtualIps                |Object *(Required)*      |Type of virtualIp to add   |
+|                          |                         |with the creation of a     |
+|                          |                         |load balancer. See the     |
+|                          |                         |virtual IP types table in  |
+|                          |                         |the API Operations         |
+|                          |                         |section "Virtual IPs".     |
++--------------------------+-------------------------+---------------------------+
+|id                        |Int *(Required)*         |The ID for the IP          |
+|                          |                         |address.                   |
++--------------------------+-------------------------+---------------------------+
+|address                   |String *(Required)*      |The IP address.            |
++--------------------------+-------------------------+---------------------------+
+|type                      |String *(Required)*      |The IP address type.       |
++--------------------------+-------------------------+---------------------------+
+|ipVersion                 |String *(Required)*      |The IP version.            |
++--------------------------+-------------------------+---------------------------+
+|nodes                     |Object *(Optional)*      |Nodes to be added to the   |
+|                          |                         |load balancer.             |
++--------------------------+-------------------------+---------------------------+
+|address                   |String *(Required)*      |The node address.          |
++--------------------------+-------------------------+---------------------------+
+|port                      |Int *(Required)*         |The node port.             |
++--------------------------+-------------------------+---------------------------+
+|condition                 |String *(Required)*      |The node condition. For    |
+|                          |                         |example, ENABLED.          |
++--------------------------+-------------------------+---------------------------+
+|status                    |String *(Required)*      |The node status. For       |
+|                          |                         |example, ONLINE.           |
++--------------------------+-------------------------+---------------------------+
+|sessionPersistence        |String *(Optional)*      |Specifies whether          |
+|                          |                         |multiple requests from     |
+|                          |                         |clients are directed to    |
+|                          |                         |the same node.             |
++--------------------------+-------------------------+---------------------------+
+|connectionThrottle        |String *(Optional)*      |Specifies limits on the    |
+|                          |                         |number of connections      |
+|                          |                         |per IP address to help     |
+|                          |                         |mitigate malicious or      |
+|                          |                         |abusive traffic to your    |
+|                          |                         |applications. See          |
+|                          |                         |:ref:`throttle-connections`|  
+|                          |                         |for information and        |
+|                          |                         |examples.                  |
++--------------------------+-------------------------+---------------------------+
+|cluster                   |String *(Required)*      |The cluster name.          |
++--------------------------+-------------------------+---------------------------+
+|created                   |Object *(Required)*      |The date and time what     |
+|                          |                         |the load balancer was      |
+|                          |                         |created.                   |
++--------------------------+-------------------------+---------------------------+
+|updated                   |Object *(Required)*      |The date and time what     |
+|                          |                         |the load balancer was      |
+|                          |                         |last updated.              |
++--------------------------+-------------------------+---------------------------+
+|sourceAddresses           |Dict *(Required)*        |The source public and      |
+|                          |                         |private IP addresses.      |
++--------------------------+-------------------------+---------------------------+      
 
 
 

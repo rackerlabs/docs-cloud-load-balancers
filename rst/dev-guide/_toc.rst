@@ -33,24 +33,24 @@
 
 * :ref:`api-operations-index` 
 
-  * :ref:`api-operations-load-balancers`
-  * :ref:`api-operations-error-pages`
-  * :ref:`api-operations-load-balancer-statistics`
-  * :ref:`api-operations-nodes`
-  * :ref:`api-operations-virtual-ips`
-  * :ref:`api-operations-allowed-domains`
-  * :ref:`api-operations-usage-reports`
-  * :ref:`api-operations-access-lists`
-  * :ref:`api-operations-monitors`
-  * :ref:`api-operations-session-persistence`
-  * :ref:`api-operations-log-connections`
-  * :ref:`api-operations-throttle-connections`
-  * :ref:`api-operations-content-caching`
-  * :ref:`api-operations-protocols`
-  * :ref:`api-operations-algorithms`
-  * :ref:`api-operations-ssl-termination`
-  * :ref:`api-operations-certificate-mappings`
-  * :ref:`api-operations-metadata`
+  * :ref:`load-balancers`
+  * :ref:`error-pages`
+  * :ref:`load-balancer-statistics`
+  * :ref:`nodes`
+  * :ref:`virtual-ips`
+  * :ref:`allowed-domains`
+  * :ref:`usage-reports`
+  * :ref:`access-lists`
+  * :ref:`monitors`
+  * :ref:`session-persistence`
+  * :ref:`log-connections`
+  * :ref:`throttle-connections`
+  * :ref:`content-caching`
+  * :ref:`protocols`
+  * :ref:`algorithms`
+  * :ref:`ssl-termination`
+  * :ref:`certificate-mappings`
+  * :ref:`metadata`
 
 
 * :ref:`load-balancer-glossary`

@@ -1,4 +1,4 @@
-.. _api-operations-nodes:
+.. _nodes:
 
 Nodes
 ~~~~~~~~~~~~~

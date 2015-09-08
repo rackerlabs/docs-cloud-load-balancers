@@ -1,4 +1,4 @@
-.. _api-operations-monitors: 
+.. _monitors: 
 
 
 Monitors

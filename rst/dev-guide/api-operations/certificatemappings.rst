@@ -1,4 +1,4 @@
-.. _api-operations-certificate-mappings:
+.. _certificate-mappings:
 
 Certificate Mappings
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -1,4 +1,4 @@
-.. _api-operations-algorithms:
+.. _algorithms:
 
 
 Algorithms

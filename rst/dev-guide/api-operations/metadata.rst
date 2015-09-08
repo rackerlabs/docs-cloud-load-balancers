@@ -1,4 +1,4 @@
-.. _api-operations-metadata:
+.. _metadata:
 
 Metadata 
 ~~~~~~~~~~~~

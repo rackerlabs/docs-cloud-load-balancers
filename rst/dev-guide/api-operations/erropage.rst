@@ -1,4 +1,4 @@
-.. _api-operations-error-pages:
+.. _error-pages:
 
 
 Error pages 

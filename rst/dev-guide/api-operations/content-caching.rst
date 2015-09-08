@@ -1,4 +1,4 @@
-.. _api-operations-content-caching: 
+.. _content-caching: 
 
 Content caching
 ~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,4 @@
-.. _api-operations-throttle-connections:
-
+.. _throttle-connections:
 
 Throttle connections 
 ~~~~~~~~~~~~~~~~~~~~~~

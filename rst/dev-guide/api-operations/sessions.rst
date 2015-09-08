@@ -1,4 +1,4 @@
-.. _api-operations-session-persistence:
+.. _session-persistence:
 
 
 Session persistence 

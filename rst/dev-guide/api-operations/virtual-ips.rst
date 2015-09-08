@@ -1,4 +1,4 @@
-.. _api-operations-virtual-ips: 
+.. _virtual-ips: 
 
 Virtual IPs 
 ~~~~~~~~~~~~~~~~~~~~

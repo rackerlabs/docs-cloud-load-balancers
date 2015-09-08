@@ -1,4 +1,4 @@
-.. _api-operations-load-balancers: 
+.. _load-balancers: 
 
 Load balancers 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

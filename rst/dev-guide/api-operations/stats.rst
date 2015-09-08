@@ -1,4 +1,4 @@
-.. _api-operations-load-balancer-statistics:
+.. _load-balancer-statistics:
 
 Load balancer statistics 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

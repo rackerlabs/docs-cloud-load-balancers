@@ -1,4 +1,4 @@
-.. _api-operations-log-connections:
+.. _log-connections:
 
 Log connections
 ~~~~~~~~~~~~~~~~~~~~~~~
