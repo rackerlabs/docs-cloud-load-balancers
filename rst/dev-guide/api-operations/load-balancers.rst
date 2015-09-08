@@ -127,9 +127,9 @@ following attributes:
 -  ``httpsRedirect``
 
 
-.. include:: get-list-load-balancers-v1.0-account-loadbalancers.rst
-.. include:: post-create-load-balancer-v1.0-account-loadbalancers.rst
-.. include:: delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.rst
-.. include:: get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid.rst
-.. include:: put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.rst
-.. include:: delete-delete-load-balancer-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: method/get-list-load-balancers-v1.0-account-loadbalancers.rst
+.. include:: method/post-create-load-balancer-v1.0-account-loadbalancers.rst
+.. include:: method/delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.rst
+.. include:: method/get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: method/put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: method/delete-delete-load-balancer-v1.0-account-loadbalancers-loadbalancerid.rst

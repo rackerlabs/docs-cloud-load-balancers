@@ -4,7 +4,7 @@
 .. _get-show-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid:
 
 Show load balancer metadata item
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -53,9 +53,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -72,26 +69,10 @@ This table shows the URI parameters for the request:
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Show load balancer metadata item: JSON response**
 

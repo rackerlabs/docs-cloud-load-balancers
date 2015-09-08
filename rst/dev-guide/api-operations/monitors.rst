@@ -147,6 +147,6 @@ Table. Required and Optional Attributes for Monitor HTTP and HTTPS
 |                            | response.                                    |          |
 +----------------------------+----------------------------------------------+----------+
 
-.. include:: get-show-health-monitor-configuration-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
-.. include:: put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
-.. include:: delete-delete-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
+.. include:: method/get-show-health-monitor-configuration-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
+.. include:: method/put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
+.. include:: method/delete-delete-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst

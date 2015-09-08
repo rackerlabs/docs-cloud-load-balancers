@@ -60,6 +60,6 @@ concurrently, choose one of the following options:
    load balancer supports session persistence for both HTTP and HTTPS
    requests concurrently.
 
-.. include:: get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
-.. include:: put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
-.. include:: delete-disable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
+.. include:: method/get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
+.. include:: method/put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
+.. include:: method/delete-disable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst

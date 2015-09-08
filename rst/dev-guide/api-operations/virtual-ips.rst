@@ -52,8 +52,8 @@ Table. Required and optional attributes
 |           |                                                              |          |
 +-----------+--------------------------------------------------------------+----------+
 
-.. include::  get-list-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
-.. include::  post-add-virtual-ip-version-6-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
-.. include::  delete-bulk-delete-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
-.. include::  delete-delete-virtual-ip-v1.0-account-loadbalancers-loadbalancerid-virtualips-virtualipid.rst
+.. include:: method/get-list-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
+.. include:: method/post-add-virtual-ip-version-6-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
+.. include:: method/delete-bulk-delete-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips.rst
+.. include:: method/delete-delete-virtual-ip-v1.0-account-loadbalancers-loadbalancerid-virtualips-virtualipid.rst
 
