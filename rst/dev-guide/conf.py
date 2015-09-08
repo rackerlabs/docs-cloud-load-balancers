@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'API developer documentation'
+project = 'Rackspace Cloud Load Balancers'
 copyright = '2015, mike.asthalter'
 author = 'mike.asthalter'
 
@@ -148,10 +148,10 @@ todo_include_todos = False
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'Rackspace Cloud Load Balancers version 1.0 API Developer Guide'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+html_short_title = 'Rackspace Cloud Load Balancers'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -280,7 +280,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'Rackspace Cloud Load Balancers API Developer Guide', 'Rackspace developer documentation',
+    (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
      'Mike Asthalter', 1)
 ]
 
@@ -295,7 +295,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the REST API Rackspace Cloud Images service',
+   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Images service',
    'Miscellaneous'),
 ]
 
