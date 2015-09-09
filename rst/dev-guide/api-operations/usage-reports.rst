@@ -13,7 +13,7 @@ balancing service. Values for both incomingTransfer and outgoingTransfer are exp
 bytes transferred. Use the usage report API operations to view usage by date, account, or 
 billing status. 
 
-.. include:: method/get-show-historical-usage-v1.0-account-loadbalancers-loadbalancerid-usage.rst
-.. include:: method/get-show-account-level-usage-v1.0-account-loadbalancers-usage.rst
-.. include:: method/get-show-current-usage-v1.0-account-loadbalancers-loadbalancerid-usage-current.rst
-.. include:: method/get-list-billable-load-balancers-v1.0-account-loadbalancers-billable.rst
+.. include:: methods/get-show-historical-usage-v1.0-account-loadbalancers-loadbalancerid-usage.rst
+.. include:: methods/get-show-account-level-usage-v1.0-account-loadbalancers-usage.rst
+.. include:: methods/get-show-current-usage-v1.0-account-loadbalancers-loadbalancerid-usage-current.rst
+.. include:: methods/get-list-billable-load-balancers-v1.0-account-loadbalancers-billable.rst

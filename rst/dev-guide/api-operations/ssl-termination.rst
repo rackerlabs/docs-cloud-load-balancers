@@ -39,6 +39,6 @@ character in Java, for example, using
            are NOT in the same datacenter, then decrypted traffic is sent in clear
            text over the public internet to the external nodes and is no longer secure.
 
-.. include:: method/get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
-.. include:: method/put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
-.. include:: method/delete-delete-ssl-termination-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
+.. include:: methods/get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
+.. include:: methods/put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst
+.. include:: methods/delete-delete-ssl-termination-v1.0-account-loadbalancers-loadbalancerid-ssltermination.rst

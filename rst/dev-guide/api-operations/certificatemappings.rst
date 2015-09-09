@@ -21,8 +21,8 @@ maximum of 20 certificate mappings.
         certificate mappings that do not match on a provided host name.
 
 
-.. include:: method/get-list-certificate-mappings-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.rst
-.. include:: method/post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.rst
-.. include:: method/get-show-certificate-mappings-details-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst
-.. include:: method/put-update-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst
-.. include:: method/delete-delete-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst
+.. include:: methods/get-list-certificate-mappings-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.rst
+.. include:: methods/post-add-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings.rst
+.. include:: methods/get-show-certificate-mappings-details-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst
+.. include:: methods/put-update-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst
+.. include:: methods/delete-delete-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid.rst

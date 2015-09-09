@@ -37,4 +37,4 @@ Table. Load balancing algorithms
 +------------------------------+-------------------------------------------------------------------+
 
 
-.. include:: method/get-list-load-balancing-algorithms-v1.0-account-loadbalancers-algorithms.rst
+.. include:: methods/get-list-load-balancing-algorithms-v1.0-account-loadbalancers-algorithms.rst
