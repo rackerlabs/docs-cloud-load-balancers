@@ -113,4 +113,4 @@ Table. Load balancing protocols
 +----------------+---------------------------------------------------------------------+
 
 
-.. include:: get-list-load-balancing-protocols-v1.0-account-loadbalancers-protocols.rst
+.. include:: methods/get-list-load-balancing-protocols-v1.0-account-loadbalancers-protocols.rst

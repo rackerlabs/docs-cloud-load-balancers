@@ -52,8 +52,12 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
+# The builder to use when running via the deconst preparer
+# builder = 'deconst-serial'
+builder = 'deconst-single'
+
 # General information about the project.
-project = 'API developer documentation'
+project = 'Rackspace Cloud Load Balancers'
 copyright = '2015, mike.asthalter'
 author = 'mike.asthalter'
 
@@ -81,7 +85,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples','include /*']
+exclude_patterns = ['_build', 'samples','api-operations/methods/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -112,7 +116,8 @@ extlinks = {
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
     'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
-    'kc-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
+    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
+    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
     'os': ('http://www.openstack.org/%s', ''),
     'os-docs': ('http://docs.openstack.org/%s', ''),
     'os-wiki': ('http://wiki.openstack.org/%s', ''),
@@ -147,10 +152,10 @@ todo_include_todos = False
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'Rackspace Cloud Load Balancers version 1.0 API Developer Guide'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+html_short_title = 'Rackspace Cloud Load Balancers'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -279,7 +284,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'Rackspace Cloud Load Balancers API Developer Guide', 'Rackspace developer documentation',
+    (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
      'Mike Asthalter', 1)
 ]
 
@@ -294,7 +299,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the REST API Rackspace Cloud Images service',
+   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Images service',
    'Miscellaneous'),
 ]
 

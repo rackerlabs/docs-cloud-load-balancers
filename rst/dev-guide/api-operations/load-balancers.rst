@@ -53,7 +53,7 @@ balancer, you may create subsequent load balancers that share a single
 virtual IPv4 and/or a single IPv6 by issuing a **POST** and supplying a
 virtual IP ID instead of a type. Additionally, this feature is highly
 desirable if you wish to load balance both an unsecured and secure
-protocol using one IP or DNS name. For example, this method makes it
+protocol using one IP or DNS name. For example, this methods makes it
 possible to use the same load balancing configuration to support
 ``HTTP`` and ``HTTPS``.
 
@@ -127,9 +127,9 @@ following attributes:
 -  ``httpsRedirect``
 
 
-.. include:: get-list-load-balancers-v1.0-account-loadbalancers.rst
-.. include:: post-create-load-balancer-v1.0-account-loadbalancers.rst
-.. include:: delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.rst
-.. include:: get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid.rst
-.. include:: put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.rst
-.. include:: delete-delete-load-balancer-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: methods/get-list-load-balancers-v1.0-account-loadbalancers.rst
+.. include:: methods/post-create-load-balancer-v1.0-account-loadbalancers.rst
+.. include:: methods/delete-bulk-delete-load-balancers-v1.0-account-loadbalancers.rst
+.. include:: methods/get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: methods/put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid.rst
+.. include:: methods/delete-delete-load-balancer-v1.0-account-loadbalancers-loadbalancerid.rst

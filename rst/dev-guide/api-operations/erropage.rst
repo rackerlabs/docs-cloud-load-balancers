@@ -21,6 +21,6 @@ load balancer. Page updates override existing content. If a custom error
 page is deleted, or the load balancer is changed to a non-HTTP protocol,
 the default error page is restored.
 
-.. include:: get-show-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst
-.. include:: put-set-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst
-.. include:: delete-delete-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst
+.. include:: methods/get-show-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst
+.. include:: methods/put-set-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst
+.. include:: methods/delete-delete-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage.rst

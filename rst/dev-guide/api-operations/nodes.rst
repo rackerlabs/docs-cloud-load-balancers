@@ -111,10 +111,10 @@ Table. Load balancer node conditions
 +--------------+---------------------------------------------------------------------+
 
 
-.. include:: get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
-.. include:: post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
-.. include:: delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
-.. include:: get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
-.. include:: put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
-.. include:: delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
-.. include:: get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events.rst
+.. include:: methods/get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: methods/post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: methods/delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
+.. include:: methods/get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: methods/put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: methods/delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: methods/get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events.rst
