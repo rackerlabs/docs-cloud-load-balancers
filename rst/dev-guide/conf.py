@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# docs-cloud-load-balancers documentation build configuration file, created by
+# Rackspace Load Balancers documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun 12 14:04:59 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -234,6 +234,9 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'docs-cloud-load-balancersdoc'
 
+# this will change the 'paragraph' character to '#'
+html_add_permalinks = '#'
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -299,7 +302,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Images service',
+   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Queues service',
    'Miscellaneous'),
 ]
 
@@ -314,3 +317,9 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Custom options for PHP output ----------------------------------------
+
+from sphinx.highlighting import lexers
+from pygments.lexers.web import PhpLexer
+lexers['php'] = PhpLexer(startinline=True)
