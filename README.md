@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers)
 
+
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-load-balancers)
+
 ## Resources
 
 This github repository contains the source files for the following Rackspace Cloud Load Balancers API documentation:
