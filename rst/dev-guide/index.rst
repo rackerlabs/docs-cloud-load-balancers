@@ -1,21 +1,22 @@
 .. _index:
 
-================================================================
-Rackspace Cloud Load Balancers version 1.0 API Developer Guide
-================================================================
+=========================================================
+Rackspace Cloud Load Balancers API 1.0
+=========================================================
 
-The Rackspace Cloud Load Balancers service enables customers to quickly 
-load-balance multiple Cloud Servers or external servers for optimal resource utilization 
-through a simple Representational State Transfer (REST) web service interface.
+Learn how to use the Rackspace Cloud Images service by using the REST API. 
 
-The :kc-product-faq:`Cloud Load Balancers FAQ <cloud-load-balancers>` in the Knowledge Center 
-provides more information about the service.
+- For details about using the API, see the :ref:`Developer Guide <developer-guide>`.
+- For details about API resources, operations, requests and responses, see the 
+  :ref:`API reference <api-reference>`.
 
 .. toctree:: :hidden:
-   :maxdepth: 3
-   
-   overview
-   concepts    
-   general-api-info/index
+   :maxdepth: 2
+ 
+   overview/index
+   developer-guide
+   concepts
+   general-api-info/index 
+   api-reference
    api-operations/index
-   glossary  
+   glossary
