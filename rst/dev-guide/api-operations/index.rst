@@ -1,16 +1,12 @@
-.. _api-operations-index:
+.. meta
+   :description: Rackspace Cloud LB API Reference
+   :keywords: Rackspace, Cloud LB ReST API, API resources, API methods
 
 
-================
-API operations 
-================
-
-You can use the Cloud Load Balancers API operations to interact directly with the Load Balancer 
-service.  You can also perform Load Balancer operations by using the Rackspace Command Line 
-Client, the SDK, or from the Cloud Control panel.  
-
-.. toctree:: :hidden:
+.. toctree:: 
+   :caption: API Reference
    :maxdepth: 2
+
 
    load-balancers     
    erropage     
