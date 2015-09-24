@@ -3,9 +3,6 @@
 Content caching
 ~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Use the content caching operations to manage content caching configuration. 
 

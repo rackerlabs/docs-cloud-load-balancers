@@ -3,9 +3,6 @@
 Access lists
 ~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 The access list management feature allows fine-grained network access
 controls to be applied to the load balancer's virtual IP address. A

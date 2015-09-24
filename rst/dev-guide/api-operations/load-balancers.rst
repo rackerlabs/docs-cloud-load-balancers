@@ -3,9 +3,6 @@
 Load balancers 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Users can configure all documented features of the load balancer at
 creation time by simply providing the additional elements or attributes

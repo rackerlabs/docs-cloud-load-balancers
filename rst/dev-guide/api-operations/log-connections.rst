@@ -3,9 +3,6 @@
 Log connections
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Use the log connections API operations to manage logging configuration.
 

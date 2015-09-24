@@ -3,9 +3,6 @@
 Throttle connections 
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Use the throttle connections operations to manage throttle configuration.
 

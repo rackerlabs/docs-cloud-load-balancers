@@ -3,9 +3,6 @@
 Nodes
 ~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 The nodes defined by the load balancer are responsible for
 servicing the requests received through the load balancer's virtual IP.

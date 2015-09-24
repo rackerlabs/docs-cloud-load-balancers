@@ -4,9 +4,6 @@
 Algorithms
 ~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 All load balancers utilize an algorithm that defines how traffic should
 be directed between back-end nodes. The default algorithm for newly

@@ -4,9 +4,6 @@
 Error pages 
 ~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 An error page is the HTML file that is shown to an end user who
 is attempting to access a load balancer node that is

@@ -4,9 +4,6 @@
 Session persistence 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Session persistence is a feature of the load balancing service that
 forces multiple requests, of the same protocol, from clients to be

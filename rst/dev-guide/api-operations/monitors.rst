@@ -4,9 +4,6 @@
 Monitors
 ~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 The load balancing service includes a health monitoring operation that
 periodically checks your back-end nodes to ensure they are responding

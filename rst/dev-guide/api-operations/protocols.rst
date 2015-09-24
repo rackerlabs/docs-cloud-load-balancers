@@ -3,9 +3,6 @@
 Protocols
 ~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 All load balancers must define the protocol of the service which is
 being load balanced. The protocol selection should be based on the

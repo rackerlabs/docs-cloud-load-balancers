@@ -3,9 +3,6 @@
 Certificate Mappings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 Certificate mappings allow for multiple certificates to be used on
 SSL-terminated load balancers. By default, a load balancer supports a
