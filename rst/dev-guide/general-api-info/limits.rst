@@ -47,7 +47,7 @@ Rate limits are applied in order relative to the verb, going from least to most 
 
 A request may be submitted to Cloud Support for an increase in load balancer limits. Each request must be approved before limits can be modified. Limits may only be increased up to the maximum limit (such as 50 nodes per load balancer).
 
-See :ref:`Determine limits programmatically <clb-dg-api-info-limits-determine>` to find your current account settings for these limits.
+See :ref:`Determine limits programmatically <determine-limits>` to find your current account settings for these limits.
 
 Absolute limits
 ~~~~~~~~~~~~~~~
@@ -70,10 +70,9 @@ The system applies default values for load balancer account and/or resource limi
 | ACCESS_LIST_LIMIT  | Total number of network items that can be added to a load balancer.    | 100     |
 +--------------------+------------------------------------------------------------------------+---------+
 
-:ref:`Determine limits programmatically <clb-dg-api-info-limits-determine>`
-to find your current account settings for these limits.
+:ref:`Determine limits programmatically <determine-limits>` to find your current account settings for these limits.
 
-.. _clb-dg-api-info-limits-determine:
+.. _determine-limits:
 
 Determine limits programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
