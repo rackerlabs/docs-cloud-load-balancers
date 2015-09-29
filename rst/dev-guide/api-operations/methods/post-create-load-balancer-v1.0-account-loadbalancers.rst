@@ -23,7 +23,8 @@ An HTTP load balancer also includes the X-Forwarded-Port HTTP header, which has 
 .. note::
    The headers listed here (X-Forwarded-For, X-Forwarded-Proto, and X-Forwarded-Port) are available for HTTP load balancers with or without SSL termination enabled, however HTTPS load balancers do not provide these header elements due to encryption.
    
-      This table shows the possible response codes for this operation:
+
+This table shows the possible response codes for this operation:
 
 
 +--------------------------+-------------------------+-------------------------+
