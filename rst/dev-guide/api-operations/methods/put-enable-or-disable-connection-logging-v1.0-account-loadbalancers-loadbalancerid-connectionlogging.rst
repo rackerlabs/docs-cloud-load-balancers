@@ -27,9 +27,6 @@ This table shows the possible response codes for this operation:
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
 |                          |                         |operation. This error    |
@@ -45,8 +42,26 @@ This table shows the possible response codes for this operation:
 |                          |                         |returned is above the    |
 |                          |                         |allowed limit.           |
 +--------------------------+-------------------------+-------------------------+
+|422                       |ImmutableEntity          |This fault is returned   |
+|                          |                         |when a user attempts to  |
+|                          |                         |modify an item that is   |
+|                          |                         |not currently in a state |
+|                          |                         |that allows              |
+|                          |                         |modification. For        |
+|                          |                         |example, load balancers  |
+|                          |                         |in a status of           |
+|                          |                         |PENDING_UPDATE,BUILD, or |
+|                          |                         |DELETED may not be       |
+|                          |                         |modified.                |
++--------------------------+-------------------------+-------------------------+
+|500                       |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
++--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
+|``-``                     |Timeout                  |HTTP timeout response.   |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
 

@@ -35,9 +35,6 @@ This table shows the possible response codes for this operation:
 |                          |                         |the values of some       |
 |                          |                         |elements are invalid.    |
 +--------------------------+-------------------------+-------------------------+
-|400 500                   |Load Balancer Fault      |The load balancer has    |
-|                          |                         |experienced a fault.     |
-+--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |You are not authorized   |
 |                          |                         |to complete this         |
 |                          |                         |operation. This error    |
@@ -64,6 +61,9 @@ This table shows the possible response codes for this operation:
 |                          |                         |PENDING_UPDATE,BUILD, or |
 |                          |                         |DELETED may not be       |
 |                          |                         |modified.                |
++--------------------------+-------------------------+-------------------------+
+|500                       |Load Balancer Fault      |The load balancer has    |
+|                          |                         |experienced a fault.     |
 +--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
