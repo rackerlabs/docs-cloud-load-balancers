@@ -79,7 +79,7 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'October 14, 2015'
+today = 'October 20, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
@@ -109,19 +109,23 @@ pygments_style = 'sphinx'
 extlinks = {
     'rax': ('http://www.rackspace.com/%s', ''),
     'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
-    'rax-docs': ('http://docs.rackspace.com/%s', ''),
     'rax-dev': ('https://developer.rackspace.com/%s', ''),
-    'rax-api': ('http://api.rackspace.com/%s', ''),
+    'rax-devdocs': ('http://developer.rackspace.com/docs/%s', ''),
+    'rax-devguide':('http:/developer.rackspace.com/docs/%s/developer-guide/',''),
+    'rax-api': ('http:/developer.rackspace.com/docs/%s/developer-guide/#api-reference',''),
     'rax-git': ('https://github.com/rackspace/%s', ''),
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
     'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
-    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
-    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
+    'kc-faq': ('http://www.rackspace.com/knowledge_center/'
+               'frequently-asked-question/%s', ''),
+    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/'
+                       'product-faq/%s', ''),
     'os': ('http://www.openstack.org/%s', ''),
     'os-docs': ('http://docs.openstack.org/%s', ''),
     'os-wiki': ('http://wiki.openstack.org/%s', ''),
-    'git-repo': ('https://github.com/rackerlabs/docs-core-infra-user-guide/%s', ''),
+    'git-repo': ('https://github.com/rackerlabs/'
+                 'docs-core-infra-user-guide/%s', ''),
     'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
     'rocket': ('https://objectrocket.com/%s', '')
 }
@@ -178,7 +182,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'October 14, 2015'
+html_last_updated_fmt = 'October 20, 2015'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

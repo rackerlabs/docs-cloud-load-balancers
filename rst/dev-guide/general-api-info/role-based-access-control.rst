@@ -15,11 +15,11 @@ The account owner (identity:user-admin) can create account users on the account 
 
 See the *Cloud Identity Client Developer Guide* for information on how to perform the following tasks:
 
-* `Add account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html>`_
+* :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`  
 
-* `Assign roles to account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`_
+* :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`  
 
-* `Delete roles from account users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`_
+* :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user>` 
 
 .. note::
     The account owner (identity:user-admin) role cannot hold any additional roles because it already has full access to all capabilities.
@@ -91,6 +91,7 @@ The following table shows two examples of how potential conflicts between user r
 RBAC permissions cross-reference to Cloud Load Balancers API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-API operations for Cloud Load Balancers may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review `the Knowledge Center article`_.
+API operations for Cloud Load Balancers may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review 
+the Knowledge Center article :kc-article:`Permissions Matrix for Role-Based Access Control (RBAC) <permissions-matrix-for-role-based-access-control-rbac>`.
 
-.. _the Knowledge Center article: http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac
+

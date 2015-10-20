@@ -40,12 +40,15 @@ Error Response Code(s): unauthorized (401), userDisabled (403), badRequest (400)
 The authenticate operation provides clients with an authentication token and a list of regional cloud endpoints. The sample requests and responses in this section illustrate a general case. In your authentication request, use your own credentials rather than the sample values shown here for `username` and `apiKey`. When you authenticate successfully, the response to your authentication request includes a catalog of the services to which you have subscribed rather than the sample values shown here.
 
 .. note::
-    If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API key credentials. For information about setting up and using multi-factor authentication, see `Multi-factor authentication`_ in the *Cloud Identity Client Developer Guide*.
+    If you authenticate with username and password credentials, you can set up multi-factor 
+    authentication to add an additional level of security to your account. This feature is 
+    not available for username and API key credentials. For information about setting up 
+    and using multi-factor authentication, see :rax-devdocs:`Multi-factor authentication <cloud-identity/v2/developer-guide/#multifactor-authenication-ovw>`
+    in the *Cloud Identity Client Developer Guide*.
 
-    For information about other authentication methods with examples, see `authentication tokens`_ in the *Cloud Identity Client Developer Guide*.
+    For information about other authentication methods with examples, see :rax-devdocs:`Authentication Tokens <cloud-identity/v2/developer-guide/#document-api-operations/token-operations>`
+    in the *Cloud Identity Client Developer Guide*.
 
-.. _Multi-factor authentication: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html
-.. _authentication tokens: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html
 
 **Example: Authentication with US endpoint: XML request**
 
@@ -366,8 +369,7 @@ Authentication tokens are typically valid for 24 hours. Applications should be d
    If you are programmatically parsing an authentication response, please be aware that service names are stable for the life of the particular service and can be used as keys. You should also be aware that a user's service catalog can include multiple uniquely-named services which perform similar functions. For example, cloudServersOpenStack is the OpenStack version of compute whereas cloudServers is the legacy version of compute; the same user can have access to both services. In Auth 2.0, the service type attribute can be used as a key by which to recognize similar services; see the tip below.
 
 .. note::
-  Beginning with Auth 2.0, the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, `type="compute"` identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For additional information on Auth 2.0 (also known as the Cloud Identity Service), refer to the `Cloud Identity Client Developer Guide`_.
+  Beginning with Auth 2.0, the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, `type="compute"` identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For additional information on Auth 2.0 (also known as the Cloud Identity Service), refer to the :rax-devguide:`Cloud Identity Client Developer Guide <cloud-identity/v2>`.
 
 Load balancer service endpoints are published in the service catalog in the Auth response with the account number, which is a required element of the service endpoints. The examples shown here are for authentication for US customers. Customers with UK-based accounts see different values in the service catalog. See the next section for more information about service endpoints.
 
-.. _Cloud Identity Client Developer Guide: http://docs.rackspace.com

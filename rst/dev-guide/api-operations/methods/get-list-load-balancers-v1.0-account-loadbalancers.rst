@@ -23,7 +23,7 @@ The response object shows a limited set of load balancer attributes, including t
 *  ``updated``
 
 
-Use the changes-since query parameter to list all load balancers that have changed since the specified date/time. For example, using the URI ``/loadbalancers?changes-since=2011-05-19T08:07:08-0500`` lists all load balancers that have changed since May 19th, 2011 at 8:07:08 AM, GMT-5. See `Date and time format <http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Date_Time_Format.html>`__ for information about specifying the date/time.
+Use the changes-since query parameter to list all load balancers that have changed since the specified date/time. For example, using the URI ``/loadbalancers?changes-since=2011-05-19T08:07:08-0500`` lists all load balancers that have changed since May 19th, 2011 at 8:07:08 AM, GMT-5. See :ref:`Date and time format <date-time-format>` for information about specifying the date/time.
 
 To view deleted load balancers, add the query parameter ``?status=DELETED`` to the end of the URI. A deleted load balancer is immutable and irrecoverable.
 
