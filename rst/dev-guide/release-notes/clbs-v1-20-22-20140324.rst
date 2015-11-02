@@ -1,0 +1,24 @@
+API v1.20.22 release - March 24, 2014 
+----------------------------------------------
+
+What's new
+~~~~~~~~~~
+ 
+|no changes|
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Fixed issue where deleting error pages caused load balancer to go into an ERROR state if
+  SSL termination was subsequently enabled.
+- Fixed concurrency issue where deleting nodes on a load balancer would not always be
+  honored.
+- Fixed issue where updating the connection throttle was causing load balancers created
+  prior to the 1.19.32 release to go into an ERROR state.
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

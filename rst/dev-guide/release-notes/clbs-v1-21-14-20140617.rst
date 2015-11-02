@@ -1,0 +1,20 @@
+API v1.21.14 release - June 17, 2014 
+----------------------------------------------
+
+What's new
+~~~~~~~~~~
+ 
+|no changes|
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Resolved some issues that could cause load balancers to go to ERROR state when updating
+  a custom error page.
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

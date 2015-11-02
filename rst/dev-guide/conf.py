@@ -130,6 +130,17 @@ extlinks = {
     'rocket': ('https://objectrocket.com/%s', '')
 }
 
+# Global variables that are replaced by the specified value during the build process.
+
+rst_epilog = """
+.. |apiservice| replace:: Rackspace Cloud Servers API
+.. |no changes| replace:: None for this release.
+.. |contract version| replace:: v2
+"""
+
+#Software release.version currently deployed in production.
+release='v1.'
+
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 

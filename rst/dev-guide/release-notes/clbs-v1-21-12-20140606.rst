@@ -1,0 +1,22 @@
+API v1.21.12 release - June 6, 2014 
+----------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+- Added additional field ``currentConn`` to stats call for better connection tracking. 
+  
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Updated stats call to properly track SSL virtual servers.
+- Fixed a bug where modifying certain attributes of a load balancer with HTTPS Redirect
+  enabled could cause an ERROR state.
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
