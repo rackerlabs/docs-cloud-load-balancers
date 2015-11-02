@@ -79,7 +79,7 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'October 20, 2015'
+today = 'November 2, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
@@ -133,9 +133,9 @@ extlinks = {
 # Global variables that are replaced by the specified value during the build process.
 
 rst_epilog = """
-.. |apiservice| replace:: Rackspace Cloud Servers API
+.. |apiservice| replace:: Rackspace Cloud Load Balancers API
 .. |no changes| replace:: None for this release.
-.. |contract version| replace:: v2
+.. |contract version| replace:: v1
 """
 
 #Software release.version currently deployed in production.
