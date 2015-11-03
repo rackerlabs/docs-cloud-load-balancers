@@ -1,4 +1,6 @@
-API v1.19.32 release - February 26, 2014 
+.. version-v1.19.32-release-notes:
+
+v1.19.32, February 26, 2014 
 ----------------------------------------------
 
 What's new

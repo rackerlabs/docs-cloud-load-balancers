@@ -1,4 +1,6 @@
-API v1.23.7 release - October 7, 2014 
+.. version-v1.23.7-release-notes:
+
+v1.23.7, October 7, 2014 
 ----------------------------------------------
 
 What's new

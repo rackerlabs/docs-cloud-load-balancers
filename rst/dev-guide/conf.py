@@ -79,7 +79,7 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'November 2, 2015'
+today = 'November 3, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
@@ -135,7 +135,7 @@ extlinks = {
 rst_epilog = """
 .. |apiservice| replace:: Rackspace Cloud Load Balancers API
 .. |no changes| replace:: None for this release.
-.. |contract version| replace:: v1
+.. |contract version| replace:: 1.0
 """
 
 #Software release.version currently deployed in production.
@@ -193,7 +193,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'October 20, 2015'
+html_last_updated_fmt = 'November 3, 2015'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

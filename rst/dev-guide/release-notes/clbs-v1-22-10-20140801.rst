@@ -1,4 +1,6 @@
-API v1.22.10 release - August 1, 2014 
+.. version-v1.22.10-release-notes:
+
+v1.22.10, August 1, 2014 
 ----------------------------------------------
 
 What's new
