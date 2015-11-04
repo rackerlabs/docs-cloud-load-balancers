@@ -12,9 +12,18 @@ Show account-level usage
 
 Shows account-level usage.
 
-The load balancer usage reports provide a view of all transfer activity, average number of connections, and number of virtual IPs associated with the load balancing service. Current usage represents all usage recorded within the preceding 24 hours. Values for both ``incomingTransfer`` and ``outgoingTransfer`` are expressed in bytes transferred.
+The load balancer usage reports provide a view of all transfer activity, average number 
+of connections, and number of virtual IPs associated with the load balancing service. 
+Values for both ``incomingTransfer`` and ``outgoingTransfer`` are expressed in bytes 
+transferred.
 
-The optional ``startTime`` and ``endTime`` parameters can be used to filter all usage. If the ``startTime`` parameter is supplied but the ``endTime`` parameter is not, then all usage beginning with the ``startTime`` is provided. Likewise, if the ``endTime`` parameter is supplied but the ``startTime`` parameter is not, then all usage is returned up to the ``endTime`` specified.
+The optional ``startTime`` and ``endTime`` parameters can be used to filter all usage. 
+If neither the ``startTime`` parameter nor the ``endTime`` parameter is supplied, then 
+only the preceding 24 hours of usage are returned. If the ``startTime`` parameter 
+is supplied, but the ``endTime`` parameter is not, then all usage beginning with the 
+``startTime`` is provided. Likewise, if the ``endTime`` parameter is supplied but the 
+``startTime`` parameter is not, then all usage is returned up to the ``endTime`` 
+specified.
 
 .. note::
    Historical usage data is available for up to 90 days of service activity.
