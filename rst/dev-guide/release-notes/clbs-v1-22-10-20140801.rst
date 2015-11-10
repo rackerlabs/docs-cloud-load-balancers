@@ -6,19 +6,18 @@ v1.22.10, August 1, 2014
 What's new
 ~~~~~~~~~~
 
-- Added new TCP_STREAM load balancing protocol. 
-  Refer to  
-  :rax-devdocs:`protocols <cloud-load-balancers/v1/developer-guide/#document-api-operations/protocols>` for details.
+A new TCP_STREAM load balancing protocol was added. 
+For details, see 
+:rax-devdocs:`Protocols <cloud-load-balancers/v1/developer-guide/#document-api-operations/protocols>`.
 
 
 
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-- Deprecated all connection throttling attributes except for the maxConnections attribute.
-  Refer to :rax-devdocs:`throttle connections <cloud-load-balancers/v1/developer-guide/#document-api-operations/throttle-connections>`
-  for details.
-- Minor bug fixes.
+- Deprecated all connection throttling attributes except for the ``maxConnections`` attribute.
+  For details, see :rax-devdocs:`Throttle connections <cloud-load-balancers/v1/developer-guide/#document-api-operations/throttle-connections>`.
+- Implemented minor bug fixes.
 
   
 Known issues

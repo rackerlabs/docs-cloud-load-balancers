@@ -11,7 +11,7 @@ What's new
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-- Various improvements to backend services.
+Implemented various improvements to backend services.
 
 
   

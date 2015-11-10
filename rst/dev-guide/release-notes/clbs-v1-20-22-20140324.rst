@@ -11,12 +11,12 @@ What's new
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-- Fixed issue where deleting error pages caused load balancer to go into an ERROR state if
-  SSL termination was subsequently enabled.
-- Fixed concurrency issue where deleting nodes on a load balancer would not always be
-  honored.
-- Fixed issue where updating the connection throttle was causing load balancers created
-  prior to the 1.19.32 release to go into an ERROR state.
+- Fixed an issue that caused a load balancer to go into an ERROR state if error pages 
+  were deleted and then SSL termination was subsequently enabled.
+- Fixed a concurrency issue that did not allow the deletion of nodes on a load balancer.
+- Fixed an issue that caused load balancers created
+  before the 1.19.32 release to go into an ERROR state when the connection throttle was
+  updated.
 
 
   

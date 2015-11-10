@@ -11,8 +11,8 @@ What's new
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-- Resolved some issues that could cause load balancers to go to ERROR state when updating
-  a custom error page.
+Resolved some issues that could cause load balancers to go to an ERROR state when 
+a custom error page was updated.
 
 
   
