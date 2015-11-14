@@ -43,9 +43,9 @@
         <releaseinfo xmlns:svg="http://www.w3.org/2000/svg"
             xmlns:m="http://www.w3.org/1998/Math/MathML"
             xmlns:html="http://www.w3.org/1999/xhtml">API
-            v2.0</releaseinfo>
+            v2</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2015-09-08</pubdate>
+        <pubdate>2015-12-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -62,7 +62,7 @@
             <revision xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">
-                <date>2015-09-08</date>
+                <date>2015-12-11</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -76,7 +76,7 @@
         <raxm:metadata
             xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v1.0">loadbalancers</raxm:product>
+            <raxm:product version="v2">loadbalancers</raxm:product>
             <raxm:priority>20</raxm:priority>
         </raxm:metadata>
     </info>
@@ -220,6 +220,15 @@
             <title>Member</title>
             <para>A member is a back-end device providing a service on a
                 specified IP and port.</para>
+        </section>
+        <section xml:id="Pool-d1e436">
+            <title>Pool</title>
+            <para>A pool is a logical set of devices, such as web
+                servers, that you group together to receive and
+                process traffic. Instead of sending client traffic to
+                the destination IP address specified in the client
+                request, the system sends the request to any of the
+                servers that are members of that pool. </para>
         </section>
         <section xml:id="Health_Monitor-d1e271">
             <title>Health monitor</title>
@@ -2104,53 +2113,65 @@
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#loadbalancers">
-                    <wadl:method href="#listLoadBalancers"/>
-                    <wadl:method href="#createLoadBalancer"/>
-                    <wadl:method href="#bulkDeleteLoadBalancer"/>
+                    href="wadl/os-lbaasv2.0-ext.wadl#loadbalancers">
+                    <wadl:method href="#listLoadBalancersv2"/>
+                    <wadl:method href="#createLoadBalancerv2"/>
+                    
                 </wadl:resource>
                 <wadl:resource
-                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#loadBalancerId">
-                    <wadl:method href="#showLoadBalancer"/>
-                    <wadl:method href="#updateLoadBalancer"/>
-                    <wadl:method href="#deleteLoadBalancer"/>
+                    href="wadl/os-lbaasv2.0-ext.wadl#lb_id">
+                    <wadl:method href="#showLoadBalancerv2"/>
+                    <wadl:method href="#updateLoadBalancerv2"/>
+                    <wadl:method href="#deleteLoadBalancerv2"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
-        <section xml:id="Erropage-d1e666">
-            <title>Error pages</title>
-            <para>An <glossterm>error page</glossterm> is the HTML
-                file that is shown to an end user who is attempting to
-                access a load balancer <glossterm>member</glossterm>
-                that is offline/unavailable.</para>
-            <para>During provisioning, every load balancer is
-                configured with a default error page that gets
-                displayed when traffic is requested for an offline
-                member.</para>
-            <para>You can add a single custom error page with an
-                HTTP-based protocol to a load balancer. Page updates
-                override existing content. If a custom error page is
-                deleted, or the load balancer is changed to a non-HTTP
-                protocol, the default error page is restored.</para>
+        <section xml:id="Listeners-d1e666">
+            <title>Listeners</title>
+            <para>A <glossterm>listener</glossterm> is an
+                object containing data pertaining to the
+                "listening" port. This object defines the "frontend"
+                of the configuration and contains the backend data
+                such as pools and its members.</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#errorpage">
-                    <wadl:method href="#showErrorPage"/>
-                    <wadl:method href="#setErrorPage"/>
-                    <wadl:method href="#deleteErrorPage"/>
-                </wadl:resource>
-            </wadl:resources>
+                   href="wadl/os-lbaasv2.0-ext.wadl#Listeners">
+                   <wadl:method href="#listListenersv2"/>
+                   <wadl:method href="#createListenerv2"/>
+                </wadl:resource> 
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#listener_id">
+                    <wadl:method href="#showListenerv2"/>
+                    <wadl:method href="#updateListenerv2"/>
+                    <wadl:method href="#deleteListenerv2"/>
+                </wadl:resource> 
+            </wadl:resources> 
         </section>
-        <section xml:id="stats">
-            <title>Load balancer statistics</title>
-            <wadl:resources
+        <section xml:id="pools">
+            <title>Pools</title>
+            <para>A <glossterm>pool</glossterm> is a logical
+                set of devices, such as web servers, that you group
+                together to receive and process traffic. Instead of
+                sending client traffic to the destination IP address
+                specified in the client request, the system sends the
+                request to any of the servers that are members of that
+                pool. </para>
+                 <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
-                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#stats">
-                    <wadl:method href="#showStats"/>
+                    href="wadl/os-lbaasv2.0-ext.wadl#lb-pools">
+                    <wadl:method href="#listPoolsv2"/>
+                    <wadl:method href="#createPoolv2"/>
+                </wadl:resource> 
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#pool_id">
+                    <wadl:method href="#showPoolv2"/>
+                    <wadl:method href="#updatePoolv2"/>
+                    <wadl:method href="#deletePoolv2"/>
                 </wadl:resource>
-            </wadl:resources>
+                
+            </wadl:resources>  
         </section>
         <section xml:id="Members-d1e2173">
             <title>Members</title>
@@ -2289,7 +2310,7 @@
                             member. Must be an integer from 1 to
                             100.</td>
                         <td colspan="1">No</td>
-                    </tr>
+                    </tr>  
                 </tbody>
             </table>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -2332,7 +2353,24 @@
                     </tr>
                 </tbody>
             </table>
+            
             <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#lb-members">
+                    <wadl:method href="#listMembersv2"/>
+                    <wadl:method href="#createMemberv2"/>
+                </wadl:resource> 
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#member_id">
+                    <wadl:method href="#showMemberv2"/>
+                    <wadl:method href="#updateMemberv2"/>
+                    <wadl:method href="#deleteMemberv2"/>
+                </wadl:resource>
+                
+            </wadl:resources>
+            
+        <!--      <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
                     href="wadl/rax-cloudLoadBalancers-api-v1.wadl#nodes">
@@ -2350,9 +2388,9 @@
                     href="wadl/rax-cloudLoadBalancers-api-v1.wadl#events">
                     <wadl:method href="#listNodeEvents"/>
                 </wadl:resource>
-            </wadl:resources>
+            </wadl:resources>  -->
         </section>
-        <section xml:id="Virtual_IPs-d1e2754">
+        <!--      <section xml:id="Virtual_IPs-d1e2754">
             <title>Virtual IPs</title>
             <para>A <glossterm>virtual IP</glossterm> (VIP) makes a
                 load balancer accessible by clients. The load
@@ -2458,8 +2496,8 @@
                     <wadl:method href="#deleteVirtualIp"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="allowed_domains">
+        </section> -->
+        <!--      <section xml:id="allowed_domains">
             <title>Allowed domains</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -2468,8 +2506,8 @@
                     <wadl:method href="#listAllowedDomains"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="Usage_Reports-d1e3009">
+        </section> -->
+        <!--     <section xml:id="Usage_Reports-d1e3009">
             <title>Usage reports</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -2490,8 +2528,8 @@
                     <wadl:method href="#listBillableLoadBalancers"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="Access_Lists-d1e3160">
+        </section>  -->
+        <!--     <section xml:id="Access_Lists-d1e3160">
             <title>Access lists</title>
             <para>The access list management feature allows
                 fine-grained network access controls to be applied to
@@ -2599,9 +2637,9 @@
                     <wadl:method href="#deleteNetwork"/>
                 </wadl:resource>  
             </wadl:resources>
-        </section>
-        <section xml:id="Monitors-d1e3370">
-            <title>Monitors</title>
+        </section>  -->
+        <section xml:id="Health_Monitors-d1e2974">
+            <title>Health Monitors</title>
             <para>The load balancing service includes a health
                 monitoring operation that periodically checks your
                 back-end members to ensure they are responding
@@ -2614,158 +2652,180 @@
                 member is operating properly before allowing it to
                 service traffic. Only one health monitor is allowed to
                 be enabled on a load balancer at a time.</para>
-            <para>As part of your strategy for monitoring connections,
-                you should consider defining secondary members that
-                provide failover for effectively routing traffic in
-                case the primary member fails. This is an additional
-                feature that ensures that you remain up in case your
-                primary member fails.</para>
-            <para>Every health monitor has a <code>type</code>
-                attribute to signify what kind of monitor it
-                is.</para>
-            <table rules="all">
-                <caption>Health monitor types</caption>
-                <?dbfo keep-together="always"?>
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Name</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="left">
-                        <td colspan="1">PING</td>
-                        <td colspan="3">Health monitor that pings the
-                            connection using ICMP.</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">TCP</td>
-                        <td colspan="3">Health monitor is a connect
-                            monitor to test the TCP connection.</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">HTTP</td>
-                        <td colspan="3">Health monitor is an HTTP
-                            monitor.</td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="1">HTTPS</td>
-                        <td colspan="3">Health monitor is an HTTPS
-                            monitor.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <note>
-                <para>When deleting a health monitor of any type,
-                    every member on that load balancer that is enabled
-                    or has failed and is in OFFLINE status has its
-                    status updated to ONLINE regardless of the health
-                    of the member.</para>
-            </note>
-            <formalpara><title>Connect Monitor</title>
-                <para>The monitor connects to each member on its
-                    defined port to ensure that the service is
-                    listening properly. The connect monitor is the
-                    most basic type of health check and does no
-                    post-processing or protocol specific health
-                    checks. It includes several configurable
-                    properties. The following table lists the required
-                    and optional attributes for Monitor Connections:
-                        <table rules="all">
-                        <caption>Required and Optional Attributes for
-                            Monitor Connections</caption>
-                        <thead>
-                            <tr>
-                                <td colspan="1">Name </td>
-                                <td colspan="3">Description</td>
-                                <td colspan="1">Required</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="1"
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#lb-health_monitors">
+                    <wadl:method href="#createHealthMonitorv2"/>
+                    <wadl:method href="#listHealthMonitorsv2"/>
+                </wadl:resource>
+                <wadl:resource
+                    href="wadl/os-lbaasv2.0-ext.wadl#health_monitor_id_hm">
+                    <wadl:method href="#showHealthMonitorv2"/>
+                    <wadl:method href="#updateHealthMonitorv2"/>
+                    <wadl:method href="#deleteHealthMonitorv2"/>
+                </wadl:resource>
+            </wadl:resources>
+            <section xml:id="Check_Health_Monitors-d1e4365" security="reviewer">
+                <title>Reviewer: Check this old v1 section to see if
+                    any info needs to be retained for the Health
+                    Monitor landing page (Section 4.5)</title>
+                <para>As part of your strategy for monitoring
+                    connections, you should consider defining
+                    secondary members that provide failover for
+                    effectively routing traffic in case the primary
+                    member fails. This is an additional feature that
+                    ensures that you remain up in case your primary
+                    member fails.</para>
+                <para>Every health monitor has a <code>type</code>
+                    attribute to signify what kind of monitor it
+                    is.</para>
+                <table rules="all">
+                    <caption>Health monitor types</caption>
+                    <?dbfo keep-together="always"?>
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Name</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr align="left">
+                            <td colspan="1">PING</td>
+                            <td colspan="3">Health monitor that pings
+                                the connection using ICMP.</td>
+                        </tr>
+                        <tr align="left">
+                            <td colspan="1">TCP</td>
+                            <td colspan="3">Health monitor is a
+                                connect monitor to test the TCP
+                                connection.</td>
+                        </tr>
+                        <tr align="left">
+                            <td colspan="1">HTTP</td>
+                            <td colspan="3">Health monitor is an HTTP
+                                monitor.</td>
+                        </tr>
+                        <tr align="left">
+                            <td colspan="1">HTTPS</td>
+                            <td colspan="3">Health monitor is an HTTPS
+                                monitor.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <note>
+                    <para>When deleting a health monitor of any type,
+                        every member on that load balancer that is
+                        enabled or has failed and is in OFFLINE status
+                        has its status updated to ONLINE regardless of
+                        the health of the member.</para>
+                </note>
+                <formalpara>
+                    <title>Connect Monitor</title>
+                    <para>The monitor connects to each member on its
+                        defined port to ensure that the service is
+                        listening properly. The connect monitor is the
+                        most basic type of health check and does no
+                        post-processing or protocol specific health
+                        checks. It includes several configurable
+                        properties. The following table lists the
+                        required and optional attributes for Monitor
+                        Connections: <table rules="all">
+                            <caption>Required and Optional Attributes
+                                for Monitor Connections</caption>
+                            <thead>
+                                <tr>
+                                   <td colspan="1">Name </td>
+                                   <td colspan="3">Description</td>
+                                   <td colspan="1">Required</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td colspan="1"
                                    >attemptsBefore<?sbr?>Deactivation</td>
-                                <td colspan="3">
+                                   <td colspan="3">
                                    <para>Number of permissible monitor
                                    failures before removing a member
                                    from rotation. Must be a number
                                    between 1 and 10.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">delay</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">delay</td>
+                                   <td colspan="3">
                                    <para>The minimum number of seconds
                                    to wait before executing the health
                                    monitor. Must be a number between 1
                                    and 3600.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">timeout</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">timeout</td>
+                                   <td colspan="3">
                                    <para>Maximum number of seconds to
                                    wait for a connection to be
                                    established before timing out. Must
                                    be a number between 1 and 300.
                                    </para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">type</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">type</td>
+                                   <td colspan="3">
                                    <para>Type of the health monitor.
                                    Must be specified as "CONNECT" to
                                    monitor connections.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </para>
-            </formalpara>
-            <formalpara>
-                <title>Monitor HTTP and HTTPS</title>
-                <para>The HTTP and HTTPS monitor is more intelligent
-                    than the connect monitor. It is capable of
-                    processing an HTTP or HTTPS response to determine
-                    the condition of a member. It supports the same
-                    basic properties as the connect monitor and
-                    includes additional attributes that are used to
-                    evaluate the HTTP response. The user can supply an
-                    optional <code>hostHeader</code> attribute for the
-                    HTTP and HTTPS health monitor to specify a host
-                    for which the health monitors will check.
-                    <?sbr?>The following table lists the required and
-                    optional attributes for Monitor HTTP and
-                        HTTPS:<?sbr?><table rules="all">
-                        <caption>Required and Optional Attributes for
-                            Monitor HTTP and HTTPS</caption>
-                        <thead>
-                            <tr>
-                                <td colspan="1">Name </td>
-                                <td colspan="3">Description</td>
-                                <td colspan="1">Required</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="1"
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </para>
+                </formalpara>
+                <formalpara>
+                    <title>Monitor HTTP and HTTPS</title>
+                    <para>The HTTP and HTTPS monitor is more
+                        intelligent than the connect monitor. It is
+                        capable of processing an HTTP or HTTPS
+                        response to determine the condition of a
+                        member. It supports the same basic properties
+                        as the connect monitor and includes additional
+                        attributes that are used to evaluate the HTTP
+                        response. The user can supply an optional
+                            <code>hostHeader</code> attribute for the
+                        HTTP and HTTPS health monitor to specify a
+                        host for which the health monitors will check.
+                        <?sbr?>The following table lists the required
+                        and optional attributes for Monitor HTTP and
+                            HTTPS:<?sbr?><table rules="all">
+                            <caption>Required and Optional Attributes
+                                for Monitor HTTP and HTTPS</caption>
+                            <thead>
+                                <tr>
+                                   <td colspan="1">Name </td>
+                                   <td colspan="3">Description</td>
+                                   <td colspan="1">Required</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td colspan="1"
                                    >attemptsBefore<?sbr?>Deactivation</td>
-                                <td colspan="3">
+                                   <td colspan="3">
                                    <para>Number of permissible monitor
                                    failures before removing a member
                                    from rotation. Must be a number
                                    between 1 and 10.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">bodyRegex</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">bodyRegex</td>
+                                   <td colspan="3">
                                    <para>A regular expression that
                                    will be used to evaluate the
                                    contents of the body of the
@@ -2797,84 +2857,75 @@
                                    2048 | egrep
                                    "YOUR_REGULAR_EXPRESSION"</para>
                                    </note>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">delay</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">delay</td>
+                                   <td colspan="3">
                                    <para>The minimum number of seconds
                                    to wait before executing the health
                                    monitor. Must be a number between 1
                                    and 3600.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">hostHeader</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">hostHeader</td>
+                                   <td colspan="3">
                                    <para>The name of a host for which
                                    the health monitors will
                                    check.</para>
-                                </td>
-                                <td colspan="1">No</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">path</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">No</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">path</td>
+                                   <td colspan="3">
                                    <para>The HTTP path that will be
                                    used in the sample request.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">statusRegex</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">statusRegex</td>
+                                   <td colspan="3">
                                    <para>A regular expression that
                                    will be used to evaluate the HTTP
                                    status code returned in the
                                    response. </para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">timeout</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">timeout</td>
+                                   <td colspan="3">
                                    <para>Maximum number of seconds to
                                    wait for a connection to be
                                    established before timing out. Must
                                    be a number between 1 and 300.
                                    </para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">type</td>
-                                <td colspan="3">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                                <tr>
+                                   <td colspan="1">type</td>
+                                   <td colspan="3">
                                    <para>Type of the health monitor.
                                    Must be specified as "HTTP" to
                                    monitor an HTTP response or "HTTPS"
                                    to monitor an HTTPS
                                    response.</para>
-                                </td>
-                                <td colspan="1">Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </para>
-            </formalpara>
-            
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource
-                    href="wadl/rax-cloudLoadBalancers-api-v1.wadl#healthmonitor">
-                    <wadl:method href="#showHealthMonitor"/>
-                    <wadl:method href="#updateHealthMonitor"/>
-                    <wadl:method href="#deleteHealthMonitor"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
-        <section xml:id="Sessions-d1e3728">
+                                   </td>
+                                   <td colspan="1">Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </para>
+                </formalpara>
+            </section>
+        </section> 
+        <!--     <section xml:id="Sessions-d1e3728">
             <title>Session persistence</title>
             <para>Session persistence is a feature of the load
                 balancing service that forces multiple requests, of
@@ -2970,8 +3021,8 @@
                     <wadl:method href="#disableSessionPersistence"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="log_connections">
+        </section>  -->
+        <!--     <section xml:id="log_connections">
             <title>Log connections</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -2981,8 +3032,8 @@
                     <wadl:method href="#enableConnectionLogging"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="throttle_connections">
+        </section> -->
+        <!--      <section xml:id="throttle_connections">
             <title>Throttle connections</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -2994,8 +3045,8 @@
                     <wadl:method href="#deleteConnectionThrottle"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="content_caching">
+        </section> -->
+        <!--      <section xml:id="content_caching">
             <title>Content caching</title>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -3005,8 +3056,8 @@
                     <wadl:method href="#enableContentCaching"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="protocols">
+        </section>  -->
+        <!--      <section xml:id="protocols">
             <title>Protocols</title>
             <para>All load balancers must define the protocol of the
                 service which is being load balanced. The protocol
@@ -3238,8 +3289,8 @@
                     <wadl:method href="#listProtocols"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="Algorithms-d1e4367">
+        </section>  -->
+        <!--     <section xml:id="Algorithms-d1e4367">
             <title>Algorithms</title>
             <para>All load balancers utilize an algorithm that defines
                 how traffic should be directed between back-end
@@ -3309,8 +3360,8 @@
                     <wadl:method href="#listAlgorithms"/>
                 </wadl:resource>
             </wadl:resources>
-        </section>
-        <section xml:id="SSLTermination-d1e2479">
+        </section> -->
+        <!--      <section xml:id="SSLTermination-d1e2479">
             <title>SSL termination</title>
             <para>You can configure SSL termination only on load
                 balancers with non-secure protocols. For example, SSL
@@ -3363,7 +3414,7 @@
                     <wadl:method href="#deleteSSLTermination"/>
                 </wadl:resource>
             </wadl:resources>
-            <section xml:id="CertificateMappings">
+         <section xml:id="CertificateMappings">
                 <title>Certificate Mappings</title>
                 <para> Certificate mappings allow for multiple
                     certificates to be used on SSL-terminated load
@@ -3400,9 +3451,9 @@
                     </wadl:resource>
                 </wadl:resources>
              </section>
-        </section>
+        </section> -->
         
-        <section xml:id="Metadata-d1e2173">
+        <!--   <section xml:id="Metadata-d1e2173">
             <title>Metadata</title>
             <para>Metadata can be associated with each load balancer
                 and each member for the client's personal use. It is
@@ -3439,7 +3490,7 @@
                     <wadl:method href="#deleteNodeMetadataItem"/>
                 </wadl:resource>
             </wadl:resources> 
-        </section>  
+        </section>  -->
     </chapter>
     
     <glossary>
@@ -3486,11 +3537,32 @@
                     as part of its configuration.</para>
             </glossdef>
         </glossentry>
+        <glossentry>
+            <glossterm>listener</glossterm>
+            <glossdef>
+                <para>A listener is an object containing data
+                    pertaining to the "listening" port. This object
+                    defines the "frontend" of the configuration and
+                    contains the backend data such as pools and its
+                    members.</para>
+            </glossdef>
+        </glossentry>
         <glossentry xml:id="Node-d1e019">
             <glossterm>member</glossterm>
             <glossdef>
                 <para>A member is a back-end device providing a
                     service on a specified IP and port.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>pool</glossterm>
+            <glossdef>
+                <para>A pool is a logical set of devices, such as web
+                    servers, that you group together to receive and
+                    process traffic. Instead of sending client traffic
+                    to the destination IP address specified in the
+                    client request, the system sends the request to
+                    any of the servers that are members of that pool. </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Session-Persistence-d1e021">
