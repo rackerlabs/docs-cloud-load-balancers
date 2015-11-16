@@ -142,7 +142,21 @@
                             <webhelpDefaultTopic>LB_Overview.html</webhelpDefaultTopic>
                             <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v1.0/clb-getting-started/content</canonicalUrlBase>
                         </configuration>
-                    </execution> 
+                    </execution>
+                    <execution>
+                        <id>clb-getting-started-external-2</id>
+                        <goals>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration> 
+                            <!-- this is the public-facing client Getting Started guide -->
+                            <!-- this document that will be published as clb-getting-started-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+                            <includes>clb-getting-started-2.xml</includes>
+                            <webhelpDefaultTopic>LB_Overview.html</webhelpDefaultTopic>
+                            <canonicalUrlBase>http://docs.rackspace.com/loadbalancers/api/v2.0/clb-getting-started/content</canonicalUrlBase>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <!-- Global config for all docs -->

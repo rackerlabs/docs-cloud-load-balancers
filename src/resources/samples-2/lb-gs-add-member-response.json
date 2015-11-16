@@ -1,0 +1,11 @@
+{
+    "member": {
+         "address": "10.0.0.8",
+         "admin_state_up": true,
+         "id": "9a7aff27-fd41-4ec1-ba4c-3eb92c629313",
+         "protocol_port": 80,
+         "subnet_id": "subnet_id",
+         "tenant_id": "tenant_id",
+         "weight": 1
+    }
+}
