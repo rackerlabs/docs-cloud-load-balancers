@@ -65,279 +65,7 @@
                     </itemizedlist>
                 </revdescription>
             </revision>
-            <revision>
-                <date>2015-02-25</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Removed London endpoint, since we
-                                now have one global endpoint for the
-                                Rackspace Authentication Service. See
-                                   <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2014-08-01</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated information about choosing
-                                which regionalized endpoint to use in
-                                   <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2014-07-23</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information about choosing
-                                which regionalized endpoint to use in
-                                   <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2014-07-15</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated information for locating
-                                your account number (tenant ID) in the
-                                Cloud Control Panel (see <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2014-06-06</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected example for Create Load
-                                Balancer Response: JSON. See <xref
-                                   linkend="Create_Load_Balancer"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2014-01-03</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected link to product
-                                information for the Load Balancers
-                                service. See <xref
-                                   linkend="LB_Overview"/>.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-12-11</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Revised information for locating
-                                your API Key and account number in the
-                                Cloud Control Panel. See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-11-19</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added additional information for
-                                using cURL commands. See <xref
-                                   linkend="DB_using-curl-cli"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-10-23</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information for Hong Kong
-                                (HKG) endpoint (see <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-09-26</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information for Northern
-                                Virginia (IAD) endpoint (see <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-06-17</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated authentication information.
-                                See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added information for Sydney (SYD)
-                                endpoint (see <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-06-04</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated to use term Cloud Control
-                                Panel (rather than Control Panel)
-                                throughout.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-02-05</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected cURL Create Load Balancer
-                                Request: XML example (refer to <xref
-                                   linkend="Create_Load_Balancer"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-10-25</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated auth response examples
-                                (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-10-09</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information for pricing and
-                                service level (refer to <xref
-                                   linkend="Pricing_SLA-d1e1362"
-                                />).</para>
-                        </listitem>
-                        <listitem>
-                            <para>Updated information for cURL
-                                command-line options (see <xref
-                                   linkend="DB_using-curl-cli"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-08-02</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected request examples for
-                                authentication (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-07-17</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated for Auth 2.0 (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-06-13</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added link to <citetitle>Cloud Load
-                                   Balancers Developer
-                                   Guide</citetitle>  (see <xref
-                                   linkend="LB_Overview"/>).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-06-06</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated service catalog information
-                                for authentication (see <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-03-07</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Initial Release.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>           
+                  
         </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Getting Started Guide</raxm:displayname>
@@ -402,13 +130,13 @@
     </chapter>
     <chapter xml:id="Create_Cloud_Server">
         <title>Create a new Cloud Server</title>
-        <para>In this chapter you will create two new Cloud Servers
-            (or use two existing Cloud Servers) to set up as nodes for
+        <para>In this chapter you will create a new Cloud Server (or
+            use an existing Cloud Server) to set up as a member for
             your load balancer.</para>
         <note>
-            <para>If you are using existing Cloud Servers on your
-                account, skip Steps 1-5 and go directly to Step 6
-                below.</para>
+            <para>If you are using an existing Cloud Server on your
+                account, skip Steps 1-4 below and go directly to Step
+                5.</para>
         </note>
         <para>Create a Cloud Server using the Cloud Servers section of
             the Cloud Control Panel (login here: <link
@@ -417,7 +145,7 @@
         <note>
             <para>You can also create a Cloud Server using the Cloud
                 Servers API. Refer to the <citetitle><link
-                    xlink:href="http://docs.rackspace.com/">Cloud
+                    xlink:href="http://developer.rackspace.com/docs/">Cloud
                     Servers API Developer Guide</link></citetitle> for
                 details.</para>
         </note>
@@ -444,21 +172,13 @@
                         Server</guibutton>. </para>
             </step>
             <step>
-                <para> Create a second Cloud Server by performing
-                    Steps 1-4 again.</para>
-            </step>
-            <step>
-                <para>Record the IP addresses of your Cloud Servers
-                    below (from the information displayed in the Cloud
+                <para>Record the IP address of your Cloud Server below
+                    (from the information displayed in the Cloud
                     Servers section of the Cloud Control Panel):<itemizedlist>
                         <listitem>
-                            <para>FIRST Cloud Server IP Address =
+                            <para>Cloud Server IP Address =
                                 _______________________________________
                             </para>
-                        </listitem>
-                        <listitem>
-                            <para>SECOND Cloud Server IP Address =
-                                _______________________________________</para>
                         </listitem>
                     </itemizedlist></para>
             </step>
@@ -617,19 +337,6 @@
                     </tr>
                 </tbody>
             </table>
-            <note>
-                <title>ppxml</title>
-                <para>For commands that return an XML response, you
-                    can append the following code to the command to
-                    call <code>ppxml</code> to pretty-print output: </para>
-                <programlisting language="bash" role="gutter: false">| ppxml</programlisting>
-                <para>If you do not want to pretty-print XML output,
-                    omit this code. </para>
-                <para>In order to use <code>ppxml</code>, you need to
-                    set the <code>ppxml</code> alias as
-                    follows:</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'</programlisting>
-            </note>
             <note xml:id="json_tool">
                 <title>json.tool</title>
                 <para>For commands that return a JSON response, you
@@ -840,11 +547,11 @@
         <para>Notice that you authenticate using a special URL for
             Cloud authentication services. For example, you may use
                 <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
-            as shown in the following Authenticate Request examples.
+            as shown in the following Authenticate Request example.
             Note that the <code>v2.0</code> component in the URL
             indicates that you are using version 2.0 of the Cloud Auth
             API.</para>
-        <example>
+        <example security="writeronly">
             <title>cURL Authenticate Request: XML</title>
             <?dbfo keep-together="always"?>
             <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
@@ -875,7 +582,7 @@
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
         </example>
-        <example>
+        <example security="writeronly">
             <title>Authenticate Response: XML</title>
             <programlisting language="xml"><xi:include href="../../src/resources/samples/auth-20.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
@@ -962,17 +669,18 @@
                 </listitem>
             </itemizedlist>
         </note>
+        <para security="reviewer">Reviewer: please give me an example
+            of the actual v2 service catalog with the v2 LB endpoint
+            that I can add to the example above and in the section
+            that follows.</para>
         <para>The <code>publicURL</code> endpoints for the services
             (for example
-                <code>https://servers.api.rackspacecloud.com/v1.0/1100111</code>)
-            are also returned in the response.</para>
-        <para>You will find the actual account number after the final
-            '/' in the <code>publicURL</code> field. In this example,
-            you can see that the account number is 1100111. You need
-            to specify your account number on most of the Cloud Load
-            Balancers API calls, wherever you see the field <emphasis
-                role="bold">your_acct_id</emphasis> specified in the
-            examples in this guide.</para>
+                <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code>)
+            are also returned in the response. To call an API
+            operation, add the URL for the operation to the end of the
+            service endpoint. For example, the URL to Create a
+            loadbalancer is
+                <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/loadbalancers</code>.</para>
         <para>Load balancer service endpoints are published in the
             service catalog in the Auth response with the account
             number, which is a required element of the service
@@ -999,7 +707,7 @@
                     >http://www.rackspace.com/knowledge_center/article/about-regions</link>.</para>
         </tip>
         <para>
-            <table rules="all">
+            <table rules="all" security="writeronly">
                 <?dbfo keep-together="always"?>
                 <caption>Regionalized Service Endpoints</caption>
                 <thead>
@@ -1022,7 +730,7 @@
                     <tr align="left">
                         <td colspan="1">Northern Virginia (IAD) </td>
                         <td colspan="4">
-                            <code>https://iad.networks.api.rackspacecloud.com/v2.0/</code></td>
+                            <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code></td>
                     </tr>
                     <tr align="left">
                         <td colspan="1">London (LON)</td>
@@ -1041,8 +749,27 @@
                     </tr>
                 </tbody>
             </table>
+            <table rules="all">
+                <?dbfo keep-together="always"?>
+                <caption>Regionalized Service Endpoint</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Region</td>
+                        <td colspan="4">Endpoint</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr align="left">
+                        <td colspan="1">Northern Virginia (IAD) </td>
+                        <td colspan="4">
+                            <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         </para>
-        <para>
+        <para security="writeronly">
             <emphasis role="bold">Since you are load balancing Cloud
                 Servers</emphasis> in this guide, you can determine
             the appropriate endpoint to select by viewing your Cloud
@@ -1052,7 +779,7 @@
             your load balancer, devices are in close proximity to each
             other and can take advantage of ServiceNet connectivity
             for free data transfer between services. </para>
-        <note>
+        <note security="writeronly">
             <para>All examples in this guide assume that you are
                 operating against the DFW datacenter, however if you
                 are using a different datacenter, be sure to use the
@@ -1061,7 +788,7 @@
         </note>
         <para>When making a Cloud Load Balancers API call, place the
             endpoint at the beginning of the request URL, for example:
-                <code>https://dfw.networks.api.rackspacecloud.com/v2.0/</code><code>lbaas/loadbalancers</code>,
+                <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code><code>loadbalancers</code>,
             as you can see in the cURL Create load balancer request
             example in <xref linkend="Create_Load_Balancer"/>. Note
             that the <code>v2.0</code> component in the URL indicates
@@ -1101,14 +828,19 @@
             <listitem>
                 <para>vip_subnet_id =
                     "013d3059-87a4-45a5-91e9-d721068ae0b2"</para>
-                <para security="reviewer">Reviewer: please provide instructions for how to
-                    get the vip_subnet_id.</para>
+                <para security="reviewer">The UUID of the subnet on
+                    which to allocate the virtual IP (VIP)
+                    address.</para>
+                <para security="reviewer">Reviewer: please provide
+                    instructions for how to get the
+                    vip_subnet_id.</para>
             </listitem>
             <listitem>
-                <para>vip_address =
-                    "013d3059-87a4-45a5-91e9-d721068ae0b2"</para>
+                <para>vip_address = "10.0.0.4"</para>
+                <para>The IP address of the VIP.</para>
                 <note>
-                    <para>This field is optional.</para>
+                    <para>This field is optional. Omit it to have the
+                        system provide the VIP.</para>
                 </note>
                 <para security="reviewer">Reviewer: please provide
                     instructions for how to get the
@@ -1117,10 +849,7 @@
             <listitem>
                 <para>admin_state_up = "true"</para>
                 <para>Specify that the admin state for the new load
-                    balancer is up.</para>
-                <para security="reviewer">Reviewer: please provide
-                    instructions for how to get the
-                    vip_address.</para>
+                    balancer is up (true).</para>
             </listitem>
             <listitem security="writeronly">
                 <para>description = "my_first_lb"</para>
@@ -1140,17 +869,11 @@
                         <xref linkend="Create_Cloud_Server"/>:</para>
                 <itemizedlist>
                     <listitem>
-                        <para><code>&lt;node address="</code><emphasis role="bold">&lt;IP
-                            address of FIRST cloud server></emphasis><code>"
-                                port="80" condition="ENABLED"/></code><note>
-                                <para>Although you could add the nodes
-                                   for both of your Cloud Servers in
-                                   this Create Load Balancer call, you
-                                   will instead add the node for your
-                                   second Cloud Server using the
-                                   separate Add Node call in <xref
-                                   linkend="Add_Node"/>.</para>
-                            </note></para>
+                        <para><code>&lt;node address="</code><emphasis
+                                role="bold">&lt;IP address of FIRST
+                                cloud server></emphasis><code>"
+                                port="80"
+                            condition="ENABLED"/></code></para>
                     </listitem>
                 </itemizedlist>
             </listitem>
@@ -1192,7 +915,7 @@
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/loadbalancers'</uri> | python -m json.tool</programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>loadbalancers'</uri> | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1236,7 +959,7 @@
             <para>This operation provides detailed output for a
             specific load balancer configured and associated with your
             account. This operation is not capable of returning
-            details for a load balancer which has been deleted. </para>
+            details for a load balancer that has been deleted. </para>
         <para>This operation does not require a request body. </para>
         <para>The examples list the details for the load balancer
             (with <emphasis role="bold">load_balancer_id</emphasis>,
@@ -1258,7 +981,7 @@
             <programlisting language="bash"><command>curl</command> <option>-s</option>  \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>'  \
 <option>-H 'Accept: application/json'</option>  \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/loadbalancers/</uri><emphasis role="bold">load_balancer_id</emphasis><uri>'</uri> | python -m json.tool</programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>loadbalancers/</uri><emphasis role="bold">load_balancer_id</emphasis><uri>'</uri> | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1338,6 +1061,9 @@
                     b36c20d0-18e9-42ce-88fd-82a35977ee8d",
                     "https://barbican.endpoint/containers/
                     c36c20d0-18e9-42ce-88fd-82a35977ee8e"</para>
+                <para security="reviewer">Reviewer: how do we explain to the user where to
+                    get these container refs for the previous 2
+                    arguments?</para>
             </listitem>
             <listitem security="writeronly">
                 <para>description = "my_first_lb"</para>
@@ -1360,15 +1086,8 @@
                         <para><code>&lt;node address="</code><emphasis
                                 role="bold">&lt;IP address of FIRST
                                 cloud server></emphasis><code>"
-                                port="80" condition="ENABLED"/></code><note>
-                                <para>Although you could add the nodes
-                                   for both of your Cloud Servers in
-                                   this Create Load Balancer call, you
-                                   will instead add the node for your
-                                   second Cloud Server using the
-                                   separate Add Node call in <xref
-                                   linkend="Add_Node"/>.</para>
-                            </note></para>
+                                port="80"
+                            condition="ENABLED"/></code></para>
                     </listitem>
                 </itemizedlist>
             </listitem>
@@ -1416,7 +1135,7 @@
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/loadbalancers'</uri> | python -m json.tool</programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>loadbalancers'</uri> | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1455,7 +1174,7 @@
     </chapter>
     <chapter xml:id="Create_Pool">
         <title>Create pool</title>
-        <para>Next you will create a Pool. A pool is a logical set of
+        <para>Next you will create a pool. A pool is a logical set of
             devices, such as web servers, that you group together to
             receive and process traffic. Instead of sending client
             traffic to the destination IP address specified in the
@@ -1532,7 +1251,7 @@
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/pools'</uri> | python -m json.tool</programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>pools'</uri> | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values for all the cURL examples
@@ -1631,7 +1350,7 @@
 '{
     "member": [
         {
-            "address": "&lt;<emphasis role="bold">IP address of FIRST cloud server</emphasis>>",
+            "address": "&lt;<emphasis role="bold">IP address of Cloud Server</emphasis>>",
             "admin_state_up": true,
             "protocol_port": 80,
             "subnet_id": "<emphasis role="bold">subnet_id</emphasis>",
@@ -1641,16 +1360,16 @@
 }' \
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/pools/</uri><emphasis role="bold">pool_id</emphasis><uri>/members'</uri> | python -m json.tool</programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>pools/</uri><emphasis role="bold">pool_id</emphasis><uri>/members'</uri> | python -m json.tool</programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values:<itemizedlist spacing="compact">
                 <listitem>
-                    <para><emphasis role="bold">IP address of FIRST
-                            cloud server</emphasis> &mdash; the IP
-                        address that you recorded for your first Cloud
-                        Server, created at the beginning of this
-                        Getting Started.</para>
+                    <para><emphasis role="bold">IP address of Cloud
+                            Server</emphasis> &mdash; the IP address
+                        that you recorded for your Cloud Server,
+                        created at the beginning of this Getting
+                        Started.</para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold"
@@ -1670,10 +1389,17 @@
                     <para><emphasis role="bold">subnet_id</emphasis>
                         &mdash; specifies the UUID of the subnet in
                         which to access this member</para>
+                    <para security="reviewer">Reviewer: how do we explain to the user
+                        where to get the subnet_id?</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">pool_id</emphasis>
+                        &mdash; specifies the UUID of the associated
+                        pool</para>
                 </listitem>
             </itemizedlist></para>
-        <para>The following example shows the response for Add
-            Node:</para>
+        <para>The following example shows the response for Add member
+            to pool:</para>
         <example security="writeronly">
             <title>Add member to pool response: XML</title>
             <programlisting language="xml"><xi:include href="../../src/resources/samples/lb-gs-add-nodes-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
@@ -1692,10 +1418,8 @@
     </chapter>
     <chapter xml:id="Create_Health_Monitor">
         <title>Create health monitor</title>
-        <para>Assume that you want to change the algorithm for your
-            load balancer from RANDOM to LEAST_CONNECTIONS. You can
-            use the Update Load Balancer Attributes API call to
-            accomplish this task. </para>
+        <para>In this section you will create a health monitor for
+            your pool.</para>
         <para>Assume that want to configure the health monitor as follows:<itemizedlist>
                 <listitem>
                     <para>"admin_state_up" = true</para>
@@ -1759,7 +1483,7 @@
 -H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
 <option>-H 'Content-Type: application/json'</option> \
 <option>-X PUT</option> \
-<uri>'https://dfw.networks.api.rackspacecloud.com/v2.0/</uri><uri>lbaas/health_monitors/</uri><uri>'</uri></programlisting>
+<uri>'https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</uri><uri>health_monitors/</uri><uri>'</uri></programlisting>
         </example>
         <para>Remember to replace the names in the examples above with
             their actual respective values:<itemizedlist
@@ -1767,7 +1491,8 @@
                 <listitem>
                     <para><emphasis role="bold">pool_id</emphasis>
                         &mdash; the pool id associated with this
-                        health monitor.</para>
+                        health monitor, as returned by the Create pool
+                        call.</para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold"

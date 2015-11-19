@@ -252,7 +252,7 @@
                         <code>admin_state_up</code>
                     </para>
                 </listitem>
-                <listitem>
+                <listitem security="writeronly">
                     <para>
                         <code>listeners</code>
                     </para>

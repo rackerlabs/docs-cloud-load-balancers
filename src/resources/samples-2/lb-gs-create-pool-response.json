@@ -7,7 +7,7 @@
         "lb_algorithm": "ROUND_ROBIN",
         "listeners": [
             {
-                "id": "listener_id"
+                "id": "39de4d56-d663-46e5-85a1-5b9d5fa17829"
             }
         ],
         "members": [],

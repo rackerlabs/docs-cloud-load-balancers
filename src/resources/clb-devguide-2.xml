@@ -750,8 +750,7 @@
                 service. It allows the caller to select a region into
                 which a load balancer is to be provisioned.</para>
             <para>To determine which region to operate against, select
-                an endpoint from the table below. 
-                <tip>
+                an endpoint from the table below. <tip>
                     <para>To help you decide which regionalized
                         endpoint to use, read about special
                         considerations for choosing a region at <link
@@ -761,8 +760,7 @@
                             xmlns:html="http://www.w3.org/1999/xhtml"
                             >http://www.rackspace.com/knowledge_center/article/about-regions</link>.</para>
                 </tip>
-                    
-                    <table rules="all">
+                <table rules="all" security="writeronly">
                     <caption>Regionalized service endpoints</caption>
                     <thead>
                         <tr align="center">
@@ -786,7 +784,7 @@
                             <td colspan="1">Northern Virginia
                                 (IAD)</td>
                             <td colspan="4">
-                                <code>https://iad.loadbalancers.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/</td>
+                                <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code></td>
                         </tr>
                         <tr align="left">
                             <td colspan="1">London (LON)</td>
@@ -804,26 +802,40 @@
                                 <code>https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/</td>
                         </tr>
                     </tbody>
+                </table><table rules="all">
+                    <caption>Regionalized service endpoints</caption>
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Region</td>
+                            <td colspan="4">Endpoint</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr align="left">
+                            <td colspan="1">Northern Virginia
+                                (IAD)</td>
+                            <td colspan="4">
+                                <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code></td>
+                        </tr>
+                        
+                    </tbody>
                 </table>
             </para>
-            <para security="reviewer">Reviewer: can you please give me the endpoints for
-                the V2 service?</para>
-            <para>Replace the sample account ID
-                    number,<parameter>1234</parameter>, with your
-                actual account number returned as part of the
-                authentication service response. You find the actual
-                account number after the final '/' in the
-                    <code>publicURL</code> field returned by the
-                authentication response. In <xref
-                    linkend="auth_response_json"/>, the account id is
-                    <code>1100111</code>, as you can see from the
-                    <code>publicURL</code> field for
-                    <code>cloudLoadBalancers</code>:<code
-                    xmlns:svg="http://www.w3.org/2000/svg"
-                    xmlns:m="http://www.w3.org/1998/Math/MathML"
-                    xmlns:html="http://www.w3.org/1999/xhtml"
-                    >"https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111"</code>.</para>
-            <para>
+            <para security="reviewer">Reviewer: can you please check
+                the endpoints for the V2 service to make sure they are
+                correct?</para>
+            <para xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">When making
+                a Cloud Load Balancers API call, place the endpoint at
+                the beginning of the request URL, for example the URL
+                to use to Create a loadbalancer is:
+                    <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code><code>loadbalancers</code>.
+                Note that the <code>v2.0</code> component in the URL
+                indicates that you are using version 2.0 of the Cloud
+                Load Balancers API.</para>
+            <para security="writeronly">
                 <emphasis role="bold">If load balancing Cloud
                     Servers</emphasis>, you can determine the
                 appropriate region to select by viewing your Cloud
@@ -836,7 +848,7 @@
                 services.</para>
             <note xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">
+                xmlns:html="http://www.w3.org/1999/xhtml" security="writeronly">
                 <para>ServiceNet is an internal Rackspace-only,
                     multi-tenant network connection within each
                     Rackspace datacenter. ServiceNet IPs are not
@@ -845,7 +857,7 @@
                     internal IP address so that traffic over the
                     ServiceNet network is not billed.</para>
             </note>
-            <para>
+            <para security="writeronly">
                 <emphasis role="bold">If load balancing external
                     servers</emphasis>, you can determine the
                 appropriate region to select by choosing the region
@@ -900,7 +912,7 @@
                 </tbody>
             </table>
         </section>
-        <section xml:id="Content_Compression-d1e690">
+        <section xml:id="Content_Compression-d1e690" security="writeronly">
             <title>Content compression</title>
             <para>Request and response body data may be encoded with
                 gzip compression to accelerate interactive performance
@@ -1106,12 +1118,12 @@
                     /> to find your current account settings for these
                     limits.</para>
             </section>
-            <section xml:id="Absolute_Limits-d1e999">
-                <title>Absolute limits</title>
-                <para>Absolute limits specify the maximum number of
-                    load balancers that can exist per Cloud account
-                    and the maximum number of resources that can exist
-                    per load balancer. The batch delete limit is the
+            <section xml:id="Quotas-d1e395">
+                <title>Quotas</title>
+                <para>Quotas specify the maximum number of load
+                    balancers that can exist per Cloud account and the
+                    maximum number of resources that can exist per
+                    load balancer. The batch delete limit is the
                     exception, since it is applied per batch delete
                     API request.</para>
                 <para>The system applies default values for load
@@ -1134,47 +1146,46 @@
                             <td colspan="3">Total number of load
                                 balancers that can be added to a Cloud
                                 account.</td>
-                            <td colspan="1">25</td>
+                            <td colspan="1">10</td>
 
                         </tr>
+                        
                         <tr align="left">
-                            <td colspan="2">NODE_LIMIT</td>
-                            <td colspan="3">Total number of nodes that
-                                can be added to a load balancer.</td>
-                            <td colspan="1">25</td>
-
-                        </tr>
-                        <tr align="left">
-                            <td colspan="2">IPV6_LIMIT</td>
-                            <td colspan="3">Total number of IPV6
-                                addresses that can be added to a load
+                            <td colspan="2">LISTENER_LIMIT</td>
+                            <td colspan="3">Total number of listeners
+                                that can be added to a load
                                 balancer.</td>
-                            <td colspan="1">25</td>
-
-                        </tr>
-                        <tr align="left">
-                            <td colspan="2">BATCH_DELETE_LIMIT</td>
-                            <td colspan="3">Total number of resources
-                                that can be listed per batch delete
-                                request.</td>
                             <td colspan="1">10</td>
 
                         </tr>
                         <tr align="left">
-                            <td colspan="2">ACCESS_LIST_LIMIT</td>
-                            <td colspan="3">Total number of network
-                                items that can be added to a load
+                            <td colspan="2">POOL_LIMIT</td>
+                            <td colspan="3">Total number of pools that
+                                can be added to a listener.</td>
+                            <td colspan="1">10</td>
+
+                        </tr>
+                        <tr align="left">
+                            <td colspan="2">MEMBER_LIMIT</td>
+                            <td colspan="3">Total number of members
+                                that can be added to a load
                                 balancer.</td>
-                            <td colspan="1">100</td>
+                            <td colspan="1">10</td>
+                            
+                        </tr>
+                        <tr align="left">
+                            <td colspan="2">HEALTH_MONITOR_LIMIT</td>
+                            <td colspan="3">Total number of health
+                                monitors that can be added to a
+                                pool.</td>
+                            <td colspan="1">10</td>
 
                         </tr>
                     </tbody>
                 </informaltable>
-                <para security="reviewer">Reviewer: is NODE_LIMIT going to be renamed to
-                    MEMBER_LIMIT?</para>
-                <para security="reviewer">Reviewer: Brandon Logan says
-                    the absolute limits will need to change. Can
-                    someone give me the new limits?</para>
+                <para security="reviewer">Reviewer: Please confirm
+                    that the limits shown in the table above are still
+                    correct.</para>
                 <para>Refer to <xref
                         linkend="Determining_Limits_Programmatically-d1e1039"
                     /> to find your current account settings for these
@@ -1238,7 +1249,7 @@
             <title>Faults</title>
             <para>API calls that return an error return one of the
                 following fault objects. All fault objects extend from
-                the base fault,<code>serviceFault</code>, for easier
+                the base fault, <code>serviceFault</code>, for easier
                 exception handling for languages that support
                 it.</para>
             <section xml:id="serviceFault-d1e1151">
@@ -1268,13 +1279,15 @@
                     <title>badRequest fault: Response</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">
-<![CDATA[<badRequest xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" code="400">
-    <message>Validation fault</message>
-    <details>The object is not valid</details>
-        <validationErrors>
-            <message>Node ip is invalid. Please specify a valid ip.</message>
-        </validationErrors>
-</badRequest>]]>
+<![CDATA[{
+  "badRequest": {
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "-code": "400",
+    "message": "Validation fault",
+    "details": "The object is not valid",
+    "validationErrors": { "message": "Node ip is invalid. Please specify a valid ip." }
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1284,15 +1297,19 @@
                     modify an item that is not currently in a state
                     that allows modification. For example, load
                     balancers in a status of
-                        <code>PENDING_UPDATE</code>,<code>BUILD</code>,
-                    or <code>DELETED</code> may not be
-                    modified.</para>
+                        <code>PENDING_UPDATE</code>,
+                        <code>BUILD</code>, or <code>DELETED</code>
+                    may not be modified.</para>
                 <example>
                     <title>immutableEntity fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<immutableEntity code="409" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>The object at the specified URI is immutable and can not be overwritten.</message>
-</immutableEntity>]]>
+<![CDATA[{
+  "immutableEntity": {
+    "-code": "409",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "The object at the specified URI is immutable and can not be overwritten."
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1301,9 +1318,13 @@
                 <example>
                     <title>itemNotFound fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<itemNotFound code="404" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>Object not Found</message>
-</itemNotFound>]]>
+<![CDATA[{
+  "itemNotFound": {
+    "-code": "404",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "Object not Found"
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1315,9 +1336,13 @@
                 <example>
                     <title>loadBalancerFault fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<loadBalancerFault code="401" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>Invalid authentication token. Please renew</message>
-</loadBalancerFault>]]>
+<![CDATA[{
+  "loadBalancerFault": {
+    "-code": "401",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "Invalid authentication token. Please renew"
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1326,17 +1351,21 @@
                 <para>This fault indicates that there are no virtual
                     IPs left to assign to a new load balancer. In
                     practice, this fault should not occur, as virtual
-                    IPs is ordered as capacity is required. If you do
+                    IPs are ordered as capacity is required. If you do
                     experience this fault, contact support so that we
                     may make more IPs available.</para>
                 <example>
                     <title>outOfVirtualIps fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<outOfVirtualIps code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>
+<![CDATA[{
+  "outOfVirtualIps": {
+    "-code": "500",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "
         Out of virtual IPs. Please contact support so they can allocate more virtual IPs.
-    </message>
-</outOfVirtualips>]]>
+    "
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1347,9 +1376,13 @@
                 <example>
                     <title>overLimit fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<overLimit code="413" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>Your account is currently over the limit so your request could not be processed.</message>
-</overLimit>]]>
+<![CDATA[{
+  "overLimit": {
+    "-code": "413",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "Your account is currently over the limit so your request could not be processed."
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1359,16 +1392,20 @@
                     unavailable, such as when the service is
                     undergoing maintenance. Note that this does not
                     necessarily mean that the currently configured
-                    loadbalancers are unable to process traffic; it
+                    load balancers are unable to process traffic; it
                     simply means that the API is currently unable to
                     service requests.</para>
                 <example>
                     <title>serviceUnavailable fault: Response</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">
-<![CDATA[<serviceUnavailable code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>The Load balancing service is currently not available</message>
-</serviceUnavailable>]]>
+<![CDATA[{
+  "serviceUnavailable": {
+    "-code": "500",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "The Load balancing service is currently not available"
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1381,9 +1418,13 @@
                     <title>unauthorized fault: Response</title>
                     <?dbfo keep-together="always"?>
                     <literallayout class="monospaced">
-<![CDATA[<unauthorized code="404" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>You are not authorized to execute this operation.</message>
-</unauthorized>]]>
+<![CDATA[{
+  "unauthorized": {
+    "-code": "404",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "You are not authorized to execute this operation."
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1413,9 +1454,13 @@
                 <example>
                     <title>unprocessableEntity fault: Response</title>
                     <literallayout class="monospaced">
-<![CDATA[<unprocessableEntity code="422" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <message>The Object at the specified URI is unprocessable.</message>
-</unprocessableEntity>]]>
+<![CDATA[{
+  "unprocessableEntity": {
+    "-code": "422",
+    "-xmlns": "http://docs.openstack.org/loadbalancers/api/v1.0",
+    "message": "The Object at the specified URI is unprocessable."
+  }
+}]]>
                     </literallayout>
                 </example>
             </section>
@@ -1893,19 +1938,20 @@
                 additional elements or attributes in the request. This
                 document provides an overview of all the features the
                 load balancing service supports.</para>
-            <para>Any protocol that is not listed in the protocols
+            <para>The <code>vip_subnet_id</code> specified for the
+                load balancer determines the type of IP and what
+                network it is allocated on.</para>
+            
+            <para security="writeronly">Any protocol that is not listed in the protocols
                 response, or is in the list but port=0, requires port
                 to be set. For example the TCP protocol is in the
-                list, however it specifies port as 0
-                    (<code>&lt;protocol name="TCP" port="0"
-                    /&gt;</code>), therefore it requires port to be
+                list, however it specifies port as 0 (<code>{
+                    "protocol": { "-name": "TCP", "-port": "0" }
+                    }</code>), therefore it requires port to be
                 set.</para>
-            <para>You must specify the type of virtualIp to add along
-                with the creation of a load balancer. The following
-                table describes the options.</para>
             <table xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xi="http://www.w3.org/2001/XInclude" rules="all"
-                xml:id="table_virtual_ip_types">
+                xml:id="table_virtual_ip_types" security="writeronly">
                 <caption>Virtual IP types</caption>
                 <thead align="center">
                     <tr>
@@ -1947,7 +1993,7 @@
                     </tr>
                 </tbody>
             </table>
-            <para>Notice in the following examples that API users are
+            <para security="writeronly">Notice in the following examples that API users are
                 now able to programmatically derive the source IP
                 addresses of our load balancers using the
                     <code>sourceAddresses</code> label included at the
@@ -1957,7 +2003,7 @@
                 infrastructure and must determine the IP addresses of
                 requests coming from our load balancers for the
                 purpose of creating more robust firewall rules.</para>
-            <para>To conserve IPv4 address space, Rackspace highly
+            <para security="writeronly">To conserve IPv4 address space, Rackspace highly
                 recommends sharing Virtual IPs between your load
                 balancers. If you have at least one load balancer, you
                 may create subsequent load balancers that share a
@@ -1970,7 +2016,7 @@
                 use the same load balancing configuration to support
                     <code>HTTP</code> and <code>HTTPS</code>.</para>
             <note xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:xi="http://www.w3.org/2001/XInclude">
+                xmlns:xi="http://www.w3.org/2001/XInclude" security="writeronly">
                 <title>Notes</title>
                 <itemizedlist>
                     <listitem>
@@ -2002,9 +2048,9 @@
                 status is immutable by the caller and is updated
                 automatically based on state changes within the
                 service. When a load balancer is first created, it is
-                placed into a <code>BUILD</code> status while the
-                configuration is being generated and applied based on
-                the request. Once the configuration is applied and
+                placed into a <code>PENDING_CREATE</code> status while
+                the configuration is being generated and applied based
+                on the request. Once the configuration is applied and
                 finalized, it is in an <code>ACTIVE</code> status. In
                 the event of a configuration change or update, the
                 status of the load balancer changes to
@@ -2032,7 +2078,8 @@
                             virtual IPs.</td>
                     </tr>
                     <tr align="left">
-                        <td colspan="1"><code>BUILD</code></td>
+                        <td colspan="1"
+                            ><code>PENDING_CREATE</code></td>
                         <td colspan="3">Load balancer is being
                             provisioned for the first time and
                             configuration is being applied to bring
@@ -2087,29 +2134,14 @@
                 </listitem>
                 <listitem>
                     <para>
-                        <code>algorithm</code></para>
+                        <code>description</code></para>
                 </listitem>
                 <listitem>
                     <para>
-                        <code>protocol</code></para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <code>halfClosed</code></para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <code>port</code></para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <code>timeout</code></para>
-                </listitem>
-                <listitem>
-                    <para>
-                        <code>httpsRedirect</code></para>
+                        <code>admin_state_up</code></para>
                 </listitem>
             </itemizedlist>
+            
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource
@@ -2666,7 +2698,7 @@
                     <wadl:method href="#deleteHealthMonitorv2"/>
                 </wadl:resource>
             </wadl:resources>
-            <section xml:id="Check_Health_Monitors-d1e4365" security="reviewer">
+            <section xml:id="Check_Health_Monitors-d1e4365" security="writeronly">
                 <title>Reviewer: Check this old v1 section to see if
                     any info needs to be retained for the Health
                     Monitor landing page (Section 4.5)</title>
@@ -3495,7 +3527,7 @@
     
     <glossary>
         <title>Glossary</title>
-        <glossentry xml:id="Connection-Logging-Gloss-d1e022">
+        <glossentry xml:id="Connection-Logging-Gloss-d1e022" security="writeronly">
             <glossterm>connection logging</glossterm>
             <glossdef>
                 <para>The connection logging feature allows logs to be
@@ -3505,7 +3537,7 @@
                     this is connection and transfer logging.</para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="Error-Page-d1e018">
+        <glossentry xml:id="Error-Page-d1e018" security="writeronly">
             <glossterm>error page</glossterm>
             <glossdef>
                 <para>An error page is the html file that is shown to
