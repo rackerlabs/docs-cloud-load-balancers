@@ -159,12 +159,12 @@
             <step>
                 <para> Click <guimenu>Create Server</guimenu>, then
                     select the Region, and specify the Server
-                    Name</para>
+                    Name.</para>
             </step>
             <step>
                 <para> Select an image from a list of different
                     operating systems, including Linux Distributions
-                    and Windows Images:</para>
+                    and Windows Images.</para>
             </step>
             <step>
                 <para> Specify the <guilabel>Flavor</guilabel> for

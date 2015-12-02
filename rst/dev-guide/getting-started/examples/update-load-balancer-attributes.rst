@@ -1,10 +1,12 @@
+.. _update-load-balancer-attributes:
+
 ===============================
-Update Load Balancer Attributes
+Update Load Balancer attributes
 ===============================
 
 Assume that you want to change the algorithm for your load balancer from
 RANDOM to LEAST\_CONNECTIONS. You can use the Update Load Balancer
-Attributes API call to accomplish this task. This call allows you to
+attributes API call to accomplish this task. This call allows you to
 change one or more of the following load balancer attributes:
 
 -  name
@@ -16,9 +18,9 @@ change one or more of the following load balancer attributes:
 -  port
 
 The following examples show the cURL requests for Update Load Balancer
-Attributes to change the algorithm to LEAST\_CONNECTIONS:
+attributes to change the algorithm to LEAST\_CONNECTIONS:
 
-**Example: cURL Update Load Balancer Attributes Request: XML**
+**Example: cURL Update Load Balancer attributes request: XML**
 
 .. code::  
 
@@ -26,13 +28,14 @@ Attributes to change the algorithm to LEAST\_CONNECTIONS:
     '<?xml version="1.0" ?>
     <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         algorithm="LEAST_CONNECTIONS" />' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
     -X PUT \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers/load_balancer_id'
+    "$API_ENDPOINT/loadbalancers/load_balancer_id"
 
-**Example: cURL Update Load Balancer Attributes Request: JSON**
+**Example: cURL Update Load Balancer attributes request: JSON**
 
 .. code::  
 
@@ -41,21 +44,20 @@ Attributes to change the algorithm to LEAST\_CONNECTIONS:
         "algorithm": "LEAST_CONNECTIONS"
         }
     }' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
     -X PUT \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers/load_balancer_id'
+    "$API_ENDPOINT/loadbalancers/load_balancer_id"
 
 This operation does not return a response body.
 
 You can now confirm that the algorithm is changed by calling List Load
-Balancer Details, as described in `Chapter 7, *List Load Balancer
-Details* <ch07.xhtml>`__.
+Balancer details, as described in :ref:`List Load Balancer details<list-load-balancer-details>`.
 
 You can also view the information for the load balancer you have created
 by clicking Load Balancers near the top of the Cloud Control Panel. Then
 click the name of the load balancer to view the details.
 
-This concludes the *Getting Started*. Thank you for using Rackspace
-Cloud products.
+This concludes the *Getting Started Guide*.
 

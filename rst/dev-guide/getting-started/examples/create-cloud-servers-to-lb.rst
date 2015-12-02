@@ -1,5 +1,7 @@
+.. _create-cloud-servers:
+
 =========================
-Create a New Cloud Server
+Create Cloud Servers
 =========================
 
 In this section you create two new Cloud Servers (or use two
@@ -18,20 +20,15 @@ Panel <http://mycloud.rackspace.com/>`__).
    the `Cloud Servers API Developer Guide <http://developer.rackspace.com/>`__
    for details.
 
-#. Click Servers to view the Cloud Servers page.
+#. Click **Servers** to view the Cloud Servers page.
 
-#. Using the Region drop-down menu, select the appropriate region,
-   depending on whether you want to create a first generation Cloud
-   Server or a next generation Cloud Server. (The type of Cloud Server
-   does not matter for this exercise.)
+#. Click **Create Server**, then select the **Region**, and specify the **Server Name**.
 
 #. Select an image from a list of different operating systems, including
-   Linux Distributions and Windows Images:
+   Linux Distributions and Windows Images.
 
-   |image0|
-
-#. Specify the Server Name and select a Size for your Cloud Server, then
-   click Create Server.
+#. Specify the **Flavor** for your Cloud Server, then click **Create Server**. Record 
+   the information requested in Step 6 below.
 
 #. Create a second Cloud Server by performing Steps 1-4 again.
 

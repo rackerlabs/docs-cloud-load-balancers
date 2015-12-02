@@ -1,5 +1,7 @@
+.. _list-load-balancer-details:
+
 ==========================
-List Load Balancer Details
+List Load Balancer details
 ==========================
 
 This operation provides detailed output for a specific load balancer
@@ -15,40 +17,30 @@ example below) that you created in the previous section.
 The following examples show the cURL requests for List Load Balancer
 Details:
 
-**Example: cURL List Load Balancer Details Request: XML**
+**Example: cURL List Load Balancer details request: XML**
 
 .. code::  
 
     curl -s  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/xml'  \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers/load_balancer_id' | ppxml
+    -H "X-Auth-Token: $AUTH_TOKEN"  \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/xml"  \
+    "$API_ENDPOINT/loadbalancers/load_balancer_id" | ppxml
 
-**Example: cURL List Load Balancer Details Request: JSON**
+**Example: cURL List Load Balancer details request: JSON**
 
 .. code::  
 
     curl -s  \
-    -H 'X-Auth-Token: your_auth_token'  \
-    -H 'Accept: application/json'  \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers/load_balancer_id' | python -m json.tool
+    -H "X-Auth-Token: $AUTH_TOKEN"  \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Accept: application/json"  \
+    "$API_ENDPOINT/loadbalancers/load_balancer_id" | python -m json.tool
 
-Remember to replace the names in the examples above with their actual
-respective values for all the cURL examples that follow:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Chapter 4, *Generate an Authentication
-   Token* <ch04.xhtml>`__)
+The following examples show the List Load Balancer details responses:
 
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
-
--  **load\_balancer\_id** — as returned in your create load balancer
-   response (must be replaced in the request URL)
-
-The following examples show the List Load Balancer Details responses:
-
-**Example: List Load Balancer Details Response: XML**
+**Example: List Load Balancer details response: XML**
 
 .. code::  
 
@@ -87,7 +79,7 @@ The following examples show the List Load Balancer Details responses:
         <sourceAddresses ipv4Servicenet="10.183.250.133" ipv4Public="174.143.139.133" ipv6Public="2001:4800:7901::2/64"/>
     </loadBalancer>
 
-**Example: List Load Balancer Details Response: JSON**
+**Example: List Load Balancer details response: JSON**
 
 .. code::  
 

@@ -1,3 +1,5 @@
+.. _create-load-balancer:
+
 ======================
 Create a Load Balancer
 ======================
@@ -7,7 +9,7 @@ configurations in the Cloud. By leveraging Cloud Load Balancers, you
 will be provided with a dedicated IP address that you can use to reach
 your service.
 
-You need to use the Create Load Balancer API call (``/loadbalancers``)
+You need to use the Create Load Balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.
 
 In this case, assume that you want to create a load balancer with the
@@ -23,22 +25,21 @@ following configuration:
    advantage of ServiceNet connectivity (by specifying Virtual IP Type =
    SERVICENET) for free data transfer between services if desired.
 
--  Nodes = <enter the IP address that you recorded for your first Cloud
-   Server created in `Chapter 2, *Create a New Cloud
-   Server* <ch02.xhtml>`__:
+-  Nodes = enter the IP address that you recorded for your first Cloud
+   Server created in :ref:`Create Cloud Servers <create-cloud-servers>`:
 
    -  ``<node address="``\ **<IP address of FIRST cloud
-      server>**\ ``"                                 port="80" condition="ENABLED"/>``
+      server>**\ ``" port="80" condition="ENABLED"/>``
 
 .. note::
       Although you could add the nodes for both of your Cloud Servers in
       this Create Load Balancer call, you will instead add the node for
-      your second Cloud Server using the separate Add Node call in
-      `Chapter 8, *Add Node* <ch08.xhtml>`__.
+      your second Cloud Server using the separate 
+      :ref:`Add node <add-node>` call.
 
 The following examples show the cURL requests for Create Load Balancer:
 
-**Example: cURL Create Load Balancer Request: XML**
+**Example: cURL Create Load Balancer request: XML**
 
 .. code::  
 
@@ -55,12 +56,13 @@ The following examples show the cURL requests for Create Load Balancer:
             <node address="<IP address of FIRST cloud server>" port="80" condition="ENABLED"/> 
         </nodes>
     </loadBalancer>' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/xml' \
-    -H 'Accept: application/xml' \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers' | ppxml
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/xml" \
+    -H "Accept: application/xml" \
+    "$API_ENDPOINT/loadbalancers" | ppxml
 
-**Example: cURL Create Load Balancer Request: JSON**
+**Example: cURL Create Load Balancer request: JSON**
 
 .. code::  
 
@@ -84,23 +86,15 @@ The following examples show the cURL requests for Create Load Balancer:
             ]
         }
     }' \
-    -H 'X-Auth-Token: your_auth_token' \
-    -H 'Content-Type: application/json' \
-    'https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/your_acct_id/loadbalancers' | python -m json.tool
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "X-Project-Id: $TENANT_ID" \
+    -H "Content-Type: application/json" \
+    "$API_ENDPOINT/loadbalancers" | python -m json.tool
 
-Remember to replace the names in the examples above with their actual
-respective values for all the cURL examples that follow:
-
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Chapter 4, *Generate an Authentication
-   Token* <ch04.xhtml>`__)
-
--  **your\_acct\_id** — as returned in your authentication response
-   (must be replaced in the request URL)
 
 The following examples show the responses for Create Load Balancer:
 
-**Example: Create Load Balancer Response: XML**
+**Example: Create Load Balancer response: XML**
 
 .. code::  
 
@@ -121,7 +115,7 @@ The following examples show the responses for Create Load Balancer:
         <sourceAddresses ipv4Servicenet="10.183.250.133" ipv4Public="174.143.139.133" ipv6Public="2001:4800:7901::2/64"/>
     </loadBalancer>
 
-**Example: cURL Create Load Balancer Response: JSON**
+**Example: cURL Create Load Balancer response: JSON**
 
 .. code::  
 
@@ -178,6 +172,6 @@ The following examples show the responses for Create Load Balancer:
 In the previous examples, you can see that one node (with IP address
 "50.56.166.100") has been added to your new load balancer with id 5355.
 You will need the load balancer id for making the List Load Balancer
-Details call in the next section, and you should supply this value
+details call in the next section, and you should supply this value
 wherever you see the field **load\_balancer\_id** in the examples in
 this guide.
