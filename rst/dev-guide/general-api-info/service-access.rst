@@ -22,25 +22,25 @@ Regionalized service endpoints
 +-------------------------+-------------------------------------------------------------+
 | Region                  | Endpoint                                                    |
 +=========================+=============================================================+
-| Chicago (ORD)           | https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| Chicago (ORD)           | https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
-| Dallas/Ft. Worth (DFW)  | https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| Dallas/Ft. Worth (DFW)  | https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
-| Northern Virginia (IAD) | https://iad.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| Northern Virginia (IAD) | https://iad.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
-| London (LON)            | https://lon.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| London (LON)            | https://lon.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
-| Sydney (SYD)            | https://syd.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| Sydney (SYD)            | https://syd.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
-| Hong Kong (HKG)         | https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234/ |
+| Hong Kong (HKG)         | https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
 
-Replace the sample account ID number, `1234`, with your actual account number returned as 
+Replace the sample account ID number, ``1234``, with your actual account number returned as 
 part of the authentication service response. You find the actual account number after the 
-final `/` in the `publicURL` field returned by the authentication response. In 
-:ref:`Authentication with US endpoint: JSON response <clb-dg-apiinfo-example2>`, 
-the account ID is `1100111`, as you can see from the `publicURL` field for 
-`cloudLoadBalancers`: https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111.
+final `/` in the ``publicURL`` field returned by the authentication response. In 
+:ref:`Review the authentication response <review-auth-resp>`, 
+the account (tenant) ID is ``110011``, as you can see from the ``publicURL`` field for 
+``cloudDatabases``: ``https://dfw.databases.api.rackspacecloud.com/v1.0/110011``.
 
 **If load balancing Cloud Servers**, you can determine the appropriate region to select 
 by viewing your Cloud Servers list and creating a load balancer within the same region as the datacenter in which your Cloud Server resides. When your resources reside in the same region as your load balancer, devices are in close proximity to each other and can take advantage of ServiceNet connectivity for free data transfer between services.
