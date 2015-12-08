@@ -1,15 +1,15 @@
 .. _add-node:
 
-========
-Add node
-========
+==============
+Adding a node
+==============
 
 When a node is added to a load balancer, it is assigned a unique
 identifier that can be used for management operations such as changing
 the condition or removing it.
 
 For the node, enter the IP address that you recorded for your second
-Cloud Server created in :ref:`Create Cloud Servers <create-cloud-servers>`. 
+Cloud Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`. 
 For example, for the XML request, enter:
 
 -  ``<node address="``\ **<IP address of SECOND cloud
@@ -55,7 +55,7 @@ Remember to replace the ``load_balancer_id`` in the examples above with its actu
 respective value:
 
 -  **load\_balancer\_id** — as returned in your create load balancer
-   response (see the examples in :ref:`Create Load Balancer <create-load-balancer>`)
+   response (see the examples in :ref:`Creating a Load Balancer <create-load-balancer>`)
 
 The following examples show the responses for Add node:
 

@@ -1,7 +1,7 @@
 .. _create-cloud-servers:
 
 =========================
-Create Cloud Servers
+Creating Cloud Servers
 =========================
 
 In this section you create two new Cloud Servers (or use two

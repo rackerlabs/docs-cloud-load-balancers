@@ -1,8 +1,8 @@
 .. _create-load-balancer:
 
-======================
-Create a Load Balancer
-======================
+==========================
+Creating a Load Balancer
+==========================
 
 Cloud Load Balancers make it easy to develop scalable, high-availability
 configurations in the Cloud. By leveraging Cloud Load Balancers, you
@@ -26,7 +26,7 @@ following configuration:
    SERVICENET) for free data transfer between services if desired.
 
 -  Nodes = enter the IP address that you recorded for your first Cloud
-   Server created in :ref:`Create Cloud Servers <create-cloud-servers>`:
+   Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`:
 
    -  ``<node address="``\ **<IP address of FIRST cloud
       server>**\ ``" port="80" condition="ENABLED"/>``

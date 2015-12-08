@@ -1,8 +1,8 @@
 .. _list-load-balancer-details:
 
-==========================
-List Load Balancer details
-==========================
+==============================
+Listing Load Balancer details
+==============================
 
 This operation provides detailed output for a specific load balancer
 configured and associated with your account. This operation is not

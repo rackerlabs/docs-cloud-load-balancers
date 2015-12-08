@@ -12,8 +12,7 @@ Use the links below to learn more about the Rackspace Cloud Load Balancers servi
   in the Rackspace Knowledge Center.
   
 - For information about getting started using Cloud Load Balancers and Cloud Servers,
-  refer to *Getting Started with Rackspace Cloud Load Balancers and Servers* at 
-  http://docs.rackspace.com/.
+  refer to the :ref:`Getting Started Guide<getting-started>`.
 
 - To learn about using Cloud Load Balancers service from the Rackspace Cloud Control panel, 
   see the Knowledge Center article :kc-article:`Configuring a Load Balancer <configuring-a-load-balancer>`. 
