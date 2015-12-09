@@ -18,7 +18,7 @@ Rackspace Cloud Load Balancers service REST API.
    :maxdepth: 2
  
    Cloud Load Balancers 1.0 <self>
-   API Status <http://www.rackspacestatus.com/>
+   API Status <https://status.rackspace.com/>
    overview/index
    getting-started
    getting-started/index
