@@ -35,6 +35,13 @@ Regionalized service endpoints
 | Hong Kong (HKG)         | https://hkg.loadbalancers.api.rackspacecloud.com/v1.0/1234  |
 +-------------------------+-------------------------------------------------------------+
 
+..  note::
+    The service catalog returned in the auth response specifies the correct
+    service access endpoint for your account to use for accessing Cloud Load Balancers. Use
+    the service type (rax:load-balancer) to locate the correct endpoint in the
+    service catalog. For an example of the service catalog, see
+    :ref:`authentication response examples <authentication-response-examples>`.
+
 Replace the sample account ID number, ``1234``, with your actual account number returned as 
 part of the authentication service response. You find the actual account number after the 
 final `/` in the ``publicURL`` field returned by the authentication response. In 
