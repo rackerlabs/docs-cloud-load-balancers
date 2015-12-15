@@ -176,6 +176,9 @@
                 <raxm:priority>2</raxm:priority>
             </raxm:metadata>
         </info>
+        <para security="reviewer">Reviewer: Please revisit these
+            concepts to see if any more should be added as we add new
+            features.</para>
         <para>To use the Rackspace Cloud Load Balancers API
             effectively, you should understand several key
             concepts:</para>
@@ -249,17 +252,20 @@
                     traffic. Active health monitoring is not applied
                     by default and must be enabled per load
                     balancer.</para>
-                <para>The active health monitor can use one of three
+                <para>The active health monitor can use one of four
                     types of probes:</para>
                 <itemizedlist spacing="compact">
                     <listitem>
-                        <para>connect</para>
+                        <para>PING</para>
                     </listitem>
                     <listitem>
                         <para>HTTP</para>
                     </listitem>
                     <listitem>
                         <para>HTTPS</para>
+                    </listitem>
+                    <listitem>
+                        <para>TCP</para>
                     </listitem>
                 </itemizedlist>
                 <para>These probes are executed at configured
@@ -1142,7 +1148,7 @@
                     </thead>
                     <tbody>
                         <tr align="left">
-                            <td colspan="2">LOADBALANCER_LIMIT</td>
+                            <td colspan="2">loadbalancer</td>
                             <td colspan="3">Total number of load
                                 balancers that can be added to a Cloud
                                 account.</td>
@@ -1151,34 +1157,34 @@
                         </tr>
                         
                         <tr align="left">
-                            <td colspan="2">LISTENER_LIMIT</td>
+                            <td colspan="2">listener</td>
                             <td colspan="3">Total number of listeners
                                 that can be added to a load
                                 balancer.</td>
-                            <td colspan="1">10</td>
+                            <td colspan="1">20</td>
 
                         </tr>
                         <tr align="left">
-                            <td colspan="2">POOL_LIMIT</td>
+                            <td colspan="2">pool</td>
                             <td colspan="3">Total number of pools that
                                 can be added to a listener.</td>
-                            <td colspan="1">10</td>
+                            <td colspan="1">20</td>
 
                         </tr>
                         <tr align="left">
-                            <td colspan="2">MEMBER_LIMIT</td>
+                            <td colspan="2">member</td>
                             <td colspan="3">Total number of members
                                 that can be added to a load
                                 balancer.</td>
-                            <td colspan="1">10</td>
+                            <td colspan="1">75</td>
                             
                         </tr>
                         <tr align="left">
-                            <td colspan="2">HEALTH_MONITOR_LIMIT</td>
+                            <td colspan="2">healthmonitor</td>
                             <td colspan="3">Total number of health
                                 monitors that can be added to a
                                 pool.</td>
-                            <td colspan="1">10</td>
+                            <td colspan="1">20</td>
 
                         </tr>
                     </tbody>
@@ -1195,8 +1201,8 @@
                 xml:id="Determining_Limits_Programmatically-d1e1039">
                 <title>Determine limits programmatically</title>
                 <para>Applications can programmatically determine
-                    current rate limits and absolute limits for an
-                    account using the following URIs:</para>
+                    current rate limits for an account using the
+                    following URI:</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1212,13 +1218,6 @@
                             <td colspan="3">Return the current rate
                                 limits for the account.</td>
                         </tr>
-                        <tr align="left">
-                            <td colspan="1">&GET;</td>
-                            <td colspan="1"
-                                >/loadbalancers/absolutelimits</td>
-                            <td colspan="3">Return the current
-                                absolute limits for the account.</td>
-                        </tr>
                     </tbody>
                 </informaltable>
                 <para>Normal Response Code(s):
@@ -1231,16 +1230,11 @@
                     unauthorized (<errorcode>401</errorcode>),
                     badRequest (<errorcode>400</errorcode>), overLimit
                         (<errorcode>413</errorcode>) </simpara>
-                <para>These operations do not require a request
+                <para>This operation does not require a request
                     body.</para>
                 <example>
                     <title>List rate limits: JSON response</title>
                     <programlisting language="json"><xi:include href="samples/lb-limits-response.json" parse="text"/>
-                    </programlisting>
-                </example>
-                <example>
-                    <title>List absolute limits: JSON response</title>
-                    <programlisting language="json"><xi:include href="samples/lb-absolute-limits-response.json" parse="text"/>
                     </programlisting>
                 </example>
             </section>
