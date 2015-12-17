@@ -63,10 +63,10 @@
                     </resource>
                 </resource>
             </resource>
-            <resource id="lb-health_monitors" path="health_monitors">
+            <resource id="lb-health_monitors" path="healthmonitors">
                 <method href="#createHealthMonitorv2"/>
                 <method href="#listHealthMonitorsv2"/>
-                <resource id="health_monitor_id_hm" path="{health_monitor_id}">
+                <resource id="health_monitor_id_hm" path="{healthmonitor_id}">
                     <method href="#showHealthMonitorv2"/>
                     <method href="#updateHealthMonitorv2"/>
                     <method href="#deleteHealthMonitorv2"/>
@@ -1507,7 +1507,7 @@
                                 <td colspan="3">The UUID of the virtual IP (VIP) address. </td>
                             </tr>
                             <tr align="left">
-                                <td colspan="1">health_monitors_<?sbr?>status</td>
+                                <td colspan="1">healthmonitors_<?sbr?>status</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:string</td>
                                 <td colspan="3">The statuses of the health monitors that are associated with the pool.  </td>
@@ -1540,7 +1540,7 @@
                 <listitem><para><code>admin_state_up</code></para></listitem>
                 <listitem><para><code>listeners</code></para></listitem>
                 <listitem><para><code>members</code></para></listitem>
-                <listitem><para><code>health_monitor_id</code></para></listitem>
+                <listitem><para><code>healthmonitor_id</code></para></listitem>
             </itemizedlist>
             
         </wadl:doc>
@@ -1582,7 +1582,7 @@
                                 <td colspan="3">The pool detailed description.</td>
                             </tr>
                             <tr align="left">
-                                <td colspan="1">health_monitor_id</td>
+                                <td colspan="1">healthmonitor_id</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">csapi:uuid</td>
                                 <td colspan="3">The UUID for the associated health monitor. </td>
@@ -1666,7 +1666,7 @@
                 <listitem><para><code>admin_state_up</code></para></listitem>
                 <listitem><para><code>listeners</code></para></listitem>
                 <listitem><para><code>members</code></para></listitem>
-                <listitem><para><code>health_monitor_id</code></para></listitem>
+                <listitem><para><code>healthmonitor_id</code></para></listitem>
             </itemizedlist>
             <para>Example: Show pool details</para>
         </wadl:doc>
@@ -1708,7 +1708,7 @@
                             <td colspan="3">The pool detailed description.</td>
                         </tr>
                         <tr align="left">
-                            <td colspan="1">health_monitor_id</td>
+                            <td colspan="1">healthmonitor_id</td>
                             <td colspan="1">plain</td>
                             <td colspan="1">csapi:uuid</td>
                             <td colspan="3">The UUID for the associated health monitor. </td>
@@ -1789,7 +1789,7 @@
             <para>
                 Note: You cannot update the pool ID, <code>tenant_id</code>,
                 <code>listener_id</code>, <code>listeners</code>,
-                <code>health_monitor_id</code>, <code>protocol</code>, and
+                <code>healthmonitor_id</code>, <code>protocol</code>, and
                 <code>members</code> immutable attributes. If you try to
                 update any of these attributes, the service returns the HTTP
                 <code>Immutable (422)</code> response code.
@@ -1896,7 +1896,7 @@
                                 <td colspan="3">The pool detailed description.</td>
                             </tr>
                             <tr align="left">
-                                <td colspan="1">health_monitor_id</td>
+                                <td colspan="1">healthmonitor_id</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">csapi:uuid</td>
                                 <td colspan="3">The UUID for the associated health monitor. </td>
@@ -2669,10 +2669,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">tenant_id (optional)</td>
@@ -2764,10 +2764,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">id</td>
@@ -2898,10 +2898,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">id</td>
@@ -2995,7 +2995,7 @@
             <para role="shortdesc">Shows details for a health monitor.</para>
             <para>
                 This operation returns a health monitor object identified by
-                <code>health_monitor_id</code>. If the user is not an
+                <code>healthmonitor_id</code>. If the user is not an
                 administrative user and the health monitor object does not
                 belong to her tenant account, the service returns the HTTP
                 <code>Forbidden (403)</code> response code.
@@ -3040,10 +3040,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">id</td>
@@ -3175,10 +3175,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">delay (optional)</td>
@@ -3257,10 +3257,10 @@
                         </thead>
                         <tbody>
                             <tr align="left">
-                                <td colspan="1">health_monitor</td>
+                                <td colspan="1">healthmonitor</td>
                                 <td colspan="1">plain</td>
                                 <td colspan="1">xsd:dict</td>
-                                <td colspan="3">A health_monitor object. </td>
+                                <td colspan="3">A healthmonitor object. </td>
                             </tr>
                             <tr align="left">
                                 <td colspan="1">id</td>
