@@ -39,23 +39,23 @@ extensions and build tools.
 
 ## Structure
 
-Source files for the Sphinx documentation project are in the ``rst/dev-guide`` directory. Here are the key files that define 
+Source files for the Sphinx documentation project are in the ``api-docs/cloud-load-balancers-<version>`` directory, where version is v1 or v2. Here are the key files that define 
 the Sphinx project and content architecture for the documentation: 
 
 Content | File
 --- | ---
-|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/conf.py) (Typically, this file does not require changes.)
-|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/index.rst)
-|About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/overview/index.rst)
-|Getting Started introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/getting-started.rst)
-|Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/getting-started/index.rst)
-|Developer Guide introduction|[developer-guide.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/developer-guide.rst)
-|Concepts section| [concepts.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/concepts.rst)
-|General API information index|[general-api-info/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/general-api-info/index.rst)
-|API Reference introduction|[api-reference.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/api-reference.rst)
-|API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/api-operations/index.rst)
-|API operations methods, including code samples|[api-operations/methods](https://github.com/rackerlabs/docs-cloud-load-balancers/tree/master/rst/dev-guide/api-operations/methods) 
-|Release notes|[release-notes.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/rst/dev-guide/release-notes.rst)
+|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/conf.py) (Typically, this file does not require changes.)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/index.rst)
+|About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/overview/index.rst)
+|Getting Started introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/getting-started.rst)
+|Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/getting-started/index.rst)
+|Developer Guide introduction|[developer-guide.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/developer-guide.rst)
+|Concepts section| [concepts.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/concepts.rst)
+|General API information index|[general-api-info/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/general-api-info/index.rst)
+|API Reference introduction|[api-reference.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/api-reference.rst)
+|API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/api-operations/index.rst)
+|API operations methods, including code samples|[api-operations/methods](https://github.com/rackerlabs/docs-cloud-load-balancers/tree/master/api-docs/cloud-load-balancers-v1/api-operations/methods) 
+|Release notes|[release-notes.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/release-notes.rst)
 |**make.bat**|Windows build script
 |**Makefile**| Linux and OS X build
 
