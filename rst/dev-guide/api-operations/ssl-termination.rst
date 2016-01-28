@@ -15,9 +15,8 @@ Therefore the X-Forwarded-Proto (XFP) header has been added for
 identifying the originating protocol of an HTTP request as "http" or
 "https" depending on what protocol the client requested.
 
-Not every service returns certificates in the proper order. Please
-verify that your chain of certificates matches that of walking up the
-chain from the domain to the CA root.
+Not every service returns certificates in the proper order. Please verify that your chain of
+certificates matches that of walking up the chain from the domain to the CA root.
 
 To be used with HTTP to HTTPS redirection, ``securePort`` must be set to
 ``443`` and ``secureTrafficOnly`` must be ``true``. Refer to the

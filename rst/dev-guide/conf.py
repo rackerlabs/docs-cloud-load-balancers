@@ -79,7 +79,7 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'December 8, 2015'
+# today = 'January 25, 2016'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
@@ -194,7 +194,8 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'December 8, 2015'
+# html_last_updated_fmt = 'January 25, 2016'
+# html_last_updated_fmt = |today|
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -318,7 +319,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Queues service',
+   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
    'Miscellaneous'),
 ]
 

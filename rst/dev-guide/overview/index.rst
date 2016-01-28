@@ -15,4 +15,4 @@ provides more information about the service.
    :maxdepth: 3
    
    additional-resources
-   Pricing and terms of service <pricing-service-level>
+..   Pricing and terms of service <pricing-service-level>
