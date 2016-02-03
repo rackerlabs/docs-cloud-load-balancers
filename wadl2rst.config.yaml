@@ -1,3 +1,3 @@
-src/resources/wadl/rax-cloudLoadBalancers-api-v1.wadl:
-    title: Rackspace Cloud Load Balancers Developer Guide
-    output_directory: rst/dev-guide/api-operations
+src/resources/wadl/os-lbaasv2.0-ext.wadl:
+    title: Rackspace Cloud Load Balancers v2.0 Developer Guide
+    output_directory: api-docs/cloud-load-balancers-v2/api-operations/test
