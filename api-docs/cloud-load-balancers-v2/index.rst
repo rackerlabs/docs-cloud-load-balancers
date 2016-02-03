@@ -20,6 +20,8 @@ Rackspace Cloud Load Balancers service REST API.
    Cloud Load Balancers 2.0 <self>
    API Status <https://status.rackspace.com/>
    overview/index
+   getting-started
+   getting-started/index
    developer-guide
    concepts
    general-api-info/index 
