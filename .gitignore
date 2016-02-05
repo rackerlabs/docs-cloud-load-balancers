@@ -1,7 +1,8 @@
 .DS_Store
 target/
 doctrees/
-rst/dev-guide/_build
+api-docs/cloud-load-balancer-v1/_build
+api-docs/cloud-load-balancer-v2/_build
 !.gitignore
 *.iml
 *.iws
