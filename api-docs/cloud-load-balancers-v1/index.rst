@@ -28,3 +28,4 @@ Rackspace Cloud Load Balancers service REST API.
    api-reference
    api-operations/index
    release-notes
+   copyright
