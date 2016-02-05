@@ -13,6 +13,7 @@ resolved issues, and other important details about |apiservice| |version| servic
    :maxdepth: 2
 
 
+   release-notes/clbs-v1-25-26-20160208
    release-notes/clbs-v1-23-7-20141007
    release-notes/clbs-v1-22-10-20140801
    release-notes/clbs-v1-21-14-20140617
