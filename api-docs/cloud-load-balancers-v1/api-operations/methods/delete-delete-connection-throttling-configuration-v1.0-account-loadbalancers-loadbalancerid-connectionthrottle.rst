@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-connection-throttling-configuration-v1.0-account-loadbalancers-loadbalancerid-connectionthrottle:
 
 Delete connection throttling configuration

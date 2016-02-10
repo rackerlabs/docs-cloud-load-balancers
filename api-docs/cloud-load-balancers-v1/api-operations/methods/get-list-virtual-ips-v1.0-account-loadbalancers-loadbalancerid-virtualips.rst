@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips:
 
 List virtual IPs

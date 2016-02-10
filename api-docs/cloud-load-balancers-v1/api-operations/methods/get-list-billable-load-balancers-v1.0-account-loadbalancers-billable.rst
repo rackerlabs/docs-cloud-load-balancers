@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-billable-load-balancers-v1.0-account-loadbalancers-billable:
 
 List billable load balancers

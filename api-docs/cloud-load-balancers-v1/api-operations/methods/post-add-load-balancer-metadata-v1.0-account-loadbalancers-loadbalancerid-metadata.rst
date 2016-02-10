@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-add-load-balancer-metadata-v1.0-account-loadbalancers-loadbalancerid-metadata:
 
 Add load balancer metadata

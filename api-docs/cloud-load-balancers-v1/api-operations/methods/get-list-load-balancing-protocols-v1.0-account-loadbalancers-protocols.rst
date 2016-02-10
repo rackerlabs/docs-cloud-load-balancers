@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-load-balancing-protocols-v1.0-account-loadbalancers-protocols:
 
 List load balancing protocols

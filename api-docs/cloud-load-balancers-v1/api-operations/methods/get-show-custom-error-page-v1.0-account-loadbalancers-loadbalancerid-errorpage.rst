@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
 
 Show custom error page

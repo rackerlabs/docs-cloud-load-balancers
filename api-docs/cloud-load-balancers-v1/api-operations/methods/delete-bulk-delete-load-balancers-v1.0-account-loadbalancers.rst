@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-bulk-delete-load-balancers-v1.0-account-loadbalancers:
 
 Bulk-delete load balancers

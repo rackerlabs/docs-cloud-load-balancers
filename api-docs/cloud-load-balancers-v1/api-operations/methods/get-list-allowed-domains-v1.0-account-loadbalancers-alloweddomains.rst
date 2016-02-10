@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-allowed-domains-v1.0-account-loadbalancers-alloweddomains:
 
 List allowed domains

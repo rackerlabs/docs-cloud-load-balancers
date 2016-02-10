@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid:
 
 Update load balancer properties
