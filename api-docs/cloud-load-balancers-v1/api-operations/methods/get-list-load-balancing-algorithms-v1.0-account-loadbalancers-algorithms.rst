@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-load-balancing-algorithms-v1.0-account-loadbalancers-algorithms:
 
 List load balancing algorithms

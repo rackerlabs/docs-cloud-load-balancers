@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-bulk-delete-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips:
 
 Bulk-delete virtual IPs

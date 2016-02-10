@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-or-update-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist:
 
 Create or update access list

@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-historical-usage-v1.0-account-loadbalancers-loadbalancerid-usage:
 
 Show historical usage

@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid:
 
 Show load balancer details

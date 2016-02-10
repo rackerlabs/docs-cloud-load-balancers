@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid:
 
 Delete load balancer node metadata item

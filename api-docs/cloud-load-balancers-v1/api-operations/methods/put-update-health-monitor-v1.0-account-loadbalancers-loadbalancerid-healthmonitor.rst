@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor:
 
 Update health monitor

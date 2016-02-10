@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes:
 
 List nodes

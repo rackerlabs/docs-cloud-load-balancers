@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-add-virtual-ip-version-6-v1.0-account-loadbalancers-loadbalancerid-virtualips:
 
 Add virtual IP version 6

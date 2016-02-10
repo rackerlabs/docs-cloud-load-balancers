@@ -126,7 +126,7 @@ This list shows the body parameters for the request:
 |                  |           |             | tenant UUID other than their own.                                                  |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | vip_address      | plain     | xsd:ip      | The IP address of the VIP.                                                         |
-| (optional)       |           |             |
+| (optional)       |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | provider         | plain     | xsd:string  | The name of the provider.                                                          |
 | (optional)       |           |             |                                                                                    |

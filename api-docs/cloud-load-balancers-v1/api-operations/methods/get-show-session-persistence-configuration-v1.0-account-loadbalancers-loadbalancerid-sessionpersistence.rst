@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence:
 
 Show session persistence configuration
