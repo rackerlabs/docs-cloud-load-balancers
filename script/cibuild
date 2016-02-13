@@ -14,3 +14,6 @@ fi
 
 cd api-docs/cloud-load-balancers-v1
 deconst-preparer-sphinx
+
+cd ../cloud-load-balancers-v2
+deconst-preparer-sphinx
