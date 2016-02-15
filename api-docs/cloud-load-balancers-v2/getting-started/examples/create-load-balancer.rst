@@ -1,7 +1,7 @@
 .. _create-load-balancer:
 
 ==========================
-Creating a load balancer
+Create a load balancer
 ==========================
 
 Cloud Load Balancers make it easy to develop scalable, high-availability
@@ -20,15 +20,14 @@ following configuration:
 -  ``description`` is ``simple lb``.
 
 
--  ``vip_subnet_id`` is ``your_vip_subnet_id``.
+-  ``vip_subnet_id`` is ``your_vip_subnet_id``. Remember to replace ``your_vip_subnet_id`` in the example with the actual value.
 
    The UUID of the subnet on which to allocate the virtual IP (VIP)
    address. The ``vip_subnet_id`` is the ID of a subnet returned from
    querying neutron's subnets as follows:
    ``neutron.endpoint/v2.0/subnets?shared=True``
 
-   **Reviewer: Please specify the specific \ ``neutron.endpoint``\ 
-   mentioned in the previous sentence.**
+   **Reviewer: Please specify the specific ``neutron.endpoint`` mentioned in the previous sentence.**
 
 -  ``vip_address`` is ``10.0.0.4``.
 
@@ -59,17 +58,14 @@ The following example shows the cURL request for create load balancer:
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
+    -X POST \
     "$API_ENDPOINT/loadbalancers" | python -m json.tool
 
-Remember to replace the names in the example above with their actual
-values for all the cURL examples that follow:
 
--  ``your_vip_subnet_id`` — The UUID of the subnet on which to
-   allocate the virtual IP (VIP) address.
 
 The following example shows the response for create load balancer:
 
-**Example. cURL create load balancer response: JSON**
+**Example. Create load balancer response: JSON**
 
 .. code::  
 
@@ -90,9 +86,8 @@ The following example shows the response for create load balancer:
       }
     }
 
-In the previous examples, you can see that a new load balancer has been
+You can see that a new load balancer has been
 created with ID ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``. You will need the
-load balancer ID for making the show load balancer details call in the
-next section, and you should supply this value wherever you see the
-field ``load_balancer_id`` in the examples in this guide.
+load balancer ID for making the :ref:`Show load balancer details <show-load-balancer-details>` call, and you should supply this value wherever you see 
+``load_balancer_id`` in the examples in this guide.
 

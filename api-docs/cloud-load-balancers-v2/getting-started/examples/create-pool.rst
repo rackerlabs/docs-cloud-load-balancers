@@ -1,119 +1,89 @@
 .. _create-pool:
 
 ================
-Create pool
+Create a pool
 ================
 
-Next you will create a listener. A listener is an object containing data
-pertaining to the "listening" port. This object defines the "frontend"
-of the configuration and contains the backend data such as pools and its
-members.
+Next you create a pool. A pool is a logical set of devices, such as web servers, that you group together to receive and process traffic. Instead of sending client traffic to the destination IP address specified in the client request, the system sends the request to any of the servers that are members of the pool.
 
-You need to use the create listener API call (``/lbaas/listeners``) to
-create a listener with the configuration that you specify.
+You need to use the create pool API call to create a pool with the configuration that you specify.
 
-In this case, assume that you want to create a listener with the
-following configuration:
+Assume that you want to create a pool with the following configuration:
 
--  "admin\_state\_up" = "listener1"
+-  ``admin_state_up`` is  = ``true``.
 
--  "connection\_limit" = 100
+-  ``description`` is ``simple pool``.
 
--  "description" = "listener one"
+-  ``lb_algorithm`` is ``ROUND_ROBIN``.
 
--  "loadbalancer\_id" = "**load\_balancer\_id**"
+-  ``listener_id`` is ``listener_id``. Remember to replace ``listerner_id`` in the example with the actual value 
+   that was returned in your create listener response. See :ref:`Create a listener <create-listener>`.
 
--  "name" = "listener1"
+-  ``name`` is ``pool1``.
 
--  "protocol" = "HTTP"
+-  ``protocol`` is ``HTTP``.
 
--  "protocol\_port" = "80"
+-  ``session_persistence`` is  ``{ "cookie_name": "my_cookie", "type": "APP_COOKIE" }``.
 
--  "default\_tls\_container\_ref":
-   "https://barbican.endpoint/containers/
-   a36c20d0-18e9-42ce-88fd-82a35977ee8c"
 
--  "sni\_container\_refs": [ "https://barbican.endpoint/containers/
-   b36c20d0-18e9-42ce-88fd-82a35977ee8d",
-   "https://barbican.endpoint/containers/
-   c36c20d0-18e9-42ce-88fd-82a35977ee8e"
+The following example shows the cURL request for create pool:
 
-   Reviewer: how do we explain to the user where to get these container
-   refs for the previous 2 arguments? If we want to link to the barbican
-   docs, please provide the specific links to the barbican (CloudKeep)
-   docs that I should provide here. I think we also should provide a
-   brief explanation here for what these containers represent.
 
-The following example shows the cURL request for create listener:
-
-**Example. cURL create listener request: JSON**
+**Example. cURL create pool request: JSON**
 
 .. code::  
 
-    curl -s -d \
-    '{
-        "listener": {
-            "admin_state_up": true,
-            "connection_limit": 100,
-            "description": "listener one",
-            "loadbalancer_id": "load_balancer_id",
-            "name": "listener1",
-            "protocol": "HTTP",
-            "protocol_port": "80",
-            "default_tls_container_ref": "https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c",
-            "sni_container_refs": [
-                "https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d",
-                "https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e" 
-            ]   
-         }
-    }' \
-    -H "X-Auth-Token: $AUTH_TOKEN" \
-    -H "Content-Type: application/json" \
-    "$API_ENDPOINT/loadbalancers" | python -m json.tool
+   curl -s -d \
+   '{
+       "pool": {
+           "admin_state_up": true,
+           "description": "simple pool",
+           "lb_algorithm": "ROUND_ROBIN",
+           "listener_id": "listener_id",
+           "name": "pool1",
+           "protocol": "HTTP",
+           "session_persistence": {
+               "cookie_name": "my_cookie",
+               "type": "APP_COOKIE"
+           }   
+        }
+   }' \
+   -H "X-Auth-Token: $AUTH_TOKEN" \
+   -H "Content-Type: application/json" \
+   -X POST \
+   "$API_ENDPOINT/pools" | python -m json.tool
 
-Remember to replace the names in the examples above with their actual
-respective values for all the cURL examples that follow:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Chapter 4, *Generate an authentication
-   token* <Generating_Auth_Token.html>`__)
 
--  **load\_balancer\_id** — as returned in your create load balancer
-   response (must be replaced in the request URL)
+The following example shows the response for create pool:
 
-The following example shows the response for create listener:
-
-**Example. cURL create listener response: JSON**
+**Example. Create pool response: JSON**
 
 .. code::  
 
     {
-       "listener":{
-          "admin_state_up":true,
-          "connection_limit":100,
-          "default_pool_id":null,
-          "description":"listener one",
-          "id":"39de4d56-d663-46e5-85a1-5b9d5fa17829",
-          "loadbalancers":[
-             {
-                "id":"a36c20d0-18e9-42ce-88fd-82a35977ee8c"
-             }
-          ],
-          "name":"listener1",
-          "protocol":"HTTP",
-          "protocol_port":80,
-          "tenant_id":"1a3e005cf9ce40308c900bcb08e5320c",
-          "default_tls_container_ref":"https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c",
-          "sni_container_refs":[
-             "https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d",
-             "https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e"
-          ]
+       "pool": {
+           "admin_state_up": true,
+          "description": "simple pool",
+           "healthmonitor_id": null,
+           "id": "12ff63af-4127-4074-a251-bcb2ecc53ebe",
+           "lb_algorithm": "ROUND_ROBIN",
+           "listeners": [
+               {
+                   "id": "39de4d56-d663-46e5-85a1-5b9d5fa17829"
+               }
+           ],
+           "members": [],
+           "name": "pool1",
+           "protocol": "HTTP",
+           "session_persistence": {
+               "cookie_name": "my_cookie",
+               "type": "APP_COOKIE"
+           },
+           "tenant_id": "1a3e005cf9ce40308c900bcb08e5320c"
        }
-    }
+   }
 
-In this example, you can see that a new listener has been created with
-ID 39de4d56-d663-46e5-85a1-5b9d5fa17829. You will need the listener ID
-for making the create pool call in the next section, and you should
-supply this value wherever you see the field **listener\_id** in the
-examples in this guide.
+In this example, you can see that a new pool has been created with ID ``12ff63af-4127-4074-a251-bcb2ecc53ebe``. You will need the pool ID for making the :ref:`Add a member to pool <add-pool-member>` call, and you should supply this value wherever you see ``pool_id`` in the examples in this guide.
+
 
