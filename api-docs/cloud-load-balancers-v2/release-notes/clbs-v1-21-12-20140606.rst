@@ -1,0 +1,27 @@
+.. version-v1.21.12-release-notes:
+
+v1.21.12, June 6, 2014 
+----------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+The ``currentConn`` field has been added to the statistics operation for better connection 
+tracking. This field shows the number of simultaneous connections that are active at the 
+time of the request.
+  
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+- Updated the statistics operation to properly track SSL virtual servers.
+- Fixed a bug that caused an ERROR state when certain attributes of a load balancer with 
+  HTTPS Redirect enabled were modified.
+
+
+
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

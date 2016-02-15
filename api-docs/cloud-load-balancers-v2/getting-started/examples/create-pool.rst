@@ -1,7 +1,7 @@
-.. _create-listener:
+.. _create-pool:
 
 ================
-Create listener
+Create pool
 ================
 
 Next you will create a listener. A listener is an object containing data

@@ -3,7 +3,7 @@
 Create and manage Cloud Load Balancers
 ----------------------------------------
 
-You can use the examples in the following sections to create and manage load balancers
+You can use the examples in the following sections to create and manage load balancers 
 by using Cloud Load Balancers API operations. Before running the examples, 
 review the :ref:`Cloud Load Balancers concepts<concepts>` to understand the 
 API workflow, messaging patterns, and use cases.  
@@ -19,7 +19,9 @@ API workflow, messaging patterns, and use cases.
 .. include:: examples/create-cloud-servers-to-lb.rst
 .. include:: examples/create-load-balancer.rst
 .. include:: examples/list-load-balancer-details.rst
-.. include:: examples/add-node.rst
-.. include:: examples/update-load-balancer-attributes.rst
+.. include:: examples/create-listener.rst
+.. include:: examples/create-pool.rst
+.. include:: examples/add-pool-member.rst
+.. include:: examples/create-health-monitor.rst
 
 

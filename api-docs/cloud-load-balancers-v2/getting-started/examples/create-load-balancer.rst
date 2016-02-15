@@ -6,46 +6,45 @@ Creating a load balancer
 
 Cloud Load Balancers make it easy to develop scalable, high-availability
 configurations in the Cloud. By leveraging Cloud Load Balancers, you
-will be provided with a dedicated IP address that you can use to reach
+are provided with a dedicated IP address that you can use to reach
 your service.
 
-You need to use the Create Load Balancer API call (``POST /loadbalancers``)
+You use the create load balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.
 
 In this case, assume that you want to create a load balancer with the
 following configuration:
 
--  name = "loadbalancer1"
+-  ``name`` is ``loadbalancer1``.
 
--  description = "simple lb"
+-  ``description`` is ``simple lb``.
 
--  vip\_subnet\_id = "**your\_vip\_subnet\_id**"
+
+-  ``vip_subnet_id`` is ``your_vip_subnet_id``.
 
    The UUID of the subnet on which to allocate the virtual IP (VIP)
-   address. The ``vip_subnet_id`` is the id of a subnet returned from
+   address. The ``vip_subnet_id`` is the ID of a subnet returned from
    querying neutron's subnets as follows:
    ``neutron.endpoint/v2.0/subnets?shared=True``
 
-   **Reviewer: please specify the specific \ ``neutron.endpoint``\ 
+   **Reviewer: Please specify the specific \ ``neutron.endpoint``\ 
    mentioned in the previous sentence.**
 
--  vip\_address = "10.0.0.4"
+-  ``vip_address`` is ``10.0.0.4``.
 
    The IP address of the VIP.
-
-      style="margin-left: 0.5in; margin-right: 0.5in;">
 
    ..  note:: 
      This field is optional. It currently cannot be provided. Omit it to
      have the system provide the VIP.
 
--  admin\_state\_up = "true"
+-  ``admin_state_up`` is ``true``.
 
-   Specify that the admin state for the new load balancer is up (true).
+   Specify that the ``admin state`` for the new load balancer is ``up`` (``true``).
 
-The following example shows the cURL request for Create Load Balancer:
+The following example shows the cURL request for create load balancer:
 
-**Example. cURL Create Load Balancer Request: JSON**
+**Example. cURL create load balancer request: JSON**
 
 .. code::  
 
@@ -62,19 +61,15 @@ The following example shows the cURL request for Create Load Balancer:
     -H "Content-Type: application/json" \
     "$API_ENDPOINT/loadbalancers" | python -m json.tool
 
-Remember to replace the names in the examples above with their actual
-respective values for all the cURL examples that follow:
+Remember to replace the names in the example above with their actual
+values for all the cURL examples that follow:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Chapter 4, *Generate an authentication
-   token* <Generating_Auth_Token.html>`__)
-
--  **your\_vip\_subnet\_id** — The UUID of the subnet on which to
+-  ``your_vip_subnet_id`` — The UUID of the subnet on which to
    allocate the virtual IP (VIP) address.
 
-The following example shows the response for Create load balancer:
+The following example shows the response for create load balancer:
 
-**Example. cURL Create Load Balancer Response: JSON**
+**Example. cURL create load balancer response: JSON**
 
 .. code::  
 
@@ -96,8 +91,8 @@ The following example shows the response for Create load balancer:
     }
 
 In the previous examples, you can see that a new load balancer has been
-created with id a36c20d0-18e9-42ce-88fd-82a35977ee8c. You will need the
-load balancer id for making the Show load balancer details call in the
+created with ID ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``. You will need the
+load balancer ID for making the show load balancer details call in the
 next section, and you should supply this value wherever you see the
-field **load\_balancer\_id** in the examples in this guide.
+field ``load_balancer_id`` in the examples in this guide.
 

@@ -1,0 +1,24 @@
+.. version-v1.23.7-release-notes:
+
+v1.23.7, October 7, 2014 
+----------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+- A certificate mappings feature was added for SSL-terminated load balancers.
+- SSL session ID persistence was added for HTTPS and SSL pass-through load balancers.
+- You can now use source IP session persistence on HTTP load balancers.
+- A private key is no longer returned for SSL termination.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+Fixed bug in which real-time stats API call was returning the wrong usage for current 
+connections (SSL).
+  
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

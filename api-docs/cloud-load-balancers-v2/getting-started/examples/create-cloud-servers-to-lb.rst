@@ -9,7 +9,7 @@ existing Cloud Server) to set up as a member for your load balancer.
 
 .. note::
    If you are using an existing Cloud Server on your account, skip Steps 1-4
-   and go directly to Step 6 below.
+   and go directly to Step 5 below.
 
 Create a Cloud Server using the Cloud Servers section of the Cloud
 Control Panel (login here: `Cloud Control

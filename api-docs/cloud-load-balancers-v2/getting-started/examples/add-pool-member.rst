@@ -1,8 +1,8 @@
-.. _create-listener:
+.. _add-pool-member:
 
-================
-Create listener
-================
+===================
+Add member to pool
+===================
 
 Next you will create a listener. A listener is an object containing data
 pertaining to the "listening" port. This object defines the "frontend"
