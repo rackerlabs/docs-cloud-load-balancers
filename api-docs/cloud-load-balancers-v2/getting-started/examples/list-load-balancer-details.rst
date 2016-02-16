@@ -12,10 +12,6 @@ configured and associated with your account.
 
 This operation does not require a request body.
 
-The example response body lists the details for the load balancer (with
-``load_balancer_id``, which you need to replace in the URL in the
-example below) that you created in the previous section.
-
 The following example shows the cURL request for show load balancer
 details:
 
@@ -26,15 +22,13 @@ details:
     curl -s  \
     -H "X-Auth-Token: $AUTH_TOKEN"  \
     -H "Accept: application/json"  \
+    -X GET \ 
     "$API_ENDPOINT/loadbalancers/load_balancer_id" | python -m json.tool
 
-Remember to replace the names in the example above with their actual
-values for all the cURL examples that follow:
+Remember to replace ``load_balancer_id`` in the example above with the actual
+value that is returned in :ref:`Create a load balancer <create-load-balancer>`.
 
--  ``load_balancer_id`` — as returned in your create load balancer
-   response (must be replaced in the request URL)
-
-The following example shows the list load balancer details response:
+The following example gives the show load balancer details response:
 
 **Example. Show load balancer details response: JSON**
 

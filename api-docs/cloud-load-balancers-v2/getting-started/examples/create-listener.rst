@@ -1,48 +1,43 @@
 .. _create-listener:
 
-================
-Create listener
-================
+==================
+Create a listener
+==================
 
-Next you will create a listener. A listener is an object containing data
+Next you create a listener. A listener is an object containing data
 pertaining to the "listening" port. This object defines the "frontend"
-of the configuration and contains the backend data such as pools and its
+of the configuration and contains the backend data, such as pools and pool
 members.
 
-You need to use the create listener API call (``/lbaas/listeners``) to
+You need to use the create listener API call to
 create a listener with the configuration that you specify.
 
-In this case, assume that you want to create a listener with the
-following configuration:
+Assume that you want to create a listener with the following configuration:
 
--  "admin\_state\_up" = "listener1"
+-  ``admin_state_up`` is  = ``listener1``.
 
--  "connection\_limit" = 100
+-  ``connection_limit`` is ``100``.
 
--  "description" = "listener one"
+-  ``description`` is ``listener one``.
 
--  "loadbalancer\_id" = "**load\_balancer\_id**"
+-  ``loadbalancer_id`` is ``load_balancer_id``. Remember to replace ``load_balancer_id`` in the example with the actual value 
+   that was returned in your create load balancer response. See :ref:`Create a load balancer <create-load-balancer>`.
 
--  "name" = "listener1"
+-  ``name`` is ``listener1``.
 
--  "protocol" = "HTTP"
+-  ``protocol`` is ``HTTP``.
 
--  "protocol\_port" = "80"
+-  ``protocol_port`` is ``80``.
 
--  "default\_tls\_container\_ref":
-   "https://barbican.endpoint/containers/
-   a36c20d0-18e9-42ce-88fd-82a35977ee8c"
+-  ``default_tls_container_ref`` is ``https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c``.
 
--  "sni\_container\_refs": [ "https://barbican.endpoint/containers/
-   b36c20d0-18e9-42ce-88fd-82a35977ee8d",
-   "https://barbican.endpoint/containers/
-   c36c20d0-18e9-42ce-88fd-82a35977ee8e"
+-  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d, https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
 
-   Reviewer: how do we explain to the user where to get these container
+   **Reviewer: How do we explain to the user where to get these container
    refs for the previous 2 arguments? If we want to link to the barbican
    docs, please provide the specific links to the barbican (CloudKeep)
    docs that I should provide here. I think we also should provide a
-   brief explanation here for what these containers represent.
+   brief explanation here for what these containers represent.**
 
 The following example shows the cURL request for create listener:
 
@@ -69,21 +64,14 @@ The following example shows the cURL request for create listener:
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
+    -X POST \
     "$API_ENDPOINT/loadbalancers" | python -m json.tool
 
-Remember to replace the names in the examples above with their actual
-respective values for all the cURL examples that follow:
 
--  **your\_auth\_token** — as returned in your authentication response
-   (see the response examples in `Chapter 4, *Generate an authentication
-   token* <Generating_Auth_Token.html>`__)
-
--  **load\_balancer\_id** — as returned in your create load balancer
-   response (must be replaced in the request URL)
 
 The following example shows the response for create listener:
 
-**Example. cURL create listener response: JSON**
+**Example. Create listener response: JSON**
 
 .. code::  
 
@@ -112,8 +100,8 @@ The following example shows the response for create listener:
     }
 
 In this example, you can see that a new listener has been created with
-ID 39de4d56-d663-46e5-85a1-5b9d5fa17829. You will need the listener ID
-for making the create pool call in the next section, and you should
-supply this value wherever you see the field **listener\_id** in the
+ID ``39de4d56-d663-46e5-85a1-5b9d5fa17829``. You will need the listener ID
+for making the :ref:`Create a pool <create-pool>` call, and you should
+supply this value wherever you see ``listener_id`` in the
 examples in this guide.
 
