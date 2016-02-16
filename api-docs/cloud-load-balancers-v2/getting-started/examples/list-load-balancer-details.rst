@@ -10,7 +10,6 @@ configured and associated with your account.
 ..  note::
     This operation does not return details for a load balancer that has been deleted.
 
-
 This operation does not require a request body.
 
 The following example shows the cURL request for show load balancer

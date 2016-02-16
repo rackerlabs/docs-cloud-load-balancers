@@ -4,7 +4,7 @@
 Create a Cloud Server
 =========================
 
-In this section you create a new Cloud Servers (or use an
+In this section you create a new Cloud Server (or use an
 existing Cloud Server) to set up as a member for your load balancer.
 
 .. note::
@@ -13,11 +13,6 @@ existing Cloud Server) to set up as a member for your load balancer.
 
 Create a Cloud Server using the Cloud Servers section of the `Cloud Control
 Panel <http://mycloud.rackspace.com/>`__.
-
-.. note::
-   You can also create a Cloud Server using the Cloud Servers API. Refer to
-   the `Cloud Servers API Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#developer-guide>`__
-   for details.
 
 #. Click **Servers** to view the Cloud Servers page.
 
@@ -37,4 +32,7 @@ Panel <http://mycloud.rackspace.com/>`__.
       \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
    
-
+.. note::
+   You can also create a Cloud Server using the Cloud Servers API. Refer to
+   the `Cloud Servers API Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#developer-guide>`__
+   for details.

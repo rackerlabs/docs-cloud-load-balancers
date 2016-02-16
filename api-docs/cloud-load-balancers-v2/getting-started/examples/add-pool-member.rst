@@ -6,7 +6,7 @@ Add a member to pool
 
 When a member is added to a pool, the member is assigned a unique identifier that you can use for management operations, such as changing the ``admin_state`` or removing the member.
 
-For the member, enter the IP address that you recorded for your Cloud Server in :ref:`Creating a Cloud Server <create-cloud-servers>`. 
+For the member, enter the IP address that you recorded for your Cloud Server in :ref:`Create a Cloud Server <create-cloud-servers>`. 
 
 Assume that you to want to configure the member with the following configuration:  
 

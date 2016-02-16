@@ -12,7 +12,7 @@ your service.
 You use the create load balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.
 
-In this case, assume that you want to create a load balancer with the
+Assume that you want to create a load balancer with the
 following configuration:
 
 -  ``name`` is ``loadbalancer1``.
@@ -20,26 +20,21 @@ following configuration:
 -  ``description`` is ``simple lb``.
 
 
--  ``vip_subnet_id`` is ``your_vip_subnet_id``. Remember to replace ``your_vip_subnet_id`` in the example with the actual value.
-
-   The UUID of the subnet on which to allocate the virtual IP (VIP)
-   address. The ``vip_subnet_id`` is the ID of a subnet returned from
+-  ``vip_subnet_id`` is ``your_vip_subnet_id``. Remember to replace ``your_vip_subnet_id`` 
+   in the example with the actual value. The ``vip_subnet_id`` parameter is the UUID of the 
+   subnet on which to allocate the virtual IP (VIP)
+   address. This parameter is the ID of a subnet returned from
    querying neutron's subnets as follows:
    ``neutron.endpoint/v2.0/subnets?shared=True``
 
    **Reviewer: Please specify the specific ``neutron.endpoint`` mentioned in the previous sentence.**
 
--  ``vip_address`` is ``10.0.0.4``.
-
-   The IP address of the VIP.
+-  ``vip_address`` is ``10.0.0.4``. The ``vip_address`` parameter is the IP address of the VIP.
 
    ..  note:: 
-     This field is optional. It currently cannot be provided. Omit it to
-     have the system provide the VIP.
+     This field is optional. Currently, you cannot provided it. When you omit it, the system provides the VIP.
 
--  ``admin_state_up`` is ``true``.
-
-   Specify that the ``admin state`` for the new load balancer is ``up`` (``true``).
+-  ``admin_state_up`` is ``true``. Specify that the ``admin state`` for the new load balancer is ``up`` (``true``).
 
 The following example shows the cURL request for create load balancer:
 
