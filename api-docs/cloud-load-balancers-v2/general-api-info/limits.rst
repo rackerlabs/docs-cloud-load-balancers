@@ -4,8 +4,6 @@
 Limits
 ======
 
-**Reviewer: This section needs to be completely redone for v2 (from Jorge).**
-
 All accounts, by default, have a preconfigured set of thresholds (or limits) to manage 
 capacity and prevent abuse of the system. The system recognizes two kinds of limits: 
 rate limits and absolute limits. Rate limits are thresholds that are reset after a 
@@ -37,26 +35,26 @@ following URI:
 +--------+---------+----------+---------------+
 | Verb   | URI     | RegEx    | Default limit |
 +========+=========+==========+===============+
-| GET    | /v1.0/* | ^/1.0/.* | 5/second      |
+| GET    | /v2.0/* | ^/2.0/.* | 5/second      |
 +--------+---------+----------+---------------+
-| GET    | /v1.0/* | ^/1.0/.* | 100/minute    |
+| GET    | /v2.0/* | ^/2.0/.* | 100/minute    |
 +--------+---------+----------+---------------+
-| POST   | /v1.0/* | ^/1.0/.* | 2/second      |
+| POST   | /v2.0/* | ^/2.0/.* | 2/second      |
 +--------+---------+----------+---------------+
-| POST   | /v1.0/* | ^/1.0/.* | 25/minute     |
+| POST   | /v2.0/* | ^/2.0/.* | 25/minute     |
 +--------+---------+----------+---------------+
-| PUT    | /v1.0/* | ^/1.0/.* | 5/second      |
+| PUT    | /v2.0/* | ^/2.0/.* | 5/second      |
 +--------+---------+----------+---------------+
-| PUT    | /v1.0/* | ^/1.0/.* | 50/minute     |
+| PUT    | /v2.0/* | ^/2.0/.* | 50/minute     |
 +--------+---------+----------+---------------+
-| DELETE | /v1.0/* | ^/1.0/.* | 2/second      |
+| DELETE | /v2.0/* | ^/2.0/.* | 2/second      |
 +--------+---------+----------+---------------+
-| DELETE | /v1.0/* | ^/1.0/.* | 50/minute     |
+| DELETE | /v2.0/* | ^/2.0/.* | 50/minute     |
 +--------+---------+----------+---------------+
 
 Rate limits are applied in order relative to the verb, going from least to most specific. 
-For example, although the threshold for **POST** to /v1.0/\* is 25 per minute, one cannot 
-**POST** to /v1.0/\* more than 2 times per second because the rate limit for any **POST** 
+For example, although the threshold for **POST** to /v2.0/\* is 25 per minute, one cannot 
+**POST** to /v2.0/\* more than 2 times per second because the rate limit for any **POST** 
 is 2 per second. In the event you exceed the thresholds established for your account, 
 a 413 (Rate Control) HTTP response is returned with a ``Retry-After`` header to notify 
 the client when they can attempt to try again.
@@ -125,8 +123,8 @@ This operation does not require a request body.
             "rate" : {
                 "values": [
                     {
-                        "uri" : "/v1.0/*",
-                        "regex" : "^/1.0/.*",
+                        "uri" : "/v2.0/*",
+                        "regex" : "^/2.0/.*",
                         "limit" : [
                             {
                                 "verb" : "GET",

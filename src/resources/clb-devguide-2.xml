@@ -18,8 +18,9 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="clb-devguide">
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
-    <title>Rackspace Cloud Load Balancers Developer Guide, v2</title>
-    <titleabbrev>Load Balancers Developer Guide, v2</titleabbrev>
+    <title>Rackspace Cloud Load Balancers Developer Guide,
+        v2.0</title>
+    <titleabbrev>Load Balancers Developer Guide, v2.0</titleabbrev>
     <?rax status.bar.text="EARLY ACCESS"?>
     <info>
         <author>
@@ -38,14 +39,15 @@
             <year>2013</year>
             <year>2014</year>
             <year>2015</year>
+            <year>2016</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo xmlns:svg="http://www.w3.org/2000/svg"
             xmlns:m="http://www.w3.org/1998/Math/MathML"
             xmlns:html="http://www.w3.org/1999/xhtml">API
-            v2</releaseinfo>
+            v2.0</releaseinfo>
         <productname>Rackspace Cloud Load Balancers</productname>
-        <pubdate>2015-12-17</pubdate>
+        <pubdate>2016-02-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the
@@ -76,7 +78,7 @@
         <raxm:metadata
             xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>API Developer Guide</raxm:displayname>
-            <raxm:product version="v2">loadbalancers</raxm:product>
+            <raxm:product version="v2.0">loadbalancers.0</raxm:product>
             <raxm:priority>20</raxm:priority>
         </raxm:metadata>
     </info>
@@ -86,7 +88,7 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">loadbalancers</raxm:product>
+                <raxm:product version="v2.0">loadbalancers</raxm:product>
                 <raxm:priority>1</raxm:priority>
             </raxm:metadata>
         </info>
@@ -105,10 +107,7 @@
                     <para>HTTP/1.1 conventions</para>
                 </listitem>
                 <listitem>
-                    <para>JSON and/or XML serialization formats</para>
-                </listitem>
-                <listitem>
-                    <para>Atom syndication format</para>
+                    <para>JSON serialization formats</para>
                 </listitem>
             </itemizedlist>
         </section>
@@ -149,21 +148,6 @@
                     xlink:href="http://www.twitter.com/Rackspace"
                     >http://www.twitter.com/Rackspace</link>.</para>
         </section>
-        <section xml:id="Pricing_SLA-d1e1362"
-            xmlns:svg="http://www.w3.org/2000/svg"
-            xmlns:m="http://www.w3.org/1998/Math/MathML"
-            xmlns:html="http://www.w3.org/1999/xhtml">
-            <title>Pricing and service level</title>
-            <para>Cloud Load Balancers is part of the Rackspace Cloud
-                and your use through the API is billed as per the
-                pricing schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/load-balancing/pricing/"
-                    >http://www.rackspace.com/cloud/load-balancing/pricing/</link>.</para>
-            <para>The Service Level Agreement (SLA) for Cloud Load
-                Balancers is available at <link
-                    xlink:href="http://www.rackspace.com/information/legal/cloud/sla#cloud_load_balancers"
-                    >http://www.rackspace.com/information/legal/cloud/sla#cloud_load_balancers</link>.</para>
-        </section>
     </chapter>
     <chapter xml:id="Concepts-d1e233">
         <?dbhtml stop-chunking?>
@@ -172,13 +156,10 @@
             <raxm:metadata
                 xmlns:raxm="http://docs.rackspace.com/api/metadata">
                 <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">loadbalancers</raxm:product>
+                <raxm:product version="v2.0">loadbalancers</raxm:product>
                 <raxm:priority>2</raxm:priority>
             </raxm:metadata>
         </info>
-        <para security="reviewer">Reviewer: Please revisit these
-            concepts to see if any more should be added as we add new
-            features.</para>
         <para>To use the Rackspace Cloud Load Balancers API
             effectively, you should understand several key
             concepts:</para>
@@ -196,11 +177,6 @@
                 to the "listening" port. This object defines the
                 "frontend" of the configuration and contains the
                 backend data such as pools and its members. </para>
-            <para security="reviewer">Reviewer: can you refine/enhance
-                this definition of Listener?</para>
-            <para security="reviewer">Reviewer: are there any other
-                new terms for V2 that we need to define here in the
-                Concepts section?</para>
         </section>
         <section xml:id="Virtual_IP-d1e252">
             <title>Virtual IP</title>
@@ -211,7 +187,7 @@
                 members based on the configuration of the load
                 balancer. </para>
         </section>
-        <section xml:id="Erropage-d1e669" security="writeronly">
+        <section xml:id="Erropage-d1e669">
             <title>Error page</title>
             <para>An error page is the html file that is shown to the
                 end user when an error in the service has been thrown.
@@ -293,7 +269,7 @@
                 connections to a service to be redirected to the same
                 member as long as it is online.</para>
         </section>
-        <section xml:id="Connection_Logging-d1e385" security="writeronly">
+        <section xml:id="Connection_Logging-d1e385">
             <title>Connection logging</title>
             <para>The connection logging feature allows logs to be
                 delivered to a Cloud Files account every hour. For
@@ -828,15 +804,12 @@
                     </tbody>
                 </table>
             </para>
-            <para security="reviewer">Reviewer: can you please check
-                the endpoints for the V2 service to make sure they are
-                correct?</para>
             <para xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">When making
                 a Cloud Load Balancers API call, place the endpoint at
-                the beginning of the request URL, for example the URL
-                to use to Create a loadbalancer is:
+                the beginning of the request URL. For example, the URL
+                to use the create a loadbalancer operation  is:
                     <code>https://iad.networks.api.rackspacecloud.com/v2.0/lbass/</code><code>loadbalancers</code>.
                 Note that the <code>v2.0</code> component in the URL
                 indicates that you are using version 2.0 of the Cloud
@@ -878,14 +851,8 @@
                 and is required for operations that have a request
                 body. The response format can be specified in requests
                 using either the <code>Accept</code> header or adding
-                a <code>.json</code> extension to the request URI.
-                Note that it is possible for a response to be
-                serialized using a format different from the request.
-                If no response format is specified, JSON is the
-                default. If conflicting formats are specified using
-                both an <code>Accept</code> header and a query
-                extension, the query extension takes
-                precedence.</para>
+                a <code>.json</code> extension to the request URI. If
+                no response format is specified, JSON is the default. </para>
             <table rules="all">
                 <caption>JSON response format</caption>
                 <thead>

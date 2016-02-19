@@ -72,7 +72,7 @@
 
 					"type": "rax:cdn"
 				}
-			],
+                       ],
 			"user": {
 				"id": "123456",
 				"roles": [

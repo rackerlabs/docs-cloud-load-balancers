@@ -4,7 +4,7 @@
 Listener protocols
 =====================
 
-The following table describes the supported Listener protocols.
+The following table describes the supported listener protocols.
 
 **Table: Listener protocols**
 

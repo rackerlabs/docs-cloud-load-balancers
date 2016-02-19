@@ -25,7 +25,7 @@ balancer changes to ``ACTIVE``, the load balancer was successfully
 provisioned and is operational for traffic handling.
 
 If the request cannot be fulfilled due to insufficient or invalid data,
-the service returns the HTTP ``Bad Request                 (400)``
+the service returns the HTTP ``Bad Request (400)``
 response code with information about the failure in the response body.
 Validation errors require that you correct the error and submit the
 request again.

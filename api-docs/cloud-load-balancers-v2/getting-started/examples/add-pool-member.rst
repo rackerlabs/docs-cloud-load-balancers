@@ -16,11 +16,8 @@ Assume that you to want to configure the member with the following configuration
 
 -  ``protocol_port`` is ``80``. 
 
--  ``subnet_id`` is the UUID of the subnet in which to access this member. The UUID is determined 
-   by what subnet the member is on and is the ID of the subnet returned from querying Neutron’s 
-   subnets using the following endpoint: ``neutron.endpoint/v2.0/subnets?shared=True``.
-
-   **Reviewer: Please specify the specific neutron.endpoint mentioned in the previous sentence.**
+-  ``subnet_id`` is the UUID of the subnet on which the member resides. The ``subnet_id`` is the ID of a subnet returned from querying Neutron’s 
+   subnets using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``.
 
 -  ``weight`` is ``1``. The ``weight`` parameter is a positive integer value that indicates the relative 
    portion of traffic that this member should receive from the pool. For example, a member with a weight 
