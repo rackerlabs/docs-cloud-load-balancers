@@ -1,3 +1,8 @@
 {
-  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-load-balancers/"
+  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-load-balancers/v2/",
+  "githubUrl": "https://github.com/rackerlabs/docs-cloud-load-balancers/",
+  "githubBranch": "master",
+  "meta": {
+    "preferGithubIssues": false
+  }
 }
