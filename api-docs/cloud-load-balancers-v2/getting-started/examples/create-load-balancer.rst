@@ -19,16 +19,12 @@ following configuration:
 
 -  ``description`` is ``simple lb``.
 
-
 -  ``vip_subnet_id`` is ``your_vip_subnet_id``. Remember to replace ``your_vip_subnet_id`` 
    in the example with the actual value. The ``vip_subnet_id`` parameter is the UUID of the 
    subnet on which to allocate the virtual IP (VIP)
    address. This parameter is the ID of a subnet returned from
-   querying neutron's subnets as follows:
-   ``neutron.endpoint/v2.0/subnets?shared=True``
-
-   **Reviewer: Please specify the specific ``neutron.endpoint`` mentioned in the previous sentence.**
-
+   querying neutron's subnets using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``.
+   
 -  ``vip_address`` is ``10.0.0.4``. The ``vip_address`` parameter is the IP address of the VIP.
 
    ..  note:: 

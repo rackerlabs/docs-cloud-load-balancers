@@ -1,7 +1,7 @@
 .. _behavior:
 
 ======================================
-API Behavior, Errors, & Suggestions
+API behavior, errors, and suggestions
 ======================================
 
 This section describes the behavior of the API, errors, and provides
@@ -9,7 +9,7 @@ suggestions for working with the API.
 
 .. _clb-dg-behavior-api:
 
-API Behavior
+API behavior
 ~~~~~~~~~~~~
 
 The LBaaS API is considered to be asynchronous because mutable operations (that is, 
@@ -25,7 +25,7 @@ GET) is allowed.
 
 .. _clb-dg-behavior-api-status:
 
-Load Balancer Statuses
+Load balancer statuses
 ----------------------
 
 +----------------+----------------------------------------------------+
@@ -50,7 +50,7 @@ Load Balancer Statuses
 
 .. _clb-dg-behavior-api-errors:
 
-API Errors
+API errors
 ~~~~~~~~~~~
 
 Error responses contain a body with the validation error, code, and specific message 

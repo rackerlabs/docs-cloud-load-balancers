@@ -28,13 +28,12 @@ Regionalized service endpoints
 ..  note::
     The service catalog returned in the auth response specifies the correct
     service access endpoint for your account to use for accessing Cloud Load Balancers. Use
-    the service type (rax:load-balancer) to locate the correct endpoint in the
+    the service ``type`` (``rax:load-balancer-v2``) to locate the correct endpoint in the
     service catalog. 
 
 
 When making a Cloud Load Balancers API call, place the endpoint at the
-beginning of the request URL, for example the URL to use to Create a
-loadbalancer is:
+beginning of the request URL. For example, the URL to use to :ref:`Create a load balancer<create-load-balancers-v2>` is:
 ``https://iad.networks.api.rackspacecloud.com/v2.0/lbaas/``\ ``loadbalancers``.
 Note that the ``v2.0`` component in the URL indicates that you are using
 version 2.0 of the Cloud Load Balancers API.

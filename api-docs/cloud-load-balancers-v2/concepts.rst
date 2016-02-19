@@ -18,9 +18,11 @@ A load balancer is a logical device which belongs to a cloud account. It is used
 Listener
 ~~~~~~~~~~~~~
 
-A Listener is an object containing data pertaining to the "listening"
-port. This object defines the "frontend" of the configuration and
-contains the backend data such as pools and its members.
+A listener is an object containing data pertaining to the "listening"
+port, and the protocol that the load balancer accepts incoming traffic on,  
+otherwise known as the "frontend" of the configuration. The frontend configuration
+also determines and contains the backend data, such as pools and its members to 
+which incoming traffic is directed.
 
 .. _concept-virtual-ip:
 

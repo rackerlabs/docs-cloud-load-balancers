@@ -210,7 +210,7 @@ the operation, but the request is properly formed.
     modifications on a single load balancer instance. If a concurrent modification 
     is attempted, the ``unprocessableEntity`` fault will be returned in the response. 
     If you are using the API programmatically, we suggest that you issue a GET request 
-    to Show load balancer details on the load balancer instance to verify that the status 
+    to :ref:`Show load balancer details <get-show-load-balancers-v2>` on the load balancer instance to verify that the status 
     is ``ACTIVE`` before continuing any other modifications.
 
 unprocessableEntity fault: Response

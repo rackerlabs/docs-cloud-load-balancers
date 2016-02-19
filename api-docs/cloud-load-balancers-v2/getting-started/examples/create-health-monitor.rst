@@ -51,7 +51,7 @@ The following example shows the cURL request for create health monitor:
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H '"Content-Type: application/json" \
    -X POST \
-   "$API_ENDPOINT/health_monitors/" | python -m json.tool
+   "$API_ENDPOINT/healthmonitors/" | python -m json.tool
 
 
 

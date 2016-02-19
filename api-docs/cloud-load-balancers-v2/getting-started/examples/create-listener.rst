@@ -31,13 +31,8 @@ Assume that you want to create a listener with the following configuration:
 
 -  ``default_tls_container_ref`` is ``https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c``.
 
--  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d, https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
+-  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d, https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``. For more information, see the `Cloud Key API Developer Guide - Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#container>`__ and the `Cloud Keep API Developer Guide - Container API operations <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#document-api-operations/container-operations>`__ .
 
-   **Reviewer: How do we explain to the user where to get these container
-   refs for the previous 2 arguments? If we want to link to the barbican
-   docs, please provide the specific links to the barbican (CloudKeep)
-   docs that I should provide here. I think we also should provide a
-   brief explanation here for what these containers represent.**
 
 The following example shows the cURL request for create listener:
 

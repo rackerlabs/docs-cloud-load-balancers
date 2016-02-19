@@ -7,7 +7,7 @@
                         "region": "IAD"
                     }
                 ],
-                "name": "cloudLoadBalancers",
-                "type": "rax:load-balancer"
+                "name": "cloudLoadBalancersV2",
+                "type": "rax:load-balancer-v2"
             }
             
