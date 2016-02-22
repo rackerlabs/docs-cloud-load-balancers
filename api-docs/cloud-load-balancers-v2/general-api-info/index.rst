@@ -16,10 +16,8 @@ The Rackspace Cloud Load Balancers API is implemented using a ReSTful web servic
     
    authentication            
    service-access            
-   request-response                                  
-   paginated-collections            
-   limits            
-   faults            
+   request-response                                              
+   limits                       
    date-time-format            
    api-behavior            
    listener-protocols            
