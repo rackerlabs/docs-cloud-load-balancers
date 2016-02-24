@@ -4,18 +4,15 @@
 Show load balancer details
 ==============================
 
-This operation provides detailed output for a specific load balancer that is 
+This operation (``GET /loadbalancers/load_balancer_id``) provides detailed output for a specific load balancer that is 
 configured and associated with your account. 
-
-..  note::
-    This operation does not return details for a load balancer that has been deleted.
 
 This operation does not require a request body.
 
-The following example shows the cURL request for show load balancer
-details:
+The following example shows the cURL request for showing load balancer
+details.
 
-**Example. cURL show load balancer details request: JSON**
+**Example: cURL command for showing load balancer details**
 
 .. code::  
 
@@ -25,12 +22,12 @@ details:
     -X GET \ 
     "$API_ENDPOINT/loadbalancers/load_balancer_id" | python -m json.tool
 
-Remember to replace ``load_balancer_id`` in the example above with the actual
+Remember to replace ``load_balancer_id`` in the example with the actual
 value that is returned in :ref:`Create a load balancer <create-load-balancer>`.
 
-The following example gives the show load balancer details response:
+The following example gives the show load balancer details response.
 
-**Example. Show load balancer details response: JSON**
+**Example: Show load balancer details response in JSON**
 
 .. code::  
 

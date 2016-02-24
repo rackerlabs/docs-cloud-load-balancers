@@ -1,31 +1,32 @@
 .. _add-pool-member:
 
-=====================
-Add a member to pool
-=====================
+========================
+Add a member to the pool
+========================
 
-When a member is added to a pool, the member is assigned a unique identifier that you can use for management operations, such as changing the ``admin_state`` or removing the member.
-
-For the member, enter the IP address that you recorded for your Cloud Server in :ref:`Create a Cloud Server <create-cloud-servers>`. 
+When a member is added to a pool (``POST /pools/pool_id/members``), the member is assigned a unique identifier that you can use for management operations, such as changing the ``admin_state`` or removing the member.
 
 Assume that you to want to configure the member with the following configuration:  
 
--  ``address`` is the IP address of the first Cloud Server that you created and recorded at the beginning of this Getting Started Guide. Remember to replace the placeholder in the example with the actual value.
+-  ``address`` is the IP address of the cloud server that you created and decided to use 
+   at the beginning of this guide. Remember to replace the placeholder in the example with the actual
+   IP address of the service.
 
 -  ``admin_state_up`` is ``true``.
 
 -  ``protocol_port`` is ``80``. 
 
--  ``subnet_id`` is the UUID of the subnet on which the member resides. The ``subnet_id`` is the ID of a subnet returned from querying Neutron’s 
-   subnets using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``.
+-  ``subnet_id`` is the UUID of the subnet on which the member resides. This parameter is the ID of a subnet 
+   returned from querying neutron’s 
+   subnets by using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``. Replace ``subnet_id`` in the example with the actual value.
 
--  ``weight`` is ``1``. The ``weight`` parameter is a positive integer value that indicates the relative 
+-  ``weight`` is ``1``. This parameter is a positive integer value that indicates the relative 
    portion of traffic that this member should receive from the pool. For example, a member with a weight 
    of 10 receives five times as much traffic as a member with a weight of 2.
 
-The following example shows the cURL request for adding a member to a pool:
+The following example shows the cURL request for adding a member to a pool.
 
-**Example. cURL add member to pool request: JSON**
+**Example: cURL command for adding a member to a pool with a JSON body**
 
 .. code::  
 
@@ -47,9 +48,9 @@ The following example shows the cURL request for adding a member to a pool:
    "$API_ENDPOINT/pools/pool_id/members" | python -m json.tool
 
 
-The following example shows the response returned when you add a member to a pool:
+The following example shows the response returned when you add a member to a pool.
 
-**Example. Add member to pool response: JSON**
+**Example: Add a member to a pool response in JSON**
 
 .. code::  
 
@@ -66,5 +67,5 @@ The following example shows the response returned when you add a member to a poo
     }
 
 
-In this example, you can see that a new member with ID ``9a7aff27-fd41-4ec1-ba4c-3eb92c629313`` has been added to the pool. You will need the pool ID for making the :ref:`Create a health monitor <create-health-monitor>` call, and you should supply this value wherever you see the ``pool_id`` in the examples in this guide.
+You need the ID (in this example, ``9a7aff27-fd41-4ec1-ba4c-3eb92c629313``) to :ref:`create a health monitor <create-health-monitor>`.
 

@@ -3,20 +3,11 @@
 Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To use the getting started examples, make sure you have the following information and 
-complete any necessary configuration work.
+To start using the API and complete the examples in this section, you need the following items:
 
-- Rackspace Cloud account
-- Username and password to access the account
-- API key to access Rackspace Cloud services
-- Account number
-- :ref:`Command line tool or browser client <send-api-requests>` to communicate with the API service
-- Configure environment variables in :ref:`cURL <configure-environment-variables>`
-
-If you don't have an account, `sign up`_ for one.
-You can find your account number and API key on the Account Settings page in the Cloud Control Panel.
+- Rackspace Cloud account. If you don't have an account, `sign up`_ for one.
+- :ref:`Command line tool or browser client <send-api-requests>` for communicating with the API service.
 
 .. include:: ../common-gs/get-credentials.rst
 
-.. _Cloud Control Panel: https://mycloud.rackspace.com
 .. _sign up: https://cart.rackspace.com/cloud/

@@ -4,10 +4,6 @@
 Create a load balancer
 ==========================
 
-Cloud Load Balancers make it easy to develop scalable, high-availability
-configurations in the Cloud. By leveraging Cloud Load Balancers, you
-are provided with a dedicated IP address that you can use to reach
-your service.
 
 You use the create load balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.
@@ -19,22 +15,17 @@ following configuration:
 
 -  ``description`` is ``simple lb``.
 
--  ``vip_subnet_id`` is ``your_vip_subnet_id``. Remember to replace ``your_vip_subnet_id`` 
-   in the example with the actual value. The ``vip_subnet_id`` parameter is the UUID of the 
+-  ``vip_subnet_id`` is the UUID of the 
    subnet on which to allocate the virtual IP (VIP)
    address. This parameter is the ID of a subnet returned from
-   querying neutron's subnets using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``.
-   
--  ``vip_address`` is ``10.0.0.4``. The ``vip_address`` parameter is the IP address of the VIP.
+   querying neutron's subnets by using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``. Remember to replace 
+   ``your_vip_subnet_id`` in the example with the actual value.
 
-   ..  note:: 
-     This field is optional. Currently, you cannot provided it. When you omit it, the system provides the VIP.
+-  ``admin_state_up`` is ``true``. 
 
--  ``admin_state_up`` is ``true``. Specify that the ``admin state`` for the new load balancer is ``up`` (``true``).
+The following example shows the cURL request for creating a load balancer.
 
-The following example shows the cURL request for create load balancer:
-
-**Example. cURL create load balancer request: JSON**
+**Example: cURL command for creating a load balancer with a JSON body**
 
 .. code::  
 
@@ -54,9 +45,9 @@ The following example shows the cURL request for create load balancer:
 
 
 
-The following example shows the response for create load balancer:
+The following example shows the response for creating a load balancer.
 
-**Example. Create load balancer response: JSON**
+**Example: Create load balancer response in JSON**
 
 .. code::  
 
@@ -77,8 +68,6 @@ The following example shows the response for create load balancer:
       }
     }
 
-You can see that a new load balancer has been
-created with ID ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``. You will need the
-load balancer ID for making the :ref:`Show load balancer details <show-load-balancer-details>` call, and you should supply this value wherever you see 
+You need the load balancer ID (in this example, ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``) to :ref:`show load balancer details <show-load-balancer-details>`, and you should supply this ID wherever you see 
 ``load_balancer_id`` in the examples in this guide.
 

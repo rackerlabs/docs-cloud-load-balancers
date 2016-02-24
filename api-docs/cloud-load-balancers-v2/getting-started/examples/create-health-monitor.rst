@@ -4,22 +4,23 @@
 Create a health monitor
 =======================
 
-Next you create a health monitor for your pool.
+A health monitor determines whether a member of a pool is usable for processing a request.
 
-Assume that you want to create a health monitor with the
+Assume that you want to create a health monitor (``POST /healthmonitors``) with the
 following configuration:
 
 -  ``admin_state_up`` is ``true``.
 
 -  ``delay`` is ``1``.
 
--  ``expected_codes`` are ``200, 201, 201``.
+-  ``expected_codes`` is ``200, 201, 201``.
 
 -  ``http_method`` is ``GET``.
 
 -  ``max_retries`` is ``5``.
 
--  ``pool_id`` is ``your_pool_id``. For your pool ID, see :ref:`Add member to pool <add-pool-member>`.
+-  ``pool_id`` is the ID of the pool member that you added (see :ref:`Add member to pool <add-pool-member>`).
+   Remember to replace ``pool_id`` in the example with the actual value that was returned in the response.
 
 -  ``timeout`` is ``1``.
 
@@ -28,9 +29,9 @@ following configuration:
 -  ``url_path`` is ``/index/html``.
    
 
-The following example shows the cURL request for create health monitor:
+The following example shows the cURL request for creating a health monitor.
 
-**Example. cURL create health monitor request: JSON**
+**Example: cURL command for creating a health monitor with a JSON body**
 
 .. code::  
 
@@ -56,9 +57,9 @@ The following example shows the cURL request for create health monitor:
 
 
 
-The following example shows the response for create health monitor:
+The following example shows the response for creating a  health monitor.
 
-**Example. Create health monitor response: JSON**
+**Example: Create a health monitor response in JSON**
 
 .. code:: 
  
@@ -82,4 +83,4 @@ The following example shows the response for create health monitor:
        }
    }
 
-Congratulations! You now have a health monitor for your load balancer configuration.
+Congratulations! You have completed the basic actions for load balancing your configuration.
