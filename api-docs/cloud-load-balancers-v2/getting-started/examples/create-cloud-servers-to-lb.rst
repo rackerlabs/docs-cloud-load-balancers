@@ -1,38 +1,36 @@
 .. _create-cloud-servers:
 
 =========================
-Create a Cloud Server
+Create a cloud server
 =========================
 
-In this section you create a new Cloud Server (or use an
-existing Cloud Server) to set up as a member for your load balancer.
+Create a new cloud server (or use an
+existing cloud server) to set up as a member for your load balancer. The instructions 
+are for the `Cloud Control Panel <http://mycloud.rackspace.com/>`__. You can also create a server by using the Cloud Servers API. See the `Cloud Servers API Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/>`__ for details.
 
-.. note::
-   If you are using an existing Cloud Server on your account, skip Steps 1-4
-   and go directly to Step 5 below.
 
-Create a Cloud Server using the Cloud Servers section of the `Cloud Control
-Panel <http://mycloud.rackspace.com/>`__.
+#. Log in to the `Cloud Control Panel <http://mycloud.rackspace.com/>`__.
 
-#. Click **Servers** to view the Cloud Servers page.
-
-#. Click **Create Server**, then select the **Region**, and specify the **Server Name**.
-
-#. Select an image from a list of different operating systems, including
-   Linux Distributions and Windows Images.
-
-#. Specify the **Flavor** for your Cloud Server, then click **Create Server**. Record 
-   the information requested in Step 5 below.
-
-#. Record the IP address of your Cloud Server below (from the
-   information displayed in the Cloud Servers section of the Cloud
-   Control Panel):
-
-   -  Cloud Server IP Address =
-      \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
+#. If the Cloud Servers page is not automatically displayed, click 
+   **Servers > Cloud Servers** at the top of the panel. 
    
-.. note::
-   You can also create a Cloud Server using the Cloud Servers API. Refer to
-   the `Cloud Servers API Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#developer-guide>`__
-   for details.
+   If you are creating a new server, proceed with the next step. If you are using an
+   existing server, skip to the last step.
+
+#. On the Cloud Servers page, click **Create Server**.
+
+#. Select the region, and specify a name for the server. 
+
+#. Select an image from the list of operating systems.
+
+#. Specify the flavor for the server.
+
+#. Click **Create Server**. 
+
+#. After your server is created, return to the Cloud Servers page, where all of your
+   servers are listed.
+
+#. From the Cloud Servers page of the Cloud Control Panel, record the IP address of 
+   your server. You will need this address in a later section (when adding a member 
+   to a pool).
+

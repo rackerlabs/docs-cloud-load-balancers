@@ -11,6 +11,7 @@ For more information about Cloud Load Balancers concepts and API operations, see
 :ref:`Developer Guide<developer-guide>` and the :ref:`API Reference<api-reference>`. 
 
 .. note::
-     You can also use Rackspace Cloud Load Balancers from the 
-     Cloud Control panel, or by using one of the language-specific 
-     :rax-devdocs:`Software development kits & tools <#sdks>`. 
+     You can also use Cloud Load Balancers from the `Cloud Control Panel`_
+     or one of the language-specific  :rax-devdocs:`software development kits<#sdks>`. 
+
+.. _Cloud Control Panel: https://mycloud.rackspace.com/
