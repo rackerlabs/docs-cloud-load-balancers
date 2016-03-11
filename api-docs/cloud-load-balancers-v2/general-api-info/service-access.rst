@@ -10,9 +10,8 @@ To determine which region to operate against, select an endpoint from
 the table below.
 
 .. tip::
-   To help you decide which regionalized endpoint to use, read about `special considerations for choosing a region`_.
+   To help you decide which regionalized endpoint to use, read about :how-to:`special considerations for choosing a region <about-regions>`.
 
-.. _special considerations for choosing a region: http://www.rackspace.com/knowledge_center/article/about-regions
 
 .. _clb-dg-api-info-service-access-regional:
 
