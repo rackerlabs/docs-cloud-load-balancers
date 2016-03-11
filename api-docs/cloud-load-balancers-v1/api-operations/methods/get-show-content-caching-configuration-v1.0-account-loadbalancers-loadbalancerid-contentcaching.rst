@@ -14,7 +14,7 @@ This operation enables the user to view the current content caching configuratio
 
 When content caching is enabled, recently-accessed files are stored on the load balancer for easy retrieval by web clients. Content caching improves the performance of high traffic web sites by temporarily storing data that was recently accessed. While it's cached, requests for that data are served by the load balancer, which in turn reduces load off the back end nodes. The result is improved response times for those requests and less load on the web server.
 
-For more information about content caching, see the following Knowledge Center article: `Content Caching for Cloud Load Balancers <http://www.rackspace.com/knowledge_center/content/content-caching-cloud-load-balancers>`__.
+For more information about content caching, see :how-to:`Content Caching for Cloud Load Balancers <content-caching-for-cloud-load-balancers>`.
 
 
 
