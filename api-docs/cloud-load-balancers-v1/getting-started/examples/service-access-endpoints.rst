@@ -7,8 +7,7 @@ table below to use for your Cloud Load Balancer API calls.
 
 .. tip::
    To help you decide which regionalized endpoint to use, read about
-   special considerations for choosing a region at
-   http://www.rackspace.com/knowledge_center/article/about-regions.
+   :how-to:`special considerations for choosing a region <about-regions>`.
 
 **Regionalized Service Endpoints**
 
