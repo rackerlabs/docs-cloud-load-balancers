@@ -8,46 +8,23 @@ List pools
     GET /v2.0/lbaas/pools
 
 
-This operation returns a response body that contains a list, which might
-be empty. Each pool element in the list can contain the following
-attributes:
+This operation returns a response body that contains a list of pools associated
+with the tenant account.
 
--  ``id``
-
--  ``tenant_id``
-
--  ``name``
-
--  ``description``
-
--  ``protocol``
-
--  ``lb_algorithm``
-
--  ``session_persistence``
-
--  ``admin_state_up``
-
--  ``listeners``
-
--  ``members``
-
--  ``healthmonitor_id``
-
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
+| 200     | Success               | The request succeeded.                      |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
@@ -60,42 +37,46 @@ This operation does not accept a request body.
 Response
 """"""""""""""""
 
-**Example. List pools: JSON response**
-
-This list shows the body parameters for the response:
-
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| **Parameter**    | **Style** | Type        | Description                                                                        |
-+==================+===========+=============+====================================================================================+
-| pools            | plain     | xsd:list    | A list of pool objects.                                                            |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| description      | plain     | xsd:string  | The pool detailed description.                                                     |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| healthmonitor_id | plain     | csapi:uuid  | The UUID for the associated health monitor.                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| id               | plain     | csapi:uuid  | The listener name.                                                                 |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| lb_algorithm     | plain     | xsd:string  | The load-balancer algorithm, which is roundrobin (ROUND_ROBIN), least-connections  |
-|                  |           |             | (LEAST_CONNECTIONS), source IP (SOURCE_IP), and so on, that is used to distribute  |
-|                  |           |             | traffic to the pool members. This value, which must be supported, is dependent on  |
-|                  |           |             | the load-balancer provider. The round-robin algorithm must be supported.           |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| listeners        | plain     | xsd:list    | The list of listeners that belong to the pool.                                     |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| members          | plain     | xsd:list    | The list of members that belong to the pool.                                       |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name (optional)  | plain     | xsd:string  | The pool name. It does not have to be unique.                                      |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol         | plain     | xsd:string  | The protocol of the pool, which is TCP, HTTP, or HTTPS.                            |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
-|                  |           |             | tenant UUID other than their own.                                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
-.. code::  
+The following table shows the body parameters for the response.
+
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| **Parameter**       | **Style** | Type        | Description                                                                        |
++=====================+===========+=============+====================================================================================+
+| pools               | plain     | xsd:list    | A list of pool objects.                                                            |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up      | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| description         | plain     | xsd:string  | The pool detailed description.                                                     |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| healthmonitor_id    | plain     | csapi:uuid  | The UUID of the associated health monitor.                                         |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id                  | plain     | csapi:uuid  | The listener ID.                                                                   |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| lb_algorithm        | plain     | xsd:string  | The load-balancer algorithm - such as round robin (``ROUND_ROBIN``), least         |
+|                     |           |             | connections(``LEAST_CONNECTIONS``), and source IP (``SOURCE_IP``) - that is used to|
+|                     |           |             | distribute traffic to the pool members. This value, which must be supported,       |
+|                     |           |             | depends on the load balancer provider. The round robin algorithm must be supported.|
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| listeners           | plain     | xsd:list    | A list of the listeners that belong to the pool.                                   |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| members             | plain     | xsd:list    | A list of the members that belong to the pool.                                     |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| name (optional)     | plain     | xsd:string  | The pool name. The name  does not have to be unique.                               |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| protocol            | plain     | xsd:string  | The protocol of the pool, which is ``TCP``, ``HTTP``, or ``HTTPS``.                |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the virtual IP (VIP) address. Only administrative  |
+|                     |           |             | users can specify a tenant UUID other than their own.                              |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| session_persistence | plain     | xsd:list    | This list defines the cookie name and cookie type used for the pool.               |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+
+
+**Example: List pools JSON response**
+
+.. code::
 
     {
         "pools": [

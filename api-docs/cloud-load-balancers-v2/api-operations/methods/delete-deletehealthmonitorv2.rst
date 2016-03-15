@@ -1,31 +1,30 @@
 .. _remove-health-monitor-v2:
 
-Remove health monitor
+Remove a health monitor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     DELETE /v2.0/lbaas/healthmonitors/{healthmonitor_id}
 
-This operation removes a health monitor and its associated configuration
+This operation removes the specified health monitor and its associated configuration
 from the tenant account.
 
-Any and all configuration data is immediately purged and cannot be
+All configuration data is immediately purged and cannot be
 recovered.
 
-You cannot delete a health monitor if the attached load balancer does
-not have a ``provisioning_status`` value of ``ACTIVE``.
+You can delete a health monitor only if the attached load balancer has a
+``provisioning_status`` value of ``ACTIVE``.
 
-Example: Delete a health monitor
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
 |Code     |                       |                                             |
 +=========+=======================+=============================================+
 | 204     | No Content            | The server has fulfilled the request but    |
-|         |                       | does not need to return an entity-body.     |
+|         |                       | does not need to return a respons body.     |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -36,20 +35,28 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed due to a |
-|         |                       | conflict with the current state of the      |
+| 409     | Conflict              | The request could not be completed because  |
+|         |                       | of a conflict with the current state of the |
 |         |                       | resource.                                   |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | The number of items returned is greater than|
+|         |                       | the allowed limit.                          |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
 Request
 """"""""""""""""
+
+The following table shows the URI parameters for the request.
+
++-------------------+------------+--------------------------------------------------------------+
+|Name               |Type        |Description                                                   |
++===================+============+==============================================================+
+|{healthmonitor_id} |csapi:uuid  | The UUID for the health monitor.                             |
++-------------------+------------+--------------------------------------------------------------+
 
 This operation does not accept a request body.
 

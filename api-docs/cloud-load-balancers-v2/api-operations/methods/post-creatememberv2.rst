@@ -1,6 +1,6 @@
 .. _add-member-to-pool-v2:
 
-Add member to pool
+Add a member to pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -9,54 +9,54 @@ Add member to pool
 
 
 This operation provisions a new member and adds it to a pool based on
-the configuration defined in the request object. After the request is
+the configuration defined in the request. After the request is
 validated and progress has started on the provisioning process, a
-response object is returned. The object contains a unique identifier.
+response is returned. The response contains a unique identifier for the member.
 
 At a minimum, you must specify the following pool attributes:
 
--  ``tenant_id``. Only required if the caller has an administrative role
-   and wants to create a pool for another tenant.
+-  ``tenant_id``
 
--  ``address``. The IP address of the member to receive traffic from the
-   load balancer.
+-  ``address``
 
--  ``protocol_port`` The port on which the member is listening to
-   receive traffic.
+-  ``protocol_port``
 
 Some attributes receive default values if you omit them from the
-request:
+request. See the body parameters table for details.
 
--  ``admin_state_up``. Default is ``true``.
+-  ``admin_state_up``
 
--  ``weight``. Default is ``1``.
+-  ``weight``
 
-If you omit the ``subnet_id`` parameter, LBaaS uses the
-``vip_subnet_id`` parameter value for the subnet ID.
 
-If the request fails due to incorrect data, the service returns the HTTP
+
+If the request fails because of incorrect data, the service returns the HTTP
 ``Bad Request (400)`` response code with information about the failure
 in the response body. Validation errors require that you correct the
 error and submit the request again.
 
-To configure all documented member features at creation time, specify
-additional elements or attributes in the request.
 
 Users with an administrative role can create members on behalf of other
 tenants by specifying a ``tenant_id`` attribute that is different than
 their own.
 
-To update a member, the load balancer must have a
+To add a member, the load balancer must have a
 ``provisioning_status`` of ``ACTIVE``.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
-| 201     | Created               | The request has been fulfilled and resulted |
-|         |                       | in a new resource being created.            |
+| 201     | Created               | The request has been fulfilled and a new    |
+|         |                       | resource was created.                       |
++---------+-----------------------+---------------------------------------------+
+| 400     | Bad Request           | The request cannot be fulfilled due to      |
+|         |                       | insufficient data or data that is not valid.|
+|         |                       | Information about the failure is in the     |
+|         |                       | response today. Correct the error and submit|
+|         |                       | the request again.                          |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -65,14 +65,14 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed due to a |
-|         |                       | conflict with the current state of the      |
+| 409     | Conflict              | The request could not be completed because  |
+|         |                       | of a conflict with the current state of the |
 |         |                       | resource.                                   |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | The number of items returned is greater than|
+|         |                       | the allowed limit.                          |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
@@ -80,27 +80,41 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-**Example. Add member to a pool: JSON request**
 
-This list shows the body parameters for the request:
+
+The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | member           | plain     | xsd:dict    | A member object.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID for the pool. The UUID of the tenant who owns the member. Only            |
-|                  |           |             | administrative users can specify a tenant UUID other than their own.               |
+| address          | plain     | xsd:ip      | The IP address of the member that receives traffic from the load balancer.         |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| address          | plain     | xsd:ip      | The IP address of the member.                                                      |
+| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
+|                  |           |             | The default is ``true``.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol_port    | plain     | xsd:int     | The port where the application is hosted.                                          |
+| protocol_port    | plain     | xsd:int     | The port where the application is hosted and where the member is listening to      |
+|                  |           |             | receive traffic.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| subnet_id        | plain     | xsd:int     | If you omit this parameter, LBaaS uses the ``vip_subnet_id`` parameter value       |
-| (optional)       |           |             | for the subnet UUID.                                                               |
+| subnet_id        | plain     | xsd:int     | The UUID of the subnet on which the member resides. If you omit this parameter,    |
+| (optional)       |           |             | the service uses the ``vip_subnet_id`` parameter value for ``subnet_id``.          |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| weight           | plain     | xsd:int     | The weight of a member determines the portion of requests or connections it        |
+| (optional)       |           |             | services compared to the other members of the pool. A value of 0 means the member  |
+|                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
+|                  |           |             | A valid value is from 0 to 256.  The default is ``1``.                             |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the member. This parameter is required only if the |
+| (optional)       |           |             | user has an administrative role and wants to create a member for another tenant.   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-.. code::  
+
+
+
+**Example: Add a member to a pool JSON request**
+
+.. code::
 
     {
         "member": {
@@ -115,40 +129,40 @@ This list shows the body parameters for the request:
 Response
 """"""""""""""""
 
-**Example. Add member to pool: JSON response**
 
-This table shows the body parameters for the response:
+
+The following table shows the body parameters for the response.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | member           | plain     | xsd:dict    | A member object.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| id               | plain     | csapi:uuid  | The UUID for the member.                                                           |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID for the pool. The UUID of the tenant who owns the member. Only            |
-|                  |           |             | administrative users can specify a tenant UUID other than their own.               |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| subnet_id        | plain     | xsd:int     | If you omit this parameter, LBaaS uses the ``vip_subnet_id`` parameter value       |
-| (optional)       |           |             | for the subnet UUID.                                                               |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | address          | plain     | xsd:ip      | The IP address of the member.                                                      |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
+|                  |           |             | The default is ``true``.                                                           |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id               | plain     | csapi:uuid  | The UUID of the member.                                                            |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol_port    | plain     | xsd:int     | The port where the application is hosted.                                          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| weight           | plain     | xsd:int     | The weight of a member determines the portion of requests or connections it        |
-| (optional)       |           |             | services compared to the other members of the pool. A value of 0 means the member  |
-|                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
-|                  |           |             | A valid value is from 0 to 256.                                                    |
+| subnet_id        | plain     | xsd:int     | The UUID of the subnet on which the member resides. If you omit this parameter, the|
+|                  |           |             | services uses the ``vip_subnet_id`` parameter value for the ``subnet_id``.         |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (true) or down (false).        |
-|                  |           |             |                                                                                    |
+| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the member. Only administrative users can specify a|
+|                  |           |             | tenant UUID other than their own.                                                  |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| status           | plain     | xsd:string  | The status of the member. Indicates whether the member is operational.             |
+| weight           | plain     | xsd:int     | The portion of requests or connections that the member services compared to the    |
+| (optional)       |           |             | other members of the pool. A value of 0 means that the member does not participate |
+|                  |           |             | in load balancing but still accepts persistent connections. Valid value are from 0 |
+|                  |           |             | 256. The default is 1.                                                             |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
-.. code::  
+**Example: Add a member to a pool JSON response**
+
+.. code::
 
     {
         "member": {

@@ -9,68 +9,64 @@ Create health monitor
 
 
 This operation provisions a new health monitor based on the
-configuration defined in the request object. After the request is
+configuration defined in the request. After the request is
 validated and progress has started on the provisioning process, a
-response object is returned. The object contains a unique identifier.
+response is returned. The response contains a unique identifier for the health
+monitor.
 
-The caller of this operation must specify these health monitor
-attributes, at a minimum:
+The request must specify the following health monitor attributes, at a minimum:
 
--  ``tenant_id``. Only required if the caller has an administrative role
-   and wants to create a health monitor for another tenant.
+-  ``tenant_id``
 
--  ``type``. The type of health monitor. Must be one of TCP, HTTP, HTTPS
+-  ``type``
 
--  ``delay``. The interval in seconds between health checks.
+-  ``delay``
 
--  ``timeout``. The time in seconds that a health check times out.
+-  ``timeout``
 
--  ``max_retries``. Number of failed health checks before marked as
-   OFFLINE.
+-  ``max_retries``
 
--  ``pool_id``. The pool that this health monitor will monitor.
+-  ``pool_id``
 
-Some attributes receive default values if you omit them from the
-request, and are only useful when you specify a health monitor type of
-HTTP(S):
+The following attributes receive default values if you omit them from the
+request, and are useful only when you specify a health monitor type of
+``HTTP`` or ``HTTPS``:
 
--  ``http_method``. Default is GET.
+-  ``http_method``
 
--  ``url_path``. Default is ``/``.
+-  ``url_path``
 
--  ``expected_codes``. The expected http status codes to get from a
-   successful health check. Default is 200.
+-  ``expected_codes``
 
--  ``admin_state_up``. Default is true.
+-  ``admin_state_up``
 
-If the request cannot be fulfilled due to insufficient data or data that
-is not valid, an HTTP 400 (Bad Request) error response is returned with
+If the request cannot be fulfilled because of insufficient data or data that
+is not valid, an HTTP ``400 (Bad Request)`` error response is returned with
 information regarding the nature of the failure in the response body.
-Failures in the validation process are non-recoverable and require the
-caller to correct the cause of the failure and **POST** the request
-again.
-
-You can configure all documented features of the health monitor at
-creation time by specifying the additional elements or attributes in the
-request.
+Failures in the validation process are non-recoverable and require you to
+correct the cause of the failure and resend the request.
 
 Users with an administrative role can create health monitors on behalf
 of other tenants by specifying a ``tenant_id`` attribute different than
 their own.
 
-To update a health monitor, the load balancer to which it is being
-attached must have an ACTIVE provisioning status.
+To create a health monitor, the load balancer to which it is being
+attached must have an ``ACTIVE`` provisioning status.
 
-Example: Create a health monitor
-
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
-| 201     | Created               | The request has been fulfilled and resulted |
-|         |                       | in a new resource being created.            |
+| 201     | Created               | The request was fulfilled and a new resource|
+|         |                       | was created.                                |
++---------+-----------------------+---------------------------------------------+
+| 400     | Bad Request           | The request cannot be fulfilled due to      |
+|         |                       | insufficient data or data that is not valid.|
+|         |                       | Information about the failure is in the     |
+|         |                       | response today. Correct the error and submit|
+|         |                       | the request again.                          |
 +---------+-----------------------+---------------------------------------------+
 | 401     | Unauthorized          | You are not authorized to complete this     |
 |         |                       | operation. This error can occur if the      |
@@ -79,14 +75,14 @@ This table shows the possible response codes for this operation:
 +---------+-----------------------+---------------------------------------------+
 | 404     | Not Found             | The requested item was not found.           |
 +---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed due to a |
-|         |                       | conflict with the current state of the      |
+| 409     | Conflict              | The request could not be completed because  |
+|         |                       | of a conflict with the current state of the |
 |         |                       | resource.                                   |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | The number of items returned is greater than|
+|         |                       | the allowed limit.                          |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
@@ -94,50 +90,52 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-**Example. Create health monitor: JSON request**
 
-This table shows the body parameters for the request:
+
+The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
-| healthmonitor    | plain     | xsd:dict    | A healthmonitor object.                                                            |
+| healthmonitor    | plain     | xsd:dict    | A health monitor object.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the healthmonitor. Only administrative users can   |
-|                  |           |             | specify a tenant UUID other than their own.                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| type             | plain     | xsd:string  | The type of probe sent by the load balancer to verify the member state.            |
-|                  |           |             | A valid value is PING, TCP, HTTP, or HTTPS.                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
+
 | delay            | plain     | xsd:int     | The time, in seconds, between sending probes to members.                           |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
-|                  |           |             | established before it times out. This value must be less than the delay value.     |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| max_retries      | plain     | xsd:int     | The number of allowed connection failures before changing the status of the member |
-|                  |           |             | to INACTIVE. A valid value is from 1 to 10.                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
-| (optional)       |           |             |                                                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-| (optional)       |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | expected_codes   | plain     | xsd:string  | The list of HTTP status codes expected in response from the member to declare it   |
 | (optional)       |           |             | healthy. Specify one of the following values:                                      |
 |                  |           |             |                                                                                    |
-|                  |           |             | - A single value, such as 200.                                                     |
-|                  |           |             | - A list, such as 200, 202.                                                        |
-|                  |           |             | - A range, such as 200-204.                                                        |
+|                  |           |             | - A single value, such as ``200``.                                                 |
+|                  |           |             | - A list, such as ``200, 202``.                                                    |
+|                  |           |             | - A range, such as ``200-204``.                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-| (optional)       |           |             | Set this attribute to false to create the listener in an administratively down     |
-|                  |           |             | state.                                                                             |
+| http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
+| (optional)       |           |             |                                                                                    |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| max_retries      | plain     | xsd:int     | The number of connection failures that are allowed before the status of the member |
+|                  |           |             | is changed to ``INACTIVE``. Valid values are from 1 to 10.                         |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| pool_id          | plain     | csapi:uuid  | The UUID of the pool associated with the health monitor.                           |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
+|                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| type             | plain     | xsd:string  | The type of probe sent by the load balancer to verify the member state.            |
+|                  |           |             | Valid values are ``PING``, ``TCP``, ``HTTP``, or ``HTTPS``.                        |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
+| (optional)       |           |             | A valid value is a string that begins with a forward slash (/).                    |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the health monitor. Only administrative users can  |
+| (optional)       |           |             | specify a tenant UUID other than their own.                                        |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
 
-.. code::  
+
+**Example: Create a health monitor JSON request**
+
+.. code::
 
     {
         "healthmonitor": {
@@ -156,54 +154,55 @@ This table shows the body parameters for the request:
 Response
 """"""""""""""""
 
-**Example. Create health monitor: JSON response**
 
-This table shows the body parameters for the response:
+
+The following table shows the body parameters for the response.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
-| healthmonitor    | plain     | xsd:dict    | A healthmonitor object.                                                            |
+| healthmonitor    | plain     | xsd:dict    | A health monitor object.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| id               | plain     | csapi:uuid  | The UUID for the health monitor.                                                   |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the healthmonitor. Only administrative users can   |
-|                  |           |             | specify a tenant UUID other than their own.                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| type             | plain     | xsd:string  | The type of probe sent by the load balancer to verify the member state.            |
-|                  |           |             | A valid value is PING, TCP, HTTP, or HTTPS.                                        |
+| admin_state_up   | plain     | xsd:boolean | The administrative state of the health monitor, which is up (``true``) or down     |
+|                  |           |             | (``false``). Set this attribute to ``false`` to create the listener in an          |
+|                  |           |             | administratively down state.                                                       |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | delay            | plain     | xsd:int     | The time, in seconds, between sending probes to members.                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
-|                  |           |             | established before it times out. This value must be less than the delay value.     |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| max_retries      | plain     | xsd:int     | The number of allowed connection failures before changing the status of the member |
-|                  |           |             | to INACTIVE. A valid value is from 1 to 10.                                        |
+| expected_codes   | plain     | xsd:string  | The list of HTTP status codes expected in response from the member to declare it   |
+|                  |           |             | healthy. Specify one of the following values:                                      |
+|                  |           |             |                                                                                    |
+|                  |           |             | - A single value, such as ``200``.                                                 |
+|                  |           |             | - A list, such as ``200, 202``.                                                    |
+|                  |           |             | - A range, such as ``200-204``.                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
-| (optional)       |           |             |                                                                                    |
+|                  |           |             |                                                                                    |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id               | plain     | csapi:uuid  | The UUID of the health monitor.                                                    |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| max_retries      | plain     | xsd:int     | The number of connection failures that are allowed before the status of the member |
+|                  |           |             | is changed to ``INACTIVE``. Valid value are from 1 to 10.                          |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| pools            | plain     | xsd:list    | A list of the pool IDs associated with the health monitor.                         |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the health monitor. Only administrative users can  |
+|                  |           |             | specify a tenant UUID other than their own.                                        |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
+|                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| type             | plain     | xsd:string  | The type of probe sent by the load balancer to verify the member state.            |
+|                  |           |             | Valid values are ``PING``, ``TCP``, ``HTTP``, or ``HTTPS``.                        |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-| (optional)       |           |             | A valid value is a string that begins with a forward slash (/).                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| expected_codes   | plain     | xsd:string  | The list of HTTP status codes expected in response from the member to declare it   |
-| (optional)       |           |             | healthy. Specify one of the following values:                                      |
-|                  |           |             |                                                                                    |
-|                  |           |             | - A single value, such as 200.                                                     |
-|                  |           |             | - A list, such as 200, 202.                                                        |
-|                  |           |             | - A range, such as 200-204.                                                        |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the health monitor, which is up (true) or down (false).|
-| (optional)       |           |             | Set this attribute to false to create the listener in an administratively down     |
-|                  |           |             | state.                                                                             |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| status           | plain     | xsd:string  | The status of the health monitor, which indicates whether the health monitor is    |
-|                  |           |             | operational.                                                                       |
+|                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
-.. code::  
+**Example: Create a health monitor JSON response**
+
+.. code::
 
     {
         "healthmonitor": {

@@ -6,7 +6,7 @@ Listener protocols
 
 The following table describes the supported listener protocols.
 
-**Table: Listener protocols**
+**Listener protocols**
 
 +-----------------------+----------------------------------------------------------------------------------+
 | Name                  | Description                                                                      |
@@ -15,8 +15,8 @@ The following table describes the supported listener protocols.
 +-----------------------+----------------------------------------------------------------------------------+
 | ``HTTP``              | This protocol load balances HTTP traffic and passes it to the members.           |
 +-----------------------+----------------------------------------------------------------------------------+
-| ``HTTPS``             | HTTPS passthrough. This protocol will not do any inspection of the packet        |
-|                       | payloads, but just pass them to the pool of members.                             |
+| ``HTTPS``             | HTTPS passthrough. This protocol does not inspect the packet  payloads, but just |
+|                       | passes them to the pool of members.                                              |
 +-----------------------+----------------------------------------------------------------------------------+
 | ``TERMINATED_HTTPS``  | This protocol terminates HTTPS at the load balancer. It decrypts and passes      |
 |                       | unencrypted data to the pool of members.                                         |
@@ -24,16 +24,16 @@ The following table describes the supported listener protocols.
 
 The following table describes the supported protocols for pools.
 
-**Table: Supported protocols for pools**
+**Supported protocols for pools**
 
 +-----------+-------------------------------------+
 | Name      | Description                         |
 +===========+=====================================+
-| ``TCP``   | Basic L4 protocol.                  |
+| ``TCP``   | Basic L4 protocol                   |
 +-----------+-------------------------------------+
-| ``HTTP``  | Higher layer protocol based on TCP. |
+| ``HTTP``  | Higher layer protocol based on TCP  |
 +-----------+-------------------------------------+
-| ``HTTPS`` | Encrypted protocol based on TCP.    |
+| ``HTTPS`` | Encrypted protocol based on TCP     |
 +-----------+-------------------------------------+
 
 

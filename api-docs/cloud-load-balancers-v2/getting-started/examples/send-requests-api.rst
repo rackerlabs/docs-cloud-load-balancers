@@ -33,7 +33,7 @@ to work with the ReST API directly without using one of the client APIs.
 The following cURL command-line options will be used in this guide to
 run the examples:
 
-**Table: cURL Command-Line Options**
+**cURL Command-Line Options**
 
 +--------------------------------------+--------------------------------------+
 | Option                               | Description                          |

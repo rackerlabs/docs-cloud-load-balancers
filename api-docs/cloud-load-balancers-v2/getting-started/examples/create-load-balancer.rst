@@ -1,7 +1,7 @@
 .. _create-load-balancer:
 
 ==========================
-Create a load balancer
+Creating a load balancer
 ==========================
 
 

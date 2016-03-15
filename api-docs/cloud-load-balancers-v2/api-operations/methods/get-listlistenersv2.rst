@@ -5,40 +5,15 @@ List listeners
 
 .. code::
 
-    GET /v2.0/lbaas/loadbalancers
+    GET /v2.0/lbaas/listeners
 
 
-Lists all load balancers that are associated with your tenant account.
+This operation lists all listeners that are associated with your tenant account.
+This operation returns a list, which might be empty.
 
 
-This operation returns a list, which might be empty. Each list element
-is a listener that can contain the following attributes:
 
--  ``id``
-
--  ``tenant_id``
-
--  ``name``
-
--  ``description``
-
--  ``protocol``
-
--  ``protocol_port``
-
--  ``connection_limit``
-
--  ``default_pool_id``
-
--  ``admin_state_up``
-
--  ``loadbalancers``
-
--  ``default_tls_container_ref``
-
--  ``sni_container_refs``
-
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
@@ -64,11 +39,46 @@ This operation does not accept a request body.
 Response
 """"""""""""""""
 
-This operation does not accept a request body.
+The following table shows the body parameters for the response.
 
-**Example. List listeners: JSON response**
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| **Parameter**             | **Style** | Type        | Description                                                                        |
++===========================+===========+=============+====================================================================================+
+| listeners                 | plain     | xsd:string  | A listeners object.                                                                |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up            | plain     | xsd:boolean | The administrative state of the listener, which is up (true) or down (false).      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| connection_limit          | plain     | xsd:int     | The connection limit for the listener.                                             |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| default_pool_id           | plain     | csapi:uuid  | The default pool id for the listener.                                              |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| description               | plain     | xsd:string  | The description for the listener.                                                  |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id                        | plain     | csapi:uuid  | The UUID for the listener.                                                         |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| loadbalancers             | plain     | xsd:string  | A load balancers object.                                                           |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id                        | plain     | csapi:uuid  | The UUID for the load balancer.                                                    |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| name                      | plain     | xsd:string  | The listener name.                                                                 |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| protocol                  | plain     | xsd:string  | The protocol of the listener.                                                      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| protocol_port             | plain     | xsd:int     | The protocol port for the listener.                                                |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id                 | plain     | csapi:uuid  | The UUID of the tenant of the listener.                                            |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| default_tls_container_ref | plain     | xstd:string | A reference to a container of Transport Layer Security (TLS) secrets.              |  
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| sni_container_refs        | plain     | xstd:list   | A list of references to secrets that are used for Server Name Indication (SNI).    |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-.. code::  
+
+
+
+**Example: List listeners JSON response**
+
+.. code::
 
     {
         "listeners": [
