@@ -1,7 +1,7 @@
 .. _show-load-balancer-details:
 
 ==============================
-Show load balancer details
+Showing load balancer details
 ==============================
 
 This operation (``GET /loadbalancers/load_balancer_id``) provides detailed output for a specific load balancer that is 

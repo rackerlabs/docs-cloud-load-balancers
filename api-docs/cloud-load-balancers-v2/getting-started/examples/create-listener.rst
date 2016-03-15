@@ -1,8 +1,8 @@
 .. _create-listener:
 
-==================
-Create a listener
-==================
+====================
+Creating a listener
+====================
 
 A listener is an object that contains data that
 pertains to the "listening" port. This object defines the "front end"

@@ -1,8 +1,8 @@
 .. _add-pool-member:
 
-========================
-Add a member to the pool
-========================
+============================
+Adding a member to the pool
+============================
 
 When a member is added to a pool (``POST /pools/pool_id/members``), the member is assigned a unique identifier that you can use for management operations, such as changing the ``admin_state`` or removing the member.
 

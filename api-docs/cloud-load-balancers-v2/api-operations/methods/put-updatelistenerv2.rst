@@ -1,6 +1,6 @@
 .. _update-listener-v2:
 
-Update listener
+Update a listener
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -8,11 +8,8 @@ Update listener
     PUT /v2.0/lbaas/listeners/{listener_id}
 
 
-This operation updates the attributes of a listener. Upon successful
-validation of the request, the service returns the HTTP
-``Accepted (202)`` response code.
 
-The update operation enables the caller to change one or more of the
+The update operation enables you to change one or more of the
 following listener attributes:
 
 -  ``name``
@@ -27,23 +24,26 @@ following listener attributes:
 
 -  ``sni_container_refs``
 
-..  note:: 
+..  note::
   - You cannot update the ``listener_id``, ``tenant_id``,
     ``loadbalancer_id``, ``loadbalancers``, ``default_pool_id``,
     ``protocol``, and ``protocol_port`` listener attributes. Attempting to
     update an immutable attribute results in the HTTP ``Immutable (422)``
-    response code.
+    response code. If the request is validated, the service returns the HTTP
+    Accepted (202) response code.
 
-  - You cannot update a listener if the load balancer to which the listener
-    is attached does not have a ``provisioning_status`` of ``ACTIVE``.
+  - You can update a listener only if the load balancer to which the listener
+    is attached has a ``provisioning_status`` of ``ACTIVE``.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
+| 200     | Success               | The request succeeded.                      |
++---------+-----------------------+---------------------------------------------+
+| 202     | Accepted              | The request is validated.                   |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -54,8 +54,9 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 422     | Immutable             | The entity is unprocessable.                |
++---------+-----------------------+---------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
 +---------+-----------------------+---------------------------------------------+
 | 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
 +---------+-----------------------+---------------------------------------------+
@@ -65,50 +66,47 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-**Example. Update listener: JSON request**
+The following table shows the URI parameters for the request.
 
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| **Parameter**    | **Style** | Type        | Description                                                                        |
-+==================+===========+=============+====================================================================================+
-| listener         | plain     | xsd:string  | A listener object.                                                                 |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| default_pool_id  | plain     | csapi:uuid  | The UUID of the default pool. It must have compatible protocol with the listener.  |
-| (optional)       |           |             |                                                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name             | plain     | xsd:string  | The listener name.                                                                 |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| description      | plain     | xsd:string  | The listener detailed description.                                                 |
-| (optional)       |           |             |                                                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
-|                  |           |             | tenant UUID other than their own.                                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| connection_limit | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
-| (optional)       |           |             | infinite                        .                                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol         | plain     | xsd:string  | The protocol to load balance. A valid value is HTTP, HTTPS, TCP, or                |
-|                  |           |             | TERMINATED_HTTPS.                                                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol_port    | plain     | xsd:int     | The TCP or UDP port on which to listen.                                            |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-| (optional)       |           |             | Set this attribute to false to create the listener in an administratively down     |
-|                  |           |             | state.                                                                             |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| loadbalancer_id  | plain     | csapi:uuid  | The UUID for the load balancer.                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| default_tls_     | plain     | xsd:string  | A reference to a container of TLS secrets.                                         |
-| container_ref    |           |             |                                                                                    |
-| (optional)       |           |             |                                                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-|sni_container_refs| plain     | xsd:list    | A list of references to TLS secrets.                                               |
-| (optional)       |           |             |                                                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
++------------------+------------+--------------------------------------------------------------+
+|Name              |Type        |Description                                                   |
++==================+============+==============================================================+
+|{listener_id}     |csapi:uuid  | The UUID for the listener.                                   |
++------------------+------------+--------------------------------------------------------------+
+
+The following table shows the body parameters for the request.
+
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| **Parameter**             | **Style** | **Type**    | **Description**                                                                    |
++===========================+===========+=============+====================================================================================+
+| listener                  | plain     | xsd:string  | A listener object.                                                                 |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up            | plain     | xsd:boolean | The administrative state of the load balancer, which is up (``true``) or down      |
+| (optional)                |           |             | (false). Set this attribute to ``false`` to create the listener in an              |
+|                           |           |             | administratively down state. The default is ``true``.                              |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| connection_limit          | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
+| (optional)                |           |             | is ``-1``, which indicates an infinite limit.                                      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| description               | plain     | xsd:string  | The listener detailed description. If you don't specify a value, the default is an |
+| (optional)                |           |             | empty string.                                                                      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| name                      | plain     | xsd:string  | The listener name. If you don't specify a value, the default is an empty string.   |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| default_tls_container_ref | plain     | xsd:string  | A reference to a container of Transport Layer Security (TLS) secrets. If           |
+| (optional)                |           |             | you also specify ``sni_container_refs``, this container is the default.            |
+|                           |           |             | This parameter is required for the ``TERMINATED_HTTPS`` protocol.                  |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| sni_container_refs        | plain     | xsd:list    | A list of references to secrets that are used for Server Name Indication           |
+| (optional)                |           |             | (SNI). This parameter is required for the ``TERMINATED_HTTPS`` protocol .          |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
 
+**Example: Update listener JSON request**
 
-.. code::  
+
+.. code::
 
     {
         "listener": {
@@ -126,11 +124,51 @@ Request
 
 Response
 """"""""""""""""
+The following table shows the body parameters for the response.
 
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| **Parameter**             | **Style** | **Type**    | **Description**                                                                    |
++===========================+===========+=============+====================================================================================+
+| listener                  | plain     | xsd:string  | A listener object.                                                                 |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up            | plain     | xsd:boolean | The administrative state of the load balancer, which is up (``true``) or down      |
+|                           |           |             | (false). The default is ``true``.                                                  |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| connection_limit          | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
+|                           |           |             | is ``-1``, which indicates an infinite limit.                                      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| default_pool_id           | plain     | csapi:uuid  | The UUID of the default pool.                                                      |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| description               | plain     | xsd:string  | The listener description.                                                          |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id                        | plain     | csapi:uuid  | The UUID for the listener.                                                         |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| loadbalancer_id           | plain     | csapi:uuid  | The UUID for the load balancer on which this listener is provisioned. Tenants can  |
+|                           |           |             | create listeners only on load balancers authorized by policy, for example, their   |
+|                           |           |             | own load balancers.                                                                |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| name                      | plain     | xsd:string  | The listener name. If you don't specify a value, the default is an empty string.   |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| protocol                  | plain     | xsd:string  | The protocol for which the front end listens. Valid values are ``HTTP``, ``HTTPS``,|
+|                           |           |             | `` TCP``, or ``TERMINATED_HTTPS``.                                                 |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| protocol_port             | plain     | xsd:int     | The TCP or UDP port on which the front end listens. The value must be an integer   |
+|                           |           |             | from 1 to 65535.                                                                   |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id                 | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
+|                           |           |             | tenant UUID other than their own. This parameter is required only if the user has  |
+|                           |           |             | an administrative role and wants to create a listener for another tenant           |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| default_tls_container_ref | plain     | xsd:string  | A reference to a container of Transport Layer Security (TLS) secrets. If           |
+|                           |           |             | you also specify ``sni_container_refs``, this container is the default.            |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| sni_container_refs        | plain     | xsd:list    | A list of references to secrets that are used for Server Name Indication           |
+|                           |           |             | (SNI).                                                                             |
++---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-**Example. Update listener: JSON response**
+**Example: Update listener JSON response**
 
-.. code::  
+.. code::
 
     {
         "listener": {

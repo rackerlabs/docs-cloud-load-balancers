@@ -1,6 +1,6 @@
 .. _update-pool-member-v2:
 
-Update pool member
+Update a pool member
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -8,31 +8,29 @@ Update pool member
     POST /v2.0/lbaas/pools/{pool_id}/members/{member_id}
 
 
-Upon successful validation of the request, the service returns the HTTP
-``OK (200)`` response code.
 
-The update operation enables you to change one or more of these pool
+This operation enables you to change one or more of the following member
 attributes:
 
 -  ``weight``
 
 -  ``admin_state_up``
 
-..  note:: 
-  -  You cannot update the member ID, ``tenant_id``, ``address``,
+..  note::
+  -  You cannot update the member ``id``, ``tenant_id``, ``address``,
      ``protocol_port``, and ``subnet_id`` attributes. If you attempt to
      update any of these attributes, the service returns the HTTP
      ``Immutable (422)`` response code.
-  - You cannot update a member if the attached load balancer does not have a
+  - You cant update a member only if the attached load balancer has a
     ``provisioning_status`` of ``ACTIVE``.
 
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
+| 200     | Success               | The request succeeded.                      |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -43,10 +41,12 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | The number of items returned is greater than|
+|         |                       | the allowed limit.                          |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 422     | Immutable             | The entity is unprocessable.                |
++---------+-----------------------+---------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
@@ -54,29 +54,36 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-**Example. Update pool member: JSON request**
+The following table shows the URI parameters for the request.
 
-This list shows the body parameters for the request:
++------------------+------------+--------------------------------------------------------------+
+|Name              |Type        |Description                                                   |
++==================+============+==============================================================+
+|{pool_id}         |csapi:uuid  | The UUID of the pool.                                        |
++------------------+------------+--------------------------------------------------------------+
+|{member_id}       |csapi:uuid  | The UUID of the member.                                      |
++------------------+------------+--------------------------------------------------------------+
+
+
+The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | member           | plain     | xsd:dict    | A member object.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| pool_id          | plain     | csapi:uuid  | The UUID of the pool to which the member belongs.                                  |
-| (optional)       |           |             |                                                                                    |
+| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
+|                  |           |             | The default is ``true``.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| weight           | plain     | xsd:int     | The weight of a member determines the portion of requests or connections it        |
-|                  |           |             | services compared to the other members of the pool. A value of 0 means the member  |
-|                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
-|                  |           |             | A valid value is from 0 to 256.                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (true) or down (false).        |
-| (optional)       |           |             |                                                                                    |
+| weight           | plain     | xsd:int     | The portion of requests or connections that the member services compared to the    |
+|                  |           |             | other members of the pool. A value of 0 means that the member does not participate |
+|                  |           |             | in load balancing but still accepts persistent connections. Valid values are from  |
+|                  |           |             | 0 to 256.                                                                          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
+**Example: Update a pool member JSON request**
 
-.. code::  
+.. code::
 
     {
         "member": {
@@ -88,39 +95,39 @@ This list shows the body parameters for the request:
 Response
 """"""""""""""""
 
-**Example. Update pool member: JSON response**
 
-This table shows the body parameters for the response:
+
+The following table shows the body parameters for the response.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | member           | plain     | xsd:dict    | A member object.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| id               | plain     | csapi:uuid  | The UUID for the member.                                                           |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID for the pool. The UUID of the tenant who owns the member. Only            |
-|                  |           |             | administrative users can specify a tenant UUID other than their own.               |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| pool_id          | plain     | csapi:uuid  | The UUID of the pool to which the member belongs.                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | address          | plain     | xsd:ip      | The IP address of the member.                                                      |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
+|                  |           |             |                                                                                    |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id               | plain     | csapi:uuid  | The UUID of the member.                                                            |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol_port    | plain     | xsd:int     | The port where the application is hosted.                                          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| weight           | plain     | xsd:int     | The weight of a member determines the portion of requests or connections it        |
-|                  |           |             | services compared to the other members of the pool. A value of 0 means the member  |
-|                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
-|                  |           |             | A valid value is from 0 to 256.                                                    |
+| subnet_id        | plain     | xsd:int     | The UUID of the subnet on which the member resides.                                |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (true) or down (false).        |
-|                  |           |             |                                                                                    |
+| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the member. Only administrative users can specify  |
+|                  |           |             | a tenant UUID other than their own.                                                |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| status           | plain     | xsd:string  | The status of the member. Indicates whether the member is operational.             |
+| weight           | plain     | xsd:int     | The portion of requests or connections that the member services compared to the    |
+|                  |           |             | other members of the pool. A value of 0 means the member does not participate in   |
+|                  |           |             | load balancing but still accepts persistent connections. Valid values are from 0 to|
+|                  |           |             | 256.                                                                               |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
-.. code::  
+**Example: Update a pool member JSON response**
+
+.. code::
 
     {
         "member": {

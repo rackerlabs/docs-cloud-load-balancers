@@ -1,6 +1,6 @@
 .. _remove-load-balancer-v2:
 
-Remove load balancer
+Remove a load balancer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -8,20 +8,18 @@ Remove load balancer
     DELETE /v2.0/lbaas/loadbalancers/{loadbalancer_id}
 
 
-Removes a load balancer and its associated configuration
-from the tenant account.
+This operation removes a load balancer and its associated configuration
+from the tenant account. All configuration data is immediately purged and cannot
+be recovered.
 
-Any and all configuration data is immediately purged and cannot be
-recovered.
-
-This table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
 | 204     | No Content            | The server has fulfilled the request but    |
-|         |                       | does not need to return an entity-body.     |
+|         |                       | does not need to return a response body.    |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -32,16 +30,25 @@ This table shows the possible response codes for this operation:
 |         |                       | request is submitted with an invalid        |
 |         |                       | authentication token.                       |
 +---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is above the   |
-|         |                       | allowed limit.                              |
+| 413     | Over Limit            | The number of items returned is greater than|
+|         |                       | the allowed limit.                          |
 +---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
 +---------+-----------------------+---------------------------------------------+
 | 503     | Service Unavailable   | The service is not available.               |
 +---------+-----------------------+---------------------------------------------+
 
 Request
 """"""""""""""""
+
+The following table shows the URI parameters for the request.
+
++------------------+------------+--------------------------------------------------------------+
+|Name              |Type        |Description                                                   |
++==================+============+==============================================================+
+|{loadbalancer_id} |csapi:uuid  | The UUID for the load balancer.                              |
++------------------+------------+--------------------------------------------------------------+
+
 
 This operation does not accept a request body.
 

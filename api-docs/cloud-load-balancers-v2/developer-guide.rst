@@ -12,9 +12,9 @@ To use the information provided here, you should have a general understanding of
 Load Balancers service and have access to an installation of the Cloud Load Balancers 
 service. You should also be familiar with the following technologies:
 
--  *RESTful* web services
+-  RESTful web services
 
--  *HTTP*/1.1
+-  HTTP/1.1
 
 -  JSON serialization format
 

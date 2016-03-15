@@ -7,17 +7,8 @@ Update load balancer
 
     PUT /v2.0/lbaas/loadbalancers/{loadbalancer_id}
 
-
-Upon successful validation of the request, the service returns the
-``Accepted (202)`` response code. A caller should check that the load
-balancer ``provisioning_status`` has changed to ``ACTIVE`` to confirm
-that the update has taken effect. If the load balancer
-``provisioning_status`` is ``PENDING_UPDATE``, the caller can poll the
-load balancer object by using a **GET** operation to wait for the
-changes to be applied.
-
-The update operation enables you to change one or more of the following
-load balancer attributes:
+This operations enables you to change one or more of the following load
+balancer attributes:
 
 -  ``name``
 
@@ -25,17 +16,29 @@ load balancer attributes:
 
 -  ``admin_state_up``
 
+If the request is validated, the service returns the
+``Accepted (202)`` response code.
+
 This operation returns the updated load balancer object. The
 ``provisioning_status`` value can be ``ACTIVE``, ``PENDING_UPDATE``, or
 ``ERROR``.
 
-This table shows the possible response codes for this operation:
+Check that the load
+balancer ``provisioning_status`` has changed to ``ACTIVE`` to confirm
+that the update has taken effect. If the load balancer
+``provisioning_status`` is ``PENDING_UPDATE``, you can poll the
+load balancer object by using a **GET** operation to wait for the
+changes to be applied.
+
+The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
 |Response | Name                  | Description                                 |
-|Code     |                       |                                             |
+|code     |                       |                                             |
 +=========+=======================+=============================================+
 | 200     | Success               | Request succeeded.                          |
++---------+-----------------------+---------------------------------------------+
+| 202     | Accepted              | Request validated.                          |
 +---------+-----------------------+---------------------------------------------+
 | 400     | Bad Request           | The request is missing one or more          |
 |         |                       | elements, or the values of some elements    |
@@ -57,25 +60,34 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-**Example. Update load balancer: JSON request**
+The following table shows the URI parameters for the request.
 
-This table shows the body parameters for the request:
++------------------+------------+--------------------------------------------------------------+
+|Name              |Type        |Description                                                   |
++==================+============+==============================================================+
+|{loadbalancer_id} |csapi:uuid  | The UUID for the load balancer.                              |
++------------------+------------+--------------------------------------------------------------+
+
+
+The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | Type        | Description                                                                        |
 +==================+===========+=============+====================================================================================+
-| loadbalancer     | plain     | xsd:string  | A loadbalancers object.                                                            |
+| loadbalancer     | plain     | xsd:string  | A load balancers object.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name (optional)  | plain     | xsd:string  | The load balancer name. Does not have to be unique.                                |
+| name             | plain     | xsd:string  | The load balancer name. The name does not have to be unique. If you omit the name, |
+| (optional)       |           |             | the default value is an empty string.                                              |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| description      | plain     | xsd:string  | The load balancer description.                                                     |
-| (optional)       |           |             |                                                                                    |    
+| description      | plain     | xsd:string  | The load balancer description. If you omit the description, the default value is an|
+| (optional)       |           |             | empty string.                                                                      |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
+**Example: Update a load balancer JSON request**
 
-.. code::  
+.. code::
 
     {
         "loadbalancer": {
@@ -88,34 +100,40 @@ This table shows the body parameters for the request:
 Response
 """"""""""""""""
 
-**Example. Update load balancer: JSON response**
-
-This list shows the body parameters for the response:
-
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| **Parameter**    | **Style** | Type        | Description                                                                        |
-+==================+===========+=============+====================================================================================+
-| loadbalancer     | plain     | xsd:string  | A loadbalancers object.                                                            |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| id               | plain     | csapi:uuid  | The UUID for the load balancer.                                                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name             | plain     | xsd:string  | The load balancer name.                                                            |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| description      | plain     | xsd:string  | The load balancer description.                                                     |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| vip_address      | plain     | xsd:ip      | The IP address of the VIP.                                                         |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| status           | plain     | xsd:string  | The status of the load balancer. Indicates whether the load balancer is            |
-|                  |           |             | operational.                                                                       |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
-|                  |           |             | tenant UUID other than their own.                                                  |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
-.. code::  
+The following table shows the body parameters for the response.
+
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| **Parameter**       | **Style** | Type        | Description                                                                        |
++=====================+===========+=============+====================================================================================+
+| loadbalancer        | plain     | xsd:string  | A load balancers object.                                                           |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| id                  | plain     | csapi:uuid  | The UUID for the load balancer.                                                    |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| listeners           | plain     | xsd:string  | The listeners object for the load balancer                                         |
++------------------------+-----------+-------------+---------------------------------------------------------------------------------+
+| name                | plain     | xsd:string  | The load balancer name.                                                            |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| description         | plain     | xsd:string  | The load balancer description.                                                     |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| vip_address         | plain     | xsd:ip      | The virtual IP (VIP) address.                                                      |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| vip_subnet_id       | plain     | csapi:uuid  | The UUID of the VIP subnet.                                                        |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| admin_state_up      | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
+|                     |           |             | tenant UUID other than their own.                                                  |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| operating_status    | plain     | xsd:string  | The status of the load balancer.                                                   |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| provisioning_status | plain     | xsd:string  | The provisioning status of the load balancer.                                      |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+
+**Example: Update a load balancer JSON response**
+
+.. code::
 
     {
         "loadbalancer": {
