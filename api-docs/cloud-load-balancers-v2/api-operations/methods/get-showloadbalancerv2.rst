@@ -91,6 +91,8 @@ The following table shows the body parameters for the response.
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | operating_status    | plain     | xsd:string  | The operating status of the load balancer                                          |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
+| listeners           | plain     | xsd:list    | A list of the listeners IDs that belong to the load balancers.                     |
++---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 **Example: Show load balancer details JSON response**
 
@@ -106,5 +108,10 @@ The following table shows the body parameters for the response.
           "tenant_id":"7725fe12-1c14-4f45-ba8e-44bf01763578",
           "admin_state_up":true,
           "status":"ACTIVE"
+          "listeners": [
+                    {
+                        "id": "35cb8516-1173-4035-8dae-0dae3453f37f"
+                    }
+                ],
        }
     }

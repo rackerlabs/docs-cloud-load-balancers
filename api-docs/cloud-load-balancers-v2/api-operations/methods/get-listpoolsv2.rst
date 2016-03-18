@@ -59,7 +59,7 @@ The following table shows the body parameters for the response.
 |                     |           |             | distribute traffic to the pool members. This value, which must be supported,       |
 |                     |           |             | depends on the load balancer provider. The round robin algorithm must be supported.|
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| listeners           | plain     | xsd:list    | A list of the listeners that belong to the pool.                                   |
+| listeners           | plain     | xsd:list    | A list of the listeners IDs that belong to the pool.                               |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | members             | plain     | xsd:list    | A list of the members that belong to the pool.                                     |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
