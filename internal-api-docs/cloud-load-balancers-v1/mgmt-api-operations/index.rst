@@ -16,7 +16,7 @@
    assoc-lb-host-machine
    config-backups
    customer-lists
-   health-check
+   health-checks
    zeus-events-callback     
      
 

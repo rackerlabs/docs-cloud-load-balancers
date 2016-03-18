@@ -1,37 +1,56 @@
-============================================================================================================
-4.3. Load Balancer Audit - Rackspace Cloud Load Balancers Developer Guide for Service Management  - API v1.0
-============================================================================================================
+.. _get-lb-audit-report:
 
-INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX
-INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL
--  INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX
-INTERNAL - 
+Retrieve a load balancer audit report
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rubric:: `  <>`__\ 4.3. Load Balancer Audit
-   :name: load-balancer-audit
-   :class: title
+.. code::
 
-Verb
-URI
-Description
-Access Level
-**GET**
-/management/audit/status?status=``statuses``\ &\ ``changes-since``
-Generate a load balancer audit report.
-Service Admin
-The load balancer audit report provides insight into the load balancers
-that may have issues. These issues are specified for this report as
-ERROR, BUILD, PENDING\_DELETE, and PENDING\_UPDATE statuses. Each status
-can be specified in the query parameter of this request in a
-comma-delimited list, along with the date since when the changes are
-requested. For example: ``/audit/status?status=error,build&2011-5-16``.
-The alerts returned with the load balancers in question can be queried
-against using the alert id to return a more detailed alert message. The
-user must provide the status to query against while attempting to use
-this call.
+    GET /management/audit/status?status=statuses&changes-since
 
-`  <>`__
-**Example 4.5. Report Load Balancer Audit Response: XML**
+
+This operation generates a load balancer audit report.
+
+The access level for this operation is ``service admin``. 
+
+The load balancer audit report provides insight into the load balancers 
+that may have issues. These issues are specified for this report as 
+``ERROR``, ``BUILD``, ``PENDING_DELETE``, and ``PENDING_UPDATE`` statuses. Each status 
+can be specified in the query parameter of this request in a comma-delimited 
+list, along with the date since when the changes are requested. For example: 
+``/audit/status?status=error,build&2011-5-16``. The alerts returned with the load 
+balancers in question can be queried against using the alert id to return a more 
+detailed alert message. The user must provide the status to query against while 
+attempting to use this call. 
+
+
+**Load balancer statuses**
+
++---------------------+------------------------------------------------------------------------------------------+
+| Name                | Description                                                                              |
++=====================+==========================================================================================+
+|  ``BUILD``          | The load balancers is building.                                                          |
++---------------------+------------------------------------------------------------------------------------------+
+|  ``ERROR``          | The system encountered an error when attempting to configure the load balancer;          |
+|                     | contact Support.                                                                         |
++---------------------+------------------------------------------------------------------------------------------+
+| ``PENDING_DELETE``  | The load balancer is online but configuration changes are being applied to begin deletion|
+|                     | of the service based on a previous request.                                              |
++---------------------+------------------------------------------------------------------------------------------+
+| ``PENDING_UPDATE``  | The load balancer is online but configuration changes are being applied to update the    |
+|                     | service based on a previous request.                                                     |
++---------------------+------------------------------------------------------------------------------------------+
+
+
+
+
+  
+
+
+Response
+""""""""""""""""
+
+
+**Example: Load balancer audit report XML response**
 
 .. code::  
 
@@ -55,8 +74,8 @@ this call.
 
                     
 
-`  <>`__
-**Example 4.6. Report Load Balancer Audit Response: JSON**
+
+**Example: Load balancer audit report JSON response**
 
 .. code::  
 
@@ -83,4 +102,4 @@ this call.
                         "created":"2011-05-13T12:23:35-05:00","messageName":"An error occurred while creating loadbalancer '437' in Zeus."}]}]}]
     }
 
-                    
+
