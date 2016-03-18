@@ -1,72 +1,32 @@
-======================================================================================================
-2.3. Host Machines - Rackspace Cloud Load Balancers Developer Guide for Service Management  - API v1.0
-======================================================================================================
+.. _get-hosts-for-cluster:
 
-INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX
-INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL
--  INTERNAL - RAX INTERNAL -  INTERNAL - RAX INTERNAL -  INTERNAL - RAX
-INTERNAL - 
+Retrieve hosts for a cluster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. rubric:: `  <>`__\ 2.3. Host Machines
-   :name: host-machines
-   :class: title
+.. code::
 
-`2.3.1. Creating a New Host <Creating_a_New_Host-d1e827.html>`__
-`2.3.2. Changing Mutable
-Attributes <Changing_Mutable_Attributes-d1e943.html>`__
+   GET /management/clusters/{clusterId}/hosts
 
-Verb
-URI
-Description
-Access Level
-**GET**
-/management/hosts
-Retrieve a list of all hosts within the region.
-Support, Service Admin
-**GET**
-/management/clusters/``clusterId``/hosts
-Retrieve a list of all hosts belonging to a cluster.
-Support, Service Admin
-**POST**
-/management/hosts
-Create a new load balancing host.
-Service Admin
-**GET**
-/management/hosts/hostId
-Retrieve a detailed list of this host's configuration.
-Support, Service Admin
-**PUT**
-/management/hosts/``hostId``
-Update the mutable attributes of a load balancing host.
-Service Admin
-**DELETE**
-/management/hosts/``hostId``
-Remove a load balancing host.
-Service Admin
-**GET**
-/management/clusters/``clusterId``/endpoint
-Retrieve the host that is currently the active SOAP endpoint.
-Support, Service Admin
-**PUT**
-/management/hosts/``hostId``/endpoint/enable
-Enable this host's SOAP endpoint. (Warning: can be overwritten by
-``pollendpoints`` call.)
-Service Admin
-**PUT**
-/management/hosts/``hostId``/endpoint/disable
-Disable this host's SOAP endpoint. (Warning: can be overwritten by
-``pollendpoints`` call.)
-Service Admin
-**PUT**
-/management/clusters/pollendpoints
-Test all endpoints and set ``soap_endpoint_active`` if endpoint works.
-Service Admin
-The host operations allow for retrieval of host configuration data and
-statistics as well as the ability to add, manipulate, or delete load
-balancing hosts.
 
-`  <>`__
-**Example 2.9. List All Hosts Within Cluster Response: XML**
+This operation retrieves a list of all hosts that belong to the cluster specified 
+by ``clusterId``.
+
+
+The access levels for this operation are ``support`` and  ``service admin``. 
+
+The **GET** response contains several attributes (``utilization``, 
+``numberOfLoadBalancingConfigurations``, and ``numberOfUniqueCustomers``) 
+that are generated based on state data and are immutable. Immutable attributes 
+are calculated based on configurations associated with this host.  
+
+
+
+
+Response
+""""""""""""""""
+
+
+**Example: List all hosts for a cluster XML response**
 
 .. code::  
 
@@ -103,8 +63,8 @@ balancing hosts.
 
                     
 
-`  <>`__
-**Example 2.10. List All Hosts Within Cluster Response: JSON**
+
+**Example: List all hosts for a cluster JSON response**
 
 .. code::  
 

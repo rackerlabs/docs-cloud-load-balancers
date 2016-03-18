@@ -4,14 +4,16 @@
 Associations between load balancers and host machines 
 ===============================================================
 
-A *pool* is a logical set of devices, such as web servers, that
-you group together to receive and process traffic. Instead of sending
-client traffic to the destination IP address specified in the client
-request, the system sends the request to any of the servers that are
-members of that pool.
+Service administrators may re-assign a load balancer to a different host machine within the same cluster. This action can be taken if capacity warrants it or if a particular configuration needs to be isolated from others within the environment. Both active and failover hosts may be changed.
 
-.. include:: methods/get-listpoolsv2.rst
-.. include:: methods/post-createpoolv2.rst
-.. include:: methods/get-showpooldetailsv2.rst
-.. include:: methods/put-updatepoolv2.rst
-.. include:: methods/delete-deletepoolv2.rst
+Additionally, this operation allows for a service administrator to define a load balancer's host configurations as being "sticky" that prohibits the system from automatically moving this configuration between hosts to balance the host performance.
+
+A load balancer that is defined as being ``ACTIVE`` on multiple hosts allows the load balancer host machines to service traffic for a single VIP across multiple systems. This is an advanced feature that should be used cautiously as it can potentially amplify DDoS and other types of malicious traffic. 
+
+
+
+.. include:: methods/put-sticky-lb.rst
+.. include:: methods/delete-sticky-lb.rst
+.. include:: methods/get-host-assignments.rst
+.. include:: methods/put-update-host-assignments.rst
+

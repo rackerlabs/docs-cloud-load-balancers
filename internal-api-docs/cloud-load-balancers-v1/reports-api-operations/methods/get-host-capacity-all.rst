@@ -12,8 +12,7 @@ This operation generates a capacity planning report for all load balancing hosts
 
 The access level for this operation is ``service admin``. 
 
-
-  
+The load balancing host capacity report provides insight into the available capacity of a given host machine. It also supplies an estimated runway of available capacity based on historical provisioning activity. The historical period consists of one week, reported as ``allocatedConcurrentConnectionsInLastSevenDays``.  
 
 
 Response
