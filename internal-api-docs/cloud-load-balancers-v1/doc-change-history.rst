@@ -10,123 +10,93 @@ versions. The most recent changes are described.
 
 April 9, 2015
 
--  Added API call List Valid Traffic for IP (see `Section 2.4, “Virtual
-   IPs” <Virtual_IPs-d1e1074.html>`__).
+-  Added the API operation to list valid traffic for IP.
 
 June 6, 2014
 
--  Updated response examples for listing a cluster and lists of clusters
-   (see `Section 2.2, “Clusters” <Clusters-d1e443.html>`__).
+-  Updated response examples for listing a cluster and lists of clusters.
 
--  Updated attributes and examples for Creating a New Host API call (see
-   `Section 2.3.1, “Creating a New
-   Host” <Creating_a_New_Host-d1e827.html>`__).
+-  Updated attributes and examples for the create a new host API operation.
 
--  Added JSON example for List Alerts Response API call (see
-   `Section 3.7, “Listing and Acknowledging
-   Alerts” <Listing_and_Acknowledging_Alerts-d1e3019.html>`__).
+-  Added JSON example for the list alerts response API operation.
 
--  Updated examples for Host Capacity Reports API calls (see
-   `Section 4.1, “Host Capacity” <Host_Capacity-d1e4265.html>`__).
+-  Updated examples for the host capacity reports API operations.
 
 June 4, 2013
 
--  Updated rate limit information (see `Section 2.5, “Rate
-   Limits” <Rate_Limits-d1e1272.html>`__).
+-  Updated rate limit information.
 
 April 3, 2013
 
 -  Added information for new alerts and events for the Atom Hopper
-   Service (see `Section 3.7, “Listing and Acknowledging
-   Alerts” <Listing_and_Acknowledging_Alerts-d1e3019.html>`__ and
-   `Section 3.12, “Viewing Events” <Viewing_Events-d1e3739.html>`__).
+   Service.
 
 February 5, 2013
 
--  Added information and examples for rate limits and Repose (see
-   `Section 2.5, “Rate Limits” <Rate_Limits-d1e1272.html>`__).
+-  Added information and examples for rate limits and Repose.
 
 October 25, 2012
 
--  Added new call for listing load balancers on an account with extended
-   details including virtual IPs (see `Section 3.5, “Account Load
-   Balancers and Usage
-   (Billing)” <Account_Loadbalancers_and_Usage_Billing_-d1e2791.html>`__).
+-  Added new operation for listing load balancers on an account with extended
+   details including virtual IPs.
 
 October 9, 2012
 
--  Updated examples for List Load Balancers (see `Section 2.1.1, “List
-   Load Balancers” <List_Load_Balancers-d1e281.html>`__).
+-  Updated examples for List Load Balancers.
 
 June 13, 2012
 
--  Updated link for API documentation (see `Section 1.3, “Additional
-   Resources” <Additional_Resources-d1e241.html>`__).
+-  Updated link for API documentation.
 
 June 6, 2012
 
--  Added cluster ``status`` to the management API call to get clusters
-   (see the examples in `Section 2.2,
-   “Clusters” <Clusters-d1e443.html>`__).
+-  Added cluster ``status`` to the management API operation to get clusters.
 
--  Updated examples for List Load Balancers Usage Response (Paginated)
-   (see `Section 3.5, “Account Load Balancers and Usage
-   (Billing)” <Account_Loadbalancers_and_Usage_Billing_-d1e2791.html>`__).
+-  Updated examples for List Load Balancers Usage Response (Paginated).
 
--  Modified management API call for listing recent load balancer service
-   events for an account to add a date range (see `Section 3.12,
-   “Viewing Events” <Viewing_Events-d1e3739.html>`__).
+-  Modified management API operation for listing recent load balancer service
+   events for an account to add a date range.
 
--  Added management API call for viewing load balancer state history in
-   `Section 4.4, “Load Balancer State
-   History” <Load-balancer-state-history-d1e3774.html>`__.
+-  Added management API operation for viewing load balancer state history.
 
 April 6, 2012
 
--  Added management API call Retrieve Account-Specific Usage to retrieve
-   account-specific usage for all accounts for the given date range in
-   `Section 3.5, “Account Load Balancers and Usage
-   (Billing)” <Account_Loadbalancers_and_Usage_Billing_-d1e2791.html>`__.
+-  Added management API operation to retrieve account-specific usage to retrieve
+   account-specific usage for all accounts for the given date range.
    The response is paginated.
 
--  Added management API call Retrieve Load Balancer-Specific Usage to
+-  Added management API operation to retrieve load balancer specific usage to
    retrieve load balancer-specific usage for all load balancers for the
-   given date range in `Section 3.5, “Account Load Balancers and Usage
-   (Billing)” <Account_Loadbalancers_and_Usage_Billing_-d1e2791.html>`__.
+   given date range.
    The response is paginated.
 
--  Added management API calls for adding and retrieving allowable
-   domains in `Section 3.14, “Allowed
-   Domains” <AllowedDomains-d2f002eM.html>`__.
+-  Added management API operations for adding and retrieving allowable
+   domains.
 
 March 9, 2012
 
--  Fixed Example 2.31 "Update Rate Limit Request: XML" in `Section 2.5,
-   “Rate Limits” <Rate_Limits-d1e1272.html>`__ to use the correct
+-  Fixed example for update rate limit XML request to use the correct
    namespace.
 
--  Fixed examples in `Section 3.3, “Suspending a Load
-   Balancer” <Suspending_a_Load_Balancer-d1e2567.html>`__ to show both
+-  Fixed examples for suspending a load balancer to show both
    requests and responses.
 
--  Added information in `Section 3.5, “Account Load Balancers and Usage
-   (Billing)” <Account_Loadbalancers_and_Usage_Billing_-d1e2791.html>`__
-   that the date parameters are required for the List Account Load
-   Balancers Usage call.
+-  Added information to "Account Load Balancers and Usage" section
+   that the date parameters are required for the list account load
+   balancers usage operation.
 
--  Added information in `Section 3.11, “Zeus
-   Usage” <Zeus_Usage-d1e3672.html>`__ that the date parameters are
-   required for the List Zeus Usage calls.
+-  Added information to the Zeus usage section that the date parameters are
+   required for the list Zeus usage operations.
 
--  The response examples for XML and JSON in `Section 3.11, “Zeus
-   Usage” <Zeus_Usage-d1e3672.html>`__ have been updated to show the
+-  The response examples for XML and JSON  for the Zeus
+   usage section have been updated to show the
    correct responses.
 
 January 16, 2012
 
--  Corrected information in `Section 3.8, “API Rate
-   Limiting” <API_Rate_Limiting-d1e3233.html>`__ to reflect the API
-   calls.
+-  Corrected information in  the API rate
+   limiting section to reflect the API
+   operations.
 
 November 17, 2011
 
@@ -134,7 +104,7 @@ November 17, 2011
 
 August 23, 2011
 
--  Added API calls for modification of absolute limits.
+-  Added API operations for modification of absolute limits.
 
 May 20, 2011
 
