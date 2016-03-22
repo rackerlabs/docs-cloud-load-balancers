@@ -4,18 +4,17 @@
 Account load balancers and usage (billing) 
 ==========================================
 
-The Load Balancers service includes a health monitoring operation that
-periodically checks your back-end members to ensure that they are responding
-correctly. If a member does not respond, it is removed from rotation
-until the *health monitor* determines that the member is
-functional.
+The sections describes the operations for billing.
 
-The health check also is performed against every member that is added to ensure
-that the member is operating correctly before it services traffic. Only one
-health monitor can be enabled on a load balancer at a time.
+A user can list all load balancers and their usage for the given account using these 
+methods. The date parameters follow the ``YYYY-MM-DD`` date format. Note that 
+usage is retained for a maximum of 90 days. The ``startTime`` and ``endTime`` parameters are 
+required for the call. 
 
-.. include:: methods/get-listhealthmonitorsv2.rst
-.. include:: methods/post-createhealthmonitorv2.rst
-.. include:: methods/get-showhealthmonitordetailsv2.rst
-.. include:: methods/put-updatehealthmonitorv2.rst
-.. include:: methods/delete-deletehealthmonitorv2.rst
+
+
+.. include:: methods/get-account-lbs.rst
+.. include:: methods/get-account-lbs-extended-details.rst
+.. include:: methods/get-usage-all-accounts-single-day.rst
+.. include:: methods/get-account-usage.rst
+.. include:: methods/get-lb-usage-date-range.rst

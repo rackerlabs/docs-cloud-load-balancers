@@ -4,13 +4,12 @@
 API rate limit
 ==============================================
 
-A *listener* is an object that contains data that pertains to the
-"listening" port. This object defines the front end of the
-configuration and contains the back-end data such as pools and its
-members.
+This section descriptions the operations for API rate limiting.
 
-.. include:: methods/get-listlistenersv2.rst
-.. include:: methods/post-createlistenerv2.rst
-.. include:: methods/get-showlistenerv2.rst
-.. include:: methods/put-updatelistenerv2.rst
-.. include:: methods/delete-deletelistenerv2.rst
+.. include:: methods/post-groupname-default.rst
+.. include:: methods/get-all-groupname.rst
+.. include:: methods/put-update-default.rst
+.. include:: methods/delete-group.rst
+.. include:: methods/post-group-account.rst
+.. include:: methods/get-account-groups.rst
+.. include:: methods/delete-account-groups.rst
