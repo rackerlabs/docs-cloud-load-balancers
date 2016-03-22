@@ -4,13 +4,7 @@
 View the extended details of a load balancer
 ==============================================
 
-A *listener* is an object that contains data that pertains to the
-"listening" port. This object defines the front end of the
-configuration and contains the back-end data such as pools and its
-members.
+This section describes the operations to view the extended details of a load balancer.
 
-.. include:: methods/get-listlistenersv2.rst
-.. include:: methods/post-createlistenerv2.rst
-.. include:: methods/get-showlistenerv2.rst
-.. include:: methods/put-updatelistenerv2.rst
-.. include:: methods/delete-deletelistenerv2.rst
+.. include:: methods/get-lb-extended-details.rst
+

@@ -4,13 +4,12 @@
 Blacklist node and access list management
 ==============================================
 
-A *listener* is an object that contains data that pertains to the
-"listening" port. This object defines the front end of the
-configuration and contains the back-end data such as pools and its
-members.
+This section describes the operations for blacklist node and access list management.
 
-.. include:: methods/get-listlistenersv2.rst
-.. include:: methods/post-createlistenerv2.rst
-.. include:: methods/get-showlistenerv2.rst
-.. include:: methods/put-updatelistenerv2.rst
-.. include:: methods/delete-deletelistenerv2.rst
+The blacklist contains a list of IP address that have been considered unusable in our system. The system can blacklist an item for nodes, access list or both. The type parameter can be set to (``NODE``, ``ACCESSLIST``) to specify the type to which the blacklisted item should be attached. If neither type is submitted, it becomes global and is used against all operations that check its values against the blacklist. 
+
+
+.. include:: methods/get-blacklist-items.rst
+.. include:: methods/post-create-blacklist-item.rst
+.. include:: methods/delete-blacklist-item.rst
+

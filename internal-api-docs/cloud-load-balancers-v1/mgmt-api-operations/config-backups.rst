@@ -5,14 +5,15 @@ Configuration backups
 =====================
 
 
-A *pool* is a logical set of devices, such as web servers, that
-you group together to receive and process traffic. Instead of sending
-client traffic to the destination IP address specified in the client
-request, the system sends the request to any of the servers that are
-members of that pool.
+The host backup and restoration operations allow for service administrators to take periodic backups of the current state of the configuration on any given host machine. These operations  allow you to view a list of available backup configurations, create new backups, purge backups, and restore any available configuration. 
 
-.. include:: methods/get-listpoolsv2.rst
-.. include:: methods/post-createpoolv2.rst
-.. include:: methods/get-showpooldetailsv2.rst
-.. include:: methods/put-updatepoolv2.rst
-.. include:: methods/delete-deletepoolv2.rst
+
+
+.. include:: methods/get-backups-all-hosts.rst
+.. include:: methods/get-backups-specific-host.rst
+.. include:: methods/get-host-subnet-map.rst
+.. include:: methods/put-host-subnet-map.rst
+.. include:: methods/delete-host-subnet-map.rst
+.. include:: methods/post-create-host-backup.rst
+.. include:: methods/delete-host-backup.rst
+.. include:: methods/put-host-restore.rst

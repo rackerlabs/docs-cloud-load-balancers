@@ -4,13 +4,21 @@
 Load balancer status URL management
 ==============================================
 
-A *listener* is an object that contains data that pertains to the
-"listening" port. This object defines the front end of the
-configuration and contains the back-end data such as pools and its
-members.
+If a load balancer is stuck in ``PENDING UPDATE`` status, this is probably due to
+a broken transaction that should have rolled back in the database but
+did not.
 
-.. include:: methods/get-listlistenersv2.rst
-.. include:: methods/post-createlistenerv2.rst
-.. include:: methods/get-showlistenerv2.rst
-.. include:: methods/put-updatelistenerv2.rst
-.. include:: methods/delete-deletelistenerv2.rst
+In this case, operations personnel can use URLs such as the following to
+correct the issues:
+
+-  ``/management/loadbalancers/{id}/setstatus/ACTIVE``
+
+-  ``/management/loadbalancers/{d}/setstatus/BUILD``
+
+-  ``/management/loadbalancers/{id}/setstatus/DELETED``
+
+-  ``/management/loadbalancers/{id}/setstatus/ERROR``
+
+-  ``/management/loadbalancers/{id}/setstatus/PENDING_DELETE``
+
+-  ``/management/loadbalancers/{id}/setstatus/PENDING_UPDATE``
