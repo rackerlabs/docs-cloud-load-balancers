@@ -25,7 +25,6 @@ Following are the key files that define project and content architecture:
 
 Content | File
 --- | ---
-
 |Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/index.rst)
 |About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/overview/index.rst)
 |Getting Started introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-load-balancers/blob/master/api-docs/cloud-load-balancers-v1/getting-started.rst)
