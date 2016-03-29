@@ -1,10 +1,14 @@
-.. meta
-   :description: Rackspace Cloud LB API Reference
-   :keywords: Rackspace, Cloud LB ReST API, API resources, API methods
+.. _reports-api-ref:
 
+======================================
+**Reports API Reference**
+======================================
+
+Various reports are available, currently focused on load balancing 
+hosts, virtual IPs, and audits. 
 
 .. toctree:: 
-   :caption: API Reference
+   :caption: API Reference for report operations
    :maxdepth: 2
 
 

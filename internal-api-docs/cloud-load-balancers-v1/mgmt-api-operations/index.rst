@@ -1,10 +1,18 @@
-.. meta
-   :description: Rackspace Cloud LB API Reference
-   :keywords: Rackspace, Cloud LB ReST API, API resources, API methods
+.. _mgmt-api-ref:
 
+======================================
+**Management API Reference**
+======================================
+
+These API operations relate to administration of the environment 
+that enables and supports the load balancing service for all customers. 
+The scope of these operations is wide, relating to the overall 
+operating environment rather than to a single customer. Rackers 
+might perform these operations to examine or alter the overall 
+operational environment. 
 
 .. toctree:: 
-   :caption: API Reference
+   :caption: API Reference for management operations
    :maxdepth: 2
 
 

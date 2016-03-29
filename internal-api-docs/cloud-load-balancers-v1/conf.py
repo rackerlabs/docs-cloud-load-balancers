@@ -85,7 +85,8 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples','api-operations/methods/*', 'common-gs', 'getting-started/examples']
+exclude_patterns = ['_build', 'samples','extended-api-operations/methods/*', 
+                    'mgmt-api-operations/methods', 'reports-api-operations/methods/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -153,7 +154,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -168,7 +169,7 @@ todo_include_todos = False
 html_title = 'Rackspace Cloud Load Balancers API v1.0 Developer Guide for Service Management'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'Rackspace Cloud Load Balancers'
+html_short_title = 'Rackspace Cloud Load Balancers Management Guide'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -246,7 +247,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'docs-cloud-load-balancersdoc'
+htmlhelp_basename = 'docs-cloud-load-balancers-admin'
 
 # this will change the 'paragraph' character to '#'
 html_add_permalinks = '#'
@@ -271,7 +272,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'docs-cloud-load-balancers.tex', 'Rackspace Cloud Load Balancers API Developer Guide',
+  (master_doc, 'docs-cloud-load-balancers-admin.tex', 'Rackspace Cloud Load Balancers API Service Managment Guide',
    'mike.asthalter', 'manual'),
 ]
 
@@ -301,7 +302,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
+    (master_doc, 'API Guide for Service Management', 'Rackspace developer documentation',
      'Mike Asthalter', 1)
 ]
 
@@ -315,7 +316,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
+  (master_doc, 'docs-cloud-load-balancers-admin', 'Rackspace Cloud Load Balancers API Service Guide for Service Management',
    'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
    'Miscellaneous'),
 ]
