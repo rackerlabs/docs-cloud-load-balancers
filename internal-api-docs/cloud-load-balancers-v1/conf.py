@@ -169,7 +169,7 @@ html_theme = 'sphinx_rtd_theme'
 html_title = 'Rackspace Cloud Load Balancers API v1.0 Developer Guide for Service Management'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'Rackspace Cloud Load Balancers Management Guide'
+html_short_title = 'Rackspace Cloud Load Balancers Guide to Service Management'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
