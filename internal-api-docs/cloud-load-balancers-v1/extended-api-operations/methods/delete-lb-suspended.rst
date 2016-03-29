@@ -1,4 +1,4 @@
-.. _delete-lb-suspended
+.. _delete-lb-suspended:
 
 Delete a load balancer in SUSPENDED status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
