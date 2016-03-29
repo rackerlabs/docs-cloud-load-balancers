@@ -34,7 +34,7 @@ cd internal-api-docs/cloud-load-balancers-v1
 make singlehtml
 
 # move html files to root directory
-mv -fv _build/html/* ../
+mv -fv _build/singlehtml/* ../
 
 # remove source files
 cd $GITDIR
@@ -49,5 +49,5 @@ git push origin gh-pages
 git checkout master
 echo
 tput setaf 2
-echo "Published at: https://pages.github.rackspace.com/IX/internal-cloud-load-balancers-v1/"
+echo "Published at: https://pages.github.rackspace.com/IX/internal-docs-cloud-load-balancers-v1/"
 tput sgr0
