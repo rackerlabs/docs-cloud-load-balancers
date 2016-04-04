@@ -17,6 +17,7 @@ different APIs for service management for the Rackspace Cloud Load Balancers ser
 .. toctree:: :hidden:
    :maxdepth: 2
  
+   Cloud Load Balancers API Developer Guide for Service Management <self>
    API Status <https://status.rackspace.com/>
    overview/index 
    mgmt-api-operations/index
