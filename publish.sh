@@ -12,13 +12,13 @@ SOURCE='internal-api-docs/cloud-load-balancers-v1'
 # set branches to build
 BRANCHES=(master)
 
-# ensure branches are up-to-date
-#for branch in ${BRANCHES[@]}; do
-#    cd $GITDIR
-#    git checkout $branch
-#    git fetch upstream
-#    git merge upstream/$branch
-#    git push origin $branch
+ensure branches are up-to-date
+for branch in ${BRANCHES[@]}; do
+cd $GITDIR
+git checkout $branch
+git fetch upstream
+git merge upstream/$branch
+git push origin $branch
 #done
 
 # checkout gh-pages branch and delete contents except . files
@@ -34,7 +34,7 @@ cd internal-api-docs/cloud-load-balancers-v1
 make singlehtml
 
 # move html files to root directory
-mv -fv _build/singlehtml/* ../
+mv -fv _build/singlehtml/* ../..
 
 # remove source files
 cd $GITDIR
@@ -49,5 +49,5 @@ git push origin gh-pages
 git checkout master
 echo
 tput setaf 2
-echo "Published at: https://pages.github.rackspace.com/IX/internal-docs-cloud-load-balancers-v1/"
+echo "Published at: https://pages.github.rackspace.com/IX/internal-docs-cloud-load-balancers/index.html"
 tput sgr0
