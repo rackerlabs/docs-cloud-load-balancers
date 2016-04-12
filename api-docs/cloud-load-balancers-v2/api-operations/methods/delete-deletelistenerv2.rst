@@ -48,6 +48,14 @@ The following table shows the possible response codes for this operation.
 Request
 """"""""""""""""
 
+The following table shows the URI parameters for the request.
+
++-------------------+------------+--------------------------------------------------------------+
+|Name               |Type        |Description                                                   |
++===================+============+==============================================================+
+|listener_id        |csapi:uuid  | The UUID for the listener.                                   |
++-------------------+------------+--------------------------------------------------------------+
+
 This operation does not accept a request body.
 
 Response

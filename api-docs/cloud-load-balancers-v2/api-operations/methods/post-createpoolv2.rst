@@ -83,32 +83,33 @@ The following table shows the body parameters for the request.
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**       | **Style** | Type        | Description                                                                        |
 +=====================+===========+=============+====================================================================================+
-| pool                | plain     | xsd:list    | A list of the pool objects.                                                        |
+| pool (*Required*)   | plain     | xsd:list    | A list of the pool objects.                                                        |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up      | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-| (optional)          |           |             | The default is ``true``.                                                           |
+|                     |           |             | The default is ``true``.                                                           |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description         | plain     | xsd:string  | The human-readable description for the pool. If you do not specify a value, the    |
-| (optional)          |           |             | default is an empty string.                                                        |
+|                     |           |             | default is an empty string.                                                        |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | lb_algorithm        | plain     | xsd:string  | The load-balancer algorithm - such as round robin (``ROUND_ROBIN``), least         |
-|                     |           |             | connections (``LEAST_CONNECTIONS``) and source IP (``SOURCE_IP``) - that is used to|
+| (*Required*)        |           |             | connections (``LEAST_CONNECTIONS``) and source IP (``SOURCE_IP``) - that is used to|
 |                     |           |             | distribute traffic to the pool members. This value, which must be supported,       |
 |                     |           |             | depends on the load balancer provider. The round robin algorithm must be supported.|
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | listener_id         | plain     | csapi:uuid  | The UUID of the listener in which this pool becomes the default pool. Each listener|
-|                     |           |             | can have only one default pool.                                                    |
+| (*Required*)        |           |             | can have only one default pool.                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name (optional)     | plain     | xsd:string  | The pool name. The name does not have to be unique. If you do not specify a value, |
+| name                | plain     | xsd:string  | The pool name. The name does not have to be unique. If you do not specify a value, |
 |                     |           |             | the default is an empty string.                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol            | plain     | xsd:string  | The protocol of the pool, which is ``TCP``, ``HTTP``, or ``HTTPS``.                |
+| (*Required*)        |           |             |                                                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the pool. Required only if the user has an         |
-| (optional)          |           |             | administrative role and wants to create a pool for another tenant.                 |
+|                     |           |             | administrative role and wants to create a pool for another tenant.                 |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | session_persistence | plain     | xsd:list    | This list defines the cookie name and cookie type used for the pool.               |
-| (optional)          |           |             | The default is an empty dictionary.                                                |
+|                     |           |             | The default is an empty dictionary.                                                |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 

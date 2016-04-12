@@ -46,7 +46,7 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{loadbalancer_id} |csapi:uuid  | The UUID for the load balancer.                              |
+|loadbalancer_id   |csapi:uuid  | The UUID for the load balancer.                              |
 +------------------+------------+--------------------------------------------------------------+
 
 

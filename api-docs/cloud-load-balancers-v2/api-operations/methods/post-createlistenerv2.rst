@@ -82,42 +82,43 @@ The following table shows the body parameters for the response.
 | **Parameter**             | **Style** | **Type**    | **Description**                                                                    |
 +===========================+===========+=============+====================================================================================+
 | listener                  | plain     | xsd:string  | A listener object.                                                                 |
+| (*Required*)              |           |             |                                                                                    |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | default_pool_id           | plain     | csapi:uuid  | The UUID of the default pool. It must have compatible protocol with the listener.  |
-| (optional)                |           |             |                                                                                    |
+|                           |           |             |                                                                                    |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name                      | plain     | xsd:string  | The listener name. If you don't specify a value, the default is an empty string.   |
+| name  (*Required*)        | plain     | xsd:string  | The listener name. If you don't specify a value, the default is an empty string.   |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description               | plain     | xsd:string  | The listener detailed description. If you don't specify a value, the default is an |
-| (optional)                |           |             | empty string.                                                                      |
+|                           |           |             | empty string.                                                                      |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id                 | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
-| (optional)                |           |             | tenant UUID other than their own. This parameter is required only if the user has  |
+|                           |           |             | tenant UUID other than their own. This parameter is required only if the user has  |
 |                           |           |             | an administrative role and wants to create a listener for another tenant           |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | connection_limit          | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
-| (optional)                |           |             | is ``-1``, which indicates an infinite limit.                                      |
+|                           |           |             | is ``-1``, which indicates an infinite limit.                                      |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol                  | plain     | xsd:string  | The protocol for which the front end listens. Valid values are ``HTTP``, ``HTTPS``,|
+| protocol (*Required*)     | plain     | xsd:string  | The protocol for which the front end listens. Valid values are ``HTTP``, ``HTTPS``,|
 |                           |           |             | `` TCP``, or ``TERMINATED_HTTPS``.                                                 |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| protocol_port             | plain     | xsd:int     | The TCP or UDP port on which the front end listens. The value must be an integer   |
+| protocol_port (*Required*)| plain     | xsd:int     | The TCP or UDP port on which the front end listens. The value must be an integer   |
 |                           |           |             | from 1 to 65535.                                                                   |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up            | plain     | xsd:boolean | The administrative state of the load balancer, which is up (``true``) or down      |
-| (optional)                |           |             | (false). Set this attribute to ``false`` to create the listener in an              |
+|                           |           |             | (false). Set this attribute to ``false`` to create the listener in an              |
 |                           |           |             | administratively down state. The default is ``true``.                              |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | loadbalancer_id           | plain     | csapi:uuid  | The UUID for the load balancer on which this listener is provisioned. Tenants can  |
-|                           |           |             | create listeners only on load balancers authorized by policy, for example, their   |
+| (*Required*)              |           |             | create listeners only on load balancers authorized by policy, for example, their   |
 |                           |           |             | own load balancers.                                                                |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | default_tls_container_ref | plain     | xsd:string  | A reference to a container of Transport Layer Security (TLS) secrets. If           |
-| (optional)                |           |             | you also specify ``sni_container_refs``, this container is the default.            |
+|                           |           |             | you also specify ``sni_container_refs``, this container is the default.            |
 |                           |           |             | This parameter is required for the ``TERMINATED_HTTPS`` protocol.                  |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | sni_container_refs        | plain     | xsd:list    | A list of references to secrets that are used for Server Name Indication           |
-| (optional)                |           |             | (SNI). This parameter is required for the ``TERMINATED_HTTPS`` protocol .          |
+|                           |           |             | (SNI). This parameter is required for the ``TERMINATED_HTTPS`` protocol .          |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 **Example: Create listener JSON request**

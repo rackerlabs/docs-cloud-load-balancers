@@ -53,7 +53,7 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{pool_id}         |csapi:uuid  | The UUID for the pool.                                       |
+|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
 +------------------+------------+--------------------------------------------------------------+
 
 This operation does not accept a request body.

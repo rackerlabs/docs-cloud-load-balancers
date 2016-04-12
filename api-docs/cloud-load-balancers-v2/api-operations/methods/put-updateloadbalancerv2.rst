@@ -65,7 +65,7 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{loadbalancer_id} |csapi:uuid  | The UUID for the load balancer.                              |
+|loadbalancer_id   |csapi:uuid  | The UUID for the load balancer.                              |
 +------------------+------------+--------------------------------------------------------------+
 
 
@@ -75,14 +75,16 @@ The following table shows the body parameters for the request.
 | **Parameter**    | **Style** | Type        | Description                                                                        |
 +==================+===========+=============+====================================================================================+
 | loadbalancer     | plain     | xsd:string  | A load balancers object.                                                           |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | name             | plain     | xsd:string  | The load balancer name. The name does not have to be unique. If you omit the name, |
-| (optional)       |           |             | the default value is an empty string.                                              |
+|                  |           |             | the default value is an empty string.                                              |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description      | plain     | xsd:string  | The load balancer description. If you omit the description, the default value is an|
-| (optional)       |           |             | empty string.                                                                      |
+|                  |           |             | empty string.                                                                      |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 **Example: Update a load balancer JSON request**

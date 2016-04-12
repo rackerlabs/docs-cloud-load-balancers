@@ -70,7 +70,7 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{pool_id}         |csapi:uuid  | The UUID for the pool.                                       |
+|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
 +------------------+------------+--------------------------------------------------------------+
 
 
@@ -80,21 +80,24 @@ The following table shows the body parameters for the request.
 | **Parameter**       | **Style** | Type        | Description                                                                        |
 +=====================+===========+=============+====================================================================================+
 | pool                | plain     | xsd:dict    | A pool object.                                                                     |
+| (*Required*)        |           |             |                                                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up      | plain     | xsd:boolean | The administrative state of the pool, which is up (true) or down (false).          |
+| (*Required*)        |           |             |                                                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description         | plain     | xsd:string  | A human-readable description of the pool.                                          |
+| (*Required*)        |           |             |                                                                                    |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | lb_algorithm        | plain     | xsd:string  | The load-balancer algorithm - such as round robin (``ROUND_ROBIN``),               |
-| (optional)          |           |             | least-connections (``LEAST_CONNECTIONS``), and source IP (``SOURCE_IP``) - that is |
+|                     |           |             | least-connections (``LEAST_CONNECTIONS``), and source IP (``SOURCE_IP``) - that is |
 |                     |           |             | used to distribute traffic to the pool members. This value, which must be          |
 |                     |           |             | supported,depends on the load-balancer provider. The round robin algorithm must be |
 |                     |           |             |supported.                                                                          |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| name (optional)     | plain     | xsd:string  | A human-readable name for the pool. The name does not have to be unique.           |
+| name                | plain     | xsd:string  | A human-readable name for the pool. The name does not have to be unique.           |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type`` and|
-|                     |           |             | ``cookie_name`` keys.                                                              |
+| (*Required*)        |           |             | ``cookie_name`` keys.                                                              |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 

@@ -53,9 +53,9 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{pool_id}         |csapi:uuid  | The UUID of the pool.                                        |
+|pool_id           |csapi:uuid  | The UUID of the pool.                                        |
 +------------------+------------+--------------------------------------------------------------+
-|{member_id}       |csapi:uuid  | The UUID of the member.                                      |
+|member_id         |csapi:uuid  | The UUID of the member.                                      |
 +------------------+------------+--------------------------------------------------------------+
 
 This operation does not accept a request body.

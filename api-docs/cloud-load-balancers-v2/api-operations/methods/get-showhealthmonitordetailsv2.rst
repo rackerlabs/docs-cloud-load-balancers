@@ -52,7 +52,7 @@ The following table shows the URI parameters for the request.
 +-------------------+------------+--------------------------------------------------------------+
 |Name               |Type        |Description                                                   |
 +===================+============+==============================================================+
-|{healthmonitor_id} |csapi:uuid  | The UUID for the health monitor.                             |
+|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.                             |
 +-------------------+------------+--------------------------------------------------------------+
 
 This operation does not accept a request body.

@@ -98,36 +98,38 @@ The following table shows the body parameters for the request.
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | healthmonitor    | plain     | xsd:dict    | A health monitor object.                                                           |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 | delay            | plain     | xsd:int     | The time, in seconds, between sending probes to members.                           |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | expected_codes   | plain     | xsd:string  | The list of HTTP status codes expected in response from the member to declare it   |
-| (optional)       |           |             | healthy. Specify one of the following values:                                      |
+|                  |           |             | healthy. Specify one of the following values:                                      |
 |                  |           |             |                                                                                    |
 |                  |           |             | - A single value, such as ``200``.                                                 |
 |                  |           |             | - A list, such as ``200, 202``.                                                    |
 |                  |           |             | - A range, such as ``200-204``.                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
-| (optional)       |           |             |                                                                                    |
+|                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | max_retries      | plain     | xsd:int     | The number of connection failures that are allowed before the status of the member |
-|                  |           |             | is changed to ``INACTIVE``. Valid values are from 1 to 10.                         |
+| (*Required*)     |           |             | is changed to ``INACTIVE``. Valid values are from 1 to 10.                         |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | pool_id          | plain     | csapi:uuid  | The UUID of the pool associated with the health monitor.                           |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
-|                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
+| (*Required*)     |           |             | established before it times out. This value must be less than the ``delay`` value. |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | type             | plain     | xsd:string  | The type of probe sent by the load balancer to verify the member state.            |
-|                  |           |             | Valid values are ``PING``, ``TCP``, ``HTTP``, or ``HTTPS``.                        |
+| (*Required*)     |           |             | Valid values are ``PING``, ``TCP``, ``HTTP``, or ``HTTPS``.                        |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-| (optional)       |           |             | A valid value is a string that begins with a forward slash (/).                    |
+|                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the health monitor. Only administrative users can  |
-| (optional)       |           |             | specify a tenant UUID other than their own.                                        |
+|                  |           |             | specify a tenant UUID other than their own.                                        |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
