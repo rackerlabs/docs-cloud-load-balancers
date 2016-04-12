@@ -94,22 +94,22 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|startTime                 |Date *(Optional)*        |If the startTime         |
+|startTime                 |Date                     |If the startTime         |
 |                          |                         |parameter is supplied    |
 |                          |                         |but the endTime          |
 |                          |                         |parameter is not, all    |
 |                          |                         |usage beginning with the |
 |                          |                         |startTime is returned.   |
 +--------------------------+-------------------------+-------------------------+
-|endTime                   |Date *(Optional)*        |If the endTime parameter |
+|endTime                   |Date                     |If the endTime parameter |
 |                          |                         |is supplied but the      |
 |                          |                         |startTime parameter is   |
 |                          |                         |not, all usage up to the |
 |                          |                         |endTime is returned.     |
 +--------------------------+-------------------------+-------------------------+
-|offset                    |String *(Optional)*      |The pagination offset.   |
+|offset                    |String                   |The pagination offset.   |
 +--------------------------+-------------------------+-------------------------+
-|limit                     |String *(Optional)*      |The pagination limit.    |
+|limit                     |String                   |The pagination limit.    |
 |                          |                         |The response is          |
 |                          |                         |paginated with a default |
 |                          |                         |limit of 500 and a       |

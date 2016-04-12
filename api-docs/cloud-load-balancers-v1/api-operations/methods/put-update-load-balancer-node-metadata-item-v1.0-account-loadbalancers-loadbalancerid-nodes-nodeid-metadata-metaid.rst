@@ -79,12 +79,12 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|{nodeId}                  |String *(Required)*      |The ID for the node.     |
+|{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
-|{metaId}                  |String *(Required)*      |The ID of the metadata   |
+|{metaId}                  |String                   |The ID of the metadata   |
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 

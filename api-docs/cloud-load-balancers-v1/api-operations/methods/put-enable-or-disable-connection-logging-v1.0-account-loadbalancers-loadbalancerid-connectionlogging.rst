@@ -78,7 +78,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -91,7 +91,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|enabled                   |Boolean *(Optional)*     |If set to true, enables  |
+|enabled                   |Boolean                  |If set to true, enables  |
 |                          |                         |connection logging. If   |
 |                          |                         |set to false, disables   |
 |                          |                         |connection logging.      |

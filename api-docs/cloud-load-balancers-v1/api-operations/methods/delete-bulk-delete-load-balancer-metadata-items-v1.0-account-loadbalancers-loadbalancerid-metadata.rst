@@ -77,7 +77,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -88,7 +88,7 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|metaId                    |String *(Optional)*      |The ID for the metadata  |
+|metaId                    |String                   |The ID for the metadata  |
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 

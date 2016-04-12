@@ -524,7 +524,7 @@ in the authentication response.</p>
 <li><p class="first">In the <code class="docutils literal"><span class="pre">service</span> <span class="pre">catalog</span></code> section of the authentication response, copy the <code class="docutils literal"><span class="pre">publicURL</span></code>
 value for the Rackspace Cloud Load Balancers API, version, and region that you want to access.</p>
 <p>This example shows the endpoints available for the Rackspace Cloud Load Balancers API.</p>
-<div class="code json highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="code json highlight-python" id="authentication-response-examples"><div class="highlight"><pre><span class="p">{</span>
     <span class="s">&quot;endpoints&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s">&quot;publicURL&quot;</span><span class="p">:</span> <span class="s">&quot;https://syd.loadbalancers.api.rackspacecloud.com/v1.0/123456&quot;</span><span class="p">,</span>
@@ -1180,7 +1180,7 @@ the table below.</p>
 service access endpoint for your account to use for accessing Cloud Load Balancers. Use
 the service type (rax:load-balancer) to locate the correct endpoint in the
 service catalog. For an example of the service catalog, see
-<span class="xref std std-ref">authentication response examples</span>.</p>
+<a class="reference internal" href="index.html#authentication-response-examples"><span>authentication response examples</span></a>.</p>
 </div>
 <p>Replace the sample account ID number, <code class="docutils literal"><span class="pre">1234</span></code>, with your actual account number returned as
 part of the authentication service response. You find the actual account number after the
@@ -2225,12 +2225,12 @@ tenancy cloud.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>loadBalancers</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>A <code class="docutils literal"><span class="pre">loadBalancers</span></code>
 object.</td>
 </tr>
 <tr class="row-odd"><td>name</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Name of the load
 balancer to create. The
 name must be 128
@@ -2242,74 +2242,74 @@ for information about the
 UTF-8 character set.</td>
 </tr>
 <tr class="row-even"><td>id</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-odd"><td>protocol</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Protocol of the service
 that is being load
 balanced.</td>
 </tr>
 <tr class="row-even"><td>port</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Port number for the
 service you are load
 balancing.</td>
 </tr>
 <tr class="row-odd"><td>algorithm</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Algorithm that defines
 how traffic should be
 directed between back-
 end nodes.</td>
 </tr>
 <tr class="row-even"><td>status</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The status of the load
 balancer.</td>
 </tr>
 <tr class="row-odd"><td>nodeCount</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>The number of load
 balancer nodes.</td>
 </tr>
 <tr class="row-even"><td>created</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 created.</td>
 </tr>
 <tr class="row-odd"><td>updated</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 last updated.</td>
 </tr>
 <tr class="row-even"><td>virtualIps</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>The list of virtualIps
 for a load balancer.</td>
 </tr>
 <tr class="row-odd"><td>id</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>The ID for the IP
 address.</td>
 </tr>
 <tr class="row-even"><td>address</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The IP address.</td>
 </tr>
 <tr class="row-odd"><td>type</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The IP address type. See
 the Virtual IP Types
 table in the Chapter 4
 section &#8220;Virtual IPs&#8221;.</td>
 </tr>
 <tr class="row-even"><td>ipVersion</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The IP version.</td>
 </tr>
 </tbody>
@@ -2549,7 +2549,7 @@ for information about the UTF-8
 character set.</td>
 </tr>
 <tr class="row-odd"><td>nodes</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>Nodes to be added to the load
 balancer.</td>
 </tr>
@@ -2559,8 +2559,7 @@ balancer.</td>
 being load balanced.</td>
 </tr>
 <tr class="row-odd"><td>halfClosed</td>
-<td>Boolean
-<em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Enables or disables Half-Closed
 support for the load balancer. Half-
 Closed support provides the ability
@@ -2578,7 +2577,7 @@ virtual IP types table at
 <a class="reference internal" href="index.html#virtual-ips"><span>Virtual IPs</span></a>.</td>
 </tr>
 <tr class="row-odd"><td>accessList</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The access list management feature
 allows fine-grained network access
 controls to be applied to the load
@@ -2587,20 +2586,20 @@ to <a class="reference internal" href="index.html#access-lists"><span>Access lis
 for information and examples.</td>
 </tr>
 <tr class="row-even"><td>algorithm</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Algorithm that defines how traffic
 should be directed between back-end
 nodes.</td>
 </tr>
 <tr class="row-odd"><td>connectionLogging</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Current connection logging
 configuration. Refer to
 <a class="reference internal" href="index.html#log-connections"><span>Log connections</span></a>
 for information and examples.</td>
 </tr>
 <tr class="row-even"><td>connectionThrottle</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies limits on the number of
 connections per IP address to help
 mitigate malicious or abusive
@@ -2609,37 +2608,36 @@ traffic to your applications. See
 for information and examples.</td>
 </tr>
 <tr class="row-odd"><td>healthMonitor</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The type of health monitor check to
 perform to ensure that the service
 is performing properly.</td>
 </tr>
 <tr class="row-even"><td>metadata</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Information (metadata) that can be
 associated with each load balancer.</td>
 </tr>
 <tr class="row-odd"><td>port</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Port number for the service you are
 load balancing.</td>
 </tr>
 <tr class="row-even"><td>timeout</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The timeout value for the load
 balancer and communications with its
 nodes. Defaults to 30 seconds with a
 maximum of 120 seconds.</td>
 </tr>
 <tr class="row-odd"><td>sessionPersistence</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies whether multiple requests
 from clients are directed to the
 same node.</td>
 </tr>
 <tr class="row-even"><td>httpsRedirect</td>
-<td>Boolean
-<em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Enables or disables HTTP to HTTPS
 redirection for the load balancer.
 When enabled, any HTTP request
@@ -2793,41 +2791,41 @@ balancer has been created.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>loadBalancer</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>A <code class="docutils literal"><span class="pre">loadBalancer</span></code>
 object.</td>
 </tr>
 <tr class="row-odd"><td>id</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>protocol</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>Protocol of the service
 that is being load
 balanced.</td>
 </tr>
 <tr class="row-odd"><td>port</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Port number for the
 service you are load
 balancing.</td>
 </tr>
 <tr class="row-even"><td>algorithm</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Algorithm that defines
 how traffic should be
 directed between back-
 end nodes.</td>
 </tr>
 <tr class="row-odd"><td>status</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The status of the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>timeout</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The timeout value for
 the load balancer and
 communications with its
@@ -2836,7 +2834,7 @@ seconds with a maximum
 of 120 seconds.</td>
 </tr>
 <tr class="row-odd"><td>connectionLogging</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Current connection
 logging configuration.
 Refer to the API Ops
@@ -2845,7 +2843,7 @@ for
 information and examples.</td>
 </tr>
 <tr class="row-even"><td>virtualIps</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>Type of virtualIp to add
 with the creation of a
 load balancer. See the
@@ -2854,54 +2852,54 @@ the API Operations
 section &#8220;Virtual IPs&#8221;.</td>
 </tr>
 <tr class="row-odd"><td>id</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The ID for the IP
 address.</td>
 </tr>
 <tr class="row-even"><td>address</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP address.</td>
 </tr>
 <tr class="row-odd"><td>type</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP address type.</td>
 </tr>
 <tr class="row-even"><td>ipVersion</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP version.</td>
 </tr>
 <tr class="row-odd"><td>nodes</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>Nodes to be added to the
 load balancer.</td>
 </tr>
 <tr class="row-even"><td>address</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node address.</td>
 </tr>
 <tr class="row-odd"><td>port</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The node port.</td>
 </tr>
 <tr class="row-even"><td>condition</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node condition. For
 example, ENABLED.</td>
 </tr>
 <tr class="row-odd"><td>status</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node status. For
 example, ONLINE.</td>
 </tr>
 <tr class="row-even"><td>sessionPersistence</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies whether
 multiple requests from
 clients are directed to
 the same node.</td>
 </tr>
 <tr class="row-odd"><td>connectionThrottle</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies limits on the
 number of connections
 per IP address to help
@@ -2913,23 +2911,23 @@ for information and
 examples.</td>
 </tr>
 <tr class="row-even"><td>cluster</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The cluster name.</td>
 </tr>
 <tr class="row-odd"><td>created</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 created.</td>
 </tr>
 <tr class="row-even"><td>updated</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 last updated.</td>
 </tr>
 <tr class="row-odd"><td>sourceAddresses</td>
-<td>Dict <em>(Required)</em></td>
+<td>Dict</td>
 <td>The source public and
 private IP addresses.</td>
 </tr>
@@ -3295,7 +3293,7 @@ tenancy cloud.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>id</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>One to ten load balancer
 IDs. For example:
 <code class="docutils literal"><span class="pre">?id={loadBalancerId}</span></code>.
@@ -3414,7 +3412,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -3439,41 +3437,41 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>loadBalancer</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>A <code class="docutils literal"><span class="pre">loadBalancer</span></code>
 object.</td>
 </tr>
 <tr class="row-odd"><td>id</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>protocol</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>Protocol of the service
 that is being load
 balanced.</td>
 </tr>
 <tr class="row-odd"><td>port</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Port number for the
 service you are load
 balancing.</td>
 </tr>
 <tr class="row-even"><td>algorithm</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Algorithm that defines
 how traffic should be
 directed between back-
 end nodes.</td>
 </tr>
 <tr class="row-odd"><td>status</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The status of the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>timeout</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The timeout value for
 the load balancer and
 communications with its
@@ -3482,7 +3480,7 @@ seconds with a maximum
 of 120 seconds.</td>
 </tr>
 <tr class="row-odd"><td>connectionLogging</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Current connection
 logging configuration.
 Refer to the API Ops
@@ -3491,7 +3489,7 @@ connections&#8221; for
 information and examples.</td>
 </tr>
 <tr class="row-even"><td>virtualIps</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>Type of virtualIp to add
 with the creation of a
 load balancer. See the
@@ -3500,54 +3498,54 @@ in the API Ops section
 &#8220;Virtual IPs&#8221;.</td>
 </tr>
 <tr class="row-odd"><td>id</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The ID for the IP
 address.</td>
 </tr>
 <tr class="row-even"><td>address</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP address.</td>
 </tr>
 <tr class="row-odd"><td>type</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP address type.</td>
 </tr>
 <tr class="row-even"><td>ipVersion</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The IP version.</td>
 </tr>
 <tr class="row-odd"><td>nodes</td>
-<td>Object <em>(Optional)</em></td>
+<td>Object</td>
 <td>Nodes to be added to the
 load balancer.</td>
 </tr>
 <tr class="row-even"><td>address</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node address.</td>
 </tr>
 <tr class="row-odd"><td>port</td>
-<td>Int <em>(Required)</em></td>
+<td>Int</td>
 <td>The node port.</td>
 </tr>
 <tr class="row-even"><td>condition</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node condition. For
 example, ENABLED.</td>
 </tr>
 <tr class="row-odd"><td>status</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The node status. For
 example, ONLINE.</td>
 </tr>
 <tr class="row-even"><td>sessionPersistence</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies whether
 multiple requests from
 clients are directed to
 the same node.</td>
 </tr>
 <tr class="row-odd"><td>connectionThrottle</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Specifies limits on the
 number of connections
 per IP address to help
@@ -3560,23 +3558,23 @@ for information and
 examples.</td>
 </tr>
 <tr class="row-even"><td>cluster</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The cluster name.</td>
 </tr>
 <tr class="row-odd"><td>created</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 created.</td>
 </tr>
 <tr class="row-even"><td>updated</td>
-<td>Object <em>(Required)</em></td>
+<td>Object</td>
 <td>The date and time what
 the load balancer was
 last updated.</td>
 </tr>
 <tr class="row-odd"><td>sourceAddresses</td>
-<td>Dict <em>(Required)</em></td>
+<td>Dict</td>
 <td>The source public and
 private IP addresses.</td>
 </tr>
@@ -3820,7 +3818,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -3841,7 +3839,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>name</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Name of the load balancer to update.
 The name must be 128 characters or
 fewer in length, and all UTF-8
@@ -3851,13 +3849,12 @@ for information about the UTF-8
 character set.</td>
 </tr>
 <tr class="row-odd"><td>protocol</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Protocol of the service that is
 being load balanced.</td>
 </tr>
 <tr class="row-even"><td>halfClosed</td>
-<td>Boolean
-<em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Enables or disables Half-Closed
 support for the load balancer. Half-
 Closed support provides the ability
@@ -3868,26 +3865,25 @@ Only available for
 TCP/TCP_CLIENT_FIRST protocols.</td>
 </tr>
 <tr class="row-odd"><td>algorithm</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Algorithm that defines how traffic
 should be directed between back-end
 nodes.</td>
 </tr>
 <tr class="row-even"><td>port</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>Port number for the service you are
 load balancing.</td>
 </tr>
 <tr class="row-odd"><td>timeout</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The timeout value for the load
 balancer and communications with its
 nodes. Defaults to 30 seconds with a
 maximum of 120 seconds.</td>
 </tr>
 <tr class="row-even"><td>httpsRedirect</td>
-<td>Boolean
-<em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Enables or disables HTTP to HTTPS
 redirection for the load balancer.
 When enabled, any HTTP request
@@ -4041,7 +4037,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -4168,7 +4164,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -4322,7 +4318,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -4493,7 +4489,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -4634,7 +4630,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -4917,7 +4913,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -5107,7 +5103,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -5317,7 +5313,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -5338,7 +5334,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>nodeId</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The ID for the specified
 node.</td>
 </tr>
@@ -5468,12 +5464,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -5639,12 +5635,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -5770,12 +5766,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -5889,7 +5885,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -6159,7 +6155,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -6313,7 +6309,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -6485,7 +6481,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -6506,7 +6502,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>virtualIpId</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The ID for the virtual
 IP.</td>
 </tr>
@@ -6607,12 +6603,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{virtualIpId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the virtual
 IP.</td>
 </tr>
@@ -6884,7 +6880,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -6905,7 +6901,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>startTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the startTime
 parameter is supplied
 but the endTime
@@ -6914,7 +6910,7 @@ usage beginning with the
 startTime is returned.</td>
 </tr>
 <tr class="row-odd"><td>endTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the endTime parameter
 is supplied but the
 startTime parameter is
@@ -7135,7 +7131,7 @@ tenancy cloud.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>startTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the startTime
 parameter is supplied
 but the endTime
@@ -7144,7 +7140,7 @@ usage beginning with the
 startTime is returned.</td>
 </tr>
 <tr class="row-odd"><td>endTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the endTime parameter
 is supplied but the
 startTime parameter is
@@ -7335,7 +7331,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -7356,7 +7352,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>startTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the startTime
 parameter is supplied
 but the endTime
@@ -7365,7 +7361,7 @@ usage beginning with the
 startTime is returned.</td>
 </tr>
 <tr class="row-odd"><td>endTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the endTime parameter
 is supplied but the
 startTime parameter is
@@ -7546,7 +7542,7 @@ tenancy cloud.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>startTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the startTime
 parameter is supplied
 but the endTime
@@ -7555,7 +7551,7 @@ usage beginning with the
 startTime is returned.</td>
 </tr>
 <tr class="row-odd"><td>endTime</td>
-<td>Date <em>(Optional)</em></td>
+<td>Date</td>
 <td>If the endTime parameter
 is supplied but the
 startTime parameter is
@@ -7563,11 +7559,11 @@ not, all usage up to the
 endTime is returned.</td>
 </tr>
 <tr class="row-even"><td>offset</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The pagination offset.</td>
 </tr>
 <tr class="row-odd"><td>limit</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The pagination limit.
 The response is
 paginated with a default
@@ -7814,7 +7810,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -8027,7 +8023,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -8167,7 +8163,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -8285,7 +8281,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -8306,7 +8302,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>id</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The ID for the network
 item.</td>
 </tr>
@@ -8420,12 +8416,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{networkItemId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the network
 item.</td>
 </tr>
@@ -8844,7 +8840,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -9239,7 +9235,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -9374,7 +9370,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -9550,7 +9546,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -9699,7 +9695,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -9849,7 +9845,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10019,7 +10015,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10044,7 +10040,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>enabled</td>
-<td>Boolean <em>(Optional)</em></td>
+<td>Boolean</td>
 <td>If set to true, enables
 connection logging. If
 set to false, disables
@@ -10171,7 +10167,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10192,7 +10188,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>enabled</td>
-<td>Boolean <em>(Optional)</em></td>
+<td>Boolean</td>
 <td>If set to true, enables
 connection logging. If
 set to false, disables
@@ -10323,7 +10319,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10462,7 +10458,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10483,7 +10479,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>maxConnectionRate</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>Deprecated as of v1.22
 and later versions.
 Parameter can still be
@@ -10492,7 +10488,7 @@ effect on the load
 balancer.</td>
 </tr>
 <tr class="row-odd"><td>maxConnections</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>Maximum number of
 connections to allow for
 a single IP address. To
@@ -10503,7 +10499,7 @@ Set to a value from 1 to
 100000.</td>
 </tr>
 <tr class="row-even"><td>minConnections</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>Deprecated as of v1.22
 and later versions.
 Parameter can still be
@@ -10512,7 +10508,7 @@ effect on the load
 balancer.</td>
 </tr>
 <tr class="row-odd"><td>rateInterval</td>
-<td>Int <em>(Optional)</em></td>
+<td>Int</td>
 <td>Deprecated as of v1.22
 and later versions.
 Parameter can still be
@@ -10672,7 +10668,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10793,7 +10789,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10921,7 +10917,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -10942,7 +10938,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>enabled</td>
-<td>Boolean <em>(Optional)</em></td>
+<td>Boolean</td>
 <td>If set to true, enables
 content caching. If set
 to false, disables
@@ -11634,7 +11630,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -11986,7 +11982,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -12036,7 +12032,7 @@ key and intermediate
 certificate if provided.</td>
 </tr>
 <tr class="row-odd"><td>intermediateCertificate</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The intermediate
 certificate for the user
 that is used for SSL
@@ -12058,7 +12054,7 @@ single attribute in a
 future request.</td>
 </tr>
 <tr class="row-even"><td>enabled</td>
-<td>Boolean <em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Determines if the load
 balancer is enabled to
 terminate SSL traffic.
@@ -12070,7 +12066,7 @@ but does not terminate
 SSL traffic.</td>
 </tr>
 <tr class="row-odd"><td>secureTrafficOnly</td>
-<td>Boolean <em>(Optional)</em></td>
+<td>Boolean</td>
 <td>Determines if the load
 balancer can accept only
 secure traffic. If
@@ -12401,7 +12397,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -12535,7 +12531,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -12680,7 +12676,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -12736,7 +12732,7 @@ certificate(s) if
 provided.</td>
 </tr>
 <tr class="row-odd"><td>intermediateCertificate</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The intermediate
 certificate to be used
 for the provided
@@ -13236,12 +13232,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{certificateMappingId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the
 certificate mapping.</td>
 </tr>
@@ -13527,12 +13523,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{certificateMappingId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the
 certificate mapping.</td>
 </tr>
@@ -13553,7 +13549,7 @@ certificate mapping.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>hostName</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The host name to be used
 for the provided
 certificate credentials.
@@ -13568,7 +13564,7 @@ mappings for a given
 load balancer.</td>
 </tr>
 <tr class="row-odd"><td>privateKey</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The private key to be
 used for the provided
 certificate. The private
@@ -13577,7 +13573,7 @@ verified against the
 provided certificates.</td>
 </tr>
 <tr class="row-even"><td>certificate</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The certificate to be
 used for the provided
 host name. The
@@ -13588,7 +13584,7 @@ certificate(s) if
 provided.</td>
 </tr>
 <tr class="row-odd"><td>intermediateCertificate</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The intermediate
 certificate to be used
 for the provided
@@ -14075,12 +14071,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{certificateMappingId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the
 certificate mapping.</td>
 </tr>
@@ -14202,7 +14198,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -14359,7 +14355,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -14497,7 +14493,7 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
@@ -14518,7 +14514,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>metaId</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The ID for the metadata
 item.</td>
 </tr>
@@ -14632,12 +14628,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>
@@ -14767,12 +14763,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>
@@ -14922,12 +14918,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>
@@ -15041,12 +15037,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -15183,12 +15179,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -15345,12 +15341,12 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 </tbody>
@@ -15370,7 +15366,7 @@ balancer.</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>metaId</td>
-<td>String <em>(Optional)</em></td>
+<td>String</td>
 <td>The ID for the metadata
 item.</td>
 </tr>
@@ -15484,16 +15480,16 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 <tr class="row-odd"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>
@@ -15623,16 +15619,16 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 <tr class="row-odd"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>
@@ -15782,16 +15778,16 @@ account in a multi-
 tenancy cloud.</td>
 </tr>
 <tr class="row-odd"><td>{loadBalancerId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the load
 balancer.</td>
 </tr>
 <tr class="row-even"><td>{nodeId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID for the node.</td>
 </tr>
 <tr class="row-odd"><td>{metaId}</td>
-<td>String <em>(Required)</em></td>
+<td>String</td>
 <td>The ID of the metadata
 item.</td>
 </tr>

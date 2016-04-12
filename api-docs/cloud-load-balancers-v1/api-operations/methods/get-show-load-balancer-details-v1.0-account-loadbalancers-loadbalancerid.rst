@@ -79,7 +79,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -104,77 +104,77 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|loadBalancer              |String *(Required)*      |A ``loadBalancer``       |
+|loadBalancer              |String                   |A ``loadBalancer``       |
 |                          |                         |object.                  |
 +--------------------------+-------------------------+-------------------------+
-|id                        |Int *(Required)*         |The ID for the load      |
+|id                        |Int                      |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|protocol                  |String *(Required)*      |Protocol of the service  |
+|protocol                  |String                   |Protocol of the service  |
 |                          |                         |that is being load       |
 |                          |                         |balanced.                |
 +--------------------------+-------------------------+-------------------------+
-|port                      |String *(Optional)*      |Port number for the      |
+|port                      |String                   |Port number for the      |
 |                          |                         |service you are load     |
 |                          |                         |balancing.               |
 +--------------------------+-------------------------+-------------------------+
-|algorithm                 |String *(Optional)*      |Algorithm that defines   |
+|algorithm                 |String                   |Algorithm that defines   |
 |                          |                         |how traffic should be    |
 |                          |                         |directed between back-   |
 |                          |                         |end nodes.               |
 +--------------------------+-------------------------+-------------------------+
-|status                    |String *(Required)*      |The status of the load   |
+|status                    |String                   |The status of the load   |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|timeout                   |String *(Optional)*      |The timeout value for    |
+|timeout                   |String                   |The timeout value for    |
 |                          |                         |the load balancer and    |
 |                          |                         |communications with its  |
 |                          |                         |nodes. Defaults to 30    |
 |                          |                         |seconds with a maximum   |
 |                          |                         |of 120 seconds.          |
 +--------------------------+-------------------------+-------------------------+
-|connectionLogging         |String *(Optional)*      |Current connection       |
+|connectionLogging         |String                   |Current connection       |
 |                          |                         |logging configuration.   |
 |                          |                         |Refer to the API Ops     |
 |                          |                         |section "Log             |
 |                          |                         |connections" for         |
 |                          |                         |information and examples.|
 +--------------------------+-------------------------+-------------------------+
-|virtualIps                |Object *(Required)*      |Type of virtualIp to add |
+|virtualIps                |Object                   |Type of virtualIp to add |
 |                          |                         |with the creation of a   |
 |                          |                         |load balancer. See the   |
 |                          |                         |virtual IP types table   |
 |                          |                         |in the API Ops section   |
 |                          |                         |"Virtual IPs".           |
 +--------------------------+-------------------------+-------------------------+
-|id                        |Int *(Required)*         |The ID for the IP        |
+|id                        |Int                      |The ID for the IP        |
 |                          |                         |address.                 |
 +--------------------------+-------------------------+-------------------------+
-|address                   |String *(Required)*      |The IP address.          |
+|address                   |String                   |The IP address.          |
 +--------------------------+-------------------------+-------------------------+
-|type                      |String *(Required)*      |The IP address type.     |
+|type                      |String                   |The IP address type.     |
 +--------------------------+-------------------------+-------------------------+
-|ipVersion                 |String *(Required)*      |The IP version.          |
+|ipVersion                 |String                   |The IP version.          |
 +--------------------------+-------------------------+-------------------------+
-|nodes                     |Object *(Optional)*      |Nodes to be added to the |
+|nodes                     |Object                   |Nodes to be added to the |
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
-|address                   |String *(Required)*      |The node address.        |
+|address                   |String                   |The node address.        |
 +--------------------------+-------------------------+-------------------------+
-|port                      |Int *(Required)*         |The node port.           |
+|port                      |Int                      |The node port.           |
 +--------------------------+-------------------------+-------------------------+
-|condition                 |String *(Required)*      |The node condition. For  |
+|condition                 |String                   |The node condition. For  |
 |                          |                         |example, ENABLED.        |
 +--------------------------+-------------------------+-------------------------+
-|status                    |String *(Required)*      |The node status. For     |
+|status                    |String                   |The node status. For     |
 |                          |                         |example, ONLINE.         |
 +--------------------------+-------------------------+-------------------------+
-|sessionPersistence        |String *(Optional)*      |Specifies whether        |
+|sessionPersistence        |String                   |Specifies whether        |
 |                          |                         |multiple requests from   |
 |                          |                         |clients are directed to  |
 |                          |                         |the same node.           |
 +--------------------------+-------------------------+-------------------------+
-|connectionThrottle        |String *(Optional)*      |Specifies limits on the  |
+|connectionThrottle        |String                   |Specifies limits on the  |
 |                          |                         |number of connections    |
 |                          |                         |per IP address to help   |
 |                          |                         |mitigate malicious or    |
@@ -185,17 +185,17 @@ This table shows the body parameters for the response:
 |                          |                         |for information and      |
 |                          |                         |examples.                |
 +--------------------------+-------------------------+-------------------------+
-|cluster                   |String *(Required)*      |The cluster name.        |
+|cluster                   |String                   |The cluster name.        |
 +--------------------------+-------------------------+-------------------------+
-|created                   |Object *(Required)*      |The date and time what   |
+|created                   |Object                   |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |created.                 |
 +--------------------------+-------------------------+-------------------------+
-|updated                   |Object *(Required)*      |The date and time what   |
+|updated                   |Object                   |The date and time what   |
 |                          |                         |the load balancer was    |
 |                          |                         |last updated.            |
 +--------------------------+-------------------------+-------------------------+
-|sourceAddresses           |Dict *(Required)*        |The source public and    |
+|sourceAddresses           |Dict                     |The source public and    |
 |                          |                         |private IP addresses.    |
 +--------------------------+-------------------------+-------------------------+
 

@@ -82,7 +82,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -95,7 +95,7 @@ This table shows the body parameters for the request:
 +--------------------+-------------------+-------------------------------------+
 |Name                |Type               |Description                          |
 +====================+===================+=====================================+
-|name                |String *(Optional)*|Name of the load balancer to update. |
+|name                |String             |Name of the load balancer to update. |
 |                    |                   |The name must be 128 characters or   |
 |                    |                   |fewer in length, and all UTF-8       |
 |                    |                   |characters are valid. See            |
@@ -104,11 +104,11 @@ This table shows the body parameters for the request:
 |                    |                   |for information about the UTF-8      |
 |                    |                   |character set.                       |
 +--------------------+-------------------+-------------------------------------+
-|protocol            |String *(Optional)*|Protocol of the service that is      |
+|protocol            |String             |Protocol of the service that is      |
 |                    |                   |being load balanced.                 |
 +--------------------+-------------------+-------------------------------------+
 |halfClosed          |Boolean            |Enables or disables Half-Closed      |
-|                    |*(Optional)*       |support for the load balancer. Half- |
+|                    |                   |support for the load balancer. Half- |
 |                    |                   |Closed support provides the ability  |
 |                    |                   |for one end of the connection to     |
 |                    |                   |terminate its output, while still    |
@@ -116,20 +116,20 @@ This table shows the body parameters for the request:
 |                    |                   |Only available for                   |
 |                    |                   |TCP/TCP_CLIENT_FIRST protocols.      |
 +--------------------+-------------------+-------------------------------------+
-|algorithm           |String *(Optional)*|Algorithm that defines how traffic   |
+|algorithm           |String             |Algorithm that defines how traffic   |
 |                    |                   |should be directed between back-end  |
 |                    |                   |nodes.                               |
 +--------------------+-------------------+-------------------------------------+
-|port                |String *(Optional)*|Port number for the service you are  |
+|port                |String             |Port number for the service you are  |
 |                    |                   |load balancing.                      |
 +--------------------+-------------------+-------------------------------------+
-|timeout             |String *(Optional)*|The timeout value for the load       |
+|timeout             |String             |The timeout value for the load       |
 |                    |                   |balancer and communications with its |
 |                    |                   |nodes. Defaults to 30 seconds with a |
 |                    |                   |maximum of 120 seconds.              |
 +--------------------+-------------------+-------------------------------------+
 |httpsRedirect       |Boolean            |Enables or disables HTTP to HTTPS    |
-|                    |*(Optional)*       |redirection for the load balancer.   |
+|                    |                   |redirection for the load balancer.   |
 |                    |                   |When enabled, any HTTP request       |
 |                    |                   |returns status code 301 (Moved       |
 |                    |                   |Permanently), and the requester is   |

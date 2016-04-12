@@ -84,7 +84,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -95,14 +95,14 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|startTime                 |Date *(Optional)*        |If the startTime         |
+|startTime                 |Date                     |If the startTime         |
 |                          |                         |parameter is supplied    |
 |                          |                         |but the endTime          |
 |                          |                         |parameter is not, all    |
 |                          |                         |usage beginning with the |
 |                          |                         |startTime is returned.   |
 +--------------------------+-------------------------+-------------------------+
-|endTime                   |Date *(Optional)*        |If the endTime parameter |
+|endTime                   |Date                     |If the endTime parameter |
 |                          |                         |is supplied but the      |
 |                          |                         |startTime parameter is   |
 |                          |                         |not, all usage up to the |

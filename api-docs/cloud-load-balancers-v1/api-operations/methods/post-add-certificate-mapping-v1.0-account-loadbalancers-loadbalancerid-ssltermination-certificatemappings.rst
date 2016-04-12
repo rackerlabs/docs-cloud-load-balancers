@@ -77,7 +77,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -119,7 +119,7 @@ This table shows the body parameters for the request:
 |                          |                         |certificate(s) if        |
 |                          |                         |provided.                |
 +--------------------------+-------------------------+-------------------------+
-|intermediateCertificate   |String *(Optional)*      |The intermediate         |
+|intermediateCertificate   |String                   |The intermediate         |
 |                          |                         |certificate to be used   |
 |                          |                         |for the provided         |
 |                          |                         |certificate and host     |

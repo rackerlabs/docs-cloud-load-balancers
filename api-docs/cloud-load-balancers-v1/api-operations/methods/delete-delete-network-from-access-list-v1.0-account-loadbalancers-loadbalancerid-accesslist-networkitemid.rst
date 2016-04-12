@@ -75,10 +75,10 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|{networkItemId}           |String *(Required)*      |The ID for the network   |
+|{networkItemId}           |String                   |The ID for the network   |
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 
