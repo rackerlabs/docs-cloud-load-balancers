@@ -87,7 +87,7 @@ This table shows the query parameters for the request:
 +-------------------------+------------------------+---------------------------+
 |Name                     |Type                    |Description                |
 +=========================+========================+===========================+
-|id                       |String *(Optional)*     |One to ten load balancer   |
+|id                       |String                  |One to ten load balancer   |
 |                         |                        |IDs. For example:          |
 |                         |                        |``?id={loadBalancerId}``.  |
 |                         |                        |The default limit is ten   |

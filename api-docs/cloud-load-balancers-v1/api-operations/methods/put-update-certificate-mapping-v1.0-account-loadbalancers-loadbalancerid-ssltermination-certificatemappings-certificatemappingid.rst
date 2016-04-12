@@ -80,10 +80,10 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|{certificateMappingId}    |String *(Required)*      |The ID for the           |
+|{certificateMappingId}    |String                   |The ID for the           |
 |                          |                         |certificate mapping.     |
 +--------------------------+-------------------------+-------------------------+
 
@@ -96,7 +96,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|hostName                  |String *(Optional)*      |The host name to be used |
+|hostName                  |String                   |The host name to be used |
 |                          |                         |for the provided         |
 |                          |                         |certificate credentials. |
 |                          |                         |The host name is not     |
@@ -109,14 +109,14 @@ This table shows the body parameters for the request:
 |                          |                         |mappings for a given     |
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
-|privateKey                |String *(Optional)*      |The private key to be    |
+|privateKey                |String                   |The private key to be    |
 |                          |                         |used for the provided    |
 |                          |                         |certificate. The private |
 |                          |                         |key is validated and     |
 |                          |                         |verified against the     |
 |                          |                         |provided certificates.   |
 +--------------------------+-------------------------+-------------------------+
-|certificate               |String *(Optional)*      |The certificate to be    |
+|certificate               |String                   |The certificate to be    |
 |                          |                         |used for the provided    |
 |                          |                         |host name. The           |
 |                          |                         |certificate is validated |
@@ -125,7 +125,7 @@ This table shows the body parameters for the request:
 |                          |                         |certificate(s) if        |
 |                          |                         |provided.                |
 +--------------------------+-------------------------+-------------------------+
-|intermediateCertificate   |String *(Optional)*      |The intermediate         |
+|intermediateCertificate   |String                   |The intermediate         |
 |                          |                         |certificate to be used   |
 |                          |                         |for the provided         |
 |                          |                         |certificate and host     |

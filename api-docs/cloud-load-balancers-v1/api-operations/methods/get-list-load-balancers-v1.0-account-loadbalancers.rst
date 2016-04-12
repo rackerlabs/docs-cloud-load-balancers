@@ -111,10 +111,10 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------------+
 |Name                      |Type                     |Description                    |
 +==========================+=========================+===============================+
-|loadBalancers             |String *(Optional)*      |A ``loadBalancers``            |
+|loadBalancers             |String                   |A ``loadBalancers``            |
 |                          |                         |object.                        |
 +--------------------------+-------------------------+-------------------------------+
-|name                      |String *(Optional)*      |Name of the load               |
+|name                      |String                   |Name of the load               |
 |                          |                         |balancer to create. The        |
 |                          |                         |name must be 128               |
 |                          |                         |characters or fewer in         |
@@ -124,50 +124,50 @@ This table shows the body parameters for the response:
 |                          |                         |for information about the      |
 |                          |                         |UTF-8 character set.           |
 +--------------------------+-------------------------+-------------------------------+
-|id                        |Int *(Optional)*         |The ID for the load            |
+|id                        |Int                      |The ID for the load            |
 |                          |                         |balancer.                      |
 +--------------------------+-------------------------+-------------------------------+
-|protocol                  |String *(Optional)*      |Protocol of the service        |
+|protocol                  |String                   |Protocol of the service        |
 |                          |                         |that is being load             |
 |                          |                         |balanced.                      |
 +--------------------------+-------------------------+-------------------------------+
-|port                      |String *(Optional)*      |Port number for the            |
+|port                      |String                   |Port number for the            |
 |                          |                         |service you are load           |
 |                          |                         |balancing.                     |
 +--------------------------+-------------------------+-------------------------------+
-|algorithm                 |String *(Optional)*      |Algorithm that defines         |
+|algorithm                 |String                   |Algorithm that defines         |
 |                          |                         |how traffic should be          |
 |                          |                         |directed between back-         |
 |                          |                         |end nodes.                     |
 +--------------------------+-------------------------+-------------------------------+
-|status                    |String *(Optional)*      |The status of the load         |
+|status                    |String                   |The status of the load         |
 |                          |                         |balancer.                      |
 +--------------------------+-------------------------+-------------------------------+
-|nodeCount                 |Int *(Optional)*         |The number of load             |
+|nodeCount                 |Int                      |The number of load             |
 |                          |                         |balancer nodes.                |
 +--------------------------+-------------------------+-------------------------------+
-|created                   |Object *(Optional)*      |The date and time what         |
+|created                   |Object                   |The date and time what         |
 |                          |                         |the load balancer was          |
 |                          |                         |created.                       |
 +--------------------------+-------------------------+-------------------------------+
-|updated                   |Object *(Optional)*      |The date and time what         |
+|updated                   |Object                   |The date and time what         |
 |                          |                         |the load balancer was          |
 |                          |                         |last updated.                  |
 +--------------------------+-------------------------+-------------------------------+
-|virtualIps                |Object *(Optional)*      |The list of virtualIps         |
+|virtualIps                |Object                   |The list of virtualIps         |
 |                          |                         |for a load balancer.           |
 +--------------------------+-------------------------+-------------------------------+
-|id                        |Int *(Optional)*         |The ID for the IP              |
+|id                        |Int                      |The ID for the IP              |
 |                          |                         |address.                       |
 +--------------------------+-------------------------+-------------------------------+
-|address                   |String *(Optional)*      |The IP address.                |
+|address                   |String                   |The IP address.                |
 +--------------------------+-------------------------+-------------------------------+
-|type                      |String *(Optional)*      |The IP address type. See       |
+|type                      |String                   |The IP address type. See       |
 |                          |                         |the Virtual IP Types           |
 |                          |                         |table in the Chapter 4         |
 |                          |                         |section "Virtual IPs".         |      
 +--------------------------+-------------------------+-------------------------------+
-|ipVersion                 |String *(Optional)*      |The IP version.                |
+|ipVersion                 |String                   |The IP version.                |
 +--------------------------+-------------------------+-------------------------------+
 
 

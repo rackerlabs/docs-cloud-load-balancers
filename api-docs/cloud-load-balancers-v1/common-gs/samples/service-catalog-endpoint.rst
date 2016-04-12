@@ -1,3 +1,5 @@
+.. _authentication-response-examples:
+
 .. code:: json
   
             {

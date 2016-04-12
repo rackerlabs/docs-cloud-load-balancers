@@ -82,7 +82,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -95,14 +95,14 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|maxConnectionRate         |Int *(Optional)*         |Deprecated as of v1.22   |
+|maxConnectionRate         |Int                      |Deprecated as of v1.22   |
 |                          |                         |and later versions.      |
 |                          |                         |Parameter can still be   |
 |                          |                         |set, but it has no       |
 |                          |                         |effect on the load       |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|maxConnections            |Int *(Optional)*         |Maximum number of        |
+|maxConnections            |Int                      |Maximum number of        |
 |                          |                         |connections to allow for |
 |                          |                         |a single IP address. To  |
 |                          |                         |enable unlimited         |
@@ -111,14 +111,14 @@ This table shows the body parameters for the request:
 |                          |                         |Set to a value from 1 to |
 |                          |                         |100000.                  |
 +--------------------------+-------------------------+-------------------------+
-|minConnections            |Int *(Optional)*         |Deprecated as of v1.22   |
+|minConnections            |Int                      |Deprecated as of v1.22   |
 |                          |                         |and later versions.      |
 |                          |                         |Parameter can still be   |
 |                          |                         |set, but it has no       |
 |                          |                         |effect on the load       |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-|rateInterval              |Int *(Optional)*         |Deprecated as of v1.22   |
+|rateInterval              |Int                      |Deprecated as of v1.22   |
 |                          |                         |and later versions.      |
 |                          |                         |Parameter can still be   |
 |                          |                         |set, but it has no       |

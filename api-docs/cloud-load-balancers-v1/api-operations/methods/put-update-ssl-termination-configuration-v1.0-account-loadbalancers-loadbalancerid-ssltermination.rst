@@ -130,7 +130,7 @@ This table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{loadBalancerId}          |String *(Required)*      |The ID for the load      |
+|{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
@@ -166,7 +166,7 @@ This table shows the body parameters for the request:
 |                          |                         |key and intermediate     |
 |                          |                         |certificate if provided. |
 +--------------------------+-------------------------+-------------------------+
-|intermediateCertificate   |String *(Optional)*      |The intermediate         |
+|intermediateCertificate   |String                   |The intermediate         |
 |                          |                         |certificate for the user |
 |                          |                         |that is used for SSL     |
 |                          |                         |termination. The         |
@@ -186,7 +186,7 @@ This table shows the body parameters for the request:
 |                          |                         |single attribute in a    |
 |                          |                         |future request.          |
 +--------------------------+-------------------------+-------------------------+
-|enabled                   |Boolean *(Optional)*     |Determines if the load   |
+|enabled                   |Boolean                  |Determines if the load   |
 |                          |                         |balancer is enabled to   |
 |                          |                         |terminate SSL traffic.   |
 |                          |                         |If ``enabled`` =         |
@@ -196,7 +196,7 @@ This table shows the body parameters for the request:
 |                          |                         |but does not terminate   |
 |                          |                         |SSL traffic.             |
 +--------------------------+-------------------------+-------------------------+
-|secureTrafficOnly         |Boolean *(Optional)*     |Determines if the load   |
+|secureTrafficOnly         |Boolean                  |Determines if the load   |
 |                          |                         |balancer can accept only |
 |                          |                         |secure traffic. If       |
 |                          |                         |``secureTrafficOnly`` =  |
