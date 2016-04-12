@@ -88,25 +88,27 @@ The following table shows the body parameters for the request.
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | member           | plain     | xsd:dict    | A member object.                                                                   |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | address          | plain     | xsd:ip      | The IP address of the member that receives traffic from the load balancer.         |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
-|                  |           |             | The default is ``true``.                                                           |
+|(*Required*)      |           |             | The default is ``true``.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol_port    | plain     | xsd:int     | The port where the application is hosted and where the member is listening to      |
-|                  |           |             | receive traffic.                                                                   |
+| (*Required*)     |           |             | receive traffic.                                                                   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | subnet_id        | plain     | xsd:int     | The UUID of the subnet on which the member resides. If you omit this parameter,    |
-| (optional)       |           |             | the service uses the ``vip_subnet_id`` parameter value for ``subnet_id``.          |
+|                  |           |             | the service uses the ``vip_subnet_id`` parameter value for ``subnet_id``.          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | weight           | plain     | xsd:int     | The weight of a member determines the portion of requests or connections it        |
-| (optional)       |           |             | services compared to the other members of the pool. A value of 0 means the member  |
+|                  |           |             | services compared to the other members of the pool. A value of 0 means the member  |
 |                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
 |                  |           |             | A valid value is from 0 to 256.  The default is ``1``.                             |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the member. This parameter is required only if the |
-| (optional)       |           |             | user has an administrative role and wants to create a member for another tenant.   |
+|                  |           |             | user has an administrative role and wants to create a member for another tenant.   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 

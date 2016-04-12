@@ -70,33 +70,33 @@ The following table shows the body parameters for the request.
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**    | **Style** | Type        | Description                                                                        |
 +==================+===========+=============+====================================================================================+
-| name (optional)  | plain     | xsd:string  | The load balancer name. The name does not have to be unique. If you omit the name, |
+| name             | plain     | xsd:string  | The load balancer name. The name does not have to be unique. If you omit the name, |
 |                  |           |             | the default value is an empty string.                                              |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description      | plain     | xsd:string  | The load balancer description. If you omit the description, the default value is an|
-| (optional)       |           |             | empty string.                                                                      |
+|                  |           |             | empty string.                                                                      |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | vip_subnet_id    | plain     | csapi:uuid  | The UUID of the subnet on which to allocate the virtual IP (VIP) address for the   |
-|                  |           |             | load balancer. Tenants can create load balancer VIP addresses only on networks that|
+| (*Required*)     |           |             | load balancer. Tenants can create load balancer VIP addresses only on networks that|
 |                  |           |             | are authorized by the policy, such as their own networks or shared or provider     |
 |                  |           |             | networks.                                                                          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP address. Only required if the caller has an|
-| (optional)       |           |             | administrative role and wants to create a load balancer for another tenant. Only   |
+|                  |           |             | administrative role and wants to create a load balancer for another tenant. Only   |
 |                  |           |             | administrative users can specify a tenant UUID other than their own.               |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | vip_address      | plain     | xsd:ip      | The VIP address. You can supply a ``vip_address`` if you own the subnet on which   |
-| (optional)       |           |             | the load balancer’s VIP will be created. If this parameter is omitted from the     |
+|                  |           |             | the load balancer’s VIP will be created. If this parameter is omitted from the     |
 |                  |           |             | request, the service allocates a VIP address from the subnet of the load balancer  |
 |                  |           |             | VIP.                                                                               |+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | provider         | plain     | xsd:string  | The name of the provider.                                                          |
-| (optional)       |           |             |                                                                                    |
+|                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The admin state. If this parameter is omitted from the request, the default value  |
-|(optional)        |           |             | is ``true``.                                                                       |
+|                  |           |             | is ``true``.                                                                       |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the load balancer, which is up (true) or down (false). |
-| (optional)       |           |             | If this parameter is omitted from the request, the default value is ``true``.      |
+|                  |           |             | If this parameter is omitted from the request, the default value is ``true``.      |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 

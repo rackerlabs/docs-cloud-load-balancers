@@ -71,7 +71,7 @@ The following table shows the URI parameters for the request.
 +------------------+------------+--------------------------------------------------------------+
 |Name              |Type        |Description                                                   |
 +==================+============+==============================================================+
-|{listener_id}     |csapi:uuid  | The UUID for the listener.                                   |
+|listener_id       |csapi:uuid  | The UUID for the listener.                                   |
 +------------------+------------+--------------------------------------------------------------+
 
 The following table shows the body parameters for the request.
@@ -80,25 +80,27 @@ The following table shows the body parameters for the request.
 | **Parameter**             | **Style** | **Type**    | **Description**                                                                    |
 +===========================+===========+=============+====================================================================================+
 | listener                  | plain     | xsd:string  | A listener object.                                                                 |
+| (*Required*)              |           |             |                                                                                    |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up            | plain     | xsd:boolean | The administrative state of the load balancer, which is up (``true``) or down      |
-| (optional)                |           |             | (false). Set this attribute to ``false`` to create the listener in an              |
+|                           |           |             | (false). Set this attribute to ``false`` to create the listener in an              |
 |                           |           |             | administratively down state. The default is ``true``.                              |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | connection_limit          | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
-| (optional)                |           |             | is ``-1``, which indicates an infinite limit.                                      |
+|                           |           |             | is ``-1``, which indicates an infinite limit.                                      |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description               | plain     | xsd:string  | The listener detailed description. If you don't specify a value, the default is an |
-| (optional)                |           |             | empty string.                                                                      |
+|                           |           |             | empty string.                                                                      |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | name                      | plain     | xsd:string  | The listener name. If you don't specify a value, the default is an empty string.   |
+| (*Required*)              |           |             |                                                                                    |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | default_tls_container_ref | plain     | xsd:string  | A reference to a container of Transport Layer Security (TLS) secrets. If           |
-| (optional)                |           |             | you also specify ``sni_container_refs``, this container is the default.            |
+|                           |           |             | you also specify ``sni_container_refs``, this container is the default.            |
 |                           |           |             | This parameter is required for the ``TERMINATED_HTTPS`` protocol.                  |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | sni_container_refs        | plain     | xsd:list    | A list of references to secrets that are used for Server Name Indication           |
-| (optional)                |           |             | (SNI). This parameter is required for the ``TERMINATED_HTTPS`` protocol .          |
+|                           |           |             | (SNI). This parameter is required for the ``TERMINATED_HTTPS`` protocol .          |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 

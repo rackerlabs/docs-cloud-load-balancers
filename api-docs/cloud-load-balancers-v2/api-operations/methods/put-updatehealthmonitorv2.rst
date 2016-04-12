@@ -73,7 +73,7 @@ The following table shows the URI parameters for the request.
 +-------------------+------------+--------------------------------------------------------------+
 |Name               |Type        |Description                                                   |
 +===================+============+==============================================================+
-|{healthmonitor_id} |csapi:uuid  | The UUID for the health monitor.                             |
+|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.                             |
 +-------------------+------------+--------------------------------------------------------------+
 
 
@@ -84,32 +84,33 @@ The following table shows the body parameters for the request.
 | **Parameter**    | **Style** | **Type**    | **Description**                                                                    |
 +==================+===========+=============+====================================================================================+
 | healthmonitor    | plain     | xsd:dict    | A health monitor object.                                                           |
+| (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the health monitor, which is up (``true``) or down     |
-| (optional)       |           |             | (``false``). Set this attribute to ``false`` to create the listener in an          |
+|                  |           |             | (``false``). Set this attribute to ``false`` to create the listener in an          |
 |                  |           |             | administratively down state.                                                       |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | delay            | plain     | xsd:int     | The time, in seconds, between sending probes to members.                           |
-| (optional)       |           |             |                                                                                    |
+|                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | expected_codes   | plain     | xsd:string  | The list of HTTP status codes expected in response from the member to declare it   |
-| (optional)       |           |             | healthy. Specify one of the following values:                                      |
+|                  |           |             | healthy. Specify one of the following values:                                      |
 |                  |           |             |                                                                                    |
 |                  |           |             | - A single value, such as ``200``.                                                 |
 |                  |           |             | - A list, such as ``200, 202``.                                                    |
 |                  |           |             | - A range, such as ``200-204``.                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
-| (optional)       |           |             |                                                                                    |
+|                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | max_retries      | plain     | xsd:int     | The number of connection failures that are allowed before the status of the member |
-|                  |           |             | is changed to ``INACTIVE``. Valid values are from 1 to 10.                         |
+| (*Required*)     |           |             | is changed to ``INACTIVE``. Valid values are from 1 to 10.                         |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | timeout          | plain     | xsd:int     | The maximum number of seconds for a monitor to wait for a connection to be         |
-| (optional)       |           |             | established before it times out. This value must be less than the ``delay`` value. |
+|                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-|                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
+|(*Required*)      |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
