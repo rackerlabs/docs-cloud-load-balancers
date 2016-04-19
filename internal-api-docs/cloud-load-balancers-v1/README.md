@@ -8,7 +8,7 @@ enterprise github repository:  [git@github.rackspace.com:IX/internal-docs-cloud-
 
 2. In the directory where you cloned the repo, add this public repository as the upstream remote:
 
-  ```git remote add git@github.com:rackerlabs/docs-cloud-load-balancers-1.git```
+  ```git remote add upstream git@github.com:rackerlabs/docs-cloud-load-balancers-1.git```
 
 3. Sync your local clone of the enterprise github with the upstream remote:
 
