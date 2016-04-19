@@ -12,7 +12,7 @@ enterprise github repository:  [git@github.rackspace.com:IX/internal-docs-cloud-
 
 3. Sync your local clone of the enterprise github with the upstream remote:
 
-   ```git --rebase upstream master```
+   ```git pull --rebase upstream master```
    
 4. Push your changes to the enterprise repository on GitHub.
 
