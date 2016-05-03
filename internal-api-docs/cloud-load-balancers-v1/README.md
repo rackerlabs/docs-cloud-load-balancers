@@ -21,4 +21,4 @@ enterprise github repository:  [git@github.rackspace.com:IX/internal-docs-cloud-
 When you push your changes, the internal build job kicks off to publish the new content on the gh-pages branch. 
 You can review the updates at the following URL: https://pages.github.rackspace.com/IX/internal-docs-cloud-load-balancers-1/latest/.
 
-You can also access the DNS Admin Guide from https://pages.github.rackspace.com/IX/internal-docs-landing-page. 
+You can also access the Rackspace CDN Admin Guide from https://pages.github.rackspace.com/IX/internal-docs-landing-page. 
