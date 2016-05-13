@@ -1,7 +1,7 @@
 .. _get-list-pools-v2:
 
 List pools
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -30,12 +30,12 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 

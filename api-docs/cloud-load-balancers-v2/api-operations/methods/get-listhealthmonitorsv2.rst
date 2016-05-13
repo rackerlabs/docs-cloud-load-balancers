@@ -1,7 +1,7 @@
 .. _get-list-health-monitors-v2:
 
 List health monitors
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -31,12 +31,12 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 

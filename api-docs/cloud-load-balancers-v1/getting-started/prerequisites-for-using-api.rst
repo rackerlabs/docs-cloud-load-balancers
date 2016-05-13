@@ -1,9 +1,9 @@
 .. _prereqs-for-using-api:
 
 Prerequisites
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------
 
-To use the getting started examples, make sure you have the following information and 
+To use the getting started examples, make sure you have the following information and
 complete any necessary configuration work.
 
 - Rackspace Cloud account

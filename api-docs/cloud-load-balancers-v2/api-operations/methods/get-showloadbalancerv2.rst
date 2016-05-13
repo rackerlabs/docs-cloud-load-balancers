@@ -1,7 +1,7 @@
 .. _get-show-load-balancers-v2:
 
 Show load balancer details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -44,7 +44,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the URI parameters for the request.
 
@@ -58,7 +58,7 @@ The following table shows the URI parameters for the request.
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 

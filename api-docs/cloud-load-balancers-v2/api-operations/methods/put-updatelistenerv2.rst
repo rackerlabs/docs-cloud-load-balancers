@@ -1,7 +1,7 @@
 .. _update-listener-v2:
 
 Update a listener
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -64,7 +64,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the URI parameters for the request.
 
@@ -125,7 +125,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 The following table shows the body parameters for the response.
 
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+

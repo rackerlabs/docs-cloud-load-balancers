@@ -11,7 +11,7 @@ Follow these steps to authenticate to the Rackspace Cloud by
 .. _send-auth-req-curl:
 
 Send an authentication request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 From a command prompt, send a **POST tokens** request to the Rackspace Cloud Identity
 service.  Include your username and :ref:`API key <get-credentials>`
 as shown in the following example.
@@ -22,7 +22,8 @@ as shown in the following example.
 .. _review-auth-resp:
 
 Review the authentication response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 If your credentials are valid, the Identity service returns an authentication response
 that includes the following information:
 
@@ -32,7 +33,7 @@ that includes the following information:
 
 .. note::
    For detailed information about the authentication response, see the
-   :rax-devdocs:`Annotated authentication request and response<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>` 
+   :rax-devdocs:`Annotated authentication request and response<cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>`
    in the Rackspace Cloud API documentation.
 
 In the following example, the ellipsis (...)  represents other service endpoints, which
@@ -51,7 +52,7 @@ authentication response. You'll need these values to submit requests to the API.
 If the request failed, review the response message and
 the following error message descriptions to determine next steps.
 
-.. code:: 
+.. code::
 
    400 Invalid request body: unable to parse Auth data. Please review XML or JSON formatting
 
@@ -59,7 +60,7 @@ Review the authentication request for syntax or coding errors.
 If you are using cURL, see :ref:`Using cURL <how-curl-commands-work>`.
 
 
-.. code:: 
+.. code::
 
    401 Unable to authenticate user with credentials provided.
 
@@ -76,7 +77,8 @@ credentials.
 .. _configure-environment-variables:
 
 Configure environment variables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The authentication response returns the following values that you
 need to include when you make service requests to the |apiservice|.
 
@@ -94,8 +96,8 @@ token ID
 
 tenant ID
     The tenant ID provides your account number. For most Rackspace Cloud service APIs, the
-    tenant ID is appended to the API endpoint in the service catalog automatically. For 
-    Rackspace Cloud Services, the tenant ID has the same value as the tenant name. 
+    tenant ID is appended to the API endpoint in the service catalog automatically. For
+    Rackspace Cloud Services, the tenant ID has the same value as the tenant name.
 
 endpoint
 	The API endpoint provides the URL that you use to access the API service. For guidance
@@ -153,23 +155,23 @@ To reference the value in an API request, prefix the variable name with a $, for
         $ export API_ENDPOINT="publicURL"
 
 
-   Replace *publicURL* with the publicURL value listed in the service catalog. 
-   
+   Replace *publicURL* with the publicURL value listed in the service catalog.
+
    .. note::
-       Rackspace Cloud Identity returns an endpoint URL with your tenant ID (account ID). 
-       With Cloud Load Balancers, you have two options for including the tenant ID in 
-       API requests. 
-       
+       Rackspace Cloud Identity returns an endpoint URL with your tenant ID (account ID).
+       With Cloud Load Balancers, you have two options for including the tenant ID in
+       API requests.
+
        - Include it in the URL.
-       
+
          .. code::
-         
+
              https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/123456
-             
-             
-       - Submit API requests to the base endpoint 
-         ``https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/``, and specify the tenant ID 
-         value in the ``X-Project-ID`` header in each request with the value set to the tenant 
-         ID. 
-         
-       In the examples in this guide, the tenant ID is included in the URL.  
+
+
+       - Submit API requests to the base endpoint
+         ``https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/``, and specify the tenant ID
+         value in the ``X-Project-ID`` header in each request with the value set to the tenant
+         ID.
+
+       In the examples in this guide, the tenant ID is included in the URL.

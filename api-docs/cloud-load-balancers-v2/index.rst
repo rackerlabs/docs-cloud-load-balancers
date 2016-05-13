@@ -6,27 +6,15 @@ Rackspace Cloud Load Balancers API |contract version| (Early Access)
 
 *Last updated:* |today|
 
-Use the following links to go directly to user and reference information for using the 
-Rackspace Cloud Load Balancers service REST API.
-
-- :ref:`Getting Started Guide<getting-started>`
-- :ref:`Developer Guide <developer-guide>`
-- :ref:`API Reference <api-reference>`
-- :ref:`Release Notes <release-notes>`
-
-.. toctree:: :hidden:
+.. toctree::
    :maxdepth: 2
- 
+
    Cloud Load Balancers 2.0 <self>
-   API Status <https://status.rackspace.com/>
-   overview/index
-   getting-started
+   overview
    getting-started/index
    developer-guide
    concepts
-   general-api-info/index 
-   api-reference
+   general-api-info/index
    api-operations/index
    release-notes
    copyright
-

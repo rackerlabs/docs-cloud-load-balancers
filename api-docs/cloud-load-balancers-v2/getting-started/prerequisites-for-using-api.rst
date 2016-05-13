@@ -1,7 +1,7 @@
 .. _prereqs-for-using-api:
 
 Prerequisites
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
 
 To start using the API and complete the examples in this section, you need the following items:
 

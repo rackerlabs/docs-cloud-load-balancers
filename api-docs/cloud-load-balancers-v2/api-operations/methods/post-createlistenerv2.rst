@@ -1,7 +1,7 @@
 .. _create-listener-v2:
 
 Create a listener
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -74,7 +74,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the body parameters for the response.
 
@@ -143,7 +143,7 @@ The following table shows the body parameters for the response.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 The following table shows the body parameters for the response.
 
