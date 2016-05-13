@@ -34,11 +34,6 @@ Node
 
 A node is a back-end device providing a service on a specified IP and port.
 
-.. _concept-health-monitor:
-
-Health monitor
-~~~~~~~~~~~~~~
-
 .. _concept-health-monitor-active:
 
 Active health monitor
