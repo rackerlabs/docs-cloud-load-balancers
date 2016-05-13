@@ -18,11 +18,6 @@ Rackspace Cloud Load Balancers service REST API.
    :hidden: 
  
    Cloud Load Balancers 1.0 <self>
-   
-.. toctree::
-   :hidden:
-   :maxdepth: 4
-   
    overview/index
    getting-started/index
    developer-guide/index
