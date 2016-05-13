@@ -1,7 +1,7 @@
 .. _update-health-monitor-v2:
 
 Update a health monitor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -66,7 +66,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the URI parameters for the request.
 
@@ -99,6 +99,7 @@ The following table shows the body parameters for the request.
 |                  |           |             | - A single value, such as ``200``.                                                 |
 |                  |           |             | - A list, such as ``200, 202``.                                                    |
 |                  |           |             | - A range, such as ``200-204``.                                                    |
+|                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | http_method      | plain     | xsd:string  | The HTTP method that the monitor uses for requests.                                |
 |                  |           |             |                                                                                    |
@@ -110,7 +111,7 @@ The following table shows the body parameters for the request.
 |                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-|(*Required*)      |           |             | A valid value is a string that begins with a forward slash (/).                    |
+| (*Required*)     |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
@@ -131,7 +132,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 

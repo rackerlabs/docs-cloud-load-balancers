@@ -14,18 +14,18 @@ Rackspace Cloud Load Balancers service REST API.
 - :ref:`API reference <api-reference>`
 - :ref:`Release Notes <release-notes>`
 
-.. toctree:: :hidden:
-   :maxdepth: 2
+.. toctree::
+   :hidden: 
  
    Cloud Load Balancers 1.0 <self>
-   API Status <https://status.rackspace.com/>
+   
+.. toctree::
+   :hidden:
+   :maxdepth: 4
+   
    overview/index
-   getting-started
    getting-started/index
-   developer-guide
-   concepts
-   general-api-info/index 
-   api-reference
-   api-operations/index
+   developer-guide/index
+   api-reference/index
    release-notes
    copyright

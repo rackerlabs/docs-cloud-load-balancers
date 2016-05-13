@@ -1,7 +1,7 @@
 .. _create-pool-v2:
 
 Create a pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -75,7 +75,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 
 The following table shows the body parameters for the request.
@@ -134,7 +134,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 The following table shows the body parameters for the response.

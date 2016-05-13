@@ -1,7 +1,7 @@
 .. _remove-health-monitor-v2:
 
 Remove a health monitor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -48,7 +48,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~
 
 The following table shows the URI parameters for the request.
 
@@ -61,7 +61,7 @@ The following table shows the URI parameters for the request.
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+~~~~~~~~~
 
 
 This operation does not return a response body.

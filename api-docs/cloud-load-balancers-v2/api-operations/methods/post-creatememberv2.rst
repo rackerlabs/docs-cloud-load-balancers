@@ -1,7 +1,7 @@
 .. _add-member-to-pool-v2:
 
 Add a member to pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -78,7 +78,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 
 
@@ -94,7 +94,7 @@ The following table shows the body parameters for the request.
 | (*Required*)     |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | admin_state_up   | plain     | xsd:boolean | The administrative state of the member, which is up (``true``) or down (``false``).|
-|(*Required*)      |           |             | The default is ``true``.                                                           |
+| (*Required*)     |           |             | The default is ``true``.                                                           |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol_port    | plain     | xsd:int     | The port where the application is hosted and where the member is listening to      |
 | (*Required*)     |           |             | receive traffic.                                                                   |
@@ -129,7 +129,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 
 
