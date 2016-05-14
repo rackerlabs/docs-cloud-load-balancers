@@ -1,6 +1,5 @@
 .. _service-access:
 
-
 Service access and endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

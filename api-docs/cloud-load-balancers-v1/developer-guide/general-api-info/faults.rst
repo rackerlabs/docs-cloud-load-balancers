@@ -4,14 +4,23 @@
 Faults
 ~~~~~~~~~~~~~~
 
-API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, ``serviceFault``, for easier exception handling for languages that support it.
+API calls that return an error return one of the following fault objects. All
+fault objects extend from the base fault, ``serviceFault``, for easier exception
+handling for languages that support it.
 
 .. _faults-service:
 
 serviceFault
 ^^^^^^^^^^^^^^^^^^
 
-The ``serviceFault`` and by extension all other faults include ``message`` and ``detail`` elements which contain strings describing the nature of the fault as well as a ``code`` attribute representing the HTTP response code for convenience. The ``code`` attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the ``serviceFault`` to be returned directly but should instead expect only one of the child faults to be returned.
+The ``serviceFault`` and by extension all other faults include ``message``
+and ``detail`` elements which contain strings describing the nature of the fault
+as well as a ``code`` attribute representing the HTTP response code for
+convenience. The ``code`` attribute of the fault is for the convenience of the
+caller so that they may retrieve the response code from the HTTP response headers
+or directly from the fault object if they choose. The caller should not expect
+the ``serviceFault`` to be returned directly but should instead expect only one
+of the child faults to be returned.
 
 .. _faults-badrequest:
 
@@ -38,7 +47,9 @@ This fault indicates that the data in the request object is invalid; for example
 immutableEntity
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
+This fault is returned when a user attempts to modify an item that is not
+currently in a state that allows modification. For example, load balancers
+in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
 may not be modified.
 
 **Example: immutableEntity fault response**
@@ -53,6 +64,8 @@ may not be modified.
 
 itemNotFound
 ^^^^^^^^^^^^^^^^
+
+This fault is returned when the system cannot find the requested resource.
 
 **Example: itemNotFound fault: Response**
 
@@ -82,7 +95,10 @@ The ``loadBalancerFault`` fault shall be returned in the event that an error occ
 outOfVirtualIps
 ^^^^^^^^^^^^^^^
 
-This fault indicates that there are no virtual IPs left to assign to a new load balancer. In practice, this fault should not occur, as virtual IPs is ordered as capacity is required. If you do experience this fault, contact support so that we may make more IPs available.
+This fault indicates that there are no virtual IPs left to assign to a new
+load balancer. In practice, this fault should not occur, as virtual IPs is
+ordered as capacity is required. If you do experience this fault, contact
+support so that we may make more IPs available.
 
 **Example: outOfVirtualIps fault response**
 
@@ -93,6 +109,7 @@ This fault indicates that there are no virtual IPs left to assign to a new load 
             Out of virtual IPs. Please contact support so they can allocate more virtual IPs.
         </message>
     </outOfVirtualips>
+
 
 .. _faults-overlimit:
 
@@ -109,12 +126,16 @@ This fault is returned when the user has exceeded a currently allocated limit.
         <message>Your account is currently over the limit so your request could not be processed.</message>
     </overLimit>
 
+
 .. _faults-serviceunavailable:
 
 serviceUnavailable
 ^^^^^^^^^^^^^^^^^^^^^
 
-This fault is returned when the service is unavailable, such as when the service is undergoing maintenance. Note that this does not necessarily mean that the currently configured loadbalancers are unable to process traffic; it simply means that the API is currently unable to service requests.
+This fault is returned when the service is unavailable, such as when the service
+is undergoing maintenance. Note that this does not necessarily mean that the
+currently configured loadbalancers are unable to process traffic; it simply
+means that the API is currently unable to service requests.
 
 **Example: serviceUnavailable fault: Response**
 
@@ -127,7 +148,7 @@ This fault is returned when the service is unavailable, such as when the service
 .. _faults-unauthorized:
 
 unauthorized
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 This fault is returned when the user is not authorized to perform an attempted operation.
 
