@@ -15,7 +15,7 @@ Rackspace Cloud Load Balancers service REST API.
 - :ref:`Release Notes <release-notes>`
 
 .. toctree::
-   :hidden: 
+   :includehidden: 
    :maxdepth: 4
  
    Cloud Load Balancers 1.0 <self>

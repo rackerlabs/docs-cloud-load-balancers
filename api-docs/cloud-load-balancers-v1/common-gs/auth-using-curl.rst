@@ -1,4 +1,3 @@
-
 Follow these steps to authenticate to the Rackspace Cloud by
 :ref:`using cURL <how-curl-commands-work>`.
 

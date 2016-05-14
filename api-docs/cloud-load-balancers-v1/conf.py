@@ -164,6 +164,7 @@ html_theme_options = {
    'collapse_navigation': True
    # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
 }
+
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
