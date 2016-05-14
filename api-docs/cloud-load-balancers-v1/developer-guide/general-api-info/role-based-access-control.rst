@@ -76,7 +76,11 @@ permissions.
 Multiproduct global roles and permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. list-table::
+Additionally, two multiproduct roles apply to all products. Users with
+multiproduct roles inherit access to future products when those products become
+RBAC-enabled. The following table describes these roles and their permissions.
+
+.. list-table:: Multiproduct global roles and permissions
    :widths: 15 40
    :header-rows: 1
 
