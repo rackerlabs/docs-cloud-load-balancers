@@ -92,7 +92,7 @@ The following table shows the body parameters for the request.
 |                     |           |             | least-connections (``LEAST_CONNECTIONS``), and source IP (``SOURCE_IP``) - that is |
 |                     |           |             | used to distribute traffic to the pool members. This value, which must be          |
 |                     |           |             | supported,depends on the load-balancer provider. The round robin algorithm must be |
-|                     |           |             |supported.                                                                          |
+|                     |           |             | supported.                                                                          |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | name                | plain     | xsd:string  | A human-readable name for the pool. The name does not have to be unique.           |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
