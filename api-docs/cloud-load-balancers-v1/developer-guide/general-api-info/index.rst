@@ -11,6 +11,7 @@ The Rackspace Cloud Load Balancers API is implemented using a ReSTful web servic
     All requests to authenticate and operate the service are performed using HTTPS on TCP port 443.
 
 .. toctree::
+   :hidden:
    :maxdepth: 3
 
    authentication
