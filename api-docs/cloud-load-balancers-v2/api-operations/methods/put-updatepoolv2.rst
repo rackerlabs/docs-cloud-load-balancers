@@ -67,11 +67,11 @@ Request
 
 The following table shows the URI parameters for the request.
 
-+------------------+------------+--------------------------------------------------------------+
-|Name              |Type        |Description                                                   |
-+==================+============+==============================================================+
-|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
-+------------------+------------+--------------------------------------------------------------+
++------------------+------------+-------------------------------------------+
+|Name              |Type        |Description                                |
++==================+============+===========================================+
+|pool_id           |csapi:uuid  | The UUID for the pool.                    |
++------------------+------------+-------------------------------------------+
 
 
 The following table shows the body parameters for the request.
@@ -92,12 +92,12 @@ The following table shows the body parameters for the request.
 |                     |           |             | least-connections (``LEAST_CONNECTIONS``), and source IP (``SOURCE_IP``) - that is |
 |                     |           |             | used to distribute traffic to the pool members. This value, which must be          |
 |                     |           |             | supported,depends on the load-balancer provider. The round robin algorithm must be |
-|                     |           |             | supported.                                                                          |
+|                     |           |             | supported.                                                                         |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | name                | plain     | xsd:string  | A human-readable name for the pool. The name does not have to be unique.           |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type`` and|
-| (*Required*)        |           |             | ``cookie_name`` keys.                                                              |
+| session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type``    |
+| (*Required*)        |           |             | and ``cookie_name`` keys.                                                          |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
@@ -151,8 +151,8 @@ The following table shows the body parameters for the response.
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol            | plain     | xsd:string  | The protocol of the pool, which is ``TCP``, ``HTTP``, or ``HTTPS``.                |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type`` and|
-|                     |           |             | ``cookie_name`` keys.                                                              |
+| session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type``    |
+|                     |           |             | and ``cookie_name`` keys.                                                          |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the pool. Only administrative users can specify a  |
 |                     |           |             | tenant UUID other than their own.                                                  |
