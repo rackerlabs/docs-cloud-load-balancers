@@ -55,7 +55,7 @@ master_doc = 'index'
 
 # The builder to use when running via the deconst preparer
 # builder = 'deconst-serial'
-builder = 'deconst-single'
+builder = 'deconst-serial'
 
 # General information about the project.
 project = 'Rackspace Cloud Load Balancers'
