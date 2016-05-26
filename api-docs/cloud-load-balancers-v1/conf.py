@@ -59,7 +59,7 @@ builder = 'deconst-serial'
 
 # General information about the project.
 project = 'Rackspace Cloud Load Balancers'
-copyright = '2015, Rackspace'
+copyright = '2015-2016, Rackspace'
 author = 'Rackspace'
 
 # The version info for the project you're documenting, acts as replacement for
