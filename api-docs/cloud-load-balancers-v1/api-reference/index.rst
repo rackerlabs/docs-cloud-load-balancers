@@ -12,7 +12,6 @@ service.  You can also perform Load Balancer operations by using the Rackspace C
 Client, the SDK, or from the Cloud Control panel.
 
 .. toctree::
-   :hidden:
    :maxdepth: 2
 
    load-balancers
