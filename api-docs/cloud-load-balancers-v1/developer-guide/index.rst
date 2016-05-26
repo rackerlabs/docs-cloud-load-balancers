@@ -19,7 +19,6 @@ service. You should also be familiar with the following technologies:
 -  JSON and/or XML serialization formats
 
 .. toctree::
-   :hidden:
    :maxdepth: 3
 
    concepts
