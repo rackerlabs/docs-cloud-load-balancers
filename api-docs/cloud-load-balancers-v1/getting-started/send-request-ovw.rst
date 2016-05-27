@@ -1,4 +1,4 @@
- .. include:: ../common-gs/get-credentials.rst
+.. include:: ../common-gs/get-credentials.rst
 
 .. _send-api-requests:
 
