@@ -1,5 +1,3 @@
-.. include:: ../common-gs/get-credentials.rst
-
 .. _send-api-requests:
 
 Sending API requests to Cloud Load Balancers
