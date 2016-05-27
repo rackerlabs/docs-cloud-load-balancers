@@ -16,7 +16,7 @@ For more information about Cloud Load Balancers concepts and API operations, see
      :rax-devdocs:`Software development kits & tools <#sdks>`.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    prerequisites-for-using-api
    send-request-ovw
