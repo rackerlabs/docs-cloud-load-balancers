@@ -10,6 +10,7 @@ and complete basic operations by using the Cloud Load Balancers API.
 .. toctree::
    :maxdepth: 1
 
+   get-credentials-include
    send-request-ovw
    authenticate
    using-cloud-load-balancers
