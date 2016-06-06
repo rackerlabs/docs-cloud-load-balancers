@@ -1,8 +1,0 @@
-<accountGroups xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <accountGroup accountId="546428">
-        <group id="1" description="customer_limit_group"/>
-    </accountGroup>
-    <accountGroup accountId="354934">
-        <group id="1" description="customer_limit_group"/>
-    </accountGroup>
-</accountGroups>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<accountsInCluster xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0" totalAccounts="6">
-    <accountInCluster accountId="354934" clusterId="1" loadBalancerCount="1"/>
-    <accountInCluster accountId="379876" clusterId="1" loadBalancerCount="1"/>
-    <accountInCluster accountId="406271" clusterId="1" loadBalancerCount="16"/>
-    <accountInCluster accountId="528830" clusterId="1" loadBalancerCount="50"/>
-    <accountInCluster accountId="546428" clusterId="1" loadBalancerCount="4"/>
-    <accountInCluster accountId="563374" clusterId="1" loadBalancerCount="22"/>
-</accountsInCluster>

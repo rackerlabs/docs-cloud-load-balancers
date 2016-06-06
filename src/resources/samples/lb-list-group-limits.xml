@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<loadBalancerLimitGroups xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <loadBalancerLimitGroup id="1" name="customer_group" limit="50000" isDefault="true">
-        <accounts/>
-    </loadBalancerLimitGroup>
-</loadBalancerLimitGroups>

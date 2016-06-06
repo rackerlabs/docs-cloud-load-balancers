@@ -1,7 +1,0 @@
-<backups>
-    <backup
-        id="1"
-        name="NightlyBackUp"
-        backupTime="2010-10-17 00:00:00"
-        hostId="1234" />
-</backups>
