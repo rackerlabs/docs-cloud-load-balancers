@@ -1,9 +1,0 @@
-<host xmlns="http://docs.rackspacecloud.com/loadbalancers/api/management/v1.0"
-        id="1"
-        name="host1"
-        clusterId="1"
-        coreDeviceId="10"
-        maxConcurrentConnections="1500"
-        managementIp="10.2.2.3"
-        trafficManagerName="ztm-n01.dev.lbaas.rackspace.com"
-        managementSoapInterface="https://173.203.239.70:9090/soap" />

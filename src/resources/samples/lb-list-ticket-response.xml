@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tickets xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <ticket id="1" ticketId="1234" comment="My first ticket :)"/>
-    <ticket id="2" ticketId="4321" comment="My last ticket :("/>
-</tickets>

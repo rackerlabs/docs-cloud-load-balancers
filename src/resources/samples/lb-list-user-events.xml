@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<loadBalancerServiceEvents xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <loadBalancerServiceEvent
-            id="46" loadbalancerId="10" accountId="123456" author="username"
-            title="Load Balancer Successfully Created"
-            description="Load balancer successfully created with name: 'a-new-new-loadbalancer', algorithm: 'RANDOM', protocol: 'HTTP', port: '80'"
-            type="CREATE_LOADBALANCER" category="CREATE" severity="INFO"
-            relativeUri="/123456/loadbalancers/10" created="11-20-2010 12:03:42"/>
-</loadBalancerServiceEvents>

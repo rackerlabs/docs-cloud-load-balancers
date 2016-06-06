@@ -1,9 +1,0 @@
-<mgmt:hostCapacityReports xmlns:mgmt="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <mgmt:hostCapacityReport hostId="1"
-                             hostName="FirstBestHost"
-                             totalConcurrentConnectionCapacity="150000"/>
-    <mgmt:hostCapacityReport hostId="2"
-                             hostName="SecondBestHost"
-                             totalConcurrentConnectionCapacity="150000"/>
-</mgmt:hostCapacityReports>
-

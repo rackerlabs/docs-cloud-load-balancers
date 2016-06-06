@@ -1,7 +1,0 @@
-<algorithms xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <algorithm name="LEAST_CONNECTIONS" />
-    <algorithm name="RANDOM" />
-    <algorithm name="ROUND_ROBIN" />
-    <algorithm name="WEIGHTED_LEAST_CONNECTIONS" />
-    <algorithm name="WEIGHTED_ROUND_ROBIN" />
-</algorithms>

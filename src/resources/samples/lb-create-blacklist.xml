@@ -1,3 +1,0 @@
-<blacklist xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <blacklistItem cidrBlock="0.0.0.0/32" ipVersion="IPV4" type="NODE"/>
-</blacklist>
