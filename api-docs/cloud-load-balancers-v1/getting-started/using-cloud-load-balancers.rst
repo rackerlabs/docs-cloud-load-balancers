@@ -8,9 +8,8 @@ by using API operations. Before running the examples, review the
 :ref:`load balancers concepts <concepts>` to understand the API workflow,
 messaging patterns, and use cases.
 
-.. contents::
-   :local:
-   :depth: 1
+.. toctree::
+   :maxdepth: 1
 
 .. note::
      These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and ``$TENANT_ID`` environment
