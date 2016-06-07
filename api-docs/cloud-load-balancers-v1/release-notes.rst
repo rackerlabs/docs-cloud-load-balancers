@@ -1,12 +1,8 @@
 .. _release-notes:
 
-
-<<<<<<< HEAD
+================
 Release notes
-=======
-Release Notes
->>>>>>> 660213457e71f50ec817f8678b4bfc452a5a0aa5
-======================
+================
 
 Learn about new features, enhancements, known issues,
 resolved issues, and other important details about |apiservice| |version| service updates.

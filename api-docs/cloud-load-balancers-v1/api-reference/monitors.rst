@@ -82,67 +82,69 @@ for Monitor HTTP and HTTPS:
 
 Table. Required and Optional Attributes for Monitor HTTP and HTTPS
 
-+----------------------------+----------------------------------------------+----------+
-| Name                       | Description                                  | Required |
-+============================+==============================================+==========+
-| attemptsBeforeDeactivation | Number of permissible monitor failures       | Yes      |
-|                            | before removing a node from rotation.        |          |
-|                            | Must be a number between 1 and 10.           |          |
-+----------------------------+----------------------------------------------+----------+
-| bodyRegex                  | A regular expression that will be used to    | Yes      |
-|                            | evaluate the contents of the body of the     |          |
-|                            | response.                                    |          |
-|                            |                                              |          |
-|                            | For example you could use the regular        |          |
-|                            | expression "^.*(Unauthorized|Forbidden|      |          |
-|                            | Not Found|Timeout|Server Error).*$"          |          |
-|                            | to look for any of those problematic strings.|          |
-|                            | in the body of the response or use the       |          |
-|                            | regular expression "^success$" to look for   |          |
-|                            | the string "success".                        |          |
-|                            |                                              |          |
-|                            | ..  note::                                   |          |
-|                            |                                              |          |
-|                            |   The system only evaluates the first 2048   |          |
-|                            |   bytes of the response against the          |          |
-|                            |   bodyRegex that is specified, so you        |          |
-|                            |   will want to test accordingly.             |          |
-|                            |                                              |          |
-|                            | To debug the HTTP/HTTPS health monitoring    |          |
-|                            | you will want to test the bodyRegex against  |          |
-|                            | the IP of the node(s) that are being         |          |
-|                            | disabled.                                    |          |
-|                            |                                              |          |
-|                            | You can use the following cURL command to    |          |
-|                            | see what the health monitoring analyzes:     |          |
-|                            |                                              |          |
-|                            | curl -s -r 0-2048 https://YOUR_IP_ADDRESS |  |          |
-|                            | head -c2048 | egrep                          |          |
-|                            | "YOUR_REGULAR_EXPRESSION"                    |          |
-+----------------------------+----------------------------------------------+----------+
-| delay                      | The minimum number of seconds to wait before | Yes      |
-|                            | executing the health monitor. Must be a      |          |
-|                            | number between 1 and 3600.                   |          |
-+----------------------------+----------------------------------------------+----------+
-| hostHeader                 | The name of a host for which the health      | No       |
-|                            | monitors will check.                         |          |
-+----------------------------+----------------------------------------------+----------+
-| path                       | The HTTP path that will be used in the       | Yes      |
-|                            | sample request.                              |          |
-+----------------------------+----------------------------------------------+----------+
-| statusRegex                | A regular expression that will be used to    | Yes      |
-|                            | evaluate the HTTP status code returned in    |          |
-|                            | the response.                                |          |
-+----------------------------+----------------------------------------------+----------+
-| timeout                    | Maximum number of seconds to wait for a      | Yes      |
-|                            | connection to be established before timing   |          |
-|                            | out. Must be a number between 1 and 300.     |          |
-+----------------------------+----------------------------------------------+----------+
-| type                       | Type of the health monitor. Must be          | Yes      |
-|                            | specified as "HTTP" to monitor an HTTP       |          |
-|                            | response or "HTTPS" to monitor an HTTPS      |          |
-|                            | response.                                    |          |
-+----------------------------+----------------------------------------------+----------+
++----------------------------+------------------------------------------------+----------+
+| Name                       | Description                                    | Required |
++============================+================================================+==========+
+| attemptsBeforeDeactivation | Number of permissible monitor failures         | Yes      |
+|                            | before removing a node from rotation.          |          |
+|                            | Must be a number between 1 and 10.             |          |
++----------------------------+------------------------------------------------+----------+
+| bodyRegex                  | A regular expression that will be used to      | Yes      |
+|                            | evaluate the contents of the body of the       |          |
+|                            | response.                                      |          |
+|                            |                                                |          |
+|                            | For example you could use the regular          |          |
+|                            | expression "^.*(Unauthorized|Forbidden|        |          |
+|                            | Not Found|Timeout|Server Error).*$"            |          |
+|                            | to look for any of those problematic strings.  |          |
+|                            | in the body of the response or use the         |          |
+|                            | regular expression "^success$" to look for     |          |
+|                            | the string "success".                          |          |
+|                            |                                                |          |
+|                            | ..  note::                                     |          |
+|                            |                                                |          |
+|                            |   The system only evaluates the first 2048     |          |
+|                            |   bytes of the response against the            |          |
+|                            |   bodyRegex that is specified, so you          |          |
+|                            |   will want to test accordingly.               |          |
+|                            |                                                |          |
+|                            | To debug the HTTP/HTTPS health monitoring      |          |
+|                            | you will want to test the bodyRegex against    |          |
+|                            | the IP of the node(s) that are being           |          |
+|                            | disabled.                                      |          |
+|                            |                                                |          |
+|                            | You can use the following cURL command to      |          |
+|                            | see what the health monitoring analyzes:       |          |
+|                            |                                                |          |
+|                            | .. code::                                      |          |
+|                            |                                                |          |
+|                            |    curl -s -r 0-2048 https://YOUR_IP_ADDRESS \ |          |
+|                            |    head -c2048 | egrep \                       |          |
+|                            |    "YOUR_REGULAR_EXPRESSION" ``                |          |
++----------------------------+------------------------------------------------+----------+
+| delay                      | The minimum number of seconds to wait before   | Yes      |
+|                            | executing the health monitor. Must be a        |          |
+|                            | number between 1 and 3600.                     |          |
++----------------------------+------------------------------------------------+----------+
+| hostHeader                 | The name of a host for which the health        | No       |
+|                            | monitors will check.                           |          |
++----------------------------+------------------------------------------------+----------+
+| path                       | The HTTP path that will be used in the         | Yes      |
+|                            | sample request.                                |          |
++----------------------------+------------------------------------------------+----------+
+| statusRegex                | A regular expression that will be used to      | Yes      |
+|                            | evaluate the HTTP status code returned in      |          |
+|                            | the response.                                  |          |
++----------------------------+------------------------------------------------+----------+
+| timeout                    | Maximum number of seconds to wait for a        | Yes      |
+|                            | connection to be established before timing     |          |
+|                            | out. Must be a number between 1 and 300.       |          |
++----------------------------+------------------------------------------------+----------+
+| type                       | Type of the health monitor. Must be            | Yes      |
+|                            | specified as "HTTP" to monitor an HTTP         |          |
+|                            | response or "HTTPS" to monitor an HTTPS        |          |
+|                            | response.                                      |          |
++----------------------------+------------------------------------------------+----------+
 
 .. include:: methods/get-show-health-monitor-configuration-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
 .. include:: methods/put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor.rst
