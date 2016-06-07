@@ -255,7 +255,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 htmlhelp_basename = 'docs-cloud-load-balancersdoc'
 
 # this will change the 'paragraph' character to '#'
-html_add_permalinks = '#'
+html_add_permalinks = 'None'
 
 # -- Options for LaTeX output ---------------------------------------------
 
