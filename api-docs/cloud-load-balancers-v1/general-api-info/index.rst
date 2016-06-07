@@ -13,13 +13,15 @@ service shares a common token-based authentication system that allows seamless'
 access between products and services.
 
 
+
 .. note::
     All requests to authenticate and operate the service are performed using
     HTTPS on TCP port 443. For authentication instructions, see
     :ref:`Authenticate to the Rackspace Cloud <authenticate-to-cloud>`.
 
 .. toctree::
-   :maxdepth: 1
+   :hidden:
+   :maxdepth: 3
 
    service-access
    request-response

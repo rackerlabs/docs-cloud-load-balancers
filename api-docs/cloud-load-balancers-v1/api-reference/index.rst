@@ -1,7 +1,7 @@
 .. _api-reference:
 
 ===================
-API reference
+API Reference
 ===================
 
 Learn about the available Cloud Load Balancers API resources and methods and see request and

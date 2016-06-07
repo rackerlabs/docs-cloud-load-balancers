@@ -1,10 +1,18 @@
 .. _concepts:
 
+<<<<<<< HEAD
 Load balancer concepts
 -------------------------------
 
 To understand the service and API, review the following key terms
 and concepts.
+=======
+Concepts
+-------------------------------
+
+To use the Rackspace Cloud Load Balancers API effectively, you should understand
+several key concepts:
+>>>>>>> 660213457e71f50ec817f8678b4bfc452a5a0aa5
 
 .. _concept-load-balancer:
 
