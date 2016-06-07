@@ -1,7 +1,7 @@
 .. _release-notes:
 
 
-Release Notes
+Release notes
 ======================
 
 Learn about new features, enhancements, known issues,

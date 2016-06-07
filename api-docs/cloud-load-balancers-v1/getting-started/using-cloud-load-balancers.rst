@@ -1,12 +1,12 @@
 .. _using-cloud-load-balancers:
 
-Create and manage Cloud Load Balancers
+Create and manage load balancers
 ----------------------------------------
 
 Use the examples in the following sections to create and manage load balancers
-by using Cloud Load Balancers API operations. Before running the examples,
-review the :ref:`Cloud Load Balancers concepts<concepts>` to understand the
-API workflow, messaging patterns, and use cases.
+by using API operations. Before running the examples, review the
+:ref:`load balancers concepts <concepts>` to understand the API workflow,
+messaging patterns, and use cases.
 
 .. contents::
    :local:

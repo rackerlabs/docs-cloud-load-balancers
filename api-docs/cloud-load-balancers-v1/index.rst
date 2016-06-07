@@ -21,11 +21,11 @@ Rackspace Cloud Load Balancers service REST API.
 - :ref:`getting-started-guide`
 - :ref:`general-api-info`
 - :ref:`API reference <api-reference>`
-- :ref:`Release Notes <release-notes>`
+- :ref:`Release notes <release-notes>`
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 3
 
    Cloud Load Balancers 1.0 <self>
    getting-started/index
@@ -34,3 +34,9 @@ Rackspace Cloud Load Balancers service REST API.
    release-notes
    additional-resources
    copyright
+
+.. note::
+
+      You can also use Rackspace Cloud Load Balancers from the
+      Cloud Control panel, or by using one of the language-specific
+      :rax-devdocs:`Software development kits & tools <#sdks>`.

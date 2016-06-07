@@ -1,7 +1,7 @@
 
 .. _clb-dg-behavior-api:
 
-API Behavior, Errors, and Suggestions
+API behavior, errors, and suggestions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The LBaaS API is considered to be asynchronous because mutable operations
