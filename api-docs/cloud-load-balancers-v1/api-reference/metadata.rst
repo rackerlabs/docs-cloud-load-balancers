@@ -3,11 +3,23 @@
 Metadata 
 ------------
 
+Use the following API operations to manage view and manage load balancer
+metadata.
+
+.. contents::
+   :local:
+   :depth: 1
 
 Metadata can be associated with each load balancer and each node for the
 client's personal use. It is defined using key-value pairs where the key
 and value consist of alphanumeric characters. A key is unique per load
 balancer.
+
+Use the following API operations to create and manage load balancer metadata:
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/post-add-load-balancer-metadata-v1.0-account-loadbalancers-loadbalancerid-metadata.rst
 .. include:: methods/get-show-load-balancer-metadata-v1.0-account-loadbalancers-loadbalancerid-metadata.rst

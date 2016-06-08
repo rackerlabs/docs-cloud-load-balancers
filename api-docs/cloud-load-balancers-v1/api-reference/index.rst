@@ -1,7 +1,7 @@
 .. _api-reference:
 
 ===================
-API Reference
+API reference
 ===================
 
 Learn about the available Cloud Load Balancers API resources and methods and see request and
@@ -12,7 +12,7 @@ service.  You can also perform Load Balancer operations by using the Rackspace C
 Client, the SDK, or from the Cloud Control panel.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    load-balancers
    erropage

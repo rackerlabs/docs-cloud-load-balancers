@@ -23,11 +23,6 @@ To start using the API and run the examples in this section, you need the follow
 - :ref:`Command line tool or browser client <send-api-requests>` for communicating with the API service.
 
 
-.. note::
-     You can also use Rackspace Cloud Load Balancers from the
-     Cloud Control panel, or by using one of the language-specific
-     :rax-devdocs:`Software development kits & tools <#sdks>`.
-
 
 .. comment: link reference
 

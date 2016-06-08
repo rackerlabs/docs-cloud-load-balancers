@@ -5,7 +5,6 @@ Release notes
 ================
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
 
 Learn about new features, enhancements, known issues,

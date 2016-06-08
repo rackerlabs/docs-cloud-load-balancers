@@ -14,7 +14,6 @@ Lists supported load balancing protocols.
 
 This table shows the possible response codes for this operation:
 
-
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
@@ -181,7 +180,7 @@ Response
             }
         ]
     }
-    
+
 
 
 **Example List load balancing protocols: XML response**
@@ -210,5 +209,3 @@ Response
         <protocol name="SFTP" port="22" />
         <protocol name="TCP_STREAM" port="0" />
     </protocols>
-    
-

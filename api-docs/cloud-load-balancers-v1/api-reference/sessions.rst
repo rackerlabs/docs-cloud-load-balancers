@@ -4,6 +4,12 @@
 Session persistence 
 ----------------------
 
+Use the following API operations to view and manage session persistence
+settings:
+
+.. contents::
+   :local:
+   :depth: 1
 
 Session persistence is a feature of the load balancing service that
 forces multiple requests, of the same protocol, from clients to be

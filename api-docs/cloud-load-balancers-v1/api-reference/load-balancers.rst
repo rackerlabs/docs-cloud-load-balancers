@@ -1,13 +1,14 @@
-.. _load-balancers:
-
 Load balancers 
 -------------------
 
-
 Users can configure all documented features of the load balancer at
 creation time by simply providing the additional elements or attributes
-in the request. This document provides an overview of all the features
-the load balancing service supports.
+in the request. This document provides an overview of the following API
+API operations for configuring load balancers:
+
+.. contents::
+   :local:
+   :depth: 1
 
 Any protocol that is not listed in the protocols response, or is in the
 list but port=0, requires port to be set. For example the TCP protocol

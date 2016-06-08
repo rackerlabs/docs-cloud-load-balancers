@@ -20,8 +20,7 @@ access between products and services.
     :ref:`Authenticate to the Rackspace Cloud <authenticate-to-cloud>`.
 
 .. toctree::
-   :hidden:
-   :maxdepth: 3
+   :maxdepth: 1
 
    service-access
    request-response

@@ -4,10 +4,14 @@
 Monitors
 --------------
 
+Use the following API operations to monitor your back-end nodes to ensure that 
+they are operating correctly.
 
-The load balancing service includes a health monitoring operation that
-periodically checks your back-end nodes to ensure they are responding
-correctly. If a node does not respond, it is removed from rotation until
+.. contents::
+   :local:
+   :depth: 1
+
+If a node does not respond, it is removed from rotation until
 the health monitor determines that the node is functional. In
 addition to being performed periodically, the health check also is
 performed against every node that is added to ensure that the node is

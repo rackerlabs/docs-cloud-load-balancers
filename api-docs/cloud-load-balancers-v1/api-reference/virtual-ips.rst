@@ -3,6 +3,12 @@
 Virtual IPs 
 -----------------
 
+Use the following API operations to view and manage the
+load balancer virtual IP configuration:
+
+.. contents::
+   :local:
+   :depth: 1
 
 A virtual IP (VIP) makes a load balancer accessible by clients.
 The load balancing service supports either a public VIP, routable on the

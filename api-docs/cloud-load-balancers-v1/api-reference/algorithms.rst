@@ -4,8 +4,10 @@
 Algorithms
 ---------------
 
+Use the `List load balancing algorithms`_ operation to view the supported
+load balancer algorithms.
 
-All load balancers utilize an algorithm that defines how traffic should
+All load balancers use an algorithm that defines how traffic should
 be directed between back-end nodes. The default algorithm for newly
 created load balancers is ``RANDOM``, which can be overridden at
 creation time or changed after the load balancer has been initially

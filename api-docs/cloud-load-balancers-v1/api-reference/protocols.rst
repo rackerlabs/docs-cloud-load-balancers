@@ -3,9 +3,11 @@
 Protocols
 -------------
 
+Use the `List load balancing protocols`_ API operation to review the
+protocols associated with load balanced services.
 
 All load balancers must define the protocol of the service which is
-being load balanced. The protocol selection should be based on the
+being load balanced. The protocol selection is based on the
 protocol of the back-end nodes. When configuring a load balancer, the
 default port for the given protocol is selected unless otherwise
 specified.
@@ -22,7 +24,8 @@ specified.
        -  Changing the protocol or port for a load balancer will disable
           session persistence.
 
-Table. Load balancing protocols
+The following table lists the load balancing protocols that can be configured
+for a service using the `Load balancers`_ configuration operations.
 
 +----------------+---------------------------------------------------------------------+
 | Name           | Description                                                         |

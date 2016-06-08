@@ -3,6 +3,11 @@
 Certificate Mappings
 ----------------------
 
+Use the following API operations to view and manage certificate mappings:
+
+.. contents::
+   :local:
+   :depth: 1
 
 Certificate mappings allow for multiple certificates to be used on
 SSL-terminated load balancers. By default, a load balancer supports a

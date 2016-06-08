@@ -3,6 +3,12 @@
 SSL termination
 -------------------
 
+Use the following API operations to view and manage the SSL termination
+configuration settings:
+
+.. contents::
+   :local:
+   :depth: 1
 
 You can configure SSL termination only on load balancers with non-secure
 protocols. For example, SSL termination can be applied to an HTTP load
