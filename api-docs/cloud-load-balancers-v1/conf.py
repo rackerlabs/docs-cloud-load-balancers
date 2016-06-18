@@ -15,6 +15,7 @@
 import sys
 import os
 import shlex
+import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -53,13 +54,13 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # The builder to use when running via the deconst preparer
-# builder = 'deconst-serial'
-builder = 'deconst-single'
+builder = 'deconst-serial'
+#builder = 'deconst-single'
 
 # General information about the project.
 project = 'Rackspace Cloud Load Balancers'
-copyright = '2015, mike.asthalter'
-author = 'mike.asthalter'
+copyright = '2015-2016, Rackspace'
+author = 'Rackspace'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -85,7 +86,8 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples','api-operations/methods/*', 'common-gs', 'getting-started/examples']
+exclude_patterns = ['_build', 'samples','api-reference/methods/*', 'common-gs', 
+                    'examples/*','release-notes/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -153,15 +155,19 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+   'sticky_navigation': True,  # Set to False to disable the sticky nav while scrolling.
+   'collapse_navigation': True
+   # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -249,7 +255,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 htmlhelp_basename = 'docs-cloud-load-balancersdoc'
 
 # this will change the 'paragraph' character to '#'
-html_add_permalinks = '#'
+html_add_permalinks = 'None'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -302,7 +308,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
-     'Mike Asthalter', 1)
+     'Rackspace', 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -316,7 +322,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
+   'Rackspace', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
    'Miscellaneous'),
 ]
 

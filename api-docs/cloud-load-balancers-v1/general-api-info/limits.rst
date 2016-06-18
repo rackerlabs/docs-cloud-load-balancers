@@ -1,20 +1,20 @@
 .. _limits:
 
-======
+
 Limits
-======
+~~~~~~~~~~~
 
 All accounts, by default, have a preconfigured set of thresholds (or limits) to manage capacity and prevent abuse of the system. The system recognizes two kinds of limits: rate limits and absolute limits. Rate limits are thresholds that are reset after a certain amount of time passes. Absolute limits are fixed. Rate limits are processed via the `Repose service`_.
 
 .. note::
   If the default limits are too low for your particular application, please contact Rackspace Cloud support to request an increase. All requests require reasonable justification.
 
-.. _Repose service: http://www.openrepose.org 
+.. _Repose service: http://www.openrepose.org
 
 .. _clb-dg-api-info-limits-ratelimits:
 
 Rate limits
-~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 We specify rate limits in terms of both a human-readable wild-card URI and a machine-processable regular expression. The regular expression boundary matcher '^' takes effect after the root URI path. For example, the regular expression `^/v1.0/1234/loadbalancers` would match the portion `/v1.0/1234/loadbalancers` of the following URI:
 `https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers`.
@@ -50,7 +50,7 @@ A request may be submitted to Cloud Support for an increase in load balancer lim
 See :ref:`Determine limits programmatically <determine-limits>` to find your current account settings for these limits.
 
 Absolute limits
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Absolute limits specify the maximum number of load balancers that can exist per Cloud account and the maximum number of resources that can exist per load balancer. The batch delete limit is the exception, since it is applied per batch delete API request.
 
@@ -75,7 +75,7 @@ The system applies default values for load balancer account and/or resource limi
 .. _determine-limits:
 
 Determine limits programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Applications can programmatically determine current rate limits and absolute limits for an account using the following URIs:
 
@@ -93,7 +93,7 @@ These operations do not require a request body.
 
 **Example: List rate limits: XML response**
 
-.. code:: 
+.. code::
 
     <limits xmlns="http://docs.openstack.org/common/api/v1.0">
         <rates>
@@ -150,7 +150,7 @@ These operations do not require a request body.
 
 **Example: List absolute limits: JSON response**
 
-.. code:: 
+.. code::
 
     {
         "absolute":

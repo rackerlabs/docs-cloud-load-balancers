@@ -1,8 +1,8 @@
 .. _health-monitors-v2:
 
-=====================
+
 Health monitors 
-=====================
+--------------------
 
 
 The Load Balancers service includes a health monitoring operation that

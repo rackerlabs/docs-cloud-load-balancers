@@ -1,27 +1,36 @@
 .. _faults:
 
-======
-Faults
-======
 
-API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, ``serviceFault``, for easier exception handling for languages that support it.
+Faults
+~~~~~~~~~~~~~~
+
+API calls that return an error return one of the following fault objects. All
+fault objects extend from the base fault, ``serviceFault``, for easier exception
+handling for languages that support it.
 
 .. _faults-service:
 
 serviceFault
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
-The ``serviceFault`` and by extension all other faults include ``message`` and ``detail`` elements which contain strings describing the nature of the fault as well as a ``code`` attribute representing the HTTP response code for convenience. The ``code`` attribute of the fault is for the convenience of the caller so that they may retrieve the response code from the HTTP response headers or directly from the fault object if they choose. The caller should not expect the ``serviceFault`` to be returned directly but should instead expect only one of the child faults to be returned.
+The ``serviceFault`` and by extension all other faults include ``message``
+and ``detail`` elements which contain strings describing the nature of the fault
+as well as a ``code`` attribute representing the HTTP response code for
+convenience. The ``code`` attribute of the fault is for the convenience of the
+caller so that they may retrieve the response code from the HTTP response headers
+or directly from the fault object if they choose. The caller should not expect
+the ``serviceFault`` to be returned directly but should instead expect only one
+of the child faults to be returned.
 
 .. _faults-badrequest:
 
 badRequest
-~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 This fault indicates that the data in the request object is invalid; for example, a string was used in a parameter that was expecting an integer. The fault wraps validation errors.
 
-badRequest fault: Response
---------------------------
+
+**Example: badRequest fault response**
 
 .. code::
 
@@ -36,13 +45,14 @@ badRequest fault: Response
 .. _faults-immutableentity:
 
 immutableEntity
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
-This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
+This fault is returned when a user attempts to modify an item that is not
+currently in a state that allows modification. For example, load balancers
+in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
 may not be modified.
 
-immutableEntity fault: Response
--------------------------------
+**Example: immutableEntity fault response**
 
 .. code::
 
@@ -53,10 +63,11 @@ immutableEntity fault: Response
 .. _faults-itemnotfound:
 
 itemNotFound
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
-itemNotFound fault: Response
-----------------------------
+This fault is returned when the system cannot find the requested resource.
+
+**Example: itemNotFound fault: Response**
 
 .. code::
 
@@ -67,12 +78,11 @@ itemNotFound fault: Response
 .. _faults-loadbalancerfault:
 
 loadBalancerFault
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 The ``loadBalancerFault`` fault shall be returned in the event that an error occurred during a load balancer operation.
 
-loadBalancerFault fault: Response
----------------------------------
+**Example: loadBalancerFault fault response**
 
 .. code::
 
@@ -83,12 +93,14 @@ loadBalancerFault fault: Response
 .. _faults-outofvirtualips:
 
 outOfVirtualIps
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
-This fault indicates that there are no virtual IPs left to assign to a new load balancer. In practice, this fault should not occur, as virtual IPs is ordered as capacity is required. If you do experience this fault, contact support so that we may make more IPs available.
+This fault indicates that there are no virtual IPs left to assign to a new
+load balancer. In practice, this fault should not occur, as virtual IPs is
+ordered as capacity is required. If you do experience this fault, contact
+support so that we may make more IPs available.
 
-outOfVirtualIps fault: Response
--------------------------------
+**Example: outOfVirtualIps fault response**
 
 .. code::
 
@@ -98,33 +110,36 @@ outOfVirtualIps fault: Response
         </message>
     </outOfVirtualips>
 
+
 .. _faults-overlimit:
 
 overLimit
-~~~~~~~~~
+^^^^^^^^^^^^^^
 
 This fault is returned when the user has exceeded a currently allocated limit.
 
-overLimit fault: Response
--------------------------
+**Example: overLimit fault response**
 
-.. code:: 
+.. code::
 
     <overLimit code="413" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <message>Your account is currently over the limit so your request could not be processed.</message>
     </overLimit>
 
+
 .. _faults-serviceunavailable:
 
 serviceUnavailable
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
-This fault is returned when the service is unavailable, such as when the service is undergoing maintenance. Note that this does not necessarily mean that the currently configured loadbalancers are unable to process traffic; it simply means that the API is currently unable to service requests.
+This fault is returned when the service is unavailable, such as when the service
+is undergoing maintenance. Note that this does not necessarily mean that the
+currently configured loadbalancers are unable to process traffic; it simply
+means that the API is currently unable to service requests.
 
-serviceUnavailable fault: Response
-----------------------------------
+**Example: serviceUnavailable fault: Response**
 
-.. code:: 
+.. code::
 
     <serviceUnavailable code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <message>The Load balancing service is currently not available</message>
@@ -133,12 +148,11 @@ serviceUnavailable fault: Response
 .. _faults-unauthorized:
 
 unauthorized
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 This fault is returned when the user is not authorized to perform an attempted operation.
 
-unauthorized fault: Response
-----------------------------
+**Example: unauthorized fault response**
 
 .. code::
 
@@ -149,15 +163,14 @@ unauthorized fault: Response
 .. _faults-unprocessableentity:
 
 unprocessableEntity
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This fault is returned when an operation is requested on an item that does not support the operation, but the request is properly formed.
 
 .. note::
     The Cloud Load Balancing API is considered asynchronous, which is why there is a ``status`` attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the ``unprocessableEntity`` fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is ``ACTIVE`` before continuing any other modifications.
 
-unprocessableEntity fault: Response
------------------------------------
+**Example: unprocessableEntity fault response**
 
 .. code::
 

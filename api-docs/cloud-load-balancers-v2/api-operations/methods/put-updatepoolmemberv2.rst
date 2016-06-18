@@ -1,7 +1,7 @@
 .. _update-pool-member-v2:
 
 Update a pool member
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -17,12 +17,12 @@ attributes:
 -  ``admin_state_up``
 
 ..  note::
-  -  You cannot update the member ``id``, ``tenant_id``, ``address``,
-     ``protocol_port``, and ``subnet_id`` attributes. If you attempt to
-     update any of these attributes, the service returns the HTTP
-     ``Immutable (422)`` response code.
-  - You cant update a member only if the attached load balancer has a
-    ``provisioning_status`` of ``ACTIVE``.
+    -  You cannot update the member ``id``, ``tenant_id``, ``address``,
+       ``protocol_port``, and ``subnet_id`` attributes. If you attempt to
+       update any of these attributes, the service returns the HTTP
+       ``Immutable (422)`` response code.
+    - You cannot update a member only if the attached load balancer has a
+      ``provisioning_status`` of ``ACTIVE``.
 
 The following table shows the possible response codes for this operation.
 
@@ -52,7 +52,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the URI parameters for the request.
 
@@ -92,10 +92,9 @@ The following table shows the body parameters for the request.
         }
     }
 
+
 Response
-""""""""""""""""
-
-
+~~~~~~~~~~~~~~
 
 The following table shows the body parameters for the response.
 

@@ -1,7 +1,7 @@
 .. _create-load-balancers-v2:
 
 Create a load balancer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -63,7 +63,7 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 The following table shows the body parameters for the request.
 
@@ -88,7 +88,8 @@ The following table shows the body parameters for the request.
 | vip_address      | plain     | xsd:ip      | The VIP address. You can supply a ``vip_address`` if you own the subnet on which   |
 |                  |           |             | the load balancer’s VIP will be created. If this parameter is omitted from the     |
 |                  |           |             | request, the service allocates a VIP address from the subnet of the load balancer  |
-|                  |           |             | VIP.                                                                               |+------------------+-----------+-------------+------------------------------------------------------------------------------------+
+|                  |           |             | VIP.                                                                               |
++------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | provider         | plain     | xsd:string  | The name of the provider.                                                          |
 |                  |           |             |                                                                                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
@@ -116,7 +117,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 The following table shows the body parameters for the response.
 

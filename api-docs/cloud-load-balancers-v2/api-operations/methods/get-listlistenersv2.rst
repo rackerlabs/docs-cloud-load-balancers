@@ -1,7 +1,7 @@
 .. _get-list-listeners-v2:
 
 List listeners
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -32,12 +32,12 @@ The following table shows the possible response codes for this operation.
 +---------+-----------------------+---------------------------------------------+
 
 Request
-""""""""""""""""
+~~~~~~~~~~~
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+~~~~~~~~~~~~~~
 
 The following table shows the body parameters for the response.
 

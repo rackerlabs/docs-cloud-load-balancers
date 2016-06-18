@@ -1,12 +1,12 @@
 .. _send-api-requests:
 
-Sending API requests to Cloud Load Balancers
+Sending API requests
 ----------------------------------------------
 
-This Getting Started Guide shows how to send requests by using cURL.
+This section shows how to send requests by using cURL.
 
-.. note:: 
-     You can also use Rackspace Cloud API services by using the following methods: 
+.. note::
+     You can also use Rackspace Cloud API services by using the following methods:
 
      -  If you are developing applications or automation, try using `Rackspace SDKs`_, the
         `Rackspace CLI`_, or `OpenStack client applications`_.
