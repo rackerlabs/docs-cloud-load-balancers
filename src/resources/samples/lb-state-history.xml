@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mgmt:loadBalancersStatusHistory xmlns:mgmt="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <mgmt:loadBalancerStatusHistory accountId="5806065" loadBalancerId="9730" status="BUILD" created="2012-04-11T15:25:49-05:00"/>
-    <mgmt:loadBalancerStatusHistory accountId="5806065" loadBalancerId="9731" status="BUILD" created="2012-04-11T15:53:53-05:00"/>
-    <mgmt:loadBalancerStatusHistory accountId="5806065" loadBalancerId="9731" status="ACTIVE" created="2012-04-11T15:54:05-05:00"/>
-    <mgmt:loadBalancerStatusHistory accountId="5806065" loadBalancerId="9731" status="PENDING_DELETE" created="2012-04-11T15:54:32-05:00"/>
-    <mgmt:loadBalancerStatusHistory accountId="5806065" loadBalancerId="9731" status="DELETED" created="2012-04-11T15:54:36-05:00"/>
-</mgmt:loadBalancersStatusHistory>

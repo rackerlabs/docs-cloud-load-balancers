@@ -1,3 +1,0 @@
-<ticket xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0"
-    ticketId="1234"
-    comment="My first ticket :)" />

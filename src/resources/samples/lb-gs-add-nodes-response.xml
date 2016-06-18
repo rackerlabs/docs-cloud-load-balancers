@@ -1,9 +1,0 @@
-<nodes xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <node
-        address="108.166.67.215"
-        id="44717"
-        port="80"
-        condition="ENABLED"
-        status="ONLINE"
-        weight="1"/>
-</nodes>

@@ -1,8 +1,0 @@
-{
-    "expirationTime": "2010-10-17T00:00:00",
-    "maxRequestsPerSecond": 150,
-    "ticket": {
-        "ticketId": 1234,
-        "comment": "DOS Attack"
-    }
-}

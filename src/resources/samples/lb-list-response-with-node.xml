@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<loadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <loadBalancer id="3" name="First Loadbalancer" status="ACTIVE"/>
-    <loadBalancer id="2" name="Second Loadbalancer" status="PENDING_UPDATE"/>
-    <loadBalancer id="8" name="Third Loadbalancer" status="ERROR"/>
-</loadBalancers>

@@ -1,9 +1,0 @@
-<alerts>
-   <alert
-           id="1"
-           accountId="38"
-           loadbalancerId="1000"
-           messageName="Error updating node"
-           status="UNACKNOWLEDGED"
-           created="2010-11-23" />
-</alerts>

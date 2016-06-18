@@ -1,3 +1,0 @@
-<rateLimit xmlns="http://docs.openstack.com/loadbalancers/api/management/v1.0"
-   expirationTime="2010-10-18T00:00:00"
-   maxRequestsPerSecond="150" />

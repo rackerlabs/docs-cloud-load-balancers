@@ -1,7 +1,0 @@
-<hostssubnet xmlns="http://docs.openstack.org/loadbalancers/api/management/v1.0">
-    <hostsubnet>
-        <netInterface name="eth-pub">
-            <cidr block="123.78.1.1/27"/>
-        </netInterface>
-    </hostsubnet>
-</hostssubnet>
