@@ -53,13 +53,13 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # The builder to use when running via the deconst preparer
-# builder = 'deconst-serial'
-builder = 'deconst-single'
+builder = 'deconst-serial'
+#builder = 'deconst-single'
 
 # General information about the project.
 project = 'Rackspace Cloud Load Balancers'
-copyright = '2015, mike.asthalter'
-author = 'mike.asthalter'
+copyright = '2015-2016'
+author = 'Rackspace'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -85,7 +85,8 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples','api-operations/methods/*', 'common-gs', 'getting-started/examples']
+exclude_patterns = ['_build','samples','api-operations/methods/*','common-gs',
+                    'examples/*','release-notes/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -112,7 +113,8 @@ extlinks = {
     'rax-dev': ('https://developer.rackspace.com/%s', ''),
     'rax-devdocs': ('http://developer.rackspace.com/docs/%s', ''),
     'rax-devguide':('http:/developer.rackspace.com/docs/%s/developer-guide/',''),
-    'rax-api': ('http:/developer.rackspace.com/docs/%s/developer-guide/#api-reference',''),
+    'rax-api':
+    ('http:/developer.rackspace.com/docs/%s/developer-guide/#api-reference',''),
     'rax-git': ('https://github.com/rackspace/%s', ''),
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'rax-glossary': ('https://developer.rackspace.com/docs/glossary/%s', ''),
@@ -249,7 +251,7 @@ html_short_title = 'Rackspace Cloud Load Balancers'
 htmlhelp_basename = 'docs-cloud-load-balancersdoc'
 
 # this will change the 'paragraph' character to '#'
-html_add_permalinks = '#'
+#html_add_permalinks = '#'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -271,8 +273,9 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'docs-cloud-load-balancers.tex', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'mike.asthalter', 'manual'),
+  (master_doc, 'docs-cloud-load-balancers.tex',
+  'Rackspace Cloud Load Balancers API Developer Guide',
+  'Rackspace', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -302,7 +305,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
-     'Mike Asthalter', 1)
+     'Rackspace', 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -316,7 +319,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'docs-cloud-load-balancers', 'Rackspace Cloud Load Balancers API Developer Guide',
-   'Mike Asthalter', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
+   'Rackspace', 'docs-cloud-load-balancers','Learn about using the Rackspace Cloud Load Balancers service',
    'Miscellaneous'),
 ]
 
