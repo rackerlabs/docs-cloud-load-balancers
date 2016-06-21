@@ -10,7 +10,7 @@ protocol of the back-end nodes. When configuring a load balancer, the
 default port for the given protocol is selected unless otherwise
 specified.
 
-..  note:: 
+..  note::
 
        -  UDP-Based protocols (DNS\_UDP, UDP, and UDP\_STREAM) have the
           following limitations:
@@ -51,11 +51,11 @@ Table. Load balancing protocols
 |                | (SSL) defines how an email client, such as Microsoft Outlook,       |
 |                | retrieves and transfers email messages with a mail server.          |
 +----------------+---------------------------------------------------------------------+
-| ``IMAPv2``     | Version 2 of IMAPS.                                                 | 
+| ``IMAPv2``     | Version 2 of IMAPS.                                                 |
 +----------------+---------------------------------------------------------------------+
-| ``IMAPv3``     | Version 3 of IMAPS.                                                 | 
+| ``IMAPv3``     | Version 3 of IMAPS.                                                 |
 +----------------+---------------------------------------------------------------------+
-| ``IMAPv4``     | Version 4, the current version of IMAPS.                            | 
+| ``IMAPv4``     | Version 4, the current version of IMAPS.                            |
 +----------------+---------------------------------------------------------------------+
 | ``LDAP``       | The Lightweight Directory Access Protocol provides access to        |
 |                | distributed directory information services over the Internet. This  |

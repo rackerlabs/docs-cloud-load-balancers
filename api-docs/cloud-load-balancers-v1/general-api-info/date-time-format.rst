@@ -1,7 +1,8 @@
 .. _date-time-format:
 
+====================
 Date and time format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================
 
 The Load Balancer service uses an ISO 8601 compliant date format for the
 display and consumption of date/time values.
@@ -9,9 +10,9 @@ display and consumption of date/time values.
 .. _clb-dg-datetime-loadbalance:
 
 Load Balancer service date and time format
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code::
+.. code:: 
 
     yyyy-MM-dd'T'HH:mm:ssZ
 
@@ -26,7 +27,7 @@ May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following format:
 .. _clb-dg-datetime-codes:
 
 Date and time format codes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------+-----------------------------------------------------------+
 | yyyy | Four digit year                                           |
@@ -46,3 +47,4 @@ Date and time format codes
 | Z    | RFC 8601 timezone (offset from GMT). If Z is not replaced |
 |      | with the offset from GMT, it indicates a 00:00 offset.    |
 +------+-----------------------------------------------------------+
+
