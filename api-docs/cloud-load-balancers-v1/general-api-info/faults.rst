@@ -1,8 +1,7 @@
 .. _faults:
 
-======
 Faults
-======
+----------
 
 API calls that return an error return one of the following fault objects. All fault objects extend from the base fault, ``serviceFault``, for easier exception handling for languages that support it.
 
@@ -20,8 +19,7 @@ badRequest
 
 This fault indicates that the data in the request object is invalid; for example, a string was used in a parameter that was expecting an integer. The fault wraps validation errors.
 
-badRequest fault: Response
---------------------------
+**Example: badRequest fault: Response**
 
 .. code::
 
@@ -41,8 +39,7 @@ immutableEntity
 This fault is returned when a user attempts to modify an item that is not currently in a state that allows modification. For example, load balancers in a status of ``PENDING_UPDATE``, ``BUILD``, or ``DELETED``
 may not be modified.
 
-immutableEntity fault: Response
--------------------------------
+**Example: immutableEntity fault: Response**
 
 .. code::
 
@@ -55,8 +52,7 @@ immutableEntity fault: Response
 itemNotFound
 ~~~~~~~~~~~~
 
-itemNotFound fault: Response
-----------------------------
+**Example: itemNotFound fault: Response**
 
 .. code::
 
@@ -71,8 +67,7 @@ loadBalancerFault
 
 The ``loadBalancerFault`` fault shall be returned in the event that an error occurred during a load balancer operation.
 
-loadBalancerFault fault: Response
----------------------------------
+**Example: loadBalancerFault fault: Response**
 
 .. code::
 
@@ -87,8 +82,7 @@ outOfVirtualIps
 
 This fault indicates that there are no virtual IPs left to assign to a new load balancer. In practice, this fault should not occur, as virtual IPs is ordered as capacity is required. If you do experience this fault, contact support so that we may make more IPs available.
 
-outOfVirtualIps fault: Response
--------------------------------
+**Example: outOfVirtualIps fault: Response**
 
 .. code::
 
@@ -105,10 +99,9 @@ overLimit
 
 This fault is returned when the user has exceeded a currently allocated limit.
 
-overLimit fault: Response
--------------------------
+**Example: overLimit fault: Response**
 
-.. code:: 
+.. code::
 
     <overLimit code="413" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <message>Your account is currently over the limit so your request could not be processed.</message>
@@ -121,10 +114,9 @@ serviceUnavailable
 
 This fault is returned when the service is unavailable, such as when the service is undergoing maintenance. Note that this does not necessarily mean that the currently configured loadbalancers are unable to process traffic; it simply means that the API is currently unable to service requests.
 
-serviceUnavailable fault: Response
-----------------------------------
+**Example: serviceUnavailable fault: Response**
 
-.. code:: 
+.. code::
 
     <serviceUnavailable code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <message>The Load balancing service is currently not available</message>
@@ -137,8 +129,7 @@ unauthorized
 
 This fault is returned when the user is not authorized to perform an attempted operation.
 
-unauthorized fault: Response
-----------------------------
+**Example: unauthorized fault: Response**
 
 .. code::
 
@@ -156,8 +147,7 @@ This fault is returned when an operation is requested on an item that does not s
 .. note::
     The Cloud Load Balancing API is considered asynchronous, which is why there is a ``status`` attribute on the load balancer. The API does not allow concurrent modifications on a single load balancer instance. If a concurrent modification is attempted, the ``unprocessableEntity`` fault will be returned in the response. If you are using the API programmatically, we suggest that you issue a GET request to Show load balancer details on the load balancer instance to verify that the status is ``ACTIVE`` before continuing any other modifications.
 
-unprocessableEntity fault: Response
------------------------------------
+**Example: unprocessableEntity fault: Response**
 
 .. code::
 
