@@ -43,7 +43,6 @@ using the Rackspace Cloud Load Balancers service REST API.
 
    Cloud Load Balancers 1.0 <https://developer.rackspace.com/docs/cloud-load-balancers/v1/developer-guide/>
    getting-started/index
-   developer-guide
    general-api-info/index
    api-reference
    api-operations/index
