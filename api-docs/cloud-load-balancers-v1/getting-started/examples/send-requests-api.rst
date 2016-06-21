@@ -60,7 +60,7 @@ run the examples:
 |                                      |    request body. The syntax for the  |
 |                                      |    ``Content-Type`` header is:       |
 |                                      |                                      |
-|                                      |    .. code::                    |
+|                                      |    .. code::                         |
 |                                      |                                      |
 |                                      |        Content-Type: application/for |
 |                                      | mat                                  |
@@ -79,7 +79,7 @@ run the examples:
 |                                      |    response body. The syntax for the |
 |                                      |    ``Accept`` header is:             |
 |                                      |                                      |
-|                                      |    .. code::                    |
+|                                      |    .. code::                         |
 |                                      |                                      |
 |                                      |        Accept: application/format    |
 |                                      |                                      |
@@ -113,7 +113,6 @@ run the examples:
 |                                      |                                      |
 |                                      |                                      |
 |                                      |                                      |
-                                                                             
 +--------------------------------------+--------------------------------------+
 | ``-X``                               | Specifies the request method to use  |
 |                                      | when communicating with the HTTP     |
@@ -128,7 +127,7 @@ ppxml
 For commands that return an XML response, you can append the following
 code to the command to call ``ppxml`` to pretty-print output:
 
-.. code::  
+.. code::
 
     | ppxml
 
@@ -137,9 +136,10 @@ If you do not want to pretty-print XML output, omit this code.
 In order to use ``ppxml``, you need to set the ``ppxml`` alias as
 follows:
 
-.. code::  
+.. code::
 
-    $ alias ppxml='python -c "import sys, xml.dom.minidom; print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
+    $ alias ppxml='python -c "import sys, xml.dom.minidom;/
+      print xml.dom.minidom.parseString(sys.stdin.read()).toprettyxml()"'
 
 json.tool
 ~~~~~~~~~
@@ -147,7 +147,7 @@ json.tool
 For commands that return a JSON response, you can append the following
 code to the command to call the json.tool to pretty-print output:
 
-.. code::  
+.. code::
 
     | python -m json.tool
 

@@ -1,8 +1,7 @@
 .. _concepts:
 
-========
-Concepts
-========
+Load balancer concepts
+---------------------------
 
 To use the Rackspace Cloud Load Balancers API effectively, you should understand several key concepts:
 

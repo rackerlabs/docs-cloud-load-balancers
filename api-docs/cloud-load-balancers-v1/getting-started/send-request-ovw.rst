@@ -3,10 +3,10 @@
 Sending API requests to Cloud Load Balancers
 ----------------------------------------------
 
-This Getting Started Guide shows how to send requests by using cURL.
+This section shows how to send requests by using cURL.
 
-.. note:: 
-     You can also use Rackspace Cloud API services by using the following methods: 
+.. note::
+     You can also use Rackspace Cloud API services by using the following methods:
 
      -  If you are developing applications or automation, try using `Rackspace SDKs`_, the
         `Rackspace CLI`_, or `OpenStack client applications`_.
@@ -24,4 +24,3 @@ This Getting Started Guide shows how to send requests by using cURL.
 .. _Openstack client applications: https://wiki.openstack.org/wiki/OpenStackClients
 .. _Postman: http://www.getpostman.com
 .. _RESTClient for Firefox: https://addons.mozilla.org/en-US/firefox/addon/restclient
-.. _Cloud Control Panel: https://mycloud.rackspace.com
