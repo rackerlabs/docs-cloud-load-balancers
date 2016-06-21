@@ -10,9 +10,11 @@ that are reset after a certain amount of time passes. Absolute limits are
 fixed. Rate limits are processed via the `Repose service`_.
 
 .. note::
-  If the default limits are too low for your particular application, please
-  contact Rackspace Cloud support to request an increase. All requests require
-  reasonable justification.
+
+    If the default limits are too low for your particular application, please
+    contact Rackspace Cloud support to request an increase. All requests require
+    reasonable justification.
+
 
 .. _Repose service: http://www.openrepose.org
 
@@ -23,10 +25,11 @@ Rate limits
 
 We specify rate limits in terms of both a human-readable wild-card URI and a
 machine-processable regular expression. The regular expression boundary matcher
- '^' takes effect after the root URI path. For example, the regular expression
- `^/v1.0/1234/loadbalancers` would match the portion `/v1.0/1234/loadbalancers`
- of the following URI:
-`https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers`.
+``^`` takes effect after the root URI path. For example, the regular expression
+``^/v1.0/1234/loadbalancers`` would match the portion
+``/v1.0/1234/loadbalancers`` of the following URI:
+
+``https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers``.
 
 .. _clb-dg-api-info-limits-ratelimits-default:
 
@@ -55,10 +58,10 @@ machine-processable regular expression. The regular expression boundary matcher
 Rate limits are applied in order relative to the verb, going from least to most
 specific. For example, although the threshold for **POST** to /v1.0/\* is 25
 per minute, one cannot **POST** to /v1.0/\* more than 2 times per second because
- the rate limit for any **POST** is 2 per second. In the event you exceed the
- thresholds established for your account, a 413 (Rate Control) HTTP response is
- returned with a `Retry-After` header to notify the client when they can attempt
- to try again.
+the rate limit for any **POST** is 2 per second. In the event you exceed the
+thresholds established for your account, a 413 (Rate Control) HTTP response is
+returned with a `Retry-After` header to notify the client when they can attempt
+to try again.
 
 A request may be submitted to Cloud Support for an increase in load balancer
 limits. Each request must be approved before limits can be modified. Limits may

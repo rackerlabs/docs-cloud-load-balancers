@@ -30,14 +30,17 @@ perform the following tasks:
 
 * :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`
 
-* :rax-devdocs:`Add role to user
-* <cloud-identity/v2/developer-guide/#add-role-to-user>`
+* :rax-devdocs:`Add role to user \
+  <cloud-identity/v2/developer-guide/#add-role-to-user>`
 
-* :rax-devdocs:`Delete global role from user
-* <cloud-identity/v2/developer-guide/#delete-global-role-from-user>`
+* :rax-devdocs:`Delete global role from user \
+  <cloud-identity/v2/developer-guide/#delete-global-role-from-user>`
 
-.. note:: The account owner (identity:user-admin) role cannot hold any
-additional roles because it already has full access to all capabilities.
+.. note::
+
+    The account owner (identity:user-admin) role cannot hold any
+    additional roles because it already has full access to all capabilities.
+
 
 .. _clb-dg-api-info-rbac-available:
 
@@ -116,5 +119,5 @@ RBAC permissions cross-reference to Cloud Load Balancers API operations
 
 API operations for Cloud Load Balancers may or may not be available to all
 roles. To see which operations are permitted to invoke which calls, please
-review :how-to:`Permissions Matrix for Role-Based Access Control (RBAC)
+review :how-to:`Permissions Matrix for Role-Based Access Control (RBAC) \
 <permissions-matrix-for-role-based-access-control-rbac>`.

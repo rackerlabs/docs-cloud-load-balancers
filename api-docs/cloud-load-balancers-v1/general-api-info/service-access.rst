@@ -51,11 +51,11 @@ the ``publicURL`` field for  ``cloudDatabases``:
 ``https://dfw.databases.api.rackspacecloud.com/v1.0/110011``.
 
 **If load balancing Cloud Servers**, you can determine the appropriate region to
-**select  by viewing your Cloud Servers list and creating a load balancer within
-**the same region as the datacenter in which your Cloud Server resides. When
-**your resources reside in the same region as your load balancer, devices are in
-**close proximity to each other and can take advantage of ServiceNet
-**connectivity for free data transfer between services.
+select  by viewing your Cloud Servers list and creating a load balancer within
+the same region as the datacenter in which your Cloud Server resides. When
+your resources reside in the same region as your load balancer, devices are in
+close proximity to each other and can take advantage of ServiceNet
+connectivity for free data transfer between services.
 
 .. note::
 
@@ -65,6 +65,6 @@ the ``publicURL`` field for  ``cloudDatabases``:
    internal IP address so that traffic over the ServiceNet network is not
    billed.
 
-**If load balancing external servers**, you can determine the appropriate region
-**to select by choosing the region that is geographically as close to your
-**external servers as possible.
+If load balancing external servers**, you can determine the appropriate region
+to select by choosing the region that is geographically as close to your
+external servers as possible.
