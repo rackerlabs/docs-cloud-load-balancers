@@ -1,20 +1,18 @@
 .. _behavior:
 
-======================================
-API Behavior, Errors, & Suggestions
-======================================
+API behavior and statuses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _clb-dg-behavior-api:
+The Load Balancer API is considered to be asynchronous because mutable
+operations (that is, POST, PUT, and DELETE) are often queued up and then
+handled accordingly. All successful asynchronous API operations have a
+normal response code of 202.
 
-API Behavior
-~~~~~~~~~~~~
+The load balancer status attribute is closely linked to mutable operations like
+GET requests because it is updated depending on the operation or the state of
+the load balancer. The following table lists the possible load balancer statuses.
 
-The LBaaS API is considered to be asynchronous because mutable operations (that is, POST/PUT/DELETE) are often queued up and then handled accordingly. All successful asynchronous API operations have a normal response code of 202. The load balancer status attribute is closely linked to mutable operations as it is updated depending on the operation and/or state of the load balancer. Please see the table below for a list of possible load balancer statuses. Please note that any load balancer can have at most one operation requested at a time. Thus, issuing parallel mutable requests per load balancer is not allowed and only one of the requests will be accepted should concurrent mutable requests be issued. Issuing concurrent non-mutable requests (that is, GET) is allowed.
-
-.. _clb-dg-behavior-api-status:
-
-Load Balancer Statuses
-----------------------
+**Table: Load balancer status values**
 
 +----------------+----------------------------------------------------+
 | Name           | Description                                        |
@@ -37,14 +35,20 @@ Load Balancer Statuses
 .. _clb-dg-behavior-api-errors:
 
 API Errors
-~~~~~~~~~~~
+^^^^^^^^^^^^
 
-Error responses contain a body with the validation error, code, and specific message related to the error. Use this information to diagnose what went wrong during the API operation.
+Error responses contain a body with the validation error, code, and specific
+message related to the error. Use this information to diagnose what went
+wrong during the API operation.
 
 
 .. _clb-dg-behavior-suggestions:
 
 Suggestions
-~~~~~~~~~~~
+^^^^^^^^^^^^^
 
-The most common issue an API user will come across is determining when a mutable action is complete. It is suggested that the API user poll the load balancer details (once per 5-10 seconds is recommended) in order to determine if the load balancer has changed back to an ACTIVE status. Once the load balancer is back in the ACTIVE status, another mutable operation can be accepted.
+The most common issue an API user will come across is determining when a
+mutable action is complete. It is suggested that the API user poll the load
+balancer details (once per 5-10 seconds is recommended) in order to determine
+if the load balancer has changed back to an ACTIVE status. Once the load
+balancer is back in the ACTIVE status, another mutable operation can be accepted.
