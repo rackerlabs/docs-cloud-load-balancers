@@ -7,6 +7,9 @@ Release notes
 Learn about new features, enhancements, known issues, resolved issues, and
 other important details about |apiservice| |version| service updates.
 
+.. toctree::
+   :maxdepth: 1
+
 .. note::
 
    For information about using the API, see the
