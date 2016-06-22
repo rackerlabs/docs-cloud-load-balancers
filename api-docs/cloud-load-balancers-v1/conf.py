@@ -86,7 +86,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 exclude_patterns = ['_build','samples','api-reference/methods/*','common-gs',
-                    'getting-started/examples/*','release-notes/*']
+                    'getting-started/examples/*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
