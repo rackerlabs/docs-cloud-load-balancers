@@ -15,19 +15,19 @@ following configuration:
 
 -  ``description`` is ``simple lb``.
 
--  ``vip_subnet_id`` is the UUID of the 
+-  ``vip_subnet_id`` is the UUID of the
    subnet on which to allocate the virtual IP (VIP)
    address. This parameter is the ID of a subnet returned from
-   querying neutron's subnets by using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``. Remember to replace 
+   querying neutron's subnets by using the endpoint ``https://iad.networks.api.rackspacecloud.com/v2.0/subnets?shared=True``. Remember to replace
    ``your_vip_subnet_id`` in the example with the actual value.
 
--  ``admin_state_up`` is ``true``. 
+-  ``admin_state_up`` is ``true``.
 
 The following example shows the cURL request for creating a load balancer.
 
 **Example: cURL command for creating a load balancer with a JSON body**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -35,7 +35,7 @@ The following example shows the cURL request for creating a load balancer.
             "name": "loadbalancer1",
             "description": "simple lb",
             "vip_subnet_id": "your_vip_subnet_id",
-            "admin_state_up": true    
+            "admin_state_up": true
          }
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
@@ -49,7 +49,7 @@ The following example shows the response for creating a load balancer.
 
 **Example: Create load balancer response in JSON**
 
-.. code::  
+.. code::
 
     {
       "loadbalancer": {
@@ -57,7 +57,7 @@ The following example shows the response for creating a load balancer.
         "description": "simple lb",
         "id": "a36c20d0-18e9-42ce-88fd-82a35977ee8c",
         "listeners": [
-          
+
         ],
         "name": "loadbalancer1",
         "operating_status": "ONLINE",
@@ -68,6 +68,5 @@ The following example shows the response for creating a load balancer.
       }
     }
 
-You need the load balancer ID (in this example, ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``) to :ref:`show load balancer details <show-load-balancer-details>`, and you should supply this ID wherever you see 
+You need the load balancer ID (in this example, ``a36c20d0-18e9-42ce-88fd-82a35977ee8c``) to :ref:`show load balancer details <get-lb-details>`, and you should supply this ID wherever you see 
 ``load_balancer_id`` in the examples in this guide.
-

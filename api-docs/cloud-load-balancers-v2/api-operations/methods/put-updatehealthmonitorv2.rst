@@ -9,7 +9,6 @@ Update a health monitor
 
 
 
-
 This operation enables you to change one or more of the following health monitor
 attributes:
 
@@ -132,7 +131,6 @@ The following table shows the body parameters for the request.
 
 Response
 """"""""""""""""
-
 
 
 The following table shows the body parameters for the response.

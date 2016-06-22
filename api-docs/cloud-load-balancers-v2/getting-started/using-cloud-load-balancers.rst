@@ -18,10 +18,11 @@ API workflow, messaging patterns, and use cases.
 
 .. include:: examples/create-cloud-servers-to-lb.rst
 .. include:: examples/create-load-balancer.rst
-.. include:: examples/list-load-balancer-details.rst
+.. include:: examples/get-lb-details.rst
 .. include:: examples/create-listener.rst
 .. include:: examples/create-pool.rst
 .. include:: examples/add-pool-member.rst
-.. include:: examples/create-health-monitor.rst
+.. include:: examples/create-healthmonitor.rst
+
 
 
