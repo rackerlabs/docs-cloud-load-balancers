@@ -81,7 +81,6 @@ Request
 """"""""""""""""
 
 
-
 The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
@@ -113,7 +112,6 @@ The following table shows the body parameters for the request.
 
 
 
-
 **Example: Add a member to a pool JSON request**
 
 .. code::
@@ -130,7 +128,6 @@ The following table shows the body parameters for the request.
 
 Response
 """"""""""""""""
-
 
 
 The following table shows the body parameters for the response.

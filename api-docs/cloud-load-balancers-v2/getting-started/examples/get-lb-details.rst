@@ -1,4 +1,4 @@
-.. _show-load-balancer-details:
+.. _get-lb-details:
 
 ==============================
 Showing load balancer details

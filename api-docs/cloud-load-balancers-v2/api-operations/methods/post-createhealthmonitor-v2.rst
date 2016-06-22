@@ -1,7 +1,7 @@
-.. _create-health-monitor-v2:
+.. _create-health-monitorv2:
 
 Create health monitor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 

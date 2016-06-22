@@ -1,7 +1,7 @@
-.. _get-show-load-balancers-v2:
+.. _show-load-balancersv2:
 
 Show load balancer details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 

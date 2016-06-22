@@ -9,7 +9,6 @@ Update a health monitor
 
 
 
-
 This operation enables you to change one or more of the following health monitor
 attributes:
 
@@ -77,7 +76,6 @@ The following table shows the URI parameters for the request.
 +-------------------+------------+--------------------------------------------------------------+
 
 
-
 The following table shows the body parameters for the request.
 
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
@@ -113,7 +111,6 @@ The following table shows the body parameters for the request.
 |(*Required*)      |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-
 **Example: Update a health monitor JSON request**
 
 .. code::
@@ -132,8 +129,6 @@ The following table shows the body parameters for the request.
 
 Response
 """"""""""""""""
-
-
 
 The following table shows the body parameters for the response.
 

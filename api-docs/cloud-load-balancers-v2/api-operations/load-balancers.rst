@@ -46,7 +46,7 @@ service. The following table describes the possible statuses.
 
 .. include:: methods/get-listloadbalancersv2.rst
 .. include:: methods/post-createloadbalancerv2.rst
-.. include:: methods/get-showloadbalancerv2.rst
+.. include:: methods/get-showloadbalancer-v2.rst
 .. include:: methods/put-updateloadbalancerv2.rst
 .. include:: methods/delete-deleteloadbalancerv2.rst
 

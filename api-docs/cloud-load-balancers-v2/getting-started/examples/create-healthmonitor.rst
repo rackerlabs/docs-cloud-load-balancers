@@ -1,4 +1,4 @@
-.. _create-health-monitor:
+.. _create-healthmonitor:
 
 =========================
 Creating a health monitor

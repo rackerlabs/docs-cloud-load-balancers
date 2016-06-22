@@ -1,6 +1,6 @@
-.. version-v2.xx.xx-release-notes:
+.. version-v2.00.00-release-notes:
 
-API |contract version| EA release, Mon DD, 2016
+API |contract version| EA release, July 12, 2016
 ---------------------------------------------------
 
 What's new
