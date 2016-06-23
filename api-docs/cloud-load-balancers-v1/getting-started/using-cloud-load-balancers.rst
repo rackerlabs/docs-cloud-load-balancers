@@ -4,9 +4,15 @@ Create and manage Cloud Load Balancers
 ----------------------------------------
 
 You can use the examples in the following sections to create and manage load balancers
-by using Cloud Load Balancers API operations. Before running the examples,
-review the :ref:`Cloud Load Balancers concepts<concepts>` to understand the
-API workflow, messaging patterns, and use cases.
+by using Cloud Load Balancers API operations. 
+
+.. contents:: 
+   :local: 
+   :depth: 1
+
+
+Before running the examples, review the :ref:`Cloud Load Balancers concepts<concepts>` to
+understand the API workflow, messaging patterns, and use cases.
 
 .. note::
      These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and ``$TENANT_ID`` environment
