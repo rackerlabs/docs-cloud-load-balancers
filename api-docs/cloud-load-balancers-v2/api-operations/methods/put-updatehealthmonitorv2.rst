@@ -108,8 +108,10 @@ The following table shows the body parameters for the request.
 |                  |           |             | established before it times out. This value must be less than the ``delay`` value. |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
-|(*Required*)      |           |             | A valid value is a string that begins with a forward slash (/).                    |
+| (*Required*)     |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
+
+
 
 **Example: Update a health monitor JSON request**
 
