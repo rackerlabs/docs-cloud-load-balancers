@@ -1,6 +1,6 @@
 .. version-v1.25.26-release-notes:
 
-API |contract version| updates, June 28, 2016
+API |contract version| updates, June 29, 2016
 ---------------------------------------------------
 
 What's new
