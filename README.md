@@ -4,10 +4,9 @@
 
 This repository contains the source files that generate the following Cloud Load Balancers API documentation: 
 
-* [Getting Started](https://developer.rackspace.com/docs/cloud-load-balancers/v1/developer-guide/#getting-started)
-* [Developer Guide](https://developer.rackspace.com/docs/cloud-load-balancers/v1/developer-guide/#developer-guide)
-* [API Reference](https://developer.rackspace.com/docs/cloud-load-balancers/v1/developer-guide/#api-reference)
-* [Release Notes](https://developer.rackspace.com/docs/cloud-load-balancers/v1/developer-guide/#release-notes)
+* [Getting Started](https://developer.rackspace.com/docs/cloud-load-balancers/v1/getting-started)
+* [API Reference](https://developer.rackspace.com/docs/cloud-load-balancers/v1/api-reference)
+* [Release Notes](https://developer.rackspace.com/docs/cloud-load-balancers/v1/release-notes)
 
 When you commit changes to the master branch of this repository, the 
 [Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-load-balancers/) 
