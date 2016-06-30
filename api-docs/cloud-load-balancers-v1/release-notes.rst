@@ -12,6 +12,7 @@ resolved issues, and other important details about |apiservice| |version| servic
 
 .. note:: For information about using the API, see the :ref:`documentation overview <index>`.
 
+.. include:: release-notes/clbs-v1-20160629.rst
 .. include:: release-notes/clbs-v1-25-26-20160205.rst
 .. include:: release-notes/clbs-v1-23-7-20141007.rst
 .. include:: release-notes/clbs-v1-22-10-20140801.rst
