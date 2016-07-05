@@ -12,8 +12,8 @@ Updates the configuration for a specified node on a specified load balancer.
 
 .. note::
    The node's IP, port, and status are immutable attributes and cannot be modified with a ``PUT`` request. Supplying an unsupported attribute results in a 400 (badRequest) fault. A load balancer supports a maximum of 25 nodes; the maximum weight of a node is 100.
-   
-   
+
+
 
 Suppose you want to add nodes to the load balancer before the services on those nodes are ready to serve traffic. As of right now, the default status for added nodes is ``ONLINE``. To get the nodes added without having them serve traffic, you can add a node with a ``DRAINING`` condition, which will prevent traffic from going to the node, but still allow the health monitor to perform checks. Once the backend node is ready to serve traffic, you can change the condition to ``ENABLED``.
 
@@ -94,8 +94,6 @@ The following table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
-
 
 
 
@@ -128,7 +126,3 @@ Response
 
 
 This operation does not return a response body.
-
-
-
-
