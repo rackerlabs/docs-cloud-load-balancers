@@ -13,7 +13,7 @@ linux-based operating system, copy each example directly to the command line or 
 
    If you are on Microsoft Windows®, you need to make adjustments to the cURL examples in
    order to run them. See
-   :ref:`Convert cURL examples to run on Windows :ref:`<convert-cURL-examples-for-windows>`
+   :ref:`Convert cURL examples to run on Windows<convert-cURL-examples-for-windows>`.
 
 
 .. _auth-curl-json:
@@ -124,11 +124,9 @@ If you do not want to pretty-print JSON output, omit this code.
    the API service will return an error.
 
 
-.. _json encoder and decoder: http://docs.python.org/2/library/json.html
-.. _simplejson encoder and decoder: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
+.. _JSON encoder and decoder: http://docs.python.org/2/library/json.html
+.. _simplejson encoder and decoder: https://simplejson.readthedocs.io/en/latest/
 
-.. _json.tool: http://docs.python.org/2/library/json.html
-.. _simplejson.tool: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
 
 
 .. _convert-cURL-examples-for-windows:
