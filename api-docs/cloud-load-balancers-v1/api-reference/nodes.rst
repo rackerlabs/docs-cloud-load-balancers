@@ -36,21 +36,21 @@ health monitors.
     is updated by the load balancing service based on whether or not the
     node *can* service requests.
 
-  Table. Load balancer node conditions
+Table. Load balancer node conditions
 
-  +--------------+---------------------------------------------------------------------+
-  | Name         | Description                                                         |
-  +==============+=====================================================================+
-  | ``ENABLED``  | Node is permitted to accept new connections.                        |
-  +--------------+---------------------------------------------------------------------+
-  | ``DISABLED`` | Node is not permitted to accept any new connections regardless      |
-  |              | of session persistence configuration. Existing connections are      |
-  |              | forcibly terminated.                                                |
-  +--------------+---------------------------------------------------------------------+
-  | ``DRAINING`` | Node is allowed to service existing established connections and     |
-  |              | connections that are being directed to it as a result of the        |
-  |              | session persistence configuration.                                  |
-  +--------------+---------------------------------------------------------------------+
++--------------+---------------------------------------------------------------------+
+| Name         | Description                                                         |
++==============+=====================================================================+
+| ``ENABLED``  | Node is permitted to accept new connections.                        |
++--------------+---------------------------------------------------------------------+
+| ``DISABLED`` | Node is not permitted to accept any new connections regardless      |
+|              | of session persistence configuration. Existing connections are      |
+|              | forcibly terminated.                                                |
++--------------+---------------------------------------------------------------------+
+| ``DRAINING`` | Node is allowed to service existing established connections and     |
+|              | connections that are being directed to it as a result of the        |
+|              | session persistence configuration.                                  |
++--------------+---------------------------------------------------------------------+
 
 A load balancer can have an associated algorithm. If the
 ``WEIGHTED_ROUND_ROBIN`` load balancer algorithm is selected, then the caller
