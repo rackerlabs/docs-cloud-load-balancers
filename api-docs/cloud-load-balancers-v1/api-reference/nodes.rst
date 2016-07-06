@@ -12,11 +12,11 @@ time of addition and at regular intervals as defined by the load
 balancer health check configuration. If a back-end node is not listening
 on its port or does not meet the conditions of the defined active health
 check for the load balancer, then the load balancer does not forward
-connections and its status is listed as ``OFFLINE``. Only nodes that are
-in an ``ONLINE`` status receive and can service traffic from the load
+connections and its ``status`` is listed as ``OFFLINE``. Only nodes with a
+``status`` of ``ONLINE`` can receive and service traffic from the load
 balancer.
 
-All nodes have an associated condition that indicates whether the node
+All nodes have an associated ``condition`` that indicates whether the node
 is ``ENABLED``, ``DISABLED``, or ``DRAINING``. Nodes that are in
 an ``ENABLED`` condition receive and can service traffic from the load balancer.
 The ``DISABLED`` condition represents a node that cannot
@@ -30,22 +30,42 @@ health monitors.
 
 ..  note::
 
-  Do not confuse the condition of a node with its status. The
-  ``condition`` attribute is mutable and gives the user control on how to
-  manage requests to the node. The ``status`` attribute is immutable and
-  is updated by the load balancing service based on whether or not the
-  node *can* service requests.
+    Do not confuse the condition of a node with its status. The
+    ``condition`` attribute is mutable and gives the user control on how to
+    manage requests to the node. The ``status`` attribute is immutable and
+    is updated by the load balancing service based on whether or not the
+    node *can* service requests.
 
-If the ``WEIGHTED_ROUND_ROBIN`` load balancer algorithm mode is
-selected, then the caller should assign the relevant weights to the node
-as part of the weight attribute of the node element. When the algorithm
-of the load balancer is changed to ``WEIGHTED_ROUND_ROBIN`` and the
-nodes do not already have an assigned weight, the service automatically
-sets the weight to ``1`` for all nodes.
+  Table. Load balancer node conditions
+
+  +--------------+---------------------------------------------------------------------+
+  | Name         | Description                                                         |
+  +==============+=====================================================================+
+  | ``ENABLED``  | Node is permitted to accept new connections.                        |
+  +--------------+---------------------------------------------------------------------+
+  | ``DISABLED`` | Node is not permitted to accept any new connections regardless      |
+  |              | of session persistence configuration. Existing connections are      |
+  |              | forcibly terminated.                                                |
+  +--------------+---------------------------------------------------------------------+
+  | ``DRAINING`` | Node is allowed to service existing established connections and     |
+  |              | connections that are being directed to it as a result of the        |
+  |              | session persistence configuration.                                  |
+  +--------------+---------------------------------------------------------------------+
+
+A load balancer can have an associated algorithm. If the
+``WEIGHTED_ROUND_ROBIN`` load balancer algorithm is selected, then the caller
+should assign the relevant weights to the node as part of the weight attribute
+of the node element. When the algorithm of the load balancer is changed to
+``WEIGHTED_ROUND_ROBIN`` and the nodes do not already have an assigned weight,
+the service automatically sets the weight to ``1`` for all nodes. If the
+``WEIGHTED_LEAST_CONNECTIONS`` load balancer algorithm is selected, each
+request is assigned to a node based on the number of concurrent connections
+to the node and its weight. For additional information about the load balancer
+algorithms, see :ref:`Algorithms <algorithms>`.
 
 One or more secondary nodes can be added to a specified load balancer so
 that if all the primary nodes fail, traffic can be redirected to
-secondary nodes. The type attribute allows configuring the node as
+secondary nodes. The ``type`` attribute allows configuring the node as
 either ``PRIMARY`` or ``SECONDARY``.
 
 ..  note::
@@ -57,9 +77,13 @@ either ``PRIMARY`` or ``SECONDARY``.
 Every node in the load balancer has an associated condition which
 determines its role within the load balancer.
 
-The following table lists the required and optional attributes:
+The following table lists the optional attributes.
 
-Table. Required and optional attributes
+..  note::
+       *At least one* of the optional attributes is required for the
+       :ref:`Update nodes request <put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid>`.
+
+Table. Optional attributes
 
 +-----------+---------------------------------------------------------------+----------+
 | Name      | Description                                                   | Required |
@@ -86,26 +110,6 @@ Table. Required and optional attributes
 |           |  assign the relevant weight to the node using the weight      |          |
 |           |  attribute for the node. Must be an integer from 1 to 100.    |          |
 +-----------+---------------------------------------------------------------+----------+
-
-..  note::
-       *At least one* of the optional attributes is required for the Modify
-       Nodes request.
-
-Table. Load balancer node conditions
-
-+--------------+---------------------------------------------------------------------+
-| Name         | Description                                                         |
-+==============+=====================================================================+
-| ``ENABLED``  | Node is permitted to accept new connections.                        |
-+--------------+---------------------------------------------------------------------+
-| ``DISABLED`` | Node is not permitted to accept any new connections regardless      |
-|              | of session persistence configuration. Existing connections are      |
-|              | forcibly terminated.                                                |
-+--------------+---------------------------------------------------------------------+
-| ``DRAINING`` | Node is allowed to service existing established connections and     |
-|              | connections that are being directed to it as a result of the        |
-|              | session persistence configuration.                                  |
-+--------------+---------------------------------------------------------------------+
 
 
 .. include:: methods/get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
