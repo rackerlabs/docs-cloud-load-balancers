@@ -105,17 +105,17 @@ The following table shows the body parameters for the ``node`` object for the
 request.
 
 ..  note::
-       *At least one* of the attributes is required.
+    *At least one* of the optional parameters listed in the table is required.
 
 +------------------+-------------+--------------------------------------------+
 | **Parameter**    | Type        | Description                                |
 +==================+=============+============================================+
 | **condition**    | String      | Indicates if the node is ``ENABLED``,      |
-|                  |             | ``DISABLED``, or ``DRAINING``. For more    |
+| (*Optional*)     |             | ``DISABLED``, or ``DRAINING``. For more    |
 |                  |             | information, see :ref:`Nodes <nodes>`.     |
 +------------------+-------------+--------------------------------------------+
 | **weight**       | Integer     | Indicates the ``weight`` for the node.     |
-|                  |             | You can specify ``weight`` or change       |
+| (*Optional*)     |             | You can specify ``weight`` or change       |
 |                  |             | ``weight`` for an existing node even when  |
 |                  |             | the load balancer is not using a weighted  |
 |                  |             | algorithm (WEIGHTED_LEAST_CONNECTIONS or   |
@@ -126,7 +126,9 @@ request.
 |                  |             | algorithm, the weight is used. For more    |
 |                  |             | information, see :ref:`Nodes <nodes>`.     |
 +------------------+-------------+--------------------------------------------+
-
+| **type**         | String      | The node type. For more information, see   |
+| (*Optional*)     |             | :ref:`Nodes <nodes>`.                      |
++------------------+-------------+--------------------------------------------+
 
 
 
