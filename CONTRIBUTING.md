@@ -92,4 +92,4 @@ When you submit a pull request, the Strider build process creates a preview of y
 After the build process completes, the following message displays in the pull request comments with a link to the content: ``Your content preview is now ready.``
 
 You can also build the project locally using the [Sphinx documentation generator](http://sphinx-doc.org/). For details, see 
-[Building from source](https://github.com/rackerlabs/docs-rackspace/blob/master/tools/build-from-source.rst).
+[Building from source](https://github.com/rackerlabs/docs-rackspace/blob/master/doc/tools/build-from-source.rst).
