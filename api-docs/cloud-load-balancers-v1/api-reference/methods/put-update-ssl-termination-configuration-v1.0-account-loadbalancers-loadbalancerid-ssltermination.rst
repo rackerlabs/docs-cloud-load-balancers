@@ -629,7 +629,7 @@ The following table shows the body parameters for the request:
     </sslTermination>
 
 
-***Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an Existing SSL Termination Configuration Request: JSON**
+**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an Existing SSL Termination Configuration Request: JSON**
 
 
 .. code::
