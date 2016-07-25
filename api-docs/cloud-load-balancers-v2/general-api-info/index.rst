@@ -8,17 +8,18 @@ The information in this section is relevant to all operations of the API. For de
 
 The Rackspace Cloud Load Balancers API is implemented using a RESTful web service interface. Like other Rackspace Cloud services, the Load Balancers service shares a common token-based authentication system that allows seamless access between products and services.
 
-.. note:: 
+.. note::
     All requests to authenticate and operate the service are performed using HTTPS on TCP port 443.
-    
+
 .. toctree:: :hidden:
    :maxdepth: 3
-    
-   authentication            
-   service-access            
-   request-response                                              
-   limits                       
-   date-time-format            
-   api-behavior            
-   listener-protocols            
-   role-based-access-control                
+
+   authentication
+   service-access
+   request-response
+   limits
+   response-codes
+   date-time-format
+   api-behavior
+   listener-protocols
+   role-based-access-control
