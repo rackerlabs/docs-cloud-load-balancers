@@ -7,10 +7,9 @@ Faults
 .. COMMENT: Adapt this topic to provide information that is relevant for
    your product.
 
-API operations that return an error return one of the fault objects described
-in this section.  All fault objects extend from the base fault,
-``serviceFault``, for easier exception handling  for languages that support
-it.
+API operations that return an error return one of the fault objects described in
+this section.  All fault objects extend from the base fault, ``serviceFault``,
+for easier exception handling  for languages that support it.
 
 .. _faults-service:
 
@@ -20,10 +19,10 @@ serviceFault
 The ``serviceFault``, and by extension all other faults, includes ``message``
 and ``details``  elements that contain strings that describe the nature of the
 fault. It also contain a ``code``  attribute that represents the HTTP response
-code. The ``code`` attribute of the fault is for  the convenience of the
-caller, who can retrieve the response code from the HTTP response headers  or
-directly from the fault object. Note that the ``serviceFault`` is not returned
-directly; instead  one of the faults based on it is returned.
+code. The ``code`` attribute of the fault is for  the convenience of the caller,
+who can retrieve the response code from the HTTP response headers  or directly
+from the fault object. Note that the ``serviceFault`` is not returned directly;
+instead  one of the faults based on it is returned.
 
 .. _faults-badrequest:
 
@@ -178,12 +177,12 @@ formed.
 .. note::
     The Cloud Load Balancing API is considered asynchronous, which is why there
     is a ``status`` attribute on the load balancer. The API does not allow
-    concurrent modifications on a single load balancer instance. If a
-    concurrent modification is attempted, the ``unprocessableEntity`` fault is
-    returned in the response. If you are using the API programmatically, we
-    recommend that you issue a GET request to show load balancer details on the
-    load balancer instance to verify that the status is ``ACTIVE`` before
-    continuing any other modifications.
+    concurrent modifications on a single load balancer instance. If a concurrent
+    modification is attempted, the ``unprocessableEntity`` fault is returned in
+    the response. If you are using the API programmatically, we recommend that
+    you issue a GET request to show load balancer details on the load balancer
+    instance to verify that the status is ``ACTIVE`` before continuing any
+    other modifications.
 
 **Example: unprocessableEntity fault response**
 
