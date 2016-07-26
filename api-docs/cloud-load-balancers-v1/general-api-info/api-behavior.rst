@@ -1,4 +1,4 @@
-.. _behavior:
+.. _behavior-api:
 
 =========================
 API behavior and statuses
@@ -7,7 +7,6 @@ API behavior and statuses
 .. COMMENT: Adapt this topic to provide information that is relevant for your
    product.
 
-.. _clb-dg-behavior-api:
 
 The Load Balancer API is considered to be asynchronous because mutable
 operations (that is, POST, PUT, and DELETE) are often queued up and then handled
@@ -18,7 +17,8 @@ The load balancer ``status`` attribute is closely linked to mutable operations
 because it is updated depending on the operation or the state of the load
 balancer. The following table lists the possible load balancer statuses.
 
-.. _clb-dg-behavior-api-status:
+
+.. _behavior-api-status:
 
 .. list-table:: **Load balancer statuses**
    :widths: 20 50
