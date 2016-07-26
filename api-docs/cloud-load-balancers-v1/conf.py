@@ -181,7 +181,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Rackspace Cloud Load Balancers version 1.0 API Developer Guide'
+html_title = 'Rackspace Cloud Load Balancer API Documentation'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title = 'Rackspace Cloud Load Balancers'
@@ -287,7 +287,7 @@ htmlhelp_basename = 'docs-cloud-load-balancersdoc'
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'docs-cloud-load-balancers.tex',
-   'Rackspace Cloud Load Balancers API Developer Guide',
+   'Rackspace Cloud Load Balancers API documentation',
    'Rackspace', 'manual'),
 ]
 
@@ -317,7 +317,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'API Developer Guide', 'Rackspace developer documentation',
+    (master_doc, 'Rackspace Cloud Load Balancer API Documentation', 'Rackspace developer documentation',
      'Rackspace', 1)
 ]
 
