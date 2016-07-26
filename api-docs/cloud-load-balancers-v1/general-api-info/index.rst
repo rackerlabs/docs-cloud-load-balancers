@@ -10,7 +10,7 @@ For details about specific operations, see the
 
 The Rackspace Cloud Load Balancers API is implemented using a RESTful web
 service interface. Like other Rackspace Cloud services, the Load Balancers
-service shares a common token-based authentication system that allows seamless'
+service shares a common token-based authentication system that allows seamless
 access between products and services.
 
 
