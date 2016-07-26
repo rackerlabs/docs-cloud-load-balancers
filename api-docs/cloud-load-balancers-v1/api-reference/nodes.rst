@@ -1,7 +1,8 @@
 .. _nodes:
 
+=====
 Nodes
------------
+=====
 
 
 The nodes defined by the load balancer are responsible for
@@ -81,7 +82,7 @@ The following table lists the optional attributes.
 
 ..  note::
        *At least one* of the optional attributes is required for the
-       :ref:`Update nodes request <put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid>`.
+       :ref:`Update nodes request <put-update-node>`.
 
 Table. Optional attributes
 

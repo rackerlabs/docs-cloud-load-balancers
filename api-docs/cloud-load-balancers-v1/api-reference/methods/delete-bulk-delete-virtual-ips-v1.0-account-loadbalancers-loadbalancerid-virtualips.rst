@@ -1,8 +1,7 @@
-
-.. _delete-bulk-delete-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips:
+.. _delete-bulk-delete-virtual-ips:
 
 Bulk-delete virtual IPs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -11,14 +10,20 @@ Bulk-delete virtual IPs
 Bulk-deletes specified virtual IPs.
 
 .. note::
-   All load balancers must have at least one virtual IP associated with them at all times. Attempting to delete the last virtual IP results in a 400 (badRequest) fault. To bulk-delete virtual IPs, provide a query parameter list of virtual ip IDs. For example: /virtualips?id= ``virtualIpId`` & id= ``virtualIpId``. The current default limit is ten IDs per request. Any and all configuration data is immediately purged and is not recoverable. If one or more of the items in the list cannot be removed due to its current status, a 400 (badRequest) is returned along with the IDs of the ones the system identified as potential failures for this request.
-   
-   
 
+   All load balancers must have at least one virtual IP associated with them
+   at all times. Attempting to delete the last virtual IP results in a 400
+   (badRequest) fault. To bulk-delete virtual IPs, provide a query parameter
+   list of virtual ip IDs, for example:
+   ``/virtualips?=virtualIpId&id=virtualIpId``.
 
+   The current default limit is ten IDs per request. Any and all
+   configuration data is immediately purged and is not recoverable. If one or
+   more of the items in the list cannot be removed due to its current status,
+   a 400 (badRequest) is returned along with the IDs of the ones the system
+   identified as potential failures for this request.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,9 +69,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,8 +85,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
 The following table shows the query parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -92,17 +94,9 @@ The following table shows the query parameters for the request:
 |                          |                         |IP.                      |
 +--------------------------+-------------------------+-------------------------+
 
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
+--------
 
 This operation does not return a response body.
-
-
-
-

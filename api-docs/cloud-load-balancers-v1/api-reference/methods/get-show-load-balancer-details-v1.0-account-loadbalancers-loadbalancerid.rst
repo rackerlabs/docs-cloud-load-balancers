@@ -1,8 +1,7 @@
-
-.. _get-show-load-balancer-details-v1.0-account-loadbalancers-loadbalancerid:
+.. _get-show-load-balancer-details:
 
 Show load balancer details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,14 +9,16 @@ Show load balancer details
 
 Shows details for a specified load balancer.
 
-This operation provides detailed output for a specific load balancer configured and associated with your account. This operation is not capable of returning details for a load balancer which has been deleted.
-
-Notice in the following examples that API users are now able to programmatically derive the source IP addresses of our load balancers using the ``sourceAddresses`` label included at the bottom of the list load balancer details response. This feature is useful for customers who are automating the deployment of infrastructure and need to determine the IP addresses of requests coming from our load balancers for the purpose of creating more robust firewall rules.
-
-
-
-The following table shows the possible response codes for this operation:
-
+This operation provides detailed output for a specific load balancer configured
+and associated with your account. This operation is not capable of returning
+details for a load balancer which has been deleted. Notice in the following
+examples that API users are now able to programmatically derive the source IP
+addresses of our load balancers using the ``sourceAddresses`` label included at
+the bottom of the list load balancer details response. This feature is useful
+for customers who are automating the deployment of infrastructure and need to
+determine the IP addresses of requests coming from our load balancers for the
+purpose of creating more robust firewall rules. The following table shows the
+possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,13 +64,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
-
+-------
 The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -83,21 +79,10 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
+--------
 
 The following table shows the body parameters for the response:
 
@@ -199,14 +184,7 @@ The following table shows the body parameters for the response:
 |                          |                         |private IP addresses.    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
 **Example Show load balancer details: JSON response**
-
 
 .. code::
 
@@ -268,9 +246,7 @@ The following table shows the body parameters for the response:
         }
     }
 
-
 **Example Show load balancer details: XML response**
-
 
 .. code::
 
@@ -316,9 +292,7 @@ The following table shows the body parameters for the response:
         <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.28" ipv6Public="2001:4801:79f1:1::1/64"/>
     </loadBalancer>
 
-
 **Example Show atom load balancer details: ATOM/XML response**
-
 
 .. code::
 
@@ -345,4 +319,3 @@ The following table shows the body parameters for the response:
             <updated>2011-04-06T13:39:45.000Z</updated>
         </entry>
     </feed>
-

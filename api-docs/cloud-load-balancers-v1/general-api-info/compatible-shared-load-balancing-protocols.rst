@@ -4,10 +4,15 @@
 Compatible shared load balancing protocols
 ==========================================
 
-Load balancers utilizing shared Virtual IPs must select *unique* ports unless the load balancer protocols used are designed to work together on the same port. This section provides information on the-compatible load balancer protocols that are designed to share UDP and TCP based protocols on the same port.
+Load balancers utilizing shared Virtual IPs must select *unique* ports unless
+the load balancer protocols used are designed to work together on the same
+port. This section provides information on the-compatible load balancer
+protocols that are designed to share UDP and TCP based protocols on the same
+port.
 
 .. note::
-    Only a select set of protocols are allowed to share the same port across shared load balancers.
+    Only a select set of protocols are allowed to share the same port across
+    shared load balancers.
 
 See below for the descriptions of these protocols.
 
@@ -27,9 +32,13 @@ DNS-compatible load balancing protocols
 +--------------+-----------------------------------------------------------------------+
 
 .. note::
-    The TCP and UDP protocols listed above are compatible and good for load balancing DNS based applications. These cannot be combined with the TCP and UDP protocols listed  below.
+    The TCP and UDP protocols listed above are compatible and good for load
+    balancing DNS based applications. These cannot be combined with the TCP and
+    UDP protocols listed  below.
 
-The TCP and UDP protocols listed below are compatible for sharing TCP and UDP based protocols on the same port. These protocols can be interchanged to achieve the proper setup for the user's TCP/UDP based application.
+The TCP and UDP protocols listed below are compatible for sharing TCP and UDP
+based protocols on the same port. These protocols can be interchanged to
+achieve the proper setup for the user's TCP/UDP based application.
 
 .. _clb-dg-compatible-tcp:
 
@@ -65,4 +74,3 @@ UDP-compatible load balancing protocols
 |``UDP_STREAM``| This protocol is designed to stream media over networks and is built  |
 |              | on top of UDP.                                                        |
 +--------------+-----------------------------------------------------------------------+
-

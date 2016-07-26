@@ -1,8 +1,7 @@
-
-.. _put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
+.. _put-update-node:
 
 Update node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code::
 
@@ -16,8 +15,6 @@ Updates the configuration for a specified node on a specified load balancer.
    in a 400 (badRequest) fault. A load balancer supports a maximum of 25 nodes;
    the maximum weight of a node is 100.
 
-
-
 Suppose you want to add nodes to the load balancer before the services on those
 nodes are ready to serve traffic. As of right now, the default status for added
 nodes is ``ONLINE``. To get the nodes added without having them serve traffic,
@@ -29,10 +26,7 @@ to ``ENABLED``.
 Every node in the load balancer has an associated condition which determines
 its role within the load balancer.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -78,12 +72,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -100,12 +90,12 @@ The following table shows the URI parameters for the request:
 |{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
 
-
 The following table shows the body parameters for the ``node`` object for the
 request.
 
 ..  note::
-    *At least one* of the optional parameters listed in the table is required.
+
+    At least one* of the optional parameters listed in the table is required.
 
 +------------------+-------------+--------------------------------------------+
 | **Parameter**    | Type        | Description                                |
@@ -130,10 +120,7 @@ request.
 | (*Optional*)     |             | :ref:`Nodes <nodes>`.                      |
 +------------------+-------------+--------------------------------------------+
 
-
-
 **Example Update node: JSON request**
-
 
 .. code::
 
@@ -143,16 +130,13 @@ request.
         }
     }
 
-
 **Example Update node: XML request**
-
 
 .. code::
 
     <node xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" condition="ENABLED" weight="12"/>
 
-
 Response
-^^^^^^^^^^^^^
+--------
 
 This operation does not return a response body.

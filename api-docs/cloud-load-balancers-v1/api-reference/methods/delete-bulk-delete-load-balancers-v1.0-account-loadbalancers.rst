@@ -1,8 +1,8 @@
 
-.. _delete-bulk-delete-load-balancers-v1.0-account-loadbalancers:
+.. _delete-bulk-delete-load-balancers:
 
 Bulk-delete load balancers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -70,7 +70,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -99,6 +99,6 @@ This operation does not accept a request body.
 
 
 Response
-^^^^^^^^^^^^^
+--------
 
 This operation does not return a response body.

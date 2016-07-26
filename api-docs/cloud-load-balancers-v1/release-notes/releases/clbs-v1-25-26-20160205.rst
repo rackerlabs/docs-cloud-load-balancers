@@ -1,0 +1,22 @@
+.. version-v1.25.26-release-notes:
+
+v1.25.26, February 5, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+
+- Updates to provisioning algorithms to improve performance.
+- Relaxed TLS Certificate validation (expiration date and cert-chain ordering
+  are no longer validated).
+
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

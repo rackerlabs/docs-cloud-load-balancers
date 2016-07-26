@@ -1,8 +1,7 @@
-
-.. _put-create-or-update-connection-throttling-configuration-v1.0-account-loadbalancers-loadbalancerid-connectionthrottle:
+.. _put-create-or-update-connection-throttling-configuration:
 
 Create or update connection throttling configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,17 +9,17 @@ Create or update connection throttling configuration
 
 Creates or updates the throttling configuration.
 
-The connection throttling feature imposes limits on the number of connections per IP address to help mitigate malicious or abusive traffic to your applications. The attributes in the table that follows can be configured based on the traffic patterns for your sites. 
+The connection throttling feature imposes limits on the number of connections
+per IP address to help mitigate malicious or abusive traffic to your
+applications. The attributes in the table that follows can be configured based
+on the traffic patterns for your sites.
 
 .. note::
-   You must specify all attributes when initially creating the connection throttle. However, when you update an existing setting, you can pass as few as one attribute.
-   
-   
-
-
+   You must specify all attributes when initially creating the connection
+   throttle. However, when you update an existing setting, you can pass as
+   few as one attribute.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -66,12 +65,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -85,10 +80,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -126,12 +117,7 @@ The following table shows the body parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Create or update connection throttling configuration: JSON request**
-
 
 .. code::
 
@@ -144,23 +130,18 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Create or update connection throttling configuration: XML request**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <connectionThrottle xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         minConnections="10"
         maxConnections="100"
         maxConnectionRate="50"
         rateInterval="60" />
 
-
 **Example Create or update atom connection throttling configuration: ATOM/XML response**
-
 
 .. code::
 
@@ -183,17 +164,7 @@ The following table shows the body parameters for the request:
         </entry>
     </feed>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

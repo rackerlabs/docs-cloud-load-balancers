@@ -1,7 +1,8 @@
 .. _load-balancer-statistics:
 
+========================
 Load balancer statistics 
----------------------------
+========================
 
 
 Use the statistics API operations to get information about load balancer

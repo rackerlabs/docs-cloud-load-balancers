@@ -1,8 +1,7 @@
-
-.. _post-add-virtual-ip-version-6-v1.0-account-loadbalancers-loadbalancerid-virtualips:
+.. _post-add-virtual-ip-version-6:
 
 Add virtual IP version 6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Add virtual IP version 6
 
 Adds virtual IP version 6.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,17 +71,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Add virtual IP version 6: JSON request**
-
 
 .. code::
 
@@ -98,17 +82,13 @@ This operation does not accept a request body.
         "ipVersion":"IPV6"
     }
 
-
 **Example Add virtual IP version 6: XML request**
-
 
 .. code::
 
     <virtualIp xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" type="PUBLIC" ipVersion="IPV6" />
 
-
 **Example Add shared virtual IP version 6: JSON request**
-
 
 .. code::
 
@@ -116,29 +96,16 @@ This operation does not accept a request body.
         "id":9000137
     }
 
-
 **Example Add shared virtual IP version 6: XML request**
-
 
 .. code::
 
     <virtualIp xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="9000137" />
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Add virtual IP version 6: JSON response**
-
 
 .. code::
 
@@ -149,9 +116,7 @@ Response
         "ipVersion":"IPV6"
     }
 
-
 **Example Add virtual IP version 6: XML response**
-
 
 .. code::
 
@@ -161,9 +126,7 @@ Response
                ipVersion="IPV6"
                type="PUBLIC" />
 
-
 **Example Add shared virtual IP version 6: JSON response**
-
 
 .. code::
 
@@ -174,9 +137,7 @@ Response
         "ipVersion":"IPV6"
     }
 
-
 **Example Add shared virtual IP version 6: XML response**
-
 
 .. code::
 
@@ -185,4 +146,3 @@ Response
                address="fd24:f480:ce44:91bc:1af2:15ff:0000:0001"
                ipVersion="IPV6"
                type="PUBLIC" />
-

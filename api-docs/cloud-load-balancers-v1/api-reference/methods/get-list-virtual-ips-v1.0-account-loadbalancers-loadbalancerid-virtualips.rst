@@ -1,8 +1,7 @@
-
-.. _get-list-virtual-ips-v1.0-account-loadbalancers-loadbalancerid-virtualips:
+.. _get-list-virtual-ips:
 
 List virtual IPs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ List virtual IPs
 
 Lists virtual IPs that are associated with a specified load balancer.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,29 +71,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example List virtual IPs: JSON response**
-
 
 .. code::
 
@@ -114,9 +89,7 @@ Response
       ]
     }
 
-
 **Example List virtual IPs: XML response**
-
 
 .. code::
 
@@ -127,9 +100,7 @@ Response
             type="PUBLIC"/>
     </virtualIps>
 
-
 **Example List atom virtual IPs: ATOM/XML response**
-
 
 .. code::
 
@@ -151,4 +122,3 @@ Response
             <updated>2011-04-11T16:31:33.000Z</updated>
         </entry>
     </feed>
-

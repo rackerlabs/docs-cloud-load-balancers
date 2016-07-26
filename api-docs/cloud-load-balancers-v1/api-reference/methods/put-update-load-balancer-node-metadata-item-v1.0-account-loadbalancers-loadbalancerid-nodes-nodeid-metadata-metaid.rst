@@ -1,8 +1,7 @@
-
-.. _put-update-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid:
+.. _put-update-load-balancer-node-metadata-item:
 
 Update load balancer node metadata item
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -11,13 +10,13 @@ Update load balancer node metadata item
 Updates the configuration of a metadata item on the node.
 
 .. note::
-   The meta data item's id and key are immutable attributes and cannot be modified with a ``PUT`` request. Supplying an unsupported attribute results in a 400 (badRequest) fault. A load balancer and node support a maximum of 25 metadata items.
-   
 
-
+   The meta data item's id and key are immutable attributes and cannot be
+   modified with a ``PUT`` request. Supplying an unsupported attribute results
+   in a 400 (badRequest) fault. A load balancer and node support a maximum of
+   25 metadata items.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,12 +62,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -88,10 +83,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 The following table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -104,12 +95,7 @@ The following table shows the body parameters for the request:
 |                          |                         |valid.                   |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Update load balancer node metadata item: JSON request**
-
 
 .. code::
 
@@ -119,25 +105,13 @@ The following table shows the body parameters for the request:
       }
     }
 
-
 **Example Update load balancer node metadata item: XML request**
-
 
 .. code::
 
     <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">blue</meta>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

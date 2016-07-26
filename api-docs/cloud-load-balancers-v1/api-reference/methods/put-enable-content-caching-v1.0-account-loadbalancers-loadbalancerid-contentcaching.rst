@@ -1,8 +1,7 @@
-
-.. _put-enable-content-caching-v1.0-account-loadbalancers-loadbalancerid-contentcaching:
+.. _put-enable-content-caching:
 
 Enable content caching
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,16 +9,17 @@ Enable content caching
 
 Enables or disables content caching.
 
-This operation enables the user to view the current content caching configuration, enable content caching, or disable content caching.
-
-When content caching is enabled, recently-accessed files are stored on the load balancer for easy retrieval by web clients. Content caching improves the performance of high traffic web sites by temporarily storing data that was recently accessed. While it's cached, requests for that data are served by the load balancer, which in turn reduces load off the back end nodes. The result is improved response times for those requests and less load on the web server.
-
-For more information about content caching, see :how-to:`Content Caching for Cloud Load Balancers <content-caching-for-cloud-load-balancers>`.
-
-
-
-The following table shows the possible response codes for this operation:
-
+This operation enables the user to view the current content caching
+configuration, enable content caching, or disable content caching. When content
+caching is enabled, recently-accessed files are stored on the load balancer for
+easy retrieval by web clients. Content caching improves the performance of high
+traffic web sites by temporarily storing data that was recently accessed. While
+it's cached, requests for that data are served by the load balancer, which in
+turn reduces load off the back end nodes. The result is improved response times
+for those requests and less load on the web server. For more information about
+content caching, see :how-to:`Content Caching for Cloud Load Balancers
+<content-caching-for-cloud-load-balancers>`. The following table shows the
+possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +65,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -85,10 +81,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 The following table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -100,20 +92,13 @@ The following table shows the body parameters for the request:
 |                          |                         |content caching.         |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Enable content caching: XML request**
-
 
 .. code::
 
     <contentCaching xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true"/>
 
-
 **Example Enable content caching: JSON request**
-
 
 .. code::
 
@@ -123,17 +108,7 @@ The following table shows the body parameters for the request:
        }
     }
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

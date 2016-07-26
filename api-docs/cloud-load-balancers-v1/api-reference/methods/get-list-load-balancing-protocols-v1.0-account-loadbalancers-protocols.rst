@@ -1,8 +1,7 @@
-
-.. _get-list-load-balancing-protocols-v1.0-account-loadbalancers-protocols:
+.. _get-list-load-balancing-protocols:
 
 List load balancing protocols
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ List load balancing protocols
 
 Lists supported load balancing protocols.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -76,29 +68,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example List load balancing protocols: JSON response**
-
 
 .. code::
 
@@ -182,10 +157,7 @@ Response
         ]
     }
     
-
-
 **Example List load balancing protocols: XML response**
-
 
 .. code::
 
@@ -210,5 +182,3 @@ Response
         <protocol name="SFTP" port="22" />
         <protocol name="TCP_STREAM" port="0" />
     </protocols>
-    
-

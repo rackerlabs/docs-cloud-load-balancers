@@ -1,8 +1,7 @@
-
-.. _put-update-load-balancer-properties-v1.0-account-loadbalancers-loadbalancerid:
+.. _put-update-load-balancer-properties:
 
 Update load balancer properties
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,17 +9,19 @@ Update load balancer properties
 
 Updates the properties for a specified load balancer.
 
-This operation asynchronously updates the attributes for a specified load balancer. Upon successful validation of the request, the service returns a 202 (Accepted) response code. A caller can poll the load balancer with its ID to wait for the changes to be applied and the load balancer to return to an ``ACTIVE`` status.
+This operation asynchronously updates the attributes for a specified load
+balancer. Upon successful validation of the request, the service returns a 202
+(Accepted) response code. A caller can poll the load balancer with its ID to
+wait for the changes to be applied and the load balancer to return to an
+``ACTIVE`` status.
 
 .. note::
-   The load balancer's ID and status are immutable attributes and cannot be modified by the caller. Supplying an unsupported attribute results in a 400 (badRequest) fault.
-   
-   
 
-
+   The load balancer's ID and status are immutable attributes and cannot be
+   modified by the caller. Supplying an unsupported attribute results in a 400
+   (badRequest) fault.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -66,12 +67,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -85,10 +82,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -152,12 +145,7 @@ The following table shows the body parameters for the request:
 |                    |                   |balancer has been created.           |
 +--------------------+-------------------+-------------------------------------+
 
-
-
-
-
 **Example Update load balancer properties: JSON request**
-
 
 .. code::
 
@@ -171,9 +159,7 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Update load balancer properties: XML request**
-
 
 .. code::
 
@@ -185,17 +171,7 @@ The following table shows the body parameters for the request:
         timeout="60"
         httpsRedirect="true"/>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

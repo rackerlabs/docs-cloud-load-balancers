@@ -1,8 +1,7 @@
-
-.. _post-add-node-v1.0-account-loadbalancers-loadbalancerid-nodes:
+.. _post-add-node:
 
 Add node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
 
 .. code::
 
@@ -10,33 +9,31 @@ Add node
 
 Adds a node to a specified load balancer.
 
-When a node is added, it is assigned a unique ID that can be used for management operations
-such as changing the condition or removing it. Every load balancer is dual-homed on both
-the public Internet and ServiceNet. That is, you may add public or ServiceNet nodes.
-As a result, nodes can either be internal ServiceNet addresses or addresses on the
-public Internet. The Virtual IP (or Virtual IPs) of the load balancer, however, can only
-be either public or ServiceNet.
+When a node is added, it is assigned a unique ID that can be used for
+management operations such as changing the condition or removing it. Every load
+balancer is dual-homed on both the public Internet and ServiceNet. That is, you
+may add public or ServiceNet nodes. As a result, nodes can either be internal
+ServiceNet addresses or addresses on the public Internet. The Virtual IP (or
+Virtual IPs) of the load balancer, however, can only be either public or
+ServiceNet.
 
-One or more secondary nodes can be added to a specified load balancer so that if all the
-primary nodes fail, traffic can be redirected to secondary nodes. The type attribute
-enables configuring the node as either PRIMARY or SECONDARY.
+One or more secondary nodes can be added to a specified load balancer so that
+if all the primary nodes fail, traffic can be redirected to secondary nodes.
+The type attribute enables configuring the node as either PRIMARY or SECONDARY.
 
 Domain names are also accepted with certain restrictions. Refer to the
-:rax-devdocs:`List allowed domains <cloud-load-balancers/v1/developer-guide/#list-allowed-domains>`
-operation for information about how to list the allowed names.
-
-Suppose that you want to add nodes to the load balancer before the services on
-those nodes are ready to serve traffic. As of right now, the default status for
-added nodes is ``ONLINE``. The node's status is an immutable attribute, and
-only health monitoring can change this attribute. So in order to prevent
-traffic from going to the node, but still allowing the health monitor to
-perform checks, you can add a node with a ``DRAINING`` condition. Once the
-back-end node is ready to serve traffic, you can then change the condition to
-``ENABLED``.
-
+:rax-devdocs:`List allowed domains
+<cloud-load-balancers/v1/developer-guide/#list-allowed-domains>` operation for
+information about how to list the allowed names. Suppose that you want to add
+nodes to the load balancer before the services on those nodes are ready to
+serve traffic. As of right now, the default status for added nodes is
+``ONLINE``. The node's status is an immutable attribute, and only health
+monitoring can change this attribute. So in order to prevent traffic from going
+to the node, but still allowing the health monitor to perform checks, you can
+add a node with a ``DRAINING`` condition. Once the back-end node is ready to
+serve traffic, you can then change the condition to ``ENABLED``.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -82,9 +79,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -98,7 +94,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
 
 The following table shows the body parameters for the ``nodes`` object for the
 request:
@@ -129,7 +124,6 @@ request:
 | (*Optional*)     |             | :ref:`Nodes <nodes>`.                      |
 +------------------+-------------+--------------------------------------------+
 
-
 **Example Add node: JSON request**
 
 .. code::
@@ -157,7 +151,6 @@ request:
         ]
     }
 
-
 **Example Add node: XML request**
 
 .. code::
@@ -168,9 +161,8 @@ request:
         <node address="www.myrackspace.com" port="88" condition="ENABLED" type="SECONDARY" weight="10"/>
     </nodes>
 
-
 Response
-^^^^^^^^^^^^^
+--------
 
 **Example Add node: JSON response**
 
@@ -206,8 +198,7 @@ Response
         }
     ]
     }
-
-
+    
 **Example Add node: XML response**
 
 .. code::

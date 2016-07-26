@@ -1,18 +1,20 @@
 .. _behavior:
 
-======================================
+=========================
 API behavior and statuses
-======================================
+=========================
 
 .. _clb-dg-behavior-api:
 
 
-The Load Balancer API is considered to be asynchronous because mutable operations (that is,
-POST, PUT, and DELETE) are often queued up and then handled accordingly. All successful
-asynchronous API operations have a normal response code of 202.
+The Load Balancer API is considered to be asynchronous because mutable
+operations (that is, POST, PUT, and DELETE) are often queued up and then
+handled accordingly. All successful asynchronous API operations have a normal
+response code of 202.
 
-The load balancer ``status`` attribute is closely linked to mutable operations because it is updated depending
-on the operation or the state of the load balancer. The following table lists the possible load balancer statuses.
+The load balancer ``status`` attribute is closely linked to mutable operations
+because it is updated depending on the operation or the state of the load
+balancer. The following table lists the possible load balancer statuses.
 
 
 .. _clb-dg-behavior-api-status:
@@ -38,9 +40,9 @@ on the operation or the state of the load balancer. The following table lists th
     API to request details about a DELETED object, you will receive a 404 Not
     Found response.
 
-Any load balancer can have only one mutable operation requested at a time.
-If concurrent mutable requests are issued for a load balancer, only one of
-the requests is accepted. Issuing concurrent non-mutable requests (that is, GET)
+Any load balancer can have only one mutable operation requested at a time. If
+concurrent mutable requests are issued for a load balancer, only one of the
+requests is accepted. Issuing concurrent non-mutable requests (that is, GET)
 is allowed.
 
 .. _clb-dg-behavior-api-errors:
@@ -48,7 +50,7 @@ is allowed.
 .. _clb-dg-behavior-suggestions:
 
 
-To determine when a mutable operation is complete, poll the load balancer details
-once every 5-10 seconds to determine if the load balancer has changed back to an
-``ACTIVE`` status. After the load balancer is back in the ``ACTIVE`` status,
-another mutable operation can be accepted.
+To determine when a mutable operation is complete, poll the load balancer
+details once every 5-10 seconds to determine if the load balancer has changed
+back to an ``ACTIVE`` status. After the load balancer is back in the
+``ACTIVE`` status, another mutable operation can be accepted.

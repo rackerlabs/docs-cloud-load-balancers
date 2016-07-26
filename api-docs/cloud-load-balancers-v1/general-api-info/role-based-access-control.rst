@@ -1,31 +1,34 @@
 .. _role-based-access-control:
 
+.. COMMENT: Adapt this topic to provide information that is relevant for your
+   product.
+
+================================
 Role-based access control (RBAC)
------------------------------------
+================================
 
 Role-based access control (RBAC) restricts access to the capabilities of
-Rackspace Cloud services, including the Cloud Load Balancers API, to authorized
-users only. RBAC enables Rackspace Cloud customers to specify which account
-users of their Cloud account have access to which Cloud Load Balancers API
-service capabilities, based on roles defined by Rackspace (see :ref:`Cloud Load
-Balancers product roles and capabilities <clb-dg-api-info-rbac-available>`). The
-permissions to perform certain operations in Cloud Load Balancers API – create,
-read, update, delete  – are assigned to specific roles. The account owner user
+Rackspace Cloud services, including the |product name| API, to authorized
+users only. RBAC enables Rackspace Cloud customers to specify
+users have access to which |product name| API
+service capabilities, based on roles defined by Rackspace. The
+permissions to perform certain operations in |product name| API (create,
+read, update, delete) are assigned to specific roles. The account owner user
 assigns these roles, either global (multiproduct) or product-specific (for
-example Cloud Load Balancers), to account users.
+example, |product name|), to account users.
 
-.. _clb-dg-api-info-rbac-assign:
+.. _rbac-assign:
 
-Assign roles to account users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assigning roles to account users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner (identity:user-admin) can create account users on the account
 and then assign roles to those users. The roles grant the account users specific
-permissions for accessing the capabilities of the Cloud Load Balancers service.
+permissions for accessing the capabilities of the |product name| service.
 Each account has only one account owner, and that role is assigned by default to
 any Rackspace Cloud account when the account is created.
 
-See the *Cloud Identity Client Developer Guide* for information on how to
+See the Cloud Identity API guide for information about how to
 perform the following tasks:
 
 * :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`
@@ -42,82 +45,95 @@ perform the following tasks:
     additional roles because it already has full access to all capabilities.
 
 
-.. _clb-dg-api-info-rbac-available:
+.. _rbac-available-roles:
 
-Roles available for Cloud Load Balancers
+Roles available for |product name|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Three roles (observer, creator, and admin) can be used to access the
-Cloud Load Balancers API specifically. The following table describes
-these roles and their permissions.
+The following table describes the roles that can be used to access the
+|product name| API.
 
-**Cloud Load Balancers product roles and capabilities**
+.. list-table:: **Product roles and capabilities**
+   :widths: 20 50
+   :header-rows: 1
 
-+----------------+------------------------------------------------------------------+
-| Role name      | Role permissions                                                 |
-+================+==================================================================+
-| lbaas:admin    | This role provides Create, Read, Update, and Delete permissions  |
-|                | in Cloud Load Balancers, where access is granted.                |
-+----------------+------------------------------------------------------------------+
-| lbaas:creator  | This role provides Create, Read and Update permissions           |
-|                | in Cloud Load Balancers, where access is granted.                |
-+----------------+------------------------------------------------------------------+
-| lbaas:observer | This role provides Read permission in Cloud Load Balancers,      |
-|                | where access is granted.                                         |
-+----------------+------------------------------------------------------------------+
+   * - Role name
+     - Role permissions
+   * - lbaas:admin
+     - This role provides Create, Read, Update, and Delete permissions
+       in Cloud Load Balancers, where access is granted.
+   * - lbaas:creator
+     - This role provides Create, Read and Update permissions in Cloud Load
+       Balancers, where access is granted.
+   * - lbaas:observer
+     - This role provides Read permission in Cloud Load Balancers, where access
+       is granted.
 
-Additionally, two multiproduct roles apply to all products. Users with
-multiproduct roles inherit access to future products when those products become
-RBAC-enabled. The following section describes these roles and their permissions.
-
-.. _clb-dg-api-info-rbac-available-multi:
+.. _rbac-available-multi-roles:
 
 Multiproduct global roles and permissions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------+------------------------------------------------------------------------------------------------------------+
-| Role Name | Role Permissions                                                                                           |
-+===========+============================================================================================================+
-| admin     | This role provides Create, Read, Update, and Delete permissions in all products, where access is granted.  |
-+-----------+------------------------------------------------------------------------------------------------------------+
-| observer  | This role provides Read permission in all products, where access is granted.                               |
-+-----------+------------------------------------------------------------------------------------------------------------+
+Additionally, two multiproduct roles apply to all products. Users with
+multiproduct roles inherit access to products when those products become
+RBAC-enabled. The following table describes these roles and their permissions.
 
-.. _clb-dg-api-info-rbac-resolve:
+**Multiproduct roles and permissions**
 
-Resolve conflicts between RBAC multiproduct and custom (product-specific) roles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. list-table:: **Multiproduct roles and permissions**
+   :widths: 20 40
+   :header-rows: 1
 
-The account owner can set roles for both multiproduct and Cloud Load Balancers
-scope, and it is important to understand how any potential conflicts among these
-roles are resolved. When two roles appear to conflict, the role that provides
-the more extensive permissions takes precedence. Therefore, admin roles take
-precedence over observer and creator roles, because admin roles provide more
-permissions.
+   * - Role name
+     - Role permissions
+   * - admin
+     - This role provides create, read, update, and delete permissions
+       in all products, where access is granted.
+   * - observer
+     - This role provides read permission in all products,
+       where access is granted.
+
+.. _rbac-resolve-role-conflict:
+
+Resolving conflicts between RBAC multiproduct and product-specific roles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The account owner can set roles for both multiproduct and |product name|
+scope, and it is important to understand how any potential conflicts between
+these roles are resolved. When two roles appear to conflict, the role that
+provides the more extensive permissions takes precedence. Therefore, admin roles
+take precedence over observer and creator roles, because admin roles provide
+more permissions.
 
 The following table shows two examples of how potential conflicts between user
-roles in the Control Panel are resolved:
+roles in the Control Panel are resolved.
 
-+----------------------------------------+-------------------------------------+--------------------------------------+
-|        Permission configuration        |         View of permission          |  Can the user perform product admin  |
-|                                        |         in the Control Panel        |  functions in the Control Panel?     |
-|                                        |                                     |                                      |
-+========================================+=====================================+======================================+
-| User is assigned the following roles:  | Appears that the user has only the  | Yes, for Cloud Load Balancers only.  |
-| multiproduct **observer** and          | multiproduct **observer** role      | The user has the **observer** role   |
-| Cloud Load Balancers **admin**         |                                     | for the rest of the products.        |
-+----------------------------------------+-------------------------------------+--------------------------------------+
-| User is assigned the following roles:  | Appears that the user has only the  | Yes, for all of the products.        |
-| multiproduct **admin** and             | multiproduct **admin** role         | The Cloud Load Balancers             |
-| Cloud Load Balancers **observer**      |                                     | **observer** role is ignored.        |
-+----------------------------------------+-------------------------------------+--------------------------------------+
 
-.. _clb-dg-api-info-rbac-permissions:
+.. list-table:: **Example of resolving permissions**
+   :widths: 10 10 40
+   :header-rows: 1
 
-RBAC permissions cross-reference to Cloud Load Balancers API operations
+   * - Permission configuration
+     - Control Panel permission view
+     - Control Panel admin capabilities
+   * - User is assigned the following roles: multiproduct **observer** and
+       |product name| **admin**
+     - Appears that the user has only the multiproduct **observer** role
+     - User can perform admin functions for |product name| only. The user has
+       the **observer** role for the rest of the products.
+   * - User is assigned to the following roles: multiproduct **admin** and
+       |product name| **observer**
+     - Appears that the user has only the multiprodcut **admin** role
+     - User can perform admin functions for all of the products.
+       The |product name| **observer** role is ignored.
+
+
+.. _keep-dg-api-info-rbac-permissions:
+
+RBAC permissions cross-reference to |product name| API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-API operations for Cloud Load Balancers may or may not be available to all
-roles. To see which operations are permitted to invoke which calls, please
-review :how-to:`Permissions Matrix for Role-Based Access Control (RBAC) \
+API operations for |product name| may or may not be available to all
+roles. To see which operations are permitted to invoke which calls,
+review the :how-to:`Permissions Matrix for Role-Based Access Control (RBAC) \
 <permissions-matrix-for-role-based-access-control-rbac>`.

@@ -1,7 +1,8 @@
 .. _metadata:
 
+========
 Metadata 
--------------
+========
 
 
 Metadata can be associated with each load balancer and each node for the

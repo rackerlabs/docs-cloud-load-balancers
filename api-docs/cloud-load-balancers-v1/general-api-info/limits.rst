@@ -1,20 +1,23 @@
 .. _limits:
 
+======
 Limits
-------------
+======
 
-All accounts, by default, have a preconfigured set of thresholds (or limits) to
-manage capacity and prevent abuse of the system. The system recognizes two
-kinds of limits: rate limits and absolute limits. Rate limits are thresholds
-that are reset after a certain amount of time passes. Absolute limits are
-fixed. Rate limits are processed via the `Repose service`_.
+.. COMMENT: Adapt this topic to provide information that is relevant for
+   your product.
+
+All accounts, by default, have a preconfigured set of thresholds, or *limits*,
+to manage capacity and prevent abuse of the system. The system recognizes two
+kinds of limits: *rate limits* and *absolute limits*. Rate limits are thresholds
+that are reset after a certain amount of time passes. Absolute limits are fixed.
+Rate limits are processed via the `Repose service`_.
 
 .. note::
 
-    If the default limits are too low for your particular application, please
-    contact Rackspace Cloud support to request an increase. All requests require
-    reasonable justification.
-
+    If the default limits are too low for your particular application,
+    contact Rackspace Cloud support to request an increase. All requests
+    require reasonable justification.
 
 .. _Repose service: http://www.openrepose.org
 
@@ -23,104 +26,140 @@ fixed. Rate limits are processed via the `Repose service`_.
 Rate limits
 ~~~~~~~~~~~
 
-We specify rate limits in terms of both a human-readable wild-card URI and a
+Rate limits are specified in terms of both a human-readable wildcard URI and a
 machine-processable regular expression. The regular expression boundary matcher
 ``^`` takes effect after the root URI path. For example, the regular expression
-``^/v1.0/1234/loadbalancers`` would match the portion
-``/v1.0/1234/loadbalancers`` of the following URI:
+``^/v1.0/1234/loadbalancers`` would match the ``/v1.0/1234/loadbalancers``
+portion  of the following URI:
 
-``https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers``.
+``https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers``
 
 .. _clb-dg-api-info-limits-ratelimits-default:
 
-**Default rate limits**
+.. list-table:: **Default rate limits**
+   :widths: 20 40 10 20
+   :header-rows: 1
 
-+--------+---------+----------+---------------+
-| Verb   | URI     | RegEx    | Default limit |
-+========+=========+==========+===============+
-| GET    | /v1.0/* | ^/1.0/.* | 5/second      |
-+--------+---------+----------+---------------+
-| GET    | /v1.0/* | ^/1.0/.* | 100/minute    |
-+--------+---------+----------+---------------+
-| POST   | /v1.0/* | ^/1.0/.* | 2/second      |
-+--------+---------+----------+---------------+
-| POST   | /v1.0/* | ^/1.0/.* | 25/minute     |
-+--------+---------+----------+---------------+
-| PUT    | /v1.0/* | ^/1.0/.* | 5/second      |
-+--------+---------+----------+---------------+
-| PUT    | /v1.0/* | ^/1.0/.* | 50/minute     |
-+--------+---------+----------+---------------+
-| DELETE | /v1.0/* | ^/1.0/.* | 2/second      |
-+--------+---------+----------+---------------+
-| DELETE | /v1.0/* | ^/1.0/.* | 50/minute     |
-+--------+---------+----------+---------------+
+   * - Method
+     - URI
+     - RegEx
+     - Default Limit
+   * - GET
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 5 per second
+   * - GET
+     - ``/v1.0/*``
+     - `^/1.0/.*``
+     - 100 per minute
+   * - POST
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 2 per second
+   * - POST
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 25 per minute
+   * - PUT
+     - ``/v1.0/*``
+     - `^/1.0/.*``
+     - 5 per second
+   * - PUT
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 50 per minute
+   * - DELETE
+     - ``/v1.0/*``
+     - `^/1.0/.*``
+     - 2 per second
+   * - DELETE
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 50 per minute
 
-Rate limits are applied in order relative to the verb, going from least to most
-specific. For example, although the threshold for **POST** to /v1.0/\* is 25
-per minute, one cannot **POST** to /v1.0/\* more than 2 times per second because
-the rate limit for any **POST** is 2 per second. In the event you exceed the
-thresholds established for your account, a 413 (Rate Control) HTTP response is
-returned with a `Retry-After` header to notify the client when they can attempt
-to try again.
+Rate limits are applied in order relative to the method, going from least to
+most specific. For example, although the threshold for **POST** requests to
+``/v1.0/*``  is 25 per minute, you cannot send a **POST** request to ``/v1.0/*``
+more than 2  times per second because the rate limit for any **POST** request
+is 2 per second.  If you exceed the limits established for your account, a
+``413 (Rate Control)`` HTTP  response is returned with a ``Retry-After`` header
+to notify the client when it can  attempt to try again.
 
-A request may be submitted to Cloud Support for an increase in load balancer
-limits. Each request must be approved before limits can be modified. Limits may
-only be increased up to the maximum limit (such as 50 nodes per load balancer).
+You can submit a request to Rackspace Support for an increase in load balancer
+limits. Each request must be approved before limits can be modified. Limits can
+be increased only up to the maximum limit (such as 50 nodes per load balancer).
 
-See :ref:`Determine limits programmatically <determine-limits>` to find your
-current account settings for these limits.
+To find your current account settings for these limits, see
+:ref:`Retrieve account limits <determine-limits>`.
 
 Absolute limits
 ~~~~~~~~~~~~~~~
 
 Absolute limits specify the maximum number of load balancers that can exist
-per Cloud account and the maximum number of resources that can exist per load
-balancer. The batch delete limit is the exception, since it is applied per
+per account and the maximum number of resources that can exist per load
+balancer. The batch delete limit is the exception, because it is applied per
 batch delete API request.
 
-The system applies default values for load balancer account and/or resource
-limits that can be increased by submitting a request to Cloud Support. Each
+The system applies default values for load balancer account and resource
+limits that can be increased by submitting a request to Support. Each
 request must be approved internally before limits can be modified.
 
-+--------------------+------------------------------------------------------------------------+---------+
-| Name               | Description                                                            | Default |
-+====================+========================================================================+=========+
-| LOADBALANCER_LIMIT | Total number of load balancers that can be added to a Cloud account.   | 25      |
-+--------------------+------------------------------------------------------------------------+---------+
-| NODE_LIMIT         | Total number of nodes that can be added to a load balancer.            | 25      |
-+--------------------+------------------------------------------------------------------------+---------+
-| IPV6_LIMIT         | Total number of IPV6 addresses that can be added to a load balancer.   | 25      |
-+--------------------+------------------------------------------------------------------------+---------+
-| BATCH_DELETE_LIMIT | Total number of resources that can be listed per batch delete request. | 10      |
-+--------------------+------------------------------------------------------------------------+---------+
-| ACCESS_LIST_LIMIT  | Total number of network items that can be added to a load balancer.    | 100     |
-+--------------------+------------------------------------------------------------------------+---------+
 
-:ref:`Determine limits programmatically <determine-limits>` to find your
-current account settings for these limits.
+.. list-table:: **Absolute limits**
+   :widths: 20 40 10
+   :header-rows: 1
+
+   * - Name
+     - Description
+     - Default
+   * - LOADBALANCER_LIMIT
+     - Total number of load balancers that can be added to a Cloud account
+     - 25
+   * - NODE_LIMIT
+     - Total number of nodes that can be added to a load balancer
+     - 25
+   * - IPV6_LIMIT
+     - Total number of IPv6 addresses that can be added to a load balancer
+     - 25
+   * - BATCH_DELETE_LIMIT
+     - Total number of resources that can be listed per batch delete request
+     - 10
+   * - ACCESS_LIST_LIMIT
+     - Total number of network items that can be added to a load balancer
+     - 100
+
+To find your current account settings for these limits, see
+:ref:`Retrieve account limits <determine-limits>`.
 
 .. _determine-limits:
 
-Determine limits programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieve account limits
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Applications can programmatically determine current rate limits and absolute
-limits for an account using the following URIs:
+limits for an account by using the following URIs.
 
-+------+-------------------------------+-----------------------------------------------------+
-| Verb | URI                           | Description                                         |
-+======+===============================+=====================================================+
-| GET  | /limits                       | Return the current rate limits for the account.     |
-+------+-------------------------------+-----------------------------------------------------+
-| GET  | /loadbalancers/absolutelimits | Return the current absolute limits for the account. |
-+------+-------------------------------+-----------------------------------------------------+
+.. list-table::
+   :widths: 20 40 10
+   :header-rows: 1
 
-Error Response Code(s): loadbalancerFault (400, 500), serviceUnavailable (503),
-unauthorized (401), badRequest (400), overLimit (413)
+   * - Method
+     - URI
+     - Description
+   * - GET
+     - ``/limits``
+     - Return the current rate limits for the account.
+   * - GET
+     - ``/loadbalancers/absolutelimits``
+     - Return the current absolute limits for the account.
+
+Possible error response codes for these operations are ``loadbalancerFault
+(400, 500)``, ``serviceUnavailable (503)``, ``unauthorized (401)``,
+``badRequest (400)``, and ``overLimit (413)``.
 
 These operations do not require a request body.
 
-**Example: List rate limits: XML response**
+**Example: Retrieve rate limits: XML response**
 
 .. code::
 
@@ -137,7 +176,7 @@ These operations do not require a request body.
         </rates>
     </limits>
 
-**Example: List rate limits: JSON response**
+**Example: Retrieve rate limits: JSON response**
 
 .. code::
 
@@ -163,7 +202,7 @@ These operations do not require a request body.
         }
     }
 
-**Example: List absolute limits: XML response**
+**Example: Retrieve absolute limits: XML response**
 
 .. code::
 
@@ -177,7 +216,7 @@ These operations do not require a request body.
         </absolute>
     </limits>
 
-**Example: List absolute limits: JSON response**
+**Example: Retrieve absolute limits: JSON response**
 
 .. code::
 

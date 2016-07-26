@@ -1,8 +1,7 @@
-
-.. _get-show-health-monitor-configuration-v1.0-account-loadbalancers-loadbalancerid-healthmonitor:
+.. _get-show-health-monitor-configuration:
 
 Show health monitor configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,14 @@ Show health monitor configuration
 
 Shows the health monitor configuration, if one exists.
 
-**Connect Monitor.** The monitor connects to each node on its defined port to ensure that the service is listening properly. The connect monitor is the most basic type of health check and does no post-processing or protocol specific health checks. It includes several configurable properties. The following table lists the required and optional attributes for Monitor Connections:
+**Connect Monitor** The monitor connects to each node on its defined port to
+ensure that the service is listening properly. The connect monitor is the
+most basic type of health check and does no post-processing or protocol
+specific health checks. It includes several configurable properties. The
+following table lists the required and optional attributes for Monitor
+Connections:
 
 .. table:: Attributes for Connect Monitor
-
 
     +---------------------------------------+--------------------------------------+
     |Name                                   |Description                           |
@@ -37,13 +40,16 @@ Shows the health monitor configuration, if one exists.
     |                                       |connections.                          |
     +---------------------------------------+--------------------------------------+
 
+**Monitor HTTP and HTTPS** The HTTP and HTTPS monitor is more intelligent than
+the connect monitor. It is capable of processing an HTTP or HTTPS response to
+determine the condition of a node. It supports the same basic properties as
+the connect monitor and includes additional attributes that are used to
+evaluate the HTTP response. The user can supply an optional ``hostHeader``
+attribute for the HTTP and HTTPS health monitor to specify a host for which
+the health monitors will check. The following table lists the required and
+optional attributes for Monitor HTTP and HTTPS:
 
-
-
-**Monitor HTTP and HTTPS.** The HTTP and HTTPS monitor is more intelligent than the connect monitor. It is capable of processing an HTTP or HTTPS response to determine the condition of a node. It supports the same basic properties as the connect monitor and includes additional attributes that are used to evaluate the HTTP response. The user can supply an optional ``hostHeader`` attribute for the HTTP and HTTPS health monitor to specify a host for which the health monitors will check. The following table lists the required and optional attributes for Monitor HTTP and HTTPS:
-
-.. table:: Attributes for HTTP and HTTPS Monitor
-
+.. table:: **Attributes for HTTP and HTTPS Monitor**
 
     +---------------------------------------+--------------------------------------+
     |Name                                   |Description                           |
@@ -106,13 +112,7 @@ Shows the health monitor configuration, if one exists.
     |                                       |an HTTPS response.                    |
     +---------------------------------------+--------------------------------------+
 
-
-
-
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -158,12 +158,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -178,43 +174,23 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show connect monitor configuration: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         type="CONNECT"
         delay="10"
         timeout="10"
         attemptsBeforeDeactivation="3" />
 
-
 **Example Show connect monitor configuration: JSON response**
-
 
 .. code::
 
@@ -227,9 +203,7 @@ Response
         }
     }
 
-
 **Example Show http monitor configuration: ATOM/XML response**
-
 
 .. code::
 
@@ -257,9 +231,7 @@ Response
         </entry>
     </feed>
 
-
 **Example Show http monitor configuration: JSON response**
-
 
 .. code::
 
@@ -276,14 +248,11 @@ Response
         }
     }
 
-
 **Example Show http monitor configuration: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         type="HTTP"
         delay="10"
@@ -294,9 +263,7 @@ Response
         bodyRegex="^[234][0-9][0-9]$"
         hostHeader="myrack.com"/>
 
-
 **Example Show https monitor configuration: JSON response**
-
 
 .. code::
 
@@ -313,14 +280,11 @@ Response
         }
     }
 
-
 **Example Show https monitor configuration: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         type="HTTPS"
         delay="10"
@@ -330,4 +294,3 @@ Response
         statusRegex="^[234][0-9][0-9]$"
         bodyRegex=""
         hostHeader="myrack.com"/>
-

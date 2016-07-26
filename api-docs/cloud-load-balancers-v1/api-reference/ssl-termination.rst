@@ -1,7 +1,8 @@
 .. _ssl-termination:
 
+===============
 SSL termination
---------------------
+===============
 
 
 You can configure SSL termination only on load balancers with non-secure

@@ -1,9 +1,8 @@
 .. _monitors:
 
-
+========
 Monitors
-----------
-
+========
 
 The load balancing service includes a health monitoring operation that
 periodically checks your back-end nodes to ensure they are responding

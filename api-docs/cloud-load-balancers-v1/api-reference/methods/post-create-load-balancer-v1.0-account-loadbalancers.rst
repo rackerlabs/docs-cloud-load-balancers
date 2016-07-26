@@ -1,8 +1,7 @@
-
-.. _post-create-load-balancer-v1.0-account-loadbalancers:
+.. _post-create-load-balancer:
 
 Create load balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,20 +9,39 @@ Create load balancer
 
 Creates a load balancer with the configuration defined by the request.
 
-This operation asynchronously provisions a new load balancer based on the configuration defined in the request object. Once the request is validated and progress has started on the provisioning process, a response object is returned. The object contains a unique ID and status of the request. Using the ID, the caller can check on the progress of the operation by performing a ``GET`` on ``loadbalancers/id``. If the corresponding request cannot be fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request) error response is returned with information regarding the nature of the failure in the body of the response. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and ``POST`` the request again.
-
-An HTTP load balancer has the X-Forwarded-For (XFF) HTTP header set by default. This header contains the actual originating IP address of a client connecting to a web server through an HTTP proxy or load balancer, which many web applications are already designed to use when determining the source address for a request. (This header is also included on the Modify Load Balancer request if the protocol changes to re-enable it.)
-
-An HTTP load balancer also includes the X-Forwarded-Proto (XFP) HTTP header, which has been added for identifying the originating protocol of an HTTP request as "http" or "https" depending on what protocol the client requested. This is specially useful when using SSL termination.
-
-An HTTP load balancer also includes the X-Forwarded-Port HTTP header, which has been added for being able to generate secure URLs containing the specified port. This header, along with the X-Forwarded-For header, provide the needed information to the underlying application servers.
+This operation asynchronously provisions a new load balancer based on the
+configuration defined in the request object. Once the request is validated and
+progress has started on the provisioning process, a response object is
+returned. The object contains a unique ID and status of the request. Using the
+ID, the caller can check on the progress of the operation by performing a
+``GET`` on ``loadbalancers/id``. If the corresponding request cannot be
+fulfilled due to insufficient or invalid data, an ``HTTP`` 400 (Bad Request)
+error response is returned with information regarding the nature of the failure
+in the body of the response. Failures in the validation process are
+non-recoverable and require the caller to correct the cause of the failure and
+``POST`` the request again. An HTTP load balancer has the X-Forwarded-For (XFF)
+HTTP header set by default. This header contains the actual originating IP
+address of a client connecting to a web server through an HTTP proxy or load
+balancer, which many web applications are already designed to use when
+determining the source address for a request. (This header is also included on
+the Modify Load Balancer request if the protocol changes to re-enable it.) An
+HTTP load balancer also includes the X-Forwarded-Proto (XFP) HTTP header, which
+has been added for identifying the originating protocol of an HTTP request as
+"http" or "https" depending on what protocol the client requested. This is
+specially useful when using SSL termination. An HTTP load balancer also
+includes the X-Forwarded-Port HTTP header, which has been added for being able
+to generate secure URLs containing the specified port. This header, along with
+the X-Forwarded-For header, provide the needed information to the underlying
+application servers.
 
 .. note::
-   The headers listed here (X-Forwarded-For, X-Forwarded-Proto, and X-Forwarded-Port) are available for HTTP load balancers with or without SSL termination enabled, however HTTPS load balancers do not provide these header elements due to encryption.
-   
- 
-The following table shows the possible response codes for this operation:
 
+   The headers listed here (X-Forwarded-For, X-Forwarded-Proto, and
+   X-Forwarded-Port) are available for HTTP load balancers with or without
+   SSL termination enabled, however HTTPS load balancers do not provide these
+   header elements due to encryption.
+
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -66,9 +84,9 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^   
+-------
+
 The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -77,7 +95,7 @@ The following table shows the URI parameters for the request:
 |{account}                 |String                   |The ID for the tenant or |
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
-+--------------------------+-------------------------+-------------------------+   
++--------------------------+-------------------------+-------------------------+
 
 The following table shows the body parameters for the request:
 
@@ -177,10 +195,9 @@ The following table shows the body parameters for the request:
 |                    |                   |termination for a load balancer can  |
 |                    |                   |only be configured after the load    |
 |                    |                   |balancer has been created.           |
-+--------------------+-------------------+-------------------------------------+   
++--------------------+-------------------+-------------------------------------+
 
 **Example Create load balancer: JSON request**
-
 
 .. code::
 
@@ -204,9 +221,7 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Create load balancer: XML request**
-
 
 .. code::
 
@@ -222,9 +237,7 @@ The following table shows the body parameters for the request:
         </nodes>
     </loadBalancer>
 
-
 **Example Create load balancer with shared IP: JSON request**
-
 
 .. code::
 
@@ -248,9 +261,7 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Create load balancer with shared IP: XML request**
-
 
 .. code::
 
@@ -266,9 +277,7 @@ The following table shows the body parameters for the request:
         </nodes>
     </loadBalancer>
 
-
 **Example Create load balancer with IPv4/IPv6: JSON request**
-
 
 .. code::
 
@@ -295,9 +304,7 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Create load balancer with IPv4/IPv6: XML request**
-
 
 .. code::
 
@@ -314,9 +321,8 @@ The following table shows the body parameters for the request:
         </nodes>
     </loadBalancer>
 
-
 Response
-^^^^^^^^^^^^^   
+--------
 
 The following table shows the body parameters for the response:
 
@@ -399,7 +405,7 @@ The following table shows the body parameters for the response:
 |                          |                         |mitigate malicious or      |
 |                          |                         |abusive traffic to your    |
 |                          |                         |applications. See          |
-|                          |                         |:ref:`throttle-connections`|  
+|                          |                         |:ref:`throttle-connections`|
 |                          |                         |for information and        |
 |                          |                         |examples.                  |
 +--------------------------+-------------------------+---------------------------+
@@ -415,15 +421,9 @@ The following table shows the body parameters for the response:
 +--------------------------+-------------------------+---------------------------+
 |sourceAddresses           |Dict                     |The source public and      |
 |                          |                         |private IP addresses.      |
-+--------------------------+-------------------------+---------------------------+      
-
-
-
-
-
++--------------------------+-------------------------+---------------------------+
 
 **Example Create load balancer: JSON response**
-
 
 .. code::
 
@@ -479,9 +479,7 @@ The following table shows the body parameters for the response:
         }
     }
 
-
 **Example Create load balancer: XML response**
-
 
 .. code::
 
@@ -502,9 +500,7 @@ The following table shows the body parameters for the response:
         <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>
     </loadBalancer>
 
-
 **Example Create load balancer with shared IP: JSON response**
-
 
 .. code::
 
@@ -551,9 +547,7 @@ The following table shows the body parameters for the response:
         }
     }
 
-
 **Example Create load balancer with shared IP: XML response**
-
 
 .. code::
 
@@ -587,9 +581,7 @@ The following table shows the body parameters for the response:
         <connectionLogging enabled="false" />
     </loadBalancer>
 
-
 **Example Create load balancer with IPv4/IPv6: JSON response**
-
 
 .. code::
 
@@ -642,9 +634,7 @@ The following table shows the body parameters for the response:
         }
     }
 
-
 **Example Create load balancer with IPv4/IPv6: XML response**
-
 
 .. code::
 
@@ -683,4 +673,3 @@ The following table shows the body parameters for the response:
         <updated time="2011-02-08T21:19:55Z" />
         <connectionLogging enabled="false" />
     </loadBalancer>
-

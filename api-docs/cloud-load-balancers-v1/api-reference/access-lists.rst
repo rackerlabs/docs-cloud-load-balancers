@@ -1,8 +1,8 @@
 .. _access-lists:
 
+============
 Access lists
--------------------
-
+============
 
 The access list management feature allows fine-grained network access
 controls to be applied to the load balancer's virtual IP address. A

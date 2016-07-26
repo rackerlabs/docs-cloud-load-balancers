@@ -1,8 +1,8 @@
 
-.. _delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
+.. _delete-delete-nodes-nodeid:
 
 Delete node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +10,15 @@ Delete node
 
 Deletes a node from a specified load balancer.
 
-To bulk-delete nodes, provide a query parameter list of node IDs (for example: /nodes?id= ``nodeId`` & id= ``nodeId`` ). The current default limit is ten IDs per request. Any and all configuration data is immediately purged and is not recoverable. If one of the items in the list cannot be removed due to its current status a 400:BadRequest is returned along with the IDs of the ones the system identified as potential failures for this request.
-
-
+To bulk-delete nodes, provide a query parameter list of node IDs,
+for example:
+/nodes?id= ``nodeId`` & id= ``nodeId`` ). The current default limit is ten
+IDs per request. Any and all configuration data is immediately purged and is
+not recoverable. If one of the items in the list cannot be removed due to its
+current status a 400:BadRequest is returned along with the IDs of the ones
+the system identified as potential failures for this request.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,10 +66,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -83,25 +83,9 @@ The following table shows the URI parameters for the request:
 |{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

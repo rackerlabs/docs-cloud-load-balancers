@@ -1,8 +1,7 @@
-
-.. _post-add-load-balancer-metadata-v1.0-account-loadbalancers-loadbalancerid-metadata:
+.. _post-add-load-balancer-metadata:
 
 Add load balancer metadata
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +9,11 @@ Add load balancer metadata
 
 Adds a metadata item to the load balancer.
 
-When a metadata item is added, it is assigned a unique identifier that can be used for mutating operations such as changing the value attribute or removing it.
-
-
+When a metadata item is added, it is assigned a unique identifier that can be
+used for mutating operations such as changing the value attribute or removing
+it.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +59,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -80,10 +74,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -103,12 +93,7 @@ The following table shows the body parameters for the request:
 |                          |                         |valid.                   |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Add load balancer metadata: JSON request**
-
 
 .. code::
 
@@ -118,25 +103,13 @@ The following table shows the body parameters for the request:
       }
     }
 
-
 **Example Add load balancer metadata: XML request**
-
 
 .. code::
 
     <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">blue</meta>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

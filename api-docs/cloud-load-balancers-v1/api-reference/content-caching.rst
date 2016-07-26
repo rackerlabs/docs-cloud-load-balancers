@@ -1,8 +1,8 @@
 .. _content-caching:
 
+===============
 Content caching
-------------------
-
+===============
 
 Use the content caching operations to manage content caching configuration.
 

@@ -1,8 +1,7 @@
-
-.. _get-show-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist:
+.. _get-show-access-list:
 
 Show access list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Show access list
 
 Shows the access list.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,29 +71,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show access list: JSON response**
-
 
 .. code::
 
@@ -150,9 +125,7 @@ Response
         ]
     }
 
-
 **Example Show access list: XML response**
-
 
 .. code::
 
@@ -167,9 +140,7 @@ Response
             type="DENY" />
     </accessList>
 
-
 **Example Show atom access list: XML response**
-
 
 .. code::
 
@@ -209,4 +180,3 @@ Response
             <updated>2011-04-07T16:58:31.000Z</updated>
         </entry>
     </feed>
-

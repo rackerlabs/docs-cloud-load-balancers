@@ -1,8 +1,7 @@
-
-.. _get-show-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
+.. _get-show-custom-error-page:
 
 Show custom error page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Show custom error page
 
 Shows the custom error page that is configured for a specified load balancer.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -78,10 +70,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -97,24 +85,10 @@ The following table shows the body parameters for the request:
 |                          |                         |JSON formats.            |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show custom error page: JSON response**
-
 
 .. code::
 
@@ -122,9 +96,7 @@ Response
         {"content":"<html> DEFAULT ERROR PAGE</html>"}
     }
 
-
 **Example Show custom error page: XML response**
-
 
 .. code::
 
@@ -135,4 +107,3 @@ Response
                    </html>
         </content>
     </errorpage>
-

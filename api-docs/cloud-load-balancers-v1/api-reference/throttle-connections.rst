@@ -1,7 +1,8 @@
 .. _throttle-connections:
 
+====================
 Throttle connections 
-------------------------
+====================
 
 
 Use the throttle connections operations to manage throttle configuration.

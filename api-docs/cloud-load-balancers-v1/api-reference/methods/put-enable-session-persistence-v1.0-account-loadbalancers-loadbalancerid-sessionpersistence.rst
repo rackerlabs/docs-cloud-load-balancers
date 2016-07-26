@@ -1,8 +1,7 @@
-
-.. _put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence:
+.. _put-enable-session-persistence:
 
 Enable session persistence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Enable session persistence
 
 Enables session persistence.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,10 +71,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 The following table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -96,20 +84,13 @@ The following table shows the body parameters for the request:
 |                          |                         |available modes.         |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Enable session persistence: XML request**
-
 
 .. code::
 
     <sessionPersistence xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" persistenceType="HTTP_COOKIE"/>
 
-
 **Example Enable session persistence: JSON request**
-
 
 .. code::
 
@@ -119,17 +100,7 @@ The following table shows the body parameters for the request:
        }
     }
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

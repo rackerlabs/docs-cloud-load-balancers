@@ -1,7 +1,8 @@
 .. _log-connections:
 
+===============
 Log connections
--------------------
+===============
 
 
 Use the log connections API operations to manage logging configuration.

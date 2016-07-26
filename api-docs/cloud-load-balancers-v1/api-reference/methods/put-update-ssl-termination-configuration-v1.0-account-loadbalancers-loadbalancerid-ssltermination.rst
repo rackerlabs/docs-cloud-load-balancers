@@ -1,8 +1,7 @@
-
-.. _put-update-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
+.. _put-update-ssl-termination-configuration:
 
 Update SSL termination configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,72 +9,82 @@ Update SSL termination configuration
 
 Updates the SSL termination configuration.
 
-The SSL termination feature enables you to terminate SSL traffic at the load balancer layer versus at the web server layer. You can choose to configure SSL termination using a key and an SSL certificate or an intermediate SSL certificate.
+The SSL termination feature enables you to terminate SSL traffic at the load
+balancer layer versus at the web server layer. You can choose to configure SSL
+termination using a key and an SSL certificate or an intermediate SSL
+certificate.
 
-You can use the ``securityProtocols`` object to turn off Transaction Layer Security (TLS) 1.0 by setting the following values:
+You can use the ``securityProtocols`` object to turn off Transaction Layer
+Security (TLS) 1.0 by setting the following values:
 
 *  ``securityProtocolName`` to ``TLS_10``
 *  ``securityProtocolStatus`` to ``DISABLED``
 
 .. note::
-   The ``securityProtocol`` object only updates the status of TLS 1.0. ``TLS_10`` is the only valid value for ``securityProtocolName``. Other
-   security protocols remain enabled. Additional protocols might become configurable via this interface in the future.
 
+   The ``securityProtocol`` object only updates the status of TLS 1.0.
+   ``TLS_10`` is the only valid value for ``securityProtocolName``. Other
+   security protocols remain enabled. Additional protocols might become
+   configurable via this interface in the future.
 
-You can update the following attributes without overwriting a load balancer’s existing SSL certificate and key specifications:
+You can update the following attributes without overwriting a load balancer’s
+existing SSL certificate and key specifications:
 
 *  ``enabled``
 *  ``secureTrafficOnly``
 *  ``securePort``
 
-These configurable attributes must be provided (individually or grouped) in a request without specifying any certificate/key combination if a user does not want the system to overwrite the existing SSL certificate/key configuration.  
-
-If a user wants to replace the existing SSL configuration, a new certificate, key, and securePort combination must be provided instead of, or in addition to, the optional/editable attributes. 
+These configurable attributes must be provided (individually or grouped) in a
+request without specifying any certificate/key combination if a user does not
+want the system to overwrite the existing SSL certificate/key configuration. 
+If a user wants to replace the existing SSL configuration, a new certificate,
+key, and securePort combination must be provided instead of, or in addition
+to, the optional/editable attributes.
 
 .. table::  Optional SSL Attributes
 
-    
-    +--------------------------+-------------------------+-------------------------+
-    |Optional SSL Attributes   |Non-SSL Traffic          |SSL Traffic              |
-    +==========================+=========================+=========================+
-    |``enabled`` =``true``     |Yes                      |Yes                      |
-    |(default)                 |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``enabled`` =``false``    |Yes                      |No                       |
-    +--------------------------+-------------------------+-------------------------+
-    |``secureTrafficOnly``     |No                       |Yes                      |
-    |=``true``                 |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``secureTrafficOnly``     |Yes                      |Yes                      |
-    |=``false`` (default)      |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``enabled`` = ``true``    |No                       |Yes                      |
-    |``secureTrafficOnly`` =   |                         |                         |
-    |``true``                  |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``enabled`` = ``true``    |Yes                      |Yes                      |
-    |``secureTrafficOnly`` =   |                         |                         |
-    |``false``                 |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``enabled`` = ``false``   |Yes                      |No                       |
-    |``secureTrafficOnly`` =   |                         |                         |
-    |``false``                 |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |``enabled`` = ``false``   |Yes                      |No                       |
-    |``secureTrafficOnly`` =   |                         |                         |
-    |``true``                  |                         |                         |
-    +--------------------------+-------------------------+-------------------------+
-    
+    +--------------------------+-------------------------+-------------------+
+    |Optional SSL Attributes   |Non-SSL Traffic          |SSL Traffic        |
+    +==========================+=========================+===================+
+    |``enabled`` =``true``     |Yes                      |Yes                |
+    |(default)                 |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``enabled`` =``false``    |Yes                      |No                 |
+    +--------------------------+-------------------------+-------------------+
+    |``secureTrafficOnly``     |No                       |Yes                |
+    |=``true``                 |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``secureTrafficOnly``     |Yes                      |Yes                |
+    |=``false`` (default)      |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``enabled`` = ``true``    |No                       |Yes                |
+    |``secureTrafficOnly`` =   |                         |                   |
+    |``true``                  |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``enabled`` = ``true``    |Yes                      |Yes                |
+    |``secureTrafficOnly`` =   |                         |                   |
+    |``false``                 |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``enabled`` = ``false``   |Yes                      |No                 |
+    |``secureTrafficOnly`` =   |                         |                   |
+    |``false``                 |                         |                   |
+    +--------------------------+-------------------------+-------------------+
+    |``enabled`` = ``false``   |Yes                      |No                 |
+    |``secureTrafficOnly`` =   |                         |                   |
+    |``true``                  |                         |                   |
+    +--------------------------+-------------------------+-------------------+
 
 .. note::
-   All requests to SSL termination in the JSON format require the key/certificates to be in "proper" JSON format, meaning that all raw line feed characters should be wrapped in a newline character. So if the user pastes in the key from a mykey.key file, JSON will not properly handle the field. The key/certificates can be wrapped in a newline character in Java, for example, using ``string.replaceAll("\n", "\\n")``. Please refer to the examples above for working, "pre-formatted" examples. 
-   
-   
 
-
+   All requests to SSL termination in the JSON format require the
+   key/certificates to be in "proper" JSON format, meaning that all raw line
+   feed characters should be wrapped in a newline character. So if the user
+   pastes in the key from a mykey.key file, JSON will not properly handle the
+   field. The key/certificates can be wrapped in a newline character in Java,
+   for example, using ``string.replaceAll("\n", "\\n")``. Please refer to the
+   examples above for working, "pre-formatted" examples.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -121,12 +130,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -140,10 +145,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -228,11 +229,9 @@ The following table shows the body parameters for the request:
 
 **Example Update Load Balancing SSL Termination Full Certification Request: XML**
 
-
 .. code::
 
     <?xml version="1.0" encoding="UTF-8"?>
-    
     <sslTermination xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true" securePort="500" secureTrafficOnly="false">
     <privatekey>-----BEGIN RSA PRIVATE KEY-----
     MIIEpAIBAAKCAQEAqSXePu8qLmniU7jNxoWq3SLkR8txMsl1gFYftpq7NIFaGfzV
@@ -411,9 +410,8 @@ The following table shows the body parameters for the request:
     -----END CERTIFICATE-----</intermediateCertificate>
     </sslTermination>
 
-
-**Example Update Load Balancing SSL Termination Full                     Certification Request: JSON**
-
+**Example Update Load Balancing SSL Termination Full Certification
+Request: JSON**
 
 .. code::
 
@@ -428,21 +426,14 @@ The following table shows the body parameters for the request:
         }
     }
 
-
-
-
-**Example Update Load Balancing SSL Termination                     Attribute Request: XML**
-
+**Example Update Load Balancing SSL Termination Attribute Request: XML**
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8"?>
-    
     <sslTermination xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true" securePort="443" secureTrafficOnly="true"/>
 
-
-**Example Update Load Balancing SSL Termination                         Attribute Request: JSON**
-
+**Example Update Load Balancing SSL Termination Attribute Request: JSON**
 
 .. code::
 
@@ -454,13 +445,11 @@ The following table shows the body parameters for the request:
         }
     }
 
-
 **Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an New SSL Termination Configuration Request: XML**
 
 .. code::
 
     <?xml version="1.0" ?>
-
     <sslTermination enabled="true" securePort="443" secureTrafficOnly="false" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <privatekey>-----BEGIN RSA PRIVATE KEY-----
     MIIJKAIBAAKCAgEAnaf69IQZC4SBDfhwWz5svh6VHOhwaKXIUCBygKf8p8II7pIm
@@ -594,68 +583,55 @@ The following table shows the body parameters for the request:
     <securityProtocols securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
     </sslTermination>
 
-**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an New SSL Termination Configuration Request: JSON**
+**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an New
+SSL Termination Configuration Request: JSON**
 
 .. code::
 
     {
       "sslTermination": {
-        "securePort": 443, 
-        "secureTrafficOnly": false, 
-        "certificate": "-----BEGIN CERTIFICATE-----\nMIIGkTCCBHmgAwIBAgIGAVVWR2MaMA0GCSqGSIb3DQEBCwUAMHoxDDAKBgNVBAMT\nA0lNRDEbMBkGA1UECxMSQ2xvdWQgTG9hZEJhbGFuY2VyMRowGAYDVQQKExFSYWNr\nc3BhY2UgSG9zdGluZzEUMBIGA1UEBxMLU2FuIEFudG9uaW8xDjAMBgNVBAgTBVRl\neGFzMQswCQYDVQQGEwJVUzAeFw0xNjA2MTUyMjU2MDZaFw0yNzA4MzEyMjU2MDZa\nMIGGMRgwFgYDVQQDEw93d3cucmFja2V4cC5vcmcxGzAZBgNVBAsTEkNsb3VkIExv\nYWRCYWxhbmNlcjEaMBgGA1UEChMRUmFja3NwYWNlIEhvc3RpbmcxFDASBgNVBAcT\nC1NhbiBBbnRvbmlvMQ4wDAYDVQQIEwVUZXhhczELMAkGA1UEBhMCVVMwggIiMA0G\nCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCdp/r0hBkLhIEN+HBbPmy+HpUc6HBo\npchQIHKAp/ynwgjukiayWTAfYIbRP/d8e1P219Nv/t4A2UE5A/mkBh0HweC52MYI\nudJcWN/iwUonMUeCo4wAHMx1ksPNJifWnBHTd5jHppFioEd0P8whFOyl1TsUsqRM\nMKR4T+qVtq10FkNWbIgmOBzA9086cdsA3leYOIQspa2m+QqCHIU5owJqclIaWMcg\n3yJs69hlSP9AoNoFDKfU8bFexwgFi+eflcIS3DmEmgfFMdfeNg1y0BsT/bnUnRU5\nOErSipbjNcbWmaK+HDMSgEAh9D11z2TG2y/PdO8GL87zi66HgHaAugTUCoqUnYEj\n3qGJSNedTWZei+P0FwLRwT0RlaoyzPbQyG68SYstIA3OYonTtY5y+f776bvTqG4q\nd2LqBP/ajXSKkX21pjUtCfAAQ21OroTU1OK20R4B6ho2bgL2bwMwPw2lQRie9pnA\nNmxaBxFSmaUyLBYTlG4ad8/O9A6MHFUAmeGQcTJLSFM66mLhzsRbqdzdfegvQCaY\nPJm82bIEMOlAzIMga/aXb5b1qP0SzQl7KRNiTTXbPiFVpvj+xSYyO+KS1HNgGDNo\nVzEGRbY1m1qvslRLZ2fV6OaWhoHEew0NEZagKIC2DMnumhSn4JSus6SgRO2bAwGU\nZP3Z1atADoZrBwIDAQABo4IBDjCCAQowDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8E\nBAMCBLAwIAYDVR0lAQH/BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMIGoBgNVHSME\ngaAwgZ2AFBmALcnULZGNnFRkqv22DqOWgoh9oX2kezB5MQswCQYDVQQDEwJDQTEb\nMBkGA1UECxMSQ2xvdWQgTG9hZEJhbGFuY2VyMRowGAYDVQQKExFSYWNrc3BhY2Ug\nSG9zdGluZzEUMBIGA1UEBxMLU2FuIEFudG9uaW8xDjAMBgNVBAgTBVRleGFzMQsw\nCQYDVQQGEwJVU4IGAVVWRpO6MB0GA1UdDgQWBBQ2FvpmWgnWiP5TGldjYZ3gyPsE\nITANBgkqhkiG9w0BAQsFAAOCAgEAqcfuim4iiDSNIRseRurff0pjAm4kvvRHGjAU\n5S5JXap4DM/nJn7rBE22NVXQbCr0PksmAmPY/bqZKptfQdhT6h8jAImY6zlL4Obc\nvQkrnAZjaBDeefYfucgU0GwtwlkUXn5ERIa97Q+Ff/mckemQQJuLIPu5DgvDxE99\nAX2fVhBU3YYkdE690TeB45aeEQJIvb8PAM46vTpRxFwLuq+8hQB1Ir0x+LY3IBSA\npL4NE0LkWAbyIwv5tkUFx1mFjjblP0YVaYEbGvQbatHAc7eCDFHxh2TggWer/x/Y\nb16TbH1C8H0aEfYU4o/IiMpXFC5mMvLwGfOy/vG+stgxOy2FkEFIRm7yoiZasMrb\nBfccM2zjXWfWfG4PwcQ8xqt9ISegfpDNe4k0z8sU22BcdGnwdjZEJ6zBweXnL4bm\nvGFQjIxxRn1IqaZk74rVlTkI82IJyGg+iXPJ9qG1QjXLkD/JHtA/xO7aZ8Ij65VY\n9WWhWpjbjxCvTLQIKGW58tu5N/qlDHNr5DcSsjq7Nf0OFgaxPe03p3B5x3V8VRyN\nCzlgPauRTtm+mB8vjKnA0F4HFyVsGsdMMWAR4tvPUluXRNkh+V5gb8FbscL2sbu9\nWAbSVtgKkUe7/DPPuF09L3Gubq0pwHW7SoS2edSepBbqFqT0eNXrlAGiWAwhDpq3\nNbAQvJ4=\n-----END CERTIFICATE-----\n", 
-        "enabled": true, 
-        "privatekey": "-----BEGIN RSA PRIVATE KEY-----\nMIIJKAIBAAKCAgEAnaf69IQZC4SBDfhwWz5svh6VHOhwaKXIUCBygKf8p8II7pIm\nslkwH2CG0T/3fHtT9tfTb/7eANlBOQP5pAYdB8HgudjGCLnSXFjf4sFKJzFHgqOM\nABzMdZLDzSYn1pwR03eYx6aRYqBHdD/MIRTspdU7FLKkTDCkeE/qlbatdBZDVmyI\nJjgcwPdPOnHbAN5XmDiELKWtpvkKghyFOaMCanJSGljHIN8ibOvYZUj/QKDaBQyn\n1PGxXscIBYvnn5XCEtw5hJoHxTHX3jYNctAbE/251J0VOThK0oqW4zXG1pmivhwz\nEoBAIfQ9dc9kxtsvz3TvBi/O84uuh4B2gLoE1AqKlJ2BI96hiUjXnU1mXovj9BcC\n0cE9EZWqMsz20MhuvEmLLSANzmKJ07WOcvn+++m706huKndi6gT/2o10ipF9taY1\nLQnwAENtTq6E1NTittEeAeoaNm4C9m8DMD8NpUEYnvaZwDZsWgcRUpmlMiwWE5Ru\nGnfPzvQOjBxVAJnhkHEyS0hTOupi4c7EW6nc3X3oL0AmmDyZvNmyBDDpQMyDIGv2\nl2+W9aj9Es0JeykTYk012z4hVab4/sUmMjviktRzYBgzaFcxBkW2NZtar7JUS2dn\n1ejmloaBxHsNDRGWoCiAtgzJ7poUp+CUrrOkoETtmwMBlGT92dWrQA6GawcCAwEA\nAQKCAgAEbvvksm5N350NeoYWWswOEKga1wKKPtdCQZdWvOKjCRbdNqj17QIob7t6\n2PSpwIIc9/bPOHifx3xJES6NCUr5s98Q+uKezjL3O9yX8N2X+o/LQbQnMKgjSkxN\nUZxfMaZirwNR4gJGpsE7qKuh5oe9JiDyNQ/fwKJva7fqG+gG0rV0EbtGb9+HIa1N\ntHP3M0l9U2GMK+CVSH2eKRUqCMaBndNnQEXhS8UZEQzV1FaxR5S5/aAeoeleA/Ta\nyxNpbnm1tBG+A+LiDcPHUPfR2b5ZMpJuQzicklOwVgtmOlXsJQfplrts8sRa8BZm\nYL2xxeozSFOMdf245Z2z2835UsHd9Q32+fHBx/3Oo8ko4qHt7Zg1iuNa32OEwmBP\nK3Wp5MGRa6aKpOuQXNP5fJZgpTMwNrBbnkwNXVlM//qFdOcdc/zcEkleHwh/RbDv\ndfSzHpc/tvtFVDPnD8gOdnfnygN5tYwGu912JT6v7HkS5skUFi4+7aqNaNe+zJBh\nZFtS/c4pX2wVrcsGhiLSYMdJfceQf3AjvlQcoRSe+a9hCAtY1vUPqUsfJi+3Ddv8\nYTzVUP1o3jn57WPswLo61WJa3NIYVAxRl/0/Tb7kfl2oNrv5VAwcBMrt55MuLdEp\nOLp1mllQxsVTHBB8p1/7wkultjZxPc6m2zEv0DhKdNcypCoDAQKCAQEA/cmNFUhf\nvG0bUmB7CA3dxRfWga9pT5bzkvaey0htRNhBQXqDjHIupa5LjL8Y1g9QgiTn149V\nqjV0C7F4RyzKwGTiEkz4iBESHK+bg4tMBfyp7MNppVsu3645dFkI67nRjG5EJc/V\nXxAzzFKmYf2eEKhpuw0HwBZfEqTb105LRNiIECU3b2XEF/xfRr7rHSmQdQDuTWjr\n86YKzWCKBRss3QYnwUpeB0MbJ1H0Dyb9GJJsPIySY4ufBuG8ZcDbCcOrRFocIMMK\n3KMotgbN2YM3bTpfSeK82QdfD/fLJQaKu/GLO0IuwLTCUdidTStpiAOyUAd8aTce\nJyip9hzJg54chwKCAQEAnwfdvBHpQYPvD6KEgT0zMgMaPHEHG5zt01NhekXiRmfs\nWMYHsHiUtboDJner3+V43FQQz/GhWe8LZU0SwzbkeSCYzRMR3VKYSFOx7s6aRQ4D\nIwBnK2777pM2B880iFodvQlTeACBUKV3mt3fxTNVbOs3rqs8wC0ODJZIZ+42fq9q\nOa1/YELYlnwbhSaZp+r2f0zEbNuLD2kzUz+8pbXJKbPkMtQqx6JwlPh01MY3zbqg\nReITL51VTU53EiOa0U+ADz6uL3B2nw8DTqg9nWw6LUmyNLleKoeaOV+95oekzzJ3\n9AlYSyqac8MJkJOiiIiyeJg9vKZYmTeTcvtL/NtdgQKCAQEAoauEsZsiSbGjpw2J\nMq9KqGSwJHsu9iGuVt++drdTzHiK0YCPTqfqaWcn/6g41Rx6Z/3Ep4BKzRwyKcTL\nX2P8YSWjEo9v/5YIWLfRtLHHI0U6pnYx1cHJkXq2ZRTW5vu/rtsLlJ7aSS3UIYRB\nM8lRqUDv4dXCKy7VL9ZPqc/ZiSj7PHXI47ELg1AlDbdPpYs12CNYq318WgFbfkvS\ngMA4CzEBoFOUpMGuCZVeiUyIDOAyDTxrgPiPvN2Om6+ImabJcsiIhKJbSAS0SYj6\nF2dMpst5qmLDdOoKN+zdv190f5e233AgwmgkJel9A4z1NE1OiUbLjWcsUTvJUdwy\nzyKo/wKCAQAQIcQkZ8y5kKCXfWzjj0m6MQZgSzblXi3h2ftxY9VoPvKCrtPo2tJ6\n/LuFE26j76sq7nwmG+S6Mr19MSxOEStr/hqB8wVE5jP8YkEScHLFvn4i9s+AYGm9\n8cDxWduCWWHa4y9MZQC5JY/Ubd1dK6/mtJWZalVnSSq7rCL8J/XvM+wanbbmFOHT\nohNIlnnPxs3qa+chA8Q/c/R45WZFiQM278CeR1dvmNLCydFQJCtU+zF25U/87IDS\nrrr1ZBc4VFAxO7J/rXDbAbLcL8TQS0I7hdZF8ufSeJ70YvnogKn/OqdgYfJK7a9t\nPsOhnthF8VfpU8gvctBZ+oFCkKtMoxQBAoIBAHELzCrBriRcnFjb1uUNcolNRi0Z\nGucGpGJA7InjZhGi3v/Jkklh7VXA3EcHC8o7W+hvniY7QFVLsYn8svWvljY9+nNx\nOeknmXHVUng74NRSM9SPTlnopaT/4C8+q/jzHiPdiDCJqBH64w70Np37OSMgwvpw\nXAEBGy1YRST3UWGX6oZwmE5Pf9FurWk5Ws9TYiE5/rfhrAnIEFFYOO9OEo8PJ48s\n75F3pJaYsKq+aGSham/310DpFoxss8yeWs/aqEN+ceIDccncdWXwOosBpk2GLhhQ\nSdbDyf8QTSf+xN3ihfUIf5XbB3cna6rdLCPBT2i80kdTlqmihebxthBkgdQ=\n-----END RSA PRIVATE KEY-----\n", 
+        "securePort": 443,
+        "secureTrafficOnly": false,
+        "certificate": "-----BEGIN CERTIFICATE-----\nMIIGkTCCBHmgAwIBAgIGAVVWR2MaMA0GCSqGSIb3DQEBCwUAMHoxDDAKBgNVBAMT\nA0lNRDEbMBkGA1UECxMSQ2xvdWQgTG9hZEJhbGFuY2VyMRowGAYDVQQKExFSYWNr\nc3BhY2UgSG9zdGluZzEUMBIGA1UEBxMLU2FuIEFudG9uaW8xDjAMBgNVBAgTBVRl\neGFzMQswCQYDVQQGEwJVUzAeFw0xNjA2MTUyMjU2MDZaFw0yNzA4MzEyMjU2MDZa\nMIGGMRgwFgYDVQQDEw93d3cucmFja2V4cC5vcmcxGzAZBgNVBAsTEkNsb3VkIExv\nYWRCYWxhbmNlcjEaMBgGA1UEChMRUmFja3NwYWNlIEhvc3RpbmcxFDASBgNVBAcT\nC1NhbiBBbnRvbmlvMQ4wDAYDVQQIEwVUZXhhczELMAkGA1UEBhMCVVMwggIiMA0G\nCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCdp/r0hBkLhIEN+HBbPmy+HpUc6HBo\npchQIHKAp/ynwgjukiayWTAfYIbRP/d8e1P219Nv/t4A2UE5A/mkBh0HweC52MYI\nudJcWN/iwUonMUeCo4wAHMx1ksPNJifWnBHTd5jHppFioEd0P8whFOyl1TsUsqRM\nMKR4T+qVtq10FkNWbIgmOBzA9086cdsA3leYOIQspa2m+QqCHIU5owJqclIaWMcg\n3yJs69hlSP9AoNoFDKfU8bFexwgFi+eflcIS3DmEmgfFMdfeNg1y0BsT/bnUnRU5\nOErSipbjNcbWmaK+HDMSgEAh9D11z2TG2y/PdO8GL87zi66HgHaAugTUCoqUnYEj\n3qGJSNedTWZei+P0FwLRwT0RlaoyzPbQyG68SYstIA3OYonTtY5y+f776bvTqG4q\nd2LqBP/ajXSKkX21pjUtCfAAQ21OroTU1OK20R4B6ho2bgL2bwMwPw2lQRie9pnA\nNmxaBxFSmaUyLBYTlG4ad8/O9A6MHFUAmeGQcTJLSFM66mLhzsRbqdzdfegvQCaY\nPJm82bIEMOlAzIMga/aXb5b1qP0SzQl7KRNiTTXbPiFVpvj+xSYyO+KS1HNgGDNo\nVzEGRbY1m1qvslRLZ2fV6OaWhoHEew0NEZagKIC2DMnumhSn4JSus6SgRO2bAwGU\nZP3Z1atADoZrBwIDAQABo4IBDjCCAQowDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8E\nBAMCBLAwIAYDVR0lAQH/BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMIGoBgNVHSME\ngaAwgZ2AFBmALcnULZGNnFRkqv22DqOWgoh9oX2kezB5MQswCQYDVQQDEwJDQTEb\nMBkGA1UECxMSQ2xvdWQgTG9hZEJhbGFuY2VyMRowGAYDVQQKExFSYWNrc3BhY2Ug\nSG9zdGluZzEUMBIGA1UEBxMLU2FuIEFudG9uaW8xDjAMBgNVBAgTBVRleGFzMQsw\nCQYDVQQGEwJVU4IGAVVWRpO6MB0GA1UdDgQWBBQ2FvpmWgnWiP5TGldjYZ3gyPsE\nITANBgkqhkiG9w0BAQsFAAOCAgEAqcfuim4iiDSNIRseRurff0pjAm4kvvRHGjAU\n5S5JXap4DM/nJn7rBE22NVXQbCr0PksmAmPY/bqZKptfQdhT6h8jAImY6zlL4Obc\nvQkrnAZjaBDeefYfucgU0GwtwlkUXn5ERIa97Q+Ff/mckemQQJuLIPu5DgvDxE99\nAX2fVhBU3YYkdE690TeB45aeEQJIvb8PAM46vTpRxFwLuq+8hQB1Ir0x+LY3IBSA\npL4NE0LkWAbyIwv5tkUFx1mFjjblP0YVaYEbGvQbatHAc7eCDFHxh2TggWer/x/Y\nb16TbH1C8H0aEfYU4o/IiMpXFC5mMvLwGfOy/vG+stgxOy2FkEFIRm7yoiZasMrb\nBfccM2zjXWfWfG4PwcQ8xqt9ISegfpDNe4k0z8sU22BcdGnwdjZEJ6zBweXnL4bm\nvGFQjIxxRn1IqaZk74rVlTkI82IJyGg+iXPJ9qG1QjXLkD/JHtA/xO7aZ8Ij65VY\n9WWhWpjbjxCvTLQIKGW58tu5N/qlDHNr5DcSsjq7Nf0OFgaxPe03p3B5x3V8VRyN\nCzlgPauRTtm+mB8vjKnA0F4HFyVsGsdMMWAR4tvPUluXRNkh+V5gb8FbscL2sbu9\nWAbSVtgKkUe7/DPPuF09L3Gubq0pwHW7SoS2edSepBbqFqT0eNXrlAGiWAwhDpq3\nNbAQvJ4=\n-----END CERTIFICATE-----\n",
+        "enabled": true,
+        "privatekey": "-----BEGIN RSA PRIVATE KEY-----\n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\n-----END RSA PRIVATE KEY-----\n",
         "securityProtocols": [
           {
-            "securityProtocolName": "TLS_10", 
+            "securityProtocolName": "TLS_10",
             "securityProtocolStatus": "DISABLED"
           }
-        ], 
+        ],
         "intermediateCertificate": "-----BEGIN CERTIFICATE-----\nMIIGgTCCBGmgAwIBAgIGAVVWRpO6MA0GCSqGSIb3DQEBCwUAMHkxCzAJBgNVBAMT\nAkNBMRswGQYDVQQLExJDbG91ZCBMb2FkQmFsYW5jZXIxGjAYBgNVBAoTEVJhY2tz\ncGFjZSBIb3N0aW5nMRQwEgYDVQQHEwtTYW4gQW50b25pbzEOMAwGA1UECBMFVGV4\nYXMxCzAJBgNVBAYTAlVTMB4XDTE2MDYxNTIyNTUxM1oXDTI3MDkwMTIyNTUxM1ow\nejEMMAoGA1UEAxMDSU1EMRswGQYDVQQLExJDbG91ZCBMb2FkQmFsYW5jZXIxGjAY\nBgNVBAoTEVJhY2tzcGFjZSBIb3N0aW5nMRQwEgYDVQQHEwtTYW4gQW50b25pbzEO\nMAwGA1UECBMFVGV4YXMxCzAJBgNVBAYTAlVTMIICIjANBgkqhkiG9w0BAQEFAAOC\nAg8AMIICCgKCAgEAqrSzGbLwNx/KRj5f9EIprvohdrWV/HHF6gTM/Ph26GwtacAb\nA7P6IpZMxRvRYYHLsaf+KLhMBx6g0mLoOwLAzsJN6eP0HKptZ7T5uR3XWv620FqP\njEwg+yuOB7wbQbQYYA53di9sbr6YQjAfutFWSuyebv7klYnDRp893VhqIGA5c8tD\no4Lpu2RGDs0oZoXOqSzZXxlAbUnufF2fkDUiIPiPlrK5QcquqW5ooxkRdIwGKvHl\n+OlwyGdVmxUJ4N07/wz4ca1txkwx9PHPe7Qh9k9BAyytybh87SBg6KvFhrcHSXuv\nMdWuTWiKtXpQs6qoZuoWPp5b4KkWxq9YP7njMoe8ONSQ+fiJw4GVUBD2gh0m3YOo\n/liHZyoEH2aHX9NqscDamLti0/pKIHYFvTsbuEPMVMNVBRoIRKcwUZRuXoTruOSx\nmbG+o4w/VHBTJGY6elvNRq36H3p3PiV0wxDdXYlTyO5Jsn+kDB5f5IHRTkTrx06u\nuv65mq3Hco8jPUaU/mHa5CVsPMSjeW/aGxDPZ5VeumER+RsobRSZtTP5+SLQ0iIx\nuuRuAsZ3FX7mN5m4X1kyuzgG7C2dD0MfPHPR2NWjRSNcQws1NBsbhE9crd1wm5Pc\nfHYD3EL/7+bLZ9kPfP1iPTU6pV7ncWbQqa6BUTO1WxsGN0A6mIPVhm6TiJkCAwEA\nAaOCAQwwggEIMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgK0MCAGA1Ud\nJQEB/wQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjCBowYDVR0jBIGbMIGYgBStGewq\nibdL3DvzARt5hrQwVP06O6F9pHsweTELMAkGA1UEAxMCQ0ExGzAZBgNVBAsTEkNs\nb3VkIExvYWRCYWxhbmNlcjEaMBgGA1UEChMRUmFja3NwYWNlIEhvc3RpbmcxFDAS\nBgNVBAcTC1NhbiBBbnRvbmlvMQ4wDAYDVQQIEwVUZXhhczELMAkGA1UEBhMCVVOC\nAQEwHQYDVR0OBBYEFBmALcnULZGNnFRkqv22DqOWgoh9MA0GCSqGSIb3DQEBCwUA\nA4ICAQAMIl3lwc6DjQ7V/WQDpPLyaKmkA7xUThx1HOPO/jOGbth0oHWgrGrjL+IX\nSIead3+SElngibg69RLQHSIa+ESbuNn/5u+wa7cfrrXDmFmy+q6TSwZ9xUhdDg3n\nVZxs4JgS+TWsRkto0GR5OoVB8OCUs/r2wYMHSrYaYQWjW9f9Cttiig+Adhz1YtrR\n5yIyISxmukQ1fNHeKbGFEsuRKBdAPXAJxgjzlhZH268HfwHV4VLIzc6c6BaJQNah\n1E+3c9AKL4gSaiToqbFp3CU5/zzeu2VgKjCkSlJLvF3L7dw3Rq2O7Fhep+3fTbCe\n/WtPk2pdmbnJEn1df9FCqyqxQeslNnjY4MAcbKD+a/4oA8/c68Jw2pIaYxzPLBMJ\nBALbLATZYocvJMZQaDM0n+9esTcFr4P/fy4Vz99h+Mj7XoBfsPyV5n/nFO19ZqiM\nR7E3natI6sbP5Wlk77AjH/zm9ye/ZtUVxnRFBrhb/I5M+nkSoUFvJSUmAm+Ry0lc\n4fDWcrgHVmZVA+y9n7CSOKcNRSCQIo8X9EQdPgYsmpMf0WUgYSbxgGLN5HwM3tCY\naHhZvyJXlEdW7siLZ/gmRruR0g4udh3Mmj7RjjE9zDQQNsbAGNT2gsyGxwRcr7c8\nyxnoyJ1KUGhWzS0AyXkA2d/nctHrNGlx5mxFzDyCP/ZOvuSxeg==\n-----END CERTIFICATE-----\n"
       }
     }
 
-
-
-**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an Existing SSL Termination Configuration Request: XML**
-
+**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an
+Existing SSL Termination Configuration Request: XML**
 
 .. code::
 
     <?xml version="1.0" ?>
-
     <sslTermination enabled="true" securePort="443" secureTrafficOnly="false" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <securityProtocols securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
     </sslTermination>
 
-
-**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an Existing SSL Termination Configuration Request: JSON**
-
+**Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an
+Existing SSL Termination Configuration Request: JSON**
 
 .. code::
-    
+
     {
       "sslTermination": {
         "securityProtocols": [
           {
-            "securityProtocolName": "TLS_10", 
+            "securityProtocolName": "TLS_10",
             "securityProtocolStatus": "DISABLED"
           }
         ]
       }
     }
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

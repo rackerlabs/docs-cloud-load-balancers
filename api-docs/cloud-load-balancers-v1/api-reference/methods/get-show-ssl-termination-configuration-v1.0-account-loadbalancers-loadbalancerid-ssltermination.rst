@@ -1,8 +1,7 @@
-
-.. _get-show-ssl-termination-configuration-v1.0-account-loadbalancers-loadbalancerid-ssltermination:
+.. _get-show-ssl-termination-configuration:
 
 Show SSL termination configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,14 +9,18 @@ Show SSL termination configuration
 
 Shows the load balancer's SSL termination configuration.
 
-The SSL termination feature enables you to terminate SSL traffic at the load balancer layer versus at the web server layer. You can choose to configure SSL termination using a key and an SSL certificate or an (Intermediate) SSL certificate.
-
-When SSL termination is configured on a load balancer, a secure shadow server is created that listens only for secure traffic on a user-specified port. This shadow server is only visible to and manageable by the system. Existing or updated attributes on a load balancer with SSL termination also applies to its shadow server. For example, if Connection Logging is enabled on an SSL load balancer, it is also enabled on the shadow server and Cloud Files logs contain log files for both.
-
-
+The SSL termination feature enables you to terminate SSL traffic at the load
+balancer layer versus at the web server layer. You can choose to configure SSL
+termination using a key and an SSL certificate or an (Intermediate) SSL
+certificate. When SSL termination is configured on a load balancer, a secure
+shadow server is created that listens only for secure traffic on a
+user-specified port. This shadow server is only visible to and manageable by
+the system. Existing or updated attributes on a load balancer with SSL
+termination also applies to its shadow server. For example, if Connection
+Logging is enabled on an SSL load balancer, it is also enabled on the shadow
+server and Cloud Files logs contain log files for both.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,12 +66,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -83,34 +82,16 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show SSL termination configuration: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8"?>
-    
     <sslTermination xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true" securePort="500" secureTrafficOnly="false">
     <certificate>-----BEGIN CERTIFICATE-----
     MIIEWjCCA0KgAwIBAgIGATTTGu/tMA0GCSqGSIb3DQEBBQUAMHkxCzAJBgNVBAYT
@@ -262,9 +243,7 @@ Response
     -----END CERTIFICATE-----</intermediateCertificate>
     </sslTermination>
 
-
 **Example Show SSL termination configuration: JSON response**
-
 
 .. code::
 
@@ -277,4 +256,3 @@ Response
             "securePort":443
         }
     }
-

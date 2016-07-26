@@ -1,7 +1,8 @@
 .. _content-compression:
 
+===================
 Content compression
-~~~~~~~~~~~~~~~~~~~~~
+===================
 
 Request and response body data may be encoded with gzip compression to
 accelerate interactive performance of API calls and responses. This is

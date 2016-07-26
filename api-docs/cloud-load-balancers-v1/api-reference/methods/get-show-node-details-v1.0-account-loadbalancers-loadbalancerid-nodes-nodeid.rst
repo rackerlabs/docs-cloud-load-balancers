@@ -1,8 +1,7 @@
-
-.. _get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid:
+.. _get-show-node-details:
 
 Show node details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -11,14 +10,10 @@ Show node details
 Show details for a specified node.
 
 .. note::
-   The ``weight`` attributes are only displayed for load balancers that use the ``WEIGHTED_LEAST_CONNECTIONS`` or ``WEIGHTED_ROUND_ROBIN`` algorithms.
-   
-   
-
-
+   The ``weight`` attributes are only displayed for load balancers that use the
+   ``WEIGHTED_LEAST_CONNECTIONS`` or ``WEIGHTED_ROUND_ROBIN`` algorithms.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +59,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -86,29 +77,12 @@ The following table shows the URI parameters for the request:
 |{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show node details: JSON response**
-
 
 .. code::
 
@@ -122,10 +96,8 @@ Response
             "type":"PRIMARY"
         }
     }
-
-
+    
 **Example Show node details: XML response**
-
 
 .. code::
 
@@ -138,9 +110,7 @@ Response
         weight="12"
         type="PRIMARY"/>
 
-
 **Example Show atom node details: ATOM/XML response**
-
 
 .. code::
 
@@ -165,4 +135,3 @@ Response
             <updated>2011-04-05T21:07:49.000Z</updated>
         </entry>
     </feed>
-

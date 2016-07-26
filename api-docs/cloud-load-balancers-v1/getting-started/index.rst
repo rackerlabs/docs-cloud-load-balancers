@@ -1,11 +1,11 @@
 .. _getting-started-guide:
 
-==========================
+===============
 Getting started
-==========================
+===============
 
 Use the following information to learn how to authenticate, send API requests,
-and complete basic operations by using the Cloud Load Balancers API.
+and complete basic operations by using the |apiservice|.
 
 .. toctree::
    :maxdepth: 1
@@ -17,13 +17,11 @@ and complete basic operations by using the Cloud Load Balancers API.
    using-cloud-load-balancers
 
 
-To start using the API and run the examples in this section, you need the following items:
+To start using the API and run the examples in this section, you need the
+following items:
 
-- Rackspace Cloud account. If you don't have an account, `sign up`_ for one.
-- :ref:`Command line tool or browser client <send-api-requests>` for communicating with the API service.
+- Rackspace Cloud account. If you don't have an account,
+  :rax-cart:`sign up <cloud>` for one on the Rackspace website.
 
-
-
-.. comment: link reference
-
-.. _sign up: https://cart.rackspace.com/cloud/
+- :ref:`Command line tool or browser client <send-api-requests>` for
+  communicating with the API service.

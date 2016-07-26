@@ -1,8 +1,8 @@
 
-.. _delete-delete-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist:
+.. _delete-delete-access-list:
 
 Delete access list
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -13,7 +13,6 @@ Deletes the entire access list.
 
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,10 +60,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,21 +75,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.

@@ -1,8 +1,8 @@
 
-.. _delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes:
+.. _delete-bulk-delete-nodes:
 
 Bulk-delete nodes
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,14 +10,19 @@ Bulk-delete nodes
 
 Bulk-deletes the specified nodes from a specified load balancer.
 
-To bulk-delete nodes, provide a query parameter list of node IDs (for example: /nodes?id= ``nodeId`` & id= ``nodeId`` ). The current default limit is ten IDs per request. Any and all configuration data is immediately purged and is not recoverable.
+To bulk-delete nodes, provide a query parameter list of node IDs (for example:
+/nodes?id= ``nodeId`` & id= ``nodeId`` ). The current default limit is ten IDs
+per request. Any and all configuration data is immediately purged and is not
+recoverable.
 
-This operation is an all or nothing proposition. If one or more of the items in the list cannot be removed due to their current status, a badRequest (400) is returned along with the IDs of the items the system identified as potential failures for this request. In this case, no nodes are deleted, and the user is notified with the specified ID(s) and related error message. Refer to the error response example shown below.
-
-
+This operation is an all or nothing proposition. If one or more of the items in
+the list cannot be removed due to their current status, a badRequest (400) is
+returned along with the IDs of the items the system identified as potential
+failures for this request. In this case, no nodes are deleted, and the user is
+notified with the specified ID(s) and related error message. Refer to the error
+response example shown below.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,10 +70,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
-
-
-
+--------
 
 The following table shows the URI parameters for the request:
 
@@ -94,25 +96,10 @@ The following table shows the query parameters for the request:
 |                          |                         |node.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Bulk-delete Nodes Error: JSON response**
 

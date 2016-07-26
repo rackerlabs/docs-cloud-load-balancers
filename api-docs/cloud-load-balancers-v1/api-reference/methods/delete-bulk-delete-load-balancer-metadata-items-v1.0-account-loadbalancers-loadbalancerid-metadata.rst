@@ -1,8 +1,8 @@
 
-.. _delete-bulk-delete-load-balancer-metadata-items-v1.0-account-loadbalancers-loadbalancerid-metadata:
+.. _delete-bulk-delete-load-balancer-metadata-items:
 
 Bulk-delete load balancer metadata items
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -66,7 +66,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -96,6 +96,6 @@ This operation does not accept a request body.
 
 
 Response
-^^^^^^^^^^^
+--------
 
 This operation does not return a response body.
