@@ -73,7 +73,7 @@ To find your account's settings for these rate limits, see
 .. _Repose service: http://www.openrepose.org
 
 Quotas
-~~~~~~~~~~~~~~~
+~~~~~~
 
 Quotas, also called absolute limits, specify the maximum number of load balancers that can exist per
 Cloud account and the maximum number of resources that can exist per
@@ -85,7 +85,7 @@ The system applies default values for each quota, as shown in the following tabl
 +--------------------+------------------------------------------------------------------------+---------+
 | Name               | Description                                                            | Default |
 +====================+========================================================================+=========+
-| loadbalancer       | Total number of load balancers that can be added to a Cloud account    | 10      |
+| loadbalancer       | Total number of load balancers that can be added to a Cloud account    | 5       |
 +--------------------+------------------------------------------------------------------------+---------+
 | listener           | Total number of listeners that can be added to a load balancer         | 20      |
 +--------------------+------------------------------------------------------------------------+---------+

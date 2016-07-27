@@ -13,4 +13,4 @@ resolved issues, and other important details about |apiservice| |version| servic
    :maxdepth: 2
 
 
-   release-notes/clbs-v2-00-00-20160726.rst
+   release-notes/clbs-v2-00-00-20160728.rst
