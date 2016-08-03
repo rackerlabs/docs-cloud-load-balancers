@@ -42,14 +42,10 @@ The following table shows the URI parameters for the request.
 |pool_id           |csapi:uuid  | The UUID for the pool.                                       |
 +------------------+------------+--------------------------------------------------------------+
 
-
-
 This operation does not accept a request body.
 
 Response
 """"""""""""""""
-
-
 
 The following table shows the body parameters for the response.
 

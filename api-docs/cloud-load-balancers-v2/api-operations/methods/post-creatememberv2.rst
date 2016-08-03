@@ -15,8 +15,6 @@ response is returned. The response contains a unique identifier for the member.
 
 At a minimum, you must specify the following pool attributes:
 
--  ``tenant_id``
-
 -  ``address``
 
 -  ``protocol_port``
@@ -35,10 +33,6 @@ If the request fails because of incorrect data, the service returns the HTTP
 in the response body. Validation errors require that you correct the
 error and submit the request again.
 
-
-Users with an administrative role can create members on behalf of other
-tenants by specifying a ``tenant_id`` attribute that is different than
-their own.
 
 To add a member, the load balancer must have a
 ``provisioning_status`` of ``ACTIVE``.
@@ -106,9 +100,6 @@ The following table shows the body parameters for the request.
 |                  |           |             | does not participate in load-balancing but still accepts persistent connections.   |
 |                  |           |             | A valid value is from 0 to 256.  The default is ``1``.                             |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the member. This parameter is required only if the |
-|                  |           |             | user has an administrative role and wants to create a member for another tenant.   |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
 
@@ -121,7 +112,7 @@ The following table shows the body parameters for the request.
             "address": "10.0.0.8",
             "admin_state_up": true,
             "protocol_port": "80",
-            "subnet_id": "013d3059-87a4-45a5-91e9-d721068ae0b2",
+            "subnet_id": "00000000-0000-0000-0000-000000000000",
             "weight": "1"
         }
     }
@@ -169,7 +160,7 @@ The following table shows the body parameters for the response.
             "admin_state_up": true,
             "id": "9a7aff27-fd41-4ec1-ba4c-3eb92c629313",
             "protocol_port": 80,
-            "subnet_id": "013d3059-87a4-45a5-91e9-d721068ae0b2",
+            "subnet_id": "00000000-0000-0000-0000-000000000000",
             "tenant_id": "1a3e005cf9ce40308c900bcb08e5320c",
             "weight": 1
         }
