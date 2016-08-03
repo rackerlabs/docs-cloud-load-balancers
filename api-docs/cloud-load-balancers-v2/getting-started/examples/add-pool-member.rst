@@ -37,7 +37,7 @@ The following example shows the cURL request for adding a member to a pool.
                "address": "<IP address of Cloud Server>",
                "admin_state_up": true,
                "protocol_port": 80,
-               "subnet_id": "subnet_id",
+               "subnet_id": "00000000-0000-0000-0000-000000000000",
                "weight": 1
            }
        ]
@@ -60,7 +60,7 @@ The following example shows the response returned when you add a member to a poo
             "admin_state_up": true,
             "id": "9a7aff27-fd41-4ec1-ba4c-3eb92c629313",
             "protocol_port": 80,
-            "subnet_id": "subnet_id",
+            "subnet_id": "00000000-0000-0000-0000-000000000000",
             "tenant_id": "tenant_id",
             "weight": 1
         }

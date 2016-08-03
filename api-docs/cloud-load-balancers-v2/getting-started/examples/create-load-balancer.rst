@@ -38,7 +38,7 @@ The following example shows the cURL request for creating a load balancer.
         "loadBalancer": {
             "name": "loadbalancer1",
             "description": "simple lb",
-            "vip_subnet_id": "your_vip_subnet_id"
+            "vip_subnet_id": "00000000-0000-0000-0000-000000000000"
          }
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
