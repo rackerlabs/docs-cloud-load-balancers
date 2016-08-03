@@ -1,8 +1,7 @@
-
-.. _delete-delete-load-balancer-v1.0-account-loadbalancers-loadbalancerid:
+.. _delete-delete-load-balancer:
 
 Delete load balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +9,10 @@ Delete load balancer
 
 Deletes a load balancer from the account.
 
-The delete load balancer call removes the specified load balancer and its associated configuration from the account. Any and all configuration data is immediately purged and is not recoverable.
-
-
-
-The following table shows the possible response codes for this operation:
-
+The delete load balancer call removes the specified load balancer and its
+associated configuration from the account. Any and all configuration data is
+immediately purged and is not recoverable. The following table shows the
+possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +58,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,21 +74,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.

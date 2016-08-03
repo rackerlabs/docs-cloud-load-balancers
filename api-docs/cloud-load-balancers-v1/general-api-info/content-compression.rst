@@ -1,16 +1,20 @@
 .. _content-compression:
 
+===================
 Content compression
-~~~~~~~~~~~~~~~~~~~~~
+===================
 
-Request and response body data may be encoded with gzip compression to
-accelerate interactive performance of API calls and responses. This is
-controlled using the `Accept-Encoding` header in the request from the client
-and indicated by the `Content-Encoding` header in the server response. Unless
-the header is explicitly set, encoding defaults to disabled.
+.. COMMENT: Adapt this topic to provide information that is relevant for your
+   product.
+
+Request and response body data can be encoded with gzip compression to
+accelerate interactive performance of API requests and responses. Compression
+is controlled by using the ``Accept-Encoding`` header in the request from the
+client and is indicated by the ``Content-Encoding`` header in the server
+response. Unless the header is explicitly set, encoding is disabled.
 
 +-------------------+------------------+-------+
-| Header Type       | Name             | Value |
+| Header type       | Name             | Value |
 +===================+==================+=======+
 | HTTP/1.1 Request  | Accept-Encoding  | gzip  |
 +-------------------+------------------+-------+

@@ -1,8 +1,7 @@
-
-.. _get-list-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes:
+.. _get-list-nodes:
 
 List nodes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 .. code::
 
@@ -11,14 +10,11 @@ List nodes
 Lists nodes that are configured for a specified load balancer.
 
 .. note::
-   The ``weight`` attributes are only displayed for load balancers that use the ``WEIGHTED_LEAST_CONNECTIONS`` or ``WEIGHTED_ROUND_ROBIN`` algorithms.
-   
-   
 
-
+   The ``weight`` attributes are only displayed for load balancers that use the
+   ``WEIGHTED_LEAST_CONNECTIONS`` or ``WEIGHTED_ROUND_ROBIN`` algorithms.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +60,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -84,29 +76,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example List nodes: JSON response**
-
 
 .. code::
 
@@ -142,9 +117,7 @@ Response
         ]
     }
 
-
 **Example List nodes: XML response**
-
 
 .. code::
 
@@ -175,4 +148,3 @@ Response
             weight="12"
             type="SECONDARY"/>
     </nodes>
-

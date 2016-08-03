@@ -1,8 +1,7 @@
-
-.. _get-list-allowed-domains-v1.0-account-loadbalancers-alloweddomains:
+.. _get-list-allowed-domains:
 
 List allowed domains
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,17 +9,17 @@ List allowed domains
 
 Lists allowed domains.
 
-The allowed domains are restrictions set for the allowed domain names used for adding load balancer nodes. In order to submit a domain name as an address for the load balancer node to add, the user must verify that the domain is valid by using the list allowed domains call. Once verified, simply supply the domain name in place of the address of the node in the add nodes call.
+The allowed domains are restrictions set for the allowed domain names used for
+adding load balancer nodes. In order to submit a domain name as an address for
+the load balancer node to add, the user must verify that the domain is valid by
+using the list allowed domains call. Once verified, simply supply the domain
+name in place of the address of the node in the add nodes call.
 
 .. note::
+
    Currently only Rackspace-based domain names are supported.
-   
-   
-
-
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -66,13 +65,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
-
+-------
 The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -83,57 +77,32 @@ The following table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
-
+--------
 **Example List allowed domains: JSON response**
-
 
 .. code::
 
-    
     {
         "allowedDomains":[
             {"allowedDomain":{
                 "name":"rackspace.com"}},
-    
             {"allowedDomain":{
                 "name":"randomsite.org"}},
-    
             {"allowedDomain":{
                 "name":"org"}}
         ]
     }
 
-
 **Example List allowed domains: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <allowedDomains xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <allowedDomain name="rackspace.com"/>
         <allowedDomain name="randomsite.com"/>
         <allowedDomain name="org"/>
     </allowedDomains>
-

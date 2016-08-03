@@ -1,8 +1,7 @@
-
-.. _delete-delete-network-from-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist-networkitemid:
+.. _delete-delete-network-from-access-list:
 
 Delete network from access list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Delete network from access list
 
 Deletes a network item from a specified access list.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -82,25 +74,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

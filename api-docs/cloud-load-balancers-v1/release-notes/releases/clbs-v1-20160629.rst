@@ -1,0 +1,22 @@
+.. version-v1.25.26-release-notes:
+
+API |contract version| updates, June 29, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+Added the ``securityProtocols`` object to the :ref:`Update SSL termination
+configuration operation <put-update-ssl-termination-configuration>` to disable
+Transaction Security Layer (TSL) 1.0.
+
+
+Resolved issues
+---------------
+
+|no changes|
+
+Known issues
+------------
+
+|no changes|

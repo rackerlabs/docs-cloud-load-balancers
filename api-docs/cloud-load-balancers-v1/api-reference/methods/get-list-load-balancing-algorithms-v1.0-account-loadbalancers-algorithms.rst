@@ -1,8 +1,7 @@
-
-.. _get-list-load-balancing-algorithms-v1.0-account-loadbalancers-algorithms:
+.. _get-list-load-balancing-algorithms:
 
 List load balancing algorithms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ List load balancing algorithms
 
 Lists all supported load balancing algorithms.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -76,29 +68,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example List load balancing algorithms: JSON response**
-
 
 .. code::
 
@@ -121,9 +96,7 @@ Response
         ]
     }
 
-
 **Example List load balancing algorithms: XML response**
-
 
 .. code::
 
@@ -134,4 +107,3 @@ Response
         <algorithm name="WEIGHTED_LEAST_CONNECTIONS" />
         <algorithm name="WEIGHTED_ROUND_ROBIN" />
     </algorithms>
-

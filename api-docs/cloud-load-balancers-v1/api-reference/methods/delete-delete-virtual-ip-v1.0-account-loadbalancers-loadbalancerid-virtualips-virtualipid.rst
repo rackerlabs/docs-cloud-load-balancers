@@ -1,8 +1,7 @@
-
-.. _delete-delete-virtual-ip-v1.0-account-loadbalancers-loadbalancerid-virtualips-virtualipid:
+.. _delete-delete-virtual-ip:
 
 Delete virtual IP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Delete virtual IP
 
 Deletes a specified virtual IP.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -50,12 +46,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -73,25 +65,8 @@ The following table shows the URI parameters for the request:
 |                          |                         |IP.                      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
+--------
 This operation does not return a response body.
-
-
-
-

@@ -1,7 +1,8 @@
 .. _protocols:
 
+=========
 Protocols
----------------
+=========
 
 
 All load balancers must define the protocol of the service which is

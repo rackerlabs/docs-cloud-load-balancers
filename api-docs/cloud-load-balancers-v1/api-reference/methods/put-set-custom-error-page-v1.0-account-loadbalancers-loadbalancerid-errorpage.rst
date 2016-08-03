@@ -1,8 +1,7 @@
-
-.. _put-set-custom-error-page-v1.0-account-loadbalancers-loadbalancerid-errorpage:
+.. _put-set-custom-error-page:
 
 Set custom error page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Set custom error page
 
 Sets a custom error page for a specified load balancer.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,13 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
-
+-------
 The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -78,10 +69,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -97,22 +84,15 @@ The following table shows the body parameters for the request:
 |                          |                         |JSON formats.            |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Set custom error page: JSON request**
-
 
 .. code::
 
-    {"errorpage": 
+    {"errorpage":
     {"content":"\n<html>\n    DEFAULT ERROR PAGE\n</html>\n"}
-    } 
-
+    }
 
 **Example Set custom error page: XML request**
-
 
 .. code::
 
@@ -125,21 +105,10 @@ The following table shows the body parameters for the request:
         </content>
     </errorpage>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Set custom error page: JSON response**
-
 
 .. code::
 
@@ -147,9 +116,7 @@ Response
         {"content":"<html> DEFAULT ERROR PAGE</html>"}
     }
 
-
 **Example Set custom error page: XML response**
-
 
 .. code::
 
@@ -160,4 +127,3 @@ Response
                    </html>
         </content>
     </errorpage>
-

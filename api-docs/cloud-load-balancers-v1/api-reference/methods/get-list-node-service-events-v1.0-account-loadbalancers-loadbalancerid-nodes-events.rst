@@ -1,8 +1,7 @@
-
-.. _get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events:
+.. _get-list-node-service-events:
 
 List node service events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +9,12 @@ List node service events
 
 Lists node service events.
 
-Lists events associated with the activity between the node and the load balancer. The events report errors found with the node. The ``detailedMessage`` provides the detailed reason for the error. The events can be processed as JSON, XML, and ATOM. This call has pagination and a list limit of 100 events. Events are stored for 90 days.
-
-
-
-The following table shows the possible response codes for this operation:
-
+Lists events associated with the activity between the node and the load
+balancer. The events report errors found with the node. The ``detailedMessage``
+provides the detailed reason for the error. The events can be processed as
+JSON, XML, and ATOM. This call has pagination and a list limit of 100 events.
+Events are stored for 90 days. The following table shows the possible response
+codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +60,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,29 +76,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example List node service events: JSON response**
-
 
 .. code::
 
@@ -139,10 +117,8 @@ Response
             "created":"10-30-2012 11:22:25"
         }
     ]}
-
-
+    
 **Example List node service events: XML response**
-
 
 .. code::
 
@@ -159,9 +135,7 @@ Response
                           created="10-30-2012 11:22:25"/>
     </nodeServiceEvents>
 
-
 **Example List node service events: JSON response**
-
 
 .. code::
 
@@ -198,4 +172,3 @@ Response
             <content type="text">Details: Invalid HTTP response received; premature end of headers</content>
         </entry>
     </feed>
-

@@ -1,8 +1,8 @@
 .. _algorithms:
 
-
+==========
 Algorithms
----------------
+==========
 
 
 All load balancers utilize an algorithm that defines how traffic should

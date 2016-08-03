@@ -1,7 +1,8 @@
 .. _virtual-ips:
 
+===========
 Virtual IPs 
------------------
+===========
 
 A virtual IP (VIP) makes a load balancer accessible by clients.
 The load balancing service supports either a public VIP, routable on the

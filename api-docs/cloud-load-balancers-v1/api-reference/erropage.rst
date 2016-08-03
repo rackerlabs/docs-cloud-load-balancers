@@ -1,8 +1,8 @@
 .. _error-pages:
 
-
+===========
 Error pages 
------------------
+===========
 
 
 An error page is the HTML file that is shown to an end user who

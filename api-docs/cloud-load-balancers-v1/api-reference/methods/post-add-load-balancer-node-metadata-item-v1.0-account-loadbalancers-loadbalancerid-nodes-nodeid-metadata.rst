@@ -1,8 +1,7 @@
-
-.. _post-add-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata:
+.. _post-add-load-balancer-node-metadata-item:
 
 Add load balancer node metadata item
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +9,11 @@ Add load balancer node metadata item
 
 Adds a metadata item to a specified node and load balancer.
 
-When a metadata item is added, it is assigned a unique identifier that can be used for mutating operations such as changing the value attribute or removing it.
-
-
+When a metadata item is added, it is assigned a unique identifier that can be
+used for mutating operations such as changing the value attribute or removing
+it.
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +59,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -82,10 +76,6 @@ The following table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 The following table shows the body parameters for the request:
 
@@ -105,12 +95,7 @@ The following table shows the body parameters for the request:
 |                          |                         |valid.                   |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Add load balancer node metadata item: JSON request**
-
 
 .. code::
 
@@ -120,25 +105,13 @@ The following table shows the body parameters for the request:
       }
     }
 
-
 **Example Add load balancer node metadata item: XML request**
-
 
 .. code::
 
     <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">blue</meta>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

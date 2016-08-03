@@ -1,8 +1,7 @@
-
-.. _delete-delete-load-balancer-node-metadata-item-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata-metaid:
+.. _delete-delete-load-balancer-node-metadata-item:
 
 Delete load balancer node metadata item
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -11,11 +10,7 @@ Delete load balancer node metadata item
 Deletes a metadata item from the node.
 
 Any and all configuration data is immediately purged and is not recoverable.
-
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +56,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -86,21 +77,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |item.                    |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.

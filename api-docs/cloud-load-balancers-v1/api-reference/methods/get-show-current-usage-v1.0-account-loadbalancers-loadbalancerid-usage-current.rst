@@ -1,8 +1,7 @@
-
-.. _get-show-current-usage-v1.0-account-loadbalancers-loadbalancerid-usage-current:
+.. _get-show-current-usage:
 
 Show current usage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,14 +9,17 @@ Show current usage
 
 Shows current usage.
 
-The load balancer usage reports provide a view of all transfer activity, average number of connections, and number of virtual IPs associated with the load balancing service. Current usage represents all usage recorded within the preceding 24 hours. Values for both ``incomingTransfer`` and ``outgoingTransfer`` are expressed in bytes transferred.
-
-The optional ``startTime`` and ``endTime`` parameters can be used to filter all usage. If the ``startTime`` parameter is supplied but the ``endTime`` parameter is not, then all usage beginning with the ``startTime`` is provided. Likewise, if the ``endTime`` parameter is supplied but the ``startTime`` parameter is not, then all usage is returned up to the ``endTime`` specified.
-
-
-
-The following table shows the possible response codes for this operation:
-
+The load balancer usage reports provide a view of all transfer activity,
+average number of connections, and number of virtual IPs associated with the
+load balancing service. Current usage represents all usage recorded within the
+preceding 24 hours. Values for both ``incomingTransfer`` and
+``outgoingTransfer`` are expressed in bytes transferred. The optional
+``startTime`` and ``endTime`` parameters can be used to filter all usage. If
+the ``startTime`` parameter is supplied but the ``endTime`` parameter is not,
+then all usage beginning with the ``startTime`` is provided. Likewise, if the
+``endTime`` parameter is supplied but the ``startTime`` parameter is not, then
+all usage is returned up to the ``endTime`` specified. The following table
+shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,12 +65,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -82,8 +80,6 @@ The following table shows the URI parameters for the request:
 |{loadBalancerId}          |String                   |The ID for the load      |
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 The following table shows the query parameters for the request:
 
@@ -104,28 +100,12 @@ The following table shows the query parameters for the request:
 |                          |                         |endTime is returned.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show current usage: JSON response**
-
 
 .. code::
 
@@ -149,11 +129,8 @@ Response
             }
         ]
     }
-    
-
 
 **Example Show current usage: XML response**
-
 
 .. code::
 
@@ -173,5 +150,3 @@ Response
     		<numPolls>0</numPolls>
     		<sslMode>OFF</sslMode>
     	</loadBalancerUsageRecords>
-    
-

@@ -1,8 +1,7 @@
-
-.. _get-list-load-balancers-v1.0-account-loadbalancers:
+.. _get-list-load-balancers:
 
 List load balancers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,27 +9,28 @@ List load balancers
 
 Lists load balancers that are configured for the account.
 
-The response object shows a limited set of load balancer attributes, including the following attributes:
-
-
-
+The response object shows a limited set of load balancer attributes, including
+the following attributes:
 *  ``name``
 *  ``id``
 *  ``status``
 *  ``created``
 *  ``updated``
 
-
-Use the changes-since query parameter to list all load balancers that have changed since the specified date/time. For example, using the URI ``/loadbalancers?changes-since=2011-05-19T08:07:08-0500`` lists all load balancers that have changed since May 19th, 2011 at 8:07:08 AM, GMT-5. See :ref:`Date and time format <date-time-format>` for information about specifying the date/time.
-
-To view deleted load balancers, add the query parameter ``?status=DELETED`` to the end of the URI. A deleted load balancer is immutable and irrecoverable.
-
-To find out if any load balancer for an account has a specific node attached to it, use the query parameter nodeaddress to specify the IP address or domain name for the desired node. For example, using the URI ``/loadbalancers?nodeaddress=10.1.1.1`` searches all load balancers for the account for a node with IP address 10.1.1.1, and returns a list including the ID, name, and status of all load balancers attached.
-
-
-
-The following table shows the possible response codes for this operation:
-
+Use the changes-since query parameter to list all load balancers that have
+changed since the specified date/time. For example, using the URI
+``/loadbalancers?changes-since=2011-05-19T08:07:08-0500`` lists all load
+balancers that have changed since May 19th, 2011 at 8:07:08 AM, GMT-5. See
+:ref:`Date and time format <date-time-format>` for information about specifying
+the date/time. To view deleted load balancers, add the query parameter
+``?status=DELETED`` to the end of the URI. A deleted load balancer is immutable
+and irrecoverable. To find out if any load balancer for an account has a
+specific node attached to it, use the query parameter nodeaddress to specify
+the IP address or domain name for the desired node. For example, using the URI
+``/loadbalancers?nodeaddress=10.1.1.1`` searches all load balancers for the
+account for a node with IP address 10.1.1.1, and returns a list including the
+ID, name, and status of all load balancers attached. The following table shows
+the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -73,12 +73,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -90,21 +86,10 @@ The following table shows the URI parameters for the request:
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
+--------
 
 The following table shows the body parameters for the response:
 
@@ -165,19 +150,12 @@ The following table shows the body parameters for the response:
 |type                      |String                   |The IP address type. See       |
 |                          |                         |the Virtual IP Types           |
 |                          |                         |table in the Chapter 4         |
-|                          |                         |section "Virtual IPs".         |      
+|                          |                         |section "Virtual IPs".         |
 +--------------------------+-------------------------+-------------------------------+
 |ipVersion                 |String                   |The IP version.                |
 +--------------------------+-------------------------+-------------------------------+
 
-
-
-
-
-
-
 **Example List load balancers: JSON response**
-
 
 .. code::
 
@@ -232,9 +210,7 @@ The following table shows the body parameters for the response:
         ]
     }
 
-
 **Example List load balancers: XML response**
-
 
 .. code::
 
@@ -260,9 +236,7 @@ The following table shows the body parameters for the response:
         </loadBalancer>
     </loadBalancers>
 
-
 **Example List load balancers: Atom response**
-
 
 .. code::
 
@@ -289,4 +263,3 @@ The following table shows the body parameters for the response:
             <updated>2011-04-07T16:58:31.000Z</updated>
         </entry>
     </feed>
-

@@ -1,7 +1,8 @@
 .. _certificate-mappings:
 
+====================
 Certificate Mappings
------------------------
+====================
 
 
 Certificate mappings allow for multiple certificates to be used on

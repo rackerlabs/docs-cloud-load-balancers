@@ -1,8 +1,7 @@
-
-.. _get-show-load-balancer-node-metadata-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid-metadata:
+.. _get-show-load-balancer-node-metadata:
 
 Show load balancer node metadata
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Show load balancer node metadata
 
 Shows all metadata associated with a specified node and load balancer.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,29 +73,12 @@ The following table shows the URI parameters for the request:
 |{nodeId}                  |String                   |The ID for the node.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show load balancer node metadata: JSON response**
-
 
 .. code::
 
@@ -122,9 +97,7 @@ Response
       ]
     }
 
-
 **Example Show load balancer node metadata: XML response**
-
 
 .. code::
 
@@ -132,4 +105,3 @@ Response
       <meta id="1" key="color">red</meta>
       <meta id="2" key="label">web-load-balancer</meta>
     </metadata>
-

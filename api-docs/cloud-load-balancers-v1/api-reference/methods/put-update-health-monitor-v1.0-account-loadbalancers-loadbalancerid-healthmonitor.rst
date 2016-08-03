@@ -1,8 +1,7 @@
-
-.. _put-update-health-monitor-v1.0-account-loadbalancers-loadbalancerid-healthmonitor:
+.. _put-update-health-monitor:
 
 Update health monitor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,13 +9,13 @@ Update health monitor
 
 Updates the settings for a health monitor.
 
-Every health monitor has a ``type`` attribute to signify what kind of monitor it is.
+Every health monitor has a ``type`` attribute to signify what kind of monitor
+it is.
 
 The following table lists the health monitor types:
 
 .. table:: Health monitor types
 
-    
     +---------------------------------------+--------------------------------------+
     |Name                                   |Description                           |
     +=======================================+======================================+
@@ -26,18 +25,21 @@ The following table lists the health monitor types:
     +---------------------------------------+--------------------------------------+
     |HTTPS                                  |Health monitor is an HTTPS monitor.   |
     +---------------------------------------+--------------------------------------+
-    
 
 .. note::
-   When deleting a health monitor of any type, every node on that load balancer that is enabled or has failed and is in OFFLINE status has its status updated to ONLINE regardless of the health of the node.
-   
-   
 
-**Connect Monitor.** The monitor connects to each node on its defined port to ensure that the service is listening properly. The connect monitor is the most basic type of health check and does no post-processing or protocol specific health checks. It includes several configurable properties. The following table lists the required and optional attributes for Monitor Connections:
+   When deleting a health monitor of any type, every node on that load balancer
+   that is enabled or has failed and is in OFFLINE status has its status updated
+   to ONLINE regardless of the health of the node.
 
-.. table:: Required and Optional Attributes for                    Monitor Connections
+**Connect Monitor** The monitor connects to each node on its defined port to
+ensure that the service is listening properly. The connect monitor is the most
+basic type of health check and does no post-processing or protocol specific
+health checks. It includes several configurable properties. The following
+table lists the required and optional attributes for Monitor Connections:
 
-    
+.. table:: Required and Optional Attributes for Monitor Connections
+
     +---------------------------+-------------------------+------------------------+
     |Name                       |Description              |Required                |
     +===========================+=========================+========================+
@@ -66,12 +68,17 @@ The following table lists the health monitor types:
     |                           |specified as "CONNECT"   |                        |
     |                           |to monitor connections.  |                        |
     +---------------------------+-------------------------+------------------------+
-    
 
-**Monitor HTTP and HTTPS.** The HTTP and HTTPS monitor is more intelligent than the connect monitor. It is capable of processing an HTTP or HTTPS response to determine the condition of a node. It supports the same basic properties as the connect monitor and includes additional attributes that are used to evaluate the HTTP response. The user can supply an optional ``hostHeader`` attribute for the HTTP and HTTPS health monitor to specify a host for which the health monitors will check. The following table lists the required and optional attributes for Monitor HTTP and HTTPS:
+**Monitor HTTP and HTTPS**  The HTTP and HTTPS monitor is more intelligent than
+the connect monitor. It is capable of processing an HTTP or HTTPS response to
+determine the condition of a node. It supports the same basic properties as
+the connect monitor and includes additional attributes that are used to
+evaluate the HTTP response. The user can supply an optional ``hostHeader``
+attribute for the HTTP and HTTPS health monitor to specify a host for which
+the health monitors will check. The following table lists the required and
+optional attributes for Monitor HTTP and HTTPS:
 
 .. table:: Required and Optional Attributes for Monitor HTTP and HTTPS
-
 
     +---------------------------+---------------------------------+----------------+
     |Name                       |Description                      |Required        |
@@ -142,13 +149,7 @@ The following table lists the health monitor types:
     |                           |response.                        |                |
     +---------------------------+---------------------------------+----------------+
 
-
-
-
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -194,12 +195,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -214,31 +211,20 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Update health monitor: XML request**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         type="CONNECT"
         delay="10"
         timeout="10"
         attemptsBeforeDeactivation="3" />
 
-
 **Example Update health monitor: JSON request**
-
 
 .. code::
 
@@ -251,17 +237,7 @@ This operation does not accept a request body.
         }
     }
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

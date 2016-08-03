@@ -1,8 +1,7 @@
-
-.. _get-show-load-balancer-statistics-v1.0-account-loadbalancers-loadbalancerid-stats:
+.. _get-show-load-balancer-statistics:
 
 Show load balancer statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,37 +9,49 @@ Show load balancer statistics
 
 Shows statistics for a specified load balancer.
 
-This operation provides detailed stats output, including the following information, for a specific load balancer configured and associated with the user's account:
+This operation provides detailed stats output, including the following
+information, for a specific load balancer configured and associated with the
+user's account:
 
-
-
-*  connectTimeOut – Connections closed by this load balancer because the 'connect_timeout' interval was exceeded.
-*  connectError – Number of transaction or protocol errors in this load balancer.
+*  connectTimeOut – Connections closed by this load balancer
+   because the 'connect_timeout' interval was exceeded.
+*  connectError – Number of transaction or protocol errors in this load
+   balancer.
 *  connectFailure – Number of connection failures in this load balancer.
-*  dataTimedOut – Connections closed by this load balancer because the 'timeout' interval was exceeded.
-*  keepAliveTimedOut – Connections closed by this load balancer because the 'keepalive_timeout' interval was exceeded.
-*  maxConn – Maximum number of simultaneous TCP connections this load balancer has processed at any one time.
-*  currentConn – Number of simultaneous connections active at the time of the request.
-*  connectTimeOutSsl – SSL connections closed by this load balancer because the 'connect_timeout' interval was exceeded.
-*  connectErrorSsl – Number of SSL transaction or protocol errors in this load balancer.
+*  dataTimedOut – Connections closed by this load balancer because the
+   'timeout' interval was exceeded.
+*  keepAliveTimedOut – Connections closed by this load balancer because the
+   'keepalive_timeout' interval was exceeded.
+*  maxConn – Maximum number of simultaneous TCP connections this load balancer
+   has processed at any one time.
+*  currentConn – Number of simultaneous connections active at the time of the
+   request.
+*  connectTimeOutSsl – SSL connections closed by this load balancer because
+   the 'connect_timeout' interval was exceeded.
+*  connectErrorSsl – Number of SSL transaction or protocol errors in this load
+   balancer.
 *  connectFailureSsl – Number of SSL connection failures in this load balancer.
-*  dataTimedOutSsl – SSL connections closed by this load balancer because the 'timeout' interval was exceeded.
-*  keepAliveTimedOutSsl – SSL connections closed by this load balancer because the 'keepalive_timeout' interval was exceeded.
-*  maxConnSsl – Maximum number of simultaneous SSL connections this load balancer has processed at any one time.
-*  currentConnSsl – Number of simultaneous SSL connections active at the time of the request.
-
+*  dataTimedOutSsl – SSL connections closed by this load balancer because the
+   'timeout' interval was exceeded.
+*  keepAliveTimedOutSsl – SSL connections closed by this load balancer because
+   the 'keepalive_timeout' interval was exceeded.
+*  maxConnSsl – Maximum number of simultaneous SSLconnections this load
+   balancer has processed at any one time.
+*  currentConnSsl – Number of simultaneous SSL connections active at the time
+   of the request.
 
 .. note::
-   The Show load balancer statistics API operation caches data for approximately 5 minutes after the initial request is sent. If the system is under high load, a 503 error response is returned to the user along with a Retry-After header suggesting to the client when to send the next request. To limit 503 error responses, the client should honor the Retry-After header. 
-   
-   
 
-The information is duplicated for SSL Termination. However, if the Load Balancer is not SSL Terminated, the appropriate information will be left without a value.
+   The Show load balancer statistics API operation caches data for
+   approximately 5 minutes after the initial request is sent. If the system is
+   under high load, a 503 error response is returned to the user along with a
+   Retry-After header suggesting to the client when to send the next request.
+   To limit 503 error responses, the client should honor the Retry-After
+   header.  The information is duplicated for SSL Termination. However, if
+   the Load Balancer is not SSL Terminated, the appropriate information will
+   be left without a value.
 
-
-
-The following table shows the possible response codes for this operation:
-
+   The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -86,12 +97,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -106,29 +113,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show load balancer statistics: JSON response**
-
 
 .. code::
 
@@ -148,11 +138,8 @@ Response
         "maxConnSsl":60,
         "currentConnSsl":40
     }
-    
-
 
 **Example Show load balancer statistics: XML response**
-
 
 .. code::
 
@@ -172,5 +159,3 @@ Response
            keepAliveTimedOutSsl="40"
            maxConnSsl="50"
            currentConnSsl="40" />
-    
-

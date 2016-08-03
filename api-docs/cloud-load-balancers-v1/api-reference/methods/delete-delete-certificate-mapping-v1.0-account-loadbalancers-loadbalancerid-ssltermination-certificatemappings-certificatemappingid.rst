@@ -1,8 +1,8 @@
 
-.. _delete-delete-certificate-mapping-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings-certificatemappingid:
+.. _delete-delete-certificate-mapping:
 
 Delete certificate mapping
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -15,7 +15,6 @@ Any and all configuration data is immediately purged and is not recoverable.
 
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -63,10 +62,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -84,21 +80,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |certificate mapping.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.

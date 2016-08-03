@@ -1,8 +1,7 @@
-
-.. _get-show-connection-throttling-configuration-v1.0-account-loadbalancers-loadbalancerid-connectionthrottle:
+.. _get-show-connection-throttling-configuration:
 
 Show connection throttling configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Show connection throttling configuration
 
 Show the connection throttling configuration.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,29 +71,12 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show connection throttling configuration: JSON response**
-
 
 .. code::
 
@@ -114,17 +89,13 @@ Response
         }
     }
 
-
 **Example Show connection throttling configuration: XML response**
-
 
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    
     <connectionThrottle xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         minConnections="10"
         maxConnections="100"
         maxConnectionRate="50"
         rateInterval="60" />
-

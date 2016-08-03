@@ -1,8 +1,7 @@
-
-.. _get-show-connection-logging-configuration-v1.0-account-loadbalancers-loadbalancerid-connectionlogging:
+.. _get-show-connection-logging-configuration:
 
 Show connection logging configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -55,7 +54,6 @@ The log format will be as follows.
 
 ``%v %{Host}i %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %n``
 
-
 .. list-table::
    :widths: 20 50
    :header-rows: 1
@@ -100,7 +98,6 @@ The log format will be as follows.
    123456_78910 destinationurl.com 192.168.2.100 - - [05/Oct/2015:18:55:25 +0000] "GET /api/getinfoonobject HTTP/1.1" 503 125 "-" "Mozilla/5.0 (Linux; U; Android 4.2.2; en-gb; GT-I9060 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30" 10.12.12.12:80
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -149,9 +146,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -166,12 +162,10 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
 This operation does not accept a request body.
 
-
 Response
-^^^^^^^^^^^^^
+--------
 
 The following table shows the body parameters for the response:
 
@@ -184,7 +178,6 @@ The following table shows the body parameters for the response:
 |                          |                         |connection logging.      |
 +--------------------------+-------------------------+-------------------------+
 
-
 **Example Show connection logging configuration: JSON response**
 
 .. code::
@@ -194,7 +187,6 @@ The following table shows the body parameters for the response:
           "enabled": true
        }
     }
-
 
 **Example Show connection logging configuration: XML response**
 

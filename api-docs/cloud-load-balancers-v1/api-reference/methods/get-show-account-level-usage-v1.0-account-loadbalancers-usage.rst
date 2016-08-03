@@ -1,8 +1,7 @@
-
-.. _get-show-account-level-usage-v1.0-account-loadbalancers-usage:
+.. _get-show-account-level-usage:
 
 Show account-level usage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,28 +9,23 @@ Show account-level usage
 
 Shows account-level usage.
 
-The load balancer usage reports provide a view of all transfer activity, average number 
-of connections, and number of virtual IPs associated with the load balancing service. 
-Values for both ``incomingTransfer`` and ``outgoingTransfer`` are expressed in bytes 
-transferred.
-
-The optional ``startTime`` and ``endTime`` parameters can be used to filter all usage. 
-If neither the ``startTime`` parameter nor the ``endTime`` parameter is supplied, then 
-only the preceding 24 hours of usage are returned. If the ``startTime`` parameter 
-is supplied, but the ``endTime`` parameter is not, then all usage beginning with the 
-``startTime`` is provided. Likewise, if the ``endTime`` parameter is supplied but the 
-``startTime`` parameter is not, then all usage is returned up to the ``endTime`` 
-specified.
+The load balancer usage reports provide a view of all transfer activity,
+average number  of connections, and number of virtual IPs associated with the
+load balancing service.  Values for both ``incomingTransfer`` and
+``outgoingTransfer`` are expressed in bytes  transferred. The optional
+``startTime`` and ``endTime`` parameters can be used to filter all usage.  If
+neither the ``startTime`` parameter nor the ``endTime`` parameter is supplied,
+then  only the preceding 24 hours of usage are returned. If the ``startTime``
+parameter  is supplied, but the ``endTime`` parameter is not, then all usage
+beginning with the  ``startTime`` is provided. Likewise, if the ``endTime``
+parameter is supplied but the  ``startTime`` parameter is not, then all usage
+is returned up to the ``endTime``  specified.
 
 .. note::
+
    Historical usage data is available for up to 90 days of service activity.
-   
-   
-
-
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -77,12 +71,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -93,8 +83,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |account in a multi-      |
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 The following table shows the query parameters for the request:
 
@@ -115,28 +103,12 @@ The following table shows the query parameters for the request:
 |                          |                         |endTime is returned.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show account-level usage: JSON response**
-
 
 .. code::
 
@@ -178,11 +150,8 @@ Response
             }
         ]
     }
-    
-
 
 **Example Show account-level usage: XML response**
-
 
 .. code::
 
@@ -215,5 +184,3 @@ Response
     			<sslMode>OFF</sslMode>
     		</loadBalancerUsageRecords>
     	</loadBalancerUsages>
-    
-

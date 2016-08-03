@@ -1,8 +1,8 @@
 
-.. _delete-delete-connection-throttling-configuration-v1.0-account-loadbalancers-loadbalancerid-connectionthrottle:
+.. _delete-delete-connection-throttling-configuration:
 
 Delete connection throttling configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,7 +10,10 @@ Delete connection throttling configuration
 
 Deletes the connection throttling configuration.
 
-The connection throttling feature imposes limits on the number of connections per IP address to help mitigate malicious or abusive traffic to your applications. The attributes in the table that follows can be configured based on the traffic patterns for your sites.
+The connection throttling feature imposes limits on the number of connections
+per IP address to help mitigate malicious or abusive traffic to your
+applications. The attributes in the table that follows can be configured based
+on the traffic patterns for your sites.
 
 
 
@@ -63,10 +66,7 @@ The following table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,21 +81,10 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
 
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.

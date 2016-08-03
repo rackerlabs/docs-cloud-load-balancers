@@ -1,8 +1,8 @@
 .. _session-persistence:
 
-
+===================
 Session persistence 
------------------------
+===================
 
 
 Session persistence is a feature of the load balancing service that

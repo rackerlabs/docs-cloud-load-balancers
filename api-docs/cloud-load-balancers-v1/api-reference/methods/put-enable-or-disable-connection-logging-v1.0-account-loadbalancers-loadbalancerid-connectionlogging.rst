@@ -1,8 +1,7 @@
-
-.. _put-enable-or-disable-connection-logging-v1.0-account-loadbalancers-loadbalancerid-connectionlogging:
+.. _put-enable-or-disable-connection-logging:
 
 Enable or disable connection logging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Enable or disable connection logging
 
 Enables or disables connection logging.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +58,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -82,10 +74,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 The following table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -97,12 +85,7 @@ The following table shows the body parameters for the request:
 |                          |                         |connection logging.      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Enable or disable connection logging: JSON request**
-
 
 .. code::
 
@@ -112,25 +95,13 @@ The following table shows the body parameters for the request:
        }
     }
 
-
 **Example Enable or disable connection logging: XML request**
-
 
 .. code::
 
     <connectionLogging xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" enabled="true"/>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-

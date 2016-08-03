@@ -1,0 +1,26 @@
+.. version-v1.22.10-release-notes:
+
+v1.22.10, August 1, 2014
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+A new TCP_STREAM load balancing protocol was added.
+For details, see :ref:`Protocols <protocols>`.
+
+
+Resolved issues
+---------------
+
+- Deprecated all connection throttling attributes except for the
+  ``maxConnections`` attribute. For details, see
+  :ref:`Throttle connections <throttle-connections>`.
+
+- Implemented minor bug fixes.
+
+
+Known issues
+------------
+
+|no changes|

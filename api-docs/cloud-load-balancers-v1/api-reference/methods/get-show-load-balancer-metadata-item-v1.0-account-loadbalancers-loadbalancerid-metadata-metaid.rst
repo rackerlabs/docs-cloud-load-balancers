@@ -1,19 +1,14 @@
-
-.. _get-show-load-balancer-metadata-item-v1.0-account-loadbalancers-loadbalancerid-metadata-metaid:
+.. _get-show-load-balancer-metadata-item:
 
 Show load balancer metadata item
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1.0/{account}/loadbalancers/{loadBalancerId}/metadata/{metaId}
 
 Shows details for a specified metadata item for a specified load balancer.
-
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,10 +54,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
+-------
 The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -82,10 +75,9 @@ The following table shows the URI parameters for the request:
 This operation does not accept a request body.
 
 Response
-^^^^^^^^^^^^^
+--------
 
 **Example Show load balancer metadata item: JSON response**
-
 
 .. code::
 
@@ -96,11 +88,8 @@ Response
         }
     }
 
-
 **Example Show load balancer metadata item: XML response**
-
 
 .. code::
 
     <meta id="1" key="color">red</meta>
-

@@ -1,8 +1,7 @@
-
-.. _get-list-certificate-mappings-v1.0-account-loadbalancers-loadbalancerid-ssltermination-certificatemappings:
+.. _get-list-certificate-mappings:
 
 List certificate mappings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -11,14 +10,10 @@ List certificate mappings
 Lists certificate mappings that are configured for a specified load balancer.
 
 .. note::
+
    Only the ``id`` and ``hostName`` attributes are displayed.
-   
-   
-
-
 
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +59,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -84,29 +75,11 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
-
+--------
 **Example List certificate mappings: XML response**
-
 
 .. code::
 
@@ -120,9 +93,7 @@ Response
         hostName="*.rackspace.com"/>
     </certificateMappings>
 
-
 **Example List certificate mappings: JSON response**
-
 
 .. code::
 
@@ -142,4 +113,3 @@ Response
         }
       ]
     }
-

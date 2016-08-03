@@ -1,8 +1,7 @@
-
-.. _get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence:
+.. _get-show-session-persistence-configuration:
 
 Show session persistence configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,10 +9,7 @@ Show session persistence configuration
 
 Shows the session persistence configuration.
 
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -59,12 +55,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -79,37 +71,18 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
-
-
-
-
+--------
 
 **Example Show session persistence configuration: XML response**
-
 
 .. code::
 
     <sessionPersistence xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" persistenceType="HTTP_COOKIE"/>
 
-
 **Example Show session persistence configuration: JSON response**
-
 
 .. code::
 
@@ -119,9 +92,7 @@ Response
        }
     }
 
-
 **Example Show atom session persistence configuration: ATOM/XML response**
-
 
 .. code::
 
@@ -146,4 +117,3 @@ Response
             <updated>2011-02-11T00:28:46.000Z</updated>
         </entry>
     </feed>
-

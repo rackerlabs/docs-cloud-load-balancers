@@ -1,8 +1,7 @@
-
-.. _post-create-or-update-access-list-v1.0-account-loadbalancers-loadbalancerid-accesslist:
+.. _post-create-or-update-access-list:
 
 Create or update access list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,12 +9,12 @@ Create or update access list
 
 Creates or appends to an access list.
 
-When issuing a ``POST`` to add to an access list, one or more network items are required. If a populated access list already exists for the load balancer, it is appended to with subsequent ``POST`` requests. One access list may include up to 100 network items. A single address or subnet definition is considered unique and cannot be duplicated between items in an access list.
-
-
-
-The following table shows the possible response codes for this operation:
-
+When issuing a ``POST`` to add to an access list, one or more network items are
+required. If a populated access list already exists for the load balancer, it
+is appended to with subsequent ``POST`` requests. One access list may include
+up to 100 network items. A single address or subnet definition is considered
+unique and cannot be duplicated between items in an access list. The following
+table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -61,12 +60,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-^^^^^^^^^^^^^
-
-
-
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -81,17 +76,9 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Create or update access list: JSON request**
-
 
 .. code::
 
@@ -108,9 +95,7 @@ This operation does not accept a request body.
         ]
     }
 
-
 **Example Create or update access list: XML request**
-
 
 .. code::
 
@@ -123,17 +108,7 @@ This operation does not accept a request body.
             type="DENY" />
     </accessList>
 
-
 Response
-^^^^^^^^^^^^^
-
-
-
-
-
+--------
 
 This operation does not return a response body.
-
-
-
-
