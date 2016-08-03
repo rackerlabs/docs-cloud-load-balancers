@@ -42,14 +42,10 @@ The following table shows the URI parameters for the request.
 |pool_id           |csapi:uuid  | The UUID for the pool.                                       |
 +------------------+------------+--------------------------------------------------------------+
 
-
-
 This operation does not accept a request body.
 
 Response
 """"""""""""""""
-
-
 
 The following table shows the body parameters for the response.
 
@@ -91,7 +87,7 @@ The following table shows the body parameters for the response.
                 "admin_state_up": true,
                 "id": "9a7aff27-fd41-4ec1-ba4c-3eb92c629313",
                 "protocol_port": 80,
-                "subnet_id": "013d3059-87a4-45a5-91e9-d721068ae0b2",
+                "subnet_id": "00000000-0000-0000-0000-000000000000",
                 "tenant_id": "1a3e005cf9ce40308c900bcb08e5320c",
                 "weight": 1
             }

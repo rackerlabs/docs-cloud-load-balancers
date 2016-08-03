@@ -24,10 +24,6 @@ the provisioning operation by performing a **GET** operation on
 balancer changes to ``ACTIVE``, the load balancer was successfully
 provisioned and is ready to handle traffic.
 
-Users with an administrative role can create load balancers on behalf of
-other tenants by specifying a ``tenant_id`` attribute different than
-their own.
-
 The following table shows the possible response codes for this operation.
 
 +---------+-----------------------+---------------------------------------------+
@@ -78,12 +74,8 @@ The following table shows the body parameters for the request.
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | vip_subnet_id    | plain     | csapi:uuid  | The UUID of the subnet on which to allocate the virtual IP (VIP) address for the   |
 | (*Required*)     |           |             | load balancer. Tenants can create load balancer VIP addresses only on networks that|
-|                  |           |             | are authorized by the policy, such as their own networks or shared or provider     |
-|                  |           |             | networks.                                                                          |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP address. Only required if the caller has an|
-|                  |           |             | administrative role and wants to create a load balancer for another tenant. Only   |
-|                  |           |             | administrative users can specify a tenant UUID other than their own.               |
+|                  |           |             | are authorized by the policy, such as shared or provider networks. Note: To receive|
+|                  |           |             | a publicly routable VIP, use the 00000000-0000-0000-0000-000000000000 subnet ID.   |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | vip_address      | plain     | xsd:ip      | The VIP address. You can supply a ``vip_address`` if you own the subnet on which   |
 |                  |           |             | the load balancer’s VIP will be created. If this parameter is omitted from the     |
@@ -108,10 +100,7 @@ The following table shows the body parameters for the request.
         "loadbalancer": {
             "name": "loadbalancer1",
             "description": "simple lb",
-            "tenant_id": "b7c1a69e88bf4b21a8148f787aef2081",
-            "vip_subnet_id": "013d3059-87a4-45a5-91e9-d721068ae0b2",
-            "vip_address": "10.0.0.4",
-            "admin_state_up": true
+            "vip_subnet_id": "00000000-0000-0000-0000-000000000000"
         }
     }
 
@@ -161,7 +150,7 @@ The following table shows the body parameters for the response.
             "operating_status": "ONLINE",
             "provisioning_status": "ACTIVE",
             "tenant_id": "b7c1a69e88bf4b21a8148f787aef2081",
-            "vip_address": "10.0.0.4",
-            "vip_subnet_id": "013d3059-87a4-45a5-91e9-d721068ae0b2"
+            "vip_address": "206.10.10.210",
+            "vip_subnet_id": "00000000-0000-0000-0000-000000000000"
         }
     }

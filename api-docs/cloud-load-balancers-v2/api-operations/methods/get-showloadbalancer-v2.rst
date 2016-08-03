@@ -104,7 +104,7 @@ The following table shows the body parameters for the response.
           "name":"Example LB",
           "description":"A very simple example load balancer.",
           "vip_address":"1.2.3.4",
-          "vip_subnet_id":"SUBNET_ID",
+          "vip_subnet_id":"00000000-0000-0000-0000-000000000000",
           "tenant_id":"7725fe12-1c14-4f45-ba8e-44bf01763578",
           "admin_state_up":true,
           "status":"ACTIVE"

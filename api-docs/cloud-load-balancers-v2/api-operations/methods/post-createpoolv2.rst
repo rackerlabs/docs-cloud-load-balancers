@@ -16,8 +16,6 @@ response contains a unique identifier for the pool.
 
 The request must specify the following pool attributes:
 
--  ``tenant_id``
-
 -  ``protocol``
 
 -  ``lb_algorithm``
@@ -32,10 +30,6 @@ the service returns the HTTP ``Bad Request (400)``
 response code with information about the failure in the response body.
 Validation errors require that you correct the error and submit the
 request again.
-
-Users with an administrative role can create pools on behalf of other
-tenants by specifying a ``tenant_id`` attribute that is different than
-their own.
 
 You cannot update a pool if the load balancer to which it is attempting
 to attach does not have a ``provisioning_status`` of ``ACTIVE``.
@@ -104,9 +98,6 @@ The following table shows the body parameters for the request.
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | protocol            | plain     | xsd:string  | The protocol of the pool, which is ``TCP``, ``HTTP``, or ``HTTPS``.                |
 | (*Required*)        |           |             |                                                                                    |
-+---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the pool. Required only if the user has an         |
-|                     |           |             | administrative role and wants to create a pool for another tenant.                 |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | session_persistence | plain     | xsd:list    | This list defines the cookie name and cookie type used for the pool.               |
 |                     |           |             | The default is an empty dictionary.                                                |

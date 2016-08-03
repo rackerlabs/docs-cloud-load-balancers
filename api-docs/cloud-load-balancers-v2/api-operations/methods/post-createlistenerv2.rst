@@ -15,8 +15,6 @@ contains a unique identifier for the listener.
 
 At a minimum, you must specify the following listener attributes:
 
--  ``tenant_id``
-
 -  ``loadbalancer_id``
 
 -  ``description``
@@ -31,10 +29,6 @@ the service returns the HTTP ``Bad Request (400)``
 response code with information about the failure in the response body.
 Validation errors require that you correct the error and submit the
 request again.
-
-Users with an administrative role can create listeners on behalf of
-other tenants by specifying a ``tenant_id`` attribute different than
-their own.
 
 A listener cannot be created if the load balancer that it is attempting
 to be attached to does not have a ``provisioning_status`` of ``ACTIVE``.
@@ -76,7 +70,7 @@ The following table shows the possible response codes for this operation.
 Request
 """"""""""""""""
 
-The following table shows the body parameters for the response.
+The following table shows the body parameters for the request.
 
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | **Parameter**             | **Style** | **Type**    | **Description**                                                                    |
@@ -91,10 +85,6 @@ The following table shows the body parameters for the response.
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | description               | plain     | xsd:string  | The listener detailed description. If you don't specify a value, the default is an |
 |                           |           |             | empty string.                                                                      |
-+---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id                 | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP. Only administrative users can specify a   |
-|                           |           |             | tenant UUID other than their own. This parameter is required only if the user has  |
-|                           |           |             | an administrative role and wants to create a listener for another tenant           |
 +---------------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | connection_limit          | plain     | xsd:int     | The maximum number of connections permitted for this load balancer. The default is |
 |                           |           |             | is ``-1``, which indicates an infinite limit.                                      |

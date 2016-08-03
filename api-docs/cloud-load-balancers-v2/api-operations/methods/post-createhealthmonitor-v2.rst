@@ -16,8 +16,6 @@ monitor.
 
 The request must specify the following health monitor attributes, at a minimum:
 
--  ``tenant_id``
-
 -  ``type``
 
 -  ``delay``
@@ -45,10 +43,6 @@ is not valid, an HTTP ``400 (Bad Request)`` error response is returned with
 information regarding the nature of the failure in the response body.
 Failures in the validation process are non-recoverable and require you to
 correct the cause of the failure and resend the request.
-
-Users with an administrative role can create health monitors on behalf
-of other tenants by specifying a ``tenant_id`` attribute different than
-their own.
 
 To create a health monitor, the load balancer to which it is being
 attached must have an ``ACTIVE`` provisioning status.
@@ -127,9 +121,6 @@ The following table shows the body parameters for the request.
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
 |                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
-+------------------+-----------+-------------+------------------------------------------------------------------------------------+
-| tenant_id        | plain     | csapi:uuid  | The UUID of the tenant who owns the health monitor. Only administrative users can  |
-|                  |           |             | specify a tenant UUID other than their own.                                        |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
 
