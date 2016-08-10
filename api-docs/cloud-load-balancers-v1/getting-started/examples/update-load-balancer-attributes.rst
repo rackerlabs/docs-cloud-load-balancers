@@ -1,8 +1,7 @@
 .. _update-load-balancer-attributes:
 
-====================================
 Updating Load Balancer attributes
-====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assume that you want to change the algorithm for your load balancer from
 RANDOM to LEAST\_CONNECTIONS. You can use the Update Load Balancer
@@ -22,7 +21,7 @@ attributes to change the algorithm to LEAST\_CONNECTIONS:
 
 **Example: cURL Update Load Balancer attributes request: XML**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '<?xml version="1.0" ?>
@@ -37,7 +36,7 @@ attributes to change the algorithm to LEAST\_CONNECTIONS:
 
 **Example: cURL Update Load Balancer attributes request: JSON**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{"loadBalancer":{
@@ -53,11 +52,11 @@ attributes to change the algorithm to LEAST\_CONNECTIONS:
 This operation does not return a response body.
 
 You can now confirm that the algorithm is changed by calling List Load
-Balancer details, as described in :ref:`Listing Load Balancer details<list-load-balancer-details>`.
+Balancer details, as described in
+:ref:`Listing Load Balancer details<list-load-balancer-details>`.
 
 You can also view the information for the load balancer you have created
 by clicking Load Balancers near the top of the Cloud Control Panel. Then
 click the name of the load balancer to view the details.
 
 This concludes the *Getting Started Guide*.
-

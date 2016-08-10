@@ -1,15 +1,14 @@
 .. _add-node:
 
-==============
 Adding a node
-==============
+~~~~~~~~~~~~~
 
 When a node is added to a load balancer, it is assigned a unique
 identifier that can be used for management operations such as changing
 the condition or removing it.
 
 For the node, enter the IP address that you recorded for your second
-Cloud Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`. 
+Cloud Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`.
 For example, for the XML request, enter:
 
 -  ``<node address="``\ **<IP address of SECOND cloud
@@ -19,10 +18,10 @@ The following examples show the cURL requests for Add node:
 
 **Example: cURL Add node request: XML**
 
-.. code::  
+.. code::
 
     curl -s -d \
-    '<?xml version="1.0" ?> 
+    '<?xml version="1.0" ?>
     <nodes xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <node address="<IP address of SECOND cloud server>" port="80" condition="ENABLED" />
     </nodes>' \
@@ -34,7 +33,7 @@ The following examples show the cURL requests for Add node:
 
 **Example: cURL Add node request: JSON**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -57,11 +56,12 @@ respective value:
 -  **load\_balancer\_id** — as returned in your create load balancer
    response (see the examples in :ref:`Creating a Load Balancer <create-load-balancer>`)
 
-The following examples show the responses for Add node:
+The following examples show the responses returned for an add node API
+request:
 
 **Example: Add node response: XML**
 
-.. code::  
+.. code::
 
     <nodes xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <node
@@ -75,7 +75,7 @@ The following examples show the responses for Add node:
 
 **Example: Add node response: JSON**
 
-.. code::  
+.. code::
 
     {
         "nodes": [
@@ -89,4 +89,3 @@ The following examples show the responses for Add node:
             }
         ]
     }
-
