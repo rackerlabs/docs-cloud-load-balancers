@@ -1,8 +1,7 @@
 .. _create-load-balancer:
 
-==========================
 Creating a Load Balancer
-==========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Cloud Load Balancers make it easy to develop scalable, high-availability
 configurations in the Cloud. By leveraging Cloud Load Balancers, you
@@ -20,31 +19,33 @@ following configuration:
 -  Virtual IP Type = PUBLIC
 
 .. note::
+
    When your resources reside in the same region as your load balancer,
    devices are in close proximity to each other and can elect to take
    advantage of ServiceNet connectivity (by specifying Virtual IP Type =
    SERVICENET) for free data transfer between services if desired.
 
 -  Nodes = enter the IP address that you recorded for your first Cloud
-   Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`:
+   Server created in :ref:`Creating Cloud Servers <create-cloud-servers>`::
 
-   -  ``<node address="``\ **<IP address of FIRST cloud
-      server>**\ ``" port="80" condition="ENABLED"/>``
+    <node address="<IP address of FIRST cloud server>"\
+    port="80" condition="ENABLED"/>
 
 .. note::
-      Although you could add the nodes for both of your Cloud Servers in
-      this Create Load Balancer call, you will instead add the node for
-      your second Cloud Server using the separate 
-      :ref:`Add node <add-node>` call.
+
+   Although you can add the nodes for both of your Cloud Servers in
+   this Create Load Balancer request, the Getting Started examples show
+   how to add the node for your second Cloud Server by making a separate
+   request using the :ref:`Add node <add-node>` operation.
 
 The following examples show the cURL requests for Create Load Balancer:
 
 **Example: cURL Create Load Balancer request: XML**
 
-.. code::  
+.. code::
 
     curl -s -d \
-    '<?xml version="1.0" ?> 
+    '<?xml version="1.0" ?>
     <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         name="a-new-loadbalancer"
         port="80"
@@ -53,7 +54,7 @@ The following examples show the cURL requests for Create Load Balancer:
             <virtualIp type="PUBLIC"/>
         </virtualIps>
         <nodes>
-            <node address="<IP address of FIRST cloud server>" port="80" condition="ENABLED"/> 
+            <node address="<IP address of FIRST cloud server>" port="80" condition="ENABLED"/>
         </nodes>
     </loadBalancer>' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
@@ -64,7 +65,7 @@ The following examples show the cURL requests for Create Load Balancer:
 
 **Example: cURL Create Load Balancer request: JSON**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -96,10 +97,10 @@ The following examples show the responses for Create Load Balancer:
 
 **Example: Create Load Balancer response: XML**
 
-.. code::  
+.. code::
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="5355" name="a-new-loadbalancer" 
+    <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="5355" name="a-new-loadbalancer"
         algorithm="RANDOM" protocol="HTTP" port="80" status="BUILD">
         <virtualIps>
             <virtualIp id="1163" address="50.56.166.100" ipVersion="IPV4" type="PUBLIC"/>
@@ -117,7 +118,7 @@ The following examples show the responses for Create Load Balancer:
 
 **Example: cURL Create Load Balancer response: JSON**
 
-.. code::  
+.. code::
 
     {
         "loadBalancer":{
@@ -170,8 +171,8 @@ The following examples show the responses for Create Load Balancer:
     }
 
 In the previous examples, you can see that one node (with IP address
-"50.56.166.100") has been added to your new load balancer with id 5355.
-You will need the load balancer id for making the List Load Balancer
-details call in the next section, and you should supply this value
-wherever you see the field **load\_balancer\_id** in the examples in
-this guide.
+``50.56.166.100``) has been added to your new load balancer with id ``5355``.
+You need the load balancer id when you use the list load balancer
+details API operation in the next section. You also need to
+supply the load balancer id in examples that include the ``load_balancer_id``
+variable.

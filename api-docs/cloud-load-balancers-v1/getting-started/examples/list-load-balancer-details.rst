@@ -1,8 +1,7 @@
 .. _list-load-balancer-details:
 
-==============================
 Listing Load Balancer details
-==============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This operation provides detailed output for a specific load balancer
 configured and associated with your account. This operation is not
@@ -19,7 +18,7 @@ Details:
 
 **Example: cURL List Load Balancer details request: XML**
 
-.. code::  
+.. code::
 
     curl -s  \
     -H "X-Auth-Token: $AUTH_TOKEN"  \
@@ -29,7 +28,7 @@ Details:
 
 **Example: cURL List Load Balancer details request: JSON**
 
-.. code::  
+.. code::
 
     curl -s  \
     -H "X-Auth-Token: $AUTH_TOKEN"  \
@@ -42,7 +41,7 @@ The following examples show the List Load Balancer details responses:
 
 **Example: List Load Balancer details response: XML**
 
-.. code::  
+.. code::
 
     <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         id="5355"
@@ -81,7 +80,7 @@ The following examples show the List Load Balancer details responses:
 
 **Example: List Load Balancer details response: JSON**
 
-.. code::  
+.. code::
 
     {
         "loadBalancer":{
