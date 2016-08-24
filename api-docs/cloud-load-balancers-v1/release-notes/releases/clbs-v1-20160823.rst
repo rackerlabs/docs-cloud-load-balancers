@@ -1,0 +1,19 @@
+.. version-v1.25.33-release-notes:
+
+API |contract version| updates, August 23, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+|no changes|
+
+Resolved issues
+---------------
+
+Fixed a bug that caused an incorrect status to be returned for nodes under certain circumstances when the nodes were added while the condition was **DRAINING**.
+
+Known issues
+------------
+
+|no changes|
