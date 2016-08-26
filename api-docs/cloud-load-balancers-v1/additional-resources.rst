@@ -3,8 +3,8 @@
 Additional resources
 -----------------------
 
-We welcome feedback, comments, and bug reports. Visit the Rackspace customer
-portal at https://feedback.rackspace.com/.
+We welcome feedback, comments, and bug reports. Visit the
+`Rackspace Product Feedback forum`_.
 
 Use the links below to learn more about the Rackspace Cloud Load Balancers
 service and API.
@@ -24,3 +24,5 @@ service and API.
 
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`API Developer Docs <>`.
+
+.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/f/68

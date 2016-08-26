@@ -22,8 +22,7 @@ if all the primary nodes fail, traffic can be redirected to secondary nodes.
 The type attribute enables configuring the node as either PRIMARY or SECONDARY.
 
 Domain names are also accepted with certain restrictions. Refer to the
-:rax-devdocs:`List allowed domains
-<cloud-load-balancers/v1/developer-guide/#list-allowed-domains>` operation for
+:ref:`List allowed domains <get-list-allowed-domains>` operation for
 information about how to list the allowed names. Suppose that you want to add
 nodes to the load balancer before the services on those nodes are ready to
 serve traffic. As of right now, the default status for added nodes is
@@ -198,7 +197,7 @@ Response
         }
     ]
     }
-    
+
 **Example Add node: XML response**
 
 .. code::
