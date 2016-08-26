@@ -49,5 +49,5 @@ Rackspace Cloud Load Balancers service REST API.
    general-api-info/index
    api-reference/index
    release-notes/index
-   copyright
    additional-resources
+   copyright
