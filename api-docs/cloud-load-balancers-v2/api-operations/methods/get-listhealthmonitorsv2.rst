@@ -1,12 +1,11 @@
 .. _get-list-health-monitors-v2:
 
 List health monitors
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v2.0/lbaas/healthmonitors
-
 
 This operation lists all health monitors associated with your tenant
 account.
@@ -14,31 +13,29 @@ account.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
-
-
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -82,7 +79,6 @@ The following table shows the body parameters for the response.
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
 |                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: List health monitors JSON response**
 

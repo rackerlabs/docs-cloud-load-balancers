@@ -4,10 +4,11 @@
 Creating a health monitor
 =========================
 
-A health monitor determines whether a member of a pool is usable for processing a request.
+A health monitor determines whether a member of a pool is usable for processing
+a request.
 
-Assume that you want to create a health monitor (``POST /healthmonitors``) with the
-following configuration:
+Assume that you want to create a health monitor (``POST /healthmonitors``) with
+the following configuration:
 
 -  ``admin_state_up`` is ``true``.
 
@@ -19,21 +20,22 @@ following configuration:
 
 -  ``max_retries`` is ``5``.
 
--  ``pool_id`` is the ID of the pool member that you added (see :ref:`Add member to pool <add-pool-member>`).
-   Remember to replace ``pool_id`` in the example with the actual value that was returned in the response.
+-  ``pool_id`` is the ID of the pool member that you added (see
+   :ref:`Add member to pool <add-pool-member>`).
+   Remember to replace ``pool_id`` in the example with the actual value that
+   was returned in the response.
 
 -  ``timeout`` is ``1``.
 
 -  ``type`` is ``HTTP``.
 
 -  ``url_path`` is ``/index/html``.
-   
 
 The following example shows the cURL request for creating a health monitor.
 
 **Example: cURL command for creating a health monitor with a JSON body**
 
-.. code::  
+.. code::
 
    curl -s -d \
       '{
@@ -54,15 +56,12 @@ The following example shows the cURL request for creating a health monitor.
    -X POST \
    "$API_ENDPOINT/healthmonitors/" | python -m json.tool
 
-
-
-
 The following example shows the response for creating a  health monitor.
 
 **Example: Create a health monitor response in JSON**
 
-.. code:: 
- 
+.. code::
+
    {
     "healthmonitor": {
            "admin_state_up": true,
@@ -83,4 +82,5 @@ The following example shows the response for creating a  health monitor.
        }
    }
 
-Congratulations! You have completed the basic actions for load balancing your configuration.
+Congratulations! You have completed the basic actions for load balancing your
+configuration.

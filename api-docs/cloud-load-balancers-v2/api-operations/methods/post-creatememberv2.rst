@@ -1,12 +1,11 @@
 .. _add-member-to-pool-v2:
 
 Add a member to pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v2.0/lbaas/pools/{pool_id}/members
-
 
 This operation provisions a new member and adds it to a pool based on
 the configuration defined in the request. After the request is
@@ -26,54 +25,50 @@ request. See the body parameters table for details.
 
 -  ``weight``
 
-
-
 If the request fails because of incorrect data, the service returns the HTTP
 ``Bad Request (400)`` response code with information about the failure
 in the response body. Validation errors require that you correct the
 error and submit the request again.
-
 
 To add a member, the load balancer must have a
 ``provisioning_status`` of ``ACTIVE``.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 201     | Created               | The request has been fulfilled and a new    |
-|         |                       | resource was created.                       |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request cannot be fulfilled due to      |
-|         |                       | insufficient data or data that is not valid.|
-|         |                       | Information about the failure is in the     |
-|         |                       | response today. Correct the error and submit|
-|         |                       | the request again.                          |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 404     | Not Found             | The requested item was not found.           |
-+---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed because  |
-|         |                       | of a conflict with the current state of the |
-|         |                       | resource.                                   |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 201     | Created               | The request has been fulfilled and a new  |
+|         |                       | resource was created.                     |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request cannot be fulfilled due to    |
+|         |                       | insufficient data or data that is not     |
+|         |                       | valid. Information about the failure is in|
+|         |                       | the response today. Correct the error and |
+|         |                       | submit the request again.                 |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 404     | Not Found             | The requested item was not found.         |
++---------+-----------------------+-------------------------------------------+
+| 409     | Conflict              | The request could not be completed because|
+|         |                       | of a conflict with the current state of   |
+|         |                       | the resource.                             |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
-
+"""""""
 
 The following table shows the body parameters for the request.
 
@@ -101,8 +96,6 @@ The following table shows the body parameters for the request.
 |                  |           |             | A valid value is from 0 to 256.  The default is ``1``.                             |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-
-
 **Example: Add a member to a pool JSON request**
 
 .. code::
@@ -118,8 +111,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
-
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -148,7 +140,6 @@ The following table shows the body parameters for the response.
 |                  |           |             | in load balancing but still accepts persistent connections. Valid value are from 0 |
 |                  |           |             | 256. The default is 1.                                                             |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: Add a member to a pool JSON response**
 

@@ -1,13 +1,12 @@
 .. _load_balancers:
 
-=====================
+==============
 Load balancers 
-=====================
-
+==============
 
 You can configure all documented features of the load balancer when you
 create it by providing the additional elements or attributes
-in the request. 
+in the request.
 
 The ``vip_subnet_id`` specified for the load balancer determines the
 type of IP address and what network it is allocated on.
@@ -43,10 +42,8 @@ service. The following table describes the possible statuses.
 |                     | deletion.                                                                                |
 +---------------------+------------------------------------------------------------------------------------------+
 
-
 .. include:: methods/get-listloadbalancersv2.rst
 .. include:: methods/post-createloadbalancerv2.rst
 .. include:: methods/get-showloadbalancer-v2.rst
 .. include:: methods/put-updateloadbalancerv2.rst
 .. include:: methods/delete-deleteloadbalancerv2.rst
-

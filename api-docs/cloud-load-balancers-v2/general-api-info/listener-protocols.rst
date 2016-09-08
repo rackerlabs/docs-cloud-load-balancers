@@ -1,8 +1,8 @@
 .. _listener_protocols:
 
-=====================
+==================
 Listener protocols
-=====================
+==================
 
 The following table describes the supported listener protocols.
 
@@ -35,5 +35,3 @@ The following table describes the supported protocols for pools.
 +-----------+-------------------------------------+
 | ``HTTPS`` | Encrypted protocol based on TCP     |
 +-----------+-------------------------------------+
-
-

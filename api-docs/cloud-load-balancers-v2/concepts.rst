@@ -4,39 +4,46 @@
 Concepts
 ========
 
-To use the Rackspace Cloud Load Balancers API effectively, you should understand several key concepts.
+To use the Rackspace Cloud Load Balancers API effectively, you should
+understand several key concepts.
 
 .. _concept-load-balancer:
 
 Load balancer
 ~~~~~~~~~~~~~
 
-A *load balancer* is a logical device that belongs to a cloud account. It is used to distribute workloads between multiple back-end systems or services, based on the criteria defined as part of its configuration.
+A *load balancer* is a logical device that belongs to a cloud account. It is
+used to distribute workloads between multiple back-end systems or services,
+based on the criteria defined as part of its configuration.
 
 .. _concept-listener:
 
 Listener
-~~~~~~~~~~~~~
+~~~~~~~~
 
 A *listener* is an object that contains data that pertains to the "listening"
-port, and the protocol that the load balancer accepts incoming traffic on,  
-otherwise known as the *front end* of the configuration. The front-end configuration
-also determines and contains the back-end data, such as pools and their members to 
-which incoming traffic is directed.
+port, and the protocol that the load balancer accepts incoming traffic on,
+otherwise known as the *front end* of the configuration. The front-end
+configuration also determines and contains the back-end data, such as pools and
+their members to which incoming traffic is directed.
 
 .. _concept-virtual-ip:
 
 Virtual IP
 ~~~~~~~~~~
 
-A *virtual IP* (VIP) is an Internet Protocol (IP) address configured on the load balancer for use by clients connecting to a service that is load balanced. Incoming connections are distributed to back-end nodes based on the configuration of the load balancer.
+A *virtual IP* (VIP) is an Internet Protocol (IP) address configured on the
+load balancer for use by clients connecting to a service that is load balanced.
+Incoming connections are distributed to back-end nodes based on the
+configuration of the load balancer.
 
 .. _concept-member:
 
 Member
-~~~~~~~~~~
+~~~~~~
 
-A *member* is a back-end device, such as a servicer, that provides a service on a specified IP address and port.
+A *member* is a back-end device, such as a servicer, that provides a service on
+a specified IP address and port.
 
 .. _concept-pool:
 
@@ -79,7 +86,6 @@ The active health monitor can use one of the following types of probes:
 
 -  TCP
 
-
 These probes are executed at configured intervals; in the event of a
 failure, the member status changes to ``OFFLINE`` and the member does
 not receive traffic. If, after running a subsequent test, the probe
@@ -91,8 +97,6 @@ changed to ``ONLINE`` and it is capable of receiving requests.
 Session persistence
 ~~~~~~~~~~~~~~~~~~~
 
-*Session persistence* is a feature of the load balancing service. It attempts to force subsequent connections to a service to be redirected to the same node as long as it is online.
-
-
-
-
+*Session persistence* is a feature of the load balancing service. It attempts
+to force subsequent connections to a service to be redirected to the same node
+as long as it is online.

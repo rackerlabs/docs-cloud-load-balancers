@@ -1,12 +1,11 @@
 .. _create-load-balancers-v2:
 
 Create a load balancer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v2.0/lbaas/loadbalancers
-
 
 This operation provisions a new load balancer based on the configuration
 defined in the request. After the request is validated and
@@ -26,40 +25,40 @@ provisioned and is ready to handle traffic.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 201     | Created               | The request was fulfilled and the new       |
-|         |                       | resource was created.                       |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request cannot be fulfilled due to      |
-|         |                       | insufficient data or data that is not valid.|
-|         |                       | Information about the failure is in the     |
-|         |                       | response today. Correct the error and submit|
-|         |                       | the request again.                          |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 404     | Not Found             | The requested item was not found.           |
-+---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed because  |
-|         |                       | of a conflict with the current state of the |
-|         |                       | resource.                                   |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer has experienced a fault.  |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 201     | Created               | The request was fulfilled and the new     |
+|         |                       | resource was created.                     |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request cannot be fulfilled due to    |
+|         |                       | insufficient data or data that is not     |
+|         |                       | valid. Information about the failure is in|
+|         |                       | the response today. Correct the error and |
+|         |                       | submit the request again.                 |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 404     | Not Found             | The requested item was not found.         |
++---------+-----------------------+-------------------------------------------+
+| 409     | Conflict              | The request could not be completed because|
+|         |                       | of a conflict with the current state of   |
+|         |                       | the resource.                             |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer has experienced a fault.|
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the body parameters for the request.
 
@@ -91,7 +90,6 @@ The following table shows the body parameters for the request.
 |                  |           |             | If this parameter is omitted from the request, the default value is ``true``.      |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-
 **Example: Create a load balancer JSON request**
 
 .. code::
@@ -105,7 +103,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+""""""""
 
 The following table shows the body parameters for the response.
 

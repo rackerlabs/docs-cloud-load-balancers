@@ -1,13 +1,11 @@
 .. _update-pool-v2:
 
 Update a pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 .. code::
 
     PUT /v2.0/lbaas/pools/{pool_id}
-
-
 
 The update operation enables you to change the
 following pool attributes:
@@ -35,44 +33,43 @@ following pool attributes:
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 202     | Accepted              | The request is validated.                   |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request is missing one or more          |
-|         |                       | elements, or the values of some elements    |
-|         |                       | are invalid.                                |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 422     | Immutable             | The entity is unprocessable.                |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 202     | Accepted              | The request is validated.                 |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request is missing one or more        |
+|         |                       | elements, or the values of some elements  |
+|         |                       | are invalid.                              |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 422     | Immutable             | The entity is unprocessable.              |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+------------------+------------+--------------------------------------------------------------+
-|Name              |Type        |Description                                                   |
-+==================+============+==============================================================+
-|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
-+------------------+------------+--------------------------------------------------------------+
-
++------------------+------------+---------------------------------------------+
+|Name              |Type        |Description                                  |
++==================+============+=============================================+
+|pool_id           |csapi:uuid  | The UUID for the pool.                      |
++------------------+------------+---------------------------------------------+
 
 The following table shows the body parameters for the request.
 
@@ -100,8 +97,6 @@ The following table shows the body parameters for the request.
 | (*Required*)        |           |             | ``cookie_name`` keys.                                                              |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-
-
 **Example: Update pool JSON request**
 
 .. code::
@@ -119,9 +114,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
-
-
+""""""""
 
 The following table shows the body parameters for the response.
 

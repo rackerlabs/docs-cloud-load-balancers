@@ -1,66 +1,63 @@
 .. _get-show-health-monitor-details-v2:
 
 Show health monitor details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v2.0/lbaas/healthmonitors/{healthmonitor_id}
 
 
-This operation returns details about the specified health monitor. If the user is
-not an administrative user and the health monitor object does not belong to the
-user's tenant account, the service returns the HTTP ``Forbidden (403)`` response
-code.
-
+This operation returns details about the specified health monitor. If the user
+is not an administrative user and the health monitor object does not belong to
+the user's tenant account, the service returns the HTTP ``Forbidden (403)``
+response code.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | Request succeeded.                          |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 403     | Forbidden             | The server understood the request, but      |
-|         |                       | won't fulfill it.                           |
-+---------+-----------------------+---------------------------------------------+
-| 404     | Not Found             | The requested item was not found.           |
-+---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed because  |
-|         |                       | of a conflict with the current state of the |
-|         |                       | resource.                                   |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | Request succeeded.                        |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 403     | Forbidden             | The server understood the request, but    |
+|         |                       | won't fulfill it.                         |
++---------+-----------------------+-------------------------------------------+
+| 404     | Not Found             | The requested item was not found.         |
++---------+-----------------------+-------------------------------------------+
+| 409     | Conflict              | The request could not be completed because|
+|         |                       | of a conflict with the current state of   |
+|         |                       | the resource.                             |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+-------------------+------------+--------------------------------------------------------------+
-|Name               |Type        |Description                                                   |
-+===================+============+==============================================================+
-|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.                             |
-+-------------------+------------+--------------------------------------------------------------+
++-------------------+------------+--------------------------------------------+
+|Name               |Type        |Description                                 |
++===================+============+============================================+
+|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.           |
++-------------------+------------+--------------------------------------------+
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
-
-
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -104,7 +101,6 @@ The following table shows the body parameters for the response.
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
 |                  |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: Show health monitor details JSON response**
 

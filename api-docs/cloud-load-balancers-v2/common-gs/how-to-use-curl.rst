@@ -1,34 +1,36 @@
 .. _how-curl-commands-work:
 
-cURL is a command-line tool that you can use to interact with REST interfaces. cURL lets
-you transmit and receive HTTP requests and responses from the command line or a shell
-script, which enables you to work with the API directly. cURL is available for Linux
-distributions, Mac OS® X, and Microsoft Windows®. For information about cURL, see
-`http://curl.haxx.se/ <http://curl.haxx.se/>`__.
+cURL is a command-line tool that you can use to interact with REST interfaces.
+cURL lets you transmit and receive HTTP requests and responses from the command
+line or a shell script, which enables you to work with the API directly. cURL
+is available for Linux distributions, Mac OS® X, and Microsoft Windows®. For
+information about cURL, see `http://curl.haxx.se/ <http://curl.haxx.se/>`__.
 
-To run the cURL request examples shown in this guide, copy each example directly to the command line or a script.
+To run the cURL request examples shown in this guide, copy each example
+directly to the command line or a script.
 
 .. _auth-curl-json:
 
-The following example shows a cURL command for sending an authentication request to
-the Rackspace Cloud Identity service.
+The following example shows a cURL command for sending an authentication
+request to the Rackspace Cloud Identity service.
 
 **Example: cURL command for sending a JSON request**
 
 .. include:: ../common-gs/samples/auth-req-curl.rst
 
-In this example, ``$apiKey`` is an environment variable that stores your API key value.
-Environment variables make it easier to reference account information in API requests,
-to reuse the same cURL commands with different credentials, and to keep sensitive
-information like your API key from being exposed when you send requests to Rackspace
-Cloud API services. For details about creating environment variables, see :ref:`Configure
-environment variables <configure-environment-variables>`.
+In this example, ``$apiKey`` is an environment variable that stores your API
+key value. Environment variables make it easier to reference account
+information in API requests, to reuse the same cURL commands with different
+credentials, and to keep sensitive information like your API key from being
+exposed when you send requests to Rackspace Cloud API services. For details
+about creating environment variables, see
+:ref:`Configure environment variables <configure-environment-variables>`.
 
 ..  note::
 
-    The carriage returns in the cURL request examples use a backslash (``\``) as an
-    escape character. The escape character allows continuation of the command across
-    multiple lines.
+    The carriage returns in the cURL request examples use a backslash (``\``)
+    as an escape character. The escape character allows continuation of the
+    command across multiple lines.
 
 
 The cURL examples in this guide use the following command-line options.
@@ -83,8 +85,8 @@ The cURL examples in this guide use the following command-line options.
 |           | which is **GET**.                                                     |
 +-----------+-----------------------------------------------------------------------+
 
-For commands that return a response, use json.tool to pretty-print the output by
-appending the following command to the cURL call:
+For commands that return a response, use json.tool to pretty-print the output
+by appending the following command to the cURL call:
 
 .. code::
 
@@ -93,8 +95,8 @@ appending the following command to the cURL call:
 To use json.tool, import the JSON module. For information about json.tool, see
 `JSON encoder and decoder`_.
 
-If you run a Python version earlier than 2.6, import the simplejson module and use
-simplejson.tool. For information about simplejson.tool, see
+If you run a Python version earlier than 2.6, import the simplejson module and
+use simplejson.tool. For information about simplejson.tool, see
 `simplejson encoder and decoder`_.
 
 If you do not want to pretty-print JSON output, omit this code.

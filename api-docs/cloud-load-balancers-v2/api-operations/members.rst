@@ -1,22 +1,20 @@
 .. _members:
 
-=====================
+=======
 Members 
-=====================
-
-
+=======
 
 The *members* defined by the load balancer are responsible for
-servicing the requests received through the load balancer's virtual IP (VIP) address.
-By default, the load balancer employs a basic health check that ensures
-the member is listening on its defined port. The member is checked when it is
-added and at regular intervals as defined by the load
+servicing the requests received through the load balancer's virtual IP (VIP)
+address. By default, the load balancer employs a basic health check that
+ensures the member is listening on its defined port. The member is checked when
+it is added and at regular intervals as defined by the load
 balancer health check configuration. If a back-end member is not
 listening on its port or does not meet the conditions of the defined
 active health check for the load balancer, then the load balancer does
 not forward connections to it and its status is listed as ``OFFLINE``. Only
-members that are in an ``ONLINE`` status receive can receive and service traffic
-from the load balancer.
+members that are in an ``ONLINE`` status receive can receive and service
+traffic from the load balancer.
 
 All members have an associated *condition* that indicates whether the
 member is ``ENABLED``, ``DISABLED``, or ``DRAINING``.
@@ -65,9 +63,6 @@ member as part of the ``weight`` attribute of the member element. When the
 algorithm of the load balancer is changed to ``WEIGHTED_ROUND_ROBIN``
 and the members do not already have an assigned weight, the service
 automatically sets the weight to ``1`` for all members.
-
-
-
 
 .. include:: methods/get-listmembersv2.rst
 .. include:: methods/post-creatememberv2.rst

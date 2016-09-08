@@ -1,8 +1,8 @@
 .. _create-listener:
 
-====================
+===================
 Creating a listener
-====================
+===================
 
 A listener is an object that contains data that
 pertains to the "listening" port. This object defines the "front end"
@@ -20,9 +20,10 @@ Assume that you want to create a listener with the following configuration:
 
 -  ``description`` is ``listener one``.
 
--  ``loadbalancer_id`` is  the ID of the load balancer that you created (see :ref:`Create a load balancer <create-load-balancer>`). 
-   Remember to replace ``load_balancer_id`` in the example with the actual value 
-   that was returned the response. 
+-  ``loadbalancer_id`` is  the ID of the load balancer that you created (see
+   :ref:`Create a load balancer <create-load-balancer>`).
+   Remember to replace ``load_balancer_id`` in the example with the actual
+   value that was returned the response.
 
 -  ``name`` is ``listener1``.
 
@@ -32,14 +33,17 @@ Assume that you want to create a listener with the following configuration:
 
 -  ``default_tls_container_ref`` is ``https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c``.
 
--  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d`` and ``https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``. For more information, see the following sections in the Cloud Keep API Developer Guide:  `Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#container>`__ and `Container API Operations <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#document-api-operations/container-operations>`__.
-
+-  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d``
+   and ``https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
+   For more information, see the following sections in the Cloud Keep API
+   Developer Guide: `Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#container>`__
+   and `Container API Operations <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#document-api-operations/container-operations>`__.
 
 The following example shows the cURL request for creating a listener.
 
 **Example: cURL command for creating a listener with a JSON body**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -54,8 +58,8 @@ The following example shows the cURL request for creating a listener.
             "default_tls_container_ref": "https://barbican.endpoint/containers/a36c20d0-18e9-42ce-88fd-82a35977ee8c",
             "sni_container_refs": [
                 "https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d",
-                "https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e" 
-            ]   
+                "https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e"
+            ]
          }
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
@@ -69,7 +73,7 @@ The following example shows the response for creating a listener:
 
 **Example: Create listener response in JSON**
 
-.. code::  
+.. code::
 
     {
        "listener":{
@@ -95,8 +99,7 @@ The following example shows the response for creating a listener:
        }
     }
 
-You need the listener ID (in this example,``39de4d56-d663-46e5-85a1-5b9d5fa17829``)
-to :ref:`create a pool <create-pool>`, and you should
-supply the ID wherever you see ``listener_id`` in the
-examples in this guide.
-
+You need the listener ID (in this example,
+``39de4d56-d663-46e5-85a1-5b9d5fa17829``) to
+:ref:`create a pool <create-pool>`, and you should supply the ID wherever you
+see ``listener_id`` in the examples in this guide.

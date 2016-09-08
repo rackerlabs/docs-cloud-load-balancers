@@ -1,51 +1,48 @@
 .. _get-list-pool-members-v2:
 
 List pool members
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v2.0/lbaas/pools/{pool_id}/members
 
-
 This operations lists all of the members that are associated with the specified
 pool.
 
-
-
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+------------------+------------+--------------------------------------------------------------+
-|Name              |Type        |Description                                                   |
-+==================+============+==============================================================+
-|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
-+------------------+------------+--------------------------------------------------------------+
++------------------+------------+---------------------------------------------+
+|Name              |Type        |Description                                  |
++==================+============+=============================================+
+|pool_id           |csapi:uuid  | The UUID for the pool.                      |
++------------------+------------+---------------------------------------------+
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -73,8 +70,6 @@ The following table shows the body parameters for the response.
 |                  |           |             | in load-balancing but still accepts persistent connections. Valid values are from  |
 |                  |           |             | 0 to 256.                                                                          |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
-
 
 **Example: List pool members JSON response**
 

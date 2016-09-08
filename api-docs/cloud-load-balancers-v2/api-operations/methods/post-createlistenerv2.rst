@@ -1,12 +1,11 @@
 .. _create-listener-v2:
 
 Create a listener
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v2.0/lbaas/listeners
-
 
 This operation provisions a new listener based on the configuration
 defined in the request object. After the request is validated and the
@@ -35,40 +34,40 @@ to be attached to does not have a ``provisioning_status`` of ``ACTIVE``.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 201     | Created               | The request was fulfilled and a new resource|
-|         |                       | created.                                    |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request cannot be fulfilled due to      |
-|         |                       | insufficient data or data that is not valid.|
-|         |                       | Information about the failure is in the     |
-|         |                       | response today. Correct the error and submit|
-|         |                       | the request again.                          |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 404     | Not Found             | The requested item was not found.           |
-+---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed because  |
-|         |                       | of a conflict with the current state of the |
-|         |                       | resource.                                   |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 201     | Created               | The request was fulfilled and a new       |
+|         |                       | resource created.                         |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request cannot be fulfilled due to    |
+|         |                       | insufficient data or data that is not     |
+|         |                       | valid. Information about the failure is in|
+|         |                       | the response today. Correct the error and |
+|         |                       | submit the request again.                 |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 404     | Not Found             | The requested item was not found.         |
++---------+-----------------------+-------------------------------------------+
+| 409     | Conflict              | The request could not be completed because|
+|         |                       | of a conflict with the current state of   |
+|         |                       | the resource.                             |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the body parameters for the request.
 
@@ -133,7 +132,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+""""""""
 
 The following table shows the body parameters for the response.
 
