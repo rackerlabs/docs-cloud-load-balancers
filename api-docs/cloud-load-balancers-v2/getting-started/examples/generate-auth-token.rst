@@ -73,14 +73,14 @@ Cloud Auth API.
 
 **Example: cURL Authenticate Request: XML**
 
-.. code::  
+.. code::
 
     curl -s -d \
-    '<?xml version="1.0" encoding="UTF-8"?>  
+    '<?xml version="1.0" encoding="UTF-8"?>
     <auth>
        <apiKeyCredentials
           xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
-             username="your_username" 
+             username="your_username"
              apiKey="your_api_key"/>
     </auth>' \
     -H 'Content-Type: application/xml' \
@@ -89,24 +89,24 @@ Cloud Auth API.
 
 **Example: cURL Authenticate Request: JSON**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
         "auth":
         {
            "RAX-KSKEY:apiKeyCredentials":
-           {  
-              "username": "your_username",  
+           {
+              "username": "your_username",
               "apiKey": "your_api_key"}
-        }  
+        }
     }' \
     -H 'Content-Type: application/json' \
     'https://identity.api.rackspacecloud.com/v2.0/tokens' | python -m json.tool
 
 **Example: Authenticate Response: XML**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Content-Type: application/xml; charset=UTF-8
@@ -171,10 +171,10 @@ Cloud Auth API.
         <service type="rax:object-cdn" name="cloudFilesCDN">
           <endpoint region="DFW"
             tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-            publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/> 
+            publicURL="https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>
           <endpoint region="ORD"
             tenantId="MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"
-            publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>    
+            publicURL="https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee"/>
         </service>
         <service type="rax:dns" name="cloudDNS">
           <endpoint tenantId="1100111"
@@ -185,7 +185,7 @@ Cloud Auth API.
 
 **Example: Authenticate Response: JSON**
 
-.. code::  
+.. code::
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
@@ -194,24 +194,24 @@ Cloud Auth API.
 
     {
         "access": {
-         
+
             "token": {
-                "expires": "2011-12-08T22:51:02.000-06:00", 
+                "expires": "2011-12-08T22:51:02.000-06:00",
                 "id": "vvvvvvvv-wwww-xxxx-yyyy-zzzzzzzzzzzz"
-            }, 
+            },
             "user": {
-                "id": "123456", 
+                "id": "123456",
                 "name": "jsmith",
                 "RAX-AUTH:defaultRegion": "DFW",
                 "roles": [
                     {
-                        "description": "Admin Role.", 
-                        "id": "identity:admin", 
+                        "description": "Admin Role.",
+                        "id": "identity:admin",
                         "name": "identity:admin"
-                    }, 
+                    },
                     {
-                        "description": "Default Role.", 
-                        "id": "identity:default", 
+                        "description": "Default Role.",
+                        "id": "identity:default",
                         "name": "identity:default"
                     }
                 ]
@@ -220,104 +220,104 @@ Cloud Auth API.
                 {
                     "endpoints": [
                         {
-                            "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/1100111", 
-                            "region": "DFW", 
+                            "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/1100111",
+                            "region": "DFW",
                             "tenantId": "1100111"
-                        }, 
+                        },
                         {
-                            "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/1100111", 
-                            "region": "ORD", 
+                            "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/1100111",
+                            "region": "ORD",
                             "tenantId": "1100111"
                         }
-                    ], 
-                    "name": "cloudDatabases", 
+                    ],
+                    "name": "cloudDatabases",
                     "type": "rax:database"
                 },
                 {
                     "endpoints": [
                         {
-                            "publicURL": "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111", 
-                            "region": "DFW", 
+                            "publicURL": "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/1100111",
+                            "region": "DFW",
                             "tenantId": "1100111"
-                        }, 
+                        },
                         {
-                            "publicURL": "https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111", 
-                            "region": "ORD", 
+                            "publicURL": "https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1100111",
+                            "region": "ORD",
                             "tenantId": "1100111"
                         }
-                    ], 
-                    "name": "cloudLoadBalancers", 
+                    ],
+                    "name": "cloudLoadBalancers",
                     "type": "rax:load-balancer"
-                }, 
+                },
                 {
                     "endpoints": [
                         {
                             "tenantId": "1100111",
                             "region": "DFW",
-                            "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/1100111", 
-                            "versionId": "2", 
-                            "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2/", 
+                            "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/1100111",
+                            "versionId": "2",
+                            "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2/",
                             "versionList": "https://dfw.servers.api.rackspacecloud.com/"
                         },
                         {
                             "tenantId": "1100111",
                             "region": "ORD",
-                            "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/1100111", 
-                            "versionId": "2", 
-                            "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2/", 
+                            "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/1100111",
+                            "versionId": "2",
+                            "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2/",
                             "versionList": "https://ord.servers.api.rackspacecloud.com/"
                         }
                     ],
-                    "name": "cloudServersOpenStack", 
+                    "name": "cloudServersOpenStack",
                     "type": "compute"
                 },
                 {
                     "endpoints": [
                         {
-                            "tenantId": "1100111", 
-                            "publicURL": "https://servers.api.rackspacecloud.com/v1.0/1100111", 
-                            "versionId": "1.0", 
-                            "versionInfo": "https://servers.api.rackspacecloud.com/v1.0/", 
+                            "tenantId": "1100111",
+                            "publicURL": "https://servers.api.rackspacecloud.com/v1.0/1100111",
+                            "versionId": "1.0",
+                            "versionInfo": "https://servers.api.rackspacecloud.com/v1.0/",
                             "versionList": "https://servers.api.rackspacecloud.com/"
                         }
                     ],
-                    "name": "cloudServers", 
+                    "name": "cloudServers",
                     "type": "compute"
-                }, 
+                },
                 {
                     "endpoints": [
                         {
                             "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
-                            "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "region": "DFW" 
+                            "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "region": "DFW"
                         },
                         {
                             "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
-                            "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "region": "ORD" 
-                        }
-                    ], 
-                    "name": "cloudFiles", 
-                    "type": "object-store"
-                }, 
-                {
-                    "endpoints": [  
-                        {
-                            "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "region": "DFW"
-                        },                
-                        {
-                            "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
-                            "publicURL": "https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee", 
+                            "publicURL": "https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "internalURL": "https://snet-storage101.ord1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
                             "region": "ORD"
                         }
                     ],
-                    "name": "cloudFilesCDN", 
+                    "name": "cloudFiles",
+                    "type": "object-store"
+                },
+                {
+                    "endpoints": [
+                        {
+                            "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "region": "DFW"
+                        },
+                        {
+                            "tenantId": "MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "publicURL": "https://cdn2.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee",
+                            "region": "ORD"
+                        }
+                    ],
+                    "name": "cloudFilesCDN",
                     "type": "rax:object-cdn"
-                }, 
+                },
                 {
                     "endpoints": [
                         {
@@ -325,7 +325,7 @@ Cloud Auth API.
                             "publicURL": "https://dns.api.rackspacecloud.com/v1.0/1100111"
                         }
                     ],
-                    "name": "cloudDNS", 
+                    "name": "cloudDNS",
                     "type": "rax:dns"
                 }
             ]
@@ -353,7 +353,7 @@ attribute that specifies when the token expires.
       **Example: Authentication request with multi-factor
       authentication credentials**
 
-      .. code::  
+      .. code::
 
           $curl https://identity.api.rackspacecloud.com/v2.0/tokens \
                -X POST \

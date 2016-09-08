@@ -1,64 +1,62 @@
 .. _get-show-pool-details-v2:
 
 Show pool details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v2.0/lbaas/pools/{pool_id}
-
 
 This operation returns the pool object identified by ``pool_id``. If the
 user is not an administrative user and the pool object does not belong
 to the user's tenant account, the service returns the HTTP
 ``Forbidden (403)`` response code.
 
-
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 403     | Forbidden             | The server understood the request, but      |
-|         |                       | won't fulfill it.                           |
-+---------+-----------------------+---------------------------------------------+
-| 404     | Not Found             | The requested item was not found.           |
-+---------+-----------------------+---------------------------------------------+
-| 409     | Conflict              | The request could not be completed because  |
-|         |                       | of a conflict with the current state of the |
-|         |                       | resource.                                   |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 403     | Forbidden             | The server understood the request, but    |
+|         |                       | won't fulfill it.                         |
++---------+-----------------------+-------------------------------------------+
+| 404     | Not Found             | The requested item was not found.         |
++---------+-----------------------+-------------------------------------------+
+| 409     | Conflict              | The request could not be completed because|
+|         |                       | of a conflict with the current state of   |
+|         |                       | the resource.                             |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | the allowed limit.                        |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+------------------+------------+--------------------------------------------------------------+
-|Name              |Type        |Description                                                   |
-+==================+============+==============================================================+
-|pool_id           |csapi:uuid  | The UUID for the pool.                                       |
-+------------------+------------+--------------------------------------------------------------+
++------------------+------------+---------------------------------------------+
+|Name              |Type        |Description                                  |
++==================+============+=============================================+
+|pool_id           |csapi:uuid  | The UUID for the pool.                      |
++------------------+------------+---------------------------------------------+
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -95,7 +93,6 @@ The following table shows the body parameters for the response.
 | session_persistence | plain     | xsd:string  | The session persistence algorithm. This algorithm is a dictionary with ``type`` and|
 |                     |           |             | ``cookie_name`` keys.                                                              |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: Show pool details JSON response**
 

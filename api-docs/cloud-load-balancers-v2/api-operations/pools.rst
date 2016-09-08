@@ -1,9 +1,8 @@
 .. _pools:
 
-=====================
+=====
 Pools 
-=====================
-
+=====
 
 A *pool* is a logical set of devices, such as web servers, that
 you group together to receive and process traffic. Instead of sending

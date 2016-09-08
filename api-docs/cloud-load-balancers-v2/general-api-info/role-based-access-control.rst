@@ -4,25 +4,41 @@
 Role-based access control (RBAC)
 ================================
 
-Role-based access control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Load Balancers API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Load Balancers API service capabilities, based on roles defined by Rackspace (see :ref:`Roles available for Cloud Load Balancers <clb-dg-api-info-rbac-available>`). The permissions to perform certain operations in Cloud Load Balancers API – create, read, update, delete  – are assigned to specific roles. The account owner user assigns these roles, either global (multiproduct) or product-specific (for example Cloud Load Balancers), to account users.
+Role-based access control (RBAC) restricts access to the capabilities of
+Rackspace Cloud services, including the Cloud Load Balancers API, to authorized
+users only. RBAC enables Rackspace Cloud customers to specify which account
+users of their Cloud account have access to which Cloud Load Balancers API
+service capabilities, based on roles defined by Rackspace (see
+:ref:`Roles available for Cloud Load Balancers
+<clb-dg-api-info-rbac-available>`). The permissions to perform certain
+operations in Cloud Load Balancers API – create, read, update, delete  – are
+assigned to specific roles. The account owner user assigns these roles, either
+global (multiproduct) or product-specific (for example Cloud Load Balancers),
+to account users.
 
 .. _clb-dg-api-info-rbac-assign:
 
 Assign roles to account users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The account owner (identity:user-admin) can create account users on the account and then assign roles to those users. The roles grant the account users specific permissions for accessing the capabilities of the Cloud Load Balancers service. Each account has only one account owner, and that role is assigned by default to any Rackspace Cloud account when the account is created.
+The account owner (identity:user-admin) can create account users on the account
+and then assign roles to those users. The roles grant the account users
+specific permissions for accessing the capabilities of the Cloud Load Balancers
+service. Each account has only one account owner, and that role is assigned by
+default to any Rackspace Cloud account when the account is created.
 
-See the *Cloud Identity Client Developer Guide* for information about how to perform the following tasks:
+See the *Cloud Identity Client Developer Guide* for information about how to
+perform the following tasks:
 
-* :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`  
+* :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`
 
-* :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`  
+* :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`
 
-* :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user>` 
+* :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user>`
 
 .. note::
-    The account owner (identity:user-admin) role cannot hold any additional roles because it already has full access to all capabilities.
+    The account owner (identity:user-admin) role cannot hold any additional
+    roles because it already has full access to all capabilities.
 
 .. _clb-dg-api-info-rbac-available:
 
@@ -48,7 +64,9 @@ these roles and their permissions.
 |                | where access is granted.                                         |
 +----------------+------------------------------------------------------------------+
 
-Additionally, two multiproduct roles apply to all products. Users with multiproduct roles inherit access to future products when those products become RBAC-enabled. The following table describes these roles and their permissions.
+Additionally, two multiproduct roles apply to all products. Users with
+multiproduct roles inherit access to future products when those products become
+RBAC-enabled. The following table describes these roles and their permissions.
 
 .. _clb-dg-api-info-rbac-available-multi:
 
@@ -67,9 +85,15 @@ Additionally, two multiproduct roles apply to all products. Users with multiprod
 Resolve conflicts between RBAC multiproduct versus custom (product-specific) roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The account owner can set roles for both multiproduct and Cloud Load Balancers scope, and it is important to understand how any potential conflicts among these roles are resolved. When two roles appear to conflict, the role that provides the more extensive permissions takes precedence. Therefore, admin roles take precedence over observer and creator roles, because admin roles provide more permissions.
+The account owner can set roles for both multiproduct and Cloud Load Balancers
+scope, and it is important to understand how any potential conflicts among
+these roles are resolved. When two roles appear to conflict, the role that
+provides the more extensive permissions takes precedence. Therefore, admin
+roles take precedence over observer and creator roles, because admin roles
+provide more permissions.
 
-The following table shows two examples of how potential conflicts between user roles in the Control Panel are resolved.
+The following table shows two examples of how potential conflicts between user
+roles in the Control Panel are resolved.
 
 +----------------------------------------+-------------------------------------+--------------------------------------+
 |        Permission configuration        |         View of permission          |  Can the user perform product admin  |
@@ -90,7 +114,7 @@ The following table shows two examples of how potential conflicts between user r
 RBAC permissions cross-reference to Cloud Load Balancers API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-API operations for Cloud Load Balancers may or may not be available to all roles. To see which operations are permitted to invoke which calls, see the 
-:how-to:`Permissions Matrix for Role-Based Access Control (RBAC) <permissions-matrix-for-role-based-access-control-rbac>`.
-
-
+API operations for Cloud Load Balancers may or may not be available to all
+roles. To see which operations are permitted to invoke which calls, see the
+:how-to:`Permissions Matrix for Role-Based Access Control (RBAC)
+<permissions-matrix-for-role-based-access-control-rbac>`.

@@ -1,16 +1,15 @@
 .. _update-health-monitor-v2:
 
 Update a health monitor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     PUT /v2.0/lbaas/healthmonitors/{healthmonitor_id}
 
 
-
-This operation enables you to change one or more of the following health monitor
-attributes:
+This operation enables you to change one or more of the following health
+monitor attributes:
 
 -  ``delay``
 
@@ -37,44 +36,43 @@ provisioning_status value of ``ACTIVE``.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 202     | Accepted              | The request is validated.                   |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request is missing one or more          |
-|         |                       | elements, or the values of some elements    |
-|         |                       | are invalid.                                |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 422     | Immutable             | The entity is unprocessable.                |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 202     | Accepted              | The request is validated.                 |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request is missing one or more        |
+|         |                       | elements, or the values of some elements  |
+|         |                       | are invalid.                              |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 422     | Immutable             | The entity is unprocessable.              |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+-------------------+------------+--------------------------------------------------------------+
-|Name               |Type        |Description                                                   |
-+===================+============+==============================================================+
-|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.                             |
-+-------------------+------------+--------------------------------------------------------------+
-
++-------------------+------------+--------------------------------------------+
+|Name               |Type        |Description                                 |
++===================+============+============================================+
+|healthmonitor_id   |csapi:uuid  | The UUID for the health monitor.           |
++-------------------+------------+--------------------------------------------+
 
 The following table shows the body parameters for the request.
 
@@ -111,8 +109,6 @@ The following table shows the body parameters for the request.
 | (*Required*)     |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
 
-
-
 **Example: Update a health monitor JSON request**
 
 .. code::
@@ -130,7 +126,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-""""""""""""""""
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -174,7 +170,6 @@ The following table shows the body parameters for the response.
 | url_path         | plain     | xsd:string  | The HTTP path of the request sent by the monitor to test the health of a member.   |
 | (optional)       |           |             | A valid value is a string that begins with a forward slash (/).                    |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: Update a health monitor JSON response**
 

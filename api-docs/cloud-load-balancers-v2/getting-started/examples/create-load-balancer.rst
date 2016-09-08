@@ -1,9 +1,8 @@
 .. _create-load-balancer:
 
-==========================
+========================
 Creating a load balancer
-==========================
-
+========================
 
 You use the create load balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.
@@ -45,8 +44,6 @@ The following example shows the cURL request for creating a load balancer.
     -H "Content-Type: application/json" \
     -X POST \
     "$API_ENDPOINT/loadbalancers" | python -m json.tool
-
-
 
 The following example shows the response for creating a load balancer.
 

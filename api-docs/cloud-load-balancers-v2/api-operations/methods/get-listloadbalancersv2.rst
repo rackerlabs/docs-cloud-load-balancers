@@ -1,42 +1,40 @@
 .. _get-list-load-balancers-v2:
 
 List load balancers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v2.0/lbaas/loadbalancers
 
-
-This operation lists all load balancers that are associated with your tenant account.
-This operation returns a list, which might be empty.
+This operation lists all load balancers that are associated with your tenant
+account. This operation returns a list, which might be empty.
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 This operation does not accept a request body.
 
 Response
-""""""""""""""""
-
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -69,7 +67,6 @@ The following table shows the body parameters for the response.
 | tenant_id           | plain     | csapi:uuid  | The UUID of the tenant who owns the VIP address. Only administrative users can     |
 |                     |           |             | specify a tenant UUID other than their own.                                        |
 +---------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: List load balancers JSON response**
 

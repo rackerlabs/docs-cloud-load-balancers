@@ -6,7 +6,8 @@ Specify a region to operate against by selecting an endpoint from the
 table below to use for your Cloud Load Balancer API calls.
 
 .. tip::
-   To help you decide which regionalized endpoint to use, read about :how-to:`special considerations for choosing a region <about-regions>`.
+   To help you decide which regionalized endpoint to use, read about
+   :how-to:`special considerations for choosing a region <about-regions>`.
 
 **Regionalized Service Endpoints**
 

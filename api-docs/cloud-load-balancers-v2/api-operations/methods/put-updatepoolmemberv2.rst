@@ -1,13 +1,11 @@
 .. _update-pool-member-v2:
 
 Update a pool member
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /v2.0/lbaas/pools/{pool_id}/members/{member_id}
-
-
 
 This operation enables you to change one or more of the following member
 attributes:
@@ -26,44 +24,43 @@ attributes:
 
 The following table shows the possible response codes for this operation.
 
-+---------+-----------------------+---------------------------------------------+
-|Response | Name                  | Description                                 |
-|code     |                       |                                             |
-+=========+=======================+=============================================+
-| 200     | Success               | The request succeeded.                      |
-+---------+-----------------------+---------------------------------------------+
-| 400     | Bad Request           | The request is missing one or more          |
-|         |                       | elements, or the values of some elements    |
-|         |                       | are invalid.                                |
-+---------+-----------------------+---------------------------------------------+
-| 401     | Unauthorized          | You are not authorized to complete this     |
-|         |                       | operation. This error can occur if the      |
-|         |                       | request is submitted with an invalid        |
-|         |                       | authentication token.                       |
-+---------+-----------------------+---------------------------------------------+
-| 413     | Over Limit            | The number of items returned is greater than|
-|         |                       | the allowed limit.                          |
-+---------+-----------------------+---------------------------------------------+
-| 422     | Immutable             | The entity is unprocessable.                |
-+---------+-----------------------+---------------------------------------------+
-| 500     | Load Balancer Fault   | The load balancer experienced a fault.      |
-+---------+-----------------------+---------------------------------------------+
-| 503     | Service Unavailable   | The service is not available.               |
-+---------+-----------------------+---------------------------------------------+
++---------+-----------------------+-------------------------------------------+
+|Response | Name                  | Description                               |
+|code     |                       |                                           |
++=========+=======================+===========================================+
+| 200     | Success               | The request succeeded.                    |
++---------+-----------------------+-------------------------------------------+
+| 400     | Bad Request           | The request is missing one or more        |
+|         |                       | elements, or the values of some elements  |
+|         |                       | are invalid.                              |
++---------+-----------------------+-------------------------------------------+
+| 401     | Unauthorized          | You are not authorized to complete this   |
+|         |                       | operation. This error can occur if the    |
+|         |                       | request is submitted with an invalid      |
+|         |                       | authentication token.                     |
++---------+-----------------------+-------------------------------------------+
+| 413     | Over Limit            | The number of items returned is greater   |
+|         |                       | than the allowed limit.                   |
++---------+-----------------------+-------------------------------------------+
+| 422     | Immutable             | The entity is unprocessable.              |
++---------+-----------------------+-------------------------------------------+
+| 500     | Load Balancer Fault   | The load balancer experienced a fault.    |
++---------+-----------------------+-------------------------------------------+
+| 503     | Service Unavailable   | The service is not available.             |
++---------+-----------------------+-------------------------------------------+
 
 Request
-""""""""""""""""
+"""""""
 
 The following table shows the URI parameters for the request.
 
-+------------------+------------+--------------------------------------------------------------+
-|Name              |Type        |Description                                                   |
-+==================+============+==============================================================+
-|pool_id           |csapi:uuid  | The UUID of the pool.                                        |
-+------------------+------------+--------------------------------------------------------------+
-|member_id         |csapi:uuid  | The UUID of the member.                                      |
-+------------------+------------+--------------------------------------------------------------+
-
++------------------+------------+---------------------------------------------+
+|Name              |Type        |Description                                  |
++==================+============+=============================================+
+|pool_id           |csapi:uuid  | The UUID of the pool.                       |
++------------------+------------+---------------------------------------------+
+|member_id         |csapi:uuid  | The UUID of the member.                     |
++------------------+------------+---------------------------------------------+
 
 The following table shows the body parameters for the request.
 
@@ -93,8 +90,7 @@ The following table shows the body parameters for the request.
     }
 
 Response
-"""""""""""
-
+""""""""
 
 The following table shows the body parameters for the response.
 
@@ -122,7 +118,6 @@ The following table shows the body parameters for the response.
 |                  |           |             | load balancing but still accepts persistent connections. Valid values are from 0 to|
 |                  |           |             | 256.                                                                               |
 +------------------+-----------+-------------+------------------------------------------------------------------------------------+
-
 
 **Example: Update a pool member JSON response**
 

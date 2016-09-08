@@ -1,8 +1,8 @@
 .. _listeners:
 
-=====================
+=========
 Listeners 
-=====================
+=========
 
 
 A *listener* is an object that contains data that pertains to the

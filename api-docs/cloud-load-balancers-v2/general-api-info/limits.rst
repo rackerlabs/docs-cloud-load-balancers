@@ -4,31 +4,30 @@
 Limits
 ======
 
-All accounts, by default, have a preconfigured set of thresholds (or limits) to manage 
-capacity and prevent abuse of the system. The system recognizes two kinds of limits: 
-*rate limits* and *absolute limits*. Rate limits are thresholds that are reset after a 
-certain amount of time passes. Absolute limits, also called *quotas*, are fixed. 
-
+All accounts, by default, have a preconfigured set of thresholds (or limits) to
+manage capacity and prevent abuse of the system. The system recognizes two
+kinds of limits: *rate limits* and *absolute limits*. Rate limits are
+thresholds that are reset after a certain amount of time passes. Absolute
+limits, also called *quotas*, are fixed.
 
 .. note::
-   You can submit a request to Rackspace Support for an increase in load balancer limits. 
-   Each request must be approved before limits can be modified. Limits can be increased 
-   only up to the maximum limit (such as 50 nodes per load balancer).
-
+   You can submit a request to Rackspace Support for an increase in load
+   balancer limits. Each request must be approved before limits can be
+   modified. Limits can be increased only up to the maximum limit (such as 50
+   nodes per load balancer).
 
 .. _clb-dg-api-info-limits-ratelimits:
 
 Rate limits
 ~~~~~~~~~~~
 
-Rate limits are specified in both a human-readable wild-card URI and a 
-machine-processable regular expression. The regular expression boundary matcher ``^`` 
-takes effect after the root URI path. For example, the regular expression 
-``^/v2.0/lbaas`` matches the ``/v2.0/lbaas`` portion of the 
+Rate limits are specified in both a human-readable wild-card URI and a
+machine-processable regular expression. The regular expression boundary matcher
+``^`` takes effect after the root URI path. For example, the regular expression
+``^/v2.0/lbaas`` matches the ``/v2.0/lbaas`` portion of the
 following URI: ``https://iad.networks.api.rackspacecloud.com/v2.0/lbaas/``.
 
 Rate limits are processed via the `Repose service`_.
-
 
 The following table shows the default rate limits for each method.
 
@@ -56,29 +55,26 @@ The following table shows the default rate limits for each method.
 | DELETE | ``/v2.0/*`` | ``^/2.0/.*`` | 50 per minute |
 +--------+-------------+--------------+---------------+
 
-Rate limits are applied in order relative to the method, going from least to most specific. 
-For example, although the threshold for submitting a  **POST** request to ``/v2.0/\*`` is 
-25 per minute, you cannot submit a **POST** request to ``/v2.0/\*`` more than 2 times per 
-second because the rate limit for any **POST** request is 2 per second. If you exceed the 
-thresholds established for your account, a 413 (Rate Control) HTTP response is returned with 
+Rate limits are applied in order relative to the method, going from least to
+most specific. For example, although the threshold for submitting a  **POST**
+request to ``/v2.0/\*`` is 25 per minute, you cannot submit a **POST** request
+to ``/v2.0/\*`` more than 2 times per second because the rate limit for any
+**POST** request is 2 per second. If you exceed the thresholds established for
+your account, a 413 (Rate Control) HTTP response is returned with
 a ``Retry-After`` header to notify the client when it can attempt to try again.
 
-To find your account's settings for these rate limits, see 
+To find your account's settings for these rate limits, see
 :ref:`Determine limits programmatically <determine-limits>`.
-
-
-
-
 
 .. _Repose service: http://www.openrepose.org
 
 Quotas
 ~~~~~~
 
-Quotas, also called absolute limits, specify the maximum number of load balancers that can exist per
-Cloud account and the maximum number of resources that can exist per
-load balancer. The batch delete limit is the exception, because it is
-applied per batch delete API request.
+Quotas, also called absolute limits, specify the maximum number of load
+balancers that can exist per Cloud account and the maximum number of resources
+that can exist per load balancer. The batch delete limit is the exception,
+because it is applied per batch delete API request.
 
 The system applies default values for each quota, as shown in the following table.
 
@@ -96,16 +92,16 @@ The system applies default values for each quota, as shown in the following tabl
 | healthmonitor      | Total number of health monitors that can be added to a pool            | 20      |
 +--------------------+------------------------------------------------------------------------+---------+
 
-To find your account's settings for these quotas, see :ref:`Determine limits programmatically <determine-limits>`. 
-
-
+To find your account's settings for these quotas, see
+:ref:`Determine limits programmatically <determine-limits>`.
 
 .. _determine-limits:
 
 Determine limits programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Applications can programmatically determine current limits for an account by using the following URI:
+Applications can programmatically determine current limits for an account by
+using the following URI:
 
 +-------+-------------------------------+-----------------------------------------------------+
 | Method| URI                           | Description                                         |
@@ -114,10 +110,11 @@ Applications can programmatically determine current limits for an account by usi
 +-------+-------------------------------+-----------------------------------------------------+
 
 
-Error response codes: loadbalancerFault (400, 500), serviceUnavailable (503), unauthorized (401), badRequest (400), overLimit (413)
+Error response codes: loadbalancerFault (400, 500), serviceUnavailable (503),
+unauthorized (401), badRequest (400), overLimit (413)
 
-This operation does not require a request body. Following is an example response
-
+This operation does not require a request body. Following is an example
+response:
 
 **Example: List rate limits JSON response**
 
@@ -144,5 +141,3 @@ This operation does not require a request body. Following is an example response
             }
         }
     }
-
-

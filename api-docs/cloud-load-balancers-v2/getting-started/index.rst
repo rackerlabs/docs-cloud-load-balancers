@@ -11,5 +11,3 @@
    Send API requests <send-request-ovw>
    Authenticate <authenticate>
    using-cloud-load-balancers
-   
-   

@@ -9,11 +9,9 @@ display and consumption of date and time values.
 
 .. _clb-dg-datetime-loadbalance:
 
-
-.. code:: 
+.. code::
 
     YYYY-MM-DD'T'hh:mm:ssZ
-
 
 For example, May 19, 2016 at 8:07:08 AM, GMT-5 would have the following format:
 
@@ -22,7 +20,6 @@ For example, May 19, 2016 at 8:07:08 AM, GMT-5 would have the following format:
     2016-05-19T08:07:08-05:00
 
 .. _clb-dg-datetime-codes:
-
 
 The following table describes the date and time format codes.
 
@@ -46,4 +43,3 @@ The following table describes the date and time format codes.
 | Z    | RFC 822 time zone (offset from GMT). If Z is not replaced |
 |      | with the offset from GMT, it indicates a 00:00 offset.    |
 +------+-----------------------------------------------------------+
-
