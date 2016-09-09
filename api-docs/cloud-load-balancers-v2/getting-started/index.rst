@@ -20,7 +20,7 @@ To start using the API and run the examples in this section, you need the
 following items:
 
 - Rackspace Cloud account. If you don't have an account,
-     :rax-cart:`sign up <cloud>` for one on the Rackspace website.
+  :rax-cart:`sign up <cloud>` for one on the Rackspace website.
 
 - :ref:`Command line tool or browser client <send-api-requests>` for
-     communicating with the API service.
+  communicating with the API service.
