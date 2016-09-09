@@ -64,7 +64,7 @@ your account, a 413 (Rate Control) HTTP response is returned with
 a ``Retry-After`` header to notify the client when it can attempt to try again.
 
 To find your current account settings for these limits, see
-:ref:`Determine limits programmatically <determine-limits>`.
+:ref:`Retrieve account limits <determine-limits>`.
 
 .. _Repose service: http://www.openrepose.org
 

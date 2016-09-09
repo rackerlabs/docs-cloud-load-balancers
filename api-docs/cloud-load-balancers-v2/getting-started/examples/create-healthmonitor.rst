@@ -20,7 +20,7 @@ the following configuration:
 -  ``max_retries`` is ``5``.
 
 -  ``pool_id`` is the ID of the pool member that you added (see
-   :ref:`Add member to pool <add-pool-member>`).
+   :ref:`add member to pool <add-pool-member>`).
    Remember to replace ``pool_id`` in the example with the actual value that
    was returned in the response.
 

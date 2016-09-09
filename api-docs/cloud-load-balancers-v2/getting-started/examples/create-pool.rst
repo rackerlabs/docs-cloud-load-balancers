@@ -20,7 +20,7 @@ Assume that you want to create a pool with the following configuration:
 -  ``lb_algorithm`` is ``ROUND_ROBIN``.
 
 -  ``listener_id`` is the ID of the listener that you created (see
-   :ref:`Create a listener <create-listener>`). Remember to replace
+   :ref:`ceate a listener <create-listener>`). Remember to replace
    ``listener_id`` in the example with the actual value that was returned in
    the response.
 

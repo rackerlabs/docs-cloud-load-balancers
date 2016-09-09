@@ -20,7 +20,7 @@ Assume that you want to create a listener with the following configuration:
 -  ``description`` is ``listener one``.
 
 -  ``loadbalancer_id`` is  the ID of the load balancer that you created (see
-   :ref:`Create a load balancer <create-load-balancer>`).
+   :ref:`create a load balancer <create-load-balancer>`).
    Remember to replace ``load_balancer_id`` in the example with the actual
    value that was returned the response.
 

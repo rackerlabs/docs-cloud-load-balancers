@@ -23,7 +23,7 @@ details.
     "$API_ENDPOINT/loadbalancers/load_balancer_id" | python -m json.tool
 
 Remember to replace ``load_balancer_id`` in the example with the actual
-value that is returned in :ref:`Create a load balancer <create-load-balancer>`.
+value that is returned in :ref:`create a load balancer <create-load-balancer>`.
 
 The following example gives the show load balancer details response.
 
