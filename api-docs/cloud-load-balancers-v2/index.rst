@@ -21,7 +21,7 @@ service. You should also be familiar with the following technologies:
 
 * RESTful web services
 * HTTP/1.1
-* JSON and/or XML serialization formats
+* JSON serialization format
 
 Use the following links to go directly to user and reference information for
 using the Rackspace Cloud Load Balancers service REST API.
@@ -43,7 +43,7 @@ using the Rackspace Cloud Load Balancers service REST API.
    :hidden:
    :maxdepth: 3
 
-   Cloud Load Balancers 2.0 <https://developer.rackspace.com/docs/cloud-load-balancers/v2/>
+   Cloud Load Balancers 2.0 <self>
    getting-started/index
    general-api-info/index
    api-reference/index

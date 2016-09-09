@@ -11,10 +11,10 @@ thresholds that are reset after a certain amount of time passes. Absolute
 limits, also called *quotas*, are fixed.
 
 .. note::
-   You can submit a request to Rackspace Support for an increase in load
-   balancer limits. Each request must be approved before limits can be
-   modified. Limits can be increased only up to the maximum limit (such as 50
-   nodes per load balancer).
+   If the default limits are too low for your particular application,
+   contact Rackspace Cloud support to request an increase. All requests
+   require reasonable justification. Limits can be increased only up to the
+   maximum limit (such as 50 nodes per load balancer).
 
 .. _clb-dg-api-info-limits-ratelimits:
 
@@ -63,7 +63,7 @@ to ``/v2.0/\*`` more than 2 times per second because the rate limit for any
 your account, a 413 (Rate Control) HTTP response is returned with
 a ``Retry-After`` header to notify the client when it can attempt to try again.
 
-To find your account's settings for these rate limits, see
+To find your current account settings for these limits, see
 :ref:`Determine limits programmatically <determine-limits>`.
 
 .. _Repose service: http://www.openrepose.org
@@ -93,12 +93,12 @@ The system applies default values for each quota, as shown in the following tabl
 +--------------------+------------------------------------------------------------------------+---------+
 
 To find your account's settings for these quotas, see
-:ref:`Determine limits programmatically <determine-limits>`.
+:ref:`Retrieve account limits <determine-limits>`.
 
 .. _determine-limits:
 
-Determine limits programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieve account limits
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Applications can programmatically determine current limits for an account by
 using the following URI:
@@ -110,8 +110,9 @@ using the following URI:
 +-------+-------------------------------+-----------------------------------------------------+
 
 
-Error response codes: loadbalancerFault (400, 500), serviceUnavailable (503),
-unauthorized (401), badRequest (400), overLimit (413)
+Possible error response codes are ``loadbalancerFault (400, 500)``,
+``serviceUnavailable (503)``, ``unauthorized (401)``, ``badRequest (400)``, and
+``overLimit (413)``.
 
 This operation does not require a request body. Following is an example
 response:

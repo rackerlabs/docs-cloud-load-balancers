@@ -64,6 +64,10 @@ algorithm of the load balancer is changed to ``WEIGHTED_ROUND_ROBIN``
 and the members do not already have an assigned weight, the service
 automatically sets the weight to ``1`` for all members.
 
+.. contents::
+   :depth: 1
+   :local:
+
 .. include:: methods/get-listmembersv2.rst
 .. include:: methods/post-creatememberv2.rst
 .. include:: methods/get-showpoolmemberdetailsv2.rst

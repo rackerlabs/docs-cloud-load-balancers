@@ -10,6 +10,10 @@ client traffic to the destination IP address specified in the client
 request, the system sends the request to any of the servers that are
 members of that pool.
 
+.. contents::
+   :depth: 1
+   :local:
+
 .. include:: methods/get-listpoolsv2.rst
 .. include:: methods/post-createpoolv2.rst
 .. include:: methods/get-showpooldetailsv2.rst

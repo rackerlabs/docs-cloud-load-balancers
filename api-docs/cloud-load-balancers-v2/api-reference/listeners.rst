@@ -9,6 +9,10 @@ A *listener* is an object that contains data that pertains to the
 configuration and contains the back-end data such as pools and its
 members.
 
+.. contents::
+   :depth: 1
+   :local:
+
 .. include:: methods/get-listlistenersv2.rst
 .. include:: methods/post-createlistenerv2.rst
 .. include:: methods/get-showlistenerv2.rst
