@@ -8,7 +8,7 @@ existing cloud server) to set up as a member for your load balancer. The
 instructions are for the
 `Cloud Control Panel <http://mycloud.rackspace.com/>`__. You can also create a
 server by using the Cloud Servers API. See the
-`Cloud Servers API Documentation
+`Cloud Servers API documentation
 <https://developer.rackspace.com/docs/cloud-servers/v2/>`__
 for details.
 
