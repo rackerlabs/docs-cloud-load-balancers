@@ -1,8 +1,7 @@
 .. _create-pool:
 
-===============
 Creating a pool
-===============
+~~~~~~~~~~~~~~~
 
 A pool is a logical set of devices, such as web servers, that you group
 together to receive and process traffic. Instead of sending client traffic to

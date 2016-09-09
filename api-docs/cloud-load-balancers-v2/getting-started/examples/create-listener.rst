@@ -1,8 +1,7 @@
 .. _create-listener:
 
-===================
 Creating a listener
-===================
+~~~~~~~~~~~~~~~~~~~
 
 A listener is an object that contains data that
 pertains to the "listening" port. This object defines the "front end"
@@ -66,8 +65,6 @@ The following example shows the cURL request for creating a listener.
     -H "Content-Type: application/json" \
     -X POST \
     "$API_ENDPOINT/listeners" | python -m json.tool
-
-
 
 The following example shows the response for creating a listener:
 

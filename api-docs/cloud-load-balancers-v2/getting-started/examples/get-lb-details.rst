@@ -1,8 +1,7 @@
 .. _get-lb-details:
 
-=============================
 Showing load balancer details
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This operation (``GET /loadbalancers/load_balancer_id``) provides detailed
 output for a specific load balancer that is configured and associated with your

@@ -31,7 +31,7 @@ using the Rackspace Cloud Load Balancers service REST API.
 - :ref:`API reference <api-reference>`
 - :ref:`Release notes <release-notes-collection>`
 
-. note::
+.. note::
 
      You can also use Rackspace Cloud Load Balancers from the Cloud Control
      panel, or by using one of the language-specific

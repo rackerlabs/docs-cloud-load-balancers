@@ -1,8 +1,7 @@
 .. _create-cloud-servers:
 
-=======================
 Creating a cloud server
-=======================
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a new cloud server (or use an
 existing cloud server) to set up as a member for your load balancer. The

@@ -1,8 +1,7 @@
 .. _create-load-balancer:
 
-========================
 Creating a load balancer
-========================
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 You use the create load balancer API call (``POST /loadbalancers``)
 to create a load balancer with the configuration that you specify.

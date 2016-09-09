@@ -1,8 +1,7 @@
 .. _create-healthmonitor:
 
-=========================
 Creating a health monitor
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A health monitor determines whether a member of a pool is usable for processing
 a request.
