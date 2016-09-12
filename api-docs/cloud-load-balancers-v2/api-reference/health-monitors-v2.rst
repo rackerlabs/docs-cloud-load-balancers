@@ -4,6 +4,10 @@
 Health monitors 
 ===============
 
+.. contents::
+   :depth: 1
+   :local:
+
 The Load Balancers service includes a health monitoring operation that
 periodically checks your back-end members to ensure that they are responding
 correctly. If a member does not respond, it is removed from rotation
@@ -14,9 +18,6 @@ The health check also is performed against every member that is added to ensure
 that the member is operating correctly before it services traffic. Only one
 health monitor can be enabled on a load balancer at a time.
 
-.. contents::
-   :depth: 1
-   :local:
 
 .. include:: methods/get-listhealthmonitorsv2.rst
 .. include:: methods/post-createhealthmonitor-v2.rst

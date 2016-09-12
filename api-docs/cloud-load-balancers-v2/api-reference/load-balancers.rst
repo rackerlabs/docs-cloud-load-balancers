@@ -4,6 +4,10 @@
 Load balancers 
 ==============
 
+.. contents::
+   :depth: 1
+   :local:
+
 You can configure all documented features of the load balancer when you
 create it by providing the additional elements or attributes
 in the request.
@@ -42,9 +46,7 @@ service. The following table describes the possible statuses.
 |                     | deletion.                                                                                |
 +---------------------+------------------------------------------------------------------------------------------+
 
-.. contents::
-   :depth: 1
-   :local:
+
 
 .. include:: methods/get-listloadbalancersv2.rst
 .. include:: methods/post-createloadbalancerv2.rst
