@@ -1,8 +1,7 @@
 .. _create-listener:
 
-===================
 Creating a listener
-===================
+~~~~~~~~~~~~~~~~~~~
 
 A listener is an object that contains data that
 pertains to the "listening" port. This object defines the "front end"
@@ -21,7 +20,7 @@ Assume that you want to create a listener with the following configuration:
 -  ``description`` is ``listener one``.
 
 -  ``loadbalancer_id`` is  the ID of the load balancer that you created (see
-   :ref:`Create a load balancer <create-load-balancer>`).
+   :ref:`create a load balancer <create-load-balancer>`).
    Remember to replace ``load_balancer_id`` in the example with the actual
    value that was returned the response.
 
@@ -36,8 +35,8 @@ Assume that you want to create a listener with the following configuration:
 -  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d``
    and ``https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
    For more information, see the following sections in the Cloud Keep API
-   Developer Guide: `Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#container>`__
-   and `Container API Operations <https://developer.rackspace.com/docs/cloud-keep/v1/developer-guide/#document-api-operations/container-operations>`__.
+   documentation: `Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/getting-started/concepts/#container>`__
+   and `Container API Operations <https://developer.rackspace.com/docs/cloud-keep/v1/api-reference/container-operations/>`__.
 
 The following example shows the cURL request for creating a listener.
 
@@ -66,8 +65,6 @@ The following example shows the cURL request for creating a listener.
     -H "Content-Type: application/json" \
     -X POST \
     "$API_ENDPOINT/listeners" | python -m json.tool
-
-
 
 The following example shows the response for creating a listener:
 
