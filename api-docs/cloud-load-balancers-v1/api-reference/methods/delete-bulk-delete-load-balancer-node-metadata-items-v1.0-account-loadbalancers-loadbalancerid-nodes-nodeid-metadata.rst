@@ -100,4 +100,5 @@ This operation does not accept a request body.
 
 Response
 --------
+
 This operation does not return a response body.

@@ -73,6 +73,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example List load balancing protocols: JSON response**
 
 .. code::
@@ -156,7 +157,7 @@ Response
             }
         ]
     }
-    
+
 **Example List load balancing protocols: XML response**
 
 .. code::

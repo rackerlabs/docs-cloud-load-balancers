@@ -105,6 +105,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show current usage: JSON response**
 
 .. code::

@@ -87,6 +87,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show SSL termination configuration: XML response**
 
 .. code::

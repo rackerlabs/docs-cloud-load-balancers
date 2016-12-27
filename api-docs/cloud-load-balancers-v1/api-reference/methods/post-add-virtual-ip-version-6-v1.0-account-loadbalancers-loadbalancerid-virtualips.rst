@@ -105,6 +105,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Add virtual IP version 6: JSON response**
 
 .. code::

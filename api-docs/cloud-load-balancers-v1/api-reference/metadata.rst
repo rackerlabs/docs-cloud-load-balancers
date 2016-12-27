@@ -4,6 +4,10 @@
 Metadata 
 ========
 
+.. contents::
+   :local:
+   :depth: 1
+
 
 Metadata can be associated with each load balancer and each node for the
 client's personal use. It is defined using key-value pairs where the key

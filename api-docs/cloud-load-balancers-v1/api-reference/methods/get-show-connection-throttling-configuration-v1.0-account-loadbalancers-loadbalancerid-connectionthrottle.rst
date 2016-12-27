@@ -76,6 +76,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show connection throttling configuration: JSON response**
 
 .. code::

@@ -4,7 +4,10 @@
 Session persistence 
 ===================
 
-
+.. contents::
+   :local:
+   :depth: 1
+   
 Session persistence is a feature of the load balancing service that
 forces multiple requests, of the same protocol, from clients to be
 directed to the same node. This is common with many web applications

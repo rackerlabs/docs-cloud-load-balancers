@@ -88,6 +88,7 @@ The following table shows the body parameters for the request:
 Response
 --------
 
+
 **Example Show custom error page: JSON response**
 
 .. code::

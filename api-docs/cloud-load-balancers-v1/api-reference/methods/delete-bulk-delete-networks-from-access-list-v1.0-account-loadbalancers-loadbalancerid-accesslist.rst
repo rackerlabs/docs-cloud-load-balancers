@@ -18,12 +18,7 @@ Bulk-deletes the specified networks from an access list.
    /v1.0/{account}/loadbalancers/{loadBalancerId}/accesslist?id={id1} &\
    id={id2} & id={id3}``
 
-
-
-
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -69,9 +64,8 @@ The following table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
---------
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -102,5 +96,6 @@ This operation does not accept a request body.
 
 Response
 --------
+
 
 This operation does not return a response body.

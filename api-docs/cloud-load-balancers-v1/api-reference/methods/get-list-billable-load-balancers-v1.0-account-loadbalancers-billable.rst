@@ -116,6 +116,7 @@ This operation does not accept a request body.
 
 Response
 --------
+
 **Example List billable load balancers: JSON response**
 
 .. code::

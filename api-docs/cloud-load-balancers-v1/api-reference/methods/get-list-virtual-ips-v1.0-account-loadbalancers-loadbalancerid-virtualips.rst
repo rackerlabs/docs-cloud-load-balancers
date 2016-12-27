@@ -76,6 +76,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example List virtual IPs: JSON response**
 
 .. code::
