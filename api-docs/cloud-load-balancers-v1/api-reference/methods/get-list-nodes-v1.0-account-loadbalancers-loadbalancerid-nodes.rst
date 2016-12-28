@@ -81,6 +81,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example List nodes: JSON response**
 
 .. code::

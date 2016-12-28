@@ -76,6 +76,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show session persistence configuration: XML response**
 
 .. code::

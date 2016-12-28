@@ -1,10 +1,13 @@
 .. _certificate-mappings:
 
 ====================
-Certificate Mappings
+Certificate mappings
 ====================
 
-
+.. contents::
+   :local:
+   :depth: 1
+   
 Certificate mappings allow for multiple certificates to be used on
 SSL-terminated load balancers. By default, a load balancer supports a
 maximum of 20 certificate mappings.

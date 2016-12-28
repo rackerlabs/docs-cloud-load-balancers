@@ -328,6 +328,7 @@ The following table shows the body parameters for the request:
 Response
 --------
 
+
 **Example Update certificate mapping: XML response**
 
 .. code::

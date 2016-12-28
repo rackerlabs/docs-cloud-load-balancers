@@ -86,6 +86,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show content caching configuration: JSON response**
 
 .. code::

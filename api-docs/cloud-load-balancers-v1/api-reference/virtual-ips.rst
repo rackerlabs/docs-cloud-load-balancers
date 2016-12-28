@@ -4,6 +4,10 @@
 Virtual IPs 
 ===========
 
+.. contents::
+   :local:
+   :depth: 1
+
 A virtual IP (VIP) makes a load balancer accessible by clients.
 The load balancing service supports either a public VIP, routable on the
 public Internet, or a ServiceNet address, routable only within the

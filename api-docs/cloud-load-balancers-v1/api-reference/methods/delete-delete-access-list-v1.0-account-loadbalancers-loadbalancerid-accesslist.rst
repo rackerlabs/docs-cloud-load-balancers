@@ -10,8 +10,6 @@ Delete access list
 
 Deletes the entire access list.
 
-
-
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
@@ -57,7 +55,6 @@ The following table shows the possible response codes for this operation:
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
-
 
 Request
 -------

@@ -179,6 +179,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show connect monitor configuration: XML response**
 
 .. code::

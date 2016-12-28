@@ -4,6 +4,10 @@
 Monitors
 ========
 
+.. contents::
+   :local:
+   :depth: 1
+
 The load balancing service includes a health monitoring operation that
 periodically checks your back-end nodes to ensure they are responding
 correctly. If a node does not respond, it is removed from rotation until

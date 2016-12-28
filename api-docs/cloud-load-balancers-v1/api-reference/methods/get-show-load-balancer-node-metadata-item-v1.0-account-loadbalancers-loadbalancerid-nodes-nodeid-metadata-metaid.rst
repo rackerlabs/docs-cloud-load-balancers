@@ -81,6 +81,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show load balancer node metadata item: JSON response**
 
 .. code::

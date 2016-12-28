@@ -4,6 +4,10 @@
 Load balancer statistics 
 ========================
 
+.. contents::
+   :local:
+   :depth: 1
+
 
 Use the statistics API operations to get information about load balancer
 transactions and connections.

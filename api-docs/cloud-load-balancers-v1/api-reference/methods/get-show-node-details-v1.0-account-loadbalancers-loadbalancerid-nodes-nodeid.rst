@@ -82,6 +82,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show node details: JSON response**
 
 .. code::
@@ -96,7 +97,7 @@ Response
             "type":"PRIMARY"
         }
     }
-    
+
 **Example Show node details: XML response**
 
 .. code::

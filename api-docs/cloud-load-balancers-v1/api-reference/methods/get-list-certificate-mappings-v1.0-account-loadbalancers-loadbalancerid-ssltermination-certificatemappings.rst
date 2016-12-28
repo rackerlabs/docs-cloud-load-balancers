@@ -79,6 +79,7 @@ This operation does not accept a request body.
 
 Response
 --------
+
 **Example List certificate mappings: XML response**
 
 .. code::

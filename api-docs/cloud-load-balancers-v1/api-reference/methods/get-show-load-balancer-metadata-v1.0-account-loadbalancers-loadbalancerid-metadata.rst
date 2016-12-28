@@ -76,6 +76,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example Show load balancer metadata: JSON response**
 
 .. code::
@@ -94,7 +95,7 @@ Response
         }
       ]
     }
-    
+
 **Example Show load balancer metadata: XML response**
 
 .. code::

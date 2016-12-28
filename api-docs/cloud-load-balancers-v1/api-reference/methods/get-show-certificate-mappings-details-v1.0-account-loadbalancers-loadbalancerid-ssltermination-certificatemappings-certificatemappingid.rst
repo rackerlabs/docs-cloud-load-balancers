@@ -81,6 +81,7 @@ This operation does not accept a request body.
 
 Response
 --------
+
 **Example Show certificate mappings details: XML response**
 
 .. code::

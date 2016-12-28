@@ -16,9 +16,7 @@ applications. The attributes in the table that follows can be configured based
 on the traffic patterns for your sites.
 
 
-
 The following table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |

@@ -4,6 +4,10 @@
 Usage reports
 =============
 
+.. contents::
+   :local:
+   :depth: 1
+
 The load balancer usage reports provide a view of all transfer activity,
 average number of connections, and number of virtual IPs associated with the load
 balancing service. Values for both incomingTransfer and outgoingTransfer are expressed in

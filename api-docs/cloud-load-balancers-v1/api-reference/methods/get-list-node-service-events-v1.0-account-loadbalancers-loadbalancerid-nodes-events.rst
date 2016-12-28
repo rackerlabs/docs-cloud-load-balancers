@@ -13,8 +13,9 @@ Lists events associated with the activity between the node and the load
 balancer. The events report errors found with the node. The ``detailedMessage``
 provides the detailed reason for the error. The events can be processed as
 JSON, XML, and ATOM. This call has pagination and a list limit of 100 events.
-Events are stored for 90 days. The following table shows the possible response
-codes for this operation:
+Events are stored for 90 days.
+
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -81,6 +82,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example List node service events: JSON response**
 
 .. code::
@@ -117,7 +119,7 @@ Response
             "created":"10-30-2012 11:22:25"
         }
     ]}
-    
+
 **Example List node service events: XML response**
 
 .. code::

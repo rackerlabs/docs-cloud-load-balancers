@@ -4,6 +4,10 @@
 Load balancers 
 ==============
 
+.. contents::
+   :local:
+   :depth: 1
+
 Users can configure all documented features of the load balancer at
 creation time by simply providing the additional elements or attributes
 in the request. This document provides an overview of all the features

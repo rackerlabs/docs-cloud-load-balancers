@@ -73,6 +73,7 @@ This operation does not accept a request body.
 Response
 --------
 
+
 **Example List load balancing algorithms: JSON response**
 
 .. code::
