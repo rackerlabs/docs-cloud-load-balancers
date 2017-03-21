@@ -17,6 +17,11 @@ or a script.
    :ref:`Convert cURL examples to run on Windows \
    <convert-cURL-examples-for-windows>`.
 
+.. important::
+
+   The cURL examples in this guide are provided for reference only. Because
+   the use of cURL has environmental dependencies, copying and pasting the
+   examples might not work in your environment.   
 
 .. _auth-curl-json:
 
@@ -139,13 +144,13 @@ changes:
 
 - Replace all line-continuation backslash characters (``\``) with a caret
   (``^``), and remove any trailing spaces after the ``^``.
-  
+
 - If an example includes JSON data, export the data to a text file. When you
   run the cURL command, use the ``@filename`` syntax to import the JSON data.
   Save the JSON data files in a directory, and run cURL commands from that
   directory.
 
-The following example shows the cURL format for Linux and UNIX systems:  
+The following example shows the cURL format for Linux and UNIX systems:
 
 .. code::
 
