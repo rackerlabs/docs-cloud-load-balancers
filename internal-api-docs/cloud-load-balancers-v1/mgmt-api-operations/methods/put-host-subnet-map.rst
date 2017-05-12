@@ -64,7 +64,7 @@ Response
 .. code::  
 
     <ns2:hostssubnet xmlns="http://docs.rackspacecloud.com/loadbalancers/api/v1.0" xmlns:ns2="http://docs.rackspacecloud.com/loadbalancers/api/management/v1.0">
-        <ns2:hostsubnet name="api-zxtm-n01.stage.dfw1.stabletransit.com">
+        <ns2:hostsubnet name="api-zxtm-n01.stage.dfwns2.rackspace.com">
             <ns2:netInterface name="eth0">
                 <ns2:cidr block="10.69.1.0/24"/>
                 <ns2:cidr block="10.69.0.0/24"/>
