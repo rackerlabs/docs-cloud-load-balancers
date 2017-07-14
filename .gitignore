@@ -8,6 +8,7 @@ api-docs/cloud-load-balancer-v2/_build/*
 *.iml
 *.iws
 *.ipr
+.idea/
 .maven
 .settings
 .project
