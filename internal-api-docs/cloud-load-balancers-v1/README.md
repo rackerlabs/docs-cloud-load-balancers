@@ -24,4 +24,4 @@ You can review the updates at the following URL: https://pages.github.rackspace.
 **Note:** 
       If the build does not run automatically, log in to the [Jenkins server](https://docs-staging.rackspace.com/jenkins) with your SSO credentials. Then, click **Build Now** to run the [internal load balancers admin  guide](https://docs-staging.rackspace.com/jenkins/job/internal-doc-load-balancer-admin-guide/) build manually.
 
-You can also access the Rackspace CDN Admin Guide from https://pages.github.rackspace.com/IX/internal-docs-landing-page. 
+You can also access the Cloud Load Balancers Developer Guide for Service Management from https://pages.github.rackspace.com/IX/internal-docs-landing-page. 
