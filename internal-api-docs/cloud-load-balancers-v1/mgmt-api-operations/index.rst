@@ -25,6 +25,7 @@ operational environment.
    config-backups
    customer-lists
    health-checks
-   zeus-events-callback     
+   zeus-events-callback
+   ciphers
      
 
