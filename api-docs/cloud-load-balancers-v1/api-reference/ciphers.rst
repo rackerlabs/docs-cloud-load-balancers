@@ -9,9 +9,9 @@ Ciphers 
    :depth: 1
 
 Users can view the ciphers defined on the load balancer. Ciphers
-are set utilizing the CiphersProfile field when creating SSL Termination
-for the Load Balancer. Utilizing the ciphers resource we can quickly
-and easily determine what ciphers the Load Balancer adheres to.
+are set utilizing the CipherProfile field when creating SSL Termination
+for the load balancer. Utilizing the ciphers resource we can quickly
+and easily determine what ciphers the load balancer adheres to.
 
 
 Table. Ciphers statuses

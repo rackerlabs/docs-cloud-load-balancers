@@ -80,11 +80,11 @@ The following table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------------+
 |Name                      |Type                     |Description                    |
 +==========================+=========================+===============================+
-|cipherList                   |String                   |A ``loadBalancers``            |
+|cipherList                |String                   |A ``loadBalancers``            |
 |                          |                         |object.                        |
 +--------------------------+-------------------------+-------------------------------+
 
-**Example List load balancers: JSON response**
+**Example List Ciphers: JSON response**
 
 .. code::
 
@@ -93,7 +93,7 @@ The following table shows the body parameters for the response:
             "SSL_DHE_RSA_WITH_AES_128_CBC_SHA, SSL_DHE_RSA_WITH_AES_256_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA"
     }
 
-**Example List load balancers: XML response**
+**Example List Cipherss: XML response**
 
 .. code::
 
