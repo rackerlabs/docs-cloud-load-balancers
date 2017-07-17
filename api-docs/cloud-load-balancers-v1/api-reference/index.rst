@@ -34,4 +34,5 @@ panel.
    algorithms
    ssl-termination
    certificatemappings
+   ciphers
    metadata
