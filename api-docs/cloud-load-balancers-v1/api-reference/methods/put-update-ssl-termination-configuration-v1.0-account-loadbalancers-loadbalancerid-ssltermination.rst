@@ -226,8 +226,8 @@ The following table shows the body parameters for the request:
 |                          |                         |``ENABLED``. The default |
 |                          |                         |value is ``ENABLED``.    |
 +--------------------------+-------------------------+-------------------------+
-|cipherProfile             |String                   |Specifies the Cipher     |
-|                          |                         |Profile to be used.      |
+|cipherProfile             |String                   |Specifies a cipher       |
+|                          |                         |profile to be used.      |
 |                          |                         |                         |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
