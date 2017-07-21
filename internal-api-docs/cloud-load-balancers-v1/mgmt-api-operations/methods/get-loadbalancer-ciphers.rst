@@ -1,14 +1,14 @@
-.. _get-ciphers:
+.. _get-loadbalancer-ciphers:
 
-Retrieve ciphers
+Retrieve load balancer ciphers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-   GET /management/ciphers
+   GET /management/loadbalancer/{loadbalancerID}/ciphers
 
 
-This operation retrieves descriptive information about all the ciphers available.
+This operation retrieves descriptive information about all the ciphers available on the specified load balancer.
 
 The access levels for this operation are ``support`` and ``service admin``. 
 
