@@ -80,8 +80,9 @@ The following table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------------+
 |Name                      |Type                     |Description                    |
 +==========================+=========================+===============================+
-|cipherList                |String                   |A ``loadBalancers``            |
-|                          |                         |object.                        |
+|cipherList                |String                   |A comma delimited list of      |
+|                          |                         |ciphers the load balancer      |
+|                          |                         |adheres to.                    |
 +--------------------------+-------------------------+-------------------------------+
 
 **Example List Ciphers: JSON response**
