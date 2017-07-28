@@ -229,7 +229,7 @@ The following table shows the body parameters for the request:
 |cipherProfile             |String                   |Specifies a cipher       |
 |                          |                         |profile to be used. The  |
 |                          |                         |default value is         |
-|                          |                         |``default``.              |
+|                          |                         |``default``.             |
 +--------------------------+-------------------------+-------------------------+
 
 .. note::
@@ -240,6 +240,14 @@ The following table shows the body parameters for the request:
    profile that can optionally be selected is ``CLBCipherPolicy2017-08``.
    :ref:` Ciphers <ciphers>` section for more details about available profiles.
 
+.. note::
+
+   In order to remove a ``cipherProfile`` set ``cipherProfile``
+   to ``default`` when updating
+   :ref:`SSLTermation <put-update-ssl-termination-configuration>`.
+   All SSLTermination objects are built using the default profile.
+   See: :ref:` Ciphers <ciphers>` section for more details about available
+   profiles.
 
 
 **Example Update Load Balancing SSL Termination Full Certification Request: XML**
