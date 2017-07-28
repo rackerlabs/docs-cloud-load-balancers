@@ -227,10 +227,20 @@ The following table shows the body parameters for the request:
 |                          |                         |value is ``ENABLED``.    |
 +--------------------------+-------------------------+-------------------------+
 |cipherProfile             |String                   |Specifies a cipher       |
-|                          |                         |profile to be used.      |
-|                          |                         |                         |
-|                          |                         |                         |
+|                          |                         |profile to be used. The  |
+|                          |                         |default value is         |
+|                          |                         |``default``.              |
 +--------------------------+-------------------------+-------------------------+
+
+.. note::
+
+   CipherProfile's are defined by the service and are immutable.
+   The service currently offers two profiles. The 'default' profile, which
+   is set on any load balancer enabling SSLTermination by default. The second
+   profile that can optionally be selected is ``CLBCipherPolicy2017-08``.
+   :ref:` Ciphers <ciphers>` section for more details about available profiles.
+
+
 
 **Example Update Load Balancing SSL Termination Full Certification Request: XML**
 
