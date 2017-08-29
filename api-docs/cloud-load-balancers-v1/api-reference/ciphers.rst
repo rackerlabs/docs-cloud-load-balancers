@@ -20,7 +20,7 @@ cipher list. Below is a matrix of the available profiles and their associated
 cipher lists.
 
 
-..note::
+.. note::
    The below tables lists the available ciphers and their associated profile.
    '*' denotes the cipher belonging to the related profile.
 
