@@ -20,25 +20,28 @@ cipher list. Below is a matrix of the available profiles and their associated
 cipher lists.
 
 
+..note::
+   The below tables lists the available ciphers and their associated profile.
+   '*' denotes the cipher belonging to the related profile.
 
 ====================================== ======= ======================
   CipherProfiles                       default CLBCipherPolicy2017-08
 -------------------------------------- ------- ----------------------
   Ciphers
 ====================================== ======= ======================
-SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     X             X
-SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     X             X
-SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     X             X
-SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA        X             X
-SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256     X             X
-SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA        X             X
-SSL_RSA_WITH_AES_256_GCM_SHA384           X             X
-SSL_RSA_WITH_AES_256_CBC_SHA256           X             X
-SSL_RSA_WITH_AES_256_CBC_SHA              X             X
-SSL_RSA_WITH_AES_128_GCM_SHA256           X             X
-SSL_RSA_WITH_AES_128_CBC_SHA256           X             X
-SSL_RSA_WITH_AES_128_CBC_SHA              X             X
-SSL_RSA_WITH_3DES_EDE_CBC_SHA             X
+SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     *             *
+SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     *             *
+SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     *             *
+SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA        *             *
+SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256     *             *
+SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA        *             *
+SSL_RSA_WITH_AES_256_GCM_SHA384           *             *
+SSL_RSA_WITH_AES_256_CBC_SHA256           *             *
+SSL_RSA_WITH_AES_256_CBC_SHA              *             *
+SSL_RSA_WITH_AES_128_GCM_SHA256           *             *
+SSL_RSA_WITH_AES_128_CBC_SHA256           *             *
+SSL_RSA_WITH_AES_128_CBC_SHA              *             *
+SSL_RSA_WITH_3DES_EDE_CBC_SHA             *
 ====================================== ======= ======================
 
 Table. Ciphers statuses

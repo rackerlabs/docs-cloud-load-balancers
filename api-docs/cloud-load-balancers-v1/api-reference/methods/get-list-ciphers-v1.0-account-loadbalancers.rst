@@ -80,24 +80,32 @@ The following table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------------+
 |Name                      |Type                     |Description                    |
 +==========================+=========================+===============================+
-|cipherList                |String                   |A comma delimited list of      |
-|                          |                         |ciphers the load balancer      |
-|                          |                         |adheres to.                    |
+|ciphers                   |Object                   |A list of named ciphers        |
+|                          |                         |associated to the load         |
+|                          |                         |balancer.                      |
 +--------------------------+-------------------------+-------------------------------+
 
 **Example List Ciphers: JSON response**
 
 .. code::
 
-    {
-        "cipherList":
-            "SSL_DHE_RSA_WITH_AES_128_CBC_SHA, SSL_DHE_RSA_WITH_AES_256_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA"
-    }
+{
+    "ciphers": [
+        {
+            "name": "SSL_RSA_WITH_3DES_EDE_CBC_SHA"
+        },
+        {
+            "name": "SSL_RSA_WITH_AES_128_CBC_SHA"
+        }
+    ]
+}
 
 **Example List Cipherss: XML response**
 
 .. code::
 
     <?xml version="1.0" ?>
-    <ciphers xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
-        cipherList="SSL_DHE_RSA_WITH_AES_128_CBC_SHA, SSL_DHE_RSA_WITH_AES_256_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA"/>
+    <ciphers>
+        <cipher name="SSL_RSA_WITH_3DES_EDE_CBC_SHA" />
+        <cipher name="SSL_RSA_WITH_AES_128_CBC_SHA" />
+    </ciphers>
