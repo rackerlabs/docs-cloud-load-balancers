@@ -12,7 +12,7 @@ What's new
 
 Resolved issues
 ---------------
-- Updated error handling regarding rollbacks.
+- Resolved several API validation and logging issues.
 
 Known issues
 ------------
