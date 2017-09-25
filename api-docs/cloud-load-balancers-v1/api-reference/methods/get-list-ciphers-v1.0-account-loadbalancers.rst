@@ -89,16 +89,16 @@ The following table shows the body parameters for the response:
 
 .. code::
 
-{
-    "ciphers": [
-        {
-            "name": "SSL_RSA_WITH_3DES_EDE_CBC_SHA"
-        },
-        {
-            "name": "SSL_RSA_WITH_AES_128_CBC_SHA"
-        }
-    ]
-}
+    {
+       "ciphers": [
+         {
+          "name": "SSL_RSA_WITH_3DES_EDE_CBC_SHA"
+         },
+         {
+          "name": "SSL_RSA_WITH_AES_128_CBC_SHA"
+         }
+       ]
+    }
 
 **Example List Cipherss: XML response**
 
