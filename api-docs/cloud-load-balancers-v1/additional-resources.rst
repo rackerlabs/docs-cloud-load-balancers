@@ -4,8 +4,8 @@ Additional resources
 -----------------------
 
 We welcome feedback, comments, and bug reports.
-Email `<infodev@rackspace.com>`__ with your comments, suggestions, and
-feedback.
+Email `<infodev@rackspace.com>`__ with your comments, suggestions,
+and feedback.
 
 Use the links below to learn more about the Rackspace Cloud Load Balancers
 service and API.
