@@ -12,3 +12,5 @@ api-docs/cloud-load-balancer-v2/_build/*
 .settings
 .project
 .classpath
+.venv
+.idea
