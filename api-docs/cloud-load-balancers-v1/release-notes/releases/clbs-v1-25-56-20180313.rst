@@ -1,0 +1,40 @@
+.. version-v1.25.56-release-notes:
+
+v1.25.56, March 13th 2018
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+
+- Feature: Cipher profile support
+
+  - Load balancers with SSL termination are now assigned a cipher profile to control the set of ciphers enabled for
+    secure communication between clients and the load balancer.
+  - By default, load balancers are assigned a cipher profile named ``default`` which is managed by Rackspace and updated
+    from time to time to disable ciphers that have become insecure. For this reason, use of the ``default`` cipher
+    profile is recommended.
+  - Other profiles are added and managed by Rackspace. As security concerns change, new cipher profiles may be added.
+    Included with this release is the availability of the ``CLBCipherPolicy2017-08`` cipher profile which currently
+    matches the ``default`` profile with the exception of disabling the ``SSL_RSA_WITH_3DES_EDE_CBC_SHA`` cipher.
+    Rackspace security experts have determined the aforementioned cipher is still secure for use with Cloud Load
+    Balancers due to maximum lifetime of requests but due to being downgraded from a "high" to "medium" strength cipher
+    will be removed from the ``default`` profile in the near future. However, if you would like to disable it now you
+    can leverage this new feature and the ``CLBCipherPolicy2017-08`` profile to have it disabled on your load balancers
+    immediately.
+  - You can find the latest list of available cipher profiles and the ciphers they enable in the
+    :ref:`Ciphers <ciphers>` section.
+
+- Feature: List enabled ciphers
+
+  - For load balancers with SSL termination enabled you can use the API to retrieve the list of ciphers enabled.
+    See :ref:`List ciphers <get-list-configured-ciphers>`.
+
+
+Resolved issues
+---------------
+- Resolved several API validation and logging issues.
+
+Known issues
+------------
+
+|no changes|

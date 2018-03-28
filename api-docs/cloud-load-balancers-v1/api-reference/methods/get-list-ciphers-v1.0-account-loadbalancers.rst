@@ -1,4 +1,4 @@
-.. _get-list-load-balancers:
+.. _get-list-configured-ciphers:
 
 List ciphers
 ~~~~~~~~~~~~~~~~~~~
@@ -7,12 +7,12 @@ List ciphers
 
     GET /v1.0/{account}/loadbalancers/{loadbalancerid}/ssltermination/ciphers
 
-Lists load balancer ciphers that are configured for the load balancer.
+Lists ciphers enabled for SSL termination on the loadbalancer.
 
-The response object shows a list of ciphers defined for the load balancer.
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
+|Response code             |Name                     |Description              |
 +==========================+=========================+=========================+
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
@@ -74,7 +74,6 @@ This operation does not accept a request body.
 Response
 --------
 
-
 The following table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------------+
@@ -85,7 +84,7 @@ The following table shows the body parameters for the response:
 |                          |                         |balancer.                      |
 +--------------------------+-------------------------+-------------------------------+
 
-**Example List Ciphers: JSON response**
+**Example List ciphers: JSON response**
 
 .. code::
 
@@ -100,7 +99,7 @@ The following table shows the body parameters for the response:
        ]
     }
 
-**Example List Cipherss: XML response**
+**Example List ciphers: XML response**
 
 .. code::
 
