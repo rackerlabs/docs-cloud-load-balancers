@@ -29,8 +29,8 @@ recommended.
    or weak ciphers, we highly recommended that you assign an updated cipher
    profile or re-assign the ``default`` profile.
 
-You can view the list of ciphers enabled on a particular load balancer by using
-the :ref:`List ciphers <get-list-configured-ciphers>` API.
+You can view the list of ciphers enabled on a particular load balancer by
+using the :ref:`List ciphers <get-list-configured-ciphers>` API.
 
 Cipher profiles
 ~~~~~~~~~~~~~~~
