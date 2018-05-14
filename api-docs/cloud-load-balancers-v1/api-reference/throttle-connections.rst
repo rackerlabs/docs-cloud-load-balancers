@@ -4,7 +4,8 @@
 Throttle connections
 ====================
 
-Use the throttle connections operations to manage throttle configuration.
+Use the throttle connections operations to manage throttle
+configuration.
 
 A common issue that you might encounter is that the load balancer exceeds
 the connection limit. After the connection limit is exceeded, the load
