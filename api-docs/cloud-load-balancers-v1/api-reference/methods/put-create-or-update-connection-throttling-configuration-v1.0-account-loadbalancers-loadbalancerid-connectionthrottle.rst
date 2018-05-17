@@ -11,13 +11,39 @@ Creates or updates the throttling configuration.
 
 The connection throttling feature imposes limits on the number of connections
 per IP address to help mitigate malicious or abusive traffic to your
-applications. The attributes in the table that follows can be configured based
-on the traffic patterns for your sites.
+applications. The attributes in the table in the following Request section
+can be configured based on the traffic patterns for your sites.
 
 .. note::
    You must specify all attributes when initially creating the connection
    throttle. However, when you update an existing setting, you can pass as
    few as one attribute.
+
+When connection throttling is active, and the connection limit is exceeded,
+the load balancer returns a ``503 Server Too Busy`` response. You'll see
+something similar to the following example:
+
+.. code::
+
+   Trying <LB IP>...
+   connected
+   Connected to <LB IP> (<LB IP>) port 80 (#0)
+   > GET /pi.php HTTP/1.1
+   > User-Agent: curl/7.26.0
+   > Host: <LB IP>
+   > Accept: /
+   >
+   additional stuff not fine transfer.c:1037: 0 0
+   HTTP 1.0, assume close after body
+   < HTTP/1.0 503 Server Too Busy
+   < Content-Length: 25
+   < Content-Type: text/html
+   <
+   <h2>Server Too Busy</h2>
+   Closing connection #0
+
+
+
 
 The following table shows the possible response codes for this operation:
 
