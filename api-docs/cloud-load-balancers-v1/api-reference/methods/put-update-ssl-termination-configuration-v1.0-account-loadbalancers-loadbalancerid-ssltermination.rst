@@ -33,6 +33,7 @@ existing SSL certificate and key specifications:
 *  ``enabled``
 *  ``secureTrafficOnly``
 *  ``securePort``
+*  ``cipherProfile``
 
 These configurable attributes must be provided (individually or grouped) in a
 request without specifying any certificate/key combination if a user does not
