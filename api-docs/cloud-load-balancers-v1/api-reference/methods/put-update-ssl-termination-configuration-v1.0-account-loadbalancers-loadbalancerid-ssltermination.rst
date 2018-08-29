@@ -33,10 +33,11 @@ existing SSL certificate and key specifications:
 *  ``enabled``
 *  ``secureTrafficOnly``
 *  ``securePort``
+*  ``cipherProfile``
 
-These configurable attributes must be provided (individually or grouped) in a
-request without specifying any certificate/key combination if a user does not
-want the system to overwrite the existing SSL certificate/key configuration. 
+These configurable attributes must be provided (individually or grouped) in
+a request without specifying any certificate/key combination if a user does not
+want the system to overwrite the existing SSL certificate/key configuration.
 If a user wants to replace the existing SSL configuration, a new certificate,
 key, and securePort combination must be provided instead of, or in addition
 to, the optional/editable attributes.
