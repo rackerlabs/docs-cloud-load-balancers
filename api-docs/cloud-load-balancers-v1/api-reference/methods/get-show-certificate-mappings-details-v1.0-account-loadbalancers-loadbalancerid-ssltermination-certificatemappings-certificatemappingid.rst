@@ -12,6 +12,10 @@ Shows details for a specified certificate mapping.
 
    The ``privateKey`` attribute is not displayed for security purposes.
 
+   ``privateKey`` is case sensitive and differs in its use in mapping and
+   in termination. In mapping, ``privateKey`` is the required case. In
+   termination, ``privatekey`` is the required case.
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+

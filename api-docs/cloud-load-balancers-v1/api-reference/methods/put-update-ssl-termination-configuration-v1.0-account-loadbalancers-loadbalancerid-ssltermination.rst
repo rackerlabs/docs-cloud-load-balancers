@@ -163,8 +163,8 @@ The following table shows the body parameters for the request:
 |                          |                         |example, port 443.       |
 +--------------------------+-------------------------+-------------------------+
 |privatekey                |String *(Required)*      |The private key for the  |
-|                          |                         |SSL certificate. The     |
-|                          |                         |private key is validated |
+|(See the note following   |                         |SSL certificate. The     |
+|this table.)              |                         |private key is validated |
 |                          |                         |and verified against the |
 |                          |                         |provided certificates.   |
 +--------------------------+-------------------------+-------------------------+
@@ -238,6 +238,12 @@ The following table shows the body parameters for the request:
 |                          |                         |profiles and which       |
 |                          |                         |ciphers they enable.     |
 +--------------------------+-------------------------+-------------------------+
+
+.. note::
+
+  ``privatekey`` is case sensitive and differs in its use in termination
+  and in mapping. In termination, ``privatekey`` is the required case. In
+  mapping, ``privateKey`` is the required case.
 
 **Example Update Load Balancing SSL Termination Full Certification Request: XML**
 
