@@ -136,7 +136,6 @@ The following table shows the body parameters for the request:
   and in termination. In mapping, ``privateKey`` is the required case. In
   termination, ``privatekey`` is the required case.
 
-
 **Example Add certificate mapping: XML request**
 
 .. code::
