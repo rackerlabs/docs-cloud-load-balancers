@@ -93,8 +93,8 @@ The following table shows the body parameters for the request:
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
 |privateKey                |String *(Required)*      |The private key to be    |
-|                          |                         |used for the provided    |
-|                          |                         |certificate. The private |
+|(See the note             |                         |used for the provided    |
+|following this table.)    |                         |certificate. The private |
 |                          |                         |key is validated and     |
 |                          |                         |verified against the     |
 |                          |                         |provided certificates.   |
@@ -129,6 +129,12 @@ The following table shows the body parameters for the request:
 |                          |                         |single attribute in a    |
 |                          |                         |future request.          |
 +--------------------------+-------------------------+-------------------------+
+
+.. note::
+
+  ``privateKey`` is case sensitive and differs in its use in mapping
+  and in termination. In mapping, ``privateKey`` is the required case. In
+  termination, ``privatekey`` is the required case.
 
 **Example Add certificate mapping: XML request**
 

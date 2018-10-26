@@ -13,6 +13,10 @@ Updates the configuration for a specified certificate mapping on a specified loa
 
    The ``privateKey`` attribute is not displayed for security purposes.
 
+   ``privateKey`` is case sensitive and differs in its use in mapping and
+   in termination. In mapping, ``privateKey`` is the required case. In
+   termination, ``privatekey`` is the required case.
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
@@ -97,8 +101,8 @@ The following table shows the body parameters for the request:
 |                          |                         |load balancer.           |
 +--------------------------+-------------------------+-------------------------+
 |privateKey                |String                   |The private key to be    |
-|                          |                         |used for the provided    |
-|                          |                         |certificate. The private |
+|(See the note in the      |                         |used for the provided    |
+|preceding description.)   |                         |certificate. The private |
 |                          |                         |key is validated and     |
 |                          |                         |verified against the     |
 |                          |                         |provided certificates.   |
