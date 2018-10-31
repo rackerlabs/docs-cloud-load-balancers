@@ -23,7 +23,7 @@ with their respective values:
 
    **To find your API Key:**
 
-   #. Log in to the Cloud Control Panel (https://mycloud.rackspace.com).
+   #. Log in to the Cloud Control Panel (https://login.rackspace.com).
 
    #. On the upper-right side of the top navigation pane, click your
       username.
