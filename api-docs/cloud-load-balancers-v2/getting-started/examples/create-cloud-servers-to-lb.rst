@@ -13,7 +13,7 @@ server by using the Cloud Servers API. See the
 for details.
 
 
-#. Log in to the `Cloud Control Panel <http://mycloud.rackspace.com/>`__.
+#. Log in to the `Cloud Control Panel <http://login.rackspace.com/>`__.
 
 #. If the Cloud Servers page is not automatically displayed, click
    **Servers > Cloud Servers** at the top of the panel.
