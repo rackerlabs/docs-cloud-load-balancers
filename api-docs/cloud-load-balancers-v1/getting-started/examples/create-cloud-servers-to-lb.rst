@@ -12,7 +12,7 @@ existing Cloud Servers) to set up as nodes for your load balancer.
 
 Create a Cloud Server using the Cloud Servers section of the Cloud
 Control Panel (login here: `Cloud Control
-Panel <http://mycloud.rackspace.com/>`__).
+Panel <http://login.rackspace.com/>`__).
 
 .. note::
    You can also create a Cloud Server using the Cloud Servers API. Refer to
