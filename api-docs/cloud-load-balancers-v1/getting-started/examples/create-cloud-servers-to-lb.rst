@@ -14,6 +14,7 @@ Create a Cloud Server using the Cloud Servers section of the Cloud
 Control Panel (login here: `Cloud Control
 Panel <http://login.rackspace.com/>`__).
 
+
 .. note::
    You can also create a Cloud Server using the Cloud Servers API. Refer to
    the `Cloud Servers API Developer Guide <http://developer.rackspace.com/>`__
