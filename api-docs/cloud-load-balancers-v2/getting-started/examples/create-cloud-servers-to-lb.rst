@@ -16,7 +16,7 @@ for details.
 #. Log in to the `Cloud Control Panel <http://login.rackspace.com/>`__.
 
 #. If the Cloud Servers page is not automatically displayed, click
-   **Servers > Cloud Servers** at the top of the panel.
+   **Select a Product > Rackspace Cloud**.
 
    If you are creating a new server, proceed with the next step. If you are
    using an existing server, skip to the last step.
