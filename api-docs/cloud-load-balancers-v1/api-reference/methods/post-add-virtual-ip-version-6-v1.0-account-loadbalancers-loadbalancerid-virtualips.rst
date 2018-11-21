@@ -93,14 +93,44 @@ This operation does not accept a request body.
 .. code::
 
     {
-        "id":9000137
+	"loadBalancer": {
+	    "name": "a-new-loadbalancer_sharedIP",
+		"port": 53,
+		"protocol": "TCP",
+		"algorithm": "ROUND_ROBIN",
+		"nodes": [{
+				"port": "80",
+				"condition": "ENABLED",
+				"address": "23.253.151.92"
+			}
+		],
+		"virtualIps": [{
+			"id": 9039389
+
+		}]
+	    }
     }
 
 **Example Add shared virtual IP version 6: XML request**
 
 .. code::
 
-    <virtualIp xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="9000137" />
+    <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+    name="a-new-loadbalancer_sharedIP"
+    port="80"
+    protocol="HTTP">
+    <virtualIps>
+        <virtualIp id="9039381"/>
+    </virtualIps>
+    <nodes>
+        <node address="10.1.1.1" port="80" condition="ENABLED"/>
+    </nodes>
+    </loadBalancer>
+
+Note:-
+Load balancer can have shared IPV6 if user is creating new load balancer. We cannot update an exiting load balancer to have shared IPV6.
+User need to make sure the load balancer whose virtual ip is getting shared with another new load balancer, both port and protocol combination cannot be same.
+
 
 Response
 --------
