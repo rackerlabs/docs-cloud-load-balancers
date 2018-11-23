@@ -127,9 +127,11 @@ This operation does not accept a request body.
     </nodes>
     </loadBalancer>
 
-Note:-
-Load balancer can have shared IPV6 if user is creating new load balancer. We cannot update an exiting load balancer to have shared IPV6.
-User need to make sure the load balancer whose virtual ip is getting shared with another new load balancer, both port and protocol combination cannot be same.
+.. note:
+   The load balancer can have shared IPV6 if the user is creating a new load balancer. Rackspace cannot
+   update an existing load balancer to have shared IPV6.
+   The user needs to make sure that both the port and protocol combination are not the same for the load balancer whose
+   virtual IP is getting shared with another new load balancer.
 
 
 Response
