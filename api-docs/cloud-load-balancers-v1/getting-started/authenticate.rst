@@ -14,7 +14,6 @@ Rackspace Identity API service endpoint:
 
        https://identity.api.rackspacecloud.com/v2.0
 
-
 With a valid token, you can send API requests to any of the API service
 endpoints that you are authorized to use. The authentication response includes
 a token expiration date. When a token expires, you can send another
