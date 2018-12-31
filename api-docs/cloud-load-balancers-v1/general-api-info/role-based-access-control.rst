@@ -28,7 +28,7 @@ permissions for accessing the capabilities of the |product name| service.
 Each account has only one account owner, and that role is assigned by default to
 any Rackspace Cloud account when the account is created.
 
-See the Cloud Identity API guide for information about how to
+See the Rackspace Identity API guide for information about how to
 perform the following tasks:
 
 * :rax-devdocs:`Add account users \
