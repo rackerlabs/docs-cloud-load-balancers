@@ -35,7 +35,6 @@ Assume that you want to create a listener with the following configuration:
 -  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d``
    and ``https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
 
-
 The following example shows the cURL request for creating a listener.
 
 **Example: cURL command for creating a listener with a JSON body**
