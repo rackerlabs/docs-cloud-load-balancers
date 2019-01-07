@@ -34,9 +34,6 @@ Assume that you want to create a listener with the following configuration:
 
 -  ``sni_container_refs`` is ``https://barbican.endpoint/containers/b36c20d0-18e9-42ce-88fd-82a35977ee8d``
    and ``https://barbican.endpoint/containers/c36c20d0-18e9-42ce-88fd-82a35977ee8e``.
-   For more information, see the following sections in the Cloud Keep API
-   documentation: `Container concepts <https://developer.rackspace.com/docs/cloud-keep/v1/getting-started/concepts/#container>`__
-   and `Container API Operations <https://developer.rackspace.com/docs/cloud-keep/v1/api-reference/container-operations/>`__.
 
 The following example shows the cURL request for creating a listener.
 
