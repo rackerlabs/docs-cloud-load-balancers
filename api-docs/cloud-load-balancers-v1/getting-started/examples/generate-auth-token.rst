@@ -363,7 +363,7 @@ attribute that specifies when the token expires.
 
    For more information, see `Multi-factor
    authentication <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html>`__
-   in the *Rackspace Identity Client Developer Guide*.
+   in the *Identity Client Developer Guide*.
 
 -  For all response examples in this guide, the field values you receive
    in your responses will vary from those shown here since they will be
