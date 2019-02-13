@@ -15,6 +15,7 @@ provides the detailed reason for the error. The events can be processed as
 JSON, XML, and ATOM. This call has pagination and a list limit of 100 events.
 Events are stored for 90 days.
 
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
