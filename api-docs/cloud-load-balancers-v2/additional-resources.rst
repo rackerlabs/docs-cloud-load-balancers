@@ -21,8 +21,5 @@ service and API.
   Control panel, see
   :how-to:`Configure a load balancer <configure-a-load-balancer>`.
 
-- To learn about using Rackspace Cloud SDKs, see
-  :rax-devdocs:`Software Development Kits & Tools <#sdks>`.
-
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`API Developer documentation <>`.

@@ -34,9 +34,7 @@ using the Rackspace Cloud Load Balancers service REST API.
 .. note::
 
      You can also use Rackspace Cloud Load Balancers from the Cloud Control
-     panel, or by using one of the language-specific
-     :rax-devdocs:`Software Development Kits & Tools <#sdks>`. To learn more
-     about the service, see the
+     Panel. To learn more about the service, see the
      :how-to:`Cloud Load Balancers FAQ <cloud-load-balancers-faq>`.
 
 
