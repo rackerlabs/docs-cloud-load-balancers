@@ -6,10 +6,10 @@ v1.26.10, April 1st 2019
 What's new
 -----------
 
-- Upgraded application support for Java version "1.8"
-    -- Support TLS 1.2, SSL3.0, and various ciphers
-    -- Dependency upgrades
-    -- Authentication upgrades
+- Upgraded application support for Java version 1.8
+    - Support TLS 1.2, SSL3.0, and various ciphers
+    - Dependency upgrades
+    - Authentication upgrades
 
 Resolved issues
 ---------------
