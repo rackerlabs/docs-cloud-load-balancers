@@ -8,6 +8,7 @@ Learn about new features, enhancements, known issues, resolved issues, and
 other important details for |apiservice| |version| service in the
 following release note information.
 
+
 .. contents::
    :local:
    :depth: 1
@@ -16,6 +17,7 @@ following release note information.
     For information about using the API, see the
     :ref:`documentation overview <index>`.
 
+.. include:: releases/clbs-v1-26-10-20190317.rst
 .. include:: releases/clbs-v1-25-56-20180313.rst
 .. include:: releases/clbs-v1-20160823.rst
 .. include:: releases/clbs-v1-20160629.rst

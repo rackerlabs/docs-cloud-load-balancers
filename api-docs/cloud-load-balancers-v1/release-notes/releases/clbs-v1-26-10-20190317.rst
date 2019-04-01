@@ -1,0 +1,25 @@
+.. version-v1.26.10-release-notes:
+
+v1.26.10, April 1st 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+
+- Upgraded application support for Java version 1.8
+
+  - Support TLS 1.2, SSL3.0, and various ciphers
+  - Dependency upgrades
+  - Authentication upgrades
+
+Resolved issues
+---------------
+- Improved timestamp formatting on API responses
+- Resolved offset parsing errors and dates without time errors
+- Fixed setting an invalid value for boolean fields returning an incorrect response
+- Fixed custom error page that didn't work with invalid characters(':')
+
+Known issues
+------------
+
+|no changes|
