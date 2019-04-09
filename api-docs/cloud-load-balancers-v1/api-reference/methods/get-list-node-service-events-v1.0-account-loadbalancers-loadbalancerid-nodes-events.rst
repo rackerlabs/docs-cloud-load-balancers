@@ -15,6 +15,7 @@ provides the detailed reason for the error. The events can be processed as
 JSON, XML, and ATOM. This call has pagination and a list limit of 100 events.
 Events are stored for 90 days.
 
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
@@ -101,7 +102,7 @@ Response
             "loadbalancerId":323,
             "title":"Node Status Updated",
             "author":"Rackspace Cloud",
-            "created":"10-30-2012 10:18:23"
+            "created":"2019-02-12T09:23:36Z"
         },
         {
             "detailedMessage":"Invalid HTTP response received; premature end of headers",
@@ -116,7 +117,7 @@ Response
             "loadbalancerId":323,
             "title":"Node Status Updated",
             "author":"Rackspace Cloud",
-            "created":"10-30-2012 11:22:25"
+            "created":"2019-02-12T09:28:36Z"
         }
     ]}
 
@@ -129,15 +130,15 @@ Response
                           loadbalancerId="323" accountId="406271" author="Rackspace Cloud" title="Node Status Updated"
                           description="Node '373' status changed to 'ONLINE' for load balancer '323'" type="UPDATE_NODE"
                           category="UPDATE" severity="INFO" relativeUri="/406271/loadbalancers/323/nodes/373/events"
-                          created="10-30-2012 10:18:23"/>
+                          created="2019-02-12T09:23:36Z"/>
         <nodeServiceEvent nodeId="373" detailedMessage="Invalid HTTP response received; premature end of headers" id="8"
                           loadbalancerId="323" accountId="406271" author="Rackspace Cloud" title="Node Status Updated"
                           description="Node '373' status changed to 'OFFLINE' for load balancer '323'" type="UPDATE_NODE"
                           category="UPDATE" severity="INFO" relativeUri="/406271/loadbalancers/323/nodes/373/events"
-                          created="10-30-2012 11:22:25"/>
+                          created="2019-02-12T09:28:36Z"/>
     </nodeServiceEvents>
 
-**Example List node service events: JSON response**
+**Example List node service events: ATOM response**
 
 .. code::
 
@@ -158,7 +159,7 @@ Response
             <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
             <id>406271-loadbalancers-323-nodes-373-events-20123041018230</id>
             <category term="UPDATE"/>
-            <updated>2012-10-30T15:18:23.000Z</updated>
+            <updated>2019-02-12T09:23:36Z</updated>
             <content type="text">Node is ok</content>
         </entry>
         <entry>
@@ -170,7 +171,7 @@ Response
             <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
             <id>406271-loadbalancers-323-nodes-373-events-20123041122250</id>
             <category term="UPDATE"/>
-            <updated>2012-10-30T16:22:25.000Z</updated>
+            <updated>2019-02-12T09:28:36Z</updated>
             <content type="text">Details: Invalid HTTP response received; premature end of headers</content>
         </entry>
     </feed>
