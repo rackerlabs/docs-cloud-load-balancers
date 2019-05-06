@@ -1,7 +1,7 @@
 .. version-v1.26.10-release-notes:
 
-v1.26.11, March 20th 2019
-~~~~~~~~~~~~~~~~~~~~~~~~~
+v1.26.11, March 20th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What's new
 -----------
@@ -12,12 +12,12 @@ Transaction Security Layer (TSL) 1.1.
 
 Resolved issues
 ---------------
-- Fixed: Toggling SSL Termination Breaks SNI Mappings
-- Fixed: SSL Termination storing bad data after removal
+- Fixed: Toggling Secure Sockets Layer (SSL) termination breaks Server Name Indication (SNI) mappings
+- Fixed: SSL termination storing bad data after removal
 - Fixed: Broken usage pagination links
 - Fixed: HTTPS passthrough allows custom errorpage
-- Fixed: Inconsistency in CONNECT Monitor UDP protocol validation
-- Fixed: UDP LoadBalancers should not be able to enable logging
+- Fixed: Inconsistency in CONNECT monitor User Datagram Protocol (UDP) validation
+- Fixed: UDP Load balancers should not be able to enable logging
 Known issues
 ------------
 
