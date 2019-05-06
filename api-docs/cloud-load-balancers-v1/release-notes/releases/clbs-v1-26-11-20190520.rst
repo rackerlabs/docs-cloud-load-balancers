@@ -1,0 +1,24 @@
+.. version-v1.26.10-release-notes:
+
+v1.26.11, March 20th 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+
+- Added Transaction Security Layer (TSL) 1.1 to the ``securityProtocols`` object for the :ref:`Update SSL termination
+configuration operation <put-update-ssl-termination-configuration>` to disable
+Transaction Security Layer (TSL) 1.1.
+
+Resolved issues
+---------------
+- Fixed: Toggling SSL Termination Breaks SNI Mappings
+- Fixed: SSL Termination storing bad data after removal
+- Fixed: Broken usage pagination links
+- Fixed: HTTPS passthrough allows custom errorpage
+- Fixed: Inconsistency in CONNECT Monitor UDP protocol validation
+- Fixed: UDP LoadBalancers should not be able to enable logging
+Known issues
+------------
+
+|no changes|
