@@ -1,6 +1,6 @@
 .. version-v1.26.10-release-notes:
 
-v1.26.11, March 20th, 2019
+v1.26.12, March 20th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What's new
