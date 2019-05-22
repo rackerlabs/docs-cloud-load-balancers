@@ -15,15 +15,15 @@ termination using a key and an SSL certificate or an intermediate SSL
 certificate.
 
 You can use the ``securityProtocols`` object to turn off Transaction Layer
-Security (TLS) 1.0 by setting the following values:
+Security (TLS) 1.0 or 1.1 by setting the following values:
 
-*  ``securityProtocolName`` to ``TLS_10``
+*  ``securityProtocolName`` to ``TLS_10`` or ``TLS_11``
 *  ``securityProtocolStatus`` to ``DISABLED``
 
 .. note::
 
-   The ``securityProtocol`` object only updates the status of TLS 1.0.
-   ``TLS_10`` is the only valid value for ``securityProtocolName``. Other
+   The ``securityProtocol`` object only updates the status of TLS 1.0 or TLS 1.1.
+   ``TLS_10`` or ``TLS_11`` are the only valid values for ``securityProtocolName``. Other
    security protocols remain enabled. Additional protocols might become
    configurable via this interface in the future.
 
@@ -34,6 +34,7 @@ existing SSL certificate and key specifications:
 *  ``secureTrafficOnly``
 *  ``securePort``
 *  ``cipherProfile``
+*  ``securityProtocols``
 
 These configurable attributes must be provided (individually or grouped) in
 a request without specifying any certificate/key combination if a user does not
@@ -220,12 +221,14 @@ The following table shows the body parameters for the request:
 |securityProtocols.\       |String                   |Specifies the security   |
 |**securityProtocolName**  |                         |protocol name. The valid |
 |                          |                         |value for TLS 1.0 is     |
-|                          |                         |``TLS_10``.              |
+|                          |                         |``TLS_10`` and for       |
+|                          |                         |TLS 1.1 is ``TLS_11``.   |
 +--------------------------+-------------------------+-------------------------+
-|securityProtocols.\       |String                   |Specifies whether TLS 1.0|
-|**securityProtocolStatus**|                         |is ``DISABLED`` or       |
-|                          |                         |``ENABLED``. The default |
-|                          |                         |value is ``ENABLED``.    |
+|securityProtocols.\       |String                   |Specifies whether the    |
+|**securityProtocolStatus**|                         |protocol is ``DISABLED`` |
+|                          |                         |or ``ENABLED``.          |
+|                          |                         |The default value is     |
+|                          |                         |``ENABLED``.             |
 +--------------------------+-------------------------+-------------------------+
 |cipherProfile             |String                   |Specifies a cipher       |
 |                          |                         |profile to be used. This |
@@ -600,7 +603,9 @@ Request: JSON**
     yxnoyJ1KUGhWzS0AyXkA2d/nctHrNGlx5mxFzDyCP/ZOvuSxeg==
     -----END CERTIFICATE-----
     </intermediateCertificate>
-    <securityProtocols securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
+    <securityProtocols>
+        <securityProtocol securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
+    </securityProtocols>
     </sslTermination>
 
 **Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an New
@@ -632,7 +637,9 @@ Existing SSL Termination Configuration Request: XML**
 
     <?xml version="1.0" ?>
     <sslTermination enabled="true" securePort="443" secureTrafficOnly="false" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <securityProtocols securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
+    <securityProtocols>
+        <securityProtocol securityProtocolName="TLS_10" securityProtocolStatus="DISABLED"/>
+    </securityProtocols>
     </sslTermination>
 
 **Example Update Load Balancing SSL Termination to Disable TLS 1.0 on an
