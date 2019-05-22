@@ -6,9 +6,9 @@ v1.26.13, May 22nd, 2019
 What's new
 -----------
 
-- Added Transaction Security Layer (TSL) 1.1 to the ``securityProtocols`` object for the :ref:`Update SSL termination
-configuration operation <put-update-ssl-termination-configuration>` to disable
-Transaction Security Layer (TSL) 1.1.
+- Added Transaction Security Layer (TSL) 1.1 to the ``securityProtocols`` object for the
+  :ref:`Update SSL termination configuration operation <put-update-ssl-termination-configuration>`
+  to disable Transaction Security Layer (TSL) 1.1.
 
 Resolved issues
 ---------------
