@@ -119,6 +119,18 @@ Response
             "author":"Rackspace Cloud",
             "created":"2019-02-12T09:28:36Z"
         }
+    ],
+    "links": [
+        {
+            "otherAttributes": {},
+            "href": "http://localhost:8080/528830/loadbalancers/nodes/events?offset=4&limit=2",
+            "rel": "next"
+        },
+        {
+            "otherAttributes": {},
+            "href": "http://localhost:8080/528830/loadbalancers/nodes/events?offset=0&limit=2",
+            "rel": "previous"
+        }
     ]}
 
 **Example List node service events: XML response**
@@ -136,6 +148,12 @@ Response
                           description="Node '373' status changed to 'OFFLINE' for load balancer '323'" type="UPDATE_NODE"
                           category="UPDATE" severity="INFO" relativeUri="/406271/loadbalancers/323/nodes/373/events"
                           created="2019-02-12T09:28:36Z"/>
+        <atom:link
+            href="http://localhost:8080/528830/loadbalancers/nodes/events?offset=4&limit=2"
+            rel="next"/>
+        <atom:link
+            href="http://localhost:8080/528830/loadbalancers/nodes/events?offset=0&limit=2"
+            rel="previous"/>
     </nodeServiceEvents>
 
 **Example List node service events: ATOM response**
