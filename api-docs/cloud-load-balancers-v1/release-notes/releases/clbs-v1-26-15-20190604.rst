@@ -1,0 +1,20 @@
+.. version-v1.26.10-release-notes:
+
+v1.26.15, Jun 4th, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Fixed: Show account-level usage API should display only the preceding 24 hours of usage if neither the startTime parameter nor the endTime parameter is supplied.
+- Fixed: When the load balancer is changed to a non-HTTP protocol, the default error page is not being restored.
+- Fixed: Fix the pagination issue for the "List node service events" API
+
+Known issues
+------------
+
+|no changes|
+
