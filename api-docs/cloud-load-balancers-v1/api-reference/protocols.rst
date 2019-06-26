@@ -23,7 +23,7 @@ specified.
 
           -  Also, SSL Termination is unavailable when using UDP-based ports.
 
-       -  Changing the protocol or port for a load balancer will disable
+       -  Changing the protocol for a load balancer will disable
           session persistence.
 
 Table. Load balancing protocols

@@ -7,7 +7,7 @@ Session persistence 
 .. contents::
    :local:
    :depth: 1
-   
+
 Session persistence is a feature of the load balancing service that
 forces multiple requests, of the same protocol, from clients to be
 directed to the same node. This is common with many web applications
@@ -15,7 +15,7 @@ that do not inherently share application state between back-end servers.
 
 ..  note::
 
-        -  Changing the protocol or port for a load balancer will disable
+        -  Changing the protocol for a load balancer will disable
            session persistence.
 
         -  If you try to DELETE the session persistence configuration when
