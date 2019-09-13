@@ -1,16 +1,15 @@
 .. version-v1.26.17-release-notes:
 
-v1.26.23, Sep 11th, 2019
+v1.26.23, Sep 18th, 2019
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What's new
 -----------
-- Upgraded backend performance and resiliency
-- SSL_ID session persistence now available
+- Updated Atlas Backend Adapter to a more fault tolerant interface.
 
 Resolved issues
 ---------------
-|no changes|
+- Health Monitor body regex is no longer required
 
 Known issues
 ------------
