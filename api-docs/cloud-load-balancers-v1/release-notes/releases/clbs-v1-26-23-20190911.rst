@@ -5,7 +5,7 @@ v1.26.23, Sep 18th, 2019
 
 What's new
 -----------
-- Updated Atlas Backend Adapter to a more fault tolerant interface.
+- Updated Atlas Backend Adapter to a more fault tolerant interface
 
 Resolved issues
 ---------------
