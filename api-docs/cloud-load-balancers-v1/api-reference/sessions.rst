@@ -38,6 +38,10 @@ Table. Session persistence modes
 |              | back-end node. This is supported for HTTPS pass-through and         |
 |              | non-HTTP load balancing only.                                       |
 +--------------+---------------------------------------------------------------------+
+| SSL_ID       | A session persistence mechanism that sends all SSL traffic with    |
+|              | the same SSL session ID to the same server node. It is only         |
+|              | applicable to SSL pass-through traffic, not SSL-decrypted traffic.  |
++--------------+---------------------------------------------------------------------+
 
 You can only set one of the session persistence modes on a load
 balancer, and it can only support one protocol. If you set HTTP\_COOKIE
@@ -59,6 +63,11 @@ concurrently, choose one of the following options:
    requests, and then enable SSL termination for that load balancer. The
    load balancer supports session persistence for both HTTP and HTTPS
    requests concurrently.
+
+.. note::
+    - SSL session ID persistence (SSL_ID) is not appropriate for application-level session persistence because many SSL clients regularly
+      renegotiate their SSL session ID. To achieve application-level session persistence, you should either use IP-based session persistence,
+      or decrypt the traffic and use HTTP method if applicable.
 
 .. include:: methods/get-show-session-persistence-configuration-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst
 .. include:: methods/put-enable-session-persistence-v1.0-account-loadbalancers-loadbalancerid-sessionpersistence.rst

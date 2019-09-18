@@ -88,7 +88,7 @@ optional attributes for Monitor HTTP and HTTPS:
     |                           |from rotation. Must be a number  |                |
     |                           |between 1 and 10.                |                |
     +---------------------------+---------------------------------+----------------+
-    |bodyRegex                  |A regular expression that will   |Yes             |
+    |bodyRegex                  |A regular expression that will   |No              |
     |                           |be used to evaluate the contents |                |
     |                           |of the body of the response. For |                |
     |                           |example you could use the        |                |
