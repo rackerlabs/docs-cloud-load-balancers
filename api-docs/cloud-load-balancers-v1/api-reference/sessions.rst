@@ -26,6 +26,7 @@ These session persistence modes are available:
 
 Table. Session persistence modes
 
+
 +--------------+---------------------------------------------------------------------+
 | Name         | Description                                                         |
 +==============+=====================================================================+
@@ -42,6 +43,7 @@ Table. Session persistence modes
 |              | the same SSL session ID to the same server node. It is only         |
 |              | applicable to SSL pass-through traffic, not SSL-decrypted traffic.  |
 +--------------+---------------------------------------------------------------------+
+
 
 You can only set one of the session persistence modes on a load
 balancer, and it can only support one protocol. If you set HTTP\_COOKIE
