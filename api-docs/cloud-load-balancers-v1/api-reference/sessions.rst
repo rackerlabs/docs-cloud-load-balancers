@@ -38,7 +38,7 @@ Table. Session persistence modes
 |              | back-end node. This is supported for HTTPS pass-through and         |
 |              | non-HTTP load balancing only.                                       |
 +--------------+---------------------------------------------------------------------+
-| SSL_ID       | A session persistence mechanism that sends all SSL traffic with    |
+| SSL_ID       | A session persistence mechanism that sends all SSL traffic with     |
 |              | the same SSL session ID to the same server node. It is only         |
 |              | applicable to SSL pass-through traffic, not SSL-decrypted traffic.  |
 +--------------+---------------------------------------------------------------------+
