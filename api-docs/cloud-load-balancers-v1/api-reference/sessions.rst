@@ -26,22 +26,23 @@ These session persistence modes are available:
 
 Table. Session persistence modes
 
-+--------------+---------------------------------------------------------------------+
-| Name         | Description                                                         |
-+==============+=====================================================================+
-| HTTP_COOKIE  | A session persistence mechanism that inserts an HTTP cookie and     |
-|              | is used to determine the destination back-end node. This is         |
-|              | supported for HTTP load balancing only.                             |
-+--------------+---------------------------------------------------------------------+
-| SOURCE_IP    | A session persistence mechanism that keeps track of the source IP   |
-|              | address that is mapped and is able to determine the destination     |
-|              | back-end node. This is supported for HTTPS pass-through and         |
-|              | non-HTTP load balancing only.                                       |
-+--------------+---------------------------------------------------------------------+
-| SSL_ID       | A session persistence mechanism that sends all SSL traffic with     |
-|              | the same SSL session ID to the same server node. It is only         |
-|              | applicable to SSL pass-through traffic, not SSL-decrypted traffic.  |
-+--------------+---------------------------------------------------------------------+
++--------------+--------------------------------------------------------------+
+| Name         | Description                                                  |
++==============+==============================================================+
+| HTTP_COOKIE  | A session persistence mechanism that inserts an HTTP cookie  |
+|              | and is used to determine the destination back-end node. This |
+|              | is supported for HTTP load balancing only.                   |
++--------------+--------------------------------------------------------------+
+| SOURCE_IP    | A session persistence mechanism that keeps track of the      |
+|              | source IP address that is mapped and is able to determine    |
+|              | the destination back-end node. This is supported for HTTPS   |
+|              | pass-through and non-HTTP load balancing only.               |
++--------------+--------------------------------------------------------------+
+| SSL_ID       | A session persistence mechanism that sends all SSL traffic   |
+|              | with the same SSL session ID to the same server node. It is  |
+|              | only applicable to SSL pass-through traffic, not SSL-        |
+|              | decrypted traffic.                                           |
++--------------+--------------------------------------------------------------+
 
 You can only set one of the session persistence modes on a load
 balancer, and it can only support one protocol. If you set HTTP\_COOKIE
