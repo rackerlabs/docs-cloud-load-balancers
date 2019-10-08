@@ -1,0 +1,19 @@
+.. version-v1.26.25-release-notes:
+
+v1.26.25, Oct 23rd, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Resolved bug when changing Load Balancer Protocol while Content Caching is enabled
+- Resolved validation failure when submitting EC PKCS#8 key for SSL Termination
+
+Known issues
+------------
+
+|no changes|
+

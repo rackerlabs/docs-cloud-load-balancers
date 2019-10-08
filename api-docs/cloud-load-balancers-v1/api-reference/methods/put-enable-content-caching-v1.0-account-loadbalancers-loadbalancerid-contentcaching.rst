@@ -18,8 +18,15 @@ it's cached, requests for that data are served by the load balancer, which in
 turn reduces load off the back end nodes. The result is improved response times
 for those requests and less load on the web server. For more information about
 content caching, see :how-to:`Content Caching for Cloud Load Balancers
-<content-caching-for-cloud-load-balancers>`. The following table shows the
-possible response codes for this operation:
+<content-caching-for-cloud-load-balancers>`.
+
+.. note::
+
+   Content Caching can only be enabled on HTTP Load Balancer protocol. HTTPS,
+   UDP, TCP etc... are incompatible with this feature.
+
+
+    The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |

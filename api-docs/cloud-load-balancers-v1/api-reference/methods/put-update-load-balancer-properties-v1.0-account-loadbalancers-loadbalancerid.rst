@@ -21,6 +21,13 @@ wait for the changes to be applied and the load balancer to return to an
    modified by the caller. Supplying an unsupported attribute results in a 400
    (badRequest) fault.
 
+.. note::
+
+   When updating the Load Balancer's protocol some properties, such as
+   ``content_caching``, that are incompatible will trigger validation
+   failures resulting in a ``BadRequest`` exception. Please view the related
+   documentation pages for further information.
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
