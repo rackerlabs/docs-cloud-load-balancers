@@ -26,7 +26,7 @@ content caching, see :how-to:`Content Caching for Cloud Load Balancers
    UDP, TCP etc... are incompatible with this feature.
 
 
-    The following table shows the possible response codes for this operation:
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
