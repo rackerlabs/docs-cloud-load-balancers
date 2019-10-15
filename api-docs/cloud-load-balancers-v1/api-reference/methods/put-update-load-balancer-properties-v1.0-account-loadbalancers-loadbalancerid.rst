@@ -23,9 +23,9 @@ wait for the changes to be applied and the load balancer to return to an
 
 .. note::
 
-   When updating the Load Balancer's protocol some properties, such as
-   ``content_caching``, that are incompatible will trigger validation
-   failures resulting in a ``BadRequest`` exception. Please view the related
+   When you update the Load Balancer's protocol, some properties, such as
+   ``content_caching`` that are incompatible, trigger validation
+   failures resulting in a ``BadRequest`` exception. View the related
    documentation pages for further information.
 
 The following table shows the possible response codes for this operation:
