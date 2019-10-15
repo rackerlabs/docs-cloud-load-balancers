@@ -22,8 +22,8 @@ content caching, see :how-to:`Content Caching for Cloud Load Balancers
 
 .. note::
 
-   Content Caching can only be enabled on HTTP Load Balancer protocol. HTTPS,
-   UDP, TCP etc... are incompatible with this feature.
+   You can only enable content caching on HTTP Load Balancer protocol. HTTPS,
+   UDP, TCP, and so on are incompatible with this feature.
 
 
 The following table shows the possible response codes for this operation:
