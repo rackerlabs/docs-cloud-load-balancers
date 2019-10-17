@@ -40,7 +40,7 @@ existing SSL certificate and key specifications:
 
 .. note::
 
-   ECDSA key format is currently not accepted for ssl termination, please use RSA
+   ECDSA key format is currently not accepted for ssl termination. Use RSA.
 
 
 These configurable attributes must be provided (individually or grouped) in
