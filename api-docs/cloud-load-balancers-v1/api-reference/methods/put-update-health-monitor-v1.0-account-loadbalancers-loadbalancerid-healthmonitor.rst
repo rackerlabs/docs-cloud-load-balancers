@@ -21,9 +21,9 @@ The following table lists the health monitor types:
     +=======================================+======================================+
     |CONNECT                                |Health monitor is a connect monitor.  |
     +---------------------------------------+--------------------------------------+
-    |HTTP                                   |Health monitor is a HTTP monitor.    |
+    |HTTP                                   |Health monitor is a HTTP monitor.     |
     +---------------------------------------+--------------------------------------+
-    |HTTPS                                  |Health monitor is a HTTPS monitor.   |
+    |HTTPS                                  |Health monitor is a HTTPS monitor.    |
     +---------------------------------------+--------------------------------------+
 
 .. note::
@@ -144,8 +144,8 @@ optional attributes for Monitor HTTP and HTTPS:
     +---------------------------+---------------------------------+----------------+
     |type                       |Type of the health monitor. Must |Yes             |
     |                           |be specified as "HTTP" to        |                |
-    |                           |monitor a HTTP response or      |                |
-    |                           |"HTTPS" to monitor a HTTPS      |                |
+    |                           |monitor a HTTP response or       |                |
+    |                           |"HTTPS" to monitor a HTTPS       |                |
     |                           |response.                        |                |
     +---------------------------+---------------------------------+----------------+
 
