@@ -16,7 +16,7 @@ Panel <http://login.rackspace.com/>`__).
 
 .. note::
    You can also create a Cloud Server using the Cloud Servers API. Refer to
-   the `Cloud Servers API Developer Guide <http://developer.rackspace.com/>`__
+   the `Cloud Servers API Developer Guide <https://developer.rackspace.com/>`__
    for details.
 
 #. Click **Servers** to view the Cloud Servers page.
