@@ -47,35 +47,35 @@ portion  of the following URI:
    * - GET
      - ``/v1.0/*``
      - ``^/1.0/.*``
-     - 5 per second
+     - 10 per second
    * - GET
      - ``/v1.0/*``
-     - `^/1.0/.*``
-     - 100 per minute
+     - ``^/1.0/.*``
+     - 600 per minute
    * - POST
      - ``/v1.0/*``
      - ``^/1.0/.*``
-     - 2 per second
-   * - POST
-     - ``/v1.0/*``
-     - ``^/1.0/.*``
-     - 25 per minute
-   * - PUT
-     - ``/v1.0/*``
-     - `^/1.0/.*``
      - 5 per second
+   * - POST
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 300 per minute
    * - PUT
      - ``/v1.0/*``
      - ``^/1.0/.*``
-     - 50 per minute
-   * - DELETE
+     - 10 per second
+   * - PUT
      - ``/v1.0/*``
-     - `^/1.0/.*``
-     - 2 per second
+     - ``^/1.0/.*``
+     - 600 per minute
    * - DELETE
      - ``/v1.0/*``
      - ``^/1.0/.*``
-     - 50 per minute
+     - 5 per second
+   * - DELETE
+     - ``/v1.0/*``
+     - ``^/1.0/.*``
+     - 300 per minute
 
 Rate limits are applied in order relative to the method, going from least to
 most specific. For example, although the threshold for **POST** requests to
