@@ -90,8 +90,8 @@ balancer operation.
 
 .. code::
 
-    <loadBalancerFault code="401" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <message>Invalid authentication token. Please renew</message>
+    <loadBalancerFault code="500" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <message>An unknown exception has occurred. Please contact support.</message>
     </loadBalancerFault>
 
 .. _faults-outofvirtualips:
@@ -126,9 +126,13 @@ The ``overLimit`` fault is returned when you exceed a currently allocated limit.
 
 .. code::
 
-    <overLimit code="413" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <message>Your account is currently over the limit so your request could not be processed.</message>
+    <overLimit xmlns="http://docs.openstack.org/loadbalancers/api/v1.1"
+        code="413"
+        retryAfter="Retry-After [DATE ISO_8601]">
+        <message>OverLimit Retry...</message>
+        <details>Error Details...</details>
     </overLimit>
+
 
 .. _faults-serviceunavailable:
 
@@ -157,13 +161,13 @@ unauthorized
 The ``unauthorized`` fault is returned when you are not authorized to perform
 an attempted operation.
 
-**Example: unauthorized fault response**
+**Example: unauthorized fault**
 
-.. code::
+.. note::
 
-    <unauthorized code="404" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <message>You are not authorized to execute this operation.</message>
-    </unauthorized>
+    No response body is returned for an unauthorized fault. A ``401`` status
+    code header will be returned during unsuccessful authentication to the
+    Load Balancers API.
 
 .. _faults-unprocessableentity:
 
