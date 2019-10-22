@@ -1,0 +1,19 @@
+.. version-v1.26.27-release-notes:
+
+v1.26.27, Oct 22nd, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Resolved bug when changing Load Balancer Protocol while Content Caching is enabled
+- Resolved validation failure when submitting ECDSA PKCS#8 key for SSL Termination
+
+Known issues
+------------
+
+|no changes|
+

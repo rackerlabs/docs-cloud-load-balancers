@@ -27,6 +27,8 @@ Security (TLS) 1.0 or 1.1 by setting the following values:
    security protocols remain enabled. Additional protocols might become
    configurable via this interface in the future.
 
+
+
 You can update the following attributes without overwriting a load balancer’s
 existing SSL certificate and key specifications:
 
@@ -35,6 +37,11 @@ existing SSL certificate and key specifications:
 *  ``securePort``
 *  ``cipherProfile``
 *  ``securityProtocols``
+
+.. note::
+
+   ECDSA key format is currently not accepted for ssl termination. Use RSA.
+
 
 These configurable attributes must be provided (individually or grouped) in
 a request without specifying any certificate/key combination if a user does not

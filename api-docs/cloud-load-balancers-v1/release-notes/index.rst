@@ -13,10 +13,12 @@ following release note information.
    :local:
    :depth: 1
 
+
 .. note::
     For information about using the API, see the
     :ref:`documentation overview <index>`.
 
+.. include:: releases/clbs-v1-26-27-20191022.rst
 .. include:: releases/clbs-v1-26-23-20190911.rst
 .. include:: releases/clbs-v1-26-17-20190710.rst
 .. include:: releases/clbs-v1-26-15-20190604.rst
