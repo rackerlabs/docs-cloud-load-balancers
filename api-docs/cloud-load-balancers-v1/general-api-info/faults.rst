@@ -60,7 +60,7 @@ cannot be modified.
 .. code::
 
     <immutableEntity code="422" xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <message>The object at the specified URI is immutable and can not be overwritten.</message>
+        <message>The object at the specified URI is immutable and cannot be overwritten.</message>
     </immutableEntity>
 
 .. _faults-itemnotfound:
@@ -166,7 +166,7 @@ an attempted operation.
 .. note::
 
     No response body is returned for an unauthorized fault. A ``401`` status
-    code header will be returned during unsuccessful authentication to the
+    code header is returned during unsuccessful authentication to the
     Load Balancers API.
 
 .. _faults-unprocessableentity:
