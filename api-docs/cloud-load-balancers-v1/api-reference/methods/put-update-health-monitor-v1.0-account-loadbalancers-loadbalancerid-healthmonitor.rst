@@ -21,9 +21,9 @@ The following table lists the health monitor types:
     +=======================================+======================================+
     |CONNECT                                |Health monitor is a connect monitor.  |
     +---------------------------------------+--------------------------------------+
-    |HTTP                                   |Health monitor is an HTTP monitor.    |
+    |HTTP                                   |Health monitor is a HTTP monitor.     |
     +---------------------------------------+--------------------------------------+
-    |HTTPS                                  |Health monitor is an HTTPS monitor.   |
+    |HTTPS                                  |Health monitor is a HTTPS monitor.    |
     +---------------------------------------+--------------------------------------+
 
 .. note::
@@ -70,7 +70,7 @@ table lists the required and optional attributes for Monitor Connections:
     +---------------------------+-------------------------+------------------------+
 
 **Monitor HTTP and HTTPS**  The HTTP and HTTPS monitor is more intelligent than
-the connect monitor. It is capable of processing an HTTP or HTTPS response to
+the connect monitor. It is capable of processing a HTTP or HTTPS response to
 determine the condition of a node. It supports the same basic properties as
 the connect monitor and includes additional attributes that are used to
 evaluate the HTTP response. The user can supply an optional ``hostHeader``
@@ -144,8 +144,8 @@ optional attributes for Monitor HTTP and HTTPS:
     +---------------------------+---------------------------------+----------------+
     |type                       |Type of the health monitor. Must |Yes             |
     |                           |be specified as "HTTP" to        |                |
-    |                           |monitor an HTTP response or      |                |
-    |                           |"HTTPS" to monitor an HTTPS      |                |
+    |                           |monitor a HTTP response or       |                |
+    |                           |"HTTPS" to monitor a HTTPS       |                |
     |                           |response.                        |                |
     +---------------------------+---------------------------------+----------------+
 
@@ -211,9 +211,8 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-This operation does not accept a request body.
 
-**Example Update health monitor: XML request**
+**Example Update Connect health monitor: XML request**
 
 .. code::
 
@@ -224,7 +223,7 @@ This operation does not accept a request body.
         timeout="10"
         attemptsBeforeDeactivation="3" />
 
-**Example Update health monitor: JSON request**
+**Example Update Connect health monitor: JSON request**
 
 .. code::
 
@@ -234,6 +233,38 @@ This operation does not accept a request body.
             "delay": 10,
             "timeout": 10,
             "attemptsBeforeDeactivation": 3
+        }
+    }
+
+**Example Update HTTP health monitor: XML request**
+
+.. code::
+
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <healthMonitor xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
+        type="HTTP"
+        delay="10"
+        timeout="10"
+        attemptsBeforeDeactivation="3"
+        path="/"
+        statusRegex="^[234][0-9][0-9]$"
+        bodyRegex="^[234][0-9][0-9]$"
+        hostHeader="mysite.com"/>
+
+**Example Update HTTP health monitor: JSON request**
+
+.. code::
+
+    {
+        "healthMonitor": {
+            "type": "HTTP",
+            "delay": 10,
+            "timeout":10,
+            "attemptsBeforeDeactivation": 3,
+            "path": "/",
+            "statusRegex":"^[234][0-9][0-9]$",
+            "bodyRegex": "^[234][0-9][0-9]$",
+            "hostHeader": "mysite.com"
         }
     }
 
