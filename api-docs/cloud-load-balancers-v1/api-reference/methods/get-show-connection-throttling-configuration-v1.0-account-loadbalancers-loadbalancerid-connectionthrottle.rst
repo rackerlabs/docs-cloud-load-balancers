@@ -7,7 +7,7 @@ Show connection throttling configuration
 
     GET /v1.0/{account}/loadbalancers/{loadBalancerId}/connectionthrottle
 
-Show the connection throttling configuration.
+Show connection throttling configuration.
 
 The following table shows the possible response codes for this operation:
 
@@ -100,3 +100,27 @@ Response
         maxConnections="100"
         maxConnectionRate="50"
         rateInterval="60" />
+
+**Example Show Atom connection throttling configuration: ATOM/XML response**
+
+.. code::
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <link rel="next"
+              href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/connectionthrottle.atom?page=2"/>
+        <title type="text">Connection Throttle Feed</title>
+        <id>1234-loadbalancers-141-connectionthrottle</id>
+        <entry>
+            <title type="text">Error Updating Connection Throttle</title>
+            <summary type="text">Could not update the connection throttle at this time</summary>
+            <author>
+                <name>Rackspace Cloud</name>
+            </author>
+            <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/connectionthrottle/"/>
+            <id>1234-loadbalancers-141-connectionthrottle-2011881846570</id>
+            <category term="UPDATE"/>
+            <updated>2011-03-29T18:46:57.000Z</updated>
+        </entry>
+    </feed>
+
