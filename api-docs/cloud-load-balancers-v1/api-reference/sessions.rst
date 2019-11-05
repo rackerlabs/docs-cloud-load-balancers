@@ -37,7 +37,7 @@ Table. Session persistence modes
 | SOURCE_IP    | A session persistence mechanism that keeps track of the source IP   |
 |              | address that is mapped and is able to determine the destination     |
 |              | back-end node. This is supported for HTTPS pass-through and         |
-|              | non-HTTP load balancing only.                                       |
+|              | HTTP load balancing only.                                           |
 +--------------+---------------------------------------------------------------------+
 | SSL_ID       | A session persistence mechanism that sends all SSL traffic with     |
 |              | the same SSL session ID to the same server node. It is only         |
