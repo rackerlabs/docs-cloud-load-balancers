@@ -199,9 +199,6 @@ The following table shows the body parameters for the response:
             "algorithm":"RANDOM",
             "status":"ACTIVE",
             "timeout": 30,
-            "connectionLogging":{
-                "enabled":true
-            },
             "virtualIps":[
                 {
                     "id": 1000,
@@ -244,7 +241,18 @@ The following table shows the body parameters for the response:
             "updated":{
                 "time":"2010-11-30T03:23:44Z"
             },
-            "sourceAddresses":{"ipv6Public":"2001:4801:79f1:1::1/64","ipv4Servicenet":"10.0.0.0","ipv4Public":"10.12.99.28"}
+            "sourceAddresses":{
+                "ipv6Public":"2001:4801:79f1:1::3/64",
+                "ipv4Servicenet":"10.0.0.0",
+                "ipv4Public":"10.12.99.28"
+            },
+            "httpsRedirect": false,
+            "connectionLogging":{
+                "enabled":false
+            },
+            "contentCaching": {
+                "enabled": false
+            }
         }
     }
 
@@ -259,8 +267,9 @@ The following table shows the body parameters for the response:
         port="80"
         algorithm="RANDOM"
         status="ACTIVE"
+        httpsRedirect="false"
+        halfClosed="false"
         timeout="30">
-        <connectionLogging enabled="false" />
         <virtualIps>
             <virtualIp
                 id="1000"
@@ -291,8 +300,9 @@ The following table shows the body parameters for the response:
         <cluster name="c1.dfw1" />
         <created time="2010-11-30T03:23:42Z" />
         <updated time="2010-11-30T03:23:44Z" />
-        <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.28" ipv6Public="2001:4801:79f1:1::1/64"/>
-    </loadBalancer>
+        <connectionLogging enabled="false" />
+        <contentCaching enabled="false"/>
+        <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>    </loadBalancer>
 
 **Example Show atom load balancer details: ATOM/XML response**
 

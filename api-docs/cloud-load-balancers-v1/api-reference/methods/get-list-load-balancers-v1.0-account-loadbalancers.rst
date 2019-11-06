@@ -170,6 +170,7 @@ The following table shows the body parameters for the response:
                 "algorithm":"RANDOM",
                 "status":"ACTIVE",
                 "nodeCount":3,
+                "timeout": 30,
                 "virtualIps":[
                     {
                         "id":403,
@@ -217,8 +218,7 @@ The following table shows the body parameters for the response:
 
     <?xml version="1.0" ?>
     <loadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <loadBalancer id="71" name="lb-site1" status="ACTIVE"
-            protocol="HTTP" port="80" algorithm="RANDOM" nodeCount="3">
+        <loadBalancer id="71" name="lb-site1" status="ACTIVE" protocol="HTTP" port="80" algorithm="RANDOM" timeout="30" nodeCount="3">
             <virtualIps>
                 <virtualIp id="403" address="206.55.130.1" ipVersion="IPV4"
                     type="PUBLIC" />
@@ -226,8 +226,7 @@ The following table shows the body parameters for the response:
             <created time="2010-12-13T15:38:27-06:00" />
             <updated time="2010-12-13T15:38:38-06:00" />
         </loadBalancer>
-        <loadBalancer id="166" name="lb-site2" status="ACTIVE"
-            protocol="HTTP" port="80" algorithm="RANDOM" nodeCount="4">
+        <loadBalancer id="166" name="lb-site2" status="ACTIVE" protocol="HTTP" port="80" algorithm="RANDOM" timeout="30" nodeCount="4">
             <virtualIps>
                 <virtualIp id="401" address="206.55.130.2" ipVersion="IPV4"
                     type="PUBLIC" />
