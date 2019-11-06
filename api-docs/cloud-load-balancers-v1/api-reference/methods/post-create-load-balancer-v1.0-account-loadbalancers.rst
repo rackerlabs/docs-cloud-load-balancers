@@ -447,7 +447,8 @@ The following table shows the body parameters for the response:
                     "port":80,
                     "status":"ONLINE",
                     "condition":"ENABLED",
-                    "weight":1
+                    "weight":1,
+                    "type": "PRIMARY",
                 }
             ],
             "virtualIps":[{
@@ -463,19 +464,20 @@ The following table shows the body parameters for the response:
                     "ipVersion":"IPV6"
                 }
             ],
-            "created":{
-                "time":"2011-06-01T08:20:09-05:00"
+            "created": {
+                "time": "2011-04-13T14:18:07Z"
             },
-            "updated":{
-                "time":"2011-06-01T08:20:09-05:00"
+            "sourceAddresses":{
+                "ipv6Public":"2001:4801:79f1:1::3/64",
+                "ipv4Servicenet":"10.0.0.0",
+                "ipv4Public":"10.12.99.28"
             },
+            "httpsRedirect": false,
             "connectionLogging":{
                 "enabled":false
             },
-            "sourceAddresses":{
-                "ipv6Public":"2001:4801:79f1:1::1/64",
-                "ipv4Servicenet":"10.0.0.0",
-                "ipv4Public":"10.12.99.28"
+            "contentCaching": {
+                "enabled": false
             }
         }
     }
@@ -486,18 +488,20 @@ The following table shows the body parameters for the response:
 
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="2198" name="a-new-loadbalancer"
-                  algorithm="RANDOM" protocol="HTTP" halfClosed="false" port="80" status="BUILD" timeout="30">
+                  algorithm="RANDOM" protocol="HTTP" httpsRedirect="false"
+                  halfClosed="false" port="80" status="BUILD" timeout="30">
         <virtualIps>
             <virtualIp id="13" address="10.0.0.16" ipVersion="IPV4" type="PUBLIC"/>
             <virtualIp id="9000135" address="fd24:f480:ce44:91bc:1af2:15ff:0000:0003" ipVersion="IPV6" type="PUBLIC"/>
         </virtualIps>
         <nodes>
-            <node id="2206" address="10.1.1.1" port="80" condition="ENABLED" status="ONLINE" weight="1"/>
+            <node id="2206" address="10.1.1.1" port="80" condition="ENABLED" status="ONLINE" weight="1" type="PRIMARY"/>
         </nodes>
         <cluster name="host2_cluster1"/>
         <created time="2011-06-01T08:08:41-05:00"/>
         <updated time="2011-06-01T08:08:41-05:00"/>
         <connectionLogging enabled="false"/>
+        <contentCaching enabled="false"/>
         <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>
     </loadBalancer>
 
@@ -525,7 +529,8 @@ The following table shows the body parameters for the response:
                     "port": 80,
                     "status": "ONLINE",
                     "condition": "ENABLED",
-                    "weight": 1
+                    "weight": 1,
+                    "type": "PRIMARY"
                 }
             ],
             "virtualIps": [
@@ -539,10 +544,16 @@ The following table shows the body parameters for the response:
             "created": {
                 "time": "2011-04-13T14:18:07Z"
             },
-            "updated": {
-                "time": "2011-04-13T14:18:07Z"
+            "sourceAddresses":{
+                "ipv6Public":"2001:4801:79f1:1::3/64",
+                "ipv4Servicenet":"10.0.0.0",
+                "ipv4Public":"10.12.99.28"
             },
+            "httpsRedirect": false,
             "connectionLogging": {
+                "enabled": false
+            },
+            "contentCaching": {
                 "enabled": false
             }
         }
@@ -558,6 +569,8 @@ The following table shows the body parameters for the response:
         algorithm="RANDOM"
         protocol="HTTP"
         port="83"
+        httpsRedirect="false"
+        halfClosed="false"
         status="BUILD"
         timeout="30">
         <virtualIps>
@@ -574,12 +587,15 @@ The following table shows the body parameters for the response:
                 port="80"
                 condition="ENABLED"
                 status="ONLINE"
-                weight="1" />
+                weight="1"
+                type="PRIMARY"/>
         </nodes>
         <cluster name="ztm-n03.staging1.lbaas.rackspace.net" />
         <created time="2011-02-08T21:19:55Z" />
         <updated time="2011-02-08T21:19:55Z" />
         <connectionLogging enabled="false" />
+        <contentCaching enabled="false"/>
+        <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>
     </loadBalancer>
 
 **Example Create load balancer with IPv4/IPv6: JSON response**
@@ -606,7 +622,8 @@ The following table shows the body parameters for the response:
                     "port": 80,
                     "status": "ONLINE",
                     "condition": "ENABLED",
-                    "weight": 1
+                    "weight": 1,
+                    "type": "PRIMARY"
                 }
             ],
             "virtualIps": [
@@ -626,10 +643,16 @@ The following table shows the body parameters for the response:
             "created": {
                 "time": "2011-04-13T14:18:07Z"
             },
-            "updated": {
-                "time": "2011-04-13T14:18:07Z"
+            "sourceAddresses":{
+                "ipv6Public":"2001:4801:79f1:1::3/64",
+                "ipv4Servicenet":"10.0.0.0",
+                "ipv4Public":"10.12.99.28"
             },
+            "httpsRedirect": false,
             "connectionLogging": {
+                "enabled": false
+            },
+            "contentCaching": {
                 "enabled": false
             }
         }
@@ -644,6 +667,7 @@ The following table shows the body parameters for the response:
         name="a-new-loadbalancer"
         algorithm="RANDOM"
         protocol="HTTP"
+        httpsRedirect="false"
         halfclosed="false"
         port="83"
         status="BUILD"
@@ -667,10 +691,13 @@ The following table shows the body parameters for the response:
                 port="80"
                 condition="ENABLED"
                 status="ONLINE"
-                weight="1" />
+                weight="1"
+                type="PRIMARY"/>
         </nodes>
         <cluster name="ztm-n03.staging1.lbaas.rackspace.net" />
         <created time="2011-02-08T21:19:55Z" />
         <updated time="2011-02-08T21:19:55Z" />
         <connectionLogging enabled="false" />
+        <contentCaching enabled="false"/>
+        <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>
     </loadBalancer>
