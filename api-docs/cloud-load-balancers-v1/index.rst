@@ -1,5 +1,6 @@
 .. _index:
 
+
 =========================================================
 Rackspace Cloud Load Balancers API |contract version|
 =========================================================
@@ -36,6 +37,7 @@ Rackspace Cloud Load Balancers service REST API.
      You can also use Rackspace Cloud Load Balancers from the Cloud Control
      Panel. To learn more about the service, see the
      :how-to:`Cloud Load Balancers FAQ <cloud-load-balancers-faq>`.
+
 
 .. toctree::
    :hidden:
