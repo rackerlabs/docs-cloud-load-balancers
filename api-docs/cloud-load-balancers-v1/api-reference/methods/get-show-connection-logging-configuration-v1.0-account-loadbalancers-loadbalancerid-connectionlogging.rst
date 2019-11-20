@@ -52,6 +52,9 @@ The log format will be as follows.
 
 **Log format for HTTP type load balancer instances:**
 
+.. note::
+   A load balancer with SSL termination enabled is an HTTP type load balancer.
+
 ``%v %{Host}i %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %n``
 
 .. list-table::
