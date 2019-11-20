@@ -14,7 +14,7 @@ Shows the connection logging configuration.
 
 The log format will be as follows.
 
-**Log format for HTTP type load balancer instances:**
+**Log format for HTTPS type load balancer instances:**
 
 ``%v %t %h %A:%p %n %B %b %T``
 
@@ -44,13 +44,13 @@ The log format will be as follows.
      - Time from initiating request to backend node until the first byte of the
        response is received, in seconds.
 
-**Sample log line for HTTP type load balancer instances:**
+**Sample log line for HTTPS type load balancer instances:**
 
 .. code::
 
    123456_78910 [14/Oct/2015:18:17:05 +0000] 192.168.2.101 10.50.4.5:443 10.50.4.82:443 1337 2183 0.001282
 
-**Log format for HTTPS type load balancer instances:**
+**Log format for HTTP type load balancer instances:**
 
 ``%v %{Host}i %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\" %n``
 
@@ -85,7 +85,7 @@ The log format will be as follows.
    * - ``%n``
      - Node that was used for the connection.
 
-**Sample log lines for HTTPS type load balancer instances:**
+**Sample log lines for HTTP type load balancer instances:**
 
 .. code::
 
