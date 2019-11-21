@@ -20,7 +20,7 @@ expressed as UTC.
     YYYY-MM-DD'T'hh:mm:ssZ
 
 For example, May 19, 2016 at 8:07:08 AM, GMT-5 would have the following
-UCT-5 format:
+UTC-5 format:
 
 .. code::
 

@@ -181,26 +181,45 @@ These operations do not require a request body.
 .. code::
 
     {
-        "limits" : {
-            "rate" : {
-                "values": [
-                    {
-                        "uri" : "/v1.0/*",
-                        "regex" : "^/1.0/.*",
-                        "limit" : [
-                            {
-                                "verb" : "GET",
-                                "value" : 600000,
-                                "remaining" : 426852,
-                                "unit" : "HOUR",
-                                "next-available" : "2011-02-22T19:32:43.835Z"
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    }
+       "limits": {
+           "rate": [
+               {
+                   "limit": [
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 120000,
+                           "unit": "MINUTE",
+                           "value": 120000,
+                           "verb": "GET"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 120000,
+                           "unit": "MINUTE",
+                           "value": 120000,
+                           "verb": "PUT"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 120000,
+                           "unit": "MINUTE",
+                           "value": 120000,
+                           "verb": "DELETE"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 120000,
+                           "unit": "MINUTE",
+                           "value": 120000,
+                           "verb": "POST"
+                       }
+                   ],
+                   "regex": ".*/([0-9]+)/loadbalancers.*",
+                   "uri": "/v1.0/*"
+               }
+           ]
+       }
+   }
 
 **Example: Retrieve absolute limits: XML response**
 
