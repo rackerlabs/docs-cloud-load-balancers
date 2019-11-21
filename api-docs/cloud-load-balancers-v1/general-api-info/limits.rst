@@ -163,18 +163,16 @@ These operations do not require a request body.
 
 .. code::
 
-    <limits xmlns="http://docs.openstack.org/common/api/v1.0">
-        <rates>
-            <rate uri="/v1.0/*" regex="^/1.0/.*">
-                <limit
-                    verb="GET"
-                    value="600000"
-                    remaining="426852"
-                    unit="HOUR"
-                    next-available="2011-02-22T19:32:43.835Z"/>
-            </rate>
-        </rates>
-    </limits>
+   <limits xmlns="http://docs.openstack.org/common/api/v1.0">
+       <rates>
+           <rate uri="/v1.0/*" regex=".*/([0-9]+)/loadbalancers.*">
+               <limit verb="GET" value="600" remaining="600" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="PUT" value="600" remaining="600" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="DELETE" value="300" remaining="300" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="POST" value="300" remaining="300" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+           </rate>
+       </rates>
+   </limits>
 
 **Example: Retrieve rate limits: JSON response**
 
