@@ -248,7 +248,7 @@ The following table shows the body parameters for the request:
             "protocol":"HTTP",
             "virtualIps":[
                 {
-                    "id":2341
+                    "id":15
                 }
             ],
             "nodes":[
@@ -270,7 +270,7 @@ The following table shows the body parameters for the request:
         port="80"
         protocol="HTTP">
         <virtualIps>
-            <virtualIp id="2341"/>
+            <virtualIp id="13"/>
         </virtualIps>
         <nodes>
             <node address="10.1.1.1" port="80" condition="ENABLED" />
@@ -535,8 +535,8 @@ The following table shows the body parameters for the response:
             ],
             "virtualIps": [
                 {
-                    "address": "206.10.10.210",
-                    "id": 39,
+                    "address": "10.0.0.18",
+                    "id": 15,
                     "type": "PUBLIC",
                     "ipVersion": "IPV4"
                 }
@@ -575,8 +575,8 @@ The following table shows the body parameters for the response:
         timeout="30">
         <virtualIps>
             <virtualIp
-                id="39"
-                address="206.10.10.210"
+                id="13"
+                address="10.0.0.16"
                 ipVersion="IPV4"
                 type="PUBLIC" />
         </virtualIps>
