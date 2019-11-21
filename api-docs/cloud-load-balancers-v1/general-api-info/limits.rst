@@ -187,30 +187,30 @@ These operations do not require a request body.
                    "limit": [
                        {
                            "next-available": "2011-02-22T19:32:43.835Z",
-                           "remaining": 120000,
+                           "remaining": 600,
                            "unit": "MINUTE",
-                           "value": 120000,
+                           "value": 600,
                            "verb": "GET"
                        },
                        {
                            "next-available": "2011-02-22T19:32:43.835Z",
-                           "remaining": 120000,
+                           "remaining": 600,
                            "unit": "MINUTE",
-                           "value": 120000,
+                           "value": 600,
                            "verb": "PUT"
                        },
                        {
                            "next-available": "2011-02-22T19:32:43.835Z",
-                           "remaining": 120000,
+                           "remaining": 300,
                            "unit": "MINUTE",
-                           "value": 120000,
+                           "value": 300,
                            "verb": "DELETE"
                        },
                        {
                            "next-available": "2011-02-22T19:32:43.835Z",
-                           "remaining": 120000,
+                           "remaining": 300,
                            "unit": "MINUTE",
-                           "value": 120000,
+                           "value": 300,
                            "verb": "POST"
                        }
                    ],
