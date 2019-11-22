@@ -288,10 +288,10 @@ The following table shows the body parameters for the request:
             "protocol":"HTTP",
             "virtualIps":[
                 {
-                    "id":2341
+                    "id":15
                 },
                 {
-                    "id":900001
+                    "id":9000137
                 }
             ],
             "nodes":[
@@ -313,8 +313,8 @@ The following table shows the body parameters for the request:
         port="80"
         protocol="HTTP">
         <virtualIps>
-            <virtualIp id="2341"/>
-            <virtualIp id="900001"/>
+            <virtualIp id="15"/>
+            <virtualIp id="9000137"/>
         </virtualIps>
         <nodes>
             <node address="10.1.1.1" port="80" condition="ENABLED" />
@@ -491,8 +491,8 @@ The following table shows the body parameters for the response:
                   algorithm="RANDOM" protocol="HTTP" httpsRedirect="false"
                   halfClosed="false" port="80" status="BUILD" timeout="30">
         <virtualIps>
-            <virtualIp id="13" address="10.0.0.16" ipVersion="IPV4" type="PUBLIC"/>
-            <virtualIp id="9000135" address="fd24:f480:ce44:91bc:1af2:15ff:0000:0003" ipVersion="IPV6" type="PUBLIC"/>
+            <virtualIp id="15" address="10.0.0.18" ipVersion="IPV4" type="PUBLIC"/>
+            <virtualIp id="9000137" address="fd24:f480:ce44:91bc:1af2:15ff:0000:0005" ipVersion="IPV6" type="PUBLIC"/>
         </virtualIps>
         <nodes>
             <node id="2206" address="10.1.1.1" port="80" condition="ENABLED" status="ONLINE" weight="1" type="PRIMARY"/>
@@ -575,8 +575,8 @@ The following table shows the body parameters for the response:
         timeout="30">
         <virtualIps>
             <virtualIp
-                id="13"
-                address="10.0.0.16"
+                id="15"
+                address="10.0.0.18"
                 ipVersion="IPV4"
                 type="PUBLIC" />
         </virtualIps>
@@ -628,16 +628,16 @@ The following table shows the body parameters for the response:
             ],
             "virtualIps": [
                 {
-                    "address": "206.10.10.210",
-                    "id": 39,
+                    "address": "10.0.0.18",
+                    "id": 15,
                     "type": "PUBLIC",
                     "ipVersion": "IPV4"
                 },
                 {
-                    "address": "2001:4801:79f1:0002:711b:be4c:0000:0021",
-                    "id": 900001,
-                    "type": "PUBLIC",
-                    "ipVersion": "IPV6"
+                    "address":"fd24:f480:ce44:91bc:1af2:15ff:0000:0005",
+                    "id":9000137,
+                    "type":"PUBLIC",
+                    "ipVersion":"IPV6"
                 }
             ],
             "created": {
@@ -674,13 +674,13 @@ The following table shows the body parameters for the response:
         timeout="30">
         <virtualIps>
             <virtualIp
-                id="39"
-                address="206.10.10.210"
+                id="15"
+                address="10.0.0.18"
                 ipVersion="IPV4"
                 type="PUBLIC" />
             <virtualIp
-                id="900001"
-                address="2001:4801:79f1:0002:711b:be4c:0000:0021"
+                id="9000137"
+                address="fd24:f480:ce44:91bc:1af2:15ff:0000:0005"
                 ipVersion="IPV6"
                 type="PUBLIC" />
         </virtualIps>
