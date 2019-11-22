@@ -216,7 +216,7 @@ The following table shows the body parameters for the response:
 
 .. code::
 
-    <?xml version="1.0" ?>
+
     <loadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
         <loadBalancer id="71" name="lb-site1" status="ACTIVE" protocol="HTTP" port="80" algorithm="RANDOM" timeout="30" nodeCount="3">
             <virtualIps>
@@ -240,7 +240,7 @@ The following table shows the body parameters for the response:
 
 .. code::
 
-    <?xml version='1.0' encoding='UTF-8'?>
+
     <feed xmlns="http://www.w3.org/2005/Atom">
         <link rel="next"
               href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers.atom?page=2"/>

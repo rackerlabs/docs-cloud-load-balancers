@@ -270,7 +270,7 @@ The following table shows the body parameters for the request:
         port="80"
         protocol="HTTP">
         <virtualIps>
-            <virtualIp id="13"/>
+            <virtualIp id="15"/>
         </virtualIps>
         <nodes>
             <node address="10.1.1.1" port="80" condition="ENABLED" />
@@ -486,7 +486,7 @@ The following table shows the body parameters for the response:
 
 .. code::
 
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
     <loadBalancer xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="2198" name="a-new-loadbalancer"
                   algorithm="RANDOM" protocol="HTTP" httpsRedirect="false"
                   halfClosed="false" port="80" status="BUILD" timeout="30">
