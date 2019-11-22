@@ -277,7 +277,7 @@ The following table shows the body parameters for the request:
         </nodes>
     </loadBalancer>
 
-**Example Create load balancer with IPv4/IPv6: JSON request**
+**Example Create load balancer with Shared IPv4/IPv6: JSON request**
 
 .. code::
 
@@ -304,7 +304,7 @@ The following table shows the body parameters for the request:
         }
     }
 
-**Example Create load balancer with IPv4/IPv6: XML request**
+**Example Create load balancer with Shared IPv4/IPv6: XML request**
 
 .. code::
 
@@ -598,7 +598,7 @@ The following table shows the body parameters for the response:
         <sourceAddresses ipv4Servicenet="10.0.0.0" ipv4Public="10.12.99.29" ipv6Public="2001:4801:79f1:1::3/64"/>
     </loadBalancer>
 
-**Example Create load balancer with IPv4/IPv6: JSON response**
+**Example Create load balancer with Shared IPv4/IPv6: JSON response**
 
 .. code::
 
@@ -658,7 +658,7 @@ The following table shows the body parameters for the response:
         }
     }
 
-**Example Create load balancer with IPv4/IPv6: XML response**
+**Example Create load balancer with Shared IPv4/IPv6: XML response**
 
 .. code::
 
