@@ -79,9 +79,9 @@ portion  of the following URI:
 
 Rate limits are applied in order relative to the method, going from least to
 most specific. For example, although the threshold for **POST** requests to
-``/v1.0/*``  is 25 per minute, you cannot send a **POST** request to ``/v1.0/*``
-more than 2  times per second because the rate limit for any **POST** request
-is 2 per second.  If you exceed the limits established for your account, a
+``/v1.0/*``  is 300 per minute, you cannot send a **POST** request to ``/v1.0/*``
+more than 5  times per second because the rate limit for any **POST** request
+is 5 per second.  If you exceed the limits established for your account, a
 ``413 (Rate Control)`` HTTP  response is returned with a ``Retry-After`` header
 to notify the client when it can  attempt to try again.
 
