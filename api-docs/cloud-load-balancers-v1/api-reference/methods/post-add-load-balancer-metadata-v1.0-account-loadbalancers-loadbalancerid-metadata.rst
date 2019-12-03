@@ -99,6 +99,7 @@ The following table shows the body parameters for the request:
 
     {
       "meta": {
+        "key":"color",
         "value":"blue"
       }
     }
