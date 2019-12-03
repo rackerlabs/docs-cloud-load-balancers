@@ -109,7 +109,7 @@ The following table shows the body parameters for the request:
 .. code::
 
 <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <meta key="xml wheight">100</meta>
+    <meta key="xml weight">100</meta>
     <meta key="xml color">blue</meta>
 </metadata>
 
