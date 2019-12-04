@@ -7,7 +7,7 @@ Add load balancer node metadata item
 
     POST /v1.0/{account}/loadbalancers/{loadBalancerId}/nodes/{nodeId}/metadata
 
-Adds a metadata item to a specified node and load balancer.
+Adds a metadata item to a specified node.
 
 When a metadata item is added, it is assigned a unique identifier that can be
 used for mutating operations such as changing the value attribute or removing
