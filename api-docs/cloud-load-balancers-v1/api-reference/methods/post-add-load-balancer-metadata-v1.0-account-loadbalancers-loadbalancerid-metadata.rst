@@ -108,26 +108,30 @@ The following table shows the body parameters for the request:
 
 .. code::
 
-<metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <meta key="xml color">blue</meta>
-</metadata>
+    <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <meta key="xml color">blue</meta>
+    </metadata>
 
 Response
 --------
 **Example Add load balancer metadata: JSON response**
 
-{
-    "metadata": [
-        {
-            "value": "blue",
-            "key": "color",
-            "id": 1
-        }
-    ]
-}
+.. code::
+
+    {
+        "metadata": [
+            {
+                "value": "blue",
+                "key": "color",
+                "id": 1
+            }
+        ]
+    }
 
 **Example Add load balancer metadata: XML response**
 
-<metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <meta id="1" key="xml color">blue</meta>
-</metadata>
+.. code::
+
+    <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+        <meta id="1" key="xml color">blue</meta>
+    </metadata>
