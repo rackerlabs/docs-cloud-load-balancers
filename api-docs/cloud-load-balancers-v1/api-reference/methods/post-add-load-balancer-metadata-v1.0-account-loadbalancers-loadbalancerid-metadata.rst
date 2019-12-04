@@ -109,12 +109,24 @@ The following table shows the body parameters for the request:
 .. code::
 
 <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <meta key="xml weight">100</meta>
     <meta key="xml color">blue</meta>
 </metadata>
 
 Response
 --------
+**Example Add load balancer metadata: JSON response**
 
+{
+    "metadata": [
+        {
+            "value": "blue",
+            "key": "color",
+        }
+    ]
+}
 
-This operation does not return a response body.
+**Example Add load balancer metadata: XML response**
+
+<metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+    <meta id="7" key="xml color">blue</meta>
+</metadata>
