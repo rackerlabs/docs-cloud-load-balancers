@@ -121,6 +121,7 @@ Response
         {
             "value": "blue",
             "key": "color",
+            "id": 1
         }
     ]
 }
@@ -128,5 +129,5 @@ Response
 **Example Add load balancer metadata: XML response**
 
 <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-    <meta id="7" key="xml color">blue</meta>
+    <meta id="1" key="xml color">blue</meta>
 </metadata>
