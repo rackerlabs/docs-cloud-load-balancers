@@ -7,7 +7,7 @@ Show load balancer node metadata item
 
     GET /v1.0/{account}/loadbalancers/{loadBalancerId}/nodes/{nodeId}/metadata/{metaId}
 
-Shows details for a specified metadata item for a specified node and load balancer.
+Shows details for a specified metadata item for a specified node of the load balancer.
 
 The following table shows the possible response codes for this operation:
 
