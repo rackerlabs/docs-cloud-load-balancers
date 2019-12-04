@@ -94,4 +94,4 @@ Response
 
 .. code::
 
-    <metadata xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="1" key="color">red</meta>
+    <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="1" key="color">red</meta>
