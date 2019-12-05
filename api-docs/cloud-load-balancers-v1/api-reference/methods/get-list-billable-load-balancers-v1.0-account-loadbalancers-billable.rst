@@ -121,76 +121,54 @@ Response
 
 .. code::
 
-    {
-        "loadBalancers": [
-            {
-                "name": "lb01",
-                "id": 761,
-                "port": 80,
-                "protocol": "HTTP",
-                "algorithm": "RANDOM",
-                "status": "DELETED",
-                "timeout": 30,
-                "nodeCount": 2,
-                "created": {
-                    "time": "2012-01-23T17:09:08-06:00"
+        {
+            "loadBalancers": [
+                {
+                    "timeout": 30,
+                    "created": {
+                        "time": "2019-11-06T17:33:29Z"
+                    },
+                    "updated": {
+                        "time": "2019-12-04T16:27:58Z"
+                    },
+                    "nodeCount": 1,
+                    "algorithm": "RANDOM",
+                    "status": "DELETED",
+                    "name": "a-new-loadbalancer",
+                    "id": 320029,
+                    "protocol": "HTTP",
+                    "port": 80
                 },
-                "updated": {
-                    "time": "2012-01-27T15:15:58-06:00"
+                {
+                    "timeout": 30,
+                    "created": {
+                        "time": "2019-11-06T17:37:25Z"
+                    },
+                    "updated": {
+                        "time": "2019-12-04T16:27:59Z"
+                    },
+                    "nodeCount": 1,
+                    "algorithm": "RANDOM",
+                    "status": "DELETED",
+                    "name": "a-new-loadbalancer",
+                    "id": 320032,
+                    "protocol": "HTTP",
+                    "port": 80
                 }
-            },
-            {
-                "name": "lb02",
-                "id": 762,
-                "port": 80,
-                "protocol": "HTTP",
-                "algorithm": "RANDOM",
-                "status": "DELETED",
-                "timeout": 30,
-                "nodeCount": 2,
-                "created": {
-                    "time": "2012-01-23T17:10:30-06:00"
-                },
-                "updated": {
-                    "time": "2012-01-27T15:26:47-06:00"
-                }
-            }
-        ],
-        "links": [
-            {
-                "otherAttributes": {},
-                "href": "http://localhost:8080/lb-mgmt-rest-service/528830/loadbalancers/billable?startTime=2012-01-27&endTime=2012-02-26&offset=4&limit=2",
-                "rel": "next"
-            },
-            {
-                "otherAttributes": {},
-                "href": "http://localhost:8080/lb-mgmt-rest-service/528830/loadbalancers/billable?startTime=2012-01-27&endTime=2012-02-26&offset=0&limit=2",
-                "rel": "previous"
-            }
-        ]
-    }
+            ]
+        }
 
 **Example List billable load balancers: XML response**
 
 .. code::
 
-    <loadBalancers
-        xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
-        xmlns:atom="http://www.w3.org/2005/Atom">
-        <loadBalancer id="761" name="lb01" algorithm="RANDOM"
-            protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="2">
-            <created time="2012-01-23T17:09:08-06:00"/>
-            <updated time="2012-01-27T15:15:58-06:00"/>
-        </loadBalancer>
-        <loadBalancer id="762" name="lb02" algorithm="RANDOM"
-            protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="2">
-            <created time="2012-01-23T17:10:30-06:00"/>
-            <updated time="2012-01-27T15:26:47-06:00"/>
-        </loadBalancer>
-        <atom:link
-            href="http://localhost:8080/lb-mgmt-rest-service/528830/loadbalancers/billable?startTime=2012-01-27&amp;endTime=2012-02-26&amp;offset=4&amp;limit=2"
-            rel="next"/>
-        <atom:link
-            href="http://localhost:8080/lb-mgmt-rest-service/528830/loadbalancers/billable?startTime=2012-01-27&amp;endTime=2012-02-26&amp;offset=0&amp;limit=2"
-            rel="previous"/>
-    </loadBalancers>
+        <loadBalancers xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
+            <loadBalancer id="320029" name="a-new-loadbalancer" algorithm="RANDOM" protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="1">
+                <created time="2019-11-06T17:33:29Z"/>
+                <updated time="2019-12-04T16:27:58Z"/>
+            </loadBalancer>
+            <loadBalancer id="320032" name="a-new-loadbalancer" algorithm="RANDOM" protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="1">
+                <created time="2019-11-06T17:37:25Z"/>
+                <updated time="2019-12-04T16:27:59Z"/>
+            </loadBalancer>
+        </loadBalancers>

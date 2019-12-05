@@ -86,34 +86,48 @@ Response
 
 .. code::
 
-    {
-        "links": [],
-        "loadBalancerUsageRecord": [
-            {
-                "id": 42030,
-                "startTime": "2014-06-25T15:00:00-05:00",
-                "endTime": "2014-06-25T16:00:00-05:00",
-                "outgoingTransfer": 0,
-                "incomingTransfer": 0,
-                "outgoingTransferSsl": 0,
-                "incomingTransferSsl": 0,
-                "numVips": 1,
-                "vipType": "PUBLIC",
-                "averageNumConnections": 0,
-                "averageNumConnectionsSsl": 0,
-                "numPolls": 0,
-                "eventType": "DELETE_LOADBALANCER",
-                "sslMode": "OFF"
-            }
-        ]
-    }
+        {
+            "loadBalancerUsageRecords": [
+                {
+                    "averageNumConnections": 0.0,
+                    "averageNumConnectionsSsl": 0.0,
+                    "numPolls": 2,
+                    "sslMode": "OFF",
+                    "outgoingTransfer": 0,
+                    "incomingTransfer": 0,
+                    "outgoingTransferSsl": 0,
+                    "incomingTransferSsl": 0,
+                    "numVips": 1,
+                    "endTime": "2019-12-05T19:00:00Z",
+                    "vipType": "PUBLIC",
+                    "startTime": "2019-12-05T18:55:56Z",
+                    "eventType": "CREATE_LOADBALANCER",
+                    "id": 11007607
+                },
+                {
+                    "averageNumConnections": 0.0,
+                    "averageNumConnectionsSsl": 0.0,
+                    "numPolls": 12,
+                    "sslMode": "OFF",
+                    "outgoingTransfer": 89,
+                    "incomingTransfer": 710,
+                    "outgoingTransferSsl": 0,
+                    "incomingTransferSsl": 0,
+                    "numVips": 1,
+                    "endTime": "2019-12-05T20:00:00Z",
+                    "vipType": "PUBLIC",
+                    "startTime": "2019-12-05T19:00:00Z",
+                    "id": 11007946
+                }
+            ],
+            "links": []
+        }
 
 **Example Show current usage: XML response**
 
 .. code::
 
-      	<loadBalancerUsageRecord id="42030" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0"
-                 averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1"
-                 numPolls="0" startTime="2014-06-25T15:00:00-05:00" endTime="2014-06-25T16:00:00-05:00"
-                 vipType="PUBLIC" sslMode="OFF" eventType="DELETE_LOADBALANCER">
-        </loadBalancerUsageRecord>
+        <loadBalancerUsage xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
+            <loadBalancerUsageRecord id="11007607" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0" averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="2" startTime="2019-12-05T18:55:56Z" endTime="2019-12-05T19:00:00Z" vipType="PUBLIC" sslMode="OFF" eventType="CREATE_LOADBALANCER"/>
+            <loadBalancerUsageRecord id="11007946" averageNumConnections="0.0" incomingTransfer="710" outgoingTransfer="89" averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="12" startTime="2019-12-05T19:00:00Z" endTime="2019-12-05T20:00:00Z" vipType="PUBLIC" sslMode="OFF"/>
+        </loadBalancerUsage>

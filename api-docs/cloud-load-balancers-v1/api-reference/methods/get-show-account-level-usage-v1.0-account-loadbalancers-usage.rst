@@ -113,59 +113,63 @@ Response
 
 .. code::
 
-    {
-        "accountId": 548939,
-        "accountUsage": {
-            "accountUsageRecords": [
-                {
-                    "startTime": "2014-03-13T12:03:51-05:00",
-                    "numLoadBalancers": 4,
-                    "numPublicVips": 4,
-                    "numServicenetVips": 0
-                }
-            ],
-            "links": []
-        },
-        "loadBalancerUsages": [
-            {
-                "loadBalancerId": 2000,
-                "loadBalancerName": "dev-testing",
+        {
+            "accountUsage": {
                 "links": [],
-                "loadBalancerUsageRecords": [
+                "accountUsageRecords": [
                     {
-                        "id": 22591,
-                        "startTime": "2014-04-08T10:00:00-05:00",
-                        "endTime": "2014-04-08T10:37:39-05:00",
-                        "outgoingTransfer": 0,
-                        "incomingTransfer": 0,
-                        "outgoingTransferSsl": 0,
-                        "incomingTransferSsl": 0,
-                        "numVips": 1,
-                        "vipType": "PUBLIC",
-                        "averageNumConnections": 0,
-                        "averageNumConnectionsSsl": 0,
-                        "numPolls": 1,
-                        "eventType": "DELETE_LOADBALANCER",
-                        "sslMode": "OFF"
+                        "numLoadBalancers": 0,
+                        "numPublicVips": 0,
+                        "numServicenetVips": 0,
+                        "startTime": "2019-12-05T00:00:00Z"
+                    },
+                    {
+                        "numLoadBalancers": 1,
+                        "numPublicVips": 1,
+                        "numServicenetVips": 0,
+                        "startTime": "2019-12-05T18:55:56Z"
                     }
                 ]
-            }
-        ]
-    }
+            },
+            "loadBalancerUsages": [
+                {
+                    "loadBalancerUsageRecords": [
+                        {
+                            "averageNumConnections": 0.0,
+                            "averageNumConnectionsSsl": 0.0,
+                            "numPolls": 2,
+                            "sslMode": "OFF",
+                            "outgoingTransfer": 0,
+                            "incomingTransfer": 0,
+                            "outgoingTransferSsl": 0,
+                            "incomingTransferSsl": 0,
+                            "numVips": 1,
+                            "endTime": "2019-12-05T19:00:00Z",
+                            "vipType": "PUBLIC",
+                            "startTime": "2019-12-05T18:55:56Z",
+                            "eventType": "CREATE_LOADBALANCER",
+                            "id": 11007607
+                        }
+                    ],
+                    "links": [],
+                    "loadBalancerId": 331456,
+                    "loadBalancerName": "a-new-loadbalancer"
+                }
+            ],
+            "accountId": 5806065
+        }
 
 **Example Show account-level usage: XML response**
 
 .. code::
 
-       	<accountBilling xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" accountId="548939">
-            <accountusage>
-                <accountUsageRecord  numLoadBalancers="4" numPublicVips="4" numServicenetVips="0"
-                startTime="2014-03-13T12:03:51-05:00"/>
+        <accountBilling xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom" accountId="5806065">
+            <accountUsage>
+                <accountUsageRecord numLoadBalancers="0" numPublicVips="0" numServicenetVips="0" startTime="2019-12-05T00:00:00Z"/>
+                <accountUsageRecord numLoadBalancers="1" numPublicVips="1" numServicenetVips="0" startTime="2019-12-05T18:55:56Z"/>
             </accountUsage>
-            <loadBalancerUsage loadBalancerId="2000" loadBalancerName="dev-testing">
-                <loadBalancerUsageRecord id="22591" averageNumConnections="0.0" incomingTransfer="0"
-                outgoingTransfer="0" averageNumConnectionsSsl="0.0" incomingTransferSsl="0"
-                outgoingTransferSsl="0" numVips="0" numPolls="0" startTime="2014-04-08T10:00:00-05:00"
-                endTime="2014-04-08T10:37:39-05:00" vipType="PUBLIC" sslMode="OFF" eventType="DELETE_LOADBALANCER"/>
+            <loadBalancerUsage loadBalancerId="331456" loadBalancerName="a-new-loadbalancer">
+                <loadBalancerUsageRecord id="11007607" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0" averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="2" startTime="2019-12-05T18:55:56Z" endTime="2019-12-05T19:00:00Z" vipType="PUBLIC" sslMode="OFF" eventType="CREATE_LOADBALANCER"/>
+                <loadBalancerUsageRecord id="11007946" averageNumConnections="0.0" incomingTransfer="710" outgoingTransfer="89" averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="12" startTime="2019-12-05T19:00:00Z" endTime="2019-12-05T20:00:00Z" vipType="PUBLIC" sslMode="OFF"/>
             </loadBalancerUsage>
         </accountBilling>
