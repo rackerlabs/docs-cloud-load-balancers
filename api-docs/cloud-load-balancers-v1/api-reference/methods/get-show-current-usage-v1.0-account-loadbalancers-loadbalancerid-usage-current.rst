@@ -113,7 +113,7 @@ Response
 .. code::
 
       	<loadBalancerUsageRecord id="42030" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0"
-                 averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="0"
-                 startTime="2014-06-25T15:00:00-05:00" endTime="2014-06-25T16:00:00-05:00" vipType="PUBLIC"
-                 sslMode="OFF" eventType="DELETE_LOADBALANCER">
+                 averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1"
+                 numPolls="0" startTime="2014-06-25T15:00:00-05:00" endTime="2014-06-25T16:00:00-05:00"
+                 vipType="PUBLIC" sslMode="OFF" eventType="DELETE_LOADBALANCER">
         </loadBalancerUsageRecord>
