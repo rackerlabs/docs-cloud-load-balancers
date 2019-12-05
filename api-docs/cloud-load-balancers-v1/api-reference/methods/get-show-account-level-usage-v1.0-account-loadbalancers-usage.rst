@@ -23,7 +23,7 @@ is returned up to the ``endTime``  specified.
 
 .. note::
 
-   Historical usage data is available for up to 90 days of service activity.
+   Account-level usage data is available for up to 90 days of service activity.
 
 The following table shows the possible response codes for this operation:
 
@@ -157,31 +157,13 @@ Response
 .. code::
 
     <?xml version="1.0" encoding="UTF-8" ?>
-    	<accountId>548939</accountId>
+    	<accountBilling xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" accountId="548939">
             <accountusage>
-    		<accountUsageRecords>
-    			<startTime>2014-03-13T12:03:51-05:00</startTime>
-    			<numLoadBalancers>4</numLoadBalancers>
-    			<numPublicVips>4</numPublicVips>
-    			<numServicenetVips>0</numServicenetVips>
-    		</accountUsageRecords>
-    	</accountUsage>
-    	<loadBalancerUsages>
-    		<loadBalancerId>2000</loadBalancerId>
-    		<loadBalancerName>dev-testing</loadBalancerName>
-    		<loadBalancerUsageRecords>
-    			<id>22591</id>
-    			<startTime>2014-04-08T10:00:00-05:00</startTime>
-    			<endTime>2014-04-08T10:37:39-05:00</endTime>
-    			<outgoingTransfer>0</outgoingTransfer>
-    			<incomingTransfer>0</incomingTransfer>
-    			<outgoingTransferSsl>0</outgoingTransferSsl>
-    			<incomingTransferSsl>0</incomingTransferSsl>
-    			<numVips>1</numVips>
-    			<vipType>PUBLIC</vipType>
-    			<averageNumConnections>0</averageNumConnections>
-    			<averageNumConnectionsSsl>0</averageNumConnectionsSsl>
-    			<numPolls>1</numPolls>
-    			<sslMode>OFF</sslMode>
-    		</loadBalancerUsageRecords>
-    	</loadBalancerUsages>
+                <accountUsageRecord  numLoadBalancers="4" numPublicVips="4" numServicenetVips="0" startTime="2014-03-13T12:03:51-05:00"/>
+            </accountUsage>
+            <loadBalancerUsage loadBalancerId="2000" loadBalancerName="dev-testing">
+                <loadBalancerUsageRecord id="22591" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0"
+                 averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="0" numPolls="0"
+                 startTime="2014-04-08T10:00:00-05:00" endTime="2014-04-08T10:37:39-05:00" vipType="PUBLIC" sslMode="OFF"/>
+            </loadBalancerUsage>
+        </accountBilling>

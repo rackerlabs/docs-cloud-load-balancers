@@ -24,7 +24,7 @@ all usage is returned up to the ``endTime`` specified.
 
 .. note::
 
-   Historical usage data is available for up to 90 days of service activity.
+   List billable load balancers usage data is available for up to 90 days of service activity.
 
 The following table shows the possible response codes for this operation:
 
