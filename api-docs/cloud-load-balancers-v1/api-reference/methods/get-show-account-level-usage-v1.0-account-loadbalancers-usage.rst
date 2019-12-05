@@ -145,6 +145,7 @@ Response
                         "averageNumConnections": 0,
                         "averageNumConnectionsSsl": 0,
                         "numPolls": 1,
+                        "eventType": "DELETE_LOADBALANCER",
                         "sslMode": "OFF"
                     }
                 ]
@@ -156,14 +157,14 @@ Response
 
 .. code::
 
-    <?xml version="1.0" encoding="UTF-8" ?>
-    	<accountBilling xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" accountId="548939">
+       	<accountBilling xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" accountId="548939">
             <accountusage>
                 <accountUsageRecord  numLoadBalancers="4" numPublicVips="4" numServicenetVips="0" startTime="2014-03-13T12:03:51-05:00"/>
             </accountUsage>
             <loadBalancerUsage loadBalancerId="2000" loadBalancerName="dev-testing">
                 <loadBalancerUsageRecord id="22591" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0"
                  averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="0" numPolls="0"
-                 startTime="2014-04-08T10:00:00-05:00" endTime="2014-04-08T10:37:39-05:00" vipType="PUBLIC" sslMode="OFF"/>
+                 startTime="2014-04-08T10:00:00-05:00" endTime="2014-04-08T10:37:39-05:00" vipType="PUBLIC"
+                 sslMode="OFF" eventType="DELETE_LOADBALANCER"/>
             </loadBalancerUsage>
         </accountBilling>

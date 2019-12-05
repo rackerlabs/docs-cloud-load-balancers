@@ -13,12 +13,7 @@ The load balancer usage reports provide a view of all transfer activity,
 average number of connections, and number of virtual IPs associated with the
 load balancing service. Current usage represents all usage recorded within the
 preceding 24 hours. Values for both ``incomingTransfer`` and
-``outgoingTransfer`` are expressed in bytes transferred. The optional
-``startTime`` and ``endTime`` parameters can be used to filter all usage. If
-the ``startTime`` parameter is supplied but the ``endTime`` parameter is not,
-then all usage beginning with the ``startTime`` is provided. Likewise, if the
-``endTime`` parameter is supplied but the ``startTime`` parameter is not, then
-all usage is returned up to the ``endTime`` specified. The following table
+``outgoingTransfer`` are expressed in bytes transferred. The following table
 shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
@@ -81,25 +76,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-The following table shows the query parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|startTime                 |Date                     |If the startTime         |
-|                          |                         |parameter is supplied    |
-|                          |                         |but the endTime          |
-|                          |                         |parameter is not, all    |
-|                          |                         |usage beginning with the |
-|                          |                         |startTime is returned.   |
-+--------------------------+-------------------------+-------------------------+
-|endTime                   |Date                     |If the endTime parameter |
-|                          |                         |is supplied but the      |
-|                          |                         |startTime parameter is   |
-|                          |                         |not, all usage up to the |
-|                          |                         |endTime is returned.     |
-+--------------------------+-------------------------+-------------------------+
-
 This operation does not accept a request body.
 
 Response
@@ -112,7 +88,7 @@ Response
 
     {
         "links": [],
-        "loadBalancerUsageRecords": [
+        "loadBalancerUsageRecord": [
             {
                 "id": 42030,
                 "startTime": "2014-06-25T15:00:00-05:00",
@@ -126,6 +102,7 @@ Response
                 "averageNumConnections": 0,
                 "averageNumConnectionsSsl": 0,
                 "numPolls": 0,
+                "eventType": "DELETE_LOADBALANCER",
                 "sslMode": "OFF"
             }
         ]
@@ -135,19 +112,8 @@ Response
 
 .. code::
 
-    <?xml version="1.0" encoding="UTF-8" ?>
-    	<loadBalancerUsageRecords>
-    		<id>42030</id>
-    		<startTime>2014-06-25T15:00:00-05:00</startTime>
-    		<endTime>2014-06-25T16:00:00-05:00</endTime>
-    		<outgoingTransfer>0</outgoingTransfer>
-    		<incomingTransfer>0</incomingTransfer>
-    		<outgoingTransferSsl>0</outgoingTransferSsl>
-    		<incomingTransferSsl>0</incomingTransferSsl>
-    		<numVips>1</numVips>
-    		<vipType>PUBLIC</vipType>
-    		<averageNumConnections>0</averageNumConnections>
-    		<averageNumConnectionsSsl>0</averageNumConnectionsSsl>
-    		<numPolls>0</numPolls>
-    		<sslMode>OFF</sslMode>
-    	</loadBalancerUsageRecords>
+      	<loadBalancerUsageRecord id="42030" averageNumConnections="0.0" incomingTransfer="0" outgoingTransfer="0"
+                 averageNumConnectionsSsl="0.0" incomingTransferSsl="0" outgoingTransferSsl="0" numVips="1" numPolls="0"
+                 startTime="2014-06-25T15:00:00-05:00" endTime="2014-06-25T16:00:00-05:00" vipType="PUBLIC"
+                 sslMode="OFF" eventType="DELETE_LOADBALANCER">
+        </loadBalancerUsageRecord>

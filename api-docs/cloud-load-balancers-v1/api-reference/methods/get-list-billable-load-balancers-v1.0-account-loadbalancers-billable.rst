@@ -130,6 +130,8 @@ Response
                 "protocol": "HTTP",
                 "algorithm": "RANDOM",
                 "status": "DELETED",
+                "timeout": 30,
+                "nodeCount": 2,
                 "created": {
                     "time": "2012-01-23T17:09:08-06:00"
                 },
@@ -144,6 +146,8 @@ Response
                 "protocol": "HTTP",
                 "algorithm": "RANDOM",
                 "status": "DELETED",
+                "timeout": 30,
+                "nodeCount": 2,
                 "created": {
                     "time": "2012-01-23T17:10:30-06:00"
                 },
@@ -174,12 +178,12 @@ Response
         xmlns="http://docs.openstack.org/loadbalancers/api/v1.0"
         xmlns:atom="http://www.w3.org/2005/Atom">
         <loadBalancer id="761" name="lb01" algorithm="RANDOM"
-            protocol="HTTP" port="80" status="DELETED">
+            protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="2">
             <created time="2012-01-23T17:09:08-06:00"/>
             <updated time="2012-01-27T15:15:58-06:00"/>
         </loadBalancer>
         <loadBalancer id="762" name="lb02" algorithm="RANDOM"
-            protocol="HTTP" port="80" status="DELETED">
+            protocol="HTTP" port="80" status="DELETED" timeout="30" nodeCount="2">
             <created time="2012-01-23T17:10:30-06:00"/>
             <updated time="2012-01-27T15:26:47-06:00"/>
         </loadBalancer>
