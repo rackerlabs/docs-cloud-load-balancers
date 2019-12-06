@@ -127,6 +127,15 @@ request must be approved internally before limits can be modified.
    * - ACCESS_LIST_LIMIT
      - Total number of network items that can be added to a load balancer
      - 100
+   * - NODE_META_LIMIT
+     - Total number of node metadata items that can be added to a load balancer
+     - 25
+   * - CERTIFICATE_MAPPING_LIMIT
+     - Total number of certificate mappings that can be added to a load balancer
+     - 20
+   * - LOADBALANCER_META_LIMIT
+     - Total number of load balancer metadata items that can be added to a load balancer
+     - 25
 
 To find your current account settings for these limits, see
 :ref:`Retrieve account limits <determine-limits>`.
@@ -213,6 +222,9 @@ These operations do not require a request body.
             <limit name="BATCH_DELETE_LIMIT" value="10"/>
             <limit name="ACCESS_LIST_LIMIT" value="100"/>
             <limit name="NODE_LIMIT" value="25"/>
+            <limit name="NODE_META_LIMIT" value="25"/>
+            <limit name="CERTIFICATE_MAPPING_LIMIT" value="20"/>
+            <limit name="LOADBALANCER_META_LIMIT" value="25"/>
         </absolute>
     </limits>
 
@@ -227,6 +239,9 @@ These operations do not require a request body.
                 {"name":"LOADBALANCER_LIMIT","value":25},
                 {"name":"BATCH_DELETE_LIMIT","value":10},
                 {"name":"ACCESS_LIST_LIMIT","value":100},
-                {"name":"NODE_LIMIT","value":25}
+                {"name":"NODE_LIMIT","value":25},
+                {"name":"NODE_META_LIMIT","value":25},
+                {"name":"CERTIFICATE_MAPPING_LIMIT","value":20},
+                {"name":"LOADBALANCER_META_LIMIT","value":25}
             ]
     }
