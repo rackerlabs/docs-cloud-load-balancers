@@ -15,12 +15,8 @@ The response is paginated with a default limit of 500 and a maximum limit of
 The load balancer usage reports provide a view of all transfer activity,
 average number of connections, and number of virtual IPs associated with the
 load balancing service. Values for both ``incomingTransfer`` and
-``outgoingTransfer`` are expressed in bytes transferred. The optional
-``startTime`` and ``endTime`` parameters can be used to filter all usage. If
-the ``startTime`` parameter is supplied but the ``endTime`` parameter is not,
-then all usage beginning with the ``startTime`` is provided. Likewise, if the
-``endTime`` parameter is supplied but the ``startTime`` parameter is not, then
-all usage is returned up to the ``endTime`` specified.
+``outgoingTransfer`` are expressed in bytes transferred. The
+``startTime`` and ``endTime`` parameters are required.
 
 .. note::
 
@@ -90,18 +86,18 @@ The following table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|startTime                 |Date                     |If the startTime         |
-|                          |                         |parameter is supplied    |
-|                          |                         |but the endTime          |
-|                          |                         |parameter is not, all    |
-|                          |                         |usage beginning with the |
-|                          |                         |startTime is returned.   |
+|startTime                 |Date                     |You must have the        |
+|                          |                         |startTime value          |
+|                          |                         |for this query to work.  |
+|                          |                         |                         |
+|                          |                         |                         |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|endTime                   |Date                     |If the endTime parameter |
-|                          |                         |is supplied but the      |
-|                          |                         |startTime parameter is   |
-|                          |                         |not, all usage up to the |
-|                          |                         |endTime is returned.     |
+|endTime                   |Date                     |You must have the        |
+|                          |                         |endtime value            |
+|                          |                         |for this query to work.  |
+|                          |                         |                         |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 |offset                    |String                   |The pagination offset.   |
 +--------------------------+-------------------------+-------------------------+
