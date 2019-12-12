@@ -109,23 +109,4 @@ The following table shows the body parameters for the request:
 Response
 --------
 
-
-**Example Set custom error page: JSON response**
-
-.. code::
-
-    {"errorpage":
-        {"content":"<html> DEFAULT ERROR PAGE</html>"}
-    }
-
-**Example Set custom error page: XML response**
-
-.. code::
-
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <errorpage xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <content>
-                   <html> DEFAULT ERROR PAGE
-                   </html>
-        </content>
-    </errorpage>
+This operation does not return a response body.
