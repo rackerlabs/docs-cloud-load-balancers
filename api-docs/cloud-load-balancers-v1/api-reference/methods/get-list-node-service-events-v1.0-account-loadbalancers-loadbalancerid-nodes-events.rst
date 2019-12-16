@@ -90,106 +90,89 @@ Response
 
     {"nodeServiceEvents":[
         {
-            "detailedMessage":"Node is ok",
-            "nodeId":373,
-            "id":7,
-            "type":"UPDATE_NODE",
-            "description":"Node '373' status changed to 'ONLINE' for load balancer '323'",
-            "category":"UPDATE",
-            "severity":"INFO",
-            "relativeUri":"/406271/loadbalancers/323/nodes/373/events",
-            "accountId":406271,
-            "loadbalancerId":323,
-            "title":"Node Status Updated",
-            "author":"Rackspace Cloud",
-            "created":"2019-02-12T09:23:36Z"
+            "nodeId": 489709,
+            "detailedMessage": "Response didn't match before 'max_response_len' limit was met (2048 bytes)",
+            "callbackHost": "ztm-n03.staging1.lbaas.rackspace.net",
+            "accountId": 6242798,
+            "loadbalancerId": 315115,
+            "severity": "INFO",
+            "author": "Rackspace Cloud",
+            "created": "2019-10-25T17:50:10Z",
+            "category": "UPDATE",
+            "relativeUri": "/6242798/loadbalancers/315115/nodes/489709/events",
+            "description": "Node '489709' status changed to 'OFFLINE' for load balancer '315115'",
+            "title": "Node Status Updated",
+            "id": 81679,
+            "type": "UPDATE_NODE"
         },
         {
-            "detailedMessage":"Invalid HTTP response received; premature end of headers",
-            "nodeId":373,
-            "id":8,
-            "type":"UPDATE_NODE",
-            "description":"Node '373' status changed to 'OFFLINE' for load balancer '323'",
-            "category":"UPDATE",
-            "severity":"INFO",
-            "relativeUri":"/406271/loadbalancers/323/nodes/373/events",
-            "accountId":406271,
-            "loadbalancerId":323,
-            "title":"Node Status Updated",
-            "author":"Rackspace Cloud",
-            "created":"2019-02-12T09:28:36Z"
+            "nodeId": 489709,
+            "detailedMessage": "Response didn't match before 'max_response_len' limit was met (2048 bytes)",
+            "callbackHost": "ztm-n03.staging1.lbaas.rackspace.net",
+            "accountId": 6242798,
+            "loadbalancerId": 315115,
+            "severity": "INFO",
+            "author": "Rackspace Cloud",
+            "created": "2019-10-25T20:43:17Z",
+            "category": "UPDATE",
+            "relativeUri": "/6242798/loadbalancers/315115/nodes/489709/events",
+            "description": "Node '489709' status changed to 'OFFLINE' for load balancer '315115'",
+            "title": "Node Status Updated",
+            "id": 81721,
+            "type": "UPDATE_NODE"
         }
     ],
-    "links": [
-        {
-            "otherAttributes": {},
-            "href": "http://localhost:8080/528830/loadbalancers/nodes/events?offset=4&limit=2",
-            "rel": "next"
-        },
-        {
-            "otherAttributes": {},
-            "href": "http://localhost:8080/528830/loadbalancers/nodes/events?offset=0&limit=2",
-            "rel": "previous"
-        }
-    ]}
+    "links": []
+    }
 
 **Example List node service events: XML response**
 
 .. code::
 
-    <nodeServiceEvents>
-        <nodeServiceEvent nodeId="373" detailedMessage="Node is ok" id="7"
-                          loadbalancerId="323" accountId="406271" author="Rackspace Cloud" title="Node Status Updated"
-                          description="Node '373' status changed to 'ONLINE' for load balancer '323'" type="UPDATE_NODE"
-                          category="UPDATE" severity="INFO" relativeUri="/406271/loadbalancers/323/nodes/373/events"
-                          created="2019-02-12T09:23:36Z"/>
-        <nodeServiceEvent nodeId="373" detailedMessage="Invalid HTTP response received; premature end of headers" id="8"
-                          loadbalancerId="323" accountId="406271" author="Rackspace Cloud" title="Node Status Updated"
-                          description="Node '373' status changed to 'OFFLINE' for load balancer '323'" type="UPDATE_NODE"
-                          category="UPDATE" severity="INFO" relativeUri="/406271/loadbalancers/323/nodes/373/events"
-                          created="2019-02-12T09:28:36Z"/>
-        <atom:link
-            href="http://localhost:8080/528830/loadbalancers/nodes/events?offset=4&limit=2"
-            rel="next"/>
-        <atom:link
-            href="http://localhost:8080/528830/loadbalancers/nodes/events?offset=0&limit=2"
-            rel="previous"/>
+    <nodeServiceEvents xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" xmlns:atom="http://www.w3.org/2005/Atom">
+        <nodeServiceEvent nodeId="489709" detailedMessage="Invalid HTTP response received; premature end of headers" callbackHost="ztm-n03.staging1.lbaas.rackspace.net"
+        id="81013" loadbalancerId="315115" accountId="6242798" author="Rackspace Cloud" title="Node Status Updated" description="Node '489709' status changed to 'OFFLINE'
+        for load balancer '315115'" type="UPDATE_NODE" category="UPDATE" severity="INFO" relativeUri="/6242798/loadbalancers/315115/nodes/489709/events" created="2019-10-17T17:04:42Z"/>
+        <nodeServiceEvent nodeId="489709" detailedMessage="Node is working" callbackHost="ztm-n03.staging1.lbaas.rackspace.net" id="81016" loadbalancerId="315115"
+        accountId="6242798" author="Rackspace Cloud" title="Node Status Updated" description="Node '489709' status changed to 'ONLINE' for load balancer '315115'"
+        type="UPDATE_NODE" category="UPDATE" severity="INFO" relativeUri="/6242798/loadbalancers/315115/nodes/489709/events" created="2019-10-17T17:08:50Z"/>
     </nodeServiceEvents>
 
 **Example List node service events: ATOM response**
 
 .. code::
 
-    <?xml version='1.0' encoding='UTF-8'?>
-    <feed xmlns="http://www.w3.org/2005/Atom">
-        <link rel="next" href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/events.atom?page=2"/>
-        <title type="text">Node Service Feed</title>
-        <id>406271-loadbalancers-323-nodeservice</id>
-        <author>
-            <name>Rackspace Cloud</name>
-        </author>
-        <entry>
-            <title type="text">Node Status Updated</title>
-            <summary type="text">Node '373' status changed to 'ONLINE' for load balancer '323'</summary>
+        <feed xmlns="http://www.w3.org/2005/Atom">
+            <link rel="next" href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/6242798/loadbalancers/315115/nodes/events.atom?page=2"/>
+            <title type="text">Node Service Feed</title>
+            <id>6242798-loadbalancers-315115-nodeservice</id>
             <author>
                 <name>Rackspace Cloud</name>
             </author>
-            <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
-            <id>406271-loadbalancers-323-nodes-373-events-20123041018230</id>
-            <category term="UPDATE"/>
-            <updated>2019-02-12T09:23:36Z</updated>
-            <content type="text">Node is ok</content>
-        </entry>
-        <entry>
-            <title type="text">Node Status Updated</title>
-            <summary type="text">Node '373' status changed to 'OFFLINE' for load balancer '323'</summary>
-            <author>
-                <name>Rackspace Cloud</name>
-            </author>
-            <link href="http://127.0.0.1:8080/pub/406271/loadbalancers/323/nodes/373/events"/>
-            <id>406271-loadbalancers-323-nodes-373-events-20123041122250</id>
-            <category term="UPDATE"/>
-            <updated>2019-02-12T09:28:36Z</updated>
-            <content type="text">Details: Invalid HTTP response received; premature end of headers</content>
-        </entry>
-    </feed>
+            <entry>
+                <title type="text">Node Status Updated</title>
+                <summary type="text">Node '489709' status changed to 'OFFLINE' for load balancer '315115'</summary>
+                <author>
+                    <name>Rackspace Cloud</name>
+                </author>
+                <link href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/6242798/loadbalancers/315115/nodes/489709/events"/>
+                <id>6242798-loadbalancers-315115-nodes-489709-events-2019290174420</id>
+                <category term="UPDATE"/>
+                <updated>2019-10-17T17:04:42.000Z</updated>
+                <content type="text">Details: Invalid HTTP response received; premature end of headers
+        Callback Host: ztm-n03.staging1.lbaas.rackspace.net</content>
+            </entry>
+            <entry>
+                <title type="text">Node Status Updated</title>
+                <summary type="text">Node '489709' status changed to 'ONLINE' for load balancer '315115'</summary>
+                <author>
+                    <name>Rackspace Cloud</name>
+                </author>
+                <link href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/6242798/loadbalancers/315115/nodes/489709/events"/>
+                <id>6242798-loadbalancers-315115-nodes-489709-events-2019290178500</id>
+                <category term="UPDATE"/>
+                <updated>2019-10-17T17:08:50.000Z</updated>
+                <content type="text">Details: Node is working
+        Callback Host: ztm-n03.staging1.lbaas.rackspace.net</content>
+            </entry>
+        </feed>
