@@ -81,45 +81,63 @@ Response
 
 .. code::
 
-    {"virtualIps": [
         {
-        "id": 1000,
-        "address": "206.10.10.210",
-        "type": "PUBLIC"
+            "virtualIps": [
+                {
+                    "address": "172.25.0.17",
+                    "id": 17,
+                    "type": "PUBLIC",
+                    "ipVersion": "IPV4"
+                },
+                {
+                    "address": "fd00:0000:0000:0101:22d6:5749:0000:0011",
+                    "id": 17,
+                    "type": "PUBLIC",
+                    "ipVersion": "IPV6"
+                }
+            ]
         }
-      ]
-    }
 
 **Example List virtual IPs: XML response**
 
 .. code::
 
-    <virtualIps xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
-        <virtualIp
-            id="1000"
-            address="206.10.10.210"
-            type="PUBLIC"/>
-    </virtualIps>
+        <virtualIps xmlns="http://docs.openstack.org/loadbalancers/api/v1.0">
+            <virtualIp id="17" address="172.25.0.17" ipVersion="IPV4" type="PUBLIC"/>
+            <virtualIp id="17" address="fd00:0000:0000:0101:22d6:5749:0000:0011" ipVersion="IPV6" type="PUBLIC"/>
+        </virtualIps>
 
 **Example List atom virtual IPs: ATOM/XML response**
 
 .. code::
 
-    <?xml version='1.0' encoding='UTF-8'?>
-    <feed xmlns="http://www.w3.org/2005/Atom">
-        <link rel="next"
-              href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141/virtualips.atom?page=2"/>
-        <title type="text">Virtual Ips Feed</title>
-        <id>1234-loadbalancers-141-virtualips</id>
-        <author>
-            <name>Rackspace Cloud</name>
-        </author>
-        <entry>
-            <title type="text">Virtual Ip Successfully Added</title>
-            <summary type="text">Virtual ip successfully added</summary>
-            <link href="https://ord.loadbalancers.api.rackspacecloud.com/v1.0/1234/loadbalancers/141"/>
-            <id>1234-loadbalancers-141-20111011631330</id>
-            <category term="CREATE"/>
-            <updated>2011-04-11T16:31:33.000Z</updated>
-        </entry>
-    </feed>
+        <feed xmlns="http://www.w3.org/2005/Atom">
+            <link rel="next" href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/5806065/loadbalancers/347763/virtualips.atom?page=2"/>
+            <title type="text">Virtual Ips Feed</title>
+            <id>5806065-loadbalancers-347763-virtualips</id>
+            <author>
+                <name>Rackspace Cloud</name>
+            </author>
+            <entry>
+                <title type="text">Virtual Ip Successfully Added</title>
+                <summary type="text">Virtual ip successfully added with address: '184.106.24.17', type: 'PUBLIC'</summary>
+                <author>
+                    <name>cloudUser</name>
+                </author>
+                <link href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/5806065/loadbalancers/347763/virtualips/919"/>
+                <id>5806065-loadbalancers-347763-virtualips-919-20193501825450</id>
+                <category term="CREATE"/>
+                <updated>2019-12-16T18:25:45.000Z</updated>
+            </entry>
+            <entry>
+                <title type="text">Virtual Ip Successfully Added</title>
+                <summary type="text">Virtual ip successfully added with address: '2001:4801:79f1:0100:22d6:5749:0000:0001', type: 'PUBLIC'</summary>
+                <author>
+                    <name>cloudUser</name>
+                </author>
+                <link href="https://staging.ord.loadbalancers.api.rackspacecloud.com/v1.0/5806065/loadbalancers/347763/virtualips/9078732"/>
+                <id>5806065-loadbalancers-347763-virtualips-9078732-20193501825450</id>
+                <category term="CREATE"/>
+                <updated>2019-12-16T18:25:45.000Z</updated>
+            </entry>
+        </feed>
