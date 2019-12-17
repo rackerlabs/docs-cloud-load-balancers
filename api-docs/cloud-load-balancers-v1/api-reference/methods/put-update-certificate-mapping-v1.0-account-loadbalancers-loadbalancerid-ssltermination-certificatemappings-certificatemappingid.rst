@@ -1,5 +1,6 @@
 .. _put-update-certificate-mapping:
 
+
 Update certificate mapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
