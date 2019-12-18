@@ -15,7 +15,7 @@ Bulk-deletes specified virtual IPs.
    at all times. Attempting to delete the last virtual IP results in a 400
    (badRequest) fault. To bulk-delete virtual IPs, provide a query parameter
    list of virtual ip IDs, for example:
-   ``/virtualips?=virtualIpId&id=virtualIpId``.
+   ``/virtualips?id=virtualIpId&id=virtualIpId``.
 
    The current default limit is ten IDs per request. Any and all
    configuration data is immediately purged and is not recoverable. If one or
