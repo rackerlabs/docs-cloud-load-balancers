@@ -1,0 +1,20 @@
+.. version-v1.26.29-release-notes:
+
+v1.26.29, Jan 13th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Resolved bug when retrieving stats for heavy usage load balancers
+- Resolved bug during saving alert notifications
+- Resolved bug in ssl termination creation with https redirect
+
+Known issues
+------------
+
+|no changes|
+
