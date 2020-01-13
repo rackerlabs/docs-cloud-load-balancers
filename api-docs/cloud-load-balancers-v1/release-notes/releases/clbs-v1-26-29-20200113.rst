@@ -11,7 +11,7 @@ Resolved issues
 ---------------
 - Resolved bug when retrieving stats for heavy usage load balancers
 - Resolved bug during saving alert notifications
-- Resolved bug in ssl termination creation with https redirect
+- Resolved bug in SSL termination creation with HTTPS redirect
 
 Known issues
 ------------
