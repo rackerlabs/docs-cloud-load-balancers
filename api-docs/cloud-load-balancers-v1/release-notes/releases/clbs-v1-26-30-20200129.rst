@@ -12,7 +12,7 @@ Resolved issues
 - Resolved bug retrieving AccessList XML
 - Resolved bug in CONNECT HealthMonitor validation
 - Resolved bug in ConnectionLogging protocol validation
-- Resolved performance related bug in handling and detection of deadlock rollbacks
+- Resolved performance-related bug in the handling and detection of deadlock rollbacks
 
 Known issues
 ------------
