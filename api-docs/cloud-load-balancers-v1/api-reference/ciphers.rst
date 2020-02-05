@@ -24,10 +24,9 @@ become insecure. For this reason, use of the ``default`` cipher profile is
 recommended.
 
 .. warning::
-   Only the ``default`` profile is updated to remove insecure ciphers.
-   If you have a load balancer with a cipher profile assigned that uses insecure
-   or weak ciphers, we highly recommended that you assign an updated cipher
-   profile or re-assign the ``default`` profile.
+   The ``default`` profile is a more general cipher that allows for the most
+   clients. This profile is only updated for larger vulnerabilities. Other ciphers
+   are more restrictive for specific security needs.
 
 You can view the list of ciphers enabled on a particular load balancer by
 using the :ref:`List ciphers <get-list-configured-ciphers>` API.
