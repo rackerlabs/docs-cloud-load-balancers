@@ -24,9 +24,12 @@ become insecure. For this reason, use of the ``default`` cipher profile is
 recommended.
 
 .. warning::
-   The ``default`` profile is a more general cipher that allows for the most
-   clients. This profile is only updated for larger vulnerabilities. Other ciphers
-   are more restrictive for specific security needs.
+   The ``default`` profile is a general cipher suite that is designed to
+   accommodate the largest number of possible clients. To accomplish this
+   goal while still providing a base level of security, the ``default`` cipher
+   suite will be updated from time to time to mitigate major vulnerabilities.
+   Other cipher profile suites will be added to accomodate specific security
+   requirements for environments that require stricter compliance.
 
 You can view the list of ciphers enabled on a particular load balancer by
 using the :ref:`List ciphers <get-list-configured-ciphers>` API.
