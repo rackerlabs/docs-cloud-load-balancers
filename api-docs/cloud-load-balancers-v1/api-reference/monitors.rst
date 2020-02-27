@@ -25,7 +25,7 @@ that ensures that you remain up in case your primary node fails.
 Every health monitor has a ``type`` attribute to signify what kind of
 monitor it is.
 
-Table. Health monitor types
+.. table:: Health monitor types
 
 +---------+--------------------------------------+
 | Name    | Description                          |
@@ -51,7 +51,7 @@ post-processing or protocol specific health checks. It includes several
 configurable properties. The following table lists the required and
 optional attributes for Monitor Connections:
 
-Table. Required and Optional Attributes for Monitor Connections
+.. table:: Required and Optional Attributes for Monitor Connections
 
 +----------------------------+----------------------------------------------+----------+
 | Name                       | Description                                  | Required |
@@ -83,7 +83,7 @@ health monitor to specify a host for which the health monitors will
 check. The following table lists the required and optional attributes
 for Monitor HTTP and HTTPS:
 
-Table. Required and Optional Attributes for Monitor HTTP and HTTPS
+.. table:: Required and Optional Attributes for Monitor HTTP and HTTPS
 
 +----------------------------+----------------------------------------------+----------+
 | Name                       | Description                                  | Required |
