@@ -23,7 +23,7 @@ traffic in case the primary node fails. This is an additional feature
 that ensures that you remain up in case your primary node fails.
 
 Every health monitor has a ``type`` attribute to signify what kind of
-monitor it is.
+monitor it is, as shown in the following table:
 
 .. table:: Health monitor types
 
@@ -44,12 +44,15 @@ monitor it is.
   balancer that is enabled or has failed and is in OFFLINE status has its
   status updated to ONLINE regardless of the health of the node.
 
-**Connect Monitor. **\ The monitor connects to each node on its defined
+Connect Monitor
+---------------
+
+The monitor connects to each node on its defined
 port to ensure that the service is listening properly. The connect
 monitor is the most basic type of health check and does no
 post-processing or protocol specific health checks. It includes several
 configurable properties. The following table lists the required and
-optional attributes for Monitor Connections:
+optional attributes for the connect monitor type:
 
 .. table:: Required and Optional Attributes for Monitor Connections
 
@@ -73,7 +76,10 @@ optional attributes for Monitor Connections:
 |                            | connections.                                 |          |
 +----------------------------+----------------------------------------------+----------+
 
-**Monitor HTTP and HTTPS. **\ The HTTP and HTTPS monitor is more
+Monitor HTTP and HTTPS
+----------------------
+
+The HTTP and HTTPS monitor is more
 intelligent than the connect monitor. It is capable of processing an
 HTTP or HTTPS response to determine the condition of a node. It supports
 the same basic properties as the connect monitor and includes additional
@@ -81,7 +87,7 @@ attributes that are used to evaluate the HTTP response. The user can
 supply an optional ``hostHeader`` attribute for the HTTP and HTTPS
 health monitor to specify a host for which the health monitors will
 check. The following table lists the required and optional attributes
-for Monitor HTTP and HTTPS:
+for the HTTP and HTTPS monitor types:
 
 .. table:: Required and Optional Attributes for Monitor HTTP and HTTPS
 
