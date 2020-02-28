@@ -24,7 +24,7 @@ determine the condition of a node. It supports the same basic properties as
 the connect monitor and includes additional attributes that are used to evaluate 
 the HTTP response. You can supply an optional ``hostHeader`` attribute for the 
 HTTP and HTTPS health monitor to specify a host for which the health monitors 
-should check. See:ref:`monitor-attributes`.
+should check. See :ref:`monitor-attributes`.
 
 .. _monitor-attributes:
 
