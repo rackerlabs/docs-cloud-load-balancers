@@ -9,32 +9,33 @@ Show health monitor configuration
 
 Shows the health monitor configuration, if one exists.
 
-**Connect Monitor** 
+**Connect Monitor**
 
-The monitor connects to each node on its defined port to ensure that the service 
-is listening properly. The connect monitor is the most basic type of health check 
-and does no post-processing or protocol-specific health checks. It includes 
-several configurable properties, as shown in the :ref:`monitor-attributes`. 
+The monitor connects to each node on its defined port to ensure that the service
+is listening properly. The connect monitor is the most basic type of health check
+and does no post-processing or protocol-specific health checks. It includes
+several configurable properties, as shown in the :ref:`monitor-attributes`.
 
-**Monitor HTTP and HTTPS** 
+**Monitor HTTP and HTTPS**
 
 The HTTP and HTTPS monitor is more intelligent than
 the connect monitor. It is capable of processing an HTTP or HTTPS response to
 determine the condition of a node. It supports the same basic properties as
-the connect monitor and includes additional attributes that are used to evaluate 
-the HTTP response. You can supply an optional ``hostHeader`` attribute for the 
-HTTP and HTTPS health monitor to specify a host for which the health monitors 
+the connect monitor and includes additional attributes that are used to evaluate
+the HTTP response. You can supply an optional ``hostHeader`` attribute for the
+HTTP and HTTPS health monitor to specify a host for which the health monitors
 should check. See :ref:`monitor-attributes`.
 
 .. _monitor-attributes:
 
-**Monitor Attributes**
+Monitor Attributes
+""""""""""""""""""
 
 The following table lists the required and optional attributes for both Monitor
 Connections and Monitor HTTP and HTTPS:
 
 .. table:: Attributes for Connect Monitor and Monitor HTTP and HTTPS
-    
+
     +----------------------------+----------------------------------------------+----------+
     | Name                       | Description                                  | Required |
     +============================+==============================================+==========+
@@ -56,11 +57,11 @@ Connections and Monitor HTTP and HTTPS:
     +----------------------------+----------------------------------------------+----------+
 
 
-The following table lists the additional required and optional attributes for 
+The following table lists the additional required and optional attributes for
 Monitor HTTP and HTTPS:
 
 .. table:: **Attributes for HTTP and HTTPS Monitor**
-    
+
     +----------------------------+----------------------------------------------+----------+
     | Name                       | Description                                  | Required |
     +============================+==============================================+==========+
