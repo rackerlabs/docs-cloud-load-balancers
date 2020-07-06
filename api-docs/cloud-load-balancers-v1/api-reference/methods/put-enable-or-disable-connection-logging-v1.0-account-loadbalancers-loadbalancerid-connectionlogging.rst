@@ -9,6 +9,10 @@ Enable or disable connection logging
 
 Enables or disables connection logging.
 
+.. note::
+
+   You cannot enable connection logging for User Datagram Protocol (UDP), UDP_STREAM, and DNS_UDP.
+
 The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+

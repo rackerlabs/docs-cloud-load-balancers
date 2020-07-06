@@ -7,7 +7,7 @@ Show load balancer node metadata item
 
     GET /v1.0/{account}/loadbalancers/{loadBalancerId}/nodes/{nodeId}/metadata/{metaId}
 
-Shows details for a specified metadata item for a specified node and load balancer.
+Shows details for a specified metadata item for a specified node of the load balancer.
 
 The following table shows the possible response codes for this operation:
 
@@ -97,4 +97,4 @@ Response
 
 .. code::
 
-    <meta id="1" key="color">red</meta>
+    <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="1" key="color">red</meta>

@@ -76,7 +76,6 @@ The following table shows the URI parameters for the request:
 |                          |                         |balancer.                |
 +--------------------------+-------------------------+-------------------------+
 
-This operation does not accept a request body.
 
 **Example Create or update access list: JSON request**
 
