@@ -44,8 +44,8 @@ As security concerns change, new cipher profiles may be added.
 ====================================== ======= ====================== ======================
                                    Ciphers
 --------------------------------------------------------------------------------------------
-TLS_AES_256_GCM_SHA384                    *
-TLS_AES_128_GCM_SHA256                    *
+TLS_AES_256_GCM_SHA384                    *             *                      *
+TLS_AES_128_GCM_SHA256                    *             *                      *
 SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     *             *                      *
 SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     *             *                      *
 SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     *             *
