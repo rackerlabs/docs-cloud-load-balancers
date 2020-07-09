@@ -42,10 +42,10 @@ The following table provides the available profiles and their associated ciphers
 As security concerns change, new cipher profiles may be added.
 
 ====================================== ======= ====================== ======================
-  Cipher profiles                      default CLBCipherPolicy2017-08 CLBCipherPolicy2019-05
+  Ciphers                              default CLBCipherPolicy2017-08 CLBCipherPolicy2019-05
 ====================================== ======= ====================== ======================
-                                   Ciphers
---------------------------------------------------------------------------------------------
+TLS_AES_256_GCM_SHA384                    *             *                      *
+TLS_AES_128_GCM_SHA256                    *             *                      *
 SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     *             *                      *
 SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     *             *                      *
 SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     *             *
@@ -61,7 +61,8 @@ SSL_RSA_WITH_AES_128_CBC_SHA              *             *
 SSL_RSA_WITH_3DES_EDE_CBC_SHA             *
 ====================================== ======= ====================== ======================
 
-Table. Ciphers statuses
+Cipher Statuses
+~~~~~~~~~~~~~~~
 
 +-----------------+---------------------------------------------------------------------+
 | Name            | Description                                                         |
