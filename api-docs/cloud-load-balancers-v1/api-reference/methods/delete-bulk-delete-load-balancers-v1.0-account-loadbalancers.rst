@@ -14,7 +14,7 @@ The bulk-delete load balancer function removes the specified load balancer and
 its associated configuration from the account. Any and all configuration data is
 immediately purged and is not recoverable.
 
-To bulk-delete load balancers, provide a quesry parameter list of load balancer IDs
+To bulk-delete load balancers, provide a query parameter list of load balancer IDs
 (for example: /loadbalancers?id=<id>&id=<id>). The current default limit is ten IDs
 per request.
 
