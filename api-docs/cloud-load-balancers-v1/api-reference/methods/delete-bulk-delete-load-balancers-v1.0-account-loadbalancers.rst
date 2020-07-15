@@ -15,7 +15,7 @@ its associated configuration from the account. Any and all configuration data is
 immediately purged and is not recoverable.
 
 To bulk-delete load balancers, provide a query parameter list of load balancer IDs
-(for example: /loadbalancers?id=<id>&id=<id>). The current default limit is ten IDs
+(for example: /v1.0/{account}/loadbalancers?id=<id>&id=<id>). The current default limit is ten IDs
 per request.
 
 This operation is an all or nothing proposition. If one or more of the items in
