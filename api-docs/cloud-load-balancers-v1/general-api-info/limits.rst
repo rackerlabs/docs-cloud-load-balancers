@@ -79,9 +79,9 @@ portion  of the following URI:
 
 Rate limits are applied in order relative to the method, going from least to
 most specific. For example, although the threshold for **POST** requests to
-``/v1.0/*``  is 25 per minute, you cannot send a **POST** request to ``/v1.0/*``
-more than 2  times per second because the rate limit for any **POST** request
-is 2 per second.  If you exceed the limits established for your account, a
+``/v1.0/*``  is 300 per minute, you cannot send a **POST** request to ``/v1.0/*``
+more than 5  times per second because the rate limit for any **POST** request
+is 5 per second.  If you exceed the limits established for your account, a
 ``413 (Rate Control)`` HTTP  response is returned with a ``Retry-After`` header
 to notify the client when it can  attempt to try again.
 
@@ -127,6 +127,15 @@ request must be approved internally before limits can be modified.
    * - ACCESS_LIST_LIMIT
      - Total number of network items that can be added to a load balancer
      - 100
+   * - NODE_META_LIMIT
+     - Total number of node metadata items that can be added to a load balancer
+     - 25
+   * - CERTIFICATE_MAPPING_LIMIT
+     - Total number of certificate mappings that can be added to a load balancer
+     - 20
+   * - LOADBALANCER_META_LIMIT
+     - Total number of load balancer metadata items that can be added to a load balancer
+     - 25
 
 To find your current account settings for these limits, see
 :ref:`Retrieve account limits <determine-limits>`.
@@ -163,44 +172,61 @@ These operations do not require a request body.
 
 .. code::
 
-    <limits xmlns="http://docs.openstack.org/common/api/v1.0">
-        <rates>
-            <rate uri="/v1.0/*" regex="^/1.0/.*">
-                <limit
-                    verb="GET"
-                    value="600000"
-                    remaining="426852"
-                    unit="HOUR"
-                    next-available="2011-02-22T19:32:43.835Z"/>
-            </rate>
-        </rates>
-    </limits>
+   <limits xmlns="http://docs.openstack.org/common/api/v1.0">
+       <rates>
+           <rate uri="/v1.0/*" regex=".*/([0-9]+)/loadbalancers.*">
+               <limit verb="GET" value="600" remaining="600" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="PUT" value="600" remaining="600" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="DELETE" value="300" remaining="300" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+               <limit verb="POST" value="300" remaining="300" unit="MINUTE" next-available="2011-02-22T19:32:43.835Z"/>
+           </rate>
+       </rates>
+   </limits>
 
 **Example: Retrieve rate limits: JSON response**
 
 .. code::
 
     {
-        "limits" : {
-            "rate" : {
-                "values": [
-                    {
-                        "uri" : "/v1.0/*",
-                        "regex" : "^/1.0/.*",
-                        "limit" : [
-                            {
-                                "verb" : "GET",
-                                "value" : 600000,
-                                "remaining" : 426852,
-                                "unit" : "HOUR",
-                                "next-available" : "2011-02-22T19:32:43.835Z"
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    }
+       "limits": {
+           "rate": [
+               {
+                   "limit": [
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 600,
+                           "unit": "MINUTE",
+                           "value": 600,
+                           "verb": "GET"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 600,
+                           "unit": "MINUTE",
+                           "value": 600,
+                           "verb": "PUT"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 300,
+                           "unit": "MINUTE",
+                           "value": 300,
+                           "verb": "DELETE"
+                       },
+                       {
+                           "next-available": "2011-02-22T19:32:43.835Z",
+                           "remaining": 300,
+                           "unit": "MINUTE",
+                           "value": 300,
+                           "verb": "POST"
+                       }
+                   ],
+                   "regex": ".*/([0-9]+)/loadbalancers.*",
+                   "uri": "/v1.0/*"
+               }
+           ]
+       }
+   }
 
 **Example: Retrieve absolute limits: XML response**
 
@@ -213,6 +239,9 @@ These operations do not require a request body.
             <limit name="BATCH_DELETE_LIMIT" value="10"/>
             <limit name="ACCESS_LIST_LIMIT" value="100"/>
             <limit name="NODE_LIMIT" value="25"/>
+            <limit name="NODE_META_LIMIT" value="25"/>
+            <limit name="CERTIFICATE_MAPPING_LIMIT" value="20"/>
+            <limit name="LOADBALANCER_META_LIMIT" value="25"/>
         </absolute>
     </limits>
 
@@ -227,6 +256,9 @@ These operations do not require a request body.
                 {"name":"LOADBALANCER_LIMIT","value":25},
                 {"name":"BATCH_DELETE_LIMIT","value":10},
                 {"name":"ACCESS_LIST_LIMIT","value":100},
-                {"name":"NODE_LIMIT","value":25}
+                {"name":"NODE_LIMIT","value":25},
+                {"name":"NODE_META_LIMIT","value":25},
+                {"name":"CERTIFICATE_MAPPING_LIMIT","value":20},
+                {"name":"LOADBALANCER_META_LIMIT","value":25}
             ]
     }

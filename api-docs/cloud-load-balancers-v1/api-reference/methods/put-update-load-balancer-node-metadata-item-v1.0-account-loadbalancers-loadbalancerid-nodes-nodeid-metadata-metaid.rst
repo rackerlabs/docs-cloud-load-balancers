@@ -113,6 +113,20 @@ The following table shows the body parameters for the request:
 
 Response
 --------
+**Example Update load balancer node metadata item: JSON response**
 
+.. code::
 
-This operation does not return a response body.
+    {
+        "meta": {
+            "value": "blue",
+            "key": "color",
+            "id": 1
+        }
+    }
+
+**Example Update load balancer node metadata item: XML response**
+
+.. code::
+
+    <meta xmlns="http://docs.openstack.org/loadbalancers/api/v1.0" id="1" key="xml color">blue</meta>

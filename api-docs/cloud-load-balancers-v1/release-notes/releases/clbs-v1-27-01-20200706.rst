@@ -1,0 +1,18 @@
+.. version-v1.27.01-release-notes:
+
+v1.27.01, Jul 6th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+- vTM REST API updated to v7.0 with backwards compatibility for v3.4
+
+Resolved issues
+---------------
+- Resolved node weight mapping inconsistencies
+
+Known issues
+------------
+
+|no changes|
+

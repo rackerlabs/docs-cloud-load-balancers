@@ -149,3 +149,39 @@ Response
             weight="12"
             type="SECONDARY"/>
     </nodes>
+
+**Example List nodes: ATOM/XML response**
+
+.. code::
+
+    <?xml version='1.0' encoding='UTF-8'?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+        <link rel="next" href="https://localhost/atom/1234567/loadbalancers/35/nodes.atom?page=2"/>
+        <title type="text">Nodes Feed</title>
+        <id>1234567-loadbalancers-35-nodes</id>
+        <author>
+            <name>Rackspace Cloud</name>
+        </author>
+        <entry>
+            <title type="text">Node Successfully Updated</title>
+            <summary type="text">Node successfully updated with address: '10.1.1.12', port: '80', weight: '59', condition: 'DISABLED'</summary>
+            <author>
+                <name>RackspaceDocs</name>
+            </author>
+            <link href="https://localhost/atom/1234567/loadbalancers/35/nodes/59"/>
+            <id>5806065-loadbalancers-35-nodes-59-2020981342390</id>
+            <category term="UPDATE"/>
+            <updated>2020-04-07T18:42:39.000Z</updated>
+        </entry>
+        <entry>
+            <title type="text">Node Successfully Created</title>
+            <summary type="text">Node successfully created with address: '10.1.1.12', port: '80', condition: 'ENABLED', weight: '1'</summary>
+            <author>
+                <name>RackspaceDocs</name>
+            </author>
+            <link href="https://localhost/atom/1234567/loadbalancers/35/nodes/59"/>
+            <id>5806065-loadbalancers-35-nodes-59-202098133120</id>
+            <category term="CREATE"/>
+            <updated>2020-04-07T18:03:12.000Z</updated>
+        </entry>
+    </feed>
