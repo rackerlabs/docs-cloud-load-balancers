@@ -1,0 +1,19 @@
+.. version-v1.27.03-release-notes:
+
+v1.27.03, Aug 12th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Resolved bug when retrieving SslTermination for load balancer
+- Resolved bug leaving load balancer objects after deletion of load balancer
+
+Known issues
+------------
+
+|no changes|
+
