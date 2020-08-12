@@ -9,7 +9,7 @@ What's new
 
 Resolved issues
 ---------------
-- Resolved bug when retrieving SslTermination for load balancer
+- Resolved bug when retrieving SSLTermination for load balancer
 - Resolved bug leaving load balancer objects after deletion of load balancer
 
 Known issues
