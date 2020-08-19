@@ -34,3 +34,4 @@ access between products and services.
    api-behavior
    compatible-shared-load-balancing-protocols
    role-based-access-control
+   http2
