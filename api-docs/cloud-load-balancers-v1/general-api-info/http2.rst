@@ -15,13 +15,13 @@ This allows HTTP/2 enabled clients making request to Cloud Load Balancers
 to take advantage of the performance gains at the load balancer
 without the need to upgrade the server application.
 
-HTTP/2 is enabled by default for all client connections to a configured
-load balancer. If an HTTP/2 client connects to a configured load balancer the
+HTTP/2 is enabled by default for all client connections to a HTTP or
+SSL Terminated load balancers.
+If an HTTP/2 client connects to a configured load balancer the
 HTTP/2 data received from a client will be translated to HTTP/1.1
-before processing it and forwarding it to the load balanced application defined
-by the configured load balancer `nodes`.
+before processing it and forwarding it to the load balancer `nodes`.
 
 Some browsers do not support HTTP/2 over an unencrypted connection.
 To maximize the number of users who can access the service using HTTP/2,
 it is recommended that you enable `SSL Termination` feature for your
-load balancer. 
+load balancer.
