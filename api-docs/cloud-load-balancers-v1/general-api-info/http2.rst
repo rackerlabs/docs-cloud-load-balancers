@@ -11,13 +11,13 @@ most notably by supporting transaction
 multiplexing over a single TCP connection.
 
 HTTP/2 is supported in Cloud Load Balancers for client-side requests.
-This allows HTTP/2 enabled clients making request to Cloud Load Balancers
+This allows HTTP/2 enabled clients making requests to Cloud Load Balancers
 to take advantage of the performance gains at the load balancer
 without the need to upgrade the server application.
 
-HTTP/2 is enabled by default for all client connections to a HTTP or
+HTTP/2 is enabled by default for all client connections to HTTP or
 SSL Terminated load balancers.
-If an HTTP/2 client connects to a configured load balancer the
+If a HTTP/2 client connects to a configured load balancer the
 HTTP/2 data received from a client will be translated to HTTP/1.1
 before processing it and forwarding it to the load balancer `nodes`.
 
