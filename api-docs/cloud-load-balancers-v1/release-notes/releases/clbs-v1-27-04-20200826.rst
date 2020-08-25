@@ -1,0 +1,18 @@
+.. version-v1.27.04-release-notes:
+
+v1.27.04, Aug 26th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+- General API improvements
+
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
