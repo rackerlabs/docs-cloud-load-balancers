@@ -1,0 +1,18 @@
+.. version-v1.27.06-release-notes:
+
+v1.27.06, Sept 29th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+|no changes|
+
+Resolved issues
+---------------
+- Fixed undesirable behavior for x_forwarded_proto
+
+Known issues
+------------
+
+|no changes|
+
