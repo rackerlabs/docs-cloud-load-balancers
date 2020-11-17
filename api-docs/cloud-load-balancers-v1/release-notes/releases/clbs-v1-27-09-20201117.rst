@@ -1,0 +1,24 @@
+.. version-v1.27.09-release-notes:
+
+v1.27.09, Nov 18th, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+-----------
+
+|no changes|
+
+Resolved issues
+---------------
+
+- Resolved bug leaving load balancer objects after deletion
+- Ensures HTTP2 is explicitly enabled for valid load balancers
+- Resolved bug allowing SSL termination to be set on a TCP_CLIENT_FIRST protocol
+- Create metadata request only accepts correct root tags mentioned in docs
+
+
+Known issues
+------------
+
+|no changes|
+
