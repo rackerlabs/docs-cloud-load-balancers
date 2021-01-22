@@ -1,6 +1,6 @@
-.. _get-show-load-balancer-statistics:
+.. _get-show-cluster-source-addresses:
 
-Show load balancer statistics
+Show Cluster Source Addresses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
