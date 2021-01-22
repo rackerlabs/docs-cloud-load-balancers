@@ -10,7 +10,7 @@ Source Addresses
 
 
 Source Addresses are public and private IP addresses that provide details for
-programatically determining the IP addresses of requests coming from the
+programmatically determining the IP addresses of requests coming from the
 load balancers service.
 
 Source Addresses can be obtained directly from the loadbalancer details
