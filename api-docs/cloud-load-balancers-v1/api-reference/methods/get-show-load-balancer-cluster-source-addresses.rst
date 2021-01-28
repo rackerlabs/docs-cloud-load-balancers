@@ -29,10 +29,6 @@ includes failover related hosts used within the cluster.
 |404                       |Not Found                |The requested item was   |
 |                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
-|413                       |Over Limit               |The number of items      |
-|                          |                         |returned is above the    |
-|                          |                         |allowed limit.           |
-+--------------------------+-------------------------+-------------------------+
 |500                       |Load Balancer Fault      |The load balancer        |
 |                          |                         |service has              |
 |                          |                         |experienced a fault.     |
