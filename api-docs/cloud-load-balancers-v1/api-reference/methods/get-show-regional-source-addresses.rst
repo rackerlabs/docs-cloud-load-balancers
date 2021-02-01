@@ -7,7 +7,7 @@ Show Regional Source Addresses
 
     GET /v1.0/{account}/regionalsourceaddresses
 
-Shows all regional source addresses for all the host machines with specific clusterType assocaited with account.
+Shows all regional source addresses for all the host machines with specific clusterType associated with account.
 
 
    The following table shows the possible response codes for this operation:
@@ -108,4 +108,3 @@ Response
             <ipv6Public>2001:0db8:85a3:0000:0000:8a2e:0370:7334</ipv6Public>
         </ipv6Publicnets>
     </regionalSourceAddresses>
-
