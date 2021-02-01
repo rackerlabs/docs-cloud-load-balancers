@@ -37,4 +37,3 @@ panel.
    ciphers
    metadata
    source-addresses
-   regional-source-addresses

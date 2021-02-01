@@ -25,3 +25,4 @@ For further automation capabilities cluster and regional source addresses
 are provided.
 
 .. include:: methods/get-show-load-balancer-cluster-source-addresses.rst
+.. include:: methods/get-show-regional-source-addresses.rst
