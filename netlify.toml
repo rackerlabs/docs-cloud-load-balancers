@@ -14,3 +14,9 @@
 [context.deploy-preview]
   publish = "api-docs/cloud-load-balancers-v1/_build/html"
   command = "cd api-docs/cloud-load-balancers-v1 && make clean html && cd .. && cd .."
+
+[[redirects]]
+  from = "/*"
+  to = "/docs/cloud-load-balancers/v1/:splat"
+  status = 301
+  force = false
