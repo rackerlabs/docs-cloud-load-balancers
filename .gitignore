@@ -1,16 +1,51 @@
 .DS_Store
-target/
-_build/
-doctrees/*
-api-docs/cloud-load-balancer-v1/_build/*
-api-docs/cloud-load-balancer-v2/_build/*
-!.gitignore
-*.iml
-*.iws
-*.ipr
-.maven
-.settings
-.project
-.classpath
-.venv
+*.xpr
 .idea
+.eggs
+
+# Build results
+target/
+/publish-docs/
+/www/output/
+/generated/
+.doctrees
+
+build/
+_build/
+/build-*.log.gz
+*.pdf
+glossary.rst
+*.mo
+
+# Python compiled files
+*.pyc
+
+# Ignore Vagrant Related Files
+acceptance_config.yml
+boxes/*
+/.vagrant
+
+# Testenvironment
+.tox/
+
+# Virtualenv
+.venv/
+ENV/
+
+# Editors
+*~
+.*.swp
+.bak
+/.project
+.python-version
+node_modules
+.vscode
+Gemfile.lock
+.env
+Pipfile.lock
+docs/_build/
+docs/build/
+doc/_build/
+doc/build/
+api-docs/_build/
+api-docs/build/
