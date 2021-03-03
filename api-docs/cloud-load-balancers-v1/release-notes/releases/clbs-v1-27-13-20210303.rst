@@ -1,0 +1,21 @@
+.. version-v1.27.13-release-notes:
+
+v1.27.13, Mar 3rd, 2021
+~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+|no changes|
+
+
+Resolved issues
+---------------
+
+- Resolved improper filtering on source address calls
+
+
+Known issues
+------------
+
+|no changes|
+
