@@ -36,3 +36,4 @@ panel.
    certificatemappings
    ciphers
    metadata
+   source-addresses

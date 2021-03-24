@@ -19,6 +19,8 @@ following release note information.
     :ref:`documentation overview <index>`.
 
 .. include:: releases/clbs-v1-27-16-20200324.rst
+.. include:: releases/clbs-v1-27-13-20210303.rst
+.. include:: releases/clbs-v1-27-12-20200210.rst
 .. include:: releases/clbs-v1-27-09-20201118.rst
 .. include:: releases/clbs-v1-27-07-20201021.rst
 .. include:: releases/clbs-v1-27-06-20200929.rst
