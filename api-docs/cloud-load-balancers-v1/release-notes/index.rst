@@ -18,7 +18,7 @@ following release note information.
     For information about using the API, see the
     :ref:`documentation overview <index>`.
 
-.. include:: releases/clbs-v1-27-19-20210505.rst
+.. include:: releases/clbs-v1-27-19-20210519.rst
 .. include:: releases/clbs-v1-27-18-20210505.rst
 .. include:: releases/clbs-v1-27-17-20210407.rst
 .. include:: releases/clbs-v1-27-16-20200324.rst
