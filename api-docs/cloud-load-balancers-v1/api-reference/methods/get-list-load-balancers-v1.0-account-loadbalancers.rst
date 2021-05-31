@@ -17,6 +17,9 @@ the following attributes:
 *  ``created``
 *  ``updated``
 
+Use the name query parameter to list all the instances of any specific load
+balancer. For example, using the URI ``/loadbalancers?name=a-loadbalancer``
+lists all the loadbalancer instances having the name as "a-loadbalancer".
 Use the changes-since query parameter to list all load balancers that have
 changed since the specified date/time. For example, using the URI
 ``/loadbalancers?changes-since=2011-05-19T08:07:08-0500`` lists all load
@@ -29,8 +32,14 @@ specific node attached to it, use the query parameter nodeaddress to specify
 the IP address or domain name for the desired node. For example, using the URI
 ``/loadbalancers?nodeaddress=10.1.1.1`` searches all load balancers for the
 account for a node with IP address 10.1.1.1, and returns a list including the
-ID, name, and status of all load balancers attached. The following table shows
-the possible response codes for this operation:
+ID, name, and status of all load balancers attached.
+
+.. note::
+
+   While using "nodeaddress" and "name" query params together in a URI please
+   note that nodeaddress takes precedence over name.
+
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
