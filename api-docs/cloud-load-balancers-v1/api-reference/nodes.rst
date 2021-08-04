@@ -121,5 +121,6 @@ Table. Optional attributes
 .. include:: methods/delete-bulk-delete-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
 .. include:: methods/get-show-node-details-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
 .. include:: methods/put-update-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
+.. include:: methods/put-bulk-update-nodes-v1.0-account-loadbalancers-loadbalancerid-nodes.rst
 .. include:: methods/delete-delete-node-v1.0-account-loadbalancers-loadbalancerid-nodes-nodeid.rst
 .. include:: methods/get-list-node-service-events-v1.0-account-loadbalancers-loadbalancerid-nodes-events.rst
