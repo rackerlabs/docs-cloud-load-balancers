@@ -121,7 +121,7 @@ request.
 | (*Optional*)     |             | :ref:`Nodes <nodes>`.                      |
 +------------------+-------------+--------------------------------------------+
 
-**Example Update node: JSON request**
+**Example Update nodes: JSON request**
 
 .. code::
 
@@ -144,6 +144,8 @@ request.
 
 Response
 --------
+
+.. code::
 
     {
         "nodes": [
