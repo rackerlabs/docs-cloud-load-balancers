@@ -100,7 +100,7 @@ request.
 +==================+=============+============================================+
 | **nodeId**       | Integer     |The ID for the node.                        |
 | (*Required*)     |             |                                            |
-+--------------------------+-------------------------+------------------------+
++------------------+-------------+--------------------------------------------+
 | **condition**    | String      | Indicates if the node is ``ENABLED``,      |
 | (*Optional*)     |             | ``DISABLED``, or ``DRAINING``. For more    |
 |                  |             | information, see :ref:`Nodes <nodes>`.     |
@@ -125,47 +125,47 @@ request.
 
 .. code::
 
-{
-   "nodes":[
-      {
-         "condition":"ENABLED",
-         "id":50,
-         "type":"PRIMARY",
-         "weight":1
-      },
-      {
-         "condition":"ENABLED",
-         "id":51,
-         "type":"PRIMARY",
-         "weight":1
-      }
-   ]
-}
+    {
+        "nodes": [
+            {
+                "condition":"ENABLED",
+                "id":50,
+                "type":"PRIMARY",
+                "weight":1
+            },
+            {
+                "condition":"ENABLED",
+                "id":51,
+                "type":"PRIMARY",
+                "weight":1
+            }
+        ]
+    }
 
 Response
 --------
 
-{
-    "nodes": [
-        {
-            "status": "ONLINE",
-            "metadata": [],
-            "address": "10.176.197.163",
-            "id": 50,
-            "type": "PRIMARY",
-            "port": 80,
-            "weight": 1,
-            "condition": "ENABLED"
-        },
-        {
-            "status": "ONLINE",
-            "metadata": [],
-            "address": "10.176.194.38",
-            "id": 51,
-            "type": "PRIMARY",
-            "port": 80,
-            "weight": 1,
-            "condition": "ENABLED"
-        }
-    ]
-}
+    {
+        "nodes": [
+            {
+                "status": "ONLINE",
+                "metadata": [],
+                "address": "10.176.197.163",
+                "id": 50,
+                "type": "PRIMARY",
+                "port": 80,
+                "weight": 1,
+                "condition": "ENABLED"
+            },
+            {
+                "status": "ONLINE",
+                "metadata": [],
+                "address": "10.176.194.38",
+                "id": 51,
+                "type": "PRIMARY",
+                "port": 80,
+                "weight": 1,
+                "condition": "ENABLED"
+            }
+        ]
+    }
