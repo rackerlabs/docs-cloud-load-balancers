@@ -1,0 +1,19 @@
+.. version-v1.27.29-release-notes:
+
+v1.27.29, August 11th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+- General Admin improvements
+- Users can now bulk update nodes on a load balancer.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
+
