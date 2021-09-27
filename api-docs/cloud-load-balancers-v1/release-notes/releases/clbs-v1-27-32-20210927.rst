@@ -1,0 +1,18 @@
+.. version-v1.27.32-release-notes:
+
+v1.27.32, September 27th, 2021
+~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+- General Admin improvements
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
+
