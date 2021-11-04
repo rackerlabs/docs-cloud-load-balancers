@@ -44,21 +44,21 @@ As security concerns change, new cipher profiles may be added.
 ====================================== ======= ====================== ======================
   Ciphers                              default CLBCipherPolicy2017-08 CLBCipherPolicy2019-05
 ====================================== ======= ====================== ======================
-TLS_AES_256_GCM_SHA384                    *             *                      *
-TLS_AES_128_GCM_SHA256                    *             *                      *
-SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     *             *                      *
-SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     *             *                      *
-SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     *             *
-SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA        *             *
-SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256     *             *
-SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA        *             *
-SSL_RSA_WITH_AES_256_GCM_SHA384           *             *
-SSL_RSA_WITH_AES_256_CBC_SHA256           *             *
-SSL_RSA_WITH_AES_256_CBC_SHA              *             *
-SSL_RSA_WITH_AES_128_GCM_SHA256           *             *
-SSL_RSA_WITH_AES_128_CBC_SHA256           *             *
-SSL_RSA_WITH_AES_128_CBC_SHA              *             *
-SSL_RSA_WITH_3DES_EDE_CBC_SHA             *
+TLS_AES_256_GCM_SHA384                    x             x                      x
+TLS_AES_128_GCM_SHA256                    x             x                      x
+SSL_ECDHE_RSA_WITH_AES_256_GCM_SHA384     x             x                      x
+SSL_ECDHE_RSA_WITH_AES_128_GCM_SHA256     x             x                      x
+SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA384     x             x
+SSL_ECDHE_RSA_WITH_AES_256_CBC_SHA        x             x
+SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256     x             x
+SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA        x             x
+SSL_RSA_WITH_AES_256_GCM_SHA384           x             x
+SSL_RSA_WITH_AES_256_CBC_SHA256           x             x
+SSL_RSA_WITH_AES_256_CBC_SHA              x             x
+SSL_RSA_WITH_AES_128_GCM_SHA256           x             x
+SSL_RSA_WITH_AES_128_CBC_SHA256           x             x
+SSL_RSA_WITH_AES_128_CBC_SHA              x             x
+SSL_RSA_WITH_3DES_EDE_CBC_SHA             x
 ====================================== ======= ====================== ======================
 
 Cipher Statuses
