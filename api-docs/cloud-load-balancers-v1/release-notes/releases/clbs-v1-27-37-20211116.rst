@@ -1,6 +1,6 @@
 .. version-v1.27.37-release-notes:
 
-v1.27.32, November 16th, 2021
+v1.27.37, November 16th, 2021
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 What's new
