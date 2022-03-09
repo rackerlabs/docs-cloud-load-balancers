@@ -1,0 +1,18 @@
+.. version-v1.27.39-release-notes:
+
+v1.27.39, March 9th, 2022
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+- General Admin improvements
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
+
