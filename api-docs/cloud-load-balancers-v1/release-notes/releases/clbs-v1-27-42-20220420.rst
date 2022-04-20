@@ -1,0 +1,18 @@
+.. version-v1.27.42-release-notes:
+
+v1.27.42, April 20th, 2022
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+- Improved GET loadbalancers response time
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
+
