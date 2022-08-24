@@ -1,6 +1,6 @@
 .. version-v1.27.48-release-notes:
 
-v1.27.47, August 24th, 2022
+v1.27.48, August 24th, 2022
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What's new
