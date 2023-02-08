@@ -1,8 +1,3 @@
-
-[build.environment]
-  NPM_VERSION = "7.9.0"
-  NODE_VERSION = "15.0.1"
-
 [build]
   publish = "api-docs/cloud-load-balancers-v1/_build/html"
   command = "cd api-docs/cloud-load-balancers-v1 && make clean html && cd .. && cd .."
