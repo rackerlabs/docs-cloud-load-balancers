@@ -1,7 +1,6 @@
-
 [build.environment]
-  NPM_VERSION = "7.9.0"
-  NODE_VERSION = "15.0.1"
+  NPM_VERSION = "7.10.0"
+  NODE_VERSION = "16"
 
 [build]
   publish = "api-docs/cloud-load-balancers-v1/_build/html"
