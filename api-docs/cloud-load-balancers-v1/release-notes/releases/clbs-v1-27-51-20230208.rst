@@ -5,7 +5,7 @@ v1.27.51, February 8th, 2023
 
 What's new
 ----------
-- General Admin improvements
+- General Admin improvements.
 
 Resolved issues
 ---------------
