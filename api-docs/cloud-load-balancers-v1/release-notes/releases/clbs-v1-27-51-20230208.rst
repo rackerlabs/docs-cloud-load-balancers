@@ -1,0 +1,18 @@
+.. version-v1.27.51-release-notes:
+
+v1.27.51, February 8th, 2023
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+- General Admin improvements.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+
+|no changes|
+
