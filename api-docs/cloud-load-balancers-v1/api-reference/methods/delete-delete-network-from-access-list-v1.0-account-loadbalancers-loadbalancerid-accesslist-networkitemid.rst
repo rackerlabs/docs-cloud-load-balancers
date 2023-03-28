@@ -80,4 +80,6 @@ Response
 --------
 
 
-This operation does not return a response body.
+This operation will return the remaining access list networks
+that were not deleted. If they were all deleted there will not be a
+response body.
