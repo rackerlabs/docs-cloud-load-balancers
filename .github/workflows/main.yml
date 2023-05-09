@@ -1,0 +1,42 @@
+name: main
+on: [ push ]
+env:
+  MELI_SITE: "9bcec6fd-65f8-4cf8-9d17-ba5c5ec1ca7f"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: "build"
+        run: |
+          npm ci
+          npm run build
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          sudo apt install pandoc
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build sphinx documentation
+        working-directory: api-docs/cloud-load-balancers-v1
+        run: |
+          make --prefix=api-docs/cloud-load-balancers-v1/_build clean html
+      - name: "publish"
+        run: |
+          npx -p "@getmeli/cli" meli upload api-docs/cloud-load-balancers-v1/_build \
+            --url "https://thisisjustatest.lol" \
+            --site "$MELI_SITE" \
+            --token "$MELI_TOKEN" \
+            --release "$GITHUB_SHA"
+        env:
+          MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
+          # Enable PR previews:
+          # uses the default GITHUB_TOKEN set by Github Actions
+          # https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
