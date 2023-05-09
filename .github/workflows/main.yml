@@ -7,13 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - name: "build"
-        run: |
-          npm ci
-          npm run build
       - name: Set up Python 3.7
         uses: actions/setup-python@v1
         with:
