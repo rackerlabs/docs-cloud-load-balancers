@@ -22,7 +22,7 @@ jobs:
           make clean html
       - name: "publish"
         run: |
-          npx -p "@getmeli/cli" meli upload api-docs/cloud-load-balancers-v1/_build \
+          npx -p "@getmeli/cli" meli upload ./api-docs/cloud-load-balancers-v1/_build \
             --url "https://thisisjustatest.lol" \
             --site "$MELI_SITE" \
             --token "$MELI_TOKEN" \
